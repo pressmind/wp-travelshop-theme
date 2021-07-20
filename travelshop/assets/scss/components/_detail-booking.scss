@@ -21,10 +21,10 @@
 			border-bottom: 3px solid silver;
 			transform: scale(1);
 			transition: ease-in-out 200ms all;
-			-webkit-box-shadow: 0 1px 10px rgb(0 0 0 / 11%), 0 4px 5px rgb(0 0 0 / 5%),
-				0 2px 4px rgb(0 0 0 / 10%);
-			box-shadow: 0 1px 10px rgb(0 0 0 / 11%), 0 4px 5px rgb(0 0 0 / 5%),
-				0 2px 4px rgb(0 0 0 / 10%);
+			-webkit-box-shadow: 0 1px 10px rgba(0,0,0,.11), 0 4px 5px rgba(0,0,0,.05),
+				0 2px 4px rgba(0,0,0,.1);
+			box-shadow: 0 1px 10px rgba(0,0,0,.11), 0 4px 5px rgba(0,0,0,.05),
+				0 2px 4px rgba(0,0,0,.1);
 
 			&.checked{
 				border-bottom: 3px solid #27ae60;
@@ -136,8 +136,8 @@
 				}
 			}
 			@include media-breakpoint-up(lg) {
-				-webkit-box-shadow: 0 8px 14px -4px rgb(0 0 0 / 10%);
-				box-shadow: 0 8px 14px -4px rgb(0 0 0 / 10%);
+				-webkit-box-shadow: 0 8px 14px -4px rgba(0,0,0,.1);
+				box-shadow: 0 8px 14px -4px rgba(0,0,0,.1);
 			}
 			&.booking-row-head {
 				font-size: 1.1rem;

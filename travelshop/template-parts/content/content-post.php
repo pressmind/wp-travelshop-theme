@@ -1,17 +1,23 @@
-<!-- BREADCRUMB: START -->
-<?php the_breadcrumb(null);?>
-<!-- BREADCRUMB: END -->
 
-<!-- CONTENT: START -->
-<div class="content-main">
-    <div class="container">
-        <section class="content-block content-block-detail-header">
-            <!-- <p>
-                <span class="badge badge-secondary">Australien</span>
-            </p> -->
-            <?php the_title('<h1>', '</h1>'); ?>
-            <!--<p class="small">4 Tage ab/bis Melbourne</p>-->
-            <?php the_content(); ?>
-        </section>
+<main>
+
+    <div class="content-main content-main--posts">
+
+        <div class="container">
+
+            <div class="content-block content-block-blog">
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <?php get_template_part( 'template-parts/wp-views/blog-list-entry-single' );  ?>
+
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <?php get_sidebar(); ?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- .container -->
     </div>
-</div>
+
+</main>
