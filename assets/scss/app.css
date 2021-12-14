@@ -15386,7 +15386,8 @@ button.select-from-control i.la {
   z-index: 10;
   display: none;
 }
-.travelshop-datepicker .datepicker-clear path, .travelshop-datepicker .datepicker-clear line {
+.travelshop-datepicker .datepicker-clear path,
+.travelshop-datepicker .datepicker-clear line {
   pointer-events: none;
 }
 .travelshop-datepicker .form-group > div {
@@ -15415,6 +15416,8 @@ button.select-from-control i.la {
     align-items: center;
     justify-content: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    left: 0 !important;
+    right: 0 !important;
   }
   .daterangepicker .ranges {
     display: none;
@@ -15429,8 +15432,10 @@ button.select-from-control i.la {
   .daterangepicker .right .prettydropdown ul {
     z-index: 50;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right {
     padding: 0 1rem;
+    margin: 0 auto;
     border-left: 0;
     border-bottom: 0;
     border-right: 0;
@@ -15438,25 +15443,32 @@ button.select-from-control i.la {
     width: 95vw;
     max-width: 450px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed {
     margin-top: 1rem;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tr, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tr {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tr,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tr {
     display: flex;
     justify-content: space-between;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed th, .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed th, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed th,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed th,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td {
     height: auto;
     padding: 0.4rem 0.2rem;
     border-collapse: separate;
     min-width: 0;
     width: auto;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed th, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed th {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed th,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed th {
     display: flex;
     align-items: center;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td {
     flex: 0 0 14.28%;
     text-align: center;
     border: 1px solid #ccc;
@@ -15464,12 +15476,15 @@ button.select-from-control i.la {
     border-radius: 0;
     transition: 300ms ease-in-out all;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td.in-range, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td.in-range {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td.in-range,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td.in-range {
     background: #66b0ff;
     color: #fff;
     font-weight: bold;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td.active, .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td.end-date, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td.active, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td.end-date {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td.active, .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed td.end-date,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td.active,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed td.end-date {
     background: #007bff;
     color: #fff;
     font-weight: bold;
@@ -15479,64 +15494,87 @@ button.select-from-control i.la {
     width: 100%;
     border: 0;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:first-child td, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:first-child td {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:first-child td,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:first-child td {
     border-top: 0;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:first-child td:first-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:first-child td:first-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:first-child td:first-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:first-child td:first-child {
     border-top-left-radius: 5px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:first-child td:last-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:first-child td:last-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:first-child td:last-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:first-child td:last-child {
     border-top-right-radius: 5px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:last-child td, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:last-child td {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:last-child td,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:last-child td {
     border-bottom: 0;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:last-child td:first-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:last-child td:first-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:last-child td:first-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:last-child td:first-child {
     border-bottom-left-radius: 5px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:last-child td:last-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:last-child td:last-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr:last-child td:last-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr:last-child td:last-child {
     border-bottom-right-radius: 5px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr td:first-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr td:first-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr td:first-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr td:first-child {
     border-left: 0;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr td:last-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr td:last-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed tbody tr td:last-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed tbody tr td:last-child {
     border-right: 0;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .monthselect, .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .yearselect, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .monthselect, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .yearselect {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .monthselect,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .yearselect,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .monthselect,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .yearselect {
     font-size: 1.3rem;
     margin: 0.75rem 0 0 0;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown {
     height: 30px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown ul, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown ul {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown ul,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown ul {
     margin: 0 !important;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown ul li, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown ul li {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown ul li,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown ul li {
     font-size: 0.9rem;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown:first-child, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown:first-child {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown:first-child,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown:first-child {
     max-width: 115px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown:first-child ul, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown:first-child ul {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown:first-child ul,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown:first-child ul {
     max-width: 115px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown:first-child ul li, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown:first-child ul li {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table .table-condensed .prettydropdown:first-child ul li,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table .table-condensed .prettydropdown:first-child ul li {
     max-width: 115px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.next span, .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.prev span, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.next span, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.prev span {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.next span,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.prev span,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.next span,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.prev span {
     padding: 6px;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.next, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.next {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.next,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.next {
     padding: 0 0.85rem 0 0.5rem;
   }
-  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.prev, .daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.prev {
+  .daterangepicker.opensright.show-calendar.ltr.show-ranges .left .calendar-table th.prev,
+.daterangepicker.opensright.show-calendar.ltr.show-ranges .right .calendar-table th.prev {
     padding: 0 0.5rem 0 0.85rem;
   }
   .daterangepicker.opensright.show-calendar.ltr.show-ranges .drp-buttons {
     border-top: 0;
     padding: 1rem 0;
+    text-align: center;
   }
   .daterangepicker.opensright.show-calendar.ltr.show-ranges .drp-buttons .applyBtn {
     font-size: 1rem;

@@ -18,7 +18,7 @@ add_action('wp_enqueue_scripts', function () {
     $js_files[] = array('handle' => 'popper', 'dependencies' => ['jquery'], 'src' => '/assets/js/popper-1.14.7.min.js', 'defer' => true, 'version' => '1.14.7');
     $js_files[] = array('handle' => 'bootstrap', 'dependencies' => ['jquery'], 'src' => '/assets/js/bootstrap.min.js', 'defer' => true, 'version' => '4.3.1');
     $js_files[] = array('handle' => 'pulltorefresh', 'dependencies' => ['jquery'], 'src' => '/assets/js/pulltorefresh.min.js', 'defer' => true, 'version' => '0.1.22');
-    $js_files[] = array('handle' => 'dayjs-pack', 'dependencies' => ['jquery'], 'src' => '/assets/js/dayjs-1.10.6.pack.min.js', 'defer' => true, 'version' => '1.10.6');
+    $js_files[] = array('handle' => 'moment-js', 'dependencies' => ['jquery'], 'src' => '/assets/js/moment.min.js', 'defer' => true, 'version' => '1.1');
     $js_files[] = array('handle' => 'daterangepicker', 'dependencies' => ['jquery'], 'src' => '/assets/js/daterangepicker.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/daterangepicker.min.js'));
     $js_files[] = array('handle' => 'autocomplete', 'dependencies' => ['jquery'], 'src' => '/assets/js/autocomplete.min.js', 'defer' => true, 'version' => '1.4.10');
     $js_files[] = array('handle' => 'rangeslider', 'dependencies' => ['jquery'], 'src' => '/assets/js/ion.rangeSlider.min.js', 'defer' => true, 'version' => '2.3.1');

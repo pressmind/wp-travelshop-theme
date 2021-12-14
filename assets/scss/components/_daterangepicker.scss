@@ -1,8 +1,10 @@
 .travelshop-datepicker-input[readonly] {
     background: #fff;
 }
+
 .travelshop-datepicker {
     position: relative;
+
     .datepicker-clear {
         cursor: pointer;
         position: absolute;
@@ -10,13 +12,17 @@
         bottom: calc(1.275rem);
         z-index: 10;
         display: none;
-        path, line {
+
+        path,
+        line {
             pointer-events: none;
         }
     }
+
     .form-group {
         >div {
             position: relative;
+
             &:after {
                 content: '';
                 position: absolute;
@@ -28,9 +34,9 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgb(255,255,255);
+                background: rgb(255, 255, 255);
                 border-radius: $border-radius;
-                background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.001) 60%);
+                background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.001) 60%);
             }
         }
     }
@@ -42,10 +48,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        left: 0 !important;
+        right: 0 !important;
+
         .ranges {
             display: none;
         }
+
         .prettydropdown {
             ul {
                 li {
@@ -54,6 +64,7 @@
                 }
             }
         }
+
         .left {
             .prettydropdown {
                 ul {
@@ -61,6 +72,7 @@
                 }
             }
         }
+
         .right {
             .prettydropdown {
                 ul {
@@ -68,9 +80,13 @@
                 }
             }
         }
+
         &.opensright.show-calendar.ltr.show-ranges {
-            .left, .right {
+
+            .left,
+            .right {
                 padding: 0 1rem;
+                margin: 0 auto;
                 border-left: 0;
                 border-bottom: 0;
                 border-right: 0;
@@ -81,21 +97,26 @@
                 .calendar-table {
                     .table-condensed {
                         margin-top: 1rem;
+
                         tr {
                             display: flex;
                             justify-content: space-between;
                         }
-                        th, td {
+
+                        th,
+                        td {
                             height: auto;
                             padding: .4rem .2rem;
                             border-collapse: separate;
                             min-width: 0;
                             width: auto;
                         }
+
                         th {
                             display: flex;
                             align-items: center;
                         }
+
                         td {
                             flex: 0 0 14.28%;
                             text-align: center;
@@ -103,12 +124,15 @@
                             background: #efefef;
                             border-radius: 0;
                             transition: 300ms ease-in-out all;
+
                             &.in-range {
                                 background: lighten(#007bff, 20%);
                                 color: #fff;
                                 font-weight: bold;
                             }
-                            &.active, &.end-date {
+
+                            &.active,
+                            &.end-date {
                                 background: #007bff;
                                 color: #fff;
                                 font-weight: bold;
@@ -119,56 +143,72 @@
                                 border: 0;
                             }
                         }
+
                         tbody {
                             tr {
                                 &:first-child {
                                     td {
                                         border-top: 0;
+
                                         &:first-child {
                                             border-top-left-radius: 5px;
                                         }
+
                                         &:last-child {
                                             border-top-right-radius: 5px;
                                         }
                                     }
                                 }
+
                                 &:last-child {
                                     td {
                                         border-bottom: 0;
+
                                         &:first-child {
                                             border-bottom-left-radius: 5px;
                                         }
+
                                         &:last-child {
                                             border-bottom-right-radius: 5px;
                                         }
                                     }
                                 }
+
                                 td {
                                     &:first-child {
                                         border-left: 0;
                                     }
+
                                     &:last-child {
                                         border-right: 0;
                                     }
                                 }
                             }
                         }
-                        .monthselect, .yearselect {
+
+                        .monthselect,
+                        .yearselect {
                             font-size: 1.3rem;
                             margin: .75rem 0 0 0;
                         }
+
                         .prettydropdown {
                             height: 30px;
+
                             ul {
                                 margin: 0 !important;
+
                                 li {
                                     font-size: .9rem;
                                 }
                             }
+
                             &:first-child {
                                 max-width: 115px;
+
                                 ul {
                                     max-width: 115px;
+
                                     li {
                                         max-width: 115px;
                                     }
@@ -176,40 +216,51 @@
                             }
                         }
                     }
-                    th.next, th.prev {
+
+                    th.next,
+                    th.prev {
                         span {
                             padding: 6px;
                         }
                     }
+
                     th.next {
                         padding: 0 .85rem 0 .5rem;
                     }
+
                     th.prev {
                         padding: 0 .5rem 0 .85rem;
                     }
                 }
             }
+
             .drp-buttons {
                 border-top: 0;
                 padding: 1rem 0;
+                text-align: center;
+
                 .applyBtn {
                     font-size: 1rem;
                     font-weight: normal;
                     padding: 5px 8px 4px 8px;
                 }
+
                 .cancelBtn {
                     position: absolute;
                     top: 1.2rem;
                     right: .4rem;
                 }
             }
-            &:before, &:after {
+
+            &:before,
+            &:after {
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
     }
 }
+
 @include media-breakpoint-up(md) {
     .prettydropdown {
         ul {
@@ -217,16 +268,20 @@
                 font-size: .7rem;
             }
         }
+
         &:first-child {
             max-width: 95px;
+
             ul {
                 max-width: 95px;
+
                 li {
                     max-width: 95px;
                 }
             }
         }
     }
+
     .daterangepicker {
         .drp-buttons {
             .cancelBtn {
@@ -237,6 +292,7 @@
             }
         }
     }
+
     .travelshop-datepicker {
         .datepicker-clear {
             right: calc(15px + .55rem);
