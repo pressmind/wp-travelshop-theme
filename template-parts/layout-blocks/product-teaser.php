@@ -70,6 +70,7 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
             </div>
         <?php if ( $has_more_items === false ) { ?>
             </div>
+            <div class="row">
         <?php } ?>
         <?php if ( isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
             <div class="col-12 col-md-auto pb-4">
