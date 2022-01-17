@@ -37,7 +37,6 @@ get_header();
                     'has_more_items' => true,
                     'search' => [
                             'pm-l' => '0,4',
-                            'pm-o' => 'rand',
                             'pm-ot' => TS_TOUR_PRODUCTS
                     ]
                 ];
