@@ -28,9 +28,9 @@ get_header();
                 $args = [
                     'headline' => 'Reise-Empfehlungen',
                     'text' => 'Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.',
-                    'link_top' => false,
-                    'link_bottom' => false,
-                    'link_teaser' => false,
+                    'link_top' => true,
+                    'link_bottom' => true,
+                    'link_teaser' => true,
                     'link_top_text' => 'Alle [TOTAL_RESULT] Reisen zum Thema anzeigen',
                     'link_bottom_text' => 'Alle [TOTAL_RESULT] Reisen zum Thema anzeigen',
                     'link_teaser_text' => 'Alle [TOTAL_RESULT] Reisen zum Thema anzeigen',
