@@ -52,6 +52,9 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
 <pre>
     <?php var_dump($args); ?>
 </pre>
+<pre>
+    <?php var_dump($has_more_items); ?>
+</pre>
 <section class="content-block content-block-travel-cols">
     <div class="row <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
         <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
