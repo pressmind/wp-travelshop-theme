@@ -68,6 +68,9 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
                 </p>
                 <?php } ?>
             </div>
+        <?php if ( $has_more_items === false ) { ?>
+            </div>
+        <?php } ?>
         <?php if ( isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
             <div class="col-12 col-md-auto pb-4">
                 <a href="<?php echo $more_results_link; ?>" title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>" class="btn-further">
