@@ -50,7 +50,7 @@ $has_more_items = count($result['items']) < $result['total_result'];
 $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/','/').'/?'.$result['query_string'] : '#ot-not-set';
 ?>
 <pre>
-    <?php print_r($args); ?>
+    <?php var_dump($args); ?>
 </pre>
 <section class="content-block content-block-travel-cols">
     <div class="row <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
