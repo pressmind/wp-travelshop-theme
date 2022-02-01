@@ -16002,4 +16002,7 @@ a {
 body {
   font-display: swap !important; }
 
+.add-to-wishlist svg {
+  pointer-events: none !important; }
+
 /*# sourceMappingURL=app.css.map */

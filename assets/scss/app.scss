@@ -85,3 +85,8 @@
 body {
 	font-display: swap !important;
 }
+
+// -- fix for wishlist issues
+.add-to-wishlist svg {
+	pointer-events: none !important;
+}
