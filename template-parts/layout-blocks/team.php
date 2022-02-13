@@ -18,11 +18,8 @@
 
         <?php
         if(!empty($args['items'])){
-            $colClass = 'col-12 col-sm-6 col-lg-3';
+            $colClass = $args['classes'];
 
-            if ( count($args['items']) < 4 ) {
-                $colClass = 'col-12 col-sm-6 col-lg-4';
-            }
             foreach($args['items'] as $item){
                 $item = (array)$item;
 

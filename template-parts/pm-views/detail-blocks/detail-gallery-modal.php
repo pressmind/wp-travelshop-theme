@@ -20,7 +20,7 @@
                 ?>
                 <div class="detail-gallery-overlay-item">
                     <div class="detail-gallery-overlay-item--image">
-                        <img src="<?php echo $picture['url_detail_gallery']; ?>" class="w-100 h-100" loading="lazy"/>
+                        <img data-src="<?php echo $picture['url_detail_gallery']; ?>" class="w-100 h-100 imglazy" loading="lazy"/>
                     </div>
                     <div class="detail-gallery-overlay-item--caption">
                         <?php echo $picture['caption']; ?>

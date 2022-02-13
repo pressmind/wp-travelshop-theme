@@ -101,12 +101,11 @@
         .description-block-element-gallery {
             margin: 0 0 1rem 0;
             display: flex !important;
-            overflow-x: auto;
+            overflow: hidden;
 
-            a {
+            >div {
                 display: block;
                 position: relative;
-                pointer-events: none;
 
                 &:last-child {
                     margin-right: 0;
@@ -135,11 +134,12 @@
                 display: flex !important;
                 transform: none !important;
 
-                a {
+                >div {
                     display: block;
                     width: 31%;
                     margin: .5rem 1.16666%;
                     pointer-events: all;
+                    cursor: pointer;
 
                     img {
                         display: block;

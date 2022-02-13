@@ -28,7 +28,7 @@ if (empty($pictures) === false) {
                     ?>
                     <div class="detail-gallery-overlay-item">
                         <div class="detail-gallery-overlay-item--image">
-                            <img src="<?php echo $picture->getUri('detail'); ?>" class="w-100 h-100"/>
+                            <img src="<?php echo $picture->getUri('detail'); ?>" class="w-100 h-100 imglazy" loading="lazy"/>
                         </div>
                         <div class="detail-gallery-overlay-item--caption">
                             <?php echo $picture->caption; ?>
@@ -49,7 +49,7 @@ if (empty($pictures) === false) {
                 ?>
                 <div class="detail-gallery-thumbnail-item">
                     <div class="detail-gallery-thumbnail-item--image">
-                        <img src="<?php echo $picture->getUri('detail'); ?>" class="w-100 h-100"/>
+                        <img src="<?php echo $picture->getUri('detail'); ?>" class="w-100 h-100 imglazy" loading="lazy"/>
                     </div>
                 </div>
             <?php } ?>

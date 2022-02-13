@@ -81,6 +81,12 @@
 // --- Gallery Overlay
 // -------------------------------------------
 
+.detail-gallery-modal-image-link {
+  img {
+    pointer-events: none;
+  }
+}
+
 .detail-gallery-overlay {
   position: fixed;
   top: 0;
@@ -118,6 +124,9 @@
     text-shadow: 0 0 10px #000;
     line-height: 40px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       color: #fff;
@@ -141,7 +150,7 @@
       transform: translateY(-50%);
       left: $grid-gutter-width;
       right: $grid-gutter-width;
-
+      width: auto;
       margin-top: 40px;
       pointer-events: none;
       z-index: 20;
@@ -149,7 +158,9 @@
       >button {
         pointer-events: none;
         @include resetbutton();
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         float: left;
         color: rgba(#fff, .5);
         transition: color .3s;
@@ -157,7 +168,7 @@
 
         font-size: 1rem;
 
-        background-color: rgba(#fff, .05);
+        background-color: rgba(#fff, .25);
         width: 40px;
         height: 40px;
         border-radius: 20px;

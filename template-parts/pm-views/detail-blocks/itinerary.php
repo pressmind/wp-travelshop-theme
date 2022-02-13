@@ -18,6 +18,8 @@
 /**
  * @var array $args
  */
+global $args;
+global $pictureIndex;
 
 if (empty($args['media_object']->getItinerarySteps())) {
     return;
@@ -67,12 +69,20 @@ if(!$valid){
                     </div>
                     <div class="itinerary-step-gallery it-gallery-<?php echo $key; ?>">
                         <?php foreach($step->document_media_objects as $picture) { ?>
-                            <a href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="itinerary-step-<?php echo $step->id; ?>">
-                              <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
-                              <div class="itinerary-step-gallery-image-copyright">
+                            <div>
+                                <img class="detail-gallery-modal-image " data-index="<?php echo $pictureIndex; ?>" src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
+                                <div class="itinerary-step-gallery-image-copyright">
                                 <?php echo $picture->copyright; ?>
-                              </div>
-                            </a>
+                                </div>
+                            </div>
+                            <?php $args['pictures'][] = [
+                                    'caption' => $picture->caption,
+                                    'copyright' => $picture->copyright,
+                                    'url_detail' => $picture->getUri('detail', null, null),
+                                    'url_detail_gallery' => $picture->getUri('detail_gallery', null, null),
+                                    'url_thumbnail' => $picture->getUri('thumbnail', null, null),
+                                    'picture_index' => $pictureIndex++,
+                            ]; ?>
                         <?php }
                         ?>
                     </div>

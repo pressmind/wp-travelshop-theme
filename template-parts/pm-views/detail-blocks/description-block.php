@@ -2,6 +2,8 @@
 /**
  * @var array $args
  */
+global $args;
+global $pictureIndex;
 ?>
 <section class="description-block-wrapper">
     <?php
@@ -44,14 +46,20 @@
                     <?php if (!empty($item['pictures'])) { ?>
                     <div class="description-block-element-gallery description-block-gallery-<?php echo $k; ?>">
                         <?php foreach ($item['pictures'] as $picture) { ?>
-                            <a href="<?php echo $picture['url_detail']; ?>"
-                               data-lightbox="description-block-gallery-<?php echo $k; ?>">
-                                <img src="<?php echo $picture['url_teaser']; ?>"
-                                     alt="<?php echo $picture['alt']; ?>"/>
-                                <div class="description-block-element-gallery-copyright">
-                                    <?php echo $picture['copyright']; ?>
+                                <div>
+                                    <img class="detail-gallery-modal-image imglazy" data-index="<?php echo $pictureIndex; ?>" src="<?php echo $picture['url_teaser']; ?>" alt="<?php echo $picture['alt']; ?>" loading="lazy" />
+                                    <div class="description-block-element-gallery-copyright">
+                                        <?php echo $picture['copyright']; ?>
+                                    </div>
                                 </div>
-                            </a>
+                            <?php $args['pictures'][] = [
+                                    'caption' => $picture['caption'],
+                                    'copyright' => $picture['copyright'],
+                                    'url_detail' => $picture['url_detail'],
+                                    'url_detail_gallery' => $picture['url_detail'],
+                                    'url_thumbnail' => $picture['url_teaser'],
+                                    'picture_index' => $pictureIndex++,
+                            ]; ?>
                         <?php } ?>
                     </div>
                     <?php } ?>

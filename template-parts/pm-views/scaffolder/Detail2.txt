@@ -22,7 +22,9 @@ $mo = $data['media_object'];
  */
 $moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
 
-
+global $args;
+global $pictureIndex;
+$pictureIndex = 0;
 $args = [];
 $args['pictures'] = [];
 foreach($moc->bilder_default as $item){
@@ -32,10 +34,9 @@ foreach($moc->bilder_default as $item){
             'url_detail' => $item->getUri('detail', null, 'base'),
             'url_detail_gallery' => $item->getUri('detail_gallery', null, 'base'),
             'url_thumbnail' => $item->getUri('detail_thumb', null, 'square'),
+            'picture_index' => $pictureIndex++,
     ];
 }
-
-
 $args['id_media_object'] = $mo->id;
 $args['media_object'] = $mo;
 $args['id_object_type'] = $mo->id_object_type;
@@ -87,9 +88,7 @@ if (empty($_GET['pm-tr']) === false) {
     }
 }
 
-if($mo->id_object_type != TS_DAYTRIPS_PRODUCTS){
-    $CheapestPriceFilter->occupancies = [2];
-}
+$CheapestPriceFilter->occupancies = [2];
 $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
 
 $args['url'] = $mo->getPrettyUrl(TS_LANGUAGE_CODE).(!empty($valid_params) ? '?'.http_build_query($valid_params) : '');
@@ -150,15 +149,7 @@ $args['descriptions'][] = [
     ]
 ];
 
-if($mo->isCached()){
-    $cacheinfo = $mo->getCacheInfo();
-    $cachetime = new DateTime($cacheinfo['date']);
-    $args['is_cached_since'] = $cachetime->format('d.m.Y H:i');
-}
 
-if(!empty($mo->booking_packages[0]->created)){
-    $args['booking_package_created_date'] = $mo->booking_packages[0]->created->format('d.m.Y H:i');
-}
 /**
  * List Housings/Hotels from object link
  */
@@ -230,27 +221,6 @@ if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsve
         $args['descriptions'][] = [
             'headline' => count($textbricks) == 1 ? 'Textbaustein' : 'Textbausteine',
             'items' => $textbricks
-        ];
-    }
-}
-
-/**
- * Example for Tables
- */
-$tables = $moc->tabelle_default;
-if(is_array($tables) && count($tables) > 0){
-    $table_html = $tables[0]->asHTML('table table-hover', true);
-    /**
-     * if you don't need a html table, try this:
-     * table_as_array = $tables[0]->get();
-     */
-    if(!empty($table_html)){
-        $args['descriptions'][] = [
-            'headline' => '',
-            'items' => [[
-                'name' => 'Route',
-                'text' => $table_html
-            ]]
         ];
     }
 }
@@ -365,10 +335,7 @@ $args['breadcrumb'][] = $tmp;
 
                     // = = = > load common description blocks < = = =
                     echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/description-block.php', $args);
-
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/info-line.php', $args);
-
-                    ?>
+                     ?>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="detail-sidebar">
@@ -388,6 +355,20 @@ $args['breadcrumb'][] = $tmp;
                                 // = = = > load contact box < = = =
                                 load_template(get_template_directory().'/template-parts/pm-views/detail-blocks/contact-box.php', false, $args);
                                 // = = = > load contact box < = = =
+                                $argsTeam = [];
+                                $argsTeam['classes'] = 'col-12';
+                                $argsTeam['items'] = [];
+                                $argsTeam['headline'] = '';
+                                $argsTeam['text'] = '';
+                                $argsTeam['items'][0] = [];
+                                $argsTeam['items'][0]['image_id'] = '29'; 
+                                $argsTeam['items'][0]['name'] = 'Max Mustermann';
+                                $argsTeam['items'][0]['position'] = 'Reiseberater';
+                                $argsTeam['items'][0]['text'] = '„Ich berate seit über 20 Jahren bei allen Fragen rund um das Thema Reisen“';
+                                $argsTeam['items'][0]['mail'] = 'info@example.com';
+                                $argsTeam['items'][0]['phone'] = '+49 012 345 678';
+                                load_template(get_template_directory().'/template-parts/layout-blocks/team.php', false, $argsTeam);
+                                // = = = > load contact box < = = =
                                 $args_trust = ['name' => $args['headline']];
                                 load_template_transient(get_template_directory().'/template-parts/pm-views/detail-blocks/trust-box.php', false, $args_trust, 0);
                             ?>
@@ -398,11 +379,15 @@ $args['breadcrumb'][] = $tmp;
         <?php
         // = = = > load sticky footer bar < = = =
         echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/mobile-bar.php', $args);
+        // = = = > detail gallery overlay < = = =
+        echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/detail-gallery-modal.php', $args);
         ?>
     </article>
     <hr>
     <div class="container">
     <?php
+        // = = = > load category bar < = = =
+        echo Template::render(APPLICATION_PATH.'/template-parts/layout-blocks/category-bar.php', $args);
         // = = = > load similiar products < = = =
         $args_similiar = [
             'headline' => 'Kunden buchten auch:',
