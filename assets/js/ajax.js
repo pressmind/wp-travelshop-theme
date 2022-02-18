@@ -780,14 +780,15 @@ jQuery(function ($) {
                     'quantity' : quantity
                 }]}),
             }).done(function (response) {
-                $(booking_btn).find('span').html(response.data[0].btn_msg);
-                $(booking_btn).attr('title', response.data[0].msg);
+                let data = response.data[0];
+                $(booking_btn).find('span').html(data.btn_msg);
+                $(booking_btn).attr('title', data.msg);
                 $(booking_btn).find('.loader').hide();
                 $(booking_btn).removeClass('green');
-                $(booking_btn).addClass(response.data[0].class);
-                if(response.data[0].bookable === true){
+                $(booking_btn).addClass(data.class);
+                if(data.bookable === true){
                     $(booking_btn).find('svg').show();
-                    location.href = $(booking_btn).attr('href') + '&t='+response.data[0].booking_type;
+                    location.href = $(booking_btn).attr('href') + '&t='+data.booking_type;
                 }
             }));
         }
