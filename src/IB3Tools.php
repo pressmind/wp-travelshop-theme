@@ -11,9 +11,10 @@ class IB3Tools{
      * @param string $url for history back link
      * @param string $dc discount code
      * @param string $booking_type enum(request,option,fix) or null ('fix' is the ib3 default value)
+     * @param bool $dont_hide_options prevent hiding the housing option dialog
      * @return string
      */
-   public static function get_bookinglink($CheapestPriceSpeed, $url = null, $dc = null, $booking_type = null): string
+   public static function get_bookinglink($CheapestPriceSpeed, $url = null, $dc = null, $booking_type = null, $dont_hide_options = false): string
    {
 
        $p = [];
@@ -26,6 +27,10 @@ class IB3Tools{
        // @TODO: possible improvement: set more than one housing_options here (with there amount)
        if(!empty($CheapestPriceSpeed->id_option)) {
            $p[] = 'iho[' . $CheapestPriceSpeed->id_option . ']=1';
+       }
+
+       if($dont_hide_options === true){
+           $p[] = 'hodh=1';
        }
 
        if(!empty($CheapestPriceSpeed->transport_type)){

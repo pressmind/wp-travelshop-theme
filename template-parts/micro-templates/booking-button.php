@@ -20,7 +20,7 @@ use Pressmind\Travelshop\IB3Tools;
         echo 'data-modal="true" data-modal-id="' . $args['modal_id'] . '"';
     }
     ?>
-   href="<?php echo IB3Tools::get_bookinglink($args['cheapest_price'], $args['url']); ?>"
+   href="<?php echo IB3Tools::get_bookinglink($args['cheapest_price'], $args['url'], null, null, true); ?>"
    data-id-offer="<?php echo $args['cheapest_price']->getId(); ?>">
     <svg xmlns="http://www.w3.org/2000/svg"
          class="icon icon-tabler icon-tabler-chevron-right" width="16" height="16"

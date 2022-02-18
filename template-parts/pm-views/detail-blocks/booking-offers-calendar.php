@@ -131,7 +131,7 @@ if ($interval->format('%m') < 3) {
                                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
                                     'transport_type' => $date_to_cheapest_price[$current_date]->transport_type,
                                 ]);
-                                ?> <br> zur Buchung" data-html="true" data-toggle="tooltip"><a href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date]);?>" class="stretched-link"><?php echo $day; ?>
+                                ?> <br> zur Buchung" data-html="true" data-toggle="tooltip"><a href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
                                         <div>ab&nbsp;<?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
                                         </div>
                                     </a></li>
