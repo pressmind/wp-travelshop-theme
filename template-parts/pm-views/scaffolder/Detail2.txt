@@ -256,6 +256,50 @@ if(is_array($tables) && count($tables) > 0){
 }
 
 /**
+ * Example for Key Value Fields
+ */
+$key_value_tables = $moc->key_value_default;
+if(is_array($key_value_tables) && count($key_value_tables) > 0){
+    $key_value_table_html = $moc->key_value_default[0]->asHTML('table table-hover', true, [
+        [
+            'value' => 'headline 1',
+            'class' => 'red'
+        ],
+        [
+            'value' => 'headline 2',
+            'class' => 'red'
+        ],
+        [
+            'value' => 'headline 3',
+            'class' => 'red'
+        ],
+        [
+            'value' => 'headline 4',
+            'class' => 'red'
+        ]
+        ,[
+            'value' => 'headline 5',
+            'class' => 'red'
+        ]
+
+    ]
+    );
+    /**
+     * if you don't need a html table, try this:
+     * table_as_array = $tables[0]->get();
+     */
+    if(!empty($key_value_table_html)){
+        $args['descriptions'][] = [
+            'headline' => '',
+            'items' => [[
+                'name' => 'Key Value Table Beispiel',
+                'text' => $key_value_table_html
+            ]]
+        ];
+    }
+}
+
+/**
  * Breadcrumb
  */
 $args['breadcrumb'] = [];
