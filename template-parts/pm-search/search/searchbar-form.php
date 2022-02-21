@@ -15,7 +15,7 @@ use Pressmind\Travelshop\RouteHelper;
 
 // NO WORDPRESS FUNCTIONS HERE! (also used in ajax calls)
 ?>
-<form id="main-search" method="GET">
+<form id="main-search" method="GET" action="<?php echo SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['id_object_type']) . '/','/'); ?>">
     <input type="hidden" name="pm-ot" value="<?php echo $args['id_object_type']; ?>">
     <div class="search-wrapper--inner search-box">
         <div class="row">

@@ -416,11 +416,10 @@ jQuery(function ($) {
         }
 
         this.resultHandlerSearchBar = function(data){
-
             for (var key in data.html) {
-                $('#' + key).html(data.html[key]);
+                $('#' + key).replaceWith(data.html[key]);
             }
-
+            _this.searchbox();
             _this.autoCompleteInit();
             _this.dateRangePickerInit();
             _this.initCategoryTreeSearchBarFields();
