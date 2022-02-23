@@ -35,7 +35,7 @@ if (isset ( $args['search']['pm-l'] ) && !empty($args['search']['pm-l']) ) {
     $page_size = (int)$page_size[1];
 }
 
-$result = Search::getResult(isset($args['search']) ? $args['search'] : [], 2, $page_size, true, false);
+$result = Search::getResult(isset($args['search']) ? $args['search'] : [], 2, $page_size, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
 
 if(count($result['items']) == 0){
     if(isset($_GET['fl_builder'])){

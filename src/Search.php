@@ -25,7 +25,7 @@ class Search
      * @return array
      * @throws \Exception
      */
-    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false)
+    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null)
     {
 
         $duration_filter_ms = null;
@@ -44,7 +44,7 @@ class Search
             $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
             $filter = new \Pressmind\Search\MongoDB($FilterCondition, ['price_total' => 'asc'], TS_LANGUAGE_CODE);
             $start_time = microtime(true);
-            $result_filter = $filter->getResult(true, true);
+            $result_filter = $filter->getResult(true, true, $ttl_filter);
             $end_time = microtime(true);
             $duration_filter_ms = ($end_time - $start_time)  * 1000;
         }
@@ -53,7 +53,7 @@ class Search
         if(!$returnFiltersOnly) {
             $search = \BuildSearch::fromRequestMongoDB($request, 'pm', true, $page_size);
             $start_time = microtime(true);
-            $result = $search->getResult(false, false);
+            $result = $search->getResult(false, false, $ttl_search);
             $end_time = microtime(true);
             $duration_search_ms = ($end_time - $start_time) * 1000;
             foreach ($result->documents as $document) {

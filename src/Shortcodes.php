@@ -158,7 +158,7 @@ class Shortcodes
             }
         }
 
-        $result = Search::getResult($atts);
+        $result = Search::getResult($atts,2, 12, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
         $view = 'Teaser1';
         if (empty($atts['view']) === false) {
             $view = $atts['view'];

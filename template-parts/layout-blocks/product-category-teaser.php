@@ -74,7 +74,7 @@ use Pressmind\Travelshop\Template;
                             </a>
                         </div>
                     <?php
-                    $result = Search::getResult($teaser['search'] ?? [], 2, 4, true, false);
+                    $result = Search::getResult($teaser['search'] ?? [], 2, 4, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
                     if(count($result['items']) > 0){
                     ?>
                         <div class="teaser-body">

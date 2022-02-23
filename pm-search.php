@@ -7,7 +7,7 @@ get_header();
 ?>
 <main>
     <?php
-    $args = $result = Search::getResult(array_merge($_GET, ['pm-ot' => (int)$wp_query->get('id_object_type')]),2, 12, true, false);
+    $args = $result = Search::getResult(array_merge($_GET, ['pm-ot' => (int)$wp_query->get('id_object_type')]),2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
     $args['headline'] = 'Finde deine Traumreise!';
     load_template(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $result);
     ?>

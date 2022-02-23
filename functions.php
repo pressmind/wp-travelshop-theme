@@ -96,6 +96,7 @@ require_once  'functions/enqueue_css.php';
 // Performance
 require_once  'functions/template_transient.php';
 require_once  'functions/max_image_upload.php';
+require_once  'functions/load_text_domain.php';
 
 // Contactform 7 support, if installed, we will load some custom formfield-tags here.
 if(class_exists('WPCF7')){

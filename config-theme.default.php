@@ -322,3 +322,14 @@ define('TS_LANDINGPAGE', [
     ['type' => 'categorytree', 'id_tree' => 1207, 'fieldname' => 'zielgebiet_default'],
     ['type' => 'categorytree', 'id_tree' => 1206, 'fieldname' => 'reiseart_default'],
 ]);
+
+
+/**
+ * Cache time in seconds of a search result, (redis-cache/MONGODB must be enabled in the pressmind sdk)
+ */
+define('TS_TTL_SEARCH', 0);
+
+/**
+ * Cache time in seconds of a search-filter result, (redis-cache/MONGODB must be enabled in the pressmind sdk)
+ */
+define('TS_TTL_FILTER', 0);

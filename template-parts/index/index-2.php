@@ -45,7 +45,7 @@ get_header();
          * @see readme-shortcodes.md
          */
 
-        $args = Search::getResult(['pm-ot' => TS_TOUR_PRODUCTS],2, 12, true, false);
+        $args = Search::getResult(['pm-ot' => TS_TOUR_PRODUCTS],2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
         $args['class'] = 'silver mt-mb-offset mt-2rem';
         load_template_transient(get_template_directory().'/template-parts/layout-blocks/search-bar.php', false, $args);
         ?>

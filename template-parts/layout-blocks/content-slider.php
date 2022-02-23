@@ -41,7 +41,7 @@ foreach ($args['items'] as $item) {
         if(empty($item['pm-id'])){
             continue;
         }
-        $product = Search::getResult(['pm-id' => (int)$item['pm-id']],2, 1, false, false);
+        $product = Search::getResult(['pm-id' => (int)$item['pm-id']],2, 1, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
         if(empty($product['items']) === true){
             continue;
         }

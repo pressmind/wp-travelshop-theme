@@ -1,7 +1,12 @@
 <?php
 
+if ( ! FLBuilderModel::is_builder_active() ) {
+    return;
+}
+
 $db = \Pressmind\Registry::getInstance()->get('db');
 $config = \Pressmind\Registry::getInstance()->get('config');
+
 
 /**
  * beaverbuilder settings

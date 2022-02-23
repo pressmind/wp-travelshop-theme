@@ -40,7 +40,7 @@ if (empty($_GET['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'search') {
-    $args = Search::getResult($_GET, 2, 12, true, false);
+    $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
     ob_start();
     require 'template-parts/pm-search/result.php';
     $Output->count = (int)$args['total_result'];
@@ -77,7 +77,7 @@ if (empty($_GET['action'])) {
     echo $result;
     exit;
 } else if ($_GET['action'] == 'searchbar'){
-    $args = Search::getResult($_GET, 2, 12, true, false);
+    $args = Search::getResult($_GET, 2, 12, true, true, TS_TTL_FILTER, TS_TTL_SEARCH);
     ob_start();
     require 'template-parts/pm-search/search/searchbar-form.php';
     $Output->html['main-search'] = ob_get_contents();
@@ -102,7 +102,7 @@ if (empty($_GET['action'])) {
     if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
         $view = $_GET['view'];
     }
-    $result = Search::getResult(['pm-id' => $id_media_object], 2, 1, false, false);
+    $result = Search::getResult(['pm-id' => $id_media_object], 2, 1, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
     $Output->error = true;
     $Output->html = '<!-- media object not found -->';
     if(!empty($result['items'][0])){
