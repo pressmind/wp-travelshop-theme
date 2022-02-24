@@ -34,6 +34,7 @@ if(empty($args['cheapest_price'])){
             </a>
         </span>
     </div>
+    <?php if($args['cheapest_price']->duration != 1){ ?>
     <div class="col-12">
         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-mix-icon.php', ['price_mix' => $args['cheapest_price']->price_mix]);?>
         <div>
@@ -43,6 +44,7 @@ if(empty($args['cheapest_price'])){
             ?>
         </div>
     </div>
+    <?php } ?>
     <div class="col-12">
         <?php
         if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {

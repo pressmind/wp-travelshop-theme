@@ -50,7 +50,13 @@ if (!empty($offers)) { ?>
                                     Dauer
                                 </div>
                                 <div class="col-3">
-                                    Zeitraum
+                                    <?php
+                                    if($offer->duration == 1){
+                                        ?>Datum<?php
+                                    }else{
+                                        ?>Zeitraum<?php
+                                    }
+                                    ?>
                                 </div>
                                 <div class="col-3">
                                     Leistung

@@ -9,6 +9,11 @@ use Pressmind\Travelshop\Template;
  * @var array $args
  */
 
+if($args['cheapest_price']->duration == 1){
+    echo $args['cheapest_price']->option_name;
+    return;
+}
+
 $offer_description = [];
 $offer_description[] = $args['cheapest_price']->housing_package_name;
 $offer_description[] = $args['cheapest_price']->option_name;

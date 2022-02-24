@@ -400,8 +400,8 @@ $args['breadcrumb'][] = $tmp;
                             <?php echo $args['usps']; ?>
                         </div>
                     <?php } ?>
-                    <?php if (!empty($args['intro'])) { ?>
-                        <p><?php echo $args['intro'];?></p>
+                    <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
+                        <p><?php echo $args['intro']; ?></p>
                     <?php } ?>
                     <?php
                     // = = = > itinerary < = = =
