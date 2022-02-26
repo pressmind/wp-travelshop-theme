@@ -313,7 +313,7 @@ jQuery(function ($) {
     // --- Register PWA ServiceWorker
     // --------------------------------
 
-    if ('serviceWorker' in navigator) {
+    if (ts_pwa && 'serviceWorker' in navigator) {
         window.addEventListener('load', function () {
             navigator.serviceWorker.register('/service-worker.min.js').then(function (registration) {
                 // Registration was successful
@@ -324,7 +324,6 @@ jQuery(function ($) {
             });
         });
     }
-
 
     // ------------------------------
     // -- content modal

@@ -17,6 +17,7 @@ add_action('init', function () {
 
 
 /**
+ * @TODO: reduce sql queries
  * Modification of "Build a tree from a flat array in PHP"
  *
  * Authors: @DSkinner, @ImmortalFirefly and @SteveEdson

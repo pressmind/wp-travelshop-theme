@@ -1,7 +1,9 @@
 <?php
 /**
+ * @var $args['name']
  * @var $args['departure_min']
  * @var $args['departure_max']
+ * @var $args['departure_dates']
  */
 
 $minDate = $maxDate = '';
@@ -24,7 +26,7 @@ if (empty($_GET['pm-dr']) === false) {
 }
 ?>
 <div class="form-group mb-md-0">
-    <label for="">Reisezeitraum</label>
+    <label for=""><?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?></label>
     <div>
         <input type="text"
             class="form-control travelshop-datepicker-input"

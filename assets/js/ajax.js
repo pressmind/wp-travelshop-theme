@@ -281,7 +281,6 @@ jQuery(function ($) {
                 }
 
             });
-
             let key;
             let delimiter = ',';
             for (key in selected) {
@@ -341,14 +340,12 @@ jQuery(function ($) {
             // dont run default realtime ajax-functions on small viewport
             if ($(window).width() > 768) {
                 $("#search-filter").on('change', ".list-filter-box input, .list-filter-box select", function (e) {
-                    var form = $(this).closest('form');
-
+                    let form = $(this).closest('form');
                     // if the second level has no more selected items, we fall back to the parents value
                     if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
                         $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
                     }
-
-                    var query_string = _this.buildSearchQuery(form);
+                    let query_string = _this.buildSearchQuery(form);
                     _this.setSpinner('#pm-search-result');
                     _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
                     e.preventDefault();
@@ -356,14 +353,12 @@ jQuery(function ($) {
             }
 
             $("#search-filter").on('click', ".list-filter-box-submit", function (e) {
-                var form = $(this).closest('form');
-
+                let form = $(this).closest('form');
                 // if the second level has no more selected items, we fall back to the parents value
                 if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
                     $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
                 }
-
-                var query_string = _this.buildSearchQuery(form);
+                let query_string = _this.buildSearchQuery(form);
                 _this.setSpinner('#pm-search-result');
                 _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
                 e.preventDefault();
@@ -407,9 +402,9 @@ jQuery(function ($) {
 
         this.searchboxSwitch = function (){
             $(".search-wrapper--tabs_btn").on('click', function (e) {
-                $(this).parents().find(".search-wrapper--tabs_btn").toggleClass('is--active');
-
-                let query_string = 'action=searchbar&pm-ot='+$(this).data('pm-ot');
+                $(this).parents().find(".search-wrapper--tabs_btn").removeClass('is--active');
+                $(this).addClass('is--active');
+                let query_string = 'action=searchbar&pm-tab='+$(this).data('pm-tab') + '&pm-box='+$(this).data('pm-box');
                 _this.call(query_string, null, null, _this.resultHandlerSearchBar);
 
             });
@@ -431,7 +426,7 @@ jQuery(function ($) {
                     serviceUrl: '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=autocomplete',
                     type: 'get',
                     dataType: 'json',
-                    paramName: 'q',
+                    paramName: 'pm-t',
                     deferRequestBy: 0,
                     minChars: 2,
                     width: 'flex',

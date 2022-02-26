@@ -1,11 +1,9 @@
  <?php
 /**
  * @todo optimize id, data tags in checkboxes
- * @todo condition_type is deprecated, remove
  * @var string $name
  * @var string $fieldname (fieldname_sectioname)
  * @var string $behavior (fieldname_sectioname)
- * @var int $id_tree
  * @var $args['categories']
  */
 

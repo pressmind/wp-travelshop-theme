@@ -51,30 +51,31 @@ foreach ($languages as $language) {
         $data['type'] = 'detail';
         $data['language'] = $language;
         $data['base_url'] = $route_prefix;
-
         $routes[$routename] = new Route('^' . $route_prefix . '/(.+?)', 'ts_detail_hook', 'pm-detail', $data);
-
-        // - SEARCH ROUTE -
-        // Build a route for each media object type > searchpage <
-        // e.g. www.xxx.de/de/reise-suche/
-        // if route is not configured continue
-        if(empty(TS_SEARCH_ROUTES[$object_type][($language_prefix) == '' ? 'default' : $language_prefix]) === true){
-            continue;
+    }
+    // Build Search Routes
+    foreach(TS_SEARCH_ROUTES as $search_route){
+        foreach($search_route['languages'] as $language_code => $language){
+            $language_prefix = '';
+            // - SEARCH ROUTE -
+            // Build a route for each media object type > searchpage <
+            // e.g. www.xxx.de/de/reise-suche/
+            // if route is not configured continue
+            $language_prefix = '';
+            if($language_code != 'default'){
+                $language_prefix = $language_code.'/';
+            }
+            $route_prefix = $language_prefix.trim($language['route'],'/');
+            $routename = 'ts_default_' . $route_prefix . '_route';
+            $data = [];
+            $data['id_object_types'] = $search_route['pm-ot'];
+            $data['type'] = 'search';
+            $data['language'] = $language_code;
+            $data['base_url'] = $route_prefix;
+            $data['title'] = $language['title'];
+            $data['meta_description'] = $language['meta_description'];
+            $routes[$routename] = new Route('^' . $route_prefix . '/?', 'ts_search_hook', 'pm-search', $data);
         }
-
-        $route_ot_config = TS_SEARCH_ROUTES[$object_type][($language_prefix) == '' ? 'default' : $language_prefix];
-        $route_prefix = $language_prefix.trim($route_ot_config['route'],'/');
-
-        $routename = 'ts_default_' . $route_prefix . '_route';
-        $data = [];
-        $data['id_object_type'] = $object_type;
-        $data['type'] = 'search';
-        $data['language'] = $language;
-        $data['base_url'] = $route_prefix;
-        $data['title'] = $route_ot_config['title'];
-        $data['meta_description'] = $route_ot_config['meta_description'];
-        $routes[$routename] = new Route('^' . $route_prefix . '/?', 'ts_search_hook', 'pm-search', $data);
-
     }
 
     // Setup the route for the calendar page
@@ -293,7 +294,7 @@ function ts_search_hook($data)
      */
 
     // set the id of the current media object as wp parameter
-    $wp_query->set('id_object_type', $data['id_object_type']);
+    $wp_query->set('pm-ot', implode(',', $data['id_object_types']));
     add_filter( 'body_class', function( $classes ) {
         $classes[] = 'pm-search-page';
         return $classes;

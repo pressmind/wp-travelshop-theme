@@ -1,5 +1,4 @@
 <?php
-
 /**
  * <code>
  * $args = ['total_result' => 100,
@@ -10,7 +9,7 @@
  *              'is_cached' => false,
  *              'info' => []
  *            ],
- *            'id_object_type' => 123,
+ *            'id_object_type' => 123 | [124, 134],
  *            'duration_min' => 3,
  *            'duration_max' => 5
  *            'price_min' => 100
@@ -27,10 +26,9 @@
 ?>
 <div class="content-block content-block-list-filter">
     <form id="filter" action="" method="GET">
-        <input type="hidden" name="pm-ot" value="<?php echo $args['id_object_type']; ?>">
+        <input type="hidden" name="pm-ot" value="<?php echo implode(',', $args['id_object_type']); ?>">
         <div class="list-filter">
-            <div class="h4 mt-0 mb-4"><i class="la la-filter"></i> Filter</div>
-
+            <div class="h4 mt-0 mb-4"><i class="la la-filter"></i> Suche verfeinern</div>
             <button class="list-filter-close">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="28" height="28"
                      viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round"
@@ -45,8 +43,11 @@
                 require 'filter/order.php';
                 require 'filter/price-range.php';
                 require 'filter/duration-range.php';
-                foreach(TS_FILTERS[$args['id_object_type']] as $filter){
-                    list($fieldname, $name, $behavior) = array_values($filter);
+                foreach(TS_FILTERS as $filter){
+
+                    $fieldname = $filter['fieldname'];
+                    $name = $filter['name'];
+                    $behavior = $filter['behavior'];
                     require 'filter/category-tree.php';
                 }
                 ?>

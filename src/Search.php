@@ -4,6 +4,11 @@ namespace Pressmind\Travelshop;
 
 class Search
 {
+
+    private static $_run_time_cache_full = [];
+    private static $_run_time_cache_filter = [];
+    private static $_run_time_cache_search = [];
+
     /**
      * @param $request
      * @param $page_size
@@ -27,7 +32,10 @@ class Search
      */
     public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null)
     {
-
+        $cache_key = md5(serialize(func_get_args()));
+        if(isset(self::$_run_time_cache_full[$cache_key])){
+            return self::$_run_time_cache_full[$cache_key];
+        }
         $duration_filter_ms = null;
         $duration_search_ms = null;
         if (empty($request['pm-ho']) === true) {
@@ -35,23 +43,34 @@ class Search
             // (to display the correct search result with the correct cheapeast price inside)
             $request['pm-ho'] = $occupancy;
         }
-
+        $id_object_type = empty($request['pm-ot']) ? false : \BuildSearch::extractObjectType($request['pm-ot']);
         if($getFilters){
             $FilterCondition = [];
             if(!empty($request['pm-ot'])){
-                $FilterCondition[] =  new \Pressmind\Search\Condition\MongoDB\ObjectType((int)$request['pm-ot']);
+                if(!$id_object_type) {
+                    $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\ObjectType($id_object_type);
+                }
             }
             $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
             $filter = new \Pressmind\Search\MongoDB($FilterCondition, ['price_total' => 'asc'], TS_LANGUAGE_CODE);
             $start_time = microtime(true);
-            $result_filter = $filter->getResult(true, true, $ttl_filter);
+            if(isset(self::$_run_time_cache_filter[$cache_key])){
+                $result_filter = self::$_run_time_cache_filter[$cache_key];
+            }else{
+                $result_filter = $filter->getResult(true, true, $ttl_filter);
+                self::$_run_time_cache_filter[$cache_key] = $result_filter;
+            }
             $end_time = microtime(true);
             $duration_filter_ms = ($end_time - $start_time)  * 1000;
         }
-
         $items = [];
         if(!$returnFiltersOnly) {
-            $search = \BuildSearch::fromRequestMongoDB($request, 'pm', true, $page_size);
+            if(isset(self::$_run_time_cache_search[$cache_key])){
+                $search = self::$_run_time_cache_search[$cache_key];
+            }else {
+                $search = \BuildSearch::fromRequestMongoDB($request, 'pm', true, $page_size);
+                self::$_run_time_cache_search[$cache_key] = $search;
+            }
             $start_time = microtime(true);
             $result = $search->getResult(false, false, $ttl_search);
             $end_time = microtime(true);
@@ -124,7 +143,7 @@ class Search
             $departure_filter_ms = ($end_time - $start_time)  * 1000;
         }
 
-        return [
+        $result = [
             'total_result' => !empty($result->total) ? $result->total : null,
             'current_page' => !empty($result->currentPage) ? $result->currentPage : null,
             'pages' => !empty($result->pages) ? $result->pages : null,
@@ -134,7 +153,7 @@ class Search
                 'is_cached' => false,
                 'info' => []
             ],
-            'id_object_type' => !empty($request['pm-ot']) ? $request['pm-ot'] : null,
+            'id_object_type' => !$id_object_type ? [] : $id_object_type,
             'categories' => $categories,
             'duration_min' => !empty($result_filter->minDuration) ? $result_filter->minDuration : null,
             'duration_max' => !empty($result_filter->maxDuration) ? $result_filter->maxDuration : null,
@@ -151,5 +170,7 @@ class Search
                 'aggregation_pipeline_search' => !empty($search) ? $search->buildQueryAsJson($getFilters) : null
             ]
         ];
+        self::$_run_time_cache_full[$cache_key] = $result;
+        return $result;
     }
 }

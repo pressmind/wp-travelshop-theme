@@ -68,20 +68,39 @@ define('TS_DESTINATIONS', null);
 /**
  * Setup the search routes for each media object type by language
  * <code>
- * define('TS_SEARCH_ROUTES', [
- *  TS_TOUR_PRODUCTS => [
- *      '{LANGUAGE_CODE|default}' => [
- *          'route' => 'reise-suche',
- *          'title' => 'Reise Suche - Travelshop',
- *          'meta_description' => ''
+ *  define('TS_SEARCH_ROUTES', [
+ *  [
+ *      'pm-ot' => [TS_TOUR_PRODUCTS,TS_DAYTRIPS_PRODUCTS],
+ *      'languages' => [
+ *          'default' => [
+ *              'route' => 'suche',
+ *              'title' => 'Reise Suche - Travelshop',
+ *              'meta_description' => '',
+ *          ],
  *      ],
  *  ],
- *  TS_DAYTRIPS_PRODUCTS => [
- *      ...
+ *  [
+ *  'pm-ot' => [TS_TOUR_PRODUCTS],
+ *      'languages' => [
+ *          'default' => [
+ *              'route' => 'reise-suche',
+ *              'title' => 'Reise Suche - Travelshop',
+ *              'meta_description' => '',
+ *          ],
+ *      ]
  *  ],
- * ]);
+ *  [
+ *      'pm-ot' => [TS_DAYTRIPS_PRODUCTS],
+ *      'languages' => [
+ *          'default' => [
+ *              'route' => 'tagesfahrt-suche',
+ *              'title' => 'Tagesfahrt Suche - Travelshop',
+ *              'meta_description' => '',
+ *          ],
+ *      ],
+ *  ],
+ *  ]);
  * </code>
- *
  */
 define('TS_SEARCH_ROUTES', []);
 
@@ -104,6 +123,21 @@ define('TS_VISIBILTY', [30]);
 
 
 /**
+ * The single fulltext search which is mostly placed in the header...
+ * see header.php
+ * <code>
+ * define('TS_SINGLE_SEARCH', [
+ *     'placeholder' => 'Suchbegriff...',
+ *     'route' => 'suche',
+ *     'search' => [
+ *         'pm-ot' => '609,607'
+ *     ],
+ * ]);
+ * </code>
+ */
+define('TS_SINGLE_SEARCH', []);
+
+/**
  * the possible category tree item search fields
  * used in this files:
  *  /template-parts/pm-search/search-bar.php
@@ -111,36 +145,107 @@ define('TS_VISIBILTY', [30]);
  * .. to draw the primary search bars.
  * <code>
  * define('TS_SEARCH', [
- *      TS_TOUR_PRODUCTS => [
- *          [ 'id_tree' => 1207, 'fieldname' => 'zielgebiet_default', 'name' => 'Zielgebiet', 'condition_type' => 'c'],
- *          [ 'id_tree' => 1206, 'fieldname' => 'reiseart_default', 'name' => 'Reiseart', 'condition_type' => 'c'],
- *      ],
- *      TS_DAYTRIPS_PRODUCTS => [
- *          [ 'id_tree' => 1207, 'fieldname' => 'zielgebiet_default', 'name' => 'Zielgebiet', 'condition_type' => 'c'],
- *          [ 'id_tree' => 1206, 'fieldname' => 'reiseart_default', 'name' => 'Reiseart', 'condition_type' => 'c'],
- *      ]
+ *     'default_search_box' => [
+ *         'tabs' => [
+ *             [
+ *                 'name' => 'Alle Reisen',
+ *                 'search' => [
+ *                     'pm-ot' => '609,607'
+ *                 ],
+ *                 'route' => 'suche',
+ *                 'fields' => [
+ *                     [
+ *                         'fieldname' => 'date_picker',
+ *                         'name' => '1 Zeitraum',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'string_search',
+ *                         'name' => 'Suche',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'reiseart_default',
+ *                         'name' => 'Reiseart',
+ *                         'behavior' => 'OR',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'zielgebiet_default',
+ *                         'name' => 'Zielgebiet',
+ *                         'behavior' => 'OR',
+ *                     ],
+ *                 ],
+ *             ],
+ *             [
+ *                 'name' => 'Pauschalreisen',
+ *                 'search' => [
+ *                     'pm-ot' => '609,607'
+ *                 ],
+ *                 'route' => 'reise-suche',
+ *                 'fields' => [
+ *                     [
+ *                         'fieldname' => 'date_picker',
+ *                         'name' => '2 Zeitraum',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'string_search',
+ *                         'name' => 'Suche',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'reiseart_default',
+ *                         'name' => 'Reiseart',
+ *                         'behavior' => 'OR',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'zielgebiet_default',
+ *                         'name' => 'Zielgebiet',
+ *                         'behavior' => 'OR',
+ *                     ],
+ *                 ],
+ *             ],
+ *             [
+ *                 'name' => 'Tagesfahrten',
+ *                 'search' => [
+ *                     'pm-ot' => '609,607'
+ *                 ],
+ *                 'route' => 'tagesfahrt-suche',
+ *                 'fields' => [
+ *                     [
+ *                         'fieldname' => 'date_picker',
+ *                         'name' => '3 Zeitraum',
+ *                     ],
+ *                     [
+ *                         'fieldname' => 'reiseart_default',
+ *                         'name' => 'Reiseart',
+ *                         'behavior' => 'OR',
+ *                     ],
+ *                 ],
+ *             ]
+ *         ]
+ *
+ *     ],
  * ]);
  * </code>
- *
- *
  */
-
 define('TS_SEARCH', []);
 
 /**
- * @TODO ebene rein für type
  * the possible category tree item filters
  * used in /template-parts/pm-search/filter-vertical.php to draw the filter list.
  * <code>
- * define('TS_FILTERS', [
-[ 'id_tree' => 1207, 'fieldname' => 'zielgebiet_default', 'name' => 'Zielgebiet', 'condition_type' => 'c'],
-[ 'id_tree' => 1206, 'fieldname' => 'reiseart_default', 'name' => 'Reiseart', 'condition_type' => 'c'],
-[ 'id_tree' => 2655, 'fieldname' => 'befoerderung_default', 'name' => 'Beförderung', 'condition_type' => 'c'],
-[ 'id_tree' => 1204, 'fieldname' => 'saison_default', 'name' => 'Saison', 'condition_type' => 'c'],
-// Example of a category tree from a sub object
-[ 'id_tree' => 1205, 'fieldname' => 'sterne_default', 'name' => 'Hotelkategorie', 'condition_type' => 'cl'],
-]);
- * </code>
+ * define('TS_FILTERS',[
+ *         [
+ *             'fieldname' => 'zielgebiet_default',
+ *             'name' => 'Zielgebiet',
+ *             'behavior' => 'OR',
+ *         ],
+ *         [
+ *             'fieldname' => 'reiseart_default',
+ *             'name' => 'Reiseart',
+ *             'behavior' => 'OR',
+ *         ],
+ *
+ *     ]
+ * );
+ *  * </code>
  */
 define('TS_FILTERS', []);
 
@@ -333,3 +438,8 @@ define('TS_TTL_SEARCH', 0);
  * Cache time in seconds of a search-filter result, (redis-cache/MONGODB must be enabled in the pressmind sdk)
  */
 define('TS_TTL_FILTER', 0);
+
+/**
+ * Laod simple service worker and PWA manifest
+ */
+define('TS_PWA', false);

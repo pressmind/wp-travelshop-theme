@@ -48,9 +48,12 @@ class BuildSearch
         // set the default visibility
         $conditions[] = Pressmind\Search\Condition\Visibility::create(TS_VISIBILTY);
 
-        if (isset($request[$prefix.'-ot']) && empty($id_object_type = intval($request[$prefix.'-ot'])) === false) {
-            $conditions[] = Pressmind\Search\Condition\ObjectType::create($id_object_type);
-            $validated_search_parameters[$prefix.'-ot'] = $id_object_type;
+        if (isset($request[$prefix.'-ot'])) {
+            $id_object_type = self::extractObjectType($request[$prefix.'-ot']);
+            if($id_object_type !== false){
+                $conditions[] = Pressmind\Search\Condition\ObjectType::create($id_object_type);
+                $validated_search_parameters[$prefix.'-ot'] = $id_object_type;
+            }
         }
 
 
@@ -288,9 +291,12 @@ class BuildSearch
         $conditions = array();
 
 
-        if (isset($request[$prefix.'-ot']) && empty($id_object_type = intval($request[$prefix.'-ot'])) === false) {
-            $conditions[] = new \Pressmind\Search\Condition\MongoDB\ObjectType($id_object_type);
-            $validated_search_parameters[$prefix.'-ot'] = $id_object_type;
+        if (isset($request[$prefix.'-ot'])) {
+            $id_object_type = self::extractObjectType($request[$prefix.'-ot']);
+            if($id_object_type !== false){
+                $conditions[] = new \Pressmind\Search\Condition\MongoDB\ObjectType($id_object_type);
+                $validated_search_parameters[$prefix.'-ot'] = $id_object_type;
+            }
         }
 
 
@@ -490,6 +496,17 @@ class BuildSearch
     public static function extractPriceRange($str){
         if(preg_match('/^([0-9]+)\-([0-9]+)$/', $str, $m) > 0){
             return array($m[1], $m[2]);
+        }
+        return false;
+    }
+
+    /**
+     * @param $str
+     * @return int[]|bool
+     */
+    public static function extractObjectType($str){
+        if(preg_match('/^([0-9\,]+)$/', $str, $m) > 0){
+            return array_map('intval', explode(',',$str));
         }
         return false;
     }

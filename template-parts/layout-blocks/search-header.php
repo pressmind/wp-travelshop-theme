@@ -2,18 +2,12 @@
 /**
  * <code>
  *  $args['headline']
- *  $args[total_result] => 112
- *  $args[current_page] => 1
- *  $args[pages] => 10
- *  $args[page_size] => 12
- *  $args[id_object_type] => 2277
- *  $args[... some more values search result ...]
+ *  $args['search_box'] = 'default_search_box'
+ *  $args['class'] // main-color, silver, transparent
  * </code>
  * @var array $args
  */
-
 ?>
-
 <section class="layout-block layout-block-search-header">
     <div class="layout-block-search-header--search">
         <div class="container">

@@ -77,7 +77,11 @@ if (empty($_GET['action'])) {
     echo $result;
     exit;
 } else if ($_GET['action'] == 'searchbar'){
-    $args = Search::getResult($_GET, 2, 12, true, true, TS_TTL_FILTER, TS_TTL_SEARCH);
+    $args = [];
+    $args['search_box_tab'] = intval($_GET['pm-tab']);
+    if(!empty($_GET['pm-get']) && preg_match('/^[0-9A-Za-z\_\-]+$/', $_GET['pm-box']) !== false){
+        $args['search_box'] = $_GET['pm-tab'];
+    }
     ob_start();
     require 'template-parts/pm-search/search/searchbar-form.php';
     $Output->html['main-search'] = ob_get_contents();

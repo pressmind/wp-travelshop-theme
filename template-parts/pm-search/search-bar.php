@@ -1,14 +1,12 @@
 <?php
-
-/***
+/**
  *  <code>
- *  $args['class'] // main-color, silver, transparent
  *  $args['headline']
- *  $args['id_object_type']
+ *  $args['search_box'] = 'default_search_box'
+ *  $args['class'] // main-color, silver, transparent
  * </code>
  * @var array $args
  */
-
 ?>
 <div class="search-wrapper">
     <?php if(!empty($args['headline'])){?>
@@ -17,9 +15,7 @@
         </div>
     <?php } ?>
     <?php
-    if(!empty(TS_TOUR_PRODUCTS) && !empty(TS_DAYTRIPS_PRODUCTS)){
-        require 'search/searchbar-tabs.php';
-    }
+    require 'search/searchbar-tabs.php';
     require 'search/searchbar-form.php';
     ?>
 </div>
