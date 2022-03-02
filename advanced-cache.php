@@ -357,6 +357,31 @@ class Redis_Page_Cache
         }
         return $output;
     }
+    public static function get_by_pattern($pattern)
+    {
+        $iterator = null;
+        $keys = [];
+        // Retry when we get no keys back
+        self::$redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY);
+        while ($scanned_keys = self::$redis->scan($iterator, $pattern)) {
+            $keys += $scanned_keys;
+        }
+        return $keys;
+    }
+    public static function del_by_pattern($redis_pattern, $level = null){
+        $keys = self::get_by_pattern($redis_pattern);
+        $c = 0;
+        foreach($keys as $key){
+            $path = explode(':', $key);
+            $depth = count($path);
+            if($level == null  || $depth == $level){
+                self::del($key);
+                $c++;
+            }
+        }
+        return $c;
+    }
+
 }
 if(defined('PM_REDIS_ACTIVATE') === true && PM_REDIS_ACTIVATE === true) {
     Redis_Page_Cache::cache_init();
