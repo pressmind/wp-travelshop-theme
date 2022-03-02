@@ -110,6 +110,9 @@ require_once 'functions/sitemaps.php';
 // Images
 require_once 'functions/images.php';
 
+// Admin Stuff
+require_once 'functions/after_wp_save.php';
+
 
 class PMTravelShop{
 
