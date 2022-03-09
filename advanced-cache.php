@@ -262,6 +262,7 @@ class Redis_Page_Cache
         $xmlrpc_request = defined('XMLRPC_REQUEST') && XMLRPC_REQUEST;
         $rest_request = defined('REST_REQUEST') && REST_REQUEST;
         $no_cache_c = defined('DONOTCACHE') && DONOTCACHE;
+        $no_cache_b = defined('DONOTCACHEPAGE') && DONOTCACHEPAGE; // beaverbuilder
         $robots_request = strpos($_SERVER['REQUEST_URI'], 'robots.txt') != false;
         $wp_admin = strpos($_SERVER['REQUEST_URI'], 'wp-admin') != false;
         $is_post = (strtolower($_SERVER['REQUEST_METHOD']) == 'post') ? true : false;
@@ -270,7 +271,7 @@ class Redis_Page_Cache
         $no_ttl = (PM_REDIS_TTL < 1) ? true : false;
         $no_bgcrf = (PM_REDIS_BACKGROUND_KEY_REFRESH < 1) ? true : false;
         $result = ($no_bgcrf || $is_post || $no_ttl  || $doing_ajax  || $xmlrpc_request || $rest_request || $robots_request || $wp_admin ||
-            $no_cache_c || $no_cache_g || $is_logged_in);
+            $no_cache_c || $no_cache_b || $no_cache_g || $is_logged_in);
         return $result;
     }
 
