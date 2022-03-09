@@ -113,6 +113,8 @@ require_once 'functions/images.php';
 // Admin Stuff
 require_once 'functions/after_wp_save.php';
 
+// Cache
+require_once 'src/RedisPageCache.php';
 
 class PMTravelShop{
 

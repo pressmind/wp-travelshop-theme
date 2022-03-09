@@ -5,7 +5,12 @@ if(defined('PM_REDIS_ACTIVATE') && PM_REDIS_ACTIVATE === true){
         $fstpage[] = get_option( 'page_on_front' );
         $fstpage[] = get_option( 'page_for_posts' );
         $level = in_array($post_id, array_filter($fstpage)) ? 3 : null;
-        $pattern = Redis_Page_Cache::get_key_path_from_url(get_permalink($post_id)).'*';
-        Redis_Page_Cache::del_by_pattern($pattern, $level);
+        if(count(array_filter($fstpage)) > 0){
+            $url = site_url();
+        }else{
+            $url = get_permalink($post_id);
+        }
+        $pattern = RedisPageCache::get_key_path_from_url($url).'*';
+        RedisPageCache::del_by_pattern($pattern, $level);
     });
 }
