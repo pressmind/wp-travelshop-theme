@@ -1,11 +1,35 @@
 <?php
 namespace Pressmind;
 
+error_reporting(-1);
+ini_set('display_errors', 'On');
+
 use Exception;
 use Pressmind\Log\Writer;
 use Pressmind\ORM\Object\MediaObject;
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php';
+
+function find_wordpress_base_path()
+{
+    $dir = dirname(__FILE__);
+    do {
+        //it is possible to check for other files here
+        if (file_exists($dir . "/wp-config.php")) {
+            return $dir;
+        }
+    } while ($dir = realpath("$dir/.."));
+    return null;
+}
+
+$wp_path = find_wordpress_base_path() . "/";
+
+define('WP_USE_THEMES', false);
+
+require_once($wp_path . 'wp-load.php');
+require_once($wp_path . 'wp-admin/includes/admin.php');
+
+global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 
 $args = $argv;
 $args[1] = isset($argv[1]) ? $argv[1] : null;
@@ -25,6 +49,20 @@ switch ($args[1]) {
             echo "WARNING: Import threw errors:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
         } finally {
             $importer->postImport();
+
+            /**
+             * @TODO it's better to have a callback for each imported media object, but the sdk has no hooks at this time
+             */
+            if(defined('PM_REDIS_ACTIVATE') && PM_REDIS_ACTIVATE){
+                $ids = $importer->getImportedIds();
+                Writer::write('Page Cache update', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                $c = \RedisPageCache::del_by_id_media_object($ids);
+                Writer::write($c.' keys updated', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                $c = \RedisPageCache::prime_by_id_media_object($ids);
+                Writer::write($c.' urls primed', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+            }
+
+            echo implode(', ', $importer->getImportedIds());
         }
         break;
     case 'mediaobject':
@@ -42,6 +80,29 @@ switch ($args[1]) {
             } catch(Exception $e) {
                 Writer::write($e->getMessage(), Writer::OUTPUT_BOTH, 'import', Writer::TYPE_ERROR);
                 echo "WARNING: Import threw errors:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
+            }
+            if(defined('PM_REDIS_ACTIVATE') && PM_REDIS_ACTIVATE){
+                $ids = $importer->getImportedIds();
+                Writer::write('Page Cache update', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                $c = \RedisPageCache::del_by_id_media_object($ids);
+                Writer::write($c.' keys updated', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                $c = \RedisPageCache::prime_by_id_media_object($ids, false, false);
+                Writer::write($c.' urls primed', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+            }
+        } else {
+            echo "Missing mediaobject id(s)";
+        }
+        break;
+    case 'mediaobject_cache_update':
+        if(!empty($args[2])) {
+            Writer::write('Importing mediaobject ID(s): ' . $args[2], Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+            $ids = array_map('trim', explode(',', $args[2]));
+            if(defined('PM_REDIS_ACTIVATE') && PM_REDIS_ACTIVATE){
+                Writer::write('Page Cache update', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                $c = \RedisPageCache::del_by_id_media_object($ids);
+                Writer::write($c.' keys updated', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                $c = \RedisPageCache::prime_by_id_media_object($ids, false, false);
+                Writer::write($c.' urls primed', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
             }
         } else {
             echo "Missing mediaobject id(s)";

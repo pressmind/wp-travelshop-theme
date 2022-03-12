@@ -130,8 +130,7 @@ class RedisPageCache
 
                 header('X-PM-Cache-Expired: true');
                 $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . (empty($_GET) ? '?' : '&') . "cache-refresh=1";
-                $cmd = 'nohup curl "' . $url . '" </dev/null >/dev/null 2>&1 &';
-                exec($cmd);
+                self::prime($url);
             }
 
 
@@ -215,6 +214,22 @@ class RedisPageCache
         return PM_REDIS_KEY_PREFIX.':'.$path;
     }
 
+    /**
+     * @return int
+     */
+    public static function ttl(){
+        if(is_array(PM_REDIS_TTL)){
+            foreach(PM_REDIS_TTL as $route => $ttl){
+                if(strpos(self::$current_url, $route) === 0){
+                    return $ttl;
+                }
+            }
+            return 0;
+        }else{
+            return PM_REDIS_TTL;
+        }
+    }
+
     public static function do_not_cache()
     {
         $doing_ajax = defined('DOING_AJAX') && DOING_AJAX;
@@ -226,8 +241,10 @@ class RedisPageCache
         $wp_admin = strpos($_SERVER['REQUEST_URI'], 'wp-admin') != false;
         $is_post = (strtolower($_SERVER['REQUEST_METHOD']) == 'post') ? true : false;
         $no_cache_g = isset($_GET['no-cache']);
+        $no_cache_g_ = isset($_GET['no_cache']);
+        $no_cache_p = isset($_GET['preview']);
         $is_logged_in = ((function_exists('is_user_logged_in') && is_user_logged_in()));
-        $no_ttl = (PM_REDIS_TTL < 1) ? true : false;
+        $no_ttl = (self::ttl() < 1) ? true : false;
         $no_bgcrf = (PM_REDIS_BACKGROUND_KEY_REFRESH < 1) ? true : false;
         $wp_login_cookie = false;
         foreach($_COOKIE as $key => $cookie){
@@ -236,7 +253,7 @@ class RedisPageCache
             }
         }
         $result = ($no_bgcrf || $is_post || $no_ttl  || $doing_ajax  || $xmlrpc_request || $rest_request || $robots_request || $wp_admin ||
-            $no_cache_c || $no_cache_b || $no_cache_g || $is_logged_in || $wp_login_cookie);
+            $no_cache_c || $no_cache_b || $no_cache_g || $is_logged_in || $wp_login_cookie || $no_cache_g_ || $no_cache_p);
         return $result;
     }
 
@@ -306,7 +323,7 @@ class RedisPageCache
         }
         $data['updated'] = time();
         if ($cache === true) {
-            self::$redis->set(self::$request_hash, serialize($data), PM_REDIS_TTL);
+            self::$redis->set(self::$request_hash, serialize($data), self::ttl());
             #$redis->expire(sprintf('tt-%s', self::$request_hash),(!defined('PM_REDIS_EXPIRE') ? 172800 : PM_REDIS_EXPIRE ));
             if (PM_REDIS_DEBUG === true) {
                 $str = '<!-- pm-cache: request_hash: ' . self::$request_hash . ' -->';
@@ -327,10 +344,11 @@ class RedisPageCache
     {
         $iterator = null;
         $keys = [];
-        // Retry when we get no keys back
         self::$redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY);
         while ($scanned_keys = self::$redis->scan($iterator, $pattern)) {
-            $keys += $scanned_keys;
+            foreach($scanned_keys as $str_key) {
+                $keys[] = $str_key;
+            }
         }
         return $keys;
     }
@@ -347,5 +365,57 @@ class RedisPageCache
         }
         return $c;
     }
+    public static function del_by_id_media_object($ids, $prime = false){
+        if(is_string($ids)){
+           $ids = [$ids];
+        }
+        if(is_null(self::$redis)){
+            self::init();
+        }
+        $c = 0;
+        foreach($ids as $id){
+            $m = new Pressmind\ORM\Object\MediaObject($id, false, false);
+            $url  = SITE_URL.$m->getPrettyUrl();
+            $key = self::get_key_path_from_url($url).':*';
+            $c += self::del_by_pattern($key);
+            if($m->isAPrimaryType() && $prime){
+                self::prime($url);
+            }
+        }
+        return $c;
+    }
 
+    public static function prime_by_id_media_object($ids, $background = false, $silent = true, $delay_ms = 200){
+        if(is_string($ids)){
+            $ids = [$ids];
+        }
+        if(is_null(self::$redis)){
+            self::init();
+        }
+        $c = 0;
+        foreach($ids as $id){
+            $m = new Pressmind\ORM\Object\MediaObject($id, false, false);
+            $url  = SITE_URL.$m->getPrettyUrl();
+            if($m->isAPrimaryType()){
+                if(!$silent){
+                    echo "Priming: ".$url."\n";
+                }
+                if(empty($delay_ms)){
+                    usleep($delay_ms * 10);
+                }
+                self::prime($url);
+                $c++;
+            }
+        }
+        return $c;
+    }
+
+    public static function prime($url, $background = true){
+        if($background){
+            $cmd = 'nohup curl "' . $url . '" </dev/null >/dev/null 2>&1 &';
+        }else{
+            $cmd = 'curl -s "' . $url . '" > /dev/null';
+        }
+        exec($cmd, $output);
+    }
 }
