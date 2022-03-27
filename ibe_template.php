@@ -1,4 +1,13 @@
-<?php require_once('../../../wp-load.php'); ?>
+<?php
+/**
+ * Tipp:
+ * All IBE request params are redirected to this page, so add you're own or use the existing
+ * params to change request based logo or contact infos on this page
+ * try: echo print_r($_GET);
+ */
+
+require_once('../../../wp-load.php');
+?>
 <!DOCTYPE html>
 <html lang="de">
 
