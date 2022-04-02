@@ -65,7 +65,6 @@
                     </div>
                     <p>
                         <strong><?php echo do_shortcode('[ts-company-name]');?></strong><br>
-                        <?php echo do_shortcode('[ts-company-street]');?><br>
                         <?php echo do_shortcode('[ts-company-zip]');?>
                         <?php echo do_shortcode('[ts-company-city]');?>
                     </p>
@@ -107,25 +106,11 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="h5">
-                        Newsletter
+                        <?php echo do_shortcode('[ts-company-name]');?>
                     </div>
                     <p>
-                        Abonniere unseren Newsletter und verpasse keine Aktion!
+                        <?php echo do_shortcode('[ts-company-name]');?>  möchte Menschen zusammenbringen, um gemeinsame unvergessliche, glückliche Reiseerlebnisse zu genießen.
                     </p>
-                    <form class="input-group mt-4" action="#" method="post">
-                        <input class="form-control" type="text" placeholder="E-Mail Adresse">
-                        <div class="input-group-append">
-                            <button class="btn btn-link" aria-label="Anmelden">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24"
-                                    height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#607D8B" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <line x1="10" y1="14" x2="21" y2="3"/>
-                                    <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

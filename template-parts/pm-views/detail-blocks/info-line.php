@@ -19,7 +19,7 @@
      * if the media object is cached, we display a short information about the content age
      */
     if(!empty($args['is_cached_since'])){
-        echo '| Stand: '.$args['is_cached_since'];
+        echo '| Stand/Cache: '.$args['is_cached_since'];
     }
     /**
      * if we are running with crs imported data we can display the created date

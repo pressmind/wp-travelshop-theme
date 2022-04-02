@@ -51,6 +51,9 @@ class Search
                     $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\ObjectType($id_object_type);
                 }
             }
+            if(defined('TS_SEARCH_GROUP_KEYS') && !empty(TS_SEARCH_GROUP_KEYS)){
+                $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Group(TS_SEARCH_GROUP_KEYS);
+            }
             $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
             $filter = new \Pressmind\Search\MongoDB($FilterCondition, ['price_total' => 'asc'], TS_LANGUAGE_CODE);
             $start_time = microtime(true);

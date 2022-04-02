@@ -49,12 +49,8 @@ if (has_nav_menu('primary') === true) {
                                         ?>
                                         <a class="dropdown-item <?php if ( !empty($menu_items['active_ids']) && in_array( $child_items->ID, $menu_items['active_ids']) ) { echo "active"; } ?>"
                                            href="<?php echo $child_items->url ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 class="icon icon-tabler icon-tabler-caret-right" width="15" height="15"
-                                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="#ccc" fill="#ccc"
-                                                 stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                <path d="M18 15l-6 -6l-6 6h12" transform="rotate(90 12 12)"/>
+                                            <svg class="icon icon-tabler icon-tabler-caret-right">
+                                                <use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-caret-right"></use>
                                             </svg>
                                             <?php echo $child_items->title; ?>
                                         </a>

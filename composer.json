@@ -10,6 +10,7 @@
     "ext-mongodb": "*",
     "mongodb/mongodb": "^1.9",
     "ext-imagick": "*",
-    "vlucas/phpdotenv" : "*"
+    "vlucas/phpdotenv" : "*",
+    "aws/aws-sdk-php" : "^3.211"
   }
 }

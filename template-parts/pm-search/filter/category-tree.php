@@ -51,10 +51,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                     <?php echo in_array($item->id_item, $selected) ? 'checked' : '';?>
                             <?php echo !empty($is_open) ? 'disabled' : '';?>
                     ><span><i
-                        ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M5 12l5 5l10 -10" />
-</svg></i></span>
+                        ><svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg></i></span>
                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                         <?php echo $item->name; ?>
                     </label>
@@ -79,10 +76,9 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                                            data-id="<?php echo $child_item->id_item; ?>"
                                            data-name="<?php echo $fieldname;?>"
                                         <?php echo in_array($child_item->id_item, $selected) ? 'checked' : '';?>
-                                           ><span><i><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M5 12l5 5l10 -10" />
-</svg></i></span>
+                                           ><span><i>
+                                            <svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg>
+                                        </i></span>
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                                         <?php echo $child_item->name; ?>
                                     </label>
