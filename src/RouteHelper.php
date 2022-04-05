@@ -22,7 +22,7 @@ class RouteHelper{
         asort($id_object_type);
         $hash = implode('-', $id_object_type);
         foreach(TS_SEARCH_ROUTES as $k => $v){
-            $ot = $v['pm-ot'];
+            $ot = !is_array($v['pm-ot']) ? explode(',', $v['pm-ot']) : $v['pm-ot'];
             asort($ot);
             if($hash == implode('-', $ot)){
                 return isset($v['languages'][$language]) ? $v['languages'][$language] : false;
