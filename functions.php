@@ -27,7 +27,7 @@ $dotenv->safeLoad();
 
     // check if web-core sdk installation is done
     if(file_exists(get_template_directory().'/Custom/MediaType') === true
-        && count(glob(get_template_directory().'/Custom/MediaType/*.php')) <= 1){
+        && count(glob(get_template_directory().'/Custom/MediaType/*.php')) < 1){
             echo 'Error: pressmind web-core SDK is not configured correctly.<br>';
             echo 'run "php install.php " in ' . get_template_directory().'/cli/';
             exit();
