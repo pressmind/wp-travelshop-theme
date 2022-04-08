@@ -10,6 +10,8 @@
 
 if(empty($args['query'])){
     $args['query'] = array('numberposts' => 8, 'order' => 'desc');
+} else {
+    $args['query'] = array('numberposts' => $args['query']['posts_per_page'], 'order' => $args['query']['order']);
 }
 $posts = get_posts($args['query']);
 
