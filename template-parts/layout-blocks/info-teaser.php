@@ -13,9 +13,9 @@ if(empty($args['query'])){
 } else {
     $args['query'] = array('numberposts' => $args['query']['posts_per_page'], 'order' => $args['query']['order']);
 }
-$posts = get_posts($args['query']);
+$postsObject = get_posts($args['query']);
 
-if(count($posts) == 0){
+if(count($postsObject) == 0){
     '<!-- module info-teaser: no posts found for this query -->';
     return;
 }
@@ -33,7 +33,7 @@ if(count($posts) == 0){
             </div>
         <?php } ?>
         <?php
-        foreach($posts as $p){
+        foreach($postsObject as $p){
             load_template(get_template_directory().'/template-parts/wp-views/info-teaser-view.php', false, $p);
         }
         ?>
