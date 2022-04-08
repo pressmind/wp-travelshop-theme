@@ -9,13 +9,15 @@ global $PMTravelShop;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0">
-    <?php if(TS_COOKIE_CONSENT){?>
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
+    <?php if(TS_COOKIE_CONSENT){
+    ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
     <?php } ?>
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1.jpg" media="(min-width: 601px)">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1-mobile.jpg" media="(max-width: 600px)">
-    <link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest-pwa.php">
+    <?php if(TS_PWA){
+    ?><link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest-pwa.php">
+    <?php } ?>
     <meta name="theme-color" content="#f4f4f4"/>
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon_192.png" sizes="192x192" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon_180.png" sizes="180x180" type="image/png" >
@@ -34,6 +36,7 @@ global $PMTravelShop;
     ?>
     <script>
         var ts_ajax_check_availibility_endpoint = '<?php echo defined('TS_IBE3_CHECK_AVAILABILITY_URL') && !empty(TS_IBE3_CHECK_AVAILABILITY_URL) ? TS_IBE3_CHECK_AVAILABILITY_URL : '/wp-content/themes/travelshop/pm-ajax-endpoint.php'; ?>';
+        var ts_pwa = <?php echo defined('TS_PWA') && TS_PWA === true ? 'true' : 'false'; ?>;
     </script>
 </head>
 <body <?php body_class(); ?>>
@@ -63,9 +66,11 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
             <div class="col align-self-center p-0">
                 <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
+            <?php if(!empty(TS_SINGLE_SEARCH)){?>
             <div class="col-auto align-self-center  d-none d-lg-block col-search" id="search">
-                <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.Pressmind\Travelshop\RouteHelper::get_url_by_object_type(TS_TOUR_PRODUCTS).'/'; ?>" method="GET">
-                    <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="Suchbegriff..."
+                <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
+                    <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
+                    <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
                            aria-label="Search" name="pm-t">
                     <div class="input-group-append">
                         <button class="btn btn-link" aria-label="Suchen">
@@ -78,6 +83,9 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </div>
                 </form>
             </div>
+            <?php } ?>
+
+
             <div class="col-auto align-self-center">
                 <div class="travelshop_hotline_batch">
                     <small>Service-Hotline</small><br/>

@@ -294,7 +294,7 @@ function ts_search_hook($data)
      */
 
     // set the id of the current media object as wp parameter
-    $wp_query->set('pm-ot', implode(',', $data['id_object_types']));
+    $wp_query->set('pm-ot', is_array($data['id_object_types']) ? implode(',', $data['id_object_types']) : $data['id_object_types']);
     add_filter( 'body_class', function( $classes ) {
         $classes[] = 'pm-search-page';
         return $classes;

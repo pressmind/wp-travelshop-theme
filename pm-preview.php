@@ -14,6 +14,7 @@ if(empty($id_media_object) === true){
 }
 
 $mediaObject = new Pressmind\ORM\Object\MediaObject($id_media_object);
+$mediaObject->updateCache($id_media_object);
 
 // @TODO check if the parameter no_cache or update_cache is the better one in context to the web-core caching strategy
 $url = SITE_URL.$mediaObject->getPrettyUrl().'?no_cache='.time().'&preview=1';

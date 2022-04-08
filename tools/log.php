@@ -10,7 +10,18 @@
 require_once '../bootstrap.php';
 $db = \Pressmind\Registry::getInstance()->get('db');
 
-$sql = "SELECT * FROM pmt2core_logs order by id desc";
+
+$the_day = new DateTime();
+if(!empty($_GET['offset'])){
+    $offset = intval($_GET['offset']);
+    $the_day->modify('-'.$offset.' day');
+}
+
+$sql = "SELECT * FROM pmt2core_logs ";
+$sql .= " where category = 'custom_import_hook' and `date` BETWEEN '".$the_day->format('Y-m-d 00:00:00')."' AND '".$the_day->format('Y-m-d 23:59:59')."'";
+$sql .= " group by text";
+$sql .= " order by id desc";
+
 $r = $db->fetchAll($sql);
 
 if(!empty($_GET['sensor'])){
@@ -19,13 +30,18 @@ if(!empty($_GET['sensor'])){
 }
 
 define('WP_USE_THEMES', false);
-require_once('../../../../wp-load.php');
+require_once('../../../../wp/wp-load.php');
 
+define('DONOTCACHE', true);
+
+/*
 if(!current_user_can('edit_pages')){
     echo 'Error: not logged in or user has not the required capability "edit_pages"<br>';
     echo '<a href="'.wp_login_url(site_url().'/wp-content/themes/travelshop/tools/log.php').'">Login WordPress</a>';
     exit;
 }
+*/
+
 
 function makeClickableLinks($s)
 {
@@ -42,6 +58,34 @@ function makeClickableLinks($s)
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
 
+
+    <script>
+        function simpleTableSearch() {
+            // Declare variables
+            let input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("logtable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                console.log(tr[i].parentElement.tagName);
+                if(tr[i].parentElement.tagName != 'THEAD'){
+                    td = tr[i].getElementsByTagName("td")[3];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().search(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+
+            }
+        }
+    </script>
     <?php
     if(!empty($_GET['delete']) && $_GET['delete'] == 'log'){
         $sql = "delete FROM pmt2core_logs";
@@ -57,18 +101,33 @@ function makeClickableLinks($s)
 </head>
 <body>
 <div class="container">
+
     <div class="row">
         <div class="col">
             <h1>Import Logfile</h1>
-            <a href="?delete=log">Delete Log</a>
-            <table class="table table-hover">
+            <p><?php echo $the_day->format('d.m.Y').' 00:00:00 - 23:59:59'; ?></p>
+
+            <a href="?offset=0">Heute</a> |
+            <a href="?offset=1">Gestern</a> |
+            <a href="?offset=2">Vorgestern</a> |
+            <a href="?offset=3">vor 3 Tagen</a> |
+            <a href="?offset=4">vor 4 Tagen</a> |
+            <a href="?offset=5">vor 5 Tagen</a> |
+            <a href="?offset=6">vor 6 Tagen</a> |
+            <a href="?offset=7">vor 7 Tagen</a> |
+            <a href="?delete=log" style="padding-left: 40px;">Delete Log</a>
+
+            <table id="logtable" class="table table-hover">
 
                 <thead class="thead-dark">
                 <tr>
                     <td>id</td>
                     <td>date</td>
                     <td>type</td>
-                    <td>text</td>
+                    <td>
+                        <div><input type="text" id="search" onkeyup="simpleTableSearch()" placeholder="Search"></div>
+
+                    </td>
                     <td>category</td>
                     <td>trace</td>
                 </tr>

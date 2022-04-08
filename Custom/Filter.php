@@ -2,6 +2,7 @@
 
 namespace Custom;
 
+use Pressmind\ORM\Object\MediaObject;
 use Pressmind\ORM\Object\MediaObject\DataType\Picture;
 
 class Filter
@@ -51,6 +52,19 @@ class Filter
             return $array[array_key_last($array)]->item->name;
         }
         return null;
+    }
+
+
+    /**
+     * This filter is created to use in
+     * mongodb search index creation context
+     * @param array $groups
+     * @param MediaObject $mediaObject
+     * @return mixed|null
+     */
+    public static function treeToGroup($groups, $mediaObject)
+    {
+        return $groups;
     }
 
 

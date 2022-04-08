@@ -21,9 +21,13 @@ class IB3Tools{
        $p[] = 'imo='.$CheapestPriceSpeed->id_media_object;
        $p[] = 'idbp='.$CheapestPriceSpeed->id_booking_package;
        $p[] = 'idd='.$CheapestPriceSpeed->id_date;
+
+       /* @TODO not supported anymore?
        if(!empty($CheapestPriceSpeed->id_housing_package)){
            $p[] = 'idhp='.$CheapestPriceSpeed->id_housing_package;
        }
+       */
+
        // @TODO: possible improvement: set more than one housing_options here (with there amount)
        if(!empty($CheapestPriceSpeed->id_option)) {
            $p[] = 'iho[' . $CheapestPriceSpeed->id_option . ']=1';

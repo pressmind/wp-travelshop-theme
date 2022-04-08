@@ -22,7 +22,7 @@ $db = Registry::getInstance()->get('db');
 $c = 0;
 $c_deleted = 0;
 $Storage = new Bucket($config['image_handling']['storage']['bucket']);
-$files = $Storage->listFiles();
+$files = $Storage->listFiles(); // @TODO if storage provide is s3, this query get's only 1000 items per call, here is a pagination required...
 foreach($files as $file){
     if(preg_match('/^[0-9]+_([0-9]+)[\_|\.]/', $file->name, $m) !== 0){
         $exist = $db->fetchAll('SELECT id_picture FROM pmt2core_media_object_images WHERE id_picture = '.$m[1]);

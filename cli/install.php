@@ -19,15 +19,17 @@ if(!file_exists('../.env')){
 $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
 $dotenv->safeLoad();
 
+$pm_config_file = dirname(__DIR__) . DIRECTORY_SEPARATOR . getenv('PM_CONFIG');
+
 error_reporting(-1);
 ini_set('display_errors', 'On');
-//@unlink('../pm-config.php');
+//@unlink($pm_config_file);
 
 if (php_sapi_name() !== 'cli') {
     die("This file is meant to be run from command line");
 }
 
-$first_install = !file_exists(dirname(__DIR__) . DIRECTORY_SEPARATOR . getenv('PM_CONFIG'));
+$first_install = !file_exists($pm_config_file);
 
 if($first_install) {
     echo "Welcome to the initial installation of your new pressmind web-core project.\n";
@@ -337,24 +339,46 @@ if($args[1] != 'only_static') {
 
             if(in_array($item->gtxf_product_type, ['TOUR', 'DAYTRIP', 'HOLIDAYHOME'])){
                 $config['data']['primary_media_type_ids'][] = $item->id_type;
-                $searchroutes[$type_map[$item->gtxf_product_type]]['default'] = [
+                $searchroute = [
+                    'pm-ot' => $item->id_type,
+                    'languages' => [
+                        'default' => [
                             'route' => HelperFunctions::human_to_machine($item->type_name).'-suche',
                             'title' => $item->type_name.' Suche - Travelshop',
                             'meta_description' => ''
-                        ];
+                        ]
+                    ]
+                ];
+
+                $searchroutes[] = $searchroute;
             }
         }
+
+        $config['data']['primary_media_type_ids'] = array_unique($config['data']['primary_media_type_ids']);
+
+        $searchroutes = array_merge([[
+            'pm-ot' => implode(',', $config['data']['primary_media_type_ids']),
+            'languages' => [
+                'default' => [
+                    'route' => 'suche',
+                    'title' => 'Reise Suche - Travelshop',
+                    'meta_description' => '',
+                ],
+            ],
+        ]], $searchroutes);
 
         $theme_config['TS_SEARCH_ROUTES'] = _var_export($searchroutes);
         $config['data']['primary_media_type_ids'] = array_unique($config['data']['primary_media_type_ids']);
 
         $response = $client->sendRequest('ObjectType', 'getById', ['ids' => implode(',',$config['data']['primary_media_type_ids'])]);
-        $ts_search = [];
+        $search_fields = [];
+        $ts_filter = [];
         $mongodb_search_categories = [];
         $mongodb_search_descriptions = [];
         $mongodb_search_build_for= [];
 
         foreach ($response->result as $item) {
+
             if(empty($item->gtxf_product_type)){
                 continue;
             }
@@ -374,19 +398,29 @@ if($args[1] != 'only_static') {
                     ];
                 }
                 foreach($field->sections as $section){
+                    $field_name = strtolower($field->var_name.'_'.$section->name);
+
                     if($field->type == 'categorytree'){
-                        $ts_search[$type_map[$item->gtxf_product_type]][] = [
-                            'fieldname' => strtolower($field->var_name.'_'.$section->name),
+                        $search_fields[$item->id][] = [
+                            'fieldname' => $field_name,
                             'name' => $field->name,
                             'behavior' => 'OR'
                         ];
-                        $mongodb_search_categories[$item->id][strtolower($field->var_name.'_'.$section->name)] = null;
+
+                        if(!in_array($field_name,$ts_filter)){
+                            $ts_filter[$field_name] = [
+                                'fieldname' => $field_name,
+                                'name' => $field->name,
+                                'behavior' => 'OR'
+                            ];
+                        }
+                        $mongodb_search_categories[$item->id][$field_name] = null;
                     }
                     if(in_array($field->type, ['text', 'plaintext']) &&
                         preg_match('/subline/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['subline']) ){
                         $mongodb_search_descriptions[$item->id]['subline'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::strip',
                         ];
@@ -395,7 +429,7 @@ if($args[1] != 'only_static') {
                         preg_match('/intro|einleitung/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['intro']) ){
                         $mongodb_search_descriptions[$item->id]['intro'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::strip',
                         ];
@@ -404,7 +438,7 @@ if($args[1] != 'only_static') {
                         preg_match('/bilder|picture|image/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['image']) ){
                         $mongodb_search_descriptions[$item->id]['image'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::firstPicture',
                             'params' => [
@@ -417,7 +451,7 @@ if($args[1] != 'only_static') {
                         preg_match('/bilder|picture|image/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['bigslide']) ){
                         $mongodb_search_descriptions[$item->id]['bigslide'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::firstPicture',
                             'params' => [
@@ -431,7 +465,7 @@ if($args[1] != 'only_static') {
                         preg_match('/bilder|picture|image/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['image_square']) ){
                         $mongodb_search_descriptions[$item->id]['image_square'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::firstPicture',
                             'params' => [
@@ -445,7 +479,7 @@ if($args[1] != 'only_static') {
                         preg_match('/^zielgebiet|^destination/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['destination']) ){
                         $mongodb_search_descriptions[$item->id]['destination'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::lastTreeItemAsString',
                         ];
@@ -454,24 +488,70 @@ if($args[1] != 'only_static') {
                         preg_match('/^reiseart/', $field->var_name) > 0 &&
                         empty($mongodb_search_descriptions[$item->id]['travel_type']) ){
                         $mongodb_search_descriptions[$item->id]['travel_type'] = [
-                            'field' => strtolower($field->var_name.'_'.$section->name),
+                            'field' => $field_name,
                             'from' => null,
                             'filter' => '\\Custom\\Filter::lastTreeItemAsString',
                         ];
                     }
                 }
+
+
+
             }
         }
 
+        $ts_filter = array_values($ts_filter);
+
+        // Build Searchboxes
+        $ts_search = [];
+        $combined_search = [];
+        $ts_search['default_search_box']['tabs'] = [];
+        foreach($search_fields as $id_object_type => $fields){
+            foreach($fields as $field){
+                if(!isset($combined_search[$field['fieldname']]) && (strpos($field['fieldname'], 'reiseart') === 0 || strpos($field['fieldname'], 'zielgebiet') === 0)){
+                    $combined_search[$field['fieldname']] = $field;
+                }
+            }
+        }
+
+        $combined_search = array_merge([
+            [
+                'fieldname' => 'string_search',
+                'name' => 'Suche',
+            ],
+            [
+                'fieldname' => 'date_picker',
+                'name' => 'Zeitraum',
+            ]
+        ], array_values($combined_search));
+
+        $ts_search['default_search_box']['tabs'][] = [
+            'name' => 'Suche',
+            'search' => [
+                'pm-ot' => implode(',', $config['data']['primary_media_type_ids'])
+            ],
+            'route' => 'suche',
+            'fields' => $combined_search
+        ];
+
+        $ts_single_search = [
+            'placeholder' => 'Suchbegriff...',
+            'route' => 'suche',
+            'search' => [
+                'pm-ot' => implode(',', $config['data']['primary_media_type_ids'])
+            ],
+        ];
+
         if($first_install){
-            $theme_config['TS_FILTERS'] = $theme_config['TS_SEARCH'] = _var_export($ts_search);
+            $theme_config['TS_FILTERS'] = _var_export($ts_filter);
+            $theme_config['TS_SEARCH'] = _var_export($ts_search);
+            $theme_config['TS_SINGLE_SEARCH'] = _var_export($ts_single_search);
             \Custom\InstallHelper::writeConfig($theme_config);
             $config['data']['search_mongodb']['search']['descriptions'] = $mongodb_search_descriptions;
             $config['data']['search_mongodb']['search']['categories'] = $mongodb_search_categories;
             $config['data']['search_mongodb']['search']['categories'] = $mongodb_search_categories;
             $config['data']['search_mongodb']['search']['build_for'] = $mongodb_search_build_for;
             $config['data']['search_mongodb']['search']['touristic']['departure_offset_to'] = 730;
-
         }
         $config['data']['media_types'] = $media_types;
         $config['data']['media_types_pretty_url'] = $media_types_pretty_url;

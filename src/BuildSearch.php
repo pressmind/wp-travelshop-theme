@@ -52,7 +52,8 @@ class BuildSearch
             $id_object_type = self::extractObjectType($request[$prefix.'-ot']);
             if($id_object_type !== false){
                 $conditions[] = Pressmind\Search\Condition\ObjectType::create($id_object_type);
-                $validated_search_parameters[$prefix.'-ot'] = $id_object_type;
+                $validated_search_parameters[$prefix.'-ot'] = is_array($id_object_type) ? implode(',',$id_object_type) : $id_object_type;
+
             }
         }
 
@@ -295,7 +296,7 @@ class BuildSearch
             $id_object_type = self::extractObjectType($request[$prefix.'-ot']);
             if($id_object_type !== false){
                 $conditions[] = new \Pressmind\Search\Condition\MongoDB\ObjectType($id_object_type);
-                $validated_search_parameters[$prefix.'-ot'] = $id_object_type;
+                $validated_search_parameters[$prefix.'-ot'] = is_array($id_object_type) ? implode(',', $id_object_type) : $id_object_type;
             }
         }
 
@@ -379,6 +380,10 @@ class BuildSearch
             }
         }
 
+        if(defined('TS_SEARCH_GROUP_KEYS') && !empty(TS_SEARCH_GROUP_KEYS)){
+            $conditions[] = new \Pressmind\Search\Condition\MongoDB\Group(TS_SEARCH_GROUP_KEYS);
+        }
+
         $order = array('price_total' => 'asc');
         $allowed_orders = array('rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc');
         if (empty($request[$prefix.'-o']) === false && in_array($request[$prefix.'-o'], $allowed_orders) === true) {
@@ -408,6 +413,7 @@ class BuildSearch
 
             $Search->setPaginator(Pressmind\Search\Paginator::create($page_size, $page));
         }
+
         return $Search;
 
     }
@@ -441,7 +447,6 @@ class BuildSearch
 
         $page = empty($page) ? self::$page : $page;
         $page_size = empty($page_size) ? self::$page_size : $page_size;
-
         return urldecode(http_build_query(self::$validated_search_parameters)).'&'.$prefix.'-l='.$page.','.$page_size;
     }
 

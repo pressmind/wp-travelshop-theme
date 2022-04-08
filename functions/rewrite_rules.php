@@ -6,8 +6,12 @@ add_action( 'init',  function() {
 add_filter('mod_rewrite_rules', function ( $rules )
 {
     $str = <<<EOD
-
 # WebP Support
+# if you have a nginx proxy, use add this lines to your config:
+# location ~* "^(?<path>.+)\.(png|jpeg|jpg|gif)$" {
+#    try_files \$path.webp \$uri =404; 
+# }
+#
 <IfModule mod_rewrite.c>
   RewriteEngine On
   # Check if browser supports WebP images

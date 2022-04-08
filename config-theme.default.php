@@ -443,3 +443,12 @@ define('TS_TTL_FILTER', 0);
  * Laod simple service worker and PWA manifest
  */
 define('TS_PWA', false);
+
+/**
+ * Use this key to build MULTIPAGE SETUPS, only products (primary mediaobjects)
+ * will be listed that contain this defined groups (or have no groups).
+ * Configure groups for mongodb index via pm-config.php:data.search.search_mongodb.groups
+ * ensure correct groupnames they will be converted to machine-readable-strings
+ * In most cases this constant must be mapped to a multipage site id
+ */
+//define('TS_SEARCH_GROUP_KEYS', ['www_demoseite1_de']);
