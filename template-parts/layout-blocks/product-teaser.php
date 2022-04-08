@@ -50,32 +50,37 @@ $has_more_items = count($result['items']) < $result['total_result'];
 $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/','/').'/?'.$result['query_string'] : '#ot-not-set';
 ?>
 <section class="content-block content-block-travel-cols">
-    <div class="row <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
-        <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
+<div class="row row-introduction <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
+            <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
 
             <div class="col-12 <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>col-md<?php } ?>">
                 <?php if(!empty($args['headline'])){ ?>
-                <h2 class="mt-0">
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['headline']);?>
-                </h2>
+                    <h2 class="mt-0">
+                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['headline']);?>
+                    </h2>
                 <?php } ?>
                 <?php if(!empty($args['text'])){ ?>
-                <p>
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']);?>
-                </p>
+                    <p>
+                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']);?>
+                    </p>
                 <?php } ?>
             </div>
-        <?php if ( isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
+            <?php if ( $has_more_items === false ) { ?>
+        </div>
+        <div class="row">
+            <?php } ?>
+            <?php if ( isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
             <div class="col-12 col-md-auto pb-4">
                 <a href="<?php echo $more_results_link; ?>" title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>" class="btn-further">
                     <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use></svg>
                 </a>
             </div>
         </div>
         <div class="row">
-        <?php } ?>
-        <?php } ?>
-        <?php
+            <?php } ?>
+            <?php } ?>
+            <?php
 
        // Example 1: Using the the shortcode ts-list for displaying the product teasers
        //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
