@@ -30,7 +30,7 @@ class Search
      * @return array
      * @throws \Exception
      */
-    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null)
+    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null, $output = null)
     {
         $cache_key = md5(serialize(func_get_args()));
         if(isset(self::$_run_time_cache_full[$cache_key])){
@@ -75,7 +75,7 @@ class Search
                 self::$_run_time_cache_search[$cache_key] = $search;
             }
             $start_time = microtime(true);
-            $result = $search->getResult(false, false, $ttl_search);
+            $result = $search->getResult(false, false, $ttl_search, $output);
             $end_time = microtime(true);
             $duration_search_ms = ($end_time - $start_time) * 1000;
             foreach ($result->documents as $document) {
@@ -97,6 +97,9 @@ class Search
                 $item['possible_durations'] = !empty($document['possible_durations']) ? $document['possible_durations'] : [];
                 $item['last_modified_date'] = $document['last_modified_date'];
                 if (!empty($document['prices'])) {
+                    if(!is_array($document['prices']['date_departures'])){
+                        $document['prices']['date_departures'] = [$document['prices']['date_departures']];
+                    }
                     $item['cheapest_price'] = new \stdClass();
                     $item['cheapest_price']->duration = $document['prices']['duration'];
                     $item['cheapest_price']->price_total = $document['prices']['price_total'];
@@ -133,6 +136,9 @@ class Search
             foreach ($result_filter->documents as $document) {
                 $document = json_decode(json_encode($document), true);
                 if (!empty($document['prices']['date_departures'])) {
+                    if(!is_array($document['prices']['date_departures'])){
+                        $document['prices']['date_departures'] = [$document['prices']['date_departures']];
+                    }
                     foreach ($document['prices']['date_departures'] as $date_departure) {
                         $date_departure = new \DateTime($date_departure);
                         $filter_departures[] = $date_departure->format('Y-m-d');
