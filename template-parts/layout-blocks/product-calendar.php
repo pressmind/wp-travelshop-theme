@@ -24,6 +24,8 @@ if (count($items) == 0) {
 }
 
 ?>
+<div class="calendar-result">
+</div>
 <section class="content-block">
     <div class="row">
         <?php if (!empty($args['headline']) || !empty($args['text'])) { ?>

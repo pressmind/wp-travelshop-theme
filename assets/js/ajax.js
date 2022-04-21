@@ -317,15 +317,22 @@ jQuery(function ($) {
                 query.push('pm-t=' + search_term);
             }
 
-            let order = $(form).find('select[name=pm-o]').val();
-            if (order && order != '') {
-                query.push('pm-o=' + order);
-            }
-
             // the view
             let view = $('.pm-switch-result-view .pm-switch-checkbox').prop('checked');
             if (view) {
-                query.push('view=' + $('.pm-switch-result-view .pm-switch-checkbox').val());
+                view = $('.pm-switch-result-view .pm-switch-checkbox').val();
+            }
+
+            let order = $(form).find('select[name=pm-o]');
+            if (order && order != '') {
+                if(order.find('option[data-view="Calendar1"]').is(':selected')) {
+                    view = 'Calendar1';
+                }
+                query.push('pm-o=' + order.val());
+            }
+
+            if (view) {
+                query.push('view=' + view);
             }
 
             // Build the Query
