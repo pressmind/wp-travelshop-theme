@@ -376,6 +376,7 @@ class RedisPageCache
         foreach($ids as $id){
             $m = new Pressmind\ORM\Object\MediaObject($id, false, false);
             $url  = SITE_URL.$m->getPrettyUrl();
+            echo $url;
             $key = self::get_key_path_from_url($url).':*';
             $c += self::del_by_pattern($key);
             if($m->isAPrimaryType() && $prime){
