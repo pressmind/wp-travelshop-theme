@@ -45,6 +45,7 @@ foreach ($args['items'] as $item) {
         if(empty($product['items']) === true){
             continue;
         }
+        $item_origin = $item;
         $item = array_merge($item, $product['items'][0]);
         if($item['image_type'] == 'from_product' || empty($item['image_type'])){
             if(!empty($product['items'][0]['bigslide']['url'])) {
@@ -53,6 +54,8 @@ foreach ($args['items'] as $item) {
             }else{
                 $item['image'] = SITE_URL . "/placeholder.svg?wh=250x170&text=image is not set";
             }
+        } else {
+            $item['image'] = $item_origin['image'];
         }
     }elseif($item['type'] == 'content'){
         if(!empty($item['image_post_id'])){
