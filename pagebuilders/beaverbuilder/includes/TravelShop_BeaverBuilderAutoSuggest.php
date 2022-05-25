@@ -21,7 +21,7 @@ final class TravelShop_BeaverBuilderAutoSuggest {
 	static public function suggest() {
 	    if ( isset( $_REQUEST['fl_as_action'] ) && isset( $_REQUEST['fl_as_query'] ) ) {
 	        // category_1234_123-zielgebiet_default
-	        if(preg_match('/^category_([0-9]+)_([0-9]+)\-([a-z0-9\_]+)$/', $_REQUEST['fl_as_action'], $matches) > 0){
+	        if(preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $_REQUEST['fl_as_action'], $matches) > 0){
 	            return self::get_categories($matches[1], $matches[2]);
             }
 		}
@@ -37,9 +37,9 @@ final class TravelShop_BeaverBuilderAutoSuggest {
 		$values = array();
 		// the field must match, otherwise this is not our call and we return silent.
         // category_1234123_-zielgebiet_default
-        if(preg_match('/^category_([0-9]+)_([0-9]+)\-([a-z0-9\_]+)$/', $fields[0]['action'], $matches) > 0){
+        if(preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $fields[0]['action'], $matches) > 0){
             foreach ( $fields as $field ) {
-                if(preg_match('/^category_([0-9]+)_([0-9]+)\-([a-z0-9\_]+)$/', $field['action'], $matches) > 0) {
+                if(preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $field['action'], $matches) > 0) {
                     $values[ $field['name'] ] = self::get_value(explode(',', $field['value']), $matches[1], $matches[2]);
                 }
             }
