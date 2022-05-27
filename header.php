@@ -43,6 +43,18 @@ global $PMTravelShop;
 <?php
 load_template_transient(get_template_directory().'/template-parts/layout-blocks/cookie-consent.php', false);
 ?>
+<script>
+    <?php if(getenv('TS_PARTNERLINK_PARAMETER_NAME')) {
+        echo "const partnerParam = '" . getenv('TS_PARTNERLINK_PARAMETER_NAME') . "';";
+    } else {
+        echo "const partnerParam = 'partnerid';";
+    } ?>
+    <?php if(getenv('TS_PARTNERLINK_VALID_DAYS')) {
+        echo "const partnerTimeout = " . getenv('TS_PARTNERLINK_VALID_DAYS') . ";";
+    } else {
+        echo "const partnerTimeout = 30;";
+    } ?>
+</script>
 <header class="header-main">
     <div class="container">
         <div class="row header-main-row">
