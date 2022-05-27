@@ -14312,13 +14312,13 @@ body.fl-builder .content-block.content-page {
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.11), 0 4px 5px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.11), 0 4px 5px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row svg {
+.content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row .icon-tabler-circle-check {
   display: none;
 }
 .content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row.checked {
   border-bottom: 3px solid #27ae60;
 }
-.content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row.checked svg {
+.content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row.checked .icon-tabler-circle-check {
   display: inline-block;
 }
 .content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row:hover {
