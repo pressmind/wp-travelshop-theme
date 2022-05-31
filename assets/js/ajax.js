@@ -834,7 +834,7 @@ jQuery(function ($) {
                 if(localStorage.getItem('partnerTimestamp') >= (+ new Date() - (partnerTimeout * 86400000) )) {
                     $('.booking-btn').each((index, item) => {
                         let href = $(item).attr('href')
-                        $(item).attr('href', href + '&' + partnerParam + '=' + localStorage.getItem('partnerParam'));
+                        $(item).attr('href', href + '&ida=' + localStorage.getItem('partnerParam'));
                         console.log(item);
                     });
                 }
