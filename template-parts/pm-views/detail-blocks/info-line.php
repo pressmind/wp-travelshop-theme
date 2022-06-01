@@ -4,6 +4,8 @@
  * $args['id_media_object']
  * $args['code']
  * $args['is_cached_since']
+ * $args['valid_from']
+ * $args['valid_to']
  * </code>
  * @var array $args
  */
@@ -27,6 +29,16 @@
     if(!empty($args['booking_package_created_date'])){
         echo '<br>Preise & Verfügbarkeiten Stand: '.$args['booking_package_created_date'];
     }
+
+    if(!empty($args['valid_from'])){
+        echo '<br>Buchbar ab: '.$args['valid_from']->format('d.m.Y H:i');
+    }
+
+    if(!empty($args['valid_to'])){
+        echo '<br>Buchbar bis: '.$args['valid_to']->format('d.m.Y H:i');
+    }
+
+
     ?>
     <br>Programmänderungen vorbehalten.
 </div>
