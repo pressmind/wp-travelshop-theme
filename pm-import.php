@@ -66,7 +66,7 @@ if($request->isGet()) {
                 $ids = $importer->getImportedIds();
                 $c = \RedisPageCache::del_by_id_media_object($ids);
                 $log[] =  $c.' keys updated';
-                $c = \RedisPageCache::prime_by_id_media_object($ids, false, false);
+                $c = \RedisPageCache::prime_by_id_media_object($ids, false, true);
                 $log[] = $c.' urls primed';
             }
 
