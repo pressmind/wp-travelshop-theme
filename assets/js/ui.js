@@ -332,17 +332,17 @@ jQuery(function ($) {
     if ($('.modal-wrapper').length > 0) {
         $('a[data-modal="true"]').on('click', function (e) {
             e.preventDefault();
-            var modalId = $(this).data('modal-id');
+            let modalId = $(this).data('modal-id');
             // -- show modal
             $('body').find('#modal-id-post-' + modalId).addClass('is--open');
-            var target = document.querySelector('.is--open .modal-body-outer');
+            let target = document.querySelector('.is--open .modal-body-outer');
             bodyScrollLock.disableBodyScroll(target);
             e.stopPropagation();
         })
 
         $('.modal-close').on('click', function (e) {
             e.preventDefault();
-            var target = document.querySelector('.is--open .modal-body-outer');
+            let target = document.querySelector('.is--open .modal-body-outer');
             $('.modal-wrapper.is--open').removeClass('is--open');
             bodyScrollLock.enableBodyScroll(target);
             e.stopPropagation();
