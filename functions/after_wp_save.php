@@ -10,6 +10,7 @@ if(defined('PM_REDIS_ACTIVATE') && PM_REDIS_ACTIVATE === true){
         }else{
             $url = get_permalink($post_id);
         }
+        RedisPageCache::init();
         $pattern = RedisPageCache::get_key_path_from_url($url).'*';
         RedisPageCache::del_by_pattern($pattern, $level);
     });
