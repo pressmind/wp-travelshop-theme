@@ -13,9 +13,9 @@ use Pressmind\Travelshop\Template;
  */
 
 $filter = new CheapestPrice();
-$filter->duration_from = $args['cheapest_price']->duration;
-$filter->duration_to = $args['cheapest_price']->duration;
-$filter->transport_types = $args['cheapest_price']->transport_type;
+//$filter->duration_from = $args['cheapest_price']->duration;
+//$filter->duration_to = $args['cheapest_price']->duration;
+//$filter->transport_types = $args['cheapest_price']->transport_type;
 $filter->occupancies_disable_fallback = true;
 
 /**
