@@ -37,24 +37,22 @@ global $PMTravelShop;
     <script>
         var ts_ajax_check_availibility_endpoint = '<?php echo defined('TS_IBE3_CHECK_AVAILABILITY_URL') && !empty(TS_IBE3_CHECK_AVAILABILITY_URL) ? TS_IBE3_CHECK_AVAILABILITY_URL : '/wp-content/themes/travelshop/pm-ajax-endpoint.php'; ?>';
         var ts_pwa = <?php echo defined('TS_PWA') && TS_PWA === true ? 'true' : 'false'; ?>;
+        <?php if(defined('TS_PARTNERLINK_PARAMETER_NAME')) {
+            echo "const partnerParam = '" . TS_PARTNERLINK_PARAMETER_NAME . "';";
+        } else {
+            echo "const partnerParam = 'partnerid';";
+        } ?>
+        <?php if(defined('TS_PARTNERLINK_VALID_DAYS')) {
+            echo "const partnerTimeout = " . TS_PARTNERLINK_VALID_DAYS . ";";
+        } else {
+            echo "const partnerTimeout = 30;";
+        } ?>
     </script>
 </head>
 <body <?php body_class(); ?>>
 <?php
 load_template_transient(get_template_directory().'/template-parts/layout-blocks/cookie-consent.php', false);
 ?>
-<script>
-    <?php if(getenv('TS_PARTNERLINK_PARAMETER_NAME')) {
-        echo "const partnerParam = '" . getenv('TS_PARTNERLINK_PARAMETER_NAME') . "';";
-    } else {
-        echo "const partnerParam = 'partnerid';";
-    } ?>
-    <?php if(getenv('TS_PARTNERLINK_VALID_DAYS')) {
-        echo "const partnerTimeout = " . getenv('TS_PARTNERLINK_VALID_DAYS') . ";";
-    } else {
-        echo "const partnerTimeout = 30;";
-    } ?>
-</script>
 <header class="header-main">
     <div class="container">
         <div class="row header-main-row">
