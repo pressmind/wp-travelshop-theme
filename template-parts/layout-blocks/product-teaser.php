@@ -35,6 +35,10 @@ if (isset ( $args['search']['pm-l'] ) && !empty($args['search']['pm-l']) ) {
     $page_size = (int)$page_size[1];
 }
 
+if(isset($_GET['pm-l'])) {
+    $args['search']['pm-l'] = $_GET['pm-l'];
+}
+
 $result = Search::getResult(isset($args['search']) ? $args['search'] : [], 2, $page_size, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
 
 if(count($result['items']) == 0){
@@ -45,11 +49,12 @@ if(count($result['items']) == 0){
     }
     return;
 }
-
+global $productTeaserCount;
+$productTeaserCount = isset($productTeaserCount) ? $productTeaserCount + 1 : 1;
 $has_more_items = count($result['items']) < $result['total_result'];
 $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/','/').'/?'.$result['query_string'] : '#ot-not-set';
 ?>
-<section class="content-block content-block-travel-cols">
+<section id="pt<?php echo $productTeaserCount; ?>" class="content-block content-block-travel-cols">
 <div class="row row-introduction <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
             <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
 
@@ -141,5 +146,15 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
             </a>
         </div>
     </div>
+    <?php } ?>
+    <?php if (isset($args['bottom_pagination']) && $args['bottom_pagination'] == 'true' && $args['link_bottom'] === false && $has_more_items === true) { ?>
+        <?php 
+            $args['items'] = $result['items'];
+            $args['current_page'] = isset($_GET['pm-l']) ? explode(',', $_GET['pm-l'])[0] : 1;
+            $args['pages'] = ceil($result['total_result'] / $page_size);
+            $args['page_size'] = $page_size;
+            $args['pt'] = $productTeaserCount;
+        ?>
+        <?php load_template_transient(get_template_directory() . '/template-parts/pm-search/result-pagination.php', false,  $args); ?>
     <?php } ?>
 </section>

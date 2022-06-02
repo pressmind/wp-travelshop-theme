@@ -97,11 +97,14 @@ FLBuilder::register_module('TSPMProductTeaser', array(
                         'default'       => 'true',
                         'options'       => array(
                             'true'      => __( 'Yes', 'fl-builder' ),
-                            'false'      => __( 'No', 'fl-builder' )
+                            'false'      => __( 'No', 'fl-builder' ),
                         ),
                         'toggle'        => array(
                             'true'      => array(
                                 'fields'        => array( 'link_bottom_text'),
+                            ),
+                            'false'      => array(
+                                'fields'        => array( 'bottom_pagination'),
                             ),
                         ),
                     ),
@@ -110,7 +113,15 @@ FLBuilder::register_module('TSPMProductTeaser', array(
                         'label' => __('Label', 'fl-builder'),
                         'default' => ' Alle [TOTAL_RESULT] Reisen zum Thema anzeigen'
                     ),
-
+                    'bottom_pagination'  => array(
+                        'type' => 'select',
+                        'label' => __('Pagination at bottom', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __( 'Yes', 'fl-builder' ),
+                            'false'      => __( 'No', 'fl-builder' ),
+                        ),
+                    ),
                 ),
             ),
 
