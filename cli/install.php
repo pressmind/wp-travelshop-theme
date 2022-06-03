@@ -398,7 +398,7 @@ if($args[1] != 'only_static') {
                     ];
                 }
                 foreach($field->sections as $section){
-                    $field_name = strtolower($field->var_name.'_'.$section->name);
+                    $field_name = HelperFunctions::human_to_machine($field->var_name.'_'.$section->name);
 
                     if($field->type == 'categorytree'){
                         $search_fields[$item->id][] = [

@@ -8,6 +8,7 @@ use Pressmind\DB\Adapter\Pdo;
  * Mostly the right setting for our market
  */
 date_default_timezone_set('Europe/Berlin');
+ini_set('date.timezone', 'Europe/Berlin');
 
 
 /**

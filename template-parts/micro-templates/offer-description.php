@@ -33,13 +33,18 @@ echo implode(', ', array_filter($offer_description));
         'prefix' => '<br>',
         'transport_type' => $args['cheapest_price']->transport_type,
     ]);
-    if($args['cheapest_price']->transport_type == 'FLUG'){
+    //if($args['cheapest_price']->transport_type == 'FLUG'){
+    if(strpos($args['cheapest_price']->transport_type, 'FLU') === 0){
         if(trim($args['cheapest_price']->transport_1_description) == ($args['cheapest_price']->transport_2_description)){
             echo '<br>Flug ab '.$args['cheapest_price']->transport_1_description;
         }else{
             echo '<br>Flug hin :  '.$args['cheapest_price']->transport_1_description;
             echo '<br>Flug zurück:  '.$args['cheapest_price']->transport_2_description;
         }
+    }
+    if(!empty($args['cheapest_price']->included_options_price)){
+        echo '<br>inkl. '.implode(', ', explode(',', $args['cheapest_price']->included_options_description));
+        //echo ' im Wert von&nbsp;'.\Pressmind\Travelshop\PriceHandler::format($args['cheapest_price']->included_options_price);
     }
     if(!empty($args['cheapest_price']->diff_to_single_room)){
         $prefix = $args['cheapest_price']->diff_to_single_room > 0 ? 'zzgl.' : 'abzgl.';

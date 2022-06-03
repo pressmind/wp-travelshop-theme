@@ -10,6 +10,10 @@ use Pressmind\Travelshop\PriceHandler;
  * @var array $args
  */
 
+if(empty($args['cheapest_price'])){
+    return;
+}
+
 // build a date to best price map
 $filter = new CheapestPrice();
 $filter->occupancies_disable_fallback = false;
