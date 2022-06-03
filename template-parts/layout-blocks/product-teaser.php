@@ -49,8 +49,6 @@ if(count($result['items']) == 0){
     }
     return;
 }
-global $productTeaserCount;
-$productTeaserCount = isset($productTeaserCount) ? $productTeaserCount + 1 : 1;
 $has_more_items = count($result['items']) < $result['total_result'];
 if ( isset($args['has_more_items']) && $args['has_more_items'] === true ) {
     $has_more_items = true;
