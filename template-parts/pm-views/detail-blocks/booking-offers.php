@@ -73,9 +73,9 @@ if (!empty($offers)) { ?>
                             $checked = ($args['cheapest_price']->id == $offer->getId());
                             ?>
                             <div class="booking-row no-gutters row booking-row-date<?php echo $checked ? ' checked' : ''; ?>">
-                                <?php if ($checked) {
+                                <?php 
                                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/checked-icon.php', []);
-                                } ?>
+                                ?>
                                 <div class="col-12 col-lg-2">
                                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration-icon.php', []);?>
                                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $offer->duration]);?>

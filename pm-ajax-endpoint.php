@@ -40,7 +40,15 @@ if (empty($_GET['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'search') {
-    $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
+    $output = null;
+    $view = 'Teaser1';
+    if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
+        $view = $_GET['view'];
+        if($view == 'Calendar1') {
+            $output = 'date_list';
+        }
+    }
+    $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
     ob_start();
     require 'template-parts/pm-search/result.php';
     $Output->count = (int)$args['total_result'];

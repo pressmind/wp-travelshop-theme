@@ -12,6 +12,8 @@ $args['link_bottom'] = filter_var($settings->link_bottom , FILTER_VALIDATE_BOOLE
 $args['link_top_text'] =  $settings->link_top_text;
 $args['link_teaser_text'] =  $settings->link_teaser_text;
 $args['link_bottom_text'] =  $settings->link_bottom_text;
+$args['pagination_bottom'] =  $settings->pagination_bottom;
+$args['uid'] = $module->node;
 
 // bind the beaver builder settings to the query string api
 $args['search']['pm-ot'] = !empty($settings->{'pm-ot'}) ? $settings->{'pm-ot'} : ''; // id_object_type

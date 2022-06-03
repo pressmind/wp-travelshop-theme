@@ -337,6 +337,16 @@ jQuery(function ($) {
             $('body').find('#modal-id-post-' + modalId).addClass('is--open');
             let target = document.querySelector('.is--open .modal-body-outer');
             bodyScrollLock.disableBodyScroll(target);
+            if($(e.target).data('anchor')) {
+                $('.modal-body-outer').scrollTop(0);
+                $('.booking-row').removeClass('checked');
+                $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
+                setTimeout(function() {
+                    $('.modal-body-outer').animate({
+                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + 200 )
+                    }, 'slow');
+                }, 500);
+            }
             e.stopPropagation();
         })
 

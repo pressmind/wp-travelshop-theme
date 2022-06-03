@@ -35,6 +35,10 @@ if (isset ( $args['search']['pm-l'] ) && !empty($args['search']['pm-l']) ) {
     $page_size = (int)$page_size[1];
 }
 
+if(isset($_GET['pm-l'])) {
+    $args['search']['pm-l'] = $_GET['pm-l'];
+}
+
 $result = Search::getResult(isset($args['search']) ? $args['search'] : [], 2, $page_size, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
 
 if(count($result['items']) == 0){
@@ -45,11 +49,13 @@ if(count($result['items']) == 0){
     }
     return;
 }
-
 $has_more_items = count($result['items']) < $result['total_result'];
+if ( isset($args['has_more_items']) && $args['has_more_items'] === true ) {
+    $has_more_items = true;
+}
 $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/','/').'/?'.$result['query_string'] : '#ot-not-set';
 ?>
-<section class="content-block content-block-travel-cols">
+<section id="<?php echo $args['uid']; ?>" class="content-block content-block-travel-cols">
 <div class="row row-introduction <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
             <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
 
@@ -59,25 +65,27 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
                         <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['headline']);?>
                     </h2>
                 <?php } ?>
-                <?php if(!empty($args['text'])){ ?>
-                    <p>
-                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']);?>
-                    </p>
-                <?php } ?>
             </div>
             <?php if ( $has_more_items === false ) { ?>
-        </div>
-        <div class="row">
+                </div>
+                <div class="row">
             <?php } ?>
             <?php if ( isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
             <div class="col-12 col-md-auto pb-4">
                 <a href="<?php echo $more_results_link; ?>" title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>" class="btn-further">
                     <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use></svg>
+                    <svg style="height: 0;"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use></svg>
                 </a>
             </div>
         </div>
         <div class="row">
+        <div class="col-12">
+                <?php if(!empty($args['text'])){ ?>
+                    <p>
+                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']);?>
+                    </p>
+                <?php } ?>
+            </div>  
             <?php } ?>
             <?php } ?>
             <?php
@@ -141,5 +149,14 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
             </a>
         </div>
     </div>
+    <?php } ?>
+    <?php if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' && $has_more_items === true) { ?>
+        <?php 
+            $args['items'] = $result['items'];
+            $args['current_page'] = isset($_GET['pm-l']) ? explode(',', $_GET['pm-l'])[0] : 1;
+            $args['pages'] = ceil($result['total_result'] / $page_size);
+            $args['page_size'] = $page_size;
+        ?>
+        <?php load_template_transient(get_template_directory() . '/template-parts/pm-search/result-pagination.php', false,  $args); ?>
     <?php } ?>
 </section>
