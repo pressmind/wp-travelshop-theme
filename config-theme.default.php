@@ -35,6 +35,11 @@ define('TS_DEMO_MODE', true);
 define('TS_PARTNERLINK_PARAMETER_NAME', 'partnerid');
 define('TS_PARTNERLINK_VALID_DAYS', 30);
 
+/**
+ * Enable GTM
+ */
+# define('TS_GTM_CODE', 'GTM-XYZ');
+
 
 // Activate multilanguage support
 // one big change is the routing, if multilanguage, all routes have the language code as prefix:
