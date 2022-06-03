@@ -91,55 +91,22 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
         <div class="msg" data-text="Suche Angebote...">Suche Angebote...</div>
         <img class="brand" src="<?php echo SITE_URL;?>/wp-content/themes/travelshop/assets/img/travelshop-logo.svg">
     </div>
-    <?php if($view == 'Calendar1') { ?>
-        <div class="product-calendar-wrap">
-            <div class="product-calendar-group">
-                <div class="product-calendar-group--items">
-                    <?php
-                        $currentMonth = 0;
-                        foreach ($args['items'] as $item) {
-                            // var_dump($item['cheapest_price']->date_departures[0]); 
-                            if($currentMonth != $item['cheapest_price']->date_departures[0]->format('m')) { ?>
-                            <div class="product-calendar-group--title">
-                                <h3><?php
-                                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
-                                        'date' => $item['cheapest_price']->date_departures[0]]);
-                                    ?>
-                                </h3>
-                            </div>
-                            <div class="product-calendar-items--title row d-none d-lg-flex">
-                                <div class="col-3">Reisezeitraum</div>
-                                <div class="col-4">Reise</div>
-                                <div class="col-2">Dauer</div>
-                                <div class="col-3 md-align-right">Preis</div>
-                            </div>
-                            <?php }
-                            $currentMonth = $item['cheapest_price']->date_departures[0]->format('m');
-                            $item['class'] = 'col-12 col-md-6 col-lg-4';
-                            echo Template::render(__DIR__.'/../pm-views/'.$view.'.php', $item);
-                        }
-                        ?>
-                </div>
-            </div>
-        </div>
-    <?php } else { ?>
-        <div id="pm-search-result" class="row">
-            <?php
-            foreach ($args['items'] as $item) {
-                $item['class'] = 'col-12 col-md-6 col-lg-4';
-                echo Template::render(__DIR__.'/../pm-views/'.$view.'.php', $item);
-            }
-            if($args['total_result'] == 0){
-                ?>
-            <div class="col-12">
-                <p>Zu Ihrer Suchanfrage wurden keine Ergebnisse gefunden. Bitte ändern Sie Ihre Suchanfrage.</p>
-                <a href="#" onclick="document.location.href = window.location.href.split('?')[0]">Suche zurücksetzen</a>
-            </div>
-            <?php
-            }
+    <div id="pm-search-result" class="row">
+        <?php
+        foreach ($args['items'] as $item) {
+            $item['class'] = 'col-12 col-md-6 col-lg-4';
+            echo Template::render(__DIR__.'/../pm-views/'.$view.'.php', $item);
+        }
+        if($args['total_result'] == 0){
             ?>
+        <div class="col-12">
+            <p>Zu Ihrer Suchanfrage wurden keine Ergebnisse gefunden. Bitte ändern Sie Ihre Suchanfrage.</p>
+            <a href="#" onclick="document.location.href = window.location.href.split('?')[0]">Suche zurücksetzen</a>
         </div>
-    <?php } ?>
+        <?php
+        }
+        ?>
+    </div>
 </section>
 <?php
 // Pagination

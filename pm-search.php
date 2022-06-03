@@ -13,7 +13,15 @@ get_header();
     $args['search_box_tab'] = 0;
     load_template_transient(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $args);
     $request = array_merge($_GET, ['pm-ot' => $wp_query->get('pm-ot')]);
-    $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
+    $output = null;
+    $view = 'Teaser1';
+    if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
+        $view = $_GET['view'];
+        if($view == 'Calendar1') {
+            $output = 'date_list';
+        }
+    }
+    $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
     ?>
     <?php the_breadcrumb(null); ?>
     <div class="content-main">

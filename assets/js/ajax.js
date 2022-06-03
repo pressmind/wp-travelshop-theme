@@ -317,15 +317,22 @@ jQuery(function ($) {
                 query.push('pm-t=' + search_term);
             }
 
-            let order = $(form).find('select[name=pm-o]').val();
-            if (order && order != '') {
-                query.push('pm-o=' + order);
-            }
-
             // the view
             let view = $('.pm-switch-result-view .pm-switch-checkbox').prop('checked');
             if (view) {
-                query.push('view=' + $('.pm-switch-result-view .pm-switch-checkbox').val());
+                view = $('.pm-switch-result-view .pm-switch-checkbox').val();
+            }
+
+            let order = $(form).find('select[name=pm-o]');
+            if (order && order != '') {
+                if(order.find('option[data-view="Calendar1"]').is(':selected')) {
+                    view = 'Calendar1';
+                }
+                query.push('pm-o=' + order.val());
+            }
+
+            if (view) {
+                query.push('view=' + view);
             }
 
             // Build the Query
@@ -803,6 +810,38 @@ jQuery(function ($) {
             }
         }
 
+        this.initPartnerParams = function () {
+            let getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+            
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+            
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                    }
+                }
+                return false;
+            };
+            if(getUrlParameter(partnerParam)) {
+                localStorage.setItem('partnerParam', getUrlParameter(partnerParam));
+                localStorage.setItem('partnerTimestamp', + new Date()); 
+            }
+            if(localStorage.getItem('partnerParam') && localStorage.getItem('partnerTimestamp')) {
+                if(localStorage.getItem('partnerTimestamp') >= (+ new Date() - (partnerTimeout * 86400000) )) {
+                    $('.booking-btn').each((index, item) => {
+                        let href = $(item).attr('href')
+                        $(item).attr('href', href + '&ida=' + localStorage.getItem('partnerParam'));
+                        console.log(item);
+                    });
+                }
+                
+            }
+        }
+
         this.init = function(){
             _this.renderWishlist();
             _this.wishlistEventListeners();
@@ -816,6 +855,7 @@ jQuery(function ($) {
             _this.initCategoryTreeSearchBarFields();
             _this.initCalendarRowClick();
             _this.initBookingBtnClickHandler();
+            _this.initPartnerParams();
         }
 
     };

@@ -29,6 +29,12 @@ define('TS_IBE3_CHECK_AVAILABILITY_URL', getenv('TS_IBE3_CHECK_AVAILABILITY_URL'
  */
 define('TS_DEMO_MODE', true);
 
+/**
+ * Partner Link Parameter / Validity
+ */
+define('TS_PARTNERLINK_PARAMETER_NAME', 'partnerid');
+define('TS_PARTNERLINK_VALID_DAYS', 30);
+
 
 // Activate multilanguage support
 // one big change is the routing, if multilanguage, all routes have the language code as prefix:

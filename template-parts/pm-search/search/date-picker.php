@@ -25,7 +25,7 @@ if (empty($_GET['pm-dr']) === false) {
     $value = $dr[0]->format('Ymd') . '-' . $dr[1]->format('Ymd');
 }
 ?>
-<div class="form-group mb-md-0">
+<div class="list-filter-box form-group mb-md-0">
     <label for=""><?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?></label>
     <div>
         <input type="text"

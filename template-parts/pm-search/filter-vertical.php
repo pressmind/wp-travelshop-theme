@@ -40,6 +40,9 @@
             </button>
             <div class="list-filter-boxes">
                 <?php
+                require 'search/string-search.php';
+                echo '<hr />';
+                require 'search/date-picker.php';
                 require 'filter/order.php';
                 require 'filter/price-range.php';
                 require 'filter/duration-range.php';
