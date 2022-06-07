@@ -110,6 +110,8 @@ jQuery(function ($) {
                 _this.scrollTo(scrollto);
             }
 
+            _this.initCalendarRowClick();
+
             window.history.pushState(null, '', window.location.pathname + '?' + query_string);
 
         }
