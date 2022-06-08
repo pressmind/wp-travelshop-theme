@@ -14666,6 +14666,10 @@ body.fl-builder .content-block.content-page {
   border-top: 1px solid silver;
   cursor: default;
 }
+.content-block-detail-booking-calendar ul li.active {
+  border-top: 1px solid #27ae60;
+  background-color: #dbffea;
+}
 .content-block-detail-booking-calendar ul li.travel-date {
   background-color: #27ae60;
   color: white;

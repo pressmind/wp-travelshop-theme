@@ -85,6 +85,11 @@
 			border-top: 1px solid silver;
 			cursor: default;
 
+			&.active {
+				border-top: 1px solid #27ae60;
+				background-color: #dbffea;
+			}
+
 			&.travel-date {
 				background-color: #27ae60;
 				color: white;

@@ -440,4 +440,36 @@ jQuery(function ($) {
 
     }
 
+    // -----------------------
+    // --- Booking Calendar Hover
+    // -----------------------
+    if($('.travel-date').length) {
+        $('.travel-date a').on('mouseover', function(e) {
+            let duration = $(e.target).attr('data-duration');
+            let counter = 1;
+            $(e.target).parent().nextAll().each((index, item) => {
+                if((index + 1) < duration) {
+                    if($(item).text().trim().length) {
+                        $(item).addClass('active');
+                        counter++;
+                    } else {
+                        let looped = false;
+                        if(!looped) {
+                            $(item).parent().parent().next().find('.calendar li').each((index2, item2) => {
+                                if($(item2).text().trim().length && !$(item2).hasClass('weekday') && counter < duration) {
+                                    $(item2).addClass('active');
+                                    counter++;
+                                }
+                                looped = true;
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        $('.travel-date a').on('mouseout', function(e) {
+            $('.calendar li').removeClass('active');
+        });
+    }
+
 });
