@@ -99,12 +99,12 @@ $args['travel_type'] = !empty($moc->reiseart_default[0]->item->name) ? $moc->rei
 
 // GTM DATA LAYER DATA
 $dataLayerData = [];
-$dataLayerData['name'] = $args['name'];
-$dataLayerData['id'] = $args['id_media_object'];
-$dataLayerData['code'] = $args['code'];
+$dataLayerData['name'] = $args['name'] ? $args['name'] : 'null';
+$dataLayerData['id'] = $args['id_media_object'] ? $args['id_media_object'] : 'null';
+$dataLayerData['code'] = $args['code'] ? $args['code'] : 'null';
 $dataLayerData['price'] = !empty($args['cheapest_price']->price_total) ? $args['cheapest_price']->price_total : null;
-$dataLayerData['category'] = $args['travel_type'];
-$dataLayerData['destination'] = $args['destination'];
+$dataLayerData['category'] = $args['travel_type'] ? $args['travel_type'] : 'null';
+$dataLayerData['destination'] = $args['destination'] ? $args['destination'] : 'null';
 
 echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gtm-detail-datalayer.php', $dataLayerData);
 
