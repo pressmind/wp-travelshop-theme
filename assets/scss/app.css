@@ -14283,6 +14283,12 @@ body.fl-builder .content-block.content-page {
   border-radius: 25px;
 }
 
+.duration-select {
+  width: auto;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
 .content-block.content-block-detail-booking {
   border-top: 1px solid #e9ecef;
   padding: 0;

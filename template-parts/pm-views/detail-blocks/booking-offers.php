@@ -17,13 +17,22 @@ $filter = new CheapestPrice();
 //$filter->duration_to = $args['cheapest_price']->duration;
 //$filter->transport_types = $args['cheapest_price']->transport_type;
 $filter->occupancies_disable_fallback = true;
-
 /**
  * @var \Pressmind\ORM\Object\CheapestPriceSpeed[] $offers
  */
 $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
+$durations = [];
+foreach($offers as $key => $offer) {
+    $durations[$offer->duration] = true;
+}
 
 if (!empty($offers)) { ?>
+    <select class="form-control duration-select">
+        <option value="all" selected>Dauer wählen</option>
+        <?php foreach($durations as $key => $value) { ?>
+            <option value="<?php echo $key; ?>"> <?php echo $key == 1 ? 'Tagesfahrt' : $key . ' Tage' ?> </option>
+        <?php } ?>
+    </select>
     <section class="content-block content-block-detail-booking" id="content-block-detail-booking">
         <div class="container">
             <div class="row">
@@ -72,7 +81,7 @@ if (!empty($offers)) { ?>
 
                             $checked = ($args['cheapest_price']->id == $offer->getId());
                             ?>
-                            <div class="booking-row no-gutters row booking-row-date<?php echo $checked ? ' checked' : ''; ?>">
+                            <div data-duration="<?php echo $offer->duration; ?>" class="booking-row no-gutters row booking-row-date<?php echo $checked ? ' checked' : ''; ?>">
                                 <?php 
                                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/checked-icon.php', []);
                                 ?>

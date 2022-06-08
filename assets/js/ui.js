@@ -472,4 +472,19 @@ jQuery(function ($) {
         });
     }
 
+    // -----------------------
+    // --- Detail Booking Duration Select
+    // -----------------------
+    if($('.duration-select').length) {
+        $('.duration-select').on('change', (e) => {
+            $('.booking-row').each((index, item) => {
+                if($(item).attr('data-duration') != $(e.target).val() && $(e.target).val() != 'all' ) {
+                    $(item).hide();
+                } else {
+                    $(item).show();
+                }
+            });
+        });
+    }
+
 });
