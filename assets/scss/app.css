@@ -17559,6 +17559,9 @@ figure.wp-block-image figcaption {
   margin-left: -0.2rem;
   flex-wrap: wrap;
 }
+.price-box .show-dates * {
+  pointer-events: none;
+}
 .price-box .show-dates span {
   line-height: 1;
   transform: translateY(1px);

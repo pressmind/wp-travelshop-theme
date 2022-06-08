@@ -20,6 +20,10 @@
         margin-left: -.2rem;
         flex-wrap: wrap;
 
+        * {
+            pointer-events: none;
+        }
+
         span {
             line-height: 1;
             transform: translateY(1px);

@@ -343,7 +343,7 @@ jQuery(function ($) {
                 $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
                 setTimeout(function() {
                     $('.modal-body-outer').animate({
-                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + 200 )
+                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + 50 )
                     }, 'slow');
                 }, 500);
             }

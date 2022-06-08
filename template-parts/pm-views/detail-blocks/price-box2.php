@@ -22,7 +22,7 @@ if(empty($args['cheapest_price'])){
     <div class="col-12">
         <span class="date">
 
-            <a class="show-dates" data-modal="true" data-modal-id="<?php echo $args['id_modal_price_box']; ?>">
+            <a class="show-dates" data-modal="true" data-anchor="<?php echo $args['cheapest_price']->id; ?>" data-modal-id="<?php echo $args['id_modal_price_box']; ?>">
                 <p class="small">Angebot wählen:</p>
                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', ['transport_type' => $args['cheapest_price']->transport_type]);?>
                 <span>
@@ -62,7 +62,8 @@ if(empty($args['cheapest_price'])){
         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
             'cheapest_price' => $args['cheapest_price'],
             'url' => $args['url'],
-            'modal_id' => $args['id_modal_price_box']
+            'modal_id' => $args['id_modal_price_box'],
+            'disable_id' => true
         ]);?>
     </div>
 </div>

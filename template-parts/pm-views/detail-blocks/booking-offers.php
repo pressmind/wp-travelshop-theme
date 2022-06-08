@@ -112,7 +112,8 @@ if (!empty($offers)) { ?>
                                 <div class="col-12 col-lg-2">
                                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
                                             'cheapest_price' => $offer,
-                                            'url' => $args['url']
+                                            'url' => $args['url'],
+                                            'disable_id' => false
                                     ]);?>
                                 </div>
 
