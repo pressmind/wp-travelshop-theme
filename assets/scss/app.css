@@ -14600,14 +14600,17 @@ body.fl-builder .content-block.content-page {
 }
 .content-block-detail-booking-calendar .booking-calendar-title {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid #ccc;
 }
 .content-block-detail-booking-calendar .booking-calendar-title h2 {
-  margin: 0;
+  margin: 0 0 0.75rem 0;
+}
+.content-block-detail-booking-calendar .booking-calendar-title > div {
+  margin-bottom: 1rem;
 }
 .content-block-detail-booking-calendar .booking-calendar-title select {
   padding: 0.5rem;
