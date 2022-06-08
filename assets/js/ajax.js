@@ -837,7 +837,6 @@ jQuery(function ($) {
                     $('.booking-btn').each((index, item) => {
                         let href = $(item).attr('href')
                         $(item).attr('href', href + '&ida=' + localStorage.getItem('partnerParam'));
-                        console.log(item);
                     });
                 }
                 
