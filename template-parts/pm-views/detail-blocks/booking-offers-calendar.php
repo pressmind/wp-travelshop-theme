@@ -32,6 +32,9 @@ $transport_types = [];
 foreach($offers as $offer){
         $durations[] = $offer->duration;
         $transport_types[] = $offer->transport_type;
+        if($offer->duration != $args['cheapest_price']->duration) {
+            continue;
+        }
         // if the date has multiple prices, display only the cheapest
         if (!empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]) &&
             $offer->price_total < $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]->price_total

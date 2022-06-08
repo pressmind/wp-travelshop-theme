@@ -104,7 +104,7 @@ if (!empty($offers)) { ?>
                                         ]);
                                     } else {
                                         echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price.php', [
-                                            'cheapest_price' => $args['cheapest_price'],
+                                            'cheapest_price' => $offer,
                                         ]);
                                     } ?>
 
