@@ -54,6 +54,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                         ><svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg></i></span>
                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                         <?php echo $item->name; ?>
+                        <span class="small">(<?php echo $item->count_in_search; ?>)</span>
                     </label>
                     <?php if ($has_childs === true) { ?>
                         <button type="button" class="toggle-second-level" >
@@ -81,6 +82,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                                         </i></span>
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                                         <?php echo $child_item->name; ?>
+                                        <span class="small">(<?php echo $child_item->count_in_search; ?>)</span>
                                     </label>
                                 </div>
                             <?php } ?>
