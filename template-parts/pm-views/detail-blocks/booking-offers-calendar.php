@@ -32,6 +32,9 @@ $transport_types = [];
 foreach($offers as $offer){
         $durations[] = $offer->duration;
         $transport_types[] = $offer->transport_type;
+        if($offer->duration != $args['cheapest_price']->duration) {
+            continue;
+        }
         // if the date has multiple prices, display only the cheapest
         if (!empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]) &&
             $offer->price_total < $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]->price_total
@@ -73,14 +76,17 @@ if ($interval->format('%m') < 3) {
             </h2>
             <?php if(count($durations) > 0 && count($transport_types) > 0){ ?>
             <div>
-                <?php
-                    foreach($durations as $duration) { ?>
-                        <a href="<?php echo Template::modifyUrl($args['url'], ['pm-du' => $duration, 'pm-dr' => '']); ?>" class="btn btn<?php echo ($duration == $args['cheapest_price']->duration) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
-                            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
-                                'duration' => $duration,
-                            ]);
-                            ?></a>
-                <?php } ?>
+                <div class="btn-group" role="group" aria-label="Durations">
+                    <?php
+                        foreach($durations as $duration) { ?>
+                            <a href="<?php echo Template::modifyUrl($args['url'], ['pm-du' => $duration, 'pm-dr' => '']); ?>" class="btn btn<?php echo ($duration == $args['cheapest_price']->duration) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
+                                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
+                                    'duration' => $duration,
+                                ]);
+                                ?></a>
+                    <?php } ?>
+                </div>
+                <div class="btn-group" role="group" aria-label="Durations">
                 <?php
                 foreach($transport_types as $transport_type) { ?>
                     <a href="<?php echo Template::modifyUrl($args['url'], ['pm-tr' => $transport_type, 'pm-dr' =>'']); ?>" class="btn btn<?php echo ($transport_type == $args['cheapest_price']->transport_type) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
@@ -91,6 +97,7 @@ if ($interval->format('%m') < 3) {
 
                     ?></a>
                 <?php } ?>
+                </div>
             </div>
             <?php } ?>
         </div>
@@ -135,7 +142,7 @@ if ($interval->format('%m') < 3) {
                                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
                                     'transport_type' => $date_to_cheapest_price[$current_date]->transport_type,
                                 ]);
-                                ?> <br> zur Buchung" data-html="true" data-toggle="tooltip"><a data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="true" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
+                                ?> <br> zur Buchung" data-html="true" data-toggle="tooltip"><a data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="true" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
                                         <div>ab&nbsp;<?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
                                         </div>
                                     </a></li>

@@ -18,7 +18,7 @@ use Pressmind\Travelshop\Template;
 $mo = $data['media_object'];
 
 /**
- * @var Custom\MediaType\###CLASSNAME### $moc
+ * @var Custom\MediaType\Reise $moc
  */
 $moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
 
@@ -96,6 +96,17 @@ $args['url'] = $mo->getPrettyUrl(TS_LANGUAGE_CODE).(!empty($valid_params) ? '?'.
 
 $args['destination'] = !empty($moc->zielgebiet_default[0]->item->name) ? $moc->zielgebiet_default[0]->item->name : null;
 $args['travel_type'] = !empty($moc->reiseart_default[0]->item->name) ? $moc->reiseart_default[0]->item->name : null;
+
+// GTM DATA LAYER DATA
+$dataLayerData = [];
+$dataLayerData['name'] = $args['name'] ? $args['name'] : 'null';
+$dataLayerData['id'] = $args['id_media_object'] ? $args['id_media_object'] : 'null';
+$dataLayerData['code'] = $args['code'] ? $args['code'] : 'null';
+$dataLayerData['price'] = !empty($args['cheapest_price']->price_total) ? $args['cheapest_price']->price_total : null;
+$dataLayerData['category'] = $args['travel_type'] ? $args['travel_type'] : 'null';
+$dataLayerData['destination'] = $args['destination'] ? $args['destination'] : 'null';
+
+echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gtm-detail-datalayer.php', $dataLayerData);
 
 $args['map_markers'] = [];
 foreach ($args['media_object']->getItinerarySteps() as $step) {
@@ -371,6 +382,7 @@ $args['breadcrumb'][] = $tmp;
                 $args_modal = [];
                 $args_modal['title'] = 'Reisetermin wählen';
                 $args_modal['id_modal'] = $args['id_modal_price_box'];
+                $args['hide_options'] = false;
                 $args_modal['content'] = Pressmind\Travelshop\Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers.php', $args);;
                 echo Template::render(APPLICATION_PATH . '/template-parts/layout-blocks/modalscreen.php', $args_modal);
             ?>

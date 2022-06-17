@@ -343,7 +343,7 @@ jQuery(function ($) {
                 $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
                 setTimeout(function() {
                     $('.modal-body-outer').animate({
-                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + 200 )
+                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + 50 )
                     }, 'slow');
                 }, 500);
             }
@@ -438,6 +438,53 @@ jQuery(function ($) {
             autoHeight: false, // if this is set to true, we have a white space on load effect... perhaps a bug in the tiny-slider
         });
 
+    }
+
+    // -----------------------
+    // --- Booking Calendar Hover
+    // -----------------------
+    if($('.travel-date').length) {
+        $('.travel-date a').on('mouseover', function(e) {
+            let duration = $(e.target).attr('data-duration');
+            let counter = 1;
+            $(e.target).parent().nextAll().each((index, item) => {
+                if((index + 1) < duration) {
+                    if($(item).text().trim().length) {
+                        $(item).addClass('active');
+                        counter++;
+                    } else {
+                        let looped = false;
+                        if(!looped) {
+                            $(item).parent().parent().next().find('.calendar li').each((index2, item2) => {
+                                if($(item2).text().trim().length && !$(item2).hasClass('weekday') && counter < duration) {
+                                    $(item2).addClass('active');
+                                    counter++;
+                                }
+                                looped = true;
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        $('.travel-date a').on('mouseout', function(e) {
+            $('.calendar li').removeClass('active');
+        });
+    }
+
+    // -----------------------
+    // --- Detail Booking Duration Select
+    // -----------------------
+    if($('.duration-select').length) {
+        $('.duration-select').on('change', (e) => {
+            $('.booking-row').each((index, item) => {
+                if($(item).attr('data-duration') != $(e.target).val() && $(e.target).val() != 'all' ) {
+                    $(item).hide();
+                } else {
+                    $(item).show();
+                }
+            });
+        });
     }
 
 });

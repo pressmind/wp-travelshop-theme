@@ -14283,6 +14283,12 @@ body.fl-builder .content-block.content-page {
   border-radius: 25px;
 }
 
+.duration-select {
+  width: auto;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
 .content-block.content-block-detail-booking {
   border-top: 1px solid #e9ecef;
   padding: 0;
@@ -14600,14 +14606,17 @@ body.fl-builder .content-block.content-page {
 }
 .content-block-detail-booking-calendar .booking-calendar-title {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid #ccc;
 }
 .content-block-detail-booking-calendar .booking-calendar-title h2 {
-  margin: 0;
+  margin: 0 0 0.75rem 0;
+}
+.content-block-detail-booking-calendar .booking-calendar-title > div {
+  margin-bottom: 1rem;
 }
 .content-block-detail-booking-calendar .booking-calendar-title select {
   padding: 0.5rem;
@@ -14665,6 +14674,10 @@ body.fl-builder .content-block.content-page {
   padding-top: 5px;
   border-top: 1px solid silver;
   cursor: default;
+}
+.content-block-detail-booking-calendar ul li.active {
+  border-top: 1px solid #27ae60;
+  background-color: #dbffea;
 }
 .content-block-detail-booking-calendar ul li.travel-date {
   background-color: #27ae60;
@@ -17551,6 +17564,9 @@ figure.wp-block-image figcaption {
   padding-left: 0.15rem;
   margin-left: -0.2rem;
   flex-wrap: wrap;
+}
+.price-box .show-dates * {
+  pointer-events: none;
 }
 .price-box .show-dates span {
   line-height: 1;

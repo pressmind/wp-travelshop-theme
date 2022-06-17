@@ -3,14 +3,18 @@
 
 	.booking-calendar-title {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		flex-direction: column;
+		align-items: flex-start;
 		padding-bottom: .5rem;
 		margin-bottom: .5rem;
 		border-bottom: 1px solid #ccc;
 
 		h2 {
-			margin: 0;
+			margin: 0 0 .75rem 0;
+		}
+
+		>div {
+			margin-bottom: 1rem;
 		}
 
 		select {
@@ -84,6 +88,11 @@
 			padding-top: 5px;
 			border-top: 1px solid silver;
 			cursor: default;
+
+			&.active {
+				border-top: 1px solid #27ae60;
+				background-color: #dbffea;
+			}
 
 			&.travel-date {
 				background-color: #27ae60;

@@ -110,6 +110,8 @@ jQuery(function ($) {
                 _this.scrollTo(scrollto);
             }
 
+            _this.initCalendarRowClick();
+
             window.history.pushState(null, '', window.location.pathname + '?' + query_string);
 
         }
@@ -835,7 +837,6 @@ jQuery(function ($) {
                     $('.booking-btn').each((index, item) => {
                         let href = $(item).attr('href')
                         $(item).attr('href', href + '&ida=' + localStorage.getItem('partnerParam'));
-                        console.log(item);
                     });
                 }
                 
