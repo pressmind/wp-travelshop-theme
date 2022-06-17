@@ -75,7 +75,7 @@ class Search
                 self::$_run_time_cache_search[$cache_key] = $search;
             }
             $start_time = microtime(true);
-            $result = $search->getResult(false, false, $ttl_search, $output);
+            $result = $search->getResult(true, false, $ttl_search, $output);
             $end_time = microtime(true);
             $duration_search_ms = ($end_time - $start_time) * 1000;
             foreach ($result->documents as $document) {
@@ -125,11 +125,22 @@ class Search
         }
         $categories = [];
         if(!empty($result_filter->categoriesGrouped)){
+            $matching_categories_map = [];
+            if(!$returnFiltersOnly){
+                $matching_categories = json_decode(json_encode($result->categoriesGrouped));
+                foreach($matching_categories as $item){
+                    $matching_categories_map[$item->_id->field_name][$item->_id->id_item] = $item;
+                }
+            }
             foreach(json_decode(json_encode($result_filter->categoriesGrouped)) as $item){
+                $item->_id->count_in_system = $item->count;
+                $item->_id->count_in_search = 0;
+                if(isset($matching_categories_map[$item->_id->field_name][$item->_id->id_item])){
+                    $item->_id->count_in_search = $matching_categories_map[$item->_id->field_name][$item->_id->id_item]->count;
+                }
                 $categories[$item->_id->field_name][$item->_id->level][$item->_id->id_item] = $item->_id;
             }
         }
-
         if(TS_CALENDAR_SHOW_DEPARTURES === true && empty($result_filter) === false){
             $start_time = microtime(true);
             $filter_departures = [];
