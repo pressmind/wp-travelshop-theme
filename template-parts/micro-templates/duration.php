@@ -11,5 +11,5 @@ use Pressmind\HelperFunctions;
 if($args['duration'] == 1){
     echo 'Tagesfahrt';
 }else{
-    echo $args['duration']. ' Tage'.(!empty($args['suffix']) ? $args['suffix'] : '');
+    echo str_replace('.', ',', $args['duration']). ' Tage'.(!empty($args['suffix']) ? $args['suffix'] : '');
 }
