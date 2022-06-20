@@ -431,11 +431,25 @@ jQuery(function ($) {
 
         this.autoCompleteInit = function (){
             if ($('.auto-complete').length > 0) {
+                $('.auto-complete').keydown((e) => {
+                    if(e.keyCode == 8 && e.target.value.length < 2) {
+                        $(e.target).autocomplete('disable');
+                        $(e.target).parent().find('.string-search-clear').hide();
+                        $(e.target).parent().find('.lds-dual-ring').hide();
+                    } else {
+                        $(e.target).autocomplete('enable');
+                    }
+                });
                 $('.auto-complete').autocomplete({
                     serviceUrl: '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=autocomplete',
-                    type: 'get',
+                    type: 'POST',
                     dataType: 'json',
                     paramName: 'pm-t',
+                    params: {
+                      'data': () => {
+                          return $('.auto-complete').attr('data-params');
+                      }
+                    },
                     deferRequestBy: 0,
                     minChars: 2,
                     width: 'flex',
@@ -443,6 +457,25 @@ jQuery(function ($) {
                     preventBadQueries: false,
                     tabDisabled: true,
                     preserveInput: true,
+                    formatResult: function (suggestion, currentValue){
+                        console.log(suggestion, currentValue);
+                        var re = new RegExp(`${currentValue}`, 'gi');
+                        let img = typeof suggestion.img != 'undefined' ? '<div class="suggestion-featured-image"><img src="' + suggestion.img + '" /></div>' : '';
+                        let price = typeof suggestion.price != 'undefined' ? '<div class="suggestion-price"><small>schon ab</small><br /><strong>' + suggestion.price + ' €</strong></div>' : '';
+                        let arrow = suggestion.type != 'media_object' ? '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-left" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
+                            '  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>\n' +
+                            '  <line x1="7" y1="7" x2="17" y2="17" />\n' +
+                            '  <polyline points="16 7 7 7 7 16" />\n' +
+                            '</svg>' : '';
+                        return '<div class="string-search-suggestion">' +
+                            '<div class="suggestion-left">' +
+                            img +
+                            '<div class="suggestion-string">' + suggestion.value.replace(re, '<strong>$&</strong>') + '</div>' +
+                            '</div>' +
+                            price +
+                            arrow +
+                            '</div>';
+                    },
                     onSelect: function (suggestion) {
                         if (suggestion.data.type == 'link') {
                             document.location.href = suggestion.data.url;
@@ -451,6 +484,21 @@ jQuery(function ($) {
                             url += '?' + suggestion.data.search_request;
                             document.location.href = url;
                         }
+                    },
+                    onSearchStart: function () {
+                        $(this).parent().find('.lds-dual-ring').show();
+                        $(this).parent().find('.string-search-clear').hide();
+                    },
+                    onSearchComplete: function() {
+                        $(this).parent().find('.lds-dual-ring').hide();
+                        $(this).parent().find('.string-search-clear').show().click(() => {
+                            $(this).val('');
+                            $(this).parent().find('.string-search-clear').hide();
+                        });
+                        if($(this).autocomplete().disabled) {
+                            $(this).parent().find('.string-search-clear').hide();
+                        }
+                        console.log($(this).autocomplete());
                     }
                 })
             }

@@ -35,7 +35,7 @@ $Output->html = array();
 $Output->msg = null;
 $Output->count = null;
 $request = json_decode(file_get_contents('php://input'));
-if (empty($_GET['action'])) {
+if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->result = $request;
     echo json_encode($Output);
     exit;
@@ -99,7 +99,15 @@ if (empty($_GET['action'])) {
     echo $result;
     exit;
 } else if ($_GET['action'] == 'autocomplete') {
+    $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, null);
+    $args['params'] = json_decode($_POST['data']);
+    $searchRoute = 'suche'; // TODO Get via Ajax JS
+    // Path to Wordpress DIR
+    $path = preg_replace('/wp-content.*$/','',__DIR__);
     ob_start();
+    define('WP_USE_THEMES', false);
+    define( 'DOING_AJAX', true );
+    include($path.'wp-load.php');
     require 'template-parts/pm-search/autocomplete.php';
     $output = ob_get_contents();
     ob_end_clean();
@@ -183,6 +191,7 @@ if (empty($_GET['action'])) {
     }
     $result = json_encode($r);
     echo $result;
+    exit;
     exit;
 }else{
     header("HTTP/1.0 400 Bad Request");

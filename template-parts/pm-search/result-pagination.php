@@ -55,6 +55,11 @@
                                     href="?action=search&<?php echo BuildSearch::getCurrentQueryString($page, $args['page_size']); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>"><?php echo $page; ?></a>
                         </li>
                     <?php } ?>
+                    <?php if($args['pages'] != $to) { ?>
+                        <li class="page-item disabled">
+                            <a class="page-link">...</a>
+                        </li>
+                    <?php } ?>
                     <li class="page-item<?php echo ($args['current_page'] == $args['pages']) ? ' disabled' : ''; ?>"><a
                                 class="page-link"
                                 href="<?php echo ($args['current_page'] >= $args['pages']) ? '#' : '?action=search&' . BuildSearch::getCurrentQueryString($args['current_page'] + 1, $args['page_size']); ?><?php echo isset($args['uid']) ? '#' .  $args['uid'] : '';?>">

@@ -27,7 +27,6 @@ use Pressmind\Travelshop\Template;
  * </code>
  * @var array $args
  */
-
 ?>
 <section class="content-block content-block-teaser-group">
     <div class="row">
@@ -75,6 +74,17 @@ use Pressmind\Travelshop\Template;
                         </div>
                     <?php
                     $result = Search::getResult($teaser['search'] ?? [], 2, 4, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
+                    if(!empty($_GET['debug'])) {
+                        echo '<pre>';
+                        echo "Filter:\n";
+                        echo "Duration:".$result['mongodb']['duration_filter_ms']."\n";
+                        echo $result['mongodb']['aggregation_pipeline_filter'];
+                        echo "\n";
+                        echo "Search:\n";
+                        echo "Duration:".$result['mongodb']['duration_search_ms']."\n";
+                        echo $result['mongodb']['aggregation_pipeline_search'];
+                        echo '</pre>';
+                    }
                     if(count($result['items']) > 0){
                     ?>
                         <div class="teaser-body">
