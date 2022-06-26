@@ -48,7 +48,7 @@ class Search
         $duration_search_ms = null;
         if (empty($request['pm-ho']) === true) {
             // if the price duration slider is active, we have to set the housing occupancy search
-            // (to display the correct search result with the correct cheapeast price inside)
+            // (to display the correct search result with the correct cheapest price inside)
             $request['pm-ho'] = $occupancy;
         }
         $id_object_type = empty($request['pm-ot']) ? false : \BuildSearch::extractObjectType($request['pm-ot']);
@@ -124,6 +124,7 @@ class Search
                     $item['cheapest_price']->earlybird_discount_date_to = new \DateTime($document['prices']['earlybird_discount_date_to']);
                     $item['cheapest_price']->option_board_type = $document['prices']['option_board_type'];
                 } else {
+                    $item['cheapest_price'] = null;
                     $document['prices'] = null;
                 }
                 $item['departure_date_count'] = $document['departure_date_count'];

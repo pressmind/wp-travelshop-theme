@@ -78,6 +78,7 @@ if (empty($filteredParams) === false) {
                         ?>
                     </div>
                     <div class="card-text price-row">
+                        <?php if(!is_null($args['cheapest_price'])){ ?>
                         <span class="small">
                             <span>
                                  <?php
@@ -88,11 +89,16 @@ if (empty($filteredParams) === false) {
                                  ?>
                             </span><br>
                         </span>
+                        <?php } ?>
                         <a href="<?php echo $args['url']; ?>" class="product-price">
                             <?php
+                            if(!is_null($args['cheapest_price'])){
                             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-1.php', [
                                 'cheapest_price' => $args['cheapest_price'],
                             ]);
+                            }else{
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                            }
                             ?>
                         </a>
                     </div>
