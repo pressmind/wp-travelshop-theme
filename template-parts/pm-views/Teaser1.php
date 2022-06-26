@@ -70,6 +70,11 @@ if (empty($filteredParams) === false) {
             </div>
 
         <section class="card-body col-7 col-sm-7 col-md-12">
+            <?php
+                if(!empty($_GET['debug'])){
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/debug-textsearch.php', $args);
+                }
+            ?>
             <h1 class="card-title">
                 <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
             </h1>

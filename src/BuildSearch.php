@@ -279,9 +279,13 @@ class BuildSearch
      * $request['pm-l'] limit 0,10
      * $request['pm-o'] order
      * @param $request
+     * @param string $prefix
+     * @param bool $paginator
+     * @param int $page_size
+     * @param array $custom_conditions
      * @return \Pressmind\Search\MongoDB
      */
-    public static function fromRequestMongoDB($request, $prefix = 'pm', $paginator = true, $page_size = 10)
+    public static function fromRequestMongoDB($request, $prefix = 'pm', $paginator = true, $page_size = 10, $custom_conditions = [])
     {
 
         array_walk_recursive($request, function($key, &$item){
@@ -290,7 +294,7 @@ class BuildSearch
 
         $validated_search_parameters = [];
         $conditions = array();
-
+        $order = array('price_total' => 'asc');
 
         if (isset($request[$prefix.'-ot'])) {
             $id_object_type = self::extractObjectType($request[$prefix.'-ot']);
@@ -300,17 +304,21 @@ class BuildSearch
             }
         }
 
-
         if (empty($request[$prefix.'-t']) === false){
             $term = $request[$prefix.'-t'];
-            $conditions[] = new \Pressmind\Search\Condition\MongoDB\Fulltext($term);
+            $order = array('score' => 'desc');
+            if(defined('TS_FULLTEXT_SEARCH') && !empty(TS_FULLTEXT_SEARCH['atlas']['active'])){
+                $conditions[] = new \Pressmind\Search\Condition\MongoDB\AtlasLuceneFulltext($term, !empty(TS_FULLTEXT_SEARCH['atlas']['definition']) ? TS_FULLTEXT_SEARCH['atlas']['definition'] : []);
+            }else{
+                $conditions[] = new \Pressmind\Search\Condition\MongoDB\Fulltext($term);
+            }
             $validated_search_parameters[$prefix.'-t'] = $request[$prefix.'-t'];
         }
 
         if (empty($request[$prefix.'-co']) === false && preg_match('/^([0-9\-_A-Za-z\,]+)$/', $request[$prefix.'-du']) > 0){
             $codes = explode(',', $request[$prefix.'-co']);
             $conditions[] = new \Pressmind\Search\Condition\MongoDB\Code($codes);
-            $validated_search_parameters[$prefix.'-t'] = $request[$prefix.'-t'];
+            $validated_search_parameters[$prefix.'-co'] = $request[$prefix.'-co'];
         }
 
         if (isset($request[$prefix.'-pr']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $request[$prefix.'-pr']) > 0) {
@@ -384,8 +392,7 @@ class BuildSearch
             $conditions[] = new \Pressmind\Search\Condition\MongoDB\Group(TS_SEARCH_GROUP_KEYS);
         }
 
-        $order = array('price_total' => 'asc');
-        $allowed_orders = array('rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc');
+        $allowed_orders = array('rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc', 'score-asc', 'score-desc');
         if (empty($request[$prefix.'-o']) === false && in_array($request[$prefix.'-o'], $allowed_orders) === true) {
 
             if($request[$prefix.'-o'] == 'rand'){
@@ -398,6 +405,8 @@ class BuildSearch
 
             $validated_search_parameters[$prefix.'-o'] = $request[$prefix.'-o'];
         }
+
+        $conditions = array_merge($conditions, $custom_conditions);
 
         $Search = new Pressmind\Search\MongoDB($conditions, $order, TS_LANGUAGE_CODE);
 
