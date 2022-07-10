@@ -55,7 +55,7 @@ if ( isset($args['has_more_items']) && $args['has_more_items'] === true ) {
 }
 $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/','/').'/?'.$result['query_string'] : '#ot-not-set';
 ?>
-<section id="<?php echo $args['uid']; ?>" class="content-block content-block-travel-cols">
+<section<?php !empty($args['uid']) ? ' id="'.$args['uid'].'"' : ''; ?> class="content-block content-block-travel-cols">
 <div class="row row-introduction <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
             <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
 
