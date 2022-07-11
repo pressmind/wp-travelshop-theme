@@ -325,7 +325,7 @@ if($args[1] != 'only_static') {
             $ids[] = $item->id_type;
             $pretty_url = [
                 'prefix' => '/' . HelperFunctions::human_to_machine($item->type_name) . '/',
-                'field' => ['name' => 'name'],
+                'fields' => ['name' => 'name'],
                 'strategy' => 'none',
                 'suffix' => '/'
             ];
