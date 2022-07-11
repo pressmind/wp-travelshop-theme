@@ -13,6 +13,7 @@ $args['link_top_text'] =  $settings->link_top_text;
 $args['link_teaser_text'] =  $settings->link_teaser_text;
 $args['link_bottom_text'] =  $settings->link_bottom_text;
 $args['pagination_bottom'] =  $settings->pagination_bottom;
+$args['is_slider'] =  $settings->show_as_slider;
 $args['uid'] = $module->node;
 
 // bind the beaver builder settings to the query string api

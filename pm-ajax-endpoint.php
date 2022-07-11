@@ -8,10 +8,10 @@ use \Pressmind\ORM\Object\MediaObject;
 use \Pressmind\Search\CheapestPrice;
 use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
-use Pressmind\Travelshop\Template;
+use \Pressmind\Travelshop\Template;
 
-//error_reporting(-1);
-//ini_set('display_errors', 'On');
+error_reporting(-1);
+ini_set('display_errors', 'On');
 
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
@@ -57,6 +57,32 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     ob_start();
     require 'template-parts/pm-search/filter-vertical.php';
     $Output->html['search-filter'] = ob_get_contents();
+    ob_end_clean();
+    $Output->error = false;
+    $result = json_encode($Output);
+    if(json_last_error() > 0){
+        $Output->error = true;
+        $Output->msg = 'json error: '.json_last_error_msg();
+        $Output->html = $Output->msg;
+        $result = json_encode($Output);
+    }
+    echo $result;
+    exit;
+}  else if ($_GET['action'] == 'slider') { 
+    $output = null;
+    $view = 'Teaser1';
+    if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
+        $view = $_GET['view'];
+        if($view == 'Calendar1') {
+            $output = 'date_list';
+        }
+    }
+    $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
+    ob_start();
+    foreach ($args['items'] as $item) {
+        echo Template::render('template-parts/pm-views/'.$view.'.php', $item);
+    }
+    $Output->html['slider-result'] = ob_get_contents();
     ob_end_clean();
     $Output->error = false;
     $result = json_encode($Output);
