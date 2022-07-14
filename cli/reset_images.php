@@ -4,9 +4,6 @@ use Pressmind\Registry;
 use Pressmind\Log\Writer;
 use Pressmind\Storage\Bucket;
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
-
 if (php_sapi_name() !== 'cli') {
     die("This file is meant to be run from command line");
 }
