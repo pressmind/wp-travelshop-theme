@@ -89,6 +89,7 @@ try {
     echo $e->getMessage();
 }
 
+/*
 echo 'Checking default configuration for newly added options' . "\n";
 $sdk_directory = dirname(__DIR__)
     . DIRECTORY_SEPARATOR
@@ -129,6 +130,7 @@ function walkArray($default_settings, &$current_settings) {
     return ['has_changes' => $has_changes, 'settings' => $current_settings];
 }
 
+*/
 /**
  * @param $expression
  * @param bool $return
