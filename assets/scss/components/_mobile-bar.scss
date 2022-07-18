@@ -10,6 +10,19 @@
     transform: translateY(100%);
     transition: 300ms ease-in-out all;
 
+    .booking-button-wrap {
+        margin-top: 1rem;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		max-width: 100%;
+		.booking-btn {
+			position: relative;
+			z-index: 25;
+		}
+	}
+
     &.show {
         transform: translateY(0);
     }

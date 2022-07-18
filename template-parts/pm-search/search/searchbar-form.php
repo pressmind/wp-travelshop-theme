@@ -49,7 +49,7 @@ $args = array_merge($args, $result);
                     ?>
                     <div class="col-12 col-md-3">
                         <?php
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search.php', ['name' => $field['name']]);
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search.php', ['name' => $field['name'], 'params' => $field['params']]);
                         ?>
                     </div>
                     <?php

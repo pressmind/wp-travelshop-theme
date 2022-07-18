@@ -11,7 +11,6 @@ $args['teaser_count_desktop'] = $settings->teaser_count_desktop;
 
 global $config;
 foreach($settings->teasers as $teaser){
-
 // bind the beaver builder settings to the query string api
     $search = [];
     $search['pm-ot'] = !empty($teaser->{'pm-ot'}) ? $teaser->{'pm-ot'} : ''; // id_object_type
@@ -32,8 +31,8 @@ foreach($settings->teasers as $teaser){
     $search['pm-pr'] = !empty($teaser->{'pm-pr'}) ? $teaser->{'pm-pr'} : ''; // price range
     $search['pm-dr'] = !empty($teaser->{'pm-dr'}) ? $teaser->{'pm-dr'} : ''; // travel date range
     foreach($teaser as $k => $v){ // categories
-        if(!empty($v) && preg_match('/^category_'.$search['pm-ot'] .'_([0-9]+)\-([a-z0-9\_]+)$/', $k, $matches) > 0){
-            $search['pm-c'][$matches[2]] = $v;
+        if(!empty($v) && preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $k, $matches) > 0){
+            $search['pm-c'][$matches[3]] = $v;
         }
     }
 

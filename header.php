@@ -30,7 +30,7 @@ global $PMTravelShop;
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
-    <meta name="robots" content="index,follow">
+    <!-- <meta name="robots" content="index,follow"> -->
     <?php
     wp_head();
     ?>
