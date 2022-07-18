@@ -297,8 +297,7 @@ class RedisPageCache
             'status' => http_response_code(),
             'gzip' => false,
         );
-        // Don't cache 5xx errors.
-        if ($data['status'] >= 500) {
+        if ($data['status'] != 200) {
             $log[] = 'error: response code is: ' . $data['status'] . "\r\n";
             $cache = false;
         }

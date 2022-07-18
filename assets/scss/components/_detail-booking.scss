@@ -8,6 +8,18 @@
 	border-top: 1px solid $gray-200;
 	padding: 0;
 
+	.booking-button-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		width: 100%;
+		.booking-btn {
+			position: relative;
+			z-index: 25;
+		}
+	}
+
 	h2 {
 		margin: 0 0 ($grid-gutter-width / 2) 0;
 

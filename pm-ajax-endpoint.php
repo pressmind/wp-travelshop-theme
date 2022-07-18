@@ -8,10 +8,10 @@ use \Pressmind\ORM\Object\MediaObject;
 use \Pressmind\Search\CheapestPrice;
 use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
-use Pressmind\Travelshop\Template;
+use \Pressmind\Travelshop\Template;
 
-//error_reporting(-1);
-//ini_set('display_errors', 'On');
+error_reporting(-1);
+ini_set('display_errors', 'On');
 
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
@@ -35,7 +35,7 @@ $Output->html = array();
 $Output->msg = null;
 $Output->count = null;
 $request = json_decode(file_get_contents('php://input'));
-if (empty($_GET['action'])) {
+if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->result = $request;
     echo json_encode($Output);
     exit;
@@ -62,6 +62,32 @@ if (empty($_GET['action'])) {
         $Output->html['search-filter'] = ob_get_contents();
         ob_end_clean();
     }
+    $Output->error = false;
+    $result = json_encode($Output);
+    if(json_last_error() > 0){
+        $Output->error = true;
+        $Output->msg = 'json error: '.json_last_error_msg();
+        $Output->html = $Output->msg;
+        $result = json_encode($Output);
+    }
+    echo $result;
+    exit;
+}  else if ($_GET['action'] == 'slider') { 
+    $output = null;
+    $view = 'Teaser1';
+    if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
+        $view = $_GET['view'];
+        if($view == 'Calendar1') {
+            $output = 'date_list';
+        }
+    }
+    $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
+    ob_start();
+    foreach ($args['items'] as $item) {
+        echo Template::render('template-parts/pm-views/'.$view.'.php', $item);
+    }
+    $Output->html['slider-result'] = ob_get_contents();
+    ob_end_clean();
     $Output->error = false;
     $result = json_encode($Output);
     if(json_last_error() > 0){
@@ -103,7 +129,15 @@ if (empty($_GET['action'])) {
     echo $result;
     exit;
 } else if ($_GET['action'] == 'autocomplete') {
+    $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, null);
+    $args['params'] = json_decode($_POST['data']);
+    $searchRoute = 'suche'; // TODO Get via Ajax JS
+    // Path to Wordpress DIR
+    $path = preg_replace('/wp-content.*$/','',__DIR__);
     ob_start();
+    define('WP_USE_THEMES', false);
+    define( 'DOING_AJAX', true );
+    include($path.'wp-load.php');
     require 'template-parts/pm-search/autocomplete.php';
     $output = ob_get_contents();
     ob_end_clean();
@@ -187,6 +221,7 @@ if (empty($_GET['action'])) {
     }
     $result = json_encode($r);
     echo $result;
+    exit;
     exit;
 }else{
     header("HTTP/1.0 400 Bad Request");

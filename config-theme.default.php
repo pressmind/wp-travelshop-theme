@@ -231,6 +231,49 @@ define('TS_FULLTEXT_SEARCH', [
  */
 define('TS_SINGLE_SEARCH', []);
 
+
+/**
+ * the setup of the autocomplete function
+ * used in this files:
+ *  /template-parts/pm-search/autocomplete.php
+ * <code>
+ * define('TS_SEARCH_AUTOCOMPLETE', [
+ *   [
+ *       'name' => 'Reisen',
+ *       'type' => 'media_object',
+ *       'search' => [
+ *           'pm-ot' => '607,609',
+ *       ],
+ *       'mongo_fieldname' => 'headline'
+ *   ],
+ *   [
+ *       'name' => 'Zielgebiet',
+ *       'type' => 'category_tree',
+ *       'search' => [
+ *           'pm-ot' => '607,609',
+ *       ],
+ *       'fieldname' => 'zielgebiet_default'
+ *   ],
+ *   [
+ *       'name' => 'Reiseart',
+ *       'type' => 'category_tree',
+ *       'search' => [
+ *           'pm-ot' => '607,609',
+ *         ],
+ *         'fieldname' => 'reiseart_default'
+ *     ],
+ *     [
+ *         'name' => 'Seiten',
+ *         'type' => 'wordpress',
+ *         'args' => [
+ *             'post_type' => ['page', 'post']
+ *         ]
+ *     ]
+ * ]);
+ * </code>
+ */
+define('TS_SEARCH_AUTOCOMPLETE', []);
+
 /**
  * the possible category tree item search fields
  * used in this files:
@@ -255,6 +298,7 @@ define('TS_SINGLE_SEARCH', []);
  *                     [
  *                         'fieldname' => 'string_search',
  *                         'name' => 'Suche',
+*                          'params' => TS_SEARCH_AUTOCOMPLETE,
  *                     ],
  *                     [
  *                         'fieldname' => 'reiseart_default',

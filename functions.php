@@ -85,6 +85,7 @@ require_once 'functions/add_meta.php';
 // Blog Features
 require_once 'functions/blog_search.php';
 require_once 'functions/user_meta.php';
+require_once  'functions/post_meta.php';
 
 // Rewrite Rules
 require_once 'functions/rewrite_rules.php';
