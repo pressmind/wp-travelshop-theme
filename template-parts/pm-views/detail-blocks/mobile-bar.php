@@ -44,10 +44,19 @@ if(empty($args['cheapest_price'])){
                             </a>
                         </span>
             </div>
-            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
-                'cheapest_price' => $args['cheapest_price'],
-                'url' => $args['url']
-            ]);?>
+            <?php // Random Availability
+                $randint = random_int(1, 10);
+            ?>
+            <div class="booking-button-wrap">
+                <?php   echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
+                        'cheapest_price' => $args['cheapest_price'],
+                        'url' => $args['url']
+                ]);?>
+                <?php if($randint <= 10) { ?>
+                    <!-- Toggle in badge the class "active" to toggle status with animation -->
+                    <div class="badge status active <?php echo $randint <= 3 ? 'alert' : ''; ?>">Nur noch <?php echo $randint <= 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
+                <?php } ?>
+            </div>
         </div>
     </div>
 </div>
