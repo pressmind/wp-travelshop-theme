@@ -305,7 +305,7 @@ class BuildSearch
         }
 
         if (empty($request[$prefix.'-t']) === false){
-            $term = $request[$prefix.'-t'];
+            $term = self::sanitizeStr($request[$prefix.'-t']);
             $order = array('score' => 'desc');
             if(defined('TS_FULLTEXT_SEARCH') && !empty(TS_FULLTEXT_SEARCH['atlas']['active'])){
                 $conditions[] = new \Pressmind\Search\Condition\MongoDB\AtlasLuceneFulltext($term, !empty(TS_FULLTEXT_SEARCH['atlas']['definition']) ? TS_FULLTEXT_SEARCH['atlas']['definition'] : []);
@@ -535,6 +535,14 @@ class BuildSearch
             return explode(',', $str);
         }
         return [];
+    }
+
+    /**
+     * @param $str
+     * @return string
+     */
+    public static function sanitizeStr($str){
+        return trim(preg_replace( '/[^a-zA-Z0-9_\-äüöÄÜÖ\s]/', '', $str));
     }
 
 }

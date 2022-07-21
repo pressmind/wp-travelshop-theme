@@ -442,14 +442,9 @@ jQuery(function ($) {
                 });
                 $('.auto-complete').autocomplete({
                     serviceUrl: '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=autocomplete',
-                    type: 'POST',
+                    type: 'GET',
                     dataType: 'json',
                     paramName: 'pm-t',
-                    params: {
-                      'data': () => {
-                          return $('.auto-complete').attr('data-params');
-                      }
-                    },
                     deferRequestBy: 0,
                     minChars: 2,
                     width: 'flex',
@@ -458,10 +453,9 @@ jQuery(function ($) {
                     tabDisabled: true,
                     preserveInput: true,
                     formatResult: function (suggestion, currentValue){
-                        console.log(suggestion, currentValue);
                         var re = new RegExp(`${currentValue}`, 'gi');
                         let img = typeof suggestion.img != 'undefined' ? '<div class="suggestion-featured-image"><img src="' + suggestion.img + '" /></div>' : '';
-                        let price = typeof suggestion.price != 'undefined' ? '<div class="suggestion-price"><small>schon ab</small><br /><strong>' + suggestion.price + ' €</strong></div>' : '';
+                        let price = typeof suggestion.price != 'undefined' ? '<div class="suggestion-price"><small>schon ab</small><br /><strong>' + suggestion.price + '</strong></div>' : '';
                         let arrow = suggestion.type != 'media_object' ? '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-left" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
                             '  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>\n' +
                             '  <line x1="7" y1="7" x2="17" y2="17" />\n' +
@@ -498,7 +492,6 @@ jQuery(function ($) {
                         if($(this).autocomplete().disabled) {
                             $(this).parent().find('.string-search-clear').hide();
                         }
-                        console.log($(this).autocomplete());
                     }
                 })
             }
@@ -895,6 +888,7 @@ jQuery(function ($) {
             if($('.product-teaser-slider').length > 0) {
                 $('.product-teaser-slider').each((e, target) => {
                     let id = $(target).attr('data-slider-id');
+                    let current_slide = $(target).attr('data-current-slide');
                     let pageSize = $(target).attr('data-slider-pagesize');
                     if($(window).width() < 992 && $(window).width() > 767) {
                         id = 1;
@@ -919,7 +913,7 @@ jQuery(function ($) {
                         $(target).find('.product-teaser-slider-content').append('<div class="col-12"><div class="row slider-content" data-slider-content-id="' + i + '"></div></div>');
                         $(target).parent().parent().find('.product-teaser-slider-dots').append('<div data-slider-id="' + i + '"></div>');
                     }
-                    let query_string = 'action=slider&pm-l=' + id + ',' + pageSize;
+                    let query_string = 'action=slider&pm-l=' + current_slide +1 + ',' + pageSize;
                     _this.call(query_string, null, null, function(data, query_string, scrollto, total_result_span_id, target2) {
                         console.log(id);
                         $(target).parent().parent().parent().find('.product-teaser-slider-dots>div').removeClass('active');

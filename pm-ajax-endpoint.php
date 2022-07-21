@@ -10,9 +10,7 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
-
+define('DOING_AJAX', true);
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->safeLoad();
@@ -129,15 +127,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo $result;
     exit;
 } else if ($_GET['action'] == 'autocomplete') {
-    $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, null);
-    $args['params'] = json_decode($_POST['data']);
-    $searchRoute = 'suche'; // TODO Get via Ajax JS
-    // Path to Wordpress DIR
-    $path = preg_replace('/wp-content.*$/','',__DIR__);
+    $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
     ob_start();
-    define('WP_USE_THEMES', false);
-    define( 'DOING_AJAX', true );
-    include($path.'wp-load.php');
     require 'template-parts/pm-search/autocomplete.php';
     $output = ob_get_contents();
     ob_end_clean();
