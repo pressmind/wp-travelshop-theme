@@ -1817,9 +1817,7 @@ pre code {
 .blog-list-entry--comments-list .comment-respond .comment-form > p textarea, button.select-from-control {
   display: block;
   width: 100%;
-  height: calc(
-  1.5em + 0.75rem + 2px
-);
+  height: calc( 1.5em + 0.75rem + 2px );
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1913,9 +1911,7 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-sm {
-  height: calc(
-  1.5em + 0.5rem + 2px
-);
+  height: calc( 1.5em + 0.5rem + 2px );
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -1923,9 +1919,7 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-lg {
-  height: calc(
-  1.5em + 1rem + 2px
-);
+  height: calc( 1.5em + 1rem + 2px );
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -2022,19 +2016,11 @@ textarea.form-control,
 .blog-list-entry--comments-list .comment-respond .comment-form > p .was-validated textarea:valid, .was-validated button.select-from-control:valid, .form-control.is-valid, .blog-list-entry--comments-list .comment-respond .comment-form > p input.is-valid:not([type=submit]):not([type=checkbox]),
 .blog-list-entry--comments-list .comment-respond .comment-form > p textarea.is-valid, button.is-valid.select-from-control {
   border-color: #28a745;
-  padding-right: calc(
-  1.5em + 0.75rem
-);
+  padding-right: calc( 1.5em + 0.75rem );
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: center right calc(
-  0.375em + 0.1875rem
-);
-  background-size: calc(
-  0.75em + 0.375rem
-) calc(
-  0.75em + 0.375rem
-);
+  background-position: center right calc( 0.375em + 0.1875rem );
+  background-size: calc( 0.75em + 0.375rem ) calc( 0.75em + 0.375rem );
 }
 .was-validated .form-control:valid:focus, .was-validated .blog-list-entry--comments-list .comment-respond .comment-form > p input:valid:focus:not([type=submit]):not([type=checkbox]), .blog-list-entry--comments-list .comment-respond .comment-form > p .was-validated input:valid:focus:not([type=submit]):not([type=checkbox]),
 .was-validated .blog-list-entry--comments-list .comment-respond .comment-form > p textarea:valid:focus,
@@ -2064,21 +2050,13 @@ button.is-valid.select-from-control ~ .valid-tooltip {
 .was-validated .blog-list-entry--comments-list .comment-respond .comment-form > p textarea:valid,
 .blog-list-entry--comments-list .comment-respond .comment-form > p .was-validated textarea:valid, textarea.form-control.is-valid,
 .blog-list-entry--comments-list .comment-respond .comment-form > p textarea.is-valid {
-  padding-right: calc(
-  1.5em + 0.75rem
-);
-  background-position: top calc(
-  0.375em + 0.1875rem
-) right calc(
-  0.375em + 0.1875rem
-);
+  padding-right: calc( 1.5em + 0.75rem );
+  background-position: top calc( 0.375em + 0.1875rem ) right calc( 0.375em + 0.1875rem );
 }
 
 .was-validated .custom-select:valid, .custom-select.is-valid {
   border-color: #28a745;
-  padding-right: calc(
-  (1em + 0.75rem) * 3 / 4 + 1.75rem
-);
+  padding-right: calc( (1em + 0.75rem) * 3 / 4 + 1.75rem );
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc( 0.75em + 0.375rem ) calc( 0.75em + 0.375rem );
 }
 .was-validated .custom-select:valid:focus, .custom-select.is-valid:focus {
@@ -2169,19 +2147,11 @@ button.is-valid.select-from-control ~ .valid-tooltip {
 .blog-list-entry--comments-list .comment-respond .comment-form > p .was-validated textarea:invalid, .was-validated button.select-from-control:invalid, .form-control.is-invalid, .blog-list-entry--comments-list .comment-respond .comment-form > p input.is-invalid:not([type=submit]):not([type=checkbox]),
 .blog-list-entry--comments-list .comment-respond .comment-form > p textarea.is-invalid, button.is-invalid.select-from-control {
   border-color: #dc3545;
-  padding-right: calc(
-  1.5em + 0.75rem
-);
+  padding-right: calc( 1.5em + 0.75rem );
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
   background-repeat: no-repeat;
-  background-position: center right calc(
-  0.375em + 0.1875rem
-);
-  background-size: calc(
-  0.75em + 0.375rem
-) calc(
-  0.75em + 0.375rem
-);
+  background-position: center right calc( 0.375em + 0.1875rem );
+  background-size: calc( 0.75em + 0.375rem ) calc( 0.75em + 0.375rem );
 }
 .was-validated .form-control:invalid:focus, .was-validated .blog-list-entry--comments-list .comment-respond .comment-form > p input:invalid:focus:not([type=submit]):not([type=checkbox]), .blog-list-entry--comments-list .comment-respond .comment-form > p .was-validated input:invalid:focus:not([type=submit]):not([type=checkbox]),
 .was-validated .blog-list-entry--comments-list .comment-respond .comment-form > p textarea:invalid:focus,
@@ -2211,21 +2181,13 @@ button.is-invalid.select-from-control ~ .invalid-tooltip {
 .was-validated .blog-list-entry--comments-list .comment-respond .comment-form > p textarea:invalid,
 .blog-list-entry--comments-list .comment-respond .comment-form > p .was-validated textarea:invalid, textarea.form-control.is-invalid,
 .blog-list-entry--comments-list .comment-respond .comment-form > p textarea.is-invalid {
-  padding-right: calc(
-  1.5em + 0.75rem
-);
-  background-position: top calc(
-  0.375em + 0.1875rem
-) right calc(
-  0.375em + 0.1875rem
-);
+  padding-right: calc( 1.5em + 0.75rem );
+  background-position: top calc( 0.375em + 0.1875rem ) right calc( 0.375em + 0.1875rem );
 }
 
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
   border-color: #dc3545;
-  padding-right: calc(
-  (1em + 0.75rem) * 3 / 4 + 1.75rem
-);
+  padding-right: calc( (1em + 0.75rem) * 3 / 4 + 1.75rem );
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") #fff no-repeat center right 1.75rem/calc( 0.75em + 0.375rem ) calc( 0.75em + 0.375rem );
 }
 .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
@@ -3381,9 +3343,7 @@ input[type=button].btn-block {
 .input-group-lg > .form-control:not(textarea), .blog-list-entry--comments-list .comment-respond .comment-form > p .input-group-lg > input:not(textarea):not([type=submit]):not([type=checkbox]),
 .blog-list-entry--comments-list .comment-respond .comment-form > p .input-group-lg > textarea:not(textarea), .input-group-lg > button.select-from-control:not(textarea),
 .input-group-lg > .custom-select {
-  height: calc(
-  1.5em + 1rem + 2px
-);
+  height: calc( 1.5em + 1rem + 2px );
 }
 
 .input-group-lg > .form-control, .blog-list-entry--comments-list .comment-respond .comment-form > p .input-group-lg > input:not([type=submit]):not([type=checkbox]),
@@ -3404,9 +3364,7 @@ input[type=button].btn-block {
 .input-group-sm > .form-control:not(textarea), .blog-list-entry--comments-list .comment-respond .comment-form > p .input-group-sm > input:not(textarea):not([type=submit]):not([type=checkbox]),
 .blog-list-entry--comments-list .comment-respond .comment-form > p .input-group-sm > textarea:not(textarea), .input-group-sm > button.select-from-control:not(textarea),
 .input-group-sm > .custom-select {
-  height: calc(
-  1.5em + 0.5rem + 2px
-);
+  height: calc( 1.5em + 0.5rem + 2px );
 }
 
 .input-group-sm > .form-control, .blog-list-entry--comments-list .comment-respond .comment-form > p .input-group-sm > input:not([type=submit]):not([type=checkbox]),
@@ -3563,12 +3521,8 @@ input[type=button].btn-block {
 .custom-switch .custom-control-label::after {
   top: calc(0.25rem + 2px);
   left: calc(-2.25rem + 2px);
-  width: calc(
-  1rem - 4px
-);
-  height: calc(
-  1rem - 4px
-);
+  width: calc( 1rem - 4px );
+  height: calc( 1rem - 4px );
   background-color: #adb5bd;
   border-radius: 0.5rem;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3589,9 +3543,7 @@ input[type=button].btn-block {
 .custom-select {
   display: inline-block;
   width: 100%;
-  height: calc(
-  1.5em + 0.75rem + 2px
-);
+  height: calc( 1.5em + 0.75rem + 2px );
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -3627,9 +3579,7 @@ input[type=button].btn-block {
 }
 
 .custom-select-sm {
-  height: calc(
-  1.5em + 0.5rem + 2px
-);
+  height: calc( 1.5em + 0.5rem + 2px );
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
@@ -3637,9 +3587,7 @@ input[type=button].btn-block {
 }
 
 .custom-select-lg {
-  height: calc(
-  1.5em + 1rem + 2px
-);
+  height: calc( 1.5em + 1rem + 2px );
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -3650,9 +3598,7 @@ input[type=button].btn-block {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: calc(
-  1.5em + 0.75rem + 2px
-);
+  height: calc( 1.5em + 0.75rem + 2px );
   margin-bottom: 0;
 }
 
@@ -3660,9 +3606,7 @@ input[type=button].btn-block {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: calc(
-  1.5em + 0.75rem + 2px
-);
+  height: calc( 1.5em + 0.75rem + 2px );
   margin: 0;
   opacity: 0;
 }
@@ -3686,9 +3630,7 @@ input[type=button].btn-block {
   right: 0;
   left: 0;
   z-index: 1;
-  height: calc(
-  1.5em + 0.75rem + 2px
-);
+  height: calc( 1.5em + 0.75rem + 2px );
   padding: 0.375rem 0.75rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3704,9 +3646,7 @@ input[type=button].btn-block {
   bottom: 0;
   z-index: 3;
   display: block;
-  height: calc(
-  1.5em + 0.75rem
-);
+  height: calc( 1.5em + 0.75rem );
   padding: 0.375rem 0.75rem;
   line-height: 1.5;
   color: #495057;
@@ -4326,11 +4266,7 @@ input[type=button].btn-block {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .card-header:first-child {
-  border-radius: calc(
-  0.25rem - 1px
-) calc(
-  0.25rem - 1px
-) 0 0;
+  border-radius: calc( 0.25rem - 1px ) calc( 0.25rem - 1px ) 0 0;
 }
 .card-header + .list-group .list-group-item:first-child {
   border-top: 0;
@@ -4342,11 +4278,7 @@ input[type=button].btn-block {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 .card-footer:last-child {
-  border-radius: 0 0 calc(
-  0.25rem - 1px
-) calc(
-  0.25rem - 1px
-);
+  border-radius: 0 0 calc( 0.25rem - 1px ) calc( 0.25rem - 1px );
 }
 
 .card-header-tabs {
@@ -4372,29 +4304,19 @@ input[type=button].btn-block {
 
 .card-img {
   width: 100%;
-  border-radius: calc(
-  0.25rem - 1px
-);
+  border-radius: calc( 0.25rem - 1px );
 }
 
 .card-img-top {
   width: 100%;
-  border-top-left-radius: calc(
-  0.25rem - 1px
-);
-  border-top-right-radius: calc(
-  0.25rem - 1px
-);
+  border-top-left-radius: calc( 0.25rem - 1px );
+  border-top-right-radius: calc( 0.25rem - 1px );
 }
 
 .card-img-bottom {
   width: 100%;
-  border-bottom-right-radius: calc(
-  0.25rem - 1px
-);
-  border-bottom-left-radius: calc(
-  0.25rem - 1px
-);
+  border-bottom-right-radius: calc( 0.25rem - 1px );
+  border-bottom-left-radius: calc( 0.25rem - 1px );
 }
 
 .card-deck {
@@ -13170,7 +13092,7 @@ body.fl-builder .content-block.content-page {
   height: 0.15em;
 }
 .card-travel-wrapper .card.card-travel .card-body .discount-wrapper .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 .card-travel-wrapper .card.card-travel .card-body .travel-teaser-link {
@@ -13211,7 +13133,7 @@ body.fl-builder .content-block.content-page {
     bottom: 0;
     width: 100%;
     height: 80px;
-    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40px);
+    background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 40px);
   }
   .card-travel-wrapper .card.card-travel .card-body .attribute-row {
     display: block;
@@ -13562,7 +13484,7 @@ body.fl-builder .content-block.content-page {
   height: 0.15em;
 }
 .travelshop-teaser-mega-stripe .stripe-inner .stripe-content .stripe-content-footer .stripe-cta .discount-wrapper p .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 @media (min-width: 768px) {
@@ -14015,7 +13937,7 @@ body.fl-builder .content-block.content-page {
 .multi-level-checkboxes .form-check {
     font-size: 1.2rem;
     margin: 0.5rem 0;
-    padding-left: calc(25px + 0.5rem);
+    padding-left: calc(25px + .5rem);
   }
   .list-filter-box-body .form-check .form-check-input + span,
 .multi-level-checkboxes .form-check .form-check-input + span {
@@ -14293,6 +14215,17 @@ body.fl-builder .content-block.content-page {
   border-top: 1px solid #e9ecef;
   padding: 0;
 }
+.content-block.content-block-detail-booking .booking-button-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+.content-block.content-block-detail-booking .booking-button-wrap .booking-btn {
+  position: relative;
+  z-index: 25;
+}
 .content-block.content-block-detail-booking h2 {
   margin: 0 0 15px 0;
 }
@@ -14394,7 +14327,7 @@ body.fl-builder .content-block.content-page {
   height: 0.15em;
 }
 .content-block.content-block-detail-booking .content-block-detail-booking-inner .booking-row .discount-wrapper .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 @media (min-width: 992px) {
@@ -14919,6 +14852,24 @@ body.fl-builder .content-block.content-page {
   padding: 0.375rem;
   border-radius: 0.25rem;
 }
+.badge.status {
+  position: relative;
+  padding-top: 10px;
+  z-index: 10;
+  background: #f39c12;
+  color: #fff;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 350ms ease-in-out all;
+}
+.badge.status.active {
+  transform: translateY(-5px);
+  transition: 350ms ease-in-out all;
+  opacity: 100;
+}
+.badge.status.alert {
+  background: #e74c3c;
+}
 
 .input-group {
   position: relative;
@@ -15122,7 +15073,7 @@ button.select-from-control i.la {
 .layout-block.layout-block-search-header .layout-block-search-header--search .search-wrapper--inner {
   padding: 0;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.4784313725);
+  background-color: #ffffff7a;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   border-radius: 0.25rem;
 }
@@ -15198,8 +15149,8 @@ button.select-from-control i.la {
 .travelshop-datepicker .datepicker-clear {
   cursor: pointer;
   position: absolute;
-  right: calc(15px + 0.55rem);
-  bottom: 1.275rem;
+  right: calc(15px + .55rem);
+  bottom: calc(1.275rem);
   z-index: 10;
   display: none;
 }
@@ -15220,9 +15171,9 @@ button.select-from-control i.la {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(255, 255, 255);
+  background: white;
   border-radius: 0.25rem;
-  background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.001) 60%);
+  background: linear-gradient(270deg, white 0%, rgba(255, 255, 255, 0.001) 60%);
 }
 
 @media (max-width: 767.98px) {
@@ -15392,8 +15343,8 @@ button.select-from-control i.la {
   }
 
   .travelshop-datepicker .datepicker-clear {
-    right: calc(15px + 0.55rem);
-    bottom: 0.23rem;
+    right: calc(15px + .55rem);
+    bottom: calc(.23rem);
   }
 }
 .list-filter-box .datepicker-clear {
@@ -16101,6 +16052,94 @@ button.select-from-control i.la {
   }
 }
 
+.string-search {
+  position: relative;
+}
+.string-search .string-search-clear {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 7px;
+  right: 7px;
+}
+.string-search .string-search-clear * {
+  pointer-events: none;
+}
+
+.autocomplete-suggestions {
+  width: 100vw;
+  max-width: 375px;
+  padding: 0 !important;
+}
+.autocomplete-suggestions .autocomplete-group {
+  padding: 0.5rem;
+}
+.autocomplete-suggestions .autocomplete-suggestion {
+  border-top: 1px solid #ddd;
+  padding: 0.5rem;
+  margin: 0 !important;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion .suggestion-left {
+  display: flex;
+  align-items: center;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-featured-image {
+  width: 75px;
+  margin-right: 1rem;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-featured-image img {
+  width: 100%;
+  height: auto;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-string {
+  max-width: 175px;
+  white-space: normal !important;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-string strong {
+  background-color: #feffc4;
+}
+.autocomplete-suggestions .autocomplete-suggestion .string-search-suggestion .suggestion-price {
+  justify-self: flex-end;
+  text-align: center;
+}
+
+.lds-dual-ring {
+  position: absolute;
+  pointer-events: none;
+  bottom: 7px;
+  right: 7px;
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-color: #06f transparent #06f transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .pagination .page-item .page-link {
   color: #0066ff;
 }
@@ -17406,7 +17445,7 @@ figure.wp-block-image figcaption {
   height: 0.15em;
 }
 .teaser.category-teaser .teaser-body .teaser-products .card-category-travel-wrapper .discount-wrapper .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 .teaser.category-teaser .teaser-body .teaser-products .card-category-travel-wrapper .price-row {
@@ -17552,6 +17591,17 @@ figure.wp-block-image figcaption {
   transition: ease-in-out 200ms all;
   background-color: #e9ecef;
 }
+.price-box .booking-button-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+.price-box .booking-button-wrap .booking-btn {
+  position: relative;
+  z-index: 25;
+}
 .price-box.checked {
   border-bottom: 3px solid #27ae60;
 }
@@ -17622,7 +17672,7 @@ figure.wp-block-image figcaption {
   height: 0.15em;
 }
 .price-box .discount-wrapper .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 .price-box > div {
@@ -18002,6 +18052,18 @@ figure.wp-block-image figcaption {
   transform: translateY(100%);
   transition: 300ms ease-in-out all;
 }
+.mobile-bar .booking-button-wrap {
+  margin-top: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 100%;
+}
+.mobile-bar .booking-button-wrap .booking-btn {
+  position: relative;
+  z-index: 25;
+}
 .mobile-bar.show {
   transform: translateY(0);
 }
@@ -18034,7 +18096,7 @@ figure.wp-block-image figcaption {
   height: 0.15em;
 }
 .mobile-bar .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 .mobile-bar .mobile-bar-title {
@@ -18373,7 +18435,7 @@ figure.wp-block-image figcaption {
   height: 0.15em;
 }
 .product-calendar-wrap .product-calendar-group .product-calendar-group--items .product-calendar-group-item .discount-wrapper .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 .product-calendar-wrap .product-calendar-group .product-calendar-group--items .product-calendar-group-item .circle.green {
@@ -19464,7 +19526,7 @@ body {
   transition: all 0.3s;
 }
 .header-main .calendar.calendar-link svg {
-  stroke: rgb(96, 125, 139) !important;
+  stroke: #607d8b !important;
 }
 .header-main .p-r-0 {
   padding-right: 0 !important;
@@ -19837,7 +19899,7 @@ a {
   height: 0.15em;
 }
 .content-block-detail-info-grid .detail-price-box .discount-wrapper .discount-label .discount {
-  color: rgb(230, 0, 0);
+  color: #e60000;
   font-weight: bold;
 }
 .content-block-detail-info-grid .detail-price-box .discount-wrapper .discount-label {

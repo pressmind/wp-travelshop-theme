@@ -1,4 +1,5 @@
 <?php
+
 use Pressmind\Travelshop\Search;
 use Pressmind\Travelshop\Template;
 use Pressmind\Travelshop\RouteHelper;
@@ -10,11 +11,11 @@ use Pressmind\Travelshop\RouteHelper;
  *          [text] => [TOTAL_RESULT] products found. Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.
  *          [view] => Teaser1
  *          [link_top] => true,
-            [link_bottom] => true,
-            [link_teaser] => true,
-            [link_top_text] => 'Alle [TOTAL_RESULT] Reisen anzeigen',
-            [link_bottom_text] => 'Alle [TOTAL_RESULT] Reisen anzeigen',
-            [link_teaser_text] => 'Alle [TOTAL_RESULT] Reisen anzeigen',
+ * [link_bottom] => true,
+ * [link_teaser] => true,
+ * [link_top_text] => 'Alle [TOTAL_RESULT] Reisen anzeigen',
+ * [link_bottom_text] => 'Alle [TOTAL_RESULT] Reisen anzeigen',
+ * [link_teaser_text] => 'Alle [TOTAL_RESULT] Reisen anzeigen',
  *          [search] => Array
  *                  (
  *                       [pm-ot] => 607
@@ -30,137 +31,107 @@ use Pressmind\Travelshop\RouteHelper;
  */
 
 $page_size = 4;
-if (isset ( $args['search']['pm-l'] ) && !empty($args['search']['pm-l']) ) {
+if (!empty($args['search']['pm-l'])) {
     $page_size = explode(',', $args['search']['pm-l']);
     $page_size = (int)$page_size[1];
 }
 
-if(isset($_GET['pm-l'])) {
+if (isset($_GET['pm-l'])) {
     $args['search']['pm-l'] = $_GET['pm-l'];
 }
 
 $result = Search::getResult(isset($args['search']) ? $args['search'] : [], 2, $page_size, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
 
-if(count($result['items']) == 0){
-    if(isset($_GET['fl_builder'])){
+if (count($result['items']) == 0) {
+    if (isset($_GET['fl_builder'])) {
         ?>
         <div class="badge badge-info" style="padding: 10px;">product-teaser has zero items</div>
-    <?php
+        <?php
     }
     return;
 }
 $has_more_items = count($result['items']) < $result['total_result'];
-if ( isset($args['has_more_items']) && $args['has_more_items'] === true ) {
+if (isset($args['has_more_items']) && $args['has_more_items'] === true) {
     $has_more_items = true;
 }
-$more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/','/').'/?'.$result['query_string'] : '#ot-not-set';
+$more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/', '/') . '/?' . $result['query_string'] : '#ot-not-set';
 ?>
-<section<?php !empty($args['uid']) ? ' id="'.$args['uid'].'"' : ''; ?> class="content-block content-block-travel-cols">
-<div class="row row-introduction <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>align-items-baseline<?php } ?>">
-            <?php if(!empty($args['headline']) || !empty($args['intro'])){ ?>
+<section<?php !empty($args['uid']) ? ' id="' . $args['uid'] . '"' : ''; ?>
+        class="content-block content-block-travel-cols">
+    <div class="row row-introduction <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>align-items-baseline<?php } ?>">
+        <?php if (!empty($args['headline']) || !empty($args['intro'])){ ?>
 
-            <div class="col-12 <?php if ( isset($args['link_top']) && $args['link_top'] === true ) { ?>col-md<?php } ?>">
-                <?php if(!empty($args['headline'])){ ?>
-                    <h2 class="mt-0">
-                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['headline']);?>
-                    </h2>
-                <?php } ?>
-            </div>
-            <?php if ( $has_more_items === false ) { ?>
-                </div>
-                <div class="row">
+        <div class="col-12 <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>col-md<?php } ?>">
+            <?php if (!empty($args['headline'])) { ?>
+                <h2 class="mt-0">
+                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['headline']); ?>
+                </h2>
             <?php } ?>
-            <?php if ( isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
-            <div class="col-12 col-md-auto pb-4">
-                <a href="<?php echo $more_results_link; ?>" title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>" class="btn-further">
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']);?>
-                    <svg style="height: 0;"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use></svg>
-                </a>
-            </div>
         </div>
-        <div class="row">
+        <?php if ($has_more_items === false) { ?>
+    </div>
+    <div class="row">
+        <?php } ?>
+        <?php if (isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
+        <div class="col-12 col-md-auto pb-4">
+            <a href="<?php echo $more_results_link; ?>"
+               title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>"
+               class="btn-further">
+                <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>
+                <svg style="height: 0;">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                         href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12">
-                <?php if(!empty($args['text'])){ ?>
-                    <p>
-                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']);?>
-                    </p>
-                <?php } ?>
-            </div>  
+            <?php if (!empty($args['text'])) { ?>
+                <p>
+                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']); ?>
+                </p>
             <?php } ?>
-            <?php } ?>
-            <?php
+        </div>
+        <?php } ?>
+        <?php } ?>
+        <?php
 
-       // Example 1: Using the the shortcode ts-list for displaying the product teasers
-       //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
-       // Note: the View-Template "Teaser1" can be found in travelshop/template-parts/pm-views/{OBJECT_TYPE_NAME}_{VIEWNAME}.php
+        // Example 1: Using the the shortcode ts-list for displaying the product teasers
+        //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
+        // Note: the View-Template "Teaser1" can be found in travelshop/template-parts/pm-views/{OBJECT_TYPE_NAME}_{VIEWNAME}.php
 
 
-       // Example 2: Using the pressmind® web-core SDK (MySQL)
-       //$conditions = array();
-       //$conditions[] = Pressmind\Search\Condition\ObjectType::create(TS_TOUR_PRODUCTS);
-       //$search = new Pressmind\Search($conditions, ['start' => 0, 'length' => 4], ['' => 'RAND()']);
-       //$products = $search->getResults();
-       //foreach ($products as $product) {
-       //    echo  $product->render('Teaser1', TS_LANGUAGE_CODE);
-       //}
+        // Example 2: Using the pressmind® web-core SDK (MySQL)
+        //$conditions = array();
+        //$conditions[] = Pressmind\Search\Condition\ObjectType::create(TS_TOUR_PRODUCTS);
+        //$search = new Pressmind\Search($conditions, ['start' => 0, 'length' => 4], ['' => 'RAND()']);
+        //$products = $search->getResults();
+        //foreach ($products as $product) {
+        //    echo  $product->render('Teaser1', TS_LANGUAGE_CODE);
+        //}
 
-       // Example 3: Use a $args['search] list (or $_GET)
-       // $search = BuildSearch::fromRequest(isset($args['search']) ? $args['search'] : [], 'pm', true, 4);
-       // $products = $search->getResults();
+        // Example 3: Use a $args['search] list (or $_GET)
+        // $search = BuildSearch::fromRequest(isset($args['search']) ? $args['search'] : [], 'pm', true, 4);
+        // $products = $search->getResults();
 
         $view = 'Teaser1';
-        if(!empty($args['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $args['view']) !== false){
+        if (!empty($args['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $args['view']) !== false) {
             $view = $args['view'];
-        } ?>
-
-        <?php if (isset($args['is_slider']) && $args['is_slider'] == 'true' && $has_more_items === true ) { ?>
-            <?php 
-                $args['current_page'] = isset($args['search']['pm-l']) ? explode(',', $args['search']['pm-l'])[0] : 1;
-                $args['pages'] = ceil($result['total_result'] / $page_size);
-            ?>
-            <div class="product-teaser-slider" data-current-slide="<?php echo $args['current_page']; ?>" data-slider-pagesize="<?php echo $page_size; ?>" data-slider-pages="<?php echo $args['pages']; ?>">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <line x1="5" y1="12" x2="11" y2="18" />
-                    <line x1="5" y1="12" x2="11" y2="6" />
-                </svg>
-                <div class="product-teaser-slider-content">
-                <?php
-                    //print_r($args['search']);
-                    for($i = 1; $i <= $args['pages']; $i++) {
-                        echo '<div ' . ($i == 1 ? 'style="margin-left:-' . ($args['current_page'] - 1) * 100 . '%"' : '') . ' class="col-12">';
-                            echo '<div class="row slider-content" data-slider-content-id="' . $i . '" >';
-                                if($args['current_page'] == $i) {
-                                    foreach ($result['items'] as $item) {
-                                        echo Template::render(get_stylesheet_directory().'/template-parts/pm-views/'.$view.'.php', $item);
-                                    }
-                                }
-                            echo '</div>';
-                        echo '</div>';
-                    } ?>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <line x1="13" y1="18" x2="19" y2="12" />
-                    <line x1="13" y1="6" x2="19" y2="12" />
-                </svg>
-            </div>
-        <?php } else { ?>
-            <?php
-                foreach ($result['items'] as $item) {
-                    echo Template::render(get_stylesheet_directory().'/template-parts/pm-views/'.$view.'.php', $item);
-            } ?>
-        <?php } ?>
-
-        <?php if (isset($args['link_teaser']) && $args['link_teaser'] === true && $has_more_items === true) {
+        }
+        foreach ($result['items'] as $item) {
+            echo Template::render(get_stylesheet_directory() . '/template-parts/pm-views/' . $view . '.php', $item);
+        }
+        if (isset($args['link_teaser']) && $args['link_teaser'] === true && $has_more_items === true) {
             ?>
             <div class="col-12 col-md-6 col-lg-3 card-travel-wrapper-link text-center pb-3">
-                <a class="btn-further btn-teaser-link d-none d-md-flex" href="<?php echo $more_results_link; ?>" title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_teaser_text']);?>">
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_teaser_text']);?>
+                <a class="btn-further btn-teaser-link d-none d-md-flex" href="<?php echo $more_results_link; ?>"
+                   title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_teaser_text']); ?>">
+                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_teaser_text']); ?>
                     <span class="icon icon-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="#007BFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right"
+                             width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="#007BFF" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <polyline points="9 6 15 12 9 18"></polyline>
                         </svg>
@@ -173,35 +144,39 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
     </div>
 
     <?php if (isset($args['link_bottom']) && $args['link_bottom'] === true && $has_more_items === true) { ?>
-    <div class="row">
-        <div class="col-12 text-center pb-4">
-            <a href="<?php echo $more_results_link; ?>" title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_bottom_text']);?>" class="btn btn-primary btn-lg btn-further btn-further-bottom">
-                <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_bottom_text']);?>
-                <span class="icon icon-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <div class="row">
+            <div class="col-12 text-center pb-4">
+                <a href="<?php echo $more_results_link; ?>"
+                   title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_bottom_text']); ?>"
+                   class="btn btn-primary btn-lg btn-further btn-further-bottom">
+                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_bottom_text']); ?>
+                    <span class="icon icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right"
+                         width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="#FFFFFF" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <polyline points="9 6 15 12 9 18"></polyline>
                     </svg>
                 </span>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
     <?php } ?>
-    <?php if (isset($args['is_slider']) && $args['is_slider'] == 'true' && $has_more_items === true ) { ?>
+    <?php if (isset($args['is_slider']) && $args['is_slider'] == 'true' && $has_more_items === true) { ?>
         <div class="product-teaser-slider-dots">
             <?php
-            for($i = 1; $i <= $args['pages']; $i++) {
+            for ($i = 1; $i <= $args['pages']; $i++) {
                 echo '<div class="' . (($args['current_page'] == $i) ? 'active' : '') . '" data-slider-id="' . $i . '"></div>';
             } ?>
         </div>
     <?php } ?>
     <?php if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' && $args['is_slider'] == 'false' && $has_more_items === true) { ?>
-        <?php 
-            $args['items'] = $result['items'];
-            $args['current_page'] = isset($_GET['pm-l']) ? explode(',', $_GET['pm-l'])[0] : 1;
-            $args['pages'] = ceil($result['total_result'] / $page_size);
-            $args['page_size'] = $page_size;
+        <?php
+        $args['items'] = $result['items'];
+        $args['current_page'] = isset($_GET['pm-l']) ? explode(',', $_GET['pm-l'])[0] : 1;
+        $args['pages'] = ceil($result['total_result'] / $page_size);
+        $args['page_size'] = $page_size;
         ?>
-        <?php load_template_transient(get_template_directory() . '/template-parts/pm-search/result-pagination.php', false,  $args); ?>
+        <?php load_template_transient(get_template_directory() . '/template-parts/pm-search/result-pagination.php', false, $args); ?>
     <?php } ?>
 </section>

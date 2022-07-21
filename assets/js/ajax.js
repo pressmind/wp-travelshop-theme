@@ -884,93 +884,6 @@ jQuery(function ($) {
             }
         }
 
-        this.initProductTeaserSlider = function() {
-            if($('.product-teaser-slider').length > 0) {
-                $('.product-teaser-slider').each((e, target) => {
-                    let id = $(target).attr('data-slider-id');
-                    let current_slide = $(target).attr('data-current-slide');
-                    let pageSize = $(target).attr('data-slider-pagesize');
-                    if($(window).width() < 992 && $(window).width() > 767) {
-                        id = 1;
-                        $(target).attr('data-slider-id', id);
-                        $(target).attr('data-slider-pagesize', 2);
-                        $(target).attr('data-current-slide', 1);
-                        pageSize = $(target).attr('data-slider-pagesize');
-                        $(target).attr('data-slider-pages', $(target).attr('data-slider-pages') * 2);
-                    } else if($(window).width() < 768) {
-                        id = 1;
-                        $(target).attr('data-slider-id', id);
-                        $(target).attr('data-slider-pagesize', 1);
-                        $(target).attr('data-current-slide', 1);
-                        pageSize = $(target).attr('data-slider-pagesize');
-                        $(target).attr('data-slider-pages', $(target).attr('data-slider-pages') * 4);
-                    }
-                    for(var i = 1; i <= $(target).attr('data-slider-pages'); i++) {
-                        if(i == 1) {
-                            $(target).find('.product-teaser-slider-content').empty();
-                            $(target).parent().parent().find('.product-teaser-slider-dots').empty();
-                        }
-                        $(target).find('.product-teaser-slider-content').append('<div class="col-12"><div class="row slider-content" data-slider-content-id="' + i + '"></div></div>');
-                        $(target).parent().parent().find('.product-teaser-slider-dots').append('<div data-slider-id="' + i + '"></div>');
-                    }
-                    let query_string = 'action=slider&pm-l=' + current_slide +1 + ',' + pageSize;
-                    _this.call(query_string, null, null, function(data, query_string, scrollto, total_result_span_id, target2) {
-                        console.log(id);
-                        $(target).parent().parent().parent().find('.product-teaser-slider-dots>div').removeClass('active');
-                        $(target).parent().parent().parent().find('.product-teaser-slider-dots>div[data-slider-id="' + id + '"]').addClass('active');
-                        $(target).find('.slider-content[data-slider-content-id="' + id + '"]').html(data.html['slider-result']);
-                        $(target).attr('data-current-slide', id);
-                        $(target).find('.product-teaser-slider-content>div:first-child').css('marginLeft', (id - 1) * -100 + '%');
-                    });
-                });
-                // query_string, scrollto, total_result_span_id, callback, target
-                $('.product-teaser-slider-dots>div').click((e) => {
-                    let id = $(e.target).attr('data-slider-id');
-                    let pageSize = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-slider-pagesize');
-                    // const pages = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-slider-pages');
-                    let query_string = 'action=slider&pm-l=' + id + ',' + pageSize;
-                    _this.call(query_string, null, null, function(data, query_string, scrollto, total_result_span_id, target) {
-                        console.log(data, query_string);
-                        $(e.target).parent().parent().find('.product-teaser-slider-dots>div').removeClass('active');
-                        $(e.target).parent().parent().find('.product-teaser-slider-dots>div[data-slider-id="' + id + '"]').addClass('active');
-                        $(e.target).parent().parent().find('.slider-content[data-slider-content-id="' + id + '"]').html(data.html['slider-result']);
-                        $(e.target).parent().parent().find('.product-teaser-slider').attr('data-current-slide', id);
-                        $(e.target).parent().parent().find('.product-teaser-slider-content>div:first-child').css('marginLeft', (id - 1) * -100 + '%');
-                    });
-                });
-                $('.product-teaser-slider .icon-tabler-arrow-right').click((e) => {
-                    let id = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-current-slide');
-                    let pages = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-slider-pages');
-                    let pageSize = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-slider-pagesize');
-                    id == pages ? id = 1 : id++;
-                    let query_string = 'action=slider&pm-l=' + id + ',' + pageSize;
-                    _this.call(query_string, null, null, function(data, query_string, scrollto, total_result_span_id, target) {
-                        console.log(data, query_string);
-                        $(e.target).parent().parent().parent().find('.product-teaser-slider-dots>div').removeClass('active');
-                        $(e.target).parent().parent().parent().find('.product-teaser-slider-dots>div[data-slider-id="' + id + '"]').addClass('active');
-                        $(e.target).parent().find('.slider-content[data-slider-content-id="' + id + '"]').html(data.html['slider-result']);
-                        $(e.target).parent().parent().find('.product-teaser-slider').attr('data-current-slide', id);
-                        $(e.target).parent().find('.product-teaser-slider-content>div:first-child').css('marginLeft', (id - 1) * -100 + '%');
-                    });
-                });
-                $('.product-teaser-slider .icon-tabler-arrow-left').click((e) => {
-                    let id = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-current-slide');
-                    let pages = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-slider-pages');
-                    let pageSize = $(e.target).parent().parent().find('.product-teaser-slider').attr('data-slider-pagesize');
-                    id == 1 ? id = pages : id--;
-                    let query_string = 'action=slider&pm-l=' + id + ',' + pageSize;
-                    _this.call(query_string, null, null, function(data, query_string, scrollto, total_result_span_id, target) {
-                        console.log(data, query_string);
-                        $(e.target).parent().parent().parent().find('.product-teaser-slider-dots>div').removeClass('active');
-                        $(e.target).parent().parent().parent().find('.product-teaser-slider-dots>div[data-slider-id="' + id + '"]').addClass('active');
-                        $(e.target).parent().find('.slider-content[data-slider-content-id="' + id + '"]').html(data.html['slider-result']);
-                        $(e.target).parent().parent().find('.product-teaser-slider').attr('data-current-slide', id);
-                        $(e.target).parent().find('.product-teaser-slider-content>div:first-child').css('marginLeft', (id - 1) * -100 + '%');
-                    });
-                });
-            }
-        }
-
         this.init = function(){
             _this.renderWishlist();
             _this.wishlistEventListeners();
@@ -985,7 +898,6 @@ jQuery(function ($) {
             _this.initCalendarRowClick();
             _this.initBookingBtnClickHandler();
             _this.initPartnerParams();
-            _this.initProductTeaserSlider();
         }
 
     };
