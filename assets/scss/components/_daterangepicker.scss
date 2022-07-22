@@ -1,6 +1,9 @@
 .travelshop-datepicker-input[readonly] {
     background: #fff;
 }
+.daterangepicker {
+    z-index: 1050 !important;
+}
 .travelshop-datepicker {
     position: relative;
     .datepicker-clear {

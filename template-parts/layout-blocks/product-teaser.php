@@ -162,15 +162,7 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
             </div>
         </div>
     <?php } ?>
-    <?php if (isset($args['is_slider']) && $args['is_slider'] == 'true' && $has_more_items === true) { ?>
-        <div class="product-teaser-slider-dots">
-            <?php
-            for ($i = 1; $i <= $args['pages']; $i++) {
-                echo '<div class="' . (($args['current_page'] == $i) ? 'active' : '') . '" data-slider-id="' . $i . '"></div>';
-            } ?>
-        </div>
-    <?php } ?>
-    <?php if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' && $args['is_slider'] == 'false' && $has_more_items === true) { ?>
+    <?php if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' && $has_more_items === true) { ?>
         <?php
         $args['items'] = $result['items'];
         $args['current_page'] = isset($_GET['pm-l']) ? explode(',', $_GET['pm-l'])[0] : 1;
