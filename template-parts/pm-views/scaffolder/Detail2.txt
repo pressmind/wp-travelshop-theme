@@ -2,6 +2,7 @@
 
 global $PMTravelShop;
 
+use Pressmind\Registry;
 use Pressmind\HelperFunctions;
 use Pressmind\Search\CheapestPrice;
 use Pressmind\Travelshop\PriceHandler;
@@ -21,7 +22,7 @@ $mo = $data['media_object'];
  * @var Custom\MediaType\Reise $moc
  */
 $moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
-
+$config = Registry::getInstance()->get('config');
 
 $args = [];
 $args['pictures'] = [];
@@ -346,10 +347,17 @@ $args['breadcrumb'][] = $tmp;
     <article class="detail-page-v2-container">
         <section class="container">
             <div class="row">
-                <?php
-                // = = = > load the breadcrumb  < = = =
-                the_breadcrumb(null, null, $args['breadcrumb']);
-                ?>
+                <div class="col-12 col-md-10">
+                    <?php
+                    // = = = > load the breadcrumb  < = = =
+                    the_breadcrumb(null, null, $args['breadcrumb']);
+                    ?>
+                </div>
+                <div class="d-none d-md-block col-md-2">
+                    <?php include(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php'); ?>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12 col-lg-8">
                     <?php
                     // = = = > detail header < = = =
