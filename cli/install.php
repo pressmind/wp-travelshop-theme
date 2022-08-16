@@ -13,7 +13,7 @@ if(!file_exists('../.env')){
 
 if(!file_exists('../.env')){
     echo "error: ../.env does not exists\n";
-   exit();
+    exit();
 }
 
 $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
@@ -499,50 +499,44 @@ if($args[1] != 'only_static') {
 
             }
         }
-
-        $ts_filter = array_values($ts_filter);
-
-        // Build Searchboxes
-        $ts_search = [];
-        $combined_search = [];
-        $ts_search['default_search_box']['tabs'] = [];
-        foreach($search_fields as $id_object_type => $fields){
-            foreach($fields as $field){
-                if(!isset($combined_search[$field['fieldname']]) && (strpos($field['fieldname'], 'reiseart') === 0 || strpos($field['fieldname'], 'zielgebiet') === 0)){
-                    $combined_search[$field['fieldname']] = $field;
+        if($first_install){
+            $ts_filter = array_values($ts_filter);
+            // Build Searchboxes
+            $ts_search = [];
+            $combined_search = [];
+            $ts_search['default_search_box']['tabs'] = [];
+            foreach($search_fields as $id_object_type => $fields){
+                foreach($fields as $field){
+                    if(!isset($combined_search[$field['fieldname']]) && (strpos($field['fieldname'], 'reiseart') === 0 || strpos($field['fieldname'], 'zielgebiet') === 0)){
+                        $combined_search[$field['fieldname']] = $field;
+                    }
                 }
             }
-        }
-
-        $combined_search = array_merge([
-            [
-                'fieldname' => 'string_search',
+            $combined_search = array_merge([
+                [
+                    'fieldname' => 'string_search',
+                    'name' => 'Suche',
+                ],
+                [
+                    'fieldname' => 'date_picker',
+                    'name' => 'Zeitraum',
+                ]
+            ], array_values($combined_search));
+            $ts_search['default_search_box']['tabs'][] = [
                 'name' => 'Suche',
-            ],
-            [
-                'fieldname' => 'date_picker',
-                'name' => 'Zeitraum',
-            ]
-        ], array_values($combined_search));
-
-        $ts_search['default_search_box']['tabs'][] = [
-            'name' => 'Suche',
-            'search' => [
-                'pm-ot' => implode(',', $config['data']['primary_media_type_ids'])
-            ],
-            'route' => 'suche',
-            'fields' => $combined_search
-        ];
-
-        $ts_single_search = [
-            'placeholder' => 'Suchbegriff...',
-            'route' => 'suche',
-            'search' => [
-                'pm-ot' => implode(',', $config['data']['primary_media_type_ids'])
-            ],
-        ];
-
-        if($first_install){
+                'search' => [
+                    'pm-ot' => implode(',', $config['data']['primary_media_type_ids'])
+                ],
+                'route' => 'suche',
+                'fields' => $combined_search
+            ];
+            $ts_single_search = [
+                'placeholder' => 'Suchbegriff...',
+                'route' => 'suche',
+                'search' => [
+                    'pm-ot' => implode(',', $config['data']['primary_media_type_ids'])
+                ],
+            ];
             $theme_config['TS_FILTERS'] = _var_export($ts_filter);
             $theme_config['TS_SEARCH'] = _var_export($ts_search);
             $theme_config['TS_SINGLE_SEARCH'] = _var_export($ts_single_search);
@@ -552,45 +546,25 @@ if($args[1] != 'only_static') {
             $config['data']['search_mongodb']['search']['categories'] = $mongodb_search_categories;
             $config['data']['search_mongodb']['search']['build_for'] = $mongodb_search_build_for;
             $config['data']['search_mongodb']['search']['touristic']['departure_offset_to'] = 730;
+            $config['data']['media_types'] = $media_types;
+            $config['data']['media_types_pretty_url'] = $media_types_pretty_url;
+            $config['data']['media_types_allowed_visibilities'] = $media_types_allowed_visibilities;
+            Registry::getInstance()->get('config_adapter')->write($config);
+            Registry::getInstance()->add('config', $config);
+            Writer::write('pm-config.php created', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_ERROR);
         }
-        $config['data']['media_types'] = $media_types;
-        $config['data']['media_types_pretty_url'] = $media_types_pretty_url;
-        $config['data']['media_types_allowed_visibilities'] = $media_types_allowed_visibilities;
-        Registry::getInstance()->get('config_adapter')->write($config);
-        Registry::getInstance()->add('config', $config);
-
         $importer->importMediaObjectTypes($ids);
     } catch (Exception $e) {
         Writer::write($e->getMessage(), Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_ERROR);
     }
+    Writer::write('Importing airports', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
+    echo shell_exec('php airport_import.php');
 }
 echo "\n";
 // TODO:
 //Writer::write('It is recommended to install a cronjob on your system. Add the following line to your servers crontab:', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
 //Writer::write('*/1 * * * * php ' . APPLICATION_PATH . '/cli/cron.php > /dev/null 2>&1', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
 echo "\n";
-if($args[1] == 'with_static' || $args[1] == 'only_static') {
-    try {
-        Writer::write('Dumping static data, this may take a while ...', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-        Writer::write('Data will be dumped using "gunzip" and "mysql" with "shell_exec". Dump data in ' . HelperFunctions::buildPathString([dirname(__DIR__), 'src', 'data']) . ' by hand if shell_exec fails', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-        $config = Registry::getInstance()->get('config');
-        Writer::write('Dumping data for pmt2core_airlines', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-        shell_exec("gunzip < " . HelperFunctions::buildPathString([dirname(__DIR__), 'src', 'data', 'pmt2core_airlines.sql.gz']) . " | mysql --host=" . $config['database']['host'] . " --user=" . $config['database']['username'] . " --password=" . $config['database']['password'] . " " . $config['database']['dbname']);
-        Writer::write('Dumping data for pmt2core_airports', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-        shell_exec("gunzip < " . HelperFunctions::buildPathString([dirname(__DIR__), 'src', 'data', 'pmt2core_airports.sql.gz']) . " | mysql --host=" . $config['database']['host'] . " --user=" . $config['database']['username'] . " --password=" . $config['database']['password'] . " " . $config['database']['dbname']);
-        Writer::write('Dumping data for pmt2core_banks', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-        shell_exec("gunzip < " . HelperFunctions::buildPathString([dirname(__DIR__), 'src', 'data', 'pmt2core_banks.sql.gz']) . " | mysql --host=" . $config['database']['host'] . " --user=" . $config['database']['username'] . " --password=" . $config['database']['password'] . " " . $config['database']['dbname']);
-        Writer::write('Dumping data for pmt2core_geozip', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-        shell_exec("gunzip < " . HelperFunctions::buildPathString([dirname(__DIR__), 'src', 'data', 'pmt2core_geozip.sql.gz']) . " | mysql --host=" . $config['database']['host'] . " --user=" . $config['database']['username'] . " --password=" . $config['database']['password'] . " " . $config['database']['dbname']);
-    } catch (Exception $e) {
-        Writer::write($e->getMessage(), Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_ERROR);
-    }
-} else {
-    echo "\n";
-    Writer::write('Some optional static data has not been dumped yet. If this data is needed (you will know, if) dump static data by calling "install.php with_static" or "install.php only_static"', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-    Writer::write('You can also dump the data by hand. Data resides here: ' . HelperFunctions::buildPathString([dirname(__DIR__), 'src', 'data']), Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
-}
-
 
 /**
  * @param $expression
@@ -606,4 +580,3 @@ function _var_export($expression) {
     $export = join(PHP_EOL, array_filter(["["] + $array));
     return $export;
 }
-// echo '!!!ATTENTION: Please have a look at the CHANGES.md file, there might be important information on breaking changes!!!!' . "\n";
