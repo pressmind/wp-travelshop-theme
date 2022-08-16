@@ -11,9 +11,9 @@
 if(empty($args['query'])){
     $args['query'] = array('numberposts' => 6, 'order' => 'asc');
 }
-$posts = get_posts($args['query']);
+$postobjects = get_posts($args['query']);
 
-if(count($posts) == 0){
+if(count($postobjects) == 0){
     '<!-- module image-teaser: no posts found for this query -->';
     return;
 }
@@ -31,7 +31,7 @@ if(count($posts) == 0){
             </div>
         <?php } ?>
         <?php
-        foreach($posts as $p){
+        foreach($postobjects as $p){
             load_template(get_template_directory().'/template-parts/wp-views/image-teaser-view.php', false, $p);
         }
         ?>
