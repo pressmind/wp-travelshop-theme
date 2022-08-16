@@ -22,8 +22,14 @@ $filter->occupancies_disable_fallback = true;
  */
 $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 $durations = [];
+$airports_departure = [];
+$has_flights = false;
 foreach($offers as $key => $offer) {
     $durations[$offer->duration] = true;
+    if(str_contains($offer->transport_type, 'FLU')){
+        $has_flights = true;
+    }
+    $airports_departure[$offer->transport_1_airport] = $offer->transport_1_airport_name;
 }
 
 if (!empty($offers)) { ?>
@@ -33,6 +39,14 @@ if (!empty($offers)) { ?>
             <option value="<?php echo $key; ?>"> <?php echo $key == 1 ? 'Tagesfahrt' : $key . ' Tage' ?> </option>
         <?php } ?>
     </select>
+    <?php if($has_flights){ ?>
+        <select class="form-control duration-select">
+            <option value="all" selected>Flughafen wählen</option>
+            <?php foreach($airports_departure as $key => $value) { ?>
+                <option value="<?php echo $key; ?>"> <?php echo $value;?> </option>
+            <?php } ?>
+        </select>
+    <?php } ?>
     <section class="content-block content-block-detail-booking" id="content-block-detail-booking">
         <div class="container">
             <div class="row">
