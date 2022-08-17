@@ -345,7 +345,7 @@ jQuery(function ($) {
                 setTimeout(function() {
                     $('.modal-body-outer').animate({
                         scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 0 : 100) )
-                    }, 'slow');
+                    }, 0);
                     setTimeout(() => {
                         $('.modal-loader').css('display', 'none');
                     }, 400);
@@ -482,6 +482,9 @@ jQuery(function ($) {
     if($('.duration-select').length) {
         $('.duration-select').on('change', (e) => {
             $('.modal-loader').css('display', 'flex');
+            $('.modal-body-outer').animate({
+                    scrollTop: 0
+                }, 0);
             setTimeout(() => {
                 $('.modal-loader').css('display', 'none');
             }, 400);
@@ -501,6 +504,9 @@ jQuery(function ($) {
     if($('.airport-select').length) {
         $('.airport-select').on('change', (e) => {
             $('.modal-loader').css('display', 'flex');
+            $('.modal-body-outer').animate({
+                scrollTop: 0
+            }, 0);
             setTimeout(() => {
                 $('.modal-loader').css('display', 'none');
             }, 400);
