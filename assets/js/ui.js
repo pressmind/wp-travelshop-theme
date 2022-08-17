@@ -487,4 +487,19 @@ jQuery(function ($) {
         });
     }
 
+    // -----------------------
+    // --- Detail Booking Airport Select
+    // -----------------------
+    if($('.airport-select').length) {
+        $('.airport-select').on('change', (e) => {
+            $('.booking-row').each((index, item) => {
+                if($(item).attr('data-airport') != $(e.target).val() && $(e.target).val() != 'all' ) {
+                    $(item).hide();
+                } else {
+                    $(item).show();
+                }
+            });
+        });
+    }
+
 });

@@ -1,8 +1,18 @@
 // -- detail box
-.duration-select {
+.booking-filter {
+	display: flex;
+	justify-content: flex-start;
+	padding: .5rem 1rem;
+	position: sticky;
+	background: #fff;
+	top: -1.25rem;
+	z-index: 25;
+}
+.duration-select,
+.airport-select {
 	width: auto;
-	margin-bottom: 1rem;
-	margin-top: -1rem;
+	margin-bottom: .25rem;
+	margin-right: 1rem;
 }
 .content-block.content-block-detail-booking {
 	border-top: 1px solid $gray-200;
