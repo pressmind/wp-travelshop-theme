@@ -26,10 +26,12 @@ $airports_departure = [];
 $has_flights = false;
 foreach($offers as $key => $offer) {
     $durations[$offer->duration] = true;
-    if(str_contains($offer->transport_type, 'FLU')){
+    if(preg_match('/FLU/', $offer->transport_type) > 0){
         $has_flights = true;
+        if(!emptY($offer->transport_1_airport) && !empty($offer->transport_1_airport_name)){
+            $airports_departure[$offer->transport_1_airport] = $offer->transport_1_airport_name;
+        }
     }
-    $airports_departure[$offer->transport_1_airport] = $offer->transport_1_airport_name;
 }
 
 if (!empty($offers)) { ?>
