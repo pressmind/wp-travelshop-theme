@@ -22,6 +22,7 @@ $mo = $data['media_object'];
  */
 $moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
 
+
 $args = [];
 $args['pictures'] = [];
 foreach($moc->bilder_default as $item){
@@ -346,10 +347,20 @@ $args['breadcrumb'][] = $tmp;
     <article class="detail-page-v2-container">
         <section class="container">
             <div class="row">
-                <?php
-                // = = = > load the breadcrumb  < = = =
-                the_breadcrumb(null, null, $args['breadcrumb']);
-                ?>
+                <div class="col-12 col-md-10">
+                    <?php
+                    // = = = > load the breadcrumb  < = = =
+                    the_breadcrumb(null, null, $args['breadcrumb']);
+                    ?>
+                </div>
+                <div class="d-none d-md-block col-md-2">
+                    <?php
+                    // = = = > simple share button < = = =
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', $args);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12 col-lg-8">
                     <?php
                     // = = = > detail header < = = =
@@ -374,6 +385,7 @@ $args['breadcrumb'][] = $tmp;
                         $id_price_box_modal = uniqid();
                         $args['id_modal_price_box'] = $id_price_box_modal;
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+
                         // = = = > load the on request row (only shown if the full product is on request < = = =
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
                     ?>
