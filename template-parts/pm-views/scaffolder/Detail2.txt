@@ -2,7 +2,6 @@
 
 global $PMTravelShop;
 
-use Pressmind\Registry;
 use Pressmind\HelperFunctions;
 use Pressmind\Search\CheapestPrice;
 use Pressmind\Travelshop\PriceHandler;
@@ -19,10 +18,9 @@ use Pressmind\Travelshop\Template;
 $mo = $data['media_object'];
 
 /**
- * @var Custom\MediaType\Reise $moc
+ * @var Custom\MediaType\###CLASSNAME### $moc
  */
 $moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
-$config = Registry::getInstance()->get('config');
 
 $args = [];
 $args['pictures'] = [];
@@ -40,6 +38,7 @@ foreach($moc->bilder_default as $item){
 $args['id_media_object'] = $mo->id;
 $args['media_object'] = $mo;
 $args['id_object_type'] = $mo->id_object_type;
+$args['booking_on_request'] = $mo->touristic_base->booking_on_request;
 $args['code'] = $mo->code;
 $args['name'] = $mo->name;
 $args['headline'] = strip_tags($moc->headline_default);
@@ -347,17 +346,10 @@ $args['breadcrumb'][] = $tmp;
     <article class="detail-page-v2-container">
         <section class="container">
             <div class="row">
-                <div class="col-12 col-md-10">
-                    <?php
-                    // = = = > load the breadcrumb  < = = =
-                    the_breadcrumb(null, null, $args['breadcrumb']);
-                    ?>
-                </div>
-                <div class="d-none d-md-block col-md-2">
-                    <?php include(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php'); ?>
-                </div>
-            </div>
-            <div class="row">
+                <?php
+                // = = = > load the breadcrumb  < = = =
+                the_breadcrumb(null, null, $args['breadcrumb']);
+                ?>
                 <div class="col-12 col-lg-8">
                     <?php
                     // = = = > detail header < = = =
@@ -382,6 +374,8 @@ $args['breadcrumb'][] = $tmp;
                         $id_price_box_modal = uniqid();
                         $args['id_modal_price_box'] = $id_price_box_modal;
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+                        // = = = > load the on request row (only shown if the full product is on request < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
                     ?>
                 </div>
             </div>
