@@ -36,17 +36,19 @@ require_once($wp_path . 'wp-admin/includes/admin.php');
 global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 
 
-$param = getopt("", array('new-site:','old-site::'));
+$param = getopt("", array('new-site:','old-site::', 'id_blog::'));
 
 if (isset($param['new-site']) === true) {
-    Migrate::toSite($param['new-site'], !empty($param['old-site']) ? $param['old-site'] : null);
+    Migrate::toSite($param['new-site'], !empty($param['old-site']) ? $param['old-site'] : null, !empty($param['id_blog']) ? $param['id_blog'] : null);
     exit;
 } else if (isset($param['all']) === true) {
 } else {
     echo 'usage:' . "\r\n";
     echo '--new-site    example: php migrate-site.php --new-site=http://wordpress.local (the old site will read from installation)' . "\r\n";
     echo '--old-site    example: php migrate-site.php --new-site=https://wordpress.de --old-site=http://wordpress.local ' . "\r\n";
+    echo '--old-site    example for multisites (old-site must be set): php migrate-site.php --new-site=https://wordpress.de --old-site=http://wordpress.local --id_blog=1' . "\r\n";
     exit;
+
 }
 
 class Migrate{
@@ -54,9 +56,10 @@ class Migrate{
     private static $newSite;
     private static $oldSite;
     private static $oldHome;
+    private static $id_blog;
 
 
-    public static function toSite($newSite, $oldsite = null)
+    public static function toSite($newSite, $oldsite = null, $id_blog = null)
     {
         global $wpdb;
 
@@ -64,20 +67,34 @@ class Migrate{
         self::$oldSite = trim(empty($oldsite) ? get_option('siteurl') : $oldsite,'/');
         self::$oldHome = trim(get_option('home'), '/');
 
+        self::$id_blog = empty($id_blog) ? (int)get_option('id_blog') : $id_blog;
+        $is_multisite = is_multisite();
+
+        if($is_multisite && empty($id_blog)){
+            echo "error: this is a multisite, set id_blog and continue\n";
+            exit;
+        }
+        if($is_multisite){
+            echo "(multisite) migrate blog id: ".$id_blog."\n";#
+            if(!self::migrateMultisiteBlogTable()){
+                echo "error: can not set wp_blog table\n";
+                exit;
+            }
+            if(switch_to_blog($id_blog) === false){
+                echo "error: can not switch to blog id: ".$id_blog."\n";
+                exit;
+            }
+        }
+
         echo "starting migration from: \r\n";
         echo self::$oldSite." > ".self::$newSite."\r\n";
-
         self::migratePostmeta();
         self::migratePosts();
-
-        // TODO not used if .env file exist.. can make some trouble if active
-        //self::migrateConfigFiles();
         self::migrateOptions();
         self::generateModRewrite();
         self::flushCaches();
 
     }
-
 
     public static function migrateOptions(){
 
@@ -97,6 +114,7 @@ class Migrate{
     public static function migratePostmeta(){
 
         global $wpdb;
+        echo "migrate table: ".$wpdb->postmeta."\n";
         $r = $wpdb->get_results("SELECT * FROM {$wpdb->postmeta} p where meta_value like '%".self::$oldSite."%'");
         foreach ($r as $meta){
             $new_value = self::replacer($meta->meta_value);
@@ -107,12 +125,19 @@ class Migrate{
         }
     }
 
+    public static function migrateMultisiteBlogTable(){
+        global $wpdb;
+        echo "update table: ".$wpdb->blogs." (blog id: ".self::$id_blog.") new site: ".self::$newSite."\n";
+        $url = trim(str_replace('https://www.', '', self::$newSite),'/');
+        $r = $wpdb->update($wpdb->blogs, ['domain' => $url], ['blog_id' => self::$id_blog]);
+        return !empty($r);
+    }
+
     public static function migratePosts(){
 
         global $wpdb;
-
+        echo "migrate table: ".$wpdb->posts."\n";
         $fields = array('post_content', 'post_title', 'post_excerpt', 'guid');
-
         $query = [];
         $query[] = "SELECT * FROM {$wpdb->posts} p where 1=1 ";
         foreach($fields as $field){
