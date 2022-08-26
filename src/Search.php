@@ -10,8 +10,16 @@ class Search
     private static $_run_time_cache_search = [];
 
     /**
-     * @param $request
-     * @param $page_size
+     * @param array $request
+     * @param int $occupancy
+     * @param int $page_size
+     * @param false $getFilters
+     * @param false $returnFiltersOnly
+     * @param null $ttl_filter
+     * @param null $ttl_search
+     * @param null $output
+     * @param \DateTime|null $preview_date
+     * @param array $custom_conditions
      * <code>
      * return ['total_result' => 100,
      *            'current_page' => 1,
@@ -30,7 +38,7 @@ class Search
      * @return array
      * @throws \Exception
      */
-    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null, $output = null)
+    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null, $output = null, $preview_date = null, $custom_conditions = [])
     {
         $cache_key = md5(serialize(func_get_args()));
         if(isset(self::$_run_time_cache_full[$cache_key])){
@@ -40,7 +48,7 @@ class Search
         $duration_search_ms = null;
         if (empty($request['pm-ho']) === true) {
             // if the price duration slider is active, we have to set the housing occupancy search
-            // (to display the correct search result with the correct cheapeast price inside)
+            // (to display the correct search result with the correct cheapest price inside)
             $request['pm-ho'] = $occupancy;
         }
         $id_object_type = empty($request['pm-ot']) ? false : \BuildSearch::extractObjectType($request['pm-ot']);
@@ -55,6 +63,7 @@ class Search
                 $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Group(TS_SEARCH_GROUP_KEYS);
             }
             $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
+            $FilterCondition = array_merge($FilterCondition, $custom_conditions);
             $filter = new \Pressmind\Search\MongoDB($FilterCondition, ['price_total' => 'asc'], TS_LANGUAGE_CODE);
             $start_time = microtime(true);
             if(isset(self::$_run_time_cache_filter[$cache_key])){
@@ -71,7 +80,7 @@ class Search
             if(isset(self::$_run_time_cache_search[$cache_key])){
                 $search = self::$_run_time_cache_search[$cache_key];
             }else {
-                $search = \BuildSearch::fromRequestMongoDB($request, 'pm', true, $page_size);
+                $search = \BuildSearch::fromRequestMongoDB($request, 'pm', true, $page_size, $custom_conditions);
                 self::$_run_time_cache_search[$cache_key] = $search;
             }
             $start_time = microtime(true);
@@ -115,11 +124,27 @@ class Search
                     $item['cheapest_price']->earlybird_discount_date_to = new \DateTime($document['prices']['earlybird_discount_date_to']);
                     $item['cheapest_price']->option_board_type = $document['prices']['option_board_type'];
                 } else {
+                    $item['cheapest_price'] = null;
                     $document['prices'] = null;
                 }
                 $item['departure_date_count'] = $document['departure_date_count'];
                 $item['possible_durations'] = !empty($document['possible_durations']) ? $document['possible_durations'] : [];
                 //$item['best_price_meta'] = $document['best_price_meta'];
+                $item['meta']['findings'] = [];
+                if(!empty($document['highlights']) && is_array($document['highlights'])){
+                    foreach($document['highlights'] as $finding){
+                        $finding_str = '';
+                        foreach($finding['texts'] as $str){
+                            if($str['type'] == 'hit'){
+                                $finding_str .= '<b>'.$str['value'].'</b>';
+                            }else{
+                                $finding_str .= $str['value'];
+                            }
+                        }
+                        $item['meta']['findings'][] = ['score' => $finding['score'], 'value' => $finding_str];
+                    }
+                }
+                $item['meta']['score'] = !empty($document['score']) ? $document['score'] : null;
                 $items[] = $item;
             }
         }

@@ -22,17 +22,35 @@ $filter->occupancies_disable_fallback = true;
  */
 $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 $durations = [];
+$airports_departure = [];
+$has_flights = false;
 foreach($offers as $key => $offer) {
     $durations[$offer->duration] = true;
+    if(preg_match('/FLU/', $offer->transport_type) > 0){
+        $has_flights = true;
+        if(!emptY($offer->transport_1_airport) && !empty($offer->transport_1_airport_name)){
+            $airports_departure[$offer->transport_1_airport] = $offer->transport_1_airport_name;
+        }
+    }
 }
 
 if (!empty($offers)) { ?>
-    <select class="form-control duration-select">
-        <option value="all" selected>Dauer wählen</option>
-        <?php foreach($durations as $key => $value) { ?>
-            <option value="<?php echo $key; ?>"> <?php echo $key == 1 ? 'Tagesfahrt' : $key . ' Tage' ?> </option>
+    <div class="booking-filter">
+        <select class="form-control duration-select">
+            <option value="all" selected>Dauer wählen</option>
+            <?php foreach($durations as $key => $value) { ?>
+                <option value="<?php echo $key; ?>"> <?php echo $key == 1 ? 'Tagesfahrt' : $key . ' Tage' ?> </option>
+            <?php } ?>
+        </select>
+        <?php if($has_flights){ ?>
+            <select class="form-control airport-select">
+                <option value="all" selected>Flughafen wählen</option>
+                <?php foreach($airports_departure as $key => $value) { ?>
+                    <option value="<?php echo $key; ?>"> <?php echo $value;?> </option>
+                <?php } ?>
+            </select>
         <?php } ?>
-    </select>
+    </div>
     <section class="content-block content-block-detail-booking" id="content-block-detail-booking">
         <div class="container">
             <div class="row">
@@ -81,7 +99,7 @@ if (!empty($offers)) { ?>
 
                             $checked = ($args['cheapest_price']->id == $offer->getId());
                             ?>
-                            <div data-duration="<?php echo $offer->duration; ?>" class="booking-row no-gutters row booking-row-date<?php echo $checked ? ' checked' : ''; ?>">
+                            <div data-duration="<?php echo $offer->duration; ?>" data-airport="<?php echo $offer->transport_1_airport; ?>" class="booking-row no-gutters row booking-row-date<?php echo $checked ? ' checked' : ''; ?>">
                                 <?php 
                                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/checked-icon.php', []);
                                 ?>

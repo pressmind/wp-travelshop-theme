@@ -7,7 +7,7 @@ use Pressmind\Travelshop\Template;
  * @var array $args
  */
 
-if(empty($args['cheapest_price'])){
+if(empty($args['cheapest_price']) || $args['booking_on_request'] === true){
     return;
 }
 ?>

@@ -53,8 +53,10 @@ if (empty($filteredParams) === false) {
                    'id_object_type' => $args['id_object_type'],
                ]);
            ?>
+            <?php if(!is_null($args['cheapest_price'])){ ?>
             <div class='stripe-duration'>
-                <?php if($args['cheapest_price']->duration == 1){ ?>
+                <?php
+                if($args['cheapest_price']->duration == 1){ ?>
                     <small><?php
                         echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
                                 'duration' => $args['cheapest_price']->duration]
@@ -67,6 +69,7 @@ if (empty($filteredParams) === false) {
                     <small>Tage</small>
                 <?php } ?>
             </div>
+            <?php } ?>
         </div>
         <section class="stripe-content">
             <div class="stripe-content-head">
@@ -83,6 +86,7 @@ if (empty($filteredParams) === false) {
                 ?>
             </div>
             <div class="stripe-content-footer">
+                <?php if(!is_null($args['cheapest_price'])){  ?>
                 <div class="stripe-departure">
                     <strong>Abreise</strong>
                     <?php
@@ -94,6 +98,7 @@ if (empty($filteredParams) === false) {
                     ]);
                     ?>
                 </div>
+                <?php } ?>
                 <div class="stripe-cta">
                     <?php
                     if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
@@ -108,9 +113,13 @@ if (empty($filteredParams) === false) {
                     <a href="<?php echo $args['url']; ?>" class="travel-teaser-link">
                         <div class="btn btn-primary">
                             <?php
-                            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-1.php', [
+                            if(!is_null($args['cheapest_price'])) {
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
                                     'cheapest_price' => $args['cheapest_price'],
-                                    ]);
+                                ]);
+                            }else{
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                            }
                             ?>
                         </div>
                     </a>

@@ -10,9 +10,7 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
-
+define('DOING_AJAX', true);
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->safeLoad();
@@ -42,22 +40,26 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 } else if ($_GET['action'] == 'search') {
     $output = null;
     $view = 'Teaser1';
-    if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
+    if (!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false) {
         $view = $_GET['view'];
-        if($view == 'Calendar1') {
+        if ($view == 'Calendar1') {
             $output = 'date_list';
         }
     }
     $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
-    ob_start();
-    require 'template-parts/pm-search/result.php';
     $Output->count = (int)$args['total_result'];
-    $Output->html['search-result'] = ob_get_contents();
-    ob_end_clean();
-    ob_start();
-    require 'template-parts/pm-search/filter-vertical.php';
-    $Output->html['search-filter'] = ob_get_contents();
-    ob_end_clean();
+    if ($view == 'data') {
+        $Output->data = $args;
+    } else {
+        ob_start();
+        require 'template-parts/pm-search/result.php';
+        $Output->html['search-result'] = ob_get_contents();
+        ob_end_clean();
+        ob_start();
+        require 'template-parts/pm-search/filter-vertical.php';
+        $Output->html['search-filter'] = ob_get_contents();
+        ob_end_clean();
+    }
     $Output->error = false;
     $result = json_encode($Output);
     if(json_last_error() > 0){
@@ -125,15 +127,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo $result;
     exit;
 } else if ($_GET['action'] == 'autocomplete') {
-    $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, null);
-    $args['params'] = json_decode($_POST['data']);
-    $searchRoute = 'suche'; // TODO Get via Ajax JS
-    // Path to Wordpress DIR
-    $path = preg_replace('/wp-content.*$/','',__DIR__);
+    $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
     ob_start();
-    define('WP_USE_THEMES', false);
-    define( 'DOING_AJAX', true );
-    include($path.'wp-load.php');
     require 'template-parts/pm-search/autocomplete.php';
     $output = ob_get_contents();
     ob_end_clean();

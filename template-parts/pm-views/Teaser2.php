@@ -58,7 +58,14 @@ if (empty($filteredParams) === false) {
         </span>
         <span class="price">
             <div data-pm-id="<?php echo $args['id_media_object']; ?>" class="remove-from-wishlist">entfernen</div>
-            <a href="<?php echo $args['url'] ; ?>"><?php echo ' ab <strong>'.PriceHandler::format($args['cheapest_price']->price_total).'</strong>' ?></a>
+            <a href="<?php echo $args['url'] ; ?>">
+                <?php
+                    if(!is_null($args['cheapest_price'])) {
+                        echo ' ab <strong>' . PriceHandler::format($args['cheapest_price']->price_total) . '</strong>';
+                    }else{
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                    }
+                ?></a>
         </span>
     </div>
 </section>

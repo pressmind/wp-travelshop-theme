@@ -132,6 +132,89 @@ define('BLOG_ENABLE_CATEGORYPAGE', true);
  */
 define('TS_VISIBILTY', [30]);
 
+/**
+ * configuration of the fulltext search, based on mongodb atlas search
+ * you have to activate atlas search on mongodb.com first.
+ */
+define('TS_FULLTEXT_SEARCH', [
+        'atlas' => [
+            'active' => false,
+            'definition' => [ /** definition of the $search stage, {term} will be replaced with the current search term */
+                'index' => 'default',
+                'compound' => [
+                    'should' => [
+                        [
+                            'text' => [
+                                'query' => '{term}',
+                                'path' => [
+                                    'categories.path_str'
+                                ],
+                                'score' => [
+                                    'boost' => [
+                                        'value' => 5
+                                    ]
+                                ],
+                                'fuzzy' => [
+                                    'maxEdits' => 1,
+                                    'prefixLength' => 3
+                                ]
+                            ],
+                        ],
+                        [
+                            'text' => [
+                                'query' => '{term}',
+                                'path' => [
+                                    'fulltext'
+                                ],
+                                'fuzzy' => [
+                                    'maxEdits' => 1,
+                                    'prefixLength' => 3
+                                ]
+                            ],
+                        ],
+                        [
+                            'phrase' => [
+                                'query' => '{term}',
+                                'path' => [
+                                    'fulltext'
+                                ],
+                                'slop' => 0,
+                                'score' => [
+                                    'boost' => [
+                                        'value' => 5
+                                    ]
+                                ],
+                            ],
+                        ],
+                        [
+                            'wildcard' => [
+                                'query' => '{term}*',
+                                'path' => [
+                                    'code'
+                                ],
+                                'allowAnalyzedField' => true,
+                                'score' => [
+                                    'boost' => [
+                                        'value' => 10
+                                    ]
+                                ],
+                            ],
+                        ],
+                    ]
+                ],
+                'highlight' => [
+                    'path' => [
+                        'categories.path_str',
+                        'fulltext',
+                        'code'
+                    ],
+                    'maxCharsToExamine'=> 500000,
+                    'maxNumPassages'=> 5
+                ]
+            ] //
+        ]
+    ]
+);
 
 /**
  * The single fulltext search which is mostly placed in the header...

@@ -32,6 +32,18 @@ if(isset($args['div_only']) && $args['div_only'] === false){
         <button type="button" class="modal-close"><span></span></button>
         <div class="modal-body-outer">
             <div class="modal-body">
+                <div class="modal-loader">
+                    <div class="spinner">
+                        <div class="sk-folding-cube">
+                            <div class="sk-cube1 sk-cube"></div>
+                            <div class="sk-cube2 sk-cube"></div>
+                            <div class="sk-cube4 sk-cube"></div>
+                            <div class="sk-cube3 sk-cube"></div>
+                        </div>
+                        <div class="msg" data-text="Suche Angebote...">Suche Angebote...</div>
+                        <img class="brand" src="<?php echo SITE_URL;?>/wp-content/themes/travelshop/assets/img/travelshop-logo.svg">
+                    </div>
+                </div>
                 <?php echo $args['content']; ?>
             </div>
         </div>

@@ -331,6 +331,7 @@ jQuery(function ($) {
 
     if ($('.modal-wrapper').length > 0) {
         $('a[data-modal="true"]').on('click', function (e) {
+            $('.modal-loader').css('display', 'flex');
             e.preventDefault();
             let modalId = $(this).data('modal-id');
             // -- show modal
@@ -343,8 +344,11 @@ jQuery(function ($) {
                 $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
                 setTimeout(function() {
                     $('.modal-body-outer').animate({
-                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + 50 )
-                    }, 'slow');
+                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 0 : 100) )
+                    }, 0);
+                    setTimeout(() => {
+                        $('.modal-loader').css('display', 'none');
+                    }, 400);
                 }, 500);
             }
             e.stopPropagation();
@@ -477,8 +481,37 @@ jQuery(function ($) {
     // -----------------------
     if($('.duration-select').length) {
         $('.duration-select').on('change', (e) => {
+            $('.modal-loader').css('display', 'flex');
+            $('.modal-body-outer').animate({
+                    scrollTop: 0
+                }, 0);
+            setTimeout(() => {
+                $('.modal-loader').css('display', 'none');
+            }, 400);
             $('.booking-row').each((index, item) => {
                 if($(item).attr('data-duration') != $(e.target).val() && $(e.target).val() != 'all' ) {
+                    $(item).hide();
+                } else {
+                    $(item).show();
+                }
+            });
+        });
+    }
+
+    // -----------------------
+    // --- Detail Booking Airport Select
+    // -----------------------
+    if($('.airport-select').length) {
+        $('.airport-select').on('change', (e) => {
+            $('.modal-loader').css('display', 'flex');
+            $('.modal-body-outer').animate({
+                scrollTop: 0
+            }, 0);
+            setTimeout(() => {
+                $('.modal-loader').css('display', 'none');
+            }, 400);
+            $('.booking-row').each((index, item) => {
+                if($(item).attr('data-airport') != $(e.target).val() && $(e.target).val() != 'all' ) {
                     $(item).hide();
                 } else {
                     $(item).show();

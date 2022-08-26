@@ -70,6 +70,11 @@ if (empty($filteredParams) === false) {
             </div>
 
         <section class="card-body col-7 col-sm-7 col-md-12">
+            <?php
+                if(!empty($_GET['debug'])){
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/debug-textsearch.php', $args);
+                }
+            ?>
             <h1 class="card-title">
                 <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
             </h1>
@@ -85,31 +90,30 @@ if (empty($filteredParams) === false) {
                 </p>
             <?php } ?>
             <div class="bottom-aligned">
+                <?php if(!is_null($args['cheapest_price'])){ ?>
                 <div class="card-text date-row">
                     <span class="small">
                         <span>
                         <?php
-
                             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
-                                'duration' => $args['cheapest_price']->duration]
+                                    'duration' => $args['cheapest_price']->duration]
                             );
                             if(!empty($args['cheapest_price']->option_board_type)){
                                 echo ', inkl. '.$args['cheapest_price']->option_board_type;
                             }
-                        ?>
-                            <br>
+                        ?><br>
                         </span>
                     </span>
                     <?php
-                    echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/date-dropdown.php', [
-                        'date_departures' => $args['cheapest_price']->date_departures,
-                        'dates_per_month' => $args['dates_per_month'],
-                        'departure_date_count' => $args['departure_date_count'],
-                        'url' => $args['url']
-                    ]);
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/date-dropdown.php', [
+                            'date_departures' => $args['cheapest_price']->date_departures,
+                            'dates_per_month' => $args['dates_per_month'],
+                            'departure_date_count' => $args['departure_date_count'],
+                            'url' => $args['url']
+                        ]);
                     ?>
-
                 </div>
+                <?php } ?>
                 <div class="card-text price-row">
                         <?php
                         if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
@@ -125,9 +129,13 @@ if (empty($filteredParams) === false) {
                         <a href="<?php echo $args['url']; ?>" class="travel-teaser-link">
                             <div class="btn btn-primary">
                             <?php
-                            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-1.php', [
-                                'cheapest_price' => $args['cheapest_price'],
-                            ]);
+                            if(!is_null($args['cheapest_price'])) {
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
+                                    'cheapest_price' => $args['cheapest_price'],
+                                ]);
+                            }else{
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                            }
                             ?>
                             </div>
                         </a>
