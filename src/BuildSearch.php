@@ -30,6 +30,7 @@ class BuildSearch
      * $request['pm-po'] pool
      * $request['pm-br'] brand
      * $request['pm-vr'] valid from, valid to range
+     * $request['pm-bt'] board type separated by comma
      * $request['pm-l'] limit 0,10
      * $request['pm-o'] order
      * @param $request
@@ -348,6 +349,11 @@ class BuildSearch
             }
         }
 
+        if (empty($request[$prefix.'-bt']) === false){
+            $board_types = self::extractBoardTypes($request[$prefix.'-bt']);
+            $conditions[] = new \Pressmind\Search\Condition\MongoDB\BoardType($board_types);
+            $validated_search_parameters[$prefix.'-bt'] = implode(',', $board_types);
+        }
 
         if (isset($request[$prefix.'-c']) === true && is_array($request[$prefix.'-c']) === true) {
             $search_item = $request[$prefix.'-c'];
@@ -539,10 +545,22 @@ class BuildSearch
 
     /**
      * @param $str
+     * @return string[]
+     */
+    public static function extractBoardTypes($str){
+         $board_types = explode(',', $str);
+         foreach($board_types as $k => $board_type){
+             $board_types[$k] = self::sanitizeStr($board_type);
+         }
+         return $board_types;
+    }
+
+    /**
+     * @param $str
      * @return string
      */
     public static function sanitizeStr($str){
-        return trim(preg_replace( '/[^a-zA-Z0-9_\-äüöÄÜÖ\s]/', '', $str));
+       return trim(preg_replace( '/[^a-zA-Z0-9_\-\.ÁÀȦÂÄǞǍĂĀÃÅǺǼǢĆĊĈČĎḌḐḒÉÈĖÊËĚĔĒẼE̊ẸǴĠĜǦĞG̃ĢĤḤáàȧâäǟǎăāãåǻǽǣćċĉčďḍḑḓéèėêëěĕēẽe̊ẹǵġĝǧğg̃ģĥḥÍÌİÎÏǏĬĪĨỊĴĶǨĹĻĽĿḼM̂M̄ʼNŃN̂ṄN̈ŇN̄ÑŅṊÓÒȮȰÔÖȪǑŎŌÕȬŐỌǾƠíìiîïǐĭīĩịĵķǩĺļľŀḽm̂m̄ŉńn̂ṅn̈ňn̄ñņṋóòôȯȱöȫǒŏōõȭőọǿơP̄ŔŘŖŚŜṠŠȘṢŤȚṬṰÚÙÛÜǓŬŪŨŰŮỤẂẀŴẄÝỲŶŸȲỸŹŻŽẒǮp̄ŕřŗśŝṡšşṣťțṭṱúùûüǔŭūũűůụẃẁŵẅýỳŷÿȳỹźżžẓǯßœŒçÇ\s]/', '', $str));
     }
 
 }

@@ -1,22 +1,20 @@
 <?php
-// @TODO improve pagespeed
-if ( TS_COOKIE_CONSENT === FALSE ) {
+/**
+ * consent.js is loaded in header.php to improve performance
+ */
+if (!TS_COOKIE_CONSENT) {
    return;
 }
 ?>
-<script src="/wp-content/themes/travelshop/assets/js/cookieconsent.min.js"></script>
 <script>
-
-
     var cc = initCookieConsent();
-
     cc.run({
         autorun : true,
         delay : 0,
         current_lang : 'de',
         autoclear_cookies : true,
         cookie_expiration : 365,
-        force_consent: true,
+        force_consent: false,
         hide_from_bots : true,
         gui_options : {
             consent_modal : {
@@ -29,14 +27,10 @@ if ( TS_COOKIE_CONSENT === FALSE ) {
                 transition : 'slide'
             }
         },
-
-
-
         onAccept: function(cookies){
             <?php if ( !empty(TS_GOOGLETAGMANAGER_UA_ID) ) { ?>
             if(cc.allowedCategory('analytics_cookies')){
                 cc.loadScript('https://www.googletagmanager.com/gtag/js?id=UA-1234-1', function(){
-
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
@@ -46,11 +40,9 @@ if ( TS_COOKIE_CONSENT === FALSE ) {
             }
             <?php } ?>
         },
-
         <?php
         $cookie_consent_logo = '<img src="'. get_stylesheet_directory_uri() .'/assets/img/travelshop-logo.svg" height="24" width="142" class="d-inline-block align-middle" alt="'. get_bloginfo( 'name' ) .'">';
         ?>
-
         languages : {
             de : {
                 consent_modal : {
@@ -115,5 +107,4 @@ if ( TS_COOKIE_CONSENT === FALSE ) {
             }
         }
     });
-
 </script>

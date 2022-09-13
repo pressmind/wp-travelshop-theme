@@ -166,6 +166,17 @@ class Search
                 $categories[$item->_id->field_name][$item->_id->level][$item->_id->id_item] = $item->_id;
             }
         }
+
+        $board_types = [];
+        if(!empty($result_filter->boardTypesGrouped)){
+            $boardTypes = json_decode(json_encode($result_filter->boardTypesGrouped));
+            foreach($boardTypes as $item){
+                    $tmp = new \stdClass();
+                    $tmp->name = $item->_id;
+                    $board_types[]= $tmp;
+            }
+        }
+
         if(TS_CALENDAR_SHOW_DEPARTURES === true && empty($result_filter) === false){
             $start_time = microtime(true);
             $filter_departures = [];
@@ -200,6 +211,7 @@ class Search
             ],
             'id_object_type' => !$id_object_type ? [] : $id_object_type,
             'categories' => $categories,
+            'board_types' => $board_types,
             'duration_min' => !empty($result_filter->minDuration) ? $result_filter->minDuration : null,
             'duration_max' => !empty($result_filter->maxDuration) ? $result_filter->maxDuration : null,
             'departure_min' => !empty($result_filter->minDeparture) ? new \DateTime($result_filter->minDeparture) : null,

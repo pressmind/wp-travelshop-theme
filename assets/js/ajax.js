@@ -258,7 +258,7 @@ jQuery(function ($) {
                 query.push('pm-ot=' + id_object_type);
             }
 
-            // checkboxes
+            // categorytree checkboxes
             let selected = [];
             $(form).find('.category-tree input:checked').each(function () {
 
@@ -292,6 +292,15 @@ jQuery(function ($) {
                     delimiter = ',';
                 }
                 query.push('pm-c[' + key + ']=' + selected[key].join(delimiter));
+            }
+
+            // board_type checkboxes
+            selected = [];
+            $(form).find('.board-type input:checked').each(function () {
+                selected.push($(this).data('id'));
+            });
+            if(selected.length > 0){
+                query.push('pm-bt=' + selected.join(','));
             }
 
             // check and set price-range
