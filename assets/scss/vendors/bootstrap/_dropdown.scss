@@ -33,6 +33,9 @@
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($dropdown-border-radius);
   @include box-shadow($dropdown-box-shadow);
+  .btn-primary {
+    font-size: .9rem;
+  }
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {

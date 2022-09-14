@@ -52,6 +52,9 @@ if(!empty($_GET['preview'])){
    </div>
 <?php } ?>
     <main>
+        <script>
+            var moid = <?php echo $mediaObjects[0]->getId(); ?>;
+        </script>
         <?php
         // @see template-parts/pm-views/
         echo $mediaObjects[0]->render('Detail2');

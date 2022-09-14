@@ -67,13 +67,13 @@
         if (this.element.hasClass('dropup'))
             this.drops = 'up';
 
-        this.buttonClasses = 'btn btn-sm';
-        this.applyButtonClasses = 'btn-primary';
-        this.cancelButtonClasses = 'btn-default';
+        this.buttonClasses = 'btn ';
+        this.applyButtonClasses = 'btn-primary btn-icon-right';
+        this.cancelButtonClasses = 'btn-default btn-sm';
 
         this.locale = {
             direction: 'ltr',
-            format: 'DD.MM.YYYY',
+            dateFormat: 'dd-mm-y',
             separator: ' - ',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
@@ -102,22 +102,45 @@
         //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template =
-            '<div class="daterangepicker">' +
-            '<div class="ranges"></div>' +
-            '<div class="drp-calendar left">' +
-            '<div class="calendar-table"></div>' +
-            '<div class="calendar-time"></div>' +
-            '</div>' +
-            '<div class="drp-calendar right">' +
-            '<div class="calendar-table"></div>' +
-            '<div class="calendar-time"></div>' +
-            '</div>' +
-            '<div class="drp-buttons">' +
-            '<span class="drp-selected"></span>' +
-            '<button class="cancelBtn" type="button"></button>' +
-            '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
-            '</div>' +
-            '</div>';
+                '<div class="daterangepicker">' +
+
+                '<div class="daterangepicker-header"><div class="h3 text-center">Datum wählen</div>' +
+
+                '<div class="drp-buttons">' +
+                '<button class="cancelBtn" type="button"></button>' +
+                '</div>' +
+
+                '</div>' +
+
+
+                '<div class="wrapper">' +
+
+                '<div class="ranges"></div>' +
+
+                '<div class="calendar-wrapper">' +
+
+                '<div class="drp-calendar left">' +
+                '<div class="calendar-table"></div>' +
+                '<div class="calendar-time"></div>' +
+                '</div>' +
+
+                '<div class="drp-calendar right">' +
+                '<div class="calendar-table"></div>' +
+                '<div class="calendar-time"></div>' +
+                '</div>' +
+
+                '</div>' +
+
+                '</div>' +
+
+                '<div class="drp-buttons">' +
+                '<span class="drp-selected"></span>' +
+                '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
+                '</div>' +
+
+
+
+                '</div>';
 
         this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
         this.container = $(options.template).appendTo(this.parentEl);
@@ -441,8 +464,8 @@
             this.element.on('keydown.daterangepicker', $.proxy(this.toggle, this));
         }
 
-        $('.travelshop-datepicker').on('click', '.datepicker-clear', $.proxy(this.show, this));
-        $('.travelshop-datepicker').on('click', '.datepicker-clear', $.proxy(this.clickCancel, this));
+        $('.travelshop-datepicker, .list-filter-box').on('click', '.datepicker-clear', $.proxy(this.show, this));
+        $('.travelshop-datepicker, .list-filter-box').on('click', '.datepicker-clear', $.proxy(this.clickCancel, this));
 
         //
         // if attached to a text input, set the initial value
@@ -1190,6 +1213,9 @@
             this.move();
             this.element.trigger('show.daterangepicker', this);
             this.isShowing = true;
+
+            // -- show backdrop
+            $('body').find('.datepicker-backdrop').addClass('open');
         },
 
         hide: function (e) {
@@ -1213,6 +1239,9 @@
             this.container.hide();
             this.element.trigger('hide.daterangepicker', this);
             this.isShowing = false;
+
+            // -- hide backdrop
+            $('body').find('.datepicker-backdrop').removeClass('open');
         },
 
         toggle: function (e) {
@@ -1575,8 +1604,8 @@
                 end = null;
 
             if (dateString.length === 2) {
-                start = dayjs(dateString[0], this.locale.format);
-                end = dayjs(dateString[1], this.locale.format);
+                start = dayjs(dateString[0], 'dd-mm');
+                end = dayjs(dateString[1], 'dd-mm-y');
             }
 
             if (this.singleDatePicker || start === null || end === null) {

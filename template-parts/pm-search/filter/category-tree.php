@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * @todo optimize id, data tags in checkboxes
  * @var string $name

@@ -147,6 +147,11 @@ table {
 
 /* IBE TEMPLATE STYLES START */
 
+.container {
+	width: 100% !important;
+	max-width: 1360px !important;
+}
+
 .header-main {
 	.header-main-row {
 		div {

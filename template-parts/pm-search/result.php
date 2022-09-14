@@ -45,6 +45,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
         <span>Reisen filtern</span>
     </button>
 </div>
+<?php if(!isset($args['calendarpage'])) { ?>
 <section class="content-block content-block-list-header">
     <div class="list-header-title h2 mt-0 mb-0 float-lg-left">
         <p>
@@ -80,6 +81,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
         </label>
     </div>
 </section>
+<?php } ?>
 <section class="content-block content-block-travel-cols">
     <div class="spinner">
         <div class="sk-folding-cube">

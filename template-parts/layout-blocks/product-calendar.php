@@ -48,7 +48,13 @@ if (count($items) == 0) {
                 <?php
                 // group items by month & year
                 $itemsGroupedByMonth = [];
-                foreach ($items as $item) {
+                $itemsCount = count($items);
+                !isset($_GET['pm-l']) ? $_GET['pm-l'] = '1,14' : '';
+                $pageStats = explode(',', $_GET['pm-l']);
+                $sliceStart = ceil($itemsCount / $pageStats[1]) * ( $pageStats[0] - 1 );
+                $totalPages = ceil($itemsCount / $pageStats[1]);
+                $sliceEnd = $sliceStart + $pageStats[1];
+                foreach (array_slice($items, $sliceStart, $sliceEnd) as $item) {
                     $item->date_departure = new DateTime($item->date_departure);
                     $itemsGroupedByMonth[$item->date_departure->format('m.Y')][] = $item;
                 }
@@ -140,6 +146,13 @@ if (count($items) == 0) {
                 } // each month
                 ?>
             </div>
+            <?php
+            echo Template::render(APPLICATION_PATH.'/template-parts/pm-search/result-pagination.php', [
+            'current_page' => $pageStats[0],
+            'page_size' => $pageStats[1],
+            'pages' => $totalPages,
+            'total_result' => $itemsCount
+            ]); ?>
         </div>
     </div>
 </section>

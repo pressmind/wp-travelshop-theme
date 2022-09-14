@@ -136,7 +136,6 @@ jQuery(function ($) {
     // --- Itinerary Steps Image Slider
     // --------------------------------
     if ($('.itinerary-step-gallery').length > 0) {
-
         if ($(window).width() < 992) {
             $('.itinerary-step-gallery').each(function (key) {
                 let slider = tns({
@@ -168,7 +167,6 @@ jQuery(function ($) {
     // --- Description Block Image Slider
     // --------------------------------
     if ($('.description-block-element-gallery').length > 0) {
-
         if ($(window).width() <= 992) {
             $('.description-block-element-gallery').each(function (key) {
                 let slider = tns({
@@ -326,48 +324,6 @@ jQuery(function ($) {
     }
 
     // ------------------------------
-    // -- content modal
-    // ------------------------------
-
-    if ($('.modal-wrapper').length > 0) {
-        $('a[data-modal="true"]').on('click', function (e) {
-            $('.modal-loader').css('display', 'flex');
-            e.preventDefault();
-            let modalId = $(this).data('modal-id');
-            // -- show modal
-            $('body').find('#modal-id-post-' + modalId).addClass('is--open');
-            let target = document.querySelector('.is--open .modal-body-outer');
-            bodyScrollLock.disableBodyScroll(target);
-            if($(e.target).data('anchor')) {
-                $('.modal-body-outer').scrollTop(0);
-                $('.booking-row').removeClass('checked');
-                $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
-                setTimeout(function() {
-                    $('.modal-body-outer').animate({
-                        scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 0 : 100) )
-                    }, 0);
-                    setTimeout(() => {
-                        $('.modal-loader').css('display', 'none');
-                    }, 400);
-                }, 500);
-            }
-            e.stopPropagation();
-        })
-
-        $('.modal-close').on('click', function (e) {
-            e.preventDefault();
-            let target = document.querySelector('.is--open .modal-body-outer');
-            $('.modal-wrapper.is--open').removeClass('is--open');
-            bodyScrollLock.enableBodyScroll(target);
-            e.stopPropagation();
-        })
-
-        $(document).on('keyup', function (e) {
-            if (e.which == 27) $('.modal-close').click(); // esc
-        });
-    }
-
-    // ------------------------------
     // -- view switch on result page
     // ------------------------------
     if ($('.pm-switch-result-view').length > 0) {
@@ -473,50 +429,6 @@ jQuery(function ($) {
         });
         $('.travel-date a').on('mouseout', function(e) {
             $('.calendar li').removeClass('active');
-        });
-    }
-
-    // -----------------------
-    // --- Detail Booking Duration Select
-    // -----------------------
-    if($('.duration-select').length) {
-        $('.duration-select').on('change', (e) => {
-            $('.modal-loader').css('display', 'flex');
-            $('.modal-body-outer').animate({
-                    scrollTop: 0
-                }, 0);
-            setTimeout(() => {
-                $('.modal-loader').css('display', 'none');
-            }, 400);
-            $('.booking-row').each((index, item) => {
-                if($(item).attr('data-duration') != $(e.target).val() && $(e.target).val() != 'all' ) {
-                    $(item).hide();
-                } else {
-                    $(item).show();
-                }
-            });
-        });
-    }
-
-    // -----------------------
-    // --- Detail Booking Airport Select
-    // -----------------------
-    if($('.airport-select').length) {
-        $('.airport-select').on('change', (e) => {
-            $('.modal-loader').css('display', 'flex');
-            $('.modal-body-outer').animate({
-                scrollTop: 0
-            }, 0);
-            setTimeout(() => {
-                $('.modal-loader').css('display', 'none');
-            }, 400);
-            $('.booking-row').each((index, item) => {
-                if($(item).attr('data-airport') != $(e.target).val() && $(e.target).val() != 'all' ) {
-                    $(item).hide();
-                } else {
-                    $(item).show();
-                }
-            });
         });
     }
 

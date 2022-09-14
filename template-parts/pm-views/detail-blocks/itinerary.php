@@ -65,7 +65,7 @@ if(!$valid){
                     <div class="itinerary-step-desc">
                         <?php echo $section->content->description; ?>
                     </div>
-                    <div class="itinerary-step-gallery it-gallery-<?php echo $key; ?>">
+                    <div class="<?php echo count($step->document_media_objects) > 1 ? 'itinerary-step-gallery' : ''; ?> it-gallery-<?php echo $key; ?>">
                         <?php foreach($step->document_media_objects as $picture) { ?>
                             <a href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="itinerary-step-<?php echo $step->id; ?>">
                               <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />

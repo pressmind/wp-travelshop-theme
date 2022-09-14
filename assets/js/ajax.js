@@ -47,6 +47,91 @@ jQuery(function ($) {
             btn.find('.loader').hide();
         }
 
+        // Explicitly save/update a url parameter using HTML5's replaceState().
+        this.updateQueryStringParam = function(key, value) {
+            let baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
+            let urlQueryString = document.location.search;
+            var newParam = key + '=' + value,
+                params = '?' + newParam;
+
+            // If the "search" string exists, then build params from it
+            if (urlQueryString) {
+                let keyRegex = new RegExp('([\?&])' + key + '[^&]*');
+                // If param exists already, update it
+                if (urlQueryString.match(keyRegex) !== null) {
+                    params = urlQueryString.replace(keyRegex, "$1" + newParam);
+                } else { // Otherwise, add it to end of query string
+                    params = urlQueryString + '&' + newParam;
+                }
+            }
+            window.history.replaceState({}, "", baseUrl + params);
+        }
+
+        this.getAllUrlParams = function(url) {
+
+            // get query string from url (optional) or window
+            var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
+            // we'll store the parameters here
+            var obj = {};
+
+            // if query string exists
+            if (queryString) {
+
+                // stuff after # is not part of query string, so get rid of it
+                queryString = queryString.split('#')[0];
+
+                // split our query string into its component parts
+                var arr = queryString.split('&');
+
+                for (var i = 0; i < arr.length; i++) {
+                    // separate the keys and the values
+                    var a = arr[i].split('=');
+
+                    // set parameter name and value (use 'true' if empty)
+                    var paramName = a[0];
+                    var paramValue = typeof (a[1]) === undefined ? true : a[1];
+
+                    // (optional) keep case consistent
+                    paramName = paramName.toLowerCase();
+                    if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+
+                    // if the paramName ends with square brackets, e.g. colors[] or colors[2]
+                    if (paramName.match(/\[(\d+)?\]$/)) {
+
+                        // create key if it doesn't exist
+                        var key = paramName.replace(/\[(\d+)?\]/, '');
+                        if (!obj[key]) obj[key] = [];
+
+                        // if it's an indexed array e.g. colors[2]
+                        if (paramName.match(/\[\d+\]$/)) {
+                            // get the index value and add the entry at the appropriate position
+                            var index = /\[(\d+)\]/.exec(paramName)[1];
+                            obj[key][index] = paramValue;
+                        } else {
+                            // otherwise add the value to the end of the array
+                            obj[key].push(paramValue);
+                        }
+                    } else {
+                        // we're dealing with a string
+                        if (!obj[paramName]) {
+                            // if it doesn't exist, create property
+                            obj[paramName] = paramValue;
+                        } else if (obj[paramName] && typeof obj[paramName] === 'string') {
+                            // if property does exist and it's a string, convert it to an array
+                            obj[paramName] = [obj[paramName]];
+                            obj[paramName].push(paramValue);
+                        } else {
+                            // otherwise add the property
+                            obj[paramName].push(paramValue);
+                        }
+                    }
+                }
+            }
+
+            return obj;
+        }
+
         this.resultHandlerWishlist = function (data) {
 
             // set the wishlist
@@ -382,6 +467,18 @@ jQuery(function ($) {
                 e.preventDefault();
             });
 
+            $("#booking-filter").on('click change', "input", function (e) {
+                let form = $(this).closest('form');
+                // if the second level has no more selected items, we fall back to the parents value
+                if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
+                    $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
+                }
+                let query_string = _this.buildSearchQuery(form);
+                //_this.setSpinner('#pm-search-result');
+                //_this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                e.preventDefault();
+            });
+
         }
 
         this.searchbox = function () {
@@ -400,7 +497,7 @@ jQuery(function ($) {
 
                 let button = $(form).find('a.btn');
                 let href = button.attr('href').split('?');
-                button.attr('href', href[0] + '?' + query_string);
+                button.attr('href', href[0] + ' ?' + query_string);
 
                 // if we're on the same page, let fire the search and set the search results
                 let current_location = window.location.href.split('?');
@@ -491,6 +588,7 @@ jQuery(function ($) {
                     onSearchStart: function () {
                         $(this).parent().find('.lds-dual-ring').show();
                         $(this).parent().find('.string-search-clear').hide();
+                        $(this).parent().find('.string-search-clear').hide();
                     },
                     onSearchComplete: function() {
                         $(this).parent().find('.lds-dual-ring').hide();
@@ -507,6 +605,7 @@ jQuery(function ($) {
         }
 
         this.dateRangePickerInit = function (){
+
             if ($('[data-type="daterange"]').length > 0) {
 
                 let easterDate = _this.theEasterDate(dayjs().year());
@@ -524,8 +623,9 @@ jQuery(function ($) {
                     rosenmontagDate = _this.theEasterDate(dayjs().add(1, 'year').year()).subtract(48, 'days');
                 }
 
-
-                let picker = $('[data-type="daterange"]').daterangepicker({
+                _this.picker = $('[data-type="daterange"]').daterangepicker({
+                    "parentEl": $('#booking-filter').length ? '#booking-filter': 'body',
+                    "opens": $('#booking-filter').length ? 'left' : 'right',
                     "ranges": {
                         'Heute': [dayjs(), dayjs()],
                         'Abreise in 30 Tagen': [dayjs().add(30, 'days'), dayjs().add(1, 'month')],
@@ -539,6 +639,7 @@ jQuery(function ($) {
                         'im nächsten Monat': [dayjs().add(1, 'month').startOf('month'), dayjs().add(1, 'month').endOf('month')],
                     },
                     "showWeekNumbers": false,
+                    "dateFormat": 'dd-mm-y',
                     "autoUpdateInput": false,
                     "alwaysShowCalendars": true,
                     "showDropdowns": true,
@@ -553,6 +654,7 @@ jQuery(function ($) {
                     // "autoApply": true,
                     "locale": {
                         "format": "DD.MM.YYYY",
+                        "dateFormat": 'DD.MM.YY',
                         "separator": " - ",
                         "applyLabel": "Auswahl übernehmen",
                         "fromLabel": "Von",
@@ -594,21 +696,16 @@ jQuery(function ($) {
                     "endDate": dayjs().startOf('hour').add(64, 'hour')
                     */
                 }, function (start, end, label) {
-                    if ($(window).width() <= 767) {
-                        $([document.documentElement, document.body]).animate({
-                            scrollTop: $('.travelshop-datepicker').offset().top - 83
-                        }, 500);
-                    }
-                    //console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+                    $('.modal-body-outer').scrollTop(0);
                 });
 
 
                 $('[data-type="daterange"]').on('apply.daterangepicker', function (ev, picker) {
-
-                    $(this).val(picker.startDate.format('DD.MM.') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
-
+                    $(this).val(picker.startDate.format('DD.MM.') + '-' + picker.endDate.format('DD.MM.YY'));
+                    _this.updateQueryStringParam('pm-dr', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
+                    _this.loadOffers(ev);
                     // build the a pm ready query string
-                    $(this).data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
+                    $(this).data('value', picker.startDate.format('DD.MM.') + '-' + picker.endDate.format('DD.MM.YY'));
 
                     $(this).trigger('change');
                 });
@@ -690,11 +787,11 @@ jQuery(function ($) {
             if ($('.dropdown-menu-select').length > 0) {
 
                 // -- prevent dropdown close when clicked inside
-                $('.dropdown-menu-select').on('click', function (e) {
+                $('.dropdown-menu-select').unbind().on('click', function (e) {
                     e.stopPropagation();
                 });
 
-                $('.dropdown-menu-select .filter-prompt').on('click', function (e) {
+                $('.dropdown-menu-select .filter-prompt').unbind().on('click', function (e) {
                     e.preventDefault();
 
                     $(this).parents('.dropdown').find('.dropdown-toggle').trigger('click');
@@ -715,7 +812,7 @@ jQuery(function ($) {
                 // -- create label text on input change, put it into span
                 $('.dropdown-menu-select').find('input').on('change', function (e) {
 
-                    var placeHolderTag = $(this).parents('.dropdown').find('.selected-options'),
+                    var placeHolderTag = $(e.target).parents('.dropdown').find('.selected-options'),
                         placeHolderDefaultText = placeHolderTag.data('placeholder'),
                         placeHolderGetText = placeHolderTag.text(),
                         placeHolderOptionsText = '',
@@ -745,10 +842,16 @@ jQuery(function ($) {
                     }
 
                     if (that.prop('checked') === true) {
-                        if (placeHolderOptionsText != '') {
-                            placeHolderOptionsText = placeHolderOptionsText + ', ' + thatValue;
-                        } else {
+                        if(that.attr('type') == 'radio') {
                             placeHolderOptionsText = thatValue;
+                        } else {
+                            if (placeHolderOptionsText != '' && !placeHolderOptionsText.includes(thatValue)) {
+                                placeHolderOptionsText = placeHolderOptionsText + ', ' + thatValue;
+                            } else {
+                                if(!placeHolderOptionsText.includes(thatValue)) {
+                                    placeHolderOptionsText = thatValue;
+                                }
+                            }
                         }
                     } else {
                         if (placeHolderGetText.indexOf(',') != -1) {
@@ -758,7 +861,11 @@ jQuery(function ($) {
                                 placeHolderOptionsText = placeHolderOptionsText.replace(', ' + thatValue, '');
                             }
                         } else {
-                            placeHolderOptionsText = $.trim(placeHolderDefaultText);
+                            if (allEmpty) {
+                                placeHolderOptionsText = $.trim(placeHolderDefaultText);
+                            } else {
+                                placeHolderOptionsText = placeHolderOptionsText;
+                            }
                         }
                     }
 
@@ -833,7 +940,7 @@ jQuery(function ($) {
                     'quantity' : quantity
                 }]}),
             }).done(function (response) {
-                let data = response.data[0];
+                let data = response;
                 $(booking_btn).find('span').html(data.btn_msg);
                 $(booking_btn).attr('title', data.msg);
                 $(booking_btn).find('.loader').hide();
@@ -844,6 +951,186 @@ jQuery(function ($) {
                     location.href = $(booking_btn).attr('href') + '&t='+data.booking_type;
                 }
             }));
+        }
+
+        _this.lastScroll = 0;
+
+        this.initOfferListeners = function() {
+            // Fire Infnity when User scrolls to bottom
+            if($('.modal-body-outer').length) {
+                _this.fired = false;
+                $('.modal-body-outer').unbind().scroll(function() {
+                    _this.nowScroll = $(this).scrollTop();
+                    if (_this.nowScroll > _this.lastScroll) {
+                        if (_this.nowScroll >= $('#offer-section').outerHeight() - $(this).outerHeight() && !_this.fired) {
+                            _this.loadOffers(null, 'infinity');
+                        }
+                    }
+                    _this.lastScroll = _this.nowScroll;
+                });
+            }
+            $('.reset-filter').click(() => {
+                //_this.picker.datepicker('setDate', null);
+                $('.datepicker-clear').trigger('click');
+                $('input:checked').prop('checked', false).trigger('change');
+                $('input[name=pm-dr]').val('').trigger('change');
+            });
+            // -----------------------
+            // --- Detail Booking Filter Input Select
+            // -----------------------
+            if($('.filter-form').length || $('.filter-form-mobile').length) {
+                $('.filter-form, .filter-form-mobile').unbind().find('input').on('change', (e) => {
+                    $('.modal-loader').css('display', 'flex');
+                    if($(e.target).data('type') != 'daterange') {
+                        let queryParam = $(e.target).attr('filter-param');
+                        let selectedValues = '';
+                        $(e.target).parent().parent().find('input:checked').each((key, item) => {
+                            if($(item).attr('filter-param') == queryParam) {
+                                if(!selectedValues.includes($(item).val())) {
+                                    selectedValues += $(item).val() + ($('.' + e.target.form.classList[0] + ' input[filter-param="' + $(item).attr('filter-param') + '"]:checked').length > key + 1 ? ',' : '');
+                                }
+                            }
+                        });
+                        if(selectedValues.length != 0) {
+                            $(e.target).parent().parent().parent().parent().find('.dropdown-clear').show();
+                            $(e.target).parent().parent().parent().parent().find('.dropdown-icon').hide();
+                        } else {
+                            $(e.target).parent().parent().parent().parent().find('.dropdown-clear').hide();
+                            $(e.target).parent().parent().parent().parent().find('.dropdown-icon').show();
+                        }
+                        $('.transport_1_airport_name').hide();
+                        if($('.' + e.target.form.classList[0] + ' input[value="Flug"]:checked').length || $('.' + e.target.form.classList[0] + ' input[name="transport_type"]:checked').length == 0) {
+                            $('.transport_1_airport_name').show();
+                        } else {
+                            if($('.' + e.target.form.classList[0] + ' input[filter-type="transport_1_airport_name"]:checked').length != 0) {
+                                $('.' + e.target.form.classList[0] + ' input[filter-type="transport_1_airport_name"]').prop( "checked", false ).change();
+                            }
+                        }
+                        _this.updateQueryStringParam($(e.target).attr('filter-param'), selectedValues);
+                    } else {
+                        $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
+                    }
+                    _this.loadOffers(e);
+                    $('.modal-body-outer').animate({
+                        scrollTop: 0
+                    }, 0);
+                    setTimeout(() => {
+                        $('.modal-loader').css('display', 'none');
+                    }, 400);
+                });
+            }
+        }
+
+        // ------------------------------
+        // -- content modal
+        // ------------------------------
+
+        this.initModals = function() {
+            if ($('.modal-wrapper').length > 0) {
+                $('a[data-modal="true"]').unbind().on('click', function (e) {
+                    e.preventDefault();
+                    let modalId = $(e.target).data('modal-id');
+                    // -- show modal
+                    $('body').find('#modal-id-post-' + modalId).addClass('is--open');
+                    modalId != 'bofilters' ? _this.loadFilters() : '';
+                    $('.modal-loader').css('display', 'flex');
+                    setTimeout(() => {
+                        _this.loadOffers(e);
+                    }, 200);
+                    let target = document.querySelector('.is--open .modal-body-outer');
+                    bodyScrollLock.disableBodyScroll(target);
+                    e.stopPropagation();
+                })
+
+                $('.modal-close, .modal-close-btn').unbind().on('click', function (e) {
+                    e.preventDefault();
+                    let target = document.querySelector('.is--open .modal-body-outer');
+                    $(e.target).closest('.is--open').removeClass('is--open');
+                    bodyScrollLock.enableBodyScroll(target);
+                    e.stopPropagation();
+                })
+
+                $(document).on('keyup', function (e) {
+                    if (e.which == 27) $('.modal-close').click(); // esc
+                });
+            }
+        }
+
+        this.loadFilters = function() {
+            $('.modal-loader').css('display', 'flex');
+            const URLParams = _this.getAllUrlParams();
+            let querystring = '';
+            Object.entries(URLParams).forEach(entry => {
+                const [key, value] = entry;
+                querystring += '&' + key + '=' + value;
+            });
+            _this.call('action=bookingoffersfilter&pm-id=' + moid + querystring, '#booking-filter', null, function(data2) {
+                for (var key2 in data2.html) {
+                    $('#' + key2).html(data2.html[key2]);
+                    _this.initModals();
+                    _this.initFilterMethods();
+                }
+            });
+        }
+
+        this.initFilterMethods = function() {
+            _this.initOfferListeners();
+            _this.dateRangePickerInit();
+            _this.initCategoryTreeSearchBarFields();
+        }
+
+        this.loadOffers = function(e, type) {
+            if($('.detail-page-v2-container').length) {
+                $('.modal-loader').css('display', 'flex');
+                const URLParams = _this.getAllUrlParams();
+                let querystring = '';
+                Object.entries(URLParams).forEach(entry => {
+                    const [key, value] = entry;
+                    querystring += '&' + key + '=' + value;
+                });
+                if(type != 'infinity') {
+                    _this.call('action=bookingoffers&pm-id=' + moid + querystring, '#booking-offers', null, function(data) {
+                        for (var key in data.html) {
+                            $('#' + key).html(data.html[key]);
+                            $('#offers-filter-total').text(data.total == 15 ? 'Über 15' : data.total);
+                            _this.initOfferListeners();
+                            _this.items = data.total;
+                            _this.loaded = data.total;
+                            setTimeout(() => {
+                                $('.modal-loader').css('display', 'none');
+                            }, 400);
+                            if($(e.target).data('anchor')) {
+                                $('.modal-body-outer').scrollTop(0);
+                                $('.booking-row').removeClass('checked');
+                                $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
+                                setTimeout(function() {
+                                    if($( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).length) {
+                                        $('.modal-body-outer').animate({
+                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 0 : 100) )
+                                        }, 500);
+                                    }
+                                }, 1000);
+                            }
+                        }
+                    });
+                } else {
+                    _this.fired = true;
+                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items,  '#booking-offers', null, function(data) {
+                        for (var key in data.html) {
+                            if(data.html != '') {
+                                _this.loaded = _this.loaded + _this.items;
+                            }
+                            $('.modal-body-outer').unbind();
+                            $('#' + key).append(data.html[key]);
+                            _this.initOfferListeners();
+                            setTimeout(() => {
+                                $('.modal-loader').css('display', 'none');
+                                _this.fired = false;
+                            }, 400);
+                        }
+                    });
+                }
+            }
         }
 
         this.initBookingBtnClickHandler = function (){
@@ -897,7 +1184,9 @@ jQuery(function ($) {
             _this.renderWishlist();
             _this.wishlistEventListeners();
             _this.wishListInit();
-            _this.pagination();
+            if(!window.location.href.includes('calendar')) {
+                _this.pagination();
+            }
             _this.searchbox();
             _this.searchboxSwitch();
             _this.filter();
@@ -907,6 +1196,7 @@ jQuery(function ($) {
             _this.initCalendarRowClick();
             _this.initBookingBtnClickHandler();
             _this.initPartnerParams();
+            _this.initModals();
         }
 
     };

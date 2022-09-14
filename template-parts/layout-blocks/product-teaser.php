@@ -78,12 +78,13 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
                title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>"
                class="btn-further">
                 <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>
-                <svg style="height: 0;">
+                <svg style="display: none;">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink"
                          href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use>
                 </svg>
             </a>
         </div>
+        <?php } ?>
     </div>
     <div class="row">
         <div class="col-12">
@@ -93,7 +94,6 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
                 </p>
             <?php } ?>
         </div>
-        <?php } ?>
         <?php } ?>
         <?php
 

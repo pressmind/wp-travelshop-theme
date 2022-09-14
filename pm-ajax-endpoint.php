@@ -10,6 +10,10 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 define('DOING_AJAX', true);
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
@@ -134,6 +138,72 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     ob_end_clean();
     echo $output;
     exit;
+} else if($_GET['action'] == 'bookingoffers') {
+    $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_GET['pm-id']);
+    $args['url'] = $args['media_object']->getPrettyUrl();
+    $filters = new stdClass();
+    $filters->id_option = null;
+    $filters->id_date = null;
+    $filters->id_booking_package = null;
+    $filters->id_housing_package = null;
+    if(!empty($_GET['pm-dr'])) {
+        $dateRange = BuildSearch::extractDaterange($_GET['pm-dr']);
+        list($from, $to) = $dateRange;
+        $filters->date_from = $from;
+        $filters->date_to = $to;
+    } else {
+        $filters->date_from = null;
+        $filters->date_to = null;
+    }
+    !empty($_GET['pm-tt']) && $_GET['pm-tt'] != 'false' ? $filters->transport_types = explode(',', strtoupper($_GET['pm-tt'])) : $filters->transport_types = null;
+    !empty($_GET['pm-ap']) && $_GET['pm-ap'] != 'false' ? $filters->transport_1_airport = explode(',', strtoupper($_GET['pm-ap'])) : $filters->airports = null;
+    if(!empty($_GET['pm-du']) && $_GET['pm-du'] != 'false') {
+        $durationArr = explode(',', $_GET['pm-du']);
+        sort( $durationArr);
+    }
+    !empty($_GET['pm-du']) && $_GET['pm-du'] != 'false' ? $filters->duration_from = $durationArr[array_key_first($durationArr)] : $filters->duration_from = null;
+    !empty($_GET['pm-du']) && $_GET['pm-du'] != 'false' ? $filters->duration_to = $durationArr[array_key_last($durationArr)] : $filters->duration_to = null;
+    !empty($_GET['pm-l']) && $_GET['pm-l'] != 'false' ? $limit = explode(',', $_GET['pm-l']) : '';
+    isset($limit) ? $limit = $limit : $limit = [0,15];
+    !empty($_GET['price_from']) ? $filters->price_from = $_GET['price_from'] : $filters->price_from = null;
+    !empty($_GET['price_to']) ? $filters->price_to = $_GET['price_to'] : '';
+    !empty($_GET['pm-ho']) ? $filters->occupancies = [$_GET['pm-ho']] : '';
+    $args['booking_offers'] = $args['media_object']->getCheapestPrices(!empty($filters) ? $filters : null, ['date_departure' => 'ASC', 'price_total' => 'ASC'], $limit);
+    $Output->total = count($args['booking_offers']);
+
+    if(!empty($_GET['type']) && $_GET['type'] = 'infinity') {
+        ob_start();
+        require 'template-parts/pm-views/detail-blocks/booking-offers-ajax-infinityload.php';
+        $Output->html['offer-section'] = ob_get_contents();
+        ob_end_clean();
+    } else {
+        ob_start();
+        require 'template-parts/pm-views/detail-blocks/booking-offers-ajax.php';
+        $Output->html['booking-offers'] = ob_get_contents();
+        ob_end_clean();
+    }
+
+    $Output->error = false;
+    $result = json_encode($Output);
+    echo $result;
+    exit;
+
+} else if($_GET['action'] == 'bookingoffersfilter') {
+    $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_GET['pm-id']);
+    $args['booking_offers_intersection'] = $args['media_object']->getCheapestPricesOptions();
+    ob_start();
+    require 'template-parts/pm-views/detail-blocks/booking-offers-filter.php';
+    $Output->html['booking-filter'] = ob_get_contents();
+    ob_end_clean();
+    ob_start();
+    require 'template-parts/pm-views/detail-blocks/booking-offers-filter-mobile.php';
+    $Output->html['booking-filter-mobile'] = ob_get_contents();
+    ob_end_clean();
+    $Output->options = $args['booking_offers_intersection'];
+    $Output->error = false;
+    $result = json_encode($Output);
+    echo $result;
+    exit;
 } else if ($_GET['action'] == 'pm-view') {
     $id_media_object = (int)$_GET['pm-id'];
     if(empty($id_media_object)){
@@ -160,10 +230,10 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
     $mediaObject = new MediaObject($id_media_object);
     $filter = new CheapestPrice();
-    if (isset($_GET['pm-du']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $_GET['pm-du']) > 0) {
+    if (!empty($_GET['pm-du']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $_GET['pm-du']) > 0) {
         list($filter->duration_from, $filter->duration_to) = explode('-', $_GET['pm-du']);
     }
-    if (isset($_GET['pm-dr']) === true) {
+    if (!empty($_GET['pm-dr']) === true) {
         $dateRange = BuildSearch::extractDaterange($_GET['pm-dr']);
         if($dateRange !== false){
             $filter->date_from = $dateRange[0];
@@ -171,7 +241,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
         }
     }
     $limit = [0,100];
-    if (isset($_GET['pm-l']) === true && preg_match('/^([0-9]+)\,([0-9]+)$/', $_GET['pm-l'], $m) > 0) {
+    if (!empty($_GET['pm-l']) === true && preg_match('/^([0-9]+)\,([0-9]+)$/', $_GET['pm-l'], $m) > 0) {
         $limit = [intval($m[1]), intval($m[2])];
     }
     $filter->occupancies_disable_fallback = true;
