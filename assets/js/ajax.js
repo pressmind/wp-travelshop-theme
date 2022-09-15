@@ -639,7 +639,6 @@ jQuery(function ($) {
                         'im nächsten Monat': [dayjs().add(1, 'month').startOf('month'), dayjs().add(1, 'month').endOf('month')],
                     },
                     "showWeekNumbers": false,
-                    "dateFormat": 'dd-mm-y',
                     "autoUpdateInput": false,
                     "alwaysShowCalendars": true,
                     "showDropdowns": true,
@@ -654,7 +653,6 @@ jQuery(function ($) {
                     // "autoApply": true,
                     "locale": {
                         "format": "DD.MM.YYYY",
-                        "dateFormat": 'DD.MM.YY',
                         "separator": " - ",
                         "applyLabel": "Auswahl übernehmen",
                         "fromLabel": "Von",
@@ -701,11 +699,11 @@ jQuery(function ($) {
 
 
                 $('[data-type="daterange"]').on('apply.daterangepicker', function (ev, picker) {
-                    $(this).val(picker.startDate.format('DD.MM.') + '-' + picker.endDate.format('DD.MM.YY'));
+                    $(this).val(picker.startDate.format('DD.MM.') + ' - ' + picker.endDate.format('DD.MM.YY'));
                     _this.updateQueryStringParam('pm-dr', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
                     _this.loadOffers(ev);
                     // build the a pm ready query string
-                    $(this).data('value', picker.startDate.format('DD.MM.') + '-' + picker.endDate.format('DD.MM.YY'));
+                    $(this).data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
 
                     $(this).trigger('change');
                 });
@@ -956,6 +954,7 @@ jQuery(function ($) {
         _this.lastScroll = 0;
 
         this.initOfferListeners = function() {
+            _this.initBookingBtnClickHandler();
             // Fire Infnity when User scrolls to bottom
             if($('.modal-body-outer').length) {
                 _this.fired = false;
@@ -1135,7 +1134,7 @@ jQuery(function ($) {
 
         this.initBookingBtnClickHandler = function (){
             if ($('.booking-btn').length > 0) {
-                $('.booking-btn').on('click', function (e) {
+                $('.booking-btn').unbind().on('click', function (e) {
                     if($(this).data('modal') === true){
                         return true;
                     }

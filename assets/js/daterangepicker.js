@@ -73,7 +73,7 @@
 
         this.locale = {
             direction: 'ltr',
-            dateFormat: 'dd-mm-y',
+            format: 'DD.MM.YYYY',
             separator: ' - ',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
@@ -1604,8 +1604,8 @@
                 end = null;
 
             if (dateString.length === 2) {
-                start = dayjs(dateString[0], 'dd-mm');
-                end = dayjs(dateString[1], 'dd-mm-y');
+                start = dayjs(dateString[0], this.locale.format);
+                end = dayjs(dateString[1], this.locale.format);
             }
 
             if (this.singleDatePicker || start === null || end === null) {
