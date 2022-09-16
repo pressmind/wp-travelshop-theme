@@ -7,6 +7,7 @@ ini_set('display_errors', 'On');
 use Exception;
 use Pressmind\Log\Writer;
 use Pressmind\ORM\Object\MediaObject;
+use Pressmind\REST\Controller\System;
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
@@ -192,11 +193,21 @@ switch ($args[1]) {
             echo "WARNING: Import threw errors:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
         }
         break;
+    case 'update_tags':
+        $system = new System();
+        try {
+            $system->updateTags(['id_object_type' => $args[2]]);
+            Writer::write('updating tags done', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+        } catch(Exception $e) {
+            Writer::write($e->getMessage(), Writer::OUTPUT_BOTH, 'import', Writer::TYPE_ERROR);
+            echo "WARNING: Import threw errors:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
+        }
+        break;
     case 'help':
     case '--help':
     case '-h':
     default:
-        $helptext = "usage: import.php [fullimport | mediaobject | itinerary | objecttypes | remove_orphans | destroy | depublish] [<single id or commaseparated list of ids>] [debug]\n";
+        $helptext = "usage: import.php [fullimport | mediaobject | itinerary | objecttypes | remove_orphans | destroy | depublish | update_tags] [<single id or commaseparated list of ids>] [debug]\n";
         $helptext .= "Example usages:\n";
         $helptext .= "php import.php fullimport\n";
         $helptext .= "php import.php mediaobject 12345,12346  <single/multiple ids allowed  / imports one or more media objects>\n";
@@ -205,6 +216,7 @@ switch ($args[1]) {
         $helptext .= "php import.php destroy 12345,12346      <single/multiple ids allowed / removes the given media objects from the database>\n";
         $helptext .= "php import.php depublish 12345,12346    <single/multiple ids allowed / sets the given media objects to the visibility=10/nobody state>\n";
         $helptext .= "php import.php remove_orphans           <removes all orphans from the database that are not delivered by the pressmind api>\n";
+        $helptext .= "php import.php update_tags 12345        <single media object type id required>\n";
 
         echo $helptext;
 }
