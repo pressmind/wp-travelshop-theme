@@ -11012,7 +11012,7 @@ Build date: 2018-12-12 00:07:25
   border-radius: 4px;
 }
 
-.daterangepicker td.active, .daterangepicker td.active:hover {
+.daterangepicker td.active:not(.ends), .daterangepicker td.active:not(.ends):hover {
   background-color: #357ebd;
   border-color: transparent;
   color: #fff !important;
@@ -15129,6 +15129,7 @@ body.fl-builder .content-block.content-page {
 
 .travelshop-datepicker-input {
   background: #fff !important;
+  cursor: pointer;
 }
 
 .form-check {

@@ -214,7 +214,7 @@
   border-radius: 4px;
 }
 
-.daterangepicker td.active, .daterangepicker td.active:hover {
+.daterangepicker td.active:not(.ends), .daterangepicker td.active:not(.ends):hover {
   background-color: #357ebd;
   border-color: transparent;
   color: #fff!important;

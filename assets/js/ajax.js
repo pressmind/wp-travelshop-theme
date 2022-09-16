@@ -938,7 +938,7 @@ jQuery(function ($) {
                     'quantity' : quantity
                 }]}),
             }).done(function (response) {
-                let data = response;
+                let data = response.data[0];
                 $(booking_btn).find('span').html(data.btn_msg);
                 $(booking_btn).attr('title', data.msg);
                 $(booking_btn).find('.loader').hide();
