@@ -407,6 +407,12 @@ jQuery(function ($) {
                 query.push('pm-dr=' + date_range);
             }
 
+            // check and set date-range
+            let transport_types = $(form).find('input[name=pm-tt]').data('value');
+            if (transport_types && transport_types != '') {
+                query.push('pm-tt=' + transport_types);
+            }
+
             // check and set search term
             let search_term = $(form).find('input[name=pm-t]').val();
             if (search_term && search_term != '') {
@@ -1017,10 +1023,9 @@ jQuery(function ($) {
                         _this.updateQueryStringParam($(e.target).attr('filter-param'), selectedValues);
                     } else {
                         if($(_this.picker).val() != '') {
-                            _this.updateQueryStringParam('pm-dr', '');
                             dpquery = '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD');
                         } else {
-                            _this.updateQueryStringParam('pm-dr', '');
+                            dpquery = '&pm-dr=null';
                         }
                         // $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
                     }
@@ -1108,7 +1113,7 @@ jQuery(function ($) {
                 });
                 if(type != 'infinity') {
                     typeof $(e.target).data('anchor') != 'undefined' ? _this.selectedOfferID = $(e.target).data('anchor') : '';
-                    _this.call('action=bookingoffers&pm-oid=' + _this.selectedOfferID + '&pm-id=' + moid + querystring + query, '#booking-offers', null, function(data) {
+                    _this.call('action=bookingoffers&pm-oid=' + _this.selectedOfferID + '&pm-id=' + moid + querystring + (typeof query != 'undefined' ? query : ''), '#booking-offers', null, function(data) {
                         for (var key in data.html) {
                             $('#' + key).html(data.html[key]);
                             $('#offers-filter-total').text(data.total == 15 ? 'Über 15' : data.total);
@@ -1134,7 +1139,7 @@ jQuery(function ($) {
                     });
                 } else {
                     _this.fired = true;
-                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items + query,  '#booking-offers', null, function(data) {
+                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items + (typeof query != 'undefined' ? query : ''),  '#booking-offers', null, function(data) {
                         for (var key in data.html) {
                             if(data.html[key] != '') {
                                 _this.loaded = _this.loaded + _this.items;
