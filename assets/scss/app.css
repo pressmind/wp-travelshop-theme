@@ -14385,6 +14385,10 @@ body.fl-builder .content-block.content-page {
   height: auto;
 }
 
+#booking-offers {
+  padding-bottom: 2rem;
+}
+
 #booking-filter .filter-form {
   display: flex;
   justify-content: center;
@@ -14432,7 +14436,7 @@ body.fl-builder .content-block.content-page {
     display: none !important;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #booking-filter .filter-form {
     top: -1.25rem;
     background: #fff;

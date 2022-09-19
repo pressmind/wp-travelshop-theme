@@ -85,6 +85,9 @@
 		}
 	}
 }
+#booking-offers {
+	padding-bottom: 2rem;
+}
 #booking-filter .filter-form {
 	@include media-breakpoint-down(md) {
 		padding: 0 1rem;
@@ -130,7 +133,7 @@
 	z-index: 25;
 	margin: 0 -1.25rem;
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		top: -1.25rem;
 		background: #fff;
 		padding: 1rem;

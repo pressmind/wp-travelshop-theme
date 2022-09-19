@@ -1058,6 +1058,7 @@ jQuery(function ($) {
         }
 
         this.loadFilters = function() {
+            _this.infinityActive = true;
             $('.modal-loader').css('display', 'flex');
             const URLParams = _this.getAllUrlParams();
             let querystring = '';
@@ -1082,7 +1083,9 @@ jQuery(function ($) {
 
         this.loadOffers = function(e, type) {
             if($('.detail-page-v2-container').length) {
-                $('.modal-loader').css('display', 'flex');
+                if(_this.infinityActive | type != 'infinity') {
+                    $('.modal-loader').css('display', 'flex');
+                }
                 const URLParams = _this.getAllUrlParams();
                 let querystring = '';
                 Object.entries(URLParams).forEach(entry => {
@@ -1120,8 +1123,10 @@ jQuery(function ($) {
                     _this.fired = true;
                     _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items,  '#booking-offers', null, function(data) {
                         for (var key in data.html) {
-                            if(data.html != '') {
+                            if(data.html[key] != '') {
                                 _this.loaded = _this.loaded + _this.items;
+                            } else {
+                                _this.infinityActive = false;
                             }
                             $('.modal-body-outer').unbind();
                             $('#' + key).append(data.html[key]);
