@@ -25,7 +25,7 @@ if(isset($args['use_ajax'])) {
 
 $human_readable_str = '';
 $value = '';
-if (empty($_GET['pm-dr']) === false) {
+if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
     $dr = BuildSearch::extractDaterange($_GET['pm-dr']);
     $human_readable_str = $dr[0]->format('d.m.') . '-' . $dr[1]->format('d.m.y');
     $value = $dr[0]->format('Ymd') . '-' . $dr[1]->format('Ymd');

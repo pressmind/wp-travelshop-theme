@@ -1017,9 +1017,10 @@ jQuery(function ($) {
                         _this.updateQueryStringParam($(e.target).attr('filter-param'), selectedValues);
                     } else {
                         if($(_this.picker).val() != '') {
+                            _this.updateQueryStringParam('pm-dr', '');
                             dpquery = '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD');
                         } else {
-                            dpquery = '&pm-dr=';
+                            _this.updateQueryStringParam('pm-dr', '');
                         }
                         // $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
                     }
@@ -1124,7 +1125,7 @@ jQuery(function ($) {
                                 setTimeout(function() {
                                     if($( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).length) {
                                         $('.modal-body-outer').animate({
-                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 325 : 175) )
+                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 325 : 325) )
                                         }, 0);
                                     }
                                 }, 0);
