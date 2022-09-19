@@ -24,6 +24,20 @@
             pointer-events: none;
         }
     }
+    >div {
+        position: relative;
+        .datepicker-icon,
+        .datepicker-clear {
+            position: absolute;
+            right: .5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .datepicker-clear {
+            pointer-events: all;
+        }
+    }
 }
 div.daterangepicker {
     z-index: 6000 !important;

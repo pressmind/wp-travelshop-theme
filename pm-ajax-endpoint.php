@@ -10,9 +10,9 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(0);
 
 define('DOING_AJAX', true);
 require_once 'vendor/autoload.php';
@@ -170,6 +170,21 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     !empty($_GET['pm-ho']) ? $filters->occupancies = [$_GET['pm-ho']] : '';
     $args['booking_offers'] = $args['media_object']->getCheapestPrices(!empty($filters) ? $filters : null, ['date_departure' => 'ASC', 'price_total' => 'ASC'], $limit);
     $Output->total = count($args['booking_offers']);
+
+    if(!empty($_GET['pm-oid'])) {
+        $filterNew = new stdClass();
+        $filterNew->id_option = null;
+        $filterNew->id_date = null;
+        $filterNew->id_booking_package = null;
+        $filterNew->id_housing_package = null;
+        $filterNew->date_from = null;
+        $filterNew->date_to = null;
+        $filterNew->id = $_GET['pm-oid'];
+        $selectedDate = $args['media_object']->getCheapestPrices(!empty($filterNew) ? $filterNew : null, null, [0,1]);
+        if(!empty($selectedDate)) {
+            array_unshift($args['booking_offers'], $selectedDate[0]);
+        }
+    }
 
     if(!empty($_GET['type']) && $_GET['type'] = 'infinity') {
         ob_start();

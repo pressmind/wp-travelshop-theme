@@ -39,7 +39,7 @@ $args = array_merge($args, $result);
 
                 if($field['fieldname'] == 'date_picker'){
                     ?>
-                    <div class="col-12 col-md-3 travelshop-datepicker">
+                    <div class="col-12 col-lg-3 travelshop-datepicker">
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => $field['name'], 'departure_min' => $args['departure_min'], 'departure_max' => $args['departure_max'], 'departure_dates' => $args['departure_dates']]);
                         ?>
@@ -47,7 +47,7 @@ $args = array_merge($args, $result);
                 <?php
                 }else if($field['fieldname'] == 'string_search'){
                     ?>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-lg-3">
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search.php', ['name' => $field['name']]);
                         ?>
@@ -59,7 +59,7 @@ $args = array_merge($args, $result);
                 }
             }
             ?>
-            <div class="col-12 col-md-3 mb-md-0">
+            <div class="col-12 col-lg-3 mb-md-0">
                 <div class="form-group mb-0">
                     <label class="d-none d-md-block">&nbsp;</label>
                     <a class="btn btn-primary btn-block" data-instant data-instant-intensity="0" href="<?php echo SITE_URL . '/' . trim(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['route'],'/'). '/'; ?>">

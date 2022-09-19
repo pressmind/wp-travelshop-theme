@@ -2,3 +2,6 @@
 hr {
   border-top: $card-border-color 1px solid; 
 }
+input::placeholder {
+  color: #495057 !important;
+}

@@ -5307,8 +5307,19 @@ a.close.disabled {
 
 .modal-body {
   position: relative;
+  min-height: 100%;
+  justify-content: center;
   flex: 1 1 auto;
   padding: 1rem;
+}
+@media (max-width: 991.98px) {
+  .modal-body {
+    display: flex;
+  }
+}
+
+.modal-body-outer {
+  overflow-x: hidden;
 }
 
 .modal-footer {
@@ -11119,6 +11130,10 @@ hr {
   border-top: rgba(0, 0, 0, 0.125) 1px solid;
 }
 
+input::placeholder {
+  color: #495057 !important;
+}
+
 /**
  *  Global offcanvas mixin wich is used in breakpoints by variant elements.
  */
@@ -11719,6 +11734,9 @@ button.select-from-control i.la {
   transform: rotate(180deg);
 }
 
+.form-group.category-tree {
+  margin-bottom: 1rem;
+}
 .form-group.category-tree .dropdown-menu.dropdown-menu-select {
   top: 100% !important;
   transform: translate(0, 0) !important;

@@ -1,6 +1,9 @@
 // set default hover effect
 .btn-primary {
   background: $primary;
+  @include media-breakpoint-down(md) {
+    font-size: .9rem;
+  }
   &:hover,
   &:focus,
   &:active {

@@ -731,9 +731,11 @@ jQuery(function ($) {
                 // -- show/hide clear button in datepicker
                 $('.travelshop-datepicker-input').on('change', function (e) {
                     if ($(e.target).val() != '') {
-                        $(e.target).parent().siblings('.datepicker-clear').show();
+                        $(e.target).siblings('.datepicker-clear').show();
+                        $(e.target).siblings('.datepicker-icon').hide();
                     } else {
-                        $(e.target).parent().siblings('.datepicker-clear').hide();
+                        $(e.target).siblings('.datepicker-clear').hide();
+                        $(e.target).siblings('.datepicker-icon').show();
                     }
                 });
 
@@ -968,8 +970,8 @@ jQuery(function ($) {
                     _this.lastScroll = _this.nowScroll;
                 });
             }
-            $('.reset-filter').click(() => {
-                //_this.picker.datepicker('setDate', null);
+            $('.clear-filter').unbind().click((e) => {
+                $('.modal-loader').css('display', 'flex');
                 $('.datepicker-clear').trigger('click');
                 $('input:checked').prop('checked', false).trigger('change');
                 $('input[name=pm-dr]').val('').trigger('change');
@@ -1088,27 +1090,29 @@ jQuery(function ($) {
                     querystring += '&' + key + '=' + value;
                 });
                 if(type != 'infinity') {
-                    _this.call('action=bookingoffers&pm-id=' + moid + querystring, '#booking-offers', null, function(data) {
+                    let selectedOfferID = $(e.target).data('anchor');
+                    _this.call('action=bookingoffers&pm-oid=' + selectedOfferID + '&pm-id=' + moid + querystring, '#booking-offers', null, function(data) {
                         for (var key in data.html) {
                             $('#' + key).html(data.html[key]);
                             $('#offers-filter-total').text(data.total == 15 ? 'Über 15' : data.total);
                             _this.initOfferListeners();
                             _this.items = data.total;
                             _this.loaded = data.total;
+                            _this.offerID = selectedOfferID;
                             setTimeout(() => {
                                 $('.modal-loader').css('display', 'none');
                             }, 400);
                             if($(e.target).data('anchor')) {
                                 $('.modal-body-outer').scrollTop(0);
                                 $('.booking-row').removeClass('checked');
-                                $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).parent().parent().addClass('checked');
+                                $( 'div[data-id-offer="' + $(e.target).data('anchor') + '"].booking-row' ).addClass('checked');
                                 setTimeout(function() {
                                     if($( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).length) {
                                         $('.modal-body-outer').animate({
-                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 0 : 100) )
-                                        }, 500);
+                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 275 : 175) )
+                                        }, 0);
                                     }
-                                }, 1000);
+                                }, 0);
                             }
                         }
                     });
@@ -1121,6 +1125,7 @@ jQuery(function ($) {
                             }
                             $('.modal-body-outer').unbind();
                             $('#' + key).append(data.html[key]);
+                            $( 'div[data-id-offer="' + _this.offerID + '"].booking-row' ).addClass('checked');
                             _this.initOfferListeners();
                             setTimeout(() => {
                                 $('.modal-loader').css('display', 'none');

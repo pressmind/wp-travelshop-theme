@@ -10,6 +10,40 @@
       pointer-events: none;
     }
   }
+  >div {
+    position: relatice;
+    .lds-dual-ring {
+      position: absolute;
+      pointer-events: none;
+      top: 50%;
+      transform: translateY(-50%);
+      right: .5rem;
+      display: none;
+      width: 24px;
+      height: 24px;
+    }
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      border-color: #06f transparent #06f transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
 }
 
 // Autocomplete Styling
@@ -52,36 +86,5 @@
         text-align: center;
       }
     }
-  }
-}
-
-.lds-dual-ring {
-  position: absolute;
-  pointer-events: none;
-  bottom: 7px;
-  right: 7px;
-  display: none;
-  width: 24px;
-  height: 24px;
-}
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  border-color: #06f transparent #06f transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
