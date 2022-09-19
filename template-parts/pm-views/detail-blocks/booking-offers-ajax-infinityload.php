@@ -27,7 +27,7 @@ if (!empty($args['booking_offers'])) { ?>
                                 $current_month = $offer->date_departure->format('Y-m');
                                 ?>
 
-                                <div class="booking-row no-gutters row booking-row-head d-none d-lg-flex">
+                                <div class="booking-row no-gutters row booking-row-head d-lg-flex month-name">
                                     <div class="col-12">
                                         <h2><?php
                                             echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [

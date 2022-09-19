@@ -89,9 +89,10 @@ $args['filter_data'] = [];
     $dateFrom = DateTime::createFromFormat('Y-m-d H:i:s', $args['booking_offers_intersection']->date_departure_from[0]);
     $dateTo = DateTime::createFromFormat('Y-m-d H:i:s', $args['booking_offers_intersection']->date_departure_to[array_key_last($args['booking_offers_intersection']->date_departure_to)]);
     $currentDate = new DateTime();
+    $ajax = '0';
     if($dateFrom != $dateTo) { ?>
         <div class="col-12 col-lg-3">
-            <?php echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => 'Reisezeitraum', 'departure_min' => $dateFrom, 'departure_max' => $dateTo, 'departure_dates' => [ $currentDate->format('Y-m-d') ] ]); ?>
+            <?php echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => 'Reisezeitraum', 'departure_min' => $dateFrom, 'departure_max' => $dateTo, 'departure_dates' => [ $currentDate->format('Y-m-d') ], 'use_ajax' => $ajax ]); ?>
         </div>
     <?php } ?>
 </form>

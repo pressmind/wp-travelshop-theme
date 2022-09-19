@@ -182,7 +182,15 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
         $filterNew->id = $_GET['pm-oid'];
         $selectedDate = $args['media_object']->getCheapestPrices(!empty($filterNew) ? $filterNew : null, null, [0,1]);
         if(!empty($selectedDate)) {
-            array_unshift($args['booking_offers'], $selectedDate[0]);
+            $found = false;
+            for ($i = 0; $i < 3; ++$i) {
+                if($args['booking_offers'][$i]->getId() == $selectedDate[0]->getId()) {
+                    $found = true;
+                }
+            }
+            if(!$found) {
+                array_unshift($args['booking_offers'], $selectedDate[0]);
+            }
         }
     }
 
@@ -192,6 +200,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
         $Output->html['offer-section'] = ob_get_contents();
         ob_end_clean();
     } else {
+        $args['cheapest_price_id'] = $selectedDate[0]->getId();
         ob_start();
         require 'template-parts/pm-views/detail-blocks/booking-offers-ajax.php';
         $Output->html['booking-offers'] = ob_get_contents();

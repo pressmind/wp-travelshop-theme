@@ -699,9 +699,15 @@ jQuery(function ($) {
 
 
                 $('[data-type="daterange"]').on('apply.daterangepicker', function (ev, picker) {
+
+                    _this.picker = picker;
+
                     $(this).val(picker.startDate.format('DD.MM.') + ' - ' + picker.endDate.format('DD.MM.YY'));
-                    _this.updateQueryStringParam('pm-dr', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
-                    _this.loadOffers(ev);
+                    console.log($(ev.target).data('ajax'));
+                    if($(ev.target).data('ajax') == '1') {
+                        _this.updateQueryStringParam('pm-dr', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
+                    }
+                    _this.loadOffers(ev, 'filter', '&pm-dr=' + picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
                     // build the a pm ready query string
                     $(this).data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
 
@@ -982,6 +988,7 @@ jQuery(function ($) {
             if($('.filter-form').length || $('.filter-form-mobile').length) {
                 $('.filter-form, .filter-form-mobile').unbind().find('input').on('change', (e) => {
                     $('.modal-loader').css('display', 'flex');
+                    let dpquery;
                     if($(e.target).data('type') != 'daterange') {
                         let queryParam = $(e.target).attr('filter-param');
                         let selectedValues = '';
@@ -1009,9 +1016,15 @@ jQuery(function ($) {
                         }
                         _this.updateQueryStringParam($(e.target).attr('filter-param'), selectedValues);
                     } else {
-                        $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
+                        if($(_this.picker).val() != '') {
+                            dpquery = '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD');
+                        } else {
+                            dpquery = '&pm-dr=';
+                        }
+                        // $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
                     }
-                    _this.loadOffers(e);
+
+                    _this.loadOffers(e, 'filter', dpquery);
                     $('.modal-body-outer').animate({
                         scrollTop: 0
                     }, 0);
@@ -1081,7 +1094,7 @@ jQuery(function ($) {
             _this.initCategoryTreeSearchBarFields();
         }
 
-        this.loadOffers = function(e, type) {
+        this.loadOffers = function(e, type, query) {
             if($('.detail-page-v2-container').length) {
                 if(_this.infinityActive | type != 'infinity') {
                     $('.modal-loader').css('display', 'flex');
@@ -1093,15 +1106,14 @@ jQuery(function ($) {
                     querystring += '&' + key + '=' + value;
                 });
                 if(type != 'infinity') {
-                    let selectedOfferID = $(e.target).data('anchor');
-                    _this.call('action=bookingoffers&pm-oid=' + selectedOfferID + '&pm-id=' + moid + querystring, '#booking-offers', null, function(data) {
+                    typeof $(e.target).data('anchor') != 'undefined' ? _this.selectedOfferID = $(e.target).data('anchor') : '';
+                    _this.call('action=bookingoffers&pm-oid=' + _this.selectedOfferID + '&pm-id=' + moid + querystring + query, '#booking-offers', null, function(data) {
                         for (var key in data.html) {
                             $('#' + key).html(data.html[key]);
                             $('#offers-filter-total').text(data.total == 15 ? 'Über 15' : data.total);
                             _this.initOfferListeners();
                             _this.items = data.total;
                             _this.loaded = data.total;
-                            _this.offerID = selectedOfferID;
                             setTimeout(() => {
                                 $('.modal-loader').css('display', 'none');
                             }, 400);
@@ -1112,7 +1124,7 @@ jQuery(function ($) {
                                 setTimeout(function() {
                                     if($( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).length) {
                                         $('.modal-body-outer').animate({
-                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 275 : 175) )
+                                            scrollTop: $( 'a[data-id-offer="' + $(e.target).data('anchor') + '"]' ).offset().top - ( $('.modal-body-outer').offset().top + ($(window).width() < 768 ? 325 : 175) )
                                         }, 0);
                                     }
                                 }, 0);
@@ -1121,7 +1133,7 @@ jQuery(function ($) {
                     });
                 } else {
                     _this.fired = true;
-                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items,  '#booking-offers', null, function(data) {
+                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items + query,  '#booking-offers', null, function(data) {
                         for (var key in data.html) {
                             if(data.html[key] != '') {
                                 _this.loaded = _this.loaded + _this.items;

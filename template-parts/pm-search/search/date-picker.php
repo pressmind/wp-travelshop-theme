@@ -16,6 +16,12 @@ $departures_dates = '[]';
 if(!empty($args['departure_dates'])){
     $departures_dates = json_encode($args['departure_dates']);
 }
+$use_ajax = '1';
+
+
+if(isset($args['use_ajax'])) {
+    $use_ajax = $args['use_ajax'];
+}
 
 $human_readable_str = '';
 $value = '';
@@ -38,6 +44,7 @@ if (empty($_GET['pm-dr']) === false) {
             data-maxdate="<?php echo $maxDate;?>"
             data-value="<?php echo $value; ?>"
             placeholder="bitte wählen"
+            data-ajax="<?php echo $use_ajax; ?>"
             data-departures='{<?php echo $departures_dates;?>}'
             value="<?php echo $human_readable_str; ?>"/>
         <svg xmlns="http://www.w3.org/2000/svg"
