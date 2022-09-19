@@ -92,7 +92,7 @@ $args['filter_data'] = [];
     $ajax = '0';
     if($dateFrom != $dateTo) { ?>
         <div class="col-12 col-lg-3">
-            <?php echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => 'Reisezeitraum', 'departure_min' => $dateFrom, 'departure_max' => $dateTo, 'departure_dates' => [ $currentDate->format('Y-m-d') ], 'use_ajax' => $ajax ]); ?>
+            <?php echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => 'Reisezeitraum', 'departure_min' => $dateFrom, 'departure_max' => $dateTo, 'departure_dates' => [], 'use_ajax' => $ajax ]); ?>
         </div>
     <?php } ?>
 </form>

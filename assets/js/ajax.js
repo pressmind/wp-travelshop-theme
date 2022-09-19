@@ -93,8 +93,10 @@ jQuery(function ($) {
                     var paramValue = typeof (a[1]) === undefined ? true : a[1];
 
                     // (optional) keep case consistent
-                    paramName = paramName.toLowerCase();
-                    if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+                    if(false) {
+                        paramName = String(paramName).toLowerCase();
+                        (typeof paramValue === 'string' && paramName.length >= 1) ? paramValue = String(paramValue).toLowerCase() : '';
+                    }
 
                     // if the paramName ends with square brackets, e.g. colors[] or colors[2]
                     if (paramName.match(/\[(\d+)?\]$/)) {
@@ -479,7 +481,7 @@ jQuery(function ($) {
                 if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
                     $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
                 }
-                let query_string = _this.buildSearchQuery(form);
+                // let query_string = _this.buildSearchQuery(form);
                 //_this.setSpinner('#pm-search-result');
                 //_this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
                 e.preventDefault();
@@ -644,15 +646,20 @@ jQuery(function ($) {
                         'über Silvester': [dayjs().date(25).month(11), dayjs().date(31).month(11)],
                         'im nächsten Monat': [dayjs().add(1, 'month').startOf('month'), dayjs().add(1, 'month').endOf('month')],
                     },
+                    "changeMonth": false,
+                    "changeYear": false,
                     "showWeekNumbers": false,
                     "autoUpdateInput": false,
                     "alwaysShowCalendars": true,
                     "showDropdowns": true,
                     "minDate": $('[data-type="daterange"]').data('mindate'),
                     "maxDate": $('[data-type="daterange"]').data('maxdate'),
+                    "maxYear": parseInt(dayjs($('[data-type="daterange"]').data('maxdate'), 'DD.MM.YYYY').format("YYYY")),
+                    "minYear": parseInt(dayjs($('[data-type="daterange"]').data('mindate'), 'DD.MM.YYYY').format("YYYY")),
                     "showCustomRangeLabel": false,
+                    "linkedCalendars": true,
                     isCustomDate: function(date) {
-                        if($('[data-type="daterange"]').data('departures').indexOf(date.format('YYYY-MM-DD')) >= 0){
+                        if($('[data-type="daterange"]').data('departures').indexOf(date.format('DD.MM.YYYY')) >= 0){
                             return 'has_departures';
                         }
                         },
@@ -688,11 +695,10 @@ jQuery(function ($) {
                             "November",
                             "Dezember"
                         ],
-
                         "firstDay": 1,
                         "buttonClasses": "btn btn-outline-secondary btn-block",
                         "applyButtonClasses": "btn btn-outline-secondary btn-block",
-                        "cancelClass": "btn-default",
+                        "cancelClass": "icon-tabler-x",
                         "cancelLabel": '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>'
                     },
                     /*
@@ -701,30 +707,42 @@ jQuery(function ($) {
                     */
                 }, function (start, end, label) {
                     $('.modal-body-outer').scrollTop(0);
+                    $('.monthselect').val(dayjs($(this).data('mindate'), 'DD.MM.YYYY').format('M'));
+                    $('.monthselect').trigger('change');
                 });
 
 
                 $('[data-type="daterange"]').on('apply.daterangepicker', function (ev, picker) {
-
                     _this.picker = picker;
-
-                    $(this).val(picker.startDate.format('DD.MM.') + ' - ' + picker.endDate.format('DD.MM.YY'));
-                    console.log($(ev.target).data('ajax'));
+                    $(this).val(_this.picker.startDate.format('DD.MM.') + ' - ' + _this.picker.endDate.format('DD.MM.YY'));
                     if($(ev.target).data('ajax') == '1') {
                         _this.updateQueryStringParam('pm-dr', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
                     }
-                    _this.loadOffers(ev, 'filter', '&pm-dr=' + picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
-                    // build the a pm ready query string
-                    $(this).data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
-
-                    $(this).trigger('change');
+                    _this.loadOffers(ev, null, '&pm-dr=' + picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
+                    picker.hide();
+                    if ($(ev.target).val() != '') {
+                        $(ev.target).siblings('.datepicker-clear').show();
+                        $(ev.target).siblings('.datepicker-icon').hide();
+                    } else {
+                        $(ev.target).siblings('.datepicker-clear').hide();
+                        $(ev.target).siblings('.datepicker-icon').show();
+                    }
                 });
 
 
                 $('[data-type="daterange"]').on('cancel.daterangepicker', function (ev, picker) {
-                    $(this).val('');
-                    $(this).data('value', '');
-                    $(this).trigger('change');
+                    $(ev.target).val('');
+                    $(ev.target).data('value', '');
+                    picker.setStartDate({});
+                    picker.setEndDate({});
+                    picker.leftCalendar.month = dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY');
+                    picker.rightCalendar.month = dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY');
+                    $(ev.target).trigger('change');
+                });
+
+                $('[data-type="daterange"]').on('show.daterangepicker', function (ev, picker) {
+                    $('.monthselect').val(dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY').format('M'));
+                    $('.monthselect').trigger('change');
                 });
 
                 document.addEventListener("DOMContentLoaded", function (event) {
@@ -976,7 +994,8 @@ jQuery(function ($) {
                     _this.nowScroll = $(this).scrollTop();
                     if (_this.nowScroll > _this.lastScroll) {
                         if (_this.nowScroll >= $('#offer-section').outerHeight() - $(this).outerHeight() && !_this.fired) {
-                            _this.loadOffers(null, 'infinity');
+                            let dpquery = '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD');
+                            _this.loadOffers(null, 'infinity', dpquery);
                         }
                     }
                     _this.lastScroll = _this.nowScroll;
@@ -994,8 +1013,7 @@ jQuery(function ($) {
             if($('.filter-form').length || $('.filter-form-mobile').length) {
                 $('.filter-form, .filter-form-mobile').unbind().find('input').on('change', (e) => {
                     $('.modal-loader').css('display', 'flex');
-                    let dpquery;
-                    if($(e.target).data('type') != 'daterange') {
+                    if($(e.target).prop('data-type') != 'daterange') {
                         let queryParam = $(e.target).attr('filter-param');
                         let selectedValues = '';
                         $(e.target).parent().parent().find('input:checked').each((key, item) => {
@@ -1022,15 +1040,13 @@ jQuery(function ($) {
                         }
                         _this.updateQueryStringParam($(e.target).attr('filter-param'), selectedValues);
                     } else {
-                        if($(_this.picker).val() != '') {
-                            dpquery = '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD');
-                        } else {
-                            dpquery = '&pm-dr=null';
+                        if($(_this.picker).val().length > 1) {
+                            _this.dpquery = '&pm-dr=' + String(_this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD'));
                         }
                         // $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
                     }
 
-                    _this.loadOffers(e, 'filter', dpquery);
+                    _this.loadOffers(e, 'filter', _this.dpquery);
                     $('.modal-body-outer').animate({
                         scrollTop: 0
                     }, 0);
@@ -1113,7 +1129,7 @@ jQuery(function ($) {
                 });
                 if(type != 'infinity') {
                     typeof $(e.target).data('anchor') != 'undefined' ? _this.selectedOfferID = $(e.target).data('anchor') : '';
-                    _this.call('action=bookingoffers&pm-oid=' + _this.selectedOfferID + '&pm-id=' + moid + querystring + (typeof query != 'undefined' ? query : ''), '#booking-offers', null, function(data) {
+                    _this.call('action=bookingoffers&pm-oid=' + _this.selectedOfferID + '&pm-id=' + moid + querystring + String(typeof query != 'undefined' ? query : ''), '#booking-offers', null, function(data) {
                         for (var key in data.html) {
                             $('#' + key).html(data.html[key]);
                             $('#offers-filter-total').text(data.total == 15 ? 'Über 15' : data.total);
