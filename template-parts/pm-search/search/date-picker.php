@@ -26,7 +26,7 @@ $value = '';
 if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
     $dr = BuildSearch::extractDaterange($_GET['pm-dr']);
     $human_readable_str = $dr[0]->format('d.m.') . ' - ' . $dr[1]->format('d.m.y');
-    $value = $dr[0]->format('YMD') . '-' . $dr[1]->format('YMD');
+    $value = $dr[0]->format('Ymd') . '-' . $dr[1]->format('Ymd');
 }
 ?>
 <div class="list-filter-box form-group mb-lg-0">
@@ -45,6 +45,7 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
             data-ajax="<?php echo $use_ajax; ?>"
             data-departures='<?php echo $departures_dates;?>'
             value="<?php echo $human_readable_str; ?>"/>
+        <?php if($use_ajax == "0") { ?>
         <svg xmlns="http://www.w3.org/2000/svg"
             <?php if (!empty($_GET['pm-dr'])) { echo 'style="display: none;"'; } else { echo 'style="display: block;"'; } ?>
              class="icon icon-tabler icon-tabler-calendar datepicker-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -56,8 +57,9 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
             <line x1="11" y1="15" x2="12" y2="15" />
             <line x1="12" y1="15" x2="12" y2="18" />
         </svg>
+        <?php } ?>
         <svg xmlns="http://www.w3.org/2000/svg"
-            <?php if (!empty($_GET['pm-dr'])) { echo 'style="display: block;"'; } else { echo 'style="display: none;"'; } ?>
+            <?php if (!empty($_GET['pm-dr']) && $use_ajax == "1") { echo 'style="display: block;"'; } else { echo 'style="display: none;"'; } ?>
              class="icon icon-tabler icon-tabler-x datepicker-clear" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0066ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <line x1="18" y1="6" x2="6" y2="18" />
