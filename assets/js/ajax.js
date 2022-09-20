@@ -629,9 +629,7 @@ jQuery(function ($) {
 
                 _this.picker = [];
                 $('[data-type="daterange"]').unbind().each((index, item) => {
-                    let newItem = $(item).clone(false, false).appendTo($(item).parent());
-                    $(item).remove();
-                    _this.picker[index] = $(newItem).daterangepicker({
+                    _this.picker[index] = $(item).unbind().daterangepicker({
                         "parentEl": $('#booking-filter').length ? '#booking-filter': 'body',
                         "opens": $('#booking-filter').length ? 'left' : 'right',
                         "ranges": {
@@ -711,7 +709,7 @@ jQuery(function ($) {
                         $('.monthselect').trigger('change');
                     });
 
-                    $(newItem).on('apply.daterangepicker', function (ev, picker) {
+                    $(item).off('apply.daterangepicker').on('apply.daterangepicker', function (ev, picker) {
                         _this.firstCancel = true;
                         $('[data-type="daterange"]').val(picker.startDate.format('DD.MM.') + ' - ' + picker.endDate.format('DD.MM.YY'));
                         $('[data-type="daterange"]').data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
@@ -733,7 +731,7 @@ jQuery(function ($) {
                     });
 
                     _this.firstCancel = true;
-                    $(newItem).on('cancel.daterangepicker', function (ev, picker) {
+                    $(item).off('cancel.daterangepicker').on('cancel.daterangepicker', function (ev, picker) {
                         _this.firstCancel ? $('[data-type="daterange"]').each((ind, it) => {
                             $('[data-type="daterange"]').val('');
                             $('[data-type="daterange"]').data('value', '');
@@ -747,7 +745,7 @@ jQuery(function ($) {
                         }) : '';
                     });
 
-                    $(newItem).on('show.daterangepicker', function (ev, picker) {
+                    $(item).off('show.daterangepicker').on('show.daterangepicker', function (ev, picker) {
                         $('.monthselect').val(parseInt(dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY').format('M')) - 1);
                         $('.monthselect').trigger('change');
                     });
