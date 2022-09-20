@@ -627,10 +627,11 @@ jQuery(function ($) {
                     rosenmontagDate = _this.theEasterDate(dayjs().add(1, 'year').year()).subtract(48, 'days');
                 }
 
-                $('.datepicker-clear').unbind();
                 _this.picker = [];
                 $('[data-type="daterange"]').unbind().each((index, item) => {
-                    _this.picker[index] = $(item).daterangepicker({
+                    let newItem = $(item).clone(false, false).appendTo($(item).parent());
+                    $(item).remove();
+                    _this.picker[index] = $(newItem).daterangepicker({
                         "parentEl": $('#booking-filter').length ? '#booking-filter': 'body',
                         "opens": $('#booking-filter').length ? 'left' : 'right',
                         "ranges": {
@@ -710,7 +711,7 @@ jQuery(function ($) {
                         $('.monthselect').trigger('change');
                     });
 
-                    $(item).on('apply.daterangepicker', function (ev, picker) {
+                    $(newItem).on('apply.daterangepicker', function (ev, picker) {
                         _this.firstCancel = true;
                         $('[data-type="daterange"]').val(picker.startDate.format('DD.MM.') + ' - ' + picker.endDate.format('DD.MM.YY'));
                         $('[data-type="daterange"]').data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
@@ -732,7 +733,7 @@ jQuery(function ($) {
                     });
 
                     _this.firstCancel = true;
-                    $(item).on('cancel.daterangepicker', function (ev, picker) {
+                    $(newItem).on('cancel.daterangepicker', function (ev, picker) {
                         _this.firstCancel ? $('[data-type="daterange"]').each((ind, it) => {
                             $('[data-type="daterange"]').val('');
                             $('[data-type="daterange"]').data('value', '');
@@ -746,7 +747,7 @@ jQuery(function ($) {
                         }) : '';
                     });
 
-                    $(item).on('show.daterangepicker', function (ev, picker) {
+                    $(newItem).on('show.daterangepicker', function (ev, picker) {
                         $('.monthselect').val(parseInt(dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY').format('M')) - 1);
                         $('.monthselect').trigger('change');
                     });
