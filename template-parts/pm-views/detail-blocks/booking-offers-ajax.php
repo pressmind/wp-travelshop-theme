@@ -22,9 +22,9 @@ use Pressmind\Travelshop\Template;
                     <div class="content-block-detail-booking-inner">
                         <?php
                         $current_month = null;
-                        foreach ($args['booking_offers'] as $offer) {
+                        foreach ($args['booking_offers'] as $key => $offer) {
 
-                            if($current_month != $offer->date_departure->format('Y-m')){
+                            if($current_month != $offer->date_departure->format('Y-m') && ($key != 1 && $args['hide_month'] == false)){
                                 $current_month = $offer->date_departure->format('Y-m');
                                 ?>
 
@@ -120,7 +120,7 @@ use Pressmind\Travelshop\Template;
                                 </div>
                             </div>
 
-                            <?php if($checked) { ?>
+                            <?php if($checked && $key == 0 && count($args['booking_offers']) > 1) { ?>
                                 <div class="booking-row no-gutters row booking-row-head d-flex additional-offers">
                                     <div class="col-12">
                                         <h2>Weitere Angebote</h2>

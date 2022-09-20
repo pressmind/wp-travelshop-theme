@@ -211,7 +211,7 @@ jQuery(function ($) {
 
         this.resultHandlerSearchBarStandalone = function(data, query_string, scrollto, btn){
 
-            _this.removeButtonLoader(btn)
+            _this.removeButtonLoader(btn);
             let total_count_span = btn.find('span');
             let str = '';
             if (data.count == 1) {
@@ -499,19 +499,18 @@ jQuery(function ($) {
             $('#main-search').on('change', '.search-box input, .search-box select', function (e) {
 
                 let form = $(this).closest('form');
-
                 // build the query string and set him on the search button
                 let query_string = _this.buildSearchQuery(form);
 
                 let button = $(form).find('a.btn');
                 let href = button.attr('href').split('?');
-                button.attr('href', href[0] + ' ?' + query_string);
+                button.attr('href', href[0] + '?' + query_string);
 
                 // if we're on the same page, let fire the search and set the search results
                 let current_location = window.location.href.split('?');
                 if (current_location[0] == href[0]) {
                     _this.setSpinner('#pm-search-result');
-                    _this.call(query_string, null, button, _this.resultHandlerSearch);
+                    _this.call(query_string, null, $('.search-bar-total-count'), _this.resultHandlerSearch);
                 } else {
                     _this.setButtonLoader(button);
                     // in this case we have placed a search box on a site without a direct result output
@@ -659,7 +658,7 @@ jQuery(function ($) {
                     "showCustomRangeLabel": false,
                     "linkedCalendars": true,
                     isCustomDate: function(date) {
-                        if($('[data-type="daterange"]').data('departures').indexOf(date.format('DD.MM.YYYY')) >= 0){
+                        if($('[data-type="daterange"]').data('departures').indexOf(date.format('YYYY-MM-DD')) >= 0){
                             return 'has_departures';
                         }
                         },
@@ -707,19 +706,23 @@ jQuery(function ($) {
                     */
                 }, function (start, end, label) {
                     $('.modal-body-outer').scrollTop(0);
-                    $('.monthselect').val(dayjs($(this).data('mindate'), 'DD.MM.YYYY').format('M'));
+                    $('.monthselect').val(parseInt(dayjs($(this).data('mindate'), 'DD.MM.YYYY').format('M')) - 1);
                     $('.monthselect').trigger('change');
                 });
 
 
                 $('[data-type="daterange"]').on('apply.daterangepicker', function (ev, picker) {
                     _this.picker = picker;
-                    $(this).val(_this.picker.startDate.format('DD.MM.') + ' - ' + _this.picker.endDate.format('DD.MM.YY'));
+                    $(ev.target).val(_this.picker.startDate.format('DD.MM.') + ' - ' + _this.picker.endDate.format('DD.MM.YY'));
+                    // build the a pm ready query string
+                    $(ev.target).data('value', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
                     if($(ev.target).data('ajax') == '1') {
-                        _this.updateQueryStringParam('pm-dr', picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
+                        $(this).trigger('change');
+                    } else {
+                        _this.loadOffers(ev, 'filter', '&pm-dr=' + picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
                     }
-                    _this.loadOffers(ev, null, '&pm-dr=' + picker.startDate.format('YYYYMMDD') + '-' + picker.endDate.format('YYYYMMDD'));
                     picker.hide();
+                    _this.selectedOfferID = null;
                     if ($(ev.target).val() != '') {
                         $(ev.target).siblings('.datepicker-clear').show();
                         $(ev.target).siblings('.datepicker-icon').hide();
@@ -733,15 +736,15 @@ jQuery(function ($) {
                 $('[data-type="daterange"]').on('cancel.daterangepicker', function (ev, picker) {
                     $(ev.target).val('');
                     $(ev.target).data('value', '');
+                    $(this).trigger('change');
                     picker.setStartDate({});
                     picker.setEndDate({});
                     picker.leftCalendar.month = dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY');
                     picker.rightCalendar.month = dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY');
-                    $(ev.target).trigger('change');
                 });
 
                 $('[data-type="daterange"]').on('show.daterangepicker', function (ev, picker) {
-                    $('.monthselect').val(dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY').format('M'));
+                    $('.monthselect').val(parseInt(dayjs($(ev.target).data('mindate'), 'DD.MM.YYYY').format('M')) - 1);
                     $('.monthselect').trigger('change');
                 });
 
@@ -990,11 +993,11 @@ jQuery(function ($) {
             // Fire Infnity when User scrolls to bottom
             if($('.modal-body-outer').length) {
                 _this.fired = false;
-                $('.modal-body-outer').unbind().scroll(function() {
+                $('.modal-body-outer').scroll(function() {
                     _this.nowScroll = $(this).scrollTop();
                     if (_this.nowScroll > _this.lastScroll) {
                         if (_this.nowScroll >= $('#offer-section').outerHeight() - $(this).outerHeight() && !_this.fired) {
-                            let dpquery = '&pm-dr=' + typeof _this.picker.startDate != 'undefined' && typeof _this.picker.endDate != 'undefined' ? _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD') : '';
+                            let dpquery = typeof _this.picker.startDate != 'undefined' && typeof _this.picker.endDate != 'undefined' ? '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD') : '&pm-dr=';
                             _this.loadOffers(null, 'infinity', dpquery);
                         }
                     }
@@ -1013,7 +1016,8 @@ jQuery(function ($) {
             if($('.filter-form').length || $('.filter-form-mobile').length) {
                 $('.filter-form, .filter-form-mobile').unbind().find('input').on('change', (e) => {
                     $('.modal-loader').css('display', 'flex');
-                    if($(e.target).prop('data-type') != 'daterange') {
+                    let dpquery = '&pm-dr=';
+                    if($(e.target).data('type') != 'daterange') {
                         let queryParam = $(e.target).attr('filter-param');
                         let selectedValues = '';
                         $(e.target).parent().parent().find('input:checked').each((key, item) => {
@@ -1040,13 +1044,11 @@ jQuery(function ($) {
                         }
                         _this.updateQueryStringParam($(e.target).attr('filter-param'), selectedValues);
                     } else {
-                        if($(_this.picker).val().length > 1) {
-                            _this.dpquery = '&pm-dr=' + String(_this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD'));
+                        if($(e.target).val().length > 1) {
+                            dpquery = '&pm-dr=' + String(_this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD'));
                         }
-                        // $(e.target).val() == '' ? _this.updateQueryStringParam('pm-dr', $(e.target).val()) : '';
                     }
-
-                    _this.loadOffers(e, 'filter', _this.dpquery);
+                    _this.loadOffers(e, 'filter', dpquery);
                     $('.modal-body-outer').animate({
                         scrollTop: 0
                     }, 0);
@@ -1125,17 +1127,21 @@ jQuery(function ($) {
                 let querystring = '';
                 Object.entries(URLParams).forEach(entry => {
                     const [key, value] = entry;
-                    querystring += '&' + key + '=' + value;
+                    if(key != 'pm-dr') {
+                        querystring += '&' + key + '=' + value;
+                    }
                 });
                 if(type != 'infinity') {
-                    typeof $(e.target).data('anchor') != 'undefined' ? _this.selectedOfferID = $(e.target).data('anchor') : '';
-                    _this.call('action=bookingoffers&pm-oid=' + _this.selectedOfferID + '&pm-id=' + moid + querystring + String(typeof query != 'undefined' ? query : ''), '#booking-offers', null, function(data) {
+                    let selectedOfferID;
+                    typeof $(e.target).data('anchor') != 'undefined' ? selectedOfferID = $(e.target).data('anchor') : selectedOfferID = undefined;
+                    _this.call('action=bookingoffers&pm-oid=' + selectedOfferID + '&pm-id=' + moid + querystring + String(typeof query != 'undefined' ? query : ''), null, '#booking-offers', function(data) {
                         for (var key in data.html) {
                             $('#' + key).html(data.html[key]);
                             $('#offers-filter-total').text(data.total == 15 ? 'Über 15' : data.total);
                             _this.initOfferListeners();
                             _this.items = data.total;
                             _this.loaded = data.total;
+                            _this.infinityActive = true;
                             setTimeout(() => {
                                 $('.modal-loader').css('display', 'none');
                             }, 400);
@@ -1155,9 +1161,9 @@ jQuery(function ($) {
                     });
                 } else {
                     _this.fired = true;
-                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items + (typeof query != 'undefined' ? query : ''),  '#booking-offers', null, function(data) {
+                    _this.call('action=bookingoffers&type=infinity&pm-id=' + moid + querystring + '&pm-l=' + _this.loaded + ',' + _this.items + (typeof query != 'undefined' ? query : ''),  null, '#offer-section', function(data) {
                         for (var key in data.html) {
-                            if(data.html[key] != '') {
+                            if(data.total != 0) {
                                 _this.loaded = _this.loaded + _this.items;
                             } else {
                                 _this.infinityActive = false;

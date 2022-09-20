@@ -170,7 +170,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     !empty($_GET['price_to']) ? $filters->price_to = $_GET['price_to'] : '';
     !empty($_GET['pm-ho']) ? $filters->occupancies = [$_GET['pm-ho']] : '';
     $args['booking_offers'] = $args['media_object']->getCheapestPrices(!empty($filters) ? $filters : null, ['date_departure' => 'ASC', 'price_total' => 'ASC'], $limit);
-    $Output->total = count($args['booking_offers']);
+    $args['hide_month'] = false;
 
     if(isset($_GET['pm-oid']) && $_GET['pm-oid'] != 'undefined') {
         $filterNew = new stdClass();
@@ -191,10 +191,13 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
                 }
             }
             if(!$found) {
+                $args['hide_month'] = true;
                 array_unshift($args['booking_offers'], $selectedDate[0]);
             }
         }
     }
+
+    $Output->total = count($args['booking_offers']);
 
     if(!empty($_GET['type']) && $_GET['type'] == 'infinity') {
         ob_start();

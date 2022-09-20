@@ -11,7 +11,7 @@ get_header();
     $args['headline'] = 'Finde deine Traumreise!';
     $args['search_box'] = 'default_search_box';
     $args['search_box_tab'] = 0;
-    load_template_transient(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $args);
+    load_template(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $args);
     $request = array_merge($_GET, ['pm-ot' => $wp_query->get('pm-ot')]);
     $output = null;
     $view = 'Teaser1';

@@ -17,8 +17,6 @@ if(!empty($args['departure_dates'])){
     $departures_dates = json_encode($args['departure_dates']);
 }
 $use_ajax = '1';
-
-
 if(isset($args['use_ajax'])) {
     $use_ajax = $args['use_ajax'];
 }
@@ -27,8 +25,8 @@ $human_readable_str = '';
 $value = '';
 if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
     $dr = BuildSearch::extractDaterange($_GET['pm-dr']);
-    $human_readable_str = $dr[0]->format('d.m.') . '-' . $dr[1]->format('d.m.y');
-    $value = $dr[0]->format('Ymd') . '-' . $dr[1]->format('Ymd');
+    $human_readable_str = $dr[0]->format('d.m.') . ' - ' . $dr[1]->format('d.m.y');
+    $value = $dr[0]->format('YMD') . '-' . $dr[1]->format('YMD');
 }
 ?>
 <div class="list-filter-box form-group mb-lg-0">

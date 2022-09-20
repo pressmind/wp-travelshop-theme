@@ -41,7 +41,8 @@ $args = array_merge($args, $result);
                     ?>
                     <div class="col-12 col-lg-3 travelshop-datepicker">
                         <?php
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => $field['name'], 'departure_min' => $args['departure_min'], 'departure_max' => $args['departure_max'], 'departure_dates' => $args['departure_dates']]);
+                        $ajax = 1;
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => $field['name'], 'departure_min' => $args['departure_min'], 'departure_max' => $args['departure_max'], 'departure_dates' => $args['departure_dates'], 'use_ajax' => $ajax]);
                         ?>
                     </div>
                 <?php
