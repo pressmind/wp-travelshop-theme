@@ -994,7 +994,7 @@ jQuery(function ($) {
                     _this.nowScroll = $(this).scrollTop();
                     if (_this.nowScroll > _this.lastScroll) {
                         if (_this.nowScroll >= $('#offer-section').outerHeight() - $(this).outerHeight() && !_this.fired) {
-                            let dpquery = '&pm-dr=' + _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD');
+                            let dpquery = '&pm-dr=' + typeof _this.picker.startDate != 'undefined' && typeof _this.picker.endDate != 'undefined' ? _this.picker.startDate.format('YYYYMMDD') + '-' + _this.picker.endDate.format('YYYYMMDD') : '';
                             _this.loadOffers(null, 'infinity', dpquery);
                         }
                     }
