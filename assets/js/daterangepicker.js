@@ -464,7 +464,7 @@
             this.element.on('keydown.daterangepicker', $.proxy(this.toggle, this));
         }
 
-        $('.travelshop-datepicker, .list-filter-box').on('click', '.datepicker-clear', $.proxy(this.show, this));
+        $('.travelshop-datepicker, .list-filter-box').unbind().on('click', '.datepicker-clear', $.proxy(this.show, this));
         $('.travelshop-datepicker, .list-filter-box').on('click', '.datepicker-clear', $.proxy(this.clickCancel, this));
 
         //
