@@ -481,9 +481,6 @@ jQuery(function ($) {
                 if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
                     $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
                 }
-                // let query_string = _this.buildSearchQuery(form);
-                //_this.setSpinner('#pm-search-result');
-                //_this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
                 e.preventDefault();
             });
 
