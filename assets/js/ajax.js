@@ -1165,7 +1165,6 @@ jQuery(function ($) {
                             } else {
                                 _this.infinityActive = false;
                             }
-                            $('.modal-body-outer').unbind();
                             $('#' + key).append(data.html[key]);
                             $( 'div[data-id-offer="' + _this.offerID + '"].booking-row' ).addClass('checked');
                             _this.initOfferListeners();
