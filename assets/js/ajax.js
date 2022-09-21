@@ -500,10 +500,13 @@ jQuery(function ($) {
                 e.preventDefault();
             });
 
-            $('.form-check.has-second-level').find('input:checked').each((ind, it) => {
+            $('#search-filter .form-check.has-second-level').find('input:checked').each((ind, it) => {
                 $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').prop('checked', true);
-                let text = $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').siblings('label').text();
-                $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').parents().eq(3).find('.selected-options').text(text);
+                let newText = $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').siblings('label').text().trim();
+                let currentText = $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').parents().eq(3).find('.selected-options').text().trim();
+                if(!currentText.includes(newText)) {
+                    $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').parents().eq(3).find('.selected-options').text(currentText.includes('bitte') ? newText : currentText + ', ' + newText);
+                }
             });
 
             // -- make dropdown span-checkboxes clickable
