@@ -455,16 +455,25 @@ jQuery(function ($) {
                     let form = $(this).closest('form');
                     let id = $(e.target).data('id');
                     // if the second level has no more selected items, we fall back to the parents value
-                    if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
+                    if($(this).closest('.form-check.has-second-level').find('input:checked')){
                         $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
+                        if($(this).prop('checked') && $('#main-search [data-id="' + $(this).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').prop('checked') == false) {
+                            $('#main-search [data-id="' + $(this).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').trigger('click');
+                        }
                     }
                     let query_string = _this.buildSearchQuery(form);
                     if($('#main-search [data-id="' + id + '"]').length) {
                         $('#main-search [data-id="' + id + '"]').val($(e.target).val());
-                        $('#main-search [data-id="' + id + '"]').prop('checked', $(e.target).prop('checked')).trigger('change');
+                            $('#main-search [data-id="' + id + '"]').prop('checked', $(e.target).prop('checked')).trigger('change');
                     } else {
-                        _this.setSpinner('#pm-search-result');
-                        _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                        if($(e.target).prop('name') == 'pm-t') {
+                            $('#main-search [name="pm-t"]').val($(e.target).val()).trigger('change');
+                            $('.auto-complete').autocomplete( "abortAjax" );
+                            $('.lds-dual-ring').hide();
+                        } else {
+                            _this.setSpinner('#pm-search-result');
+                            _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                        }
                     }
                     e.preventDefault();
                 });
@@ -489,6 +498,33 @@ jQuery(function ($) {
                     $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
                 }
                 e.preventDefault();
+            });
+
+            $('.form-check.has-second-level').find('input:checked').each((ind, it) => {
+                $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').prop('checked', true);
+                let text = $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').siblings('label').text();
+                $('#main-search [data-id="' + $(it).closest('.form-check.has-second-level').find('input:first').data('id') + '"]').parents().eq(3).find('.selected-options').text(text);
+            });
+
+            // -- make dropdown span-checkboxes clickable
+            $('.form-check span').unbind().on('click', function (e) {
+                $(e.target).siblings('input').trigger('click');
+            });
+
+            // Filter toggle second level filter (open second level tree item)
+            $('.toggle-second-level').unbind().click(function (e) {
+                $(this).parent().toggleClass('is--open');
+            });
+
+            // Filter toggle
+            $('.list-filter-close').one('click', function (e) {
+                e.preventDefault();
+                $('.content-block-list-filter').removeClass('is--open');
+            });
+
+            $('#search-result').unbind().on('click', '.list-filter-open', function (e) {
+                e.preventDefault();
+                $('.content-block-list-filter').addClass('is--open');
             });
 
         }
@@ -523,7 +559,6 @@ jQuery(function ($) {
 
                 e.preventDefault();
             });
-
         }
 
         this.searchboxSwitch = function (){
@@ -837,14 +872,9 @@ jQuery(function ($) {
                 })
 
                 // -- make dropdown span-checkboxes clickable
-                $('.multi-level-checkboxes .form-check span').on('click', function (e) {
-                    if ($(e.target).siblings('input').is(':checked')) {
-                        $(e.target).siblings('input').prop('checked', false).trigger('change');
-                    } else {
-                        $(e.target).parent().find('input').prop('checked', true).trigger('change');
-                    }
+                $('.form-check span').unbind().on('click', function (e) {
+                    $(e.target).siblings('input').trigger('click');
                 });
-
 
                 // -- create label text on input change, put it into span
                 $('.dropdown-menu-select').find('input').on('click change', function (e) {

@@ -4,23 +4,6 @@ jQuery(function ($) {
 // --- Filter
 // -----------------------------------------------
 
-    // Filter toggle second level filter (open second level tree item)
-    $('#search-filter').on('click', '.toggle-second-level', function (e) {
-        $(this).parent().toggleClass('is--open');
-    });
-
-
-    // Filter toggle
-    $('.list-filter-close').on('click', function (e) {
-        e.preventDefault();
-        $('.content-block-list-filter').removeClass('is--open');
-    });
-
-    $('#search-result').on('click', '.list-filter-open', function (e) {
-        e.preventDefault();
-        $('.content-block-list-filter').addClass('is--open');
-    });
-
     // -- make filter span-checkboxes clickable
     function addFilterCheckboxEventListener() {
         $('#search-filter').on('click','#filter .form-check span', function (e) {
