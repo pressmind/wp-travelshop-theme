@@ -201,6 +201,7 @@ jQuery(function ($) {
 
             window.history.pushState(null, '', window.location.pathname + '?' + query_string);
             _this.dateRangePickerInit();
+            _this.filter();
         }
 
         this.scrollTo = function (scrollto) {
@@ -450,15 +451,21 @@ jQuery(function ($) {
 
             // dont run default realtime ajax-functions on small viewport
             if ($(window).width() > 768) {
-                $("#search-filter").one('change', ".list-filter-box input, .list-filter-box select", function (e) {
+                $("#search-filter").unbind().on('change', ".list-filter-box input, .list-filter-box select", function (e) {
                     let form = $(this).closest('form');
+                    let id = $(e.target).data('id');
                     // if the second level has no more selected items, we fall back to the parents value
                     if($(this).closest('.form-check.has-second-level').find('input:checked').length == 0){
                         $(this).closest('.form-check.has-second-level').find('input:disabled:first').attr("disabled", false).prop('checked', true);
                     }
                     let query_string = _this.buildSearchQuery(form);
-                    _this.setSpinner('#pm-search-result');
-                    _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                    if($('#main-search [data-id="' + id + '"]').length) {
+                        $('#main-search [data-id="' + id + '"]').val($(e.target).val());
+                        $('#main-search [data-id="' + id + '"]').prop('checked', $(e.target).prop('checked')).trigger('change');
+                    } else {
+                        _this.setSpinner('#pm-search-result');
+                        _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                    }
                     e.preventDefault();
                 });
             }
@@ -906,12 +913,12 @@ jQuery(function ($) {
                     e.stopPropagation();
                     var placeHolderTag = $(e.target).parent().parent().find('.selected-options');
                     var dropdown = $(e.target).parent().parent().parent().find('.dropdown-menu');
-                    var allBoxes = $(dropdown).find('input');
-                    var fired = false;
+                    var allBoxes = $(dropdown).find('input:checked');
                     $(allBoxes).each(function (key, input) {
-                        if (input.checked && !fired) {
+                        if (key + 1 == allBoxes.length) {
                             $(input).prop('checked', false).trigger('change');
-                            fired = true;
+                        } else {
+                            $(input).prop('checked', false);
                         }
                     });
 
@@ -922,6 +929,8 @@ jQuery(function ($) {
 
                 // Init on load
                 $('.dropdown-menu-select input:checked').trigger('change');
+
+                _this.initOfferListeners();
 
             }
 
@@ -1110,9 +1119,6 @@ jQuery(function ($) {
         this.initFilterMethods = function() {
             _this.initCategoryTreeSearchBarFields();
             _this.dateRangePickerInit();
-            setTimeout(() => {
-                _this.initOfferListeners();
-            }, 200);
         }
 
         this.loadOffers = function(e, type, query) {
@@ -1232,9 +1238,7 @@ jQuery(function ($) {
             if(!window.location.href.includes('calendar')) {
                 _this.pagination();
             }
-            _this.searchbox();
             _this.searchboxSwitch();
-            _this.filter();
             _this.autoCompleteInit();
             _this.dateRangePickerInit();
             _this.initCategoryTreeSearchBarFields();
@@ -1242,6 +1246,8 @@ jQuery(function ($) {
             _this.initBookingBtnClickHandler();
             _this.initPartnerParams();
             _this.initModals();
+            _this.searchbox();
+            _this.filter();
         }
 
     };

@@ -30,7 +30,7 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
 }
 ?>
 <div class="list-filter-box form-group mb-lg-0">
-    <?php if(!empty($args['name'])) { ?><label for=""><?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?></label><?php } ?>
+    <?php if(!empty($args['name'])) { ?><label for="pm-dr"><?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?></label><?php } ?>
     <div>
         <input type="text"
             class="form-control travelshop-datepicker-input"

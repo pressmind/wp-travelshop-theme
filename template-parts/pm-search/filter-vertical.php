@@ -42,6 +42,7 @@
                 <?php
                 require 'search/string-search.php';
                 echo '<hr />';
+                $args['name'] = 'Zeitraum';
                 require 'search/date-picker.php';
                 require 'filter/order.php';
                 require 'filter/price-range.php';
