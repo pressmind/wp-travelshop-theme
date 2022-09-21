@@ -37,7 +37,8 @@ if (empty($args['filter_data'][$args['filter_val']][array_key_first($args['filte
                                            filter-type="<?php echo $args['filter_val']; ?>"
                                            filter-param="<?php echo $args['filter_param']; ?>"
                                            id="<?php echo $uuid; ?>"
-                                        <?php echo isset($_GET[$args['filter_param']]) && in_array(strtoupper($args['filter_data'][$args['filter_val2'] ?? $args['filter_val']][$key]), explode(',', strtoupper($_GET[$args['filter_param']]))) ? 'checked' : ''; ?>><span><i>
+                                        <?php echo isset($_GET[$args['filter_param']]) && in_array(strtoupper($args['filter_data'][$args['filter_val2'] ?? $args['filter_val']][$key]), explode(',', strtoupper($_GET[$args['filter_param']]))) ? 'checked' : ''; ?>>
+                                        <span><i>
                                             <svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg>
                                         </i></span>
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">

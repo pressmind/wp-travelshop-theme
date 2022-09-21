@@ -40,9 +40,10 @@
             </button>
             <div class="list-filter-boxes">
                 <?php
-                require 'search/string-search.php';
-                echo '<hr />';
+                // require 'search/string-search.php';
+                // echo '<hr />';
                 $args['name'] = 'Zeitraum';
+                $args['use_ajax'] = 1;
                 require 'search/date-picker.php';
                 require 'filter/order.php';
                 require 'filter/price-range.php';
