@@ -177,6 +177,16 @@ class Search
             }
         }
 
+        $transport_types = [];
+        if(!empty($result_filter->transportTypesGrouped)){
+            $transportTypes = json_decode(json_encode($result_filter->transportTypesGrouped));
+            foreach($transportTypes as $item){
+                $tmp = new \stdClass();
+                $tmp->name = $item->_id;
+                $transport_types[]= $tmp;
+            }
+        }
+
         if(TS_CALENDAR_SHOW_DEPARTURES === true && empty($result_filter) === false){
             $start_time = microtime(true);
             $filter_departures = [];
@@ -212,6 +222,7 @@ class Search
             'id_object_type' => !$id_object_type ? [] : $id_object_type,
             'categories' => $categories,
             'board_types' => $board_types,
+            'transport_types' => $transport_types,
             'duration_min' => !empty($result_filter->minDuration) ? $result_filter->minDuration : null,
             'duration_max' => !empty($result_filter->maxDuration) ? $result_filter->maxDuration : null,
             'departure_min' => !empty($result_filter->minDeparture) ? new \DateTime($result_filter->minDeparture) : null,

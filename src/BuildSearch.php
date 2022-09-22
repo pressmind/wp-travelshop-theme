@@ -355,6 +355,12 @@ class BuildSearch
             $validated_search_parameters[$prefix.'-bt'] = implode(',', $board_types);
         }
 
+        if (empty($request[$prefix.'-tr']) === false){
+            $transport_types = self::extractTransportTypes($request[$prefix.'-tr']);
+            $conditions[] = new \Pressmind\Search\Condition\MongoDB\TransportType($transport_types);
+            $validated_search_parameters[$prefix.'-tr'] = implode(',', $transport_types);
+        }
+
         if (isset($request[$prefix.'-c']) === true && is_array($request[$prefix.'-c']) === true) {
             $search_item = $request[$prefix.'-c'];
             foreach($search_item as $property_name => $item_ids){

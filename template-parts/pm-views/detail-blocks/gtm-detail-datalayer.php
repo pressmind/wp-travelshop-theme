@@ -13,7 +13,7 @@ use Pressmind\Travelshop\Template;
             items: [
                 {
                     id_media_object: <?php echo $args['id']; ?>,
-                    code: <?php echo $args['code']; ?>,
+                    code: '<?php echo $args['code']; ?>',
                     name: '<?php echo $args['name']; ?>',
                     destination: '<?php echo $args['destination']; ?>',
                     travel_type: '<?php echo $args['category']; ?>',

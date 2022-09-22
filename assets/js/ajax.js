@@ -391,6 +391,15 @@ jQuery(function ($) {
                 query.push('pm-bt=' + selected.join(','));
             }
 
+            // transport_type checkboxes
+            selected = [];
+            $(form).find('.transport-type input:checked').each(function () {
+                selected.push($(this).attr('data-id'));
+            });
+            if(selected.length > 0){
+                query.push('pm-tr=' + selected.join(','));
+            }
+
             // check and set price-range
             let price_range = $(form).find('input[name=pm-pr]').val();
             let price_mm_range = $(form).find('input[name=pm-pr]').data('min') + '-' + $(form).find('input[name=pm-pr]').data('max');

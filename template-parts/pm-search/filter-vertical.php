@@ -48,6 +48,7 @@
                 require 'filter/order.php';
                 require 'filter/price-range.php';
                 require 'filter/duration-range.php';
+                require 'filter/transport_type.php';
                 require 'filter/board_type.php';
                 foreach(TS_FILTERS as $filter){
 
