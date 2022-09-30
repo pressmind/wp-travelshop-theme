@@ -29,10 +29,25 @@ foreach (Info::STATIC_MODELS as $model_name) {
                         modifyDatabaseTableNull($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
                         break;
                     case 'alter_column_type':
-                        modifyDatabaseTableColumn($object->getDbTableName(), $difference['column_name'], $difference['column_type']);
+                        modifyDatabaseTableColumn($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
                         break;
                     case 'create_column':
-                        addDatabaseTableColumn($object->getDbTableName(), $difference['column_name'], $difference['column_type']);
+                        addDatabaseTableColumn($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
+                        break;
+                    case 'remove_auto_increment':
+                        removeAutoIncrement($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
+                        break;
+                    case 'set_auto_increment':
+                        addAutoIncrement($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
+                        break;
+                    case 'add_index':
+                        addIndex($object->getDbTableName(), $difference['column_names'], $difference['index_name']);
+                        break;
+                    case 'alter_primary_key':
+                        alterPrimaryKey($object->getDbTableName(), $difference['column_names'], $difference['old_column_names']);
+                        break;
+                    case 'drop_column':
+                        dropColumn($object->getDbTableName(), $difference['column_name']);
                         break;
                 }
             }
@@ -71,48 +86,23 @@ try {
                         case 'create_column':
                             addDatabaseTableColumn('objectdata_' . $media_type_definition->id, $difference['column_name'], $difference['column_type']);
                             break;
+                        case 'drop_column':
+                            dropColumn('objectdata_' . $media_type_definition->id, $difference['column_name']);
+                            break;
                     }
                 }
                 $line2 = readline("Apply Changes to PHP file? [y for yes, any for no]: ");
                 if (strtolower($line2) == 'y') {
                     $scaffolder = new ObjectTypeScaffolder($media_type_definition, $media_type_definition->id);
-                    $scaffolder->generateORMFile($media_type_definition);
-                    $scaffolder->generateExampleViewFile();
-                    $scaffolder->generateObjectInformationFile();
+                    $scaffolder->parse();
                 }
             }
         } else {
-            echo "table is O.K.\n";
+            echo 'Table ' . 'objectdata_' . $media_type_definition->id . " is up to date.\n";
         }
     }
 } catch (Exception $e) {
     echo $e->getMessage();
-}
-
-/*
-echo 'Checking default configuration for newly added options' . "\n";
-$sdk_directory = dirname(__DIR__)
-    . DIRECTORY_SEPARATOR
-    . 'vendor'
-    . DIRECTORY_SEPARATOR
-    . 'pressmind'
-    . DIRECTORY_SEPARATOR
-    . 'sdk';
-
-$default_config_file = $sdk_directory . DIRECTORY_SEPARATOR . 'config.default.json';
-$config_file = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'pm-config.php';
-$default_config = json_decode(file_get_contents($default_config_file), true);
-
-include $config_file;
-
-$changes = walkArray($default_config['development'], $config['development']);
-if($changes['has_changes'] == true) {
-    $config['development'] = $changes['settings'];
-    $config_text = "<?php\n\$config = " . _var_export($config, true) . ';';
-    file_put_contents($config_file, $config_text);
-    echo 'New configuration options were added to ' . $config_file . "\n" . 'Please check this file for possible errors before continuing' . "\n";
-} else {
-    echo 'Current configuration is up to date with default configuration' . "\n";
 }
 
 function walkArray($default_settings, &$current_settings) {
@@ -130,26 +120,6 @@ function walkArray($default_settings, &$current_settings) {
     return ['has_changes' => $has_changes, 'settings' => $current_settings];
 }
 
-*/
-/**
- * @param $expression
- * @param bool $return
- * @return mixed|string|string[]|null
- */
-function _var_export($expression, $return = false) {
-    $export = var_export($expression, true);
-    $export = preg_replace("/^([ ]*)(.*)/m", '$1$1$2', $export);
-    $array = preg_split("/\r\n|\n|\r/", $export);
-    $array = preg_replace(["/\s*array\s\($/", "/\)(,)?$/", "/\s=>\s$/"], [NULL, ']$1', ' => ['], $array);
-    $export = join(PHP_EOL, array_filter(["["] + $array));
-    if ($return) {
-        return $export;
-    } else  {
-        echo $export;
-    }
-    return null;
-}
-
 function isArrayAssociative($array) {
     foreach ($array as $key => $value) {
         if(is_string($key)) {
@@ -159,15 +129,15 @@ function isArrayAssociative($array) {
     return false;
 }
 
-function modifyDatabaseTableColumn($tableName, $columnName, $type) {
-    $sql = 'ALTER TABLE ' . $tableName . ' MODIFY ' . $columnName . ' ' . $type . ' NULL';
+function modifyDatabaseTableColumn($tableName, $columnName, $type, $is_null = 'NULL') {
+    $sql = 'ALTER TABLE ' . $tableName . ' MODIFY ' . $columnName . ' ' . $type . ' ' . $is_null;
     $db = Registry::getInstance()->get('db');
     echo $sql . "\n";
     $db->execute($sql);
 }
 
-function addDatabaseTableColumn($tableName, $columnName, $type) {
-    $sql = 'ALTER TABLE ' . $tableName . ' ADD ' . $columnName . ' ' . $type . ' NULL';
+function addDatabaseTableColumn($tableName, $columnName, $type, $is_null = 'NULL') {
+    $sql = 'ALTER TABLE ' . $tableName . ' ADD ' . $columnName . ' ' . $type . ' ' . $is_null;
     $db = Registry::getInstance()->get('db');
     echo $sql . "\n";
     $db->execute($sql);
@@ -175,6 +145,51 @@ function addDatabaseTableColumn($tableName, $columnName, $type) {
 
 function modifyDatabaseTableNull($tableName, $columnName, $type, $is_null) {
     $sql = 'ALTER TABLE ' . $tableName . ' MODIFY ' . $columnName . ' ' . $type . ' ' . $is_null;
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+}
+
+function addAutoIncrement($tableName, $columnName, $type, $is_null) {
+    $sql = 'ALTER TABLE ' . $tableName . ' MODIFY ' . $columnName . ' ' . $type . ' ' . $is_null . ' auto_increment';
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+}
+
+function removeAutoIncrement($tableName, $columnName, $type, $is_null) {
+    $sql = 'ALTER TABLE ' . $tableName . ' MODIFY ' . $columnName . ' ' . $type . ' ' . $is_null;
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+}
+
+function dropColumn($tableName, $columnName) {
+    $sql = 'ALTER TABLE ' . $tableName . ' DROP ' . $columnName;
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+}
+
+function addIndex($tableName, $columnNames, $indexName) {
+    $sql = "CREATE INDEX " . $indexName . " ON " . $tableName . " (" . implode(',' , $columnNames) . ")";
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+}
+
+function alterPrimaryKey($tableName, $newPrimaryKey, $oldPrimaryKey) {
+    $sql = "ALTER TABLE " . $tableName . " MODIFY " . $oldPrimaryKey . " varchar(255) NOT NULL";
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+
+    $sql = "ALTER TABLE " . $tableName . " DROP PRIMARY KEY";
+    $db = Registry::getInstance()->get('db');
+    echo $sql . "\n";
+    $db->execute($sql);
+
+    $sql = "ALTER TABLE " . $tableName . " ADD PRIMARY KEY (" . $newPrimaryKey . ")";
     $db = Registry::getInstance()->get('db');
     echo $sql . "\n";
     $db->execute($sql);
