@@ -40,6 +40,7 @@ class Search
      */
     public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null, $output = null, $preview_date = null, $custom_conditions = [])
     {
+        $allowed_visibilities = [30];
         $cache_key = md5(serialize(func_get_args()));
         if(isset(self::$_run_time_cache_full[$cache_key])){
             return self::$_run_time_cache_full[$cache_key];
@@ -69,7 +70,7 @@ class Search
             if(isset(self::$_run_time_cache_filter[$cache_key])){
                 $result_filter = self::$_run_time_cache_filter[$cache_key];
             }else{
-                $result_filter = $filter->getResult(true, true, $ttl_filter);
+                $result_filter = $filter->getResult(true, true, $ttl_filter, null, $preview_date, $allowed_visibilities);
                 self::$_run_time_cache_filter[$cache_key] = $result_filter;
             }
             $end_time = microtime(true);
@@ -84,7 +85,7 @@ class Search
                 self::$_run_time_cache_search[$cache_key] = $search;
             }
             $start_time = microtime(true);
-            $result = $search->getResult(true, false, $ttl_search, $output);
+            $result = $search->getResult(true, false, $ttl_search, $output, $preview_date, $allowed_visibilities);
             $end_time = microtime(true);
             $duration_search_ms = ($end_time - $start_time) * 1000;
             foreach ($result->documents as $document) {
@@ -234,8 +235,8 @@ class Search
             'mongodb' => [
                 'duration_filter_ms' => $duration_filter_ms,
                 'duration_search_ms' => $duration_search_ms,
-                'aggregation_pipeline_filter' => !empty($filter) ? $filter->buildQueryAsJson($getFilters) : null,
-                'aggregation_pipeline_search' => !empty($search) ? $search->buildQueryAsJson($getFilters) : null
+                'aggregation_pipeline_filter' => !empty($filter) ? $filter->buildQueryAsJson($getFilters, $output, $preview_date, $allowed_visibilities) : null,
+                'aggregation_pipeline_search' => !empty($search) ? $search->buildQueryAsJson($getFilters, $output, $preview_date, $allowed_visibilities) : null
             ]
         ];
         self::$_run_time_cache_full[$cache_key] = $result;

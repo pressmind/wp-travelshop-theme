@@ -277,6 +277,8 @@ class BuildSearch
      * $request['pm-c'] category id's separated by comma (search with "or") or plus (search with "and")   e.g. pm-c[land_default]=xxx,yyyy = or Suche, + and Suche
      * $request['pm-pr'] price range 123-1234
      * $request['pm-dr'] date range 20200101-20200202
+     * $request['pm-url'] url like /travel/5-italia/
+     * $request['pm-gr'] groups
      * $request['pm-l'] limit 0,10
      * $request['pm-o'] order
      * @param $request
@@ -316,7 +318,7 @@ class BuildSearch
             $validated_search_parameters[$prefix.'-t'] = $request[$prefix.'-t'];
         }
 
-        if (empty($request[$prefix.'-co']) === false && preg_match('/^([0-9\-_A-Za-z\,]+)$/', $request[$prefix.'-du']) > 0){
+        if (empty($request[$prefix.'-co']) === false && preg_match('/^([0-9\-_A-Za-z\,]+)$/', $request[$prefix.'-co']) > 0){
             $codes = explode(',', $request[$prefix.'-co']);
             $conditions[] = new \Pressmind\Search\Condition\MongoDB\Code($codes);
             $validated_search_parameters[$prefix.'-co'] = $request[$prefix.'-co'];
@@ -398,6 +400,18 @@ class BuildSearch
                 $validated_search_parameters[$prefix.'-id'] = implode(',', $ids);
 
             }
+        }
+
+        if (empty($request[$prefix.'-url']) === false){
+            $url = $request[$prefix.'-url'];
+            $conditions[] = new \Pressmind\Search\Condition\MongoDB\Url($url);
+            $validated_search_parameters[$prefix.'-url'] = $url;
+        }
+
+        if (empty($request[$prefix.'-gr']) === false){
+            $groups = self::extractGroups($request[$prefix.'-gr']);
+            $conditions[] = new \Pressmind\Search\Condition\MongoDB\Group($groups);
+            $validated_search_parameters[$prefix.'-gr'] = implode(',', $groups);
         }
 
         if(defined('TS_SEARCH_GROUP_KEYS') && !empty(TS_SEARCH_GROUP_KEYS)){
@@ -559,6 +573,20 @@ class BuildSearch
              $board_types[$k] = self::sanitizeStr($board_type);
          }
          return $board_types;
+    }
+
+    /**
+     * @param $str
+     * @return string[]
+     */
+    public static function extractGroups($groups){
+        if(!is_array($groups)){
+            $groups = explode(',', $groups);
+        }
+        foreach($groups as $k => $group){
+            $groups[$k] = self::sanitizeStr($group);
+        }
+        return $groups;
     }
 
     /**

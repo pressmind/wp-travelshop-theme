@@ -9,6 +9,8 @@
 
 use Pressmind\Registry;
 use Pressmind\Travelshop\Route;
+use Pressmind\Travelshop\Search;
+use Pressmind\Travelshop\Template;
 use Pressmind\Travelshop\WPFunctions;
 
 /**
@@ -122,69 +124,67 @@ function ts_detail_hook($data)
 {
     global $wp, $wp_query, $post;
     $post = null;
-
+    define('TS_IS_DETAIL', true);
     try {
         if($data['type'] == 'detail'){
+            $route = $wp->request;
             if (MULTILANGUAGE_SITE) {
                 $route = preg_replace('(^' . $data['language'] . '\/)', '', $wp->request);
-            } else {
-                $route = $wp->request;
             }
-            // get the media object id by url, language is not supported at this moment
-            $r = Pressmind\ORM\Object\MediaObject::getByPrettyUrl('/' . $route . '/', $data['id_object_type'], $data['language'], null);
+            $q = [
+                'pm-url' => '/' . $route . '/',
+                'pm-ot' => $data['id_object_type']
+            ];
         }elseif($data['type'] == 'detail-by-id'){
+            $id = preg_replace('(^id\/)', '', $wp->request);
             if (MULTILANGUAGE_SITE) {
                 $id = preg_replace('(^' . $data['language'] . '\/id\/)', '', $wp->request);
-            } else {
-                $id = preg_replace('(^id\/)', '', $wp->request);
             }
-            $r = [];
-            $r[0] = new Pressmind\ORM\Object\MediaObject($id, false, (!empty($_GET['no_cache']) || !empty($_GET['update_cache'])));
+            $q = ['pm-id' => $id];
         }elseif($data['type'] == 'detail-by-code'){
+            $code = preg_replace('(^code\/)', '', $wp->request);
             if (MULTILANGUAGE_SITE) {
                 $code = preg_replace('(^' . $data['language'] . '\/code\/)', '', $wp->request);
-            } else {
-                $code = preg_replace('(^code\/)', '', $wp->request);
             }
-            $r = Pressmind\ORM\Object\MediaObject::getByCode($code);
+            $q = [ 'pm-co' => $code];
         }else{
             exit('route type not valid');
         }
-
-        if (empty($r[0]->id) === true) {
-            WPFunctions::throw404();
+        // support for multisite products
+        if(defined('TS_SEARCH_GROUP_KEYS')){
+            $q['pm-gr'] = TS_SEARCH_GROUP_KEYS;
         }
-
-        /**
-         * based on the url strategy it's possible to retrieve more than one media object for url
-         * at this moment we support progress each media object, but we have no specific header logic,
-         * so the meta/header below will make usage only from the first...
-         */
+        $preview_date = null;
+        if(!empty($_GET['preview'])){
+            $preview_date = new DateTime();
+        }
+        $r = Search::getResult($q,2,1,false,false, null, null, null, $preview_date);
+        if (empty($r['total_result'])) {
+            WPFunctions::throw404(410); // 410 = page/product has gone
+        }
+        // Preload mediaobjects
         $id_media_objects = [];
         $mediaObjects = [];
         $mediaObjectCachedKeys = [];
-        foreach ($r as $i) {
-            $id_media_objects[] = $i->id;
-            $mediaObject = new Pressmind\ORM\Object\MediaObject($i->id, false, (!empty($_GET['no_cache']) || !empty($_GET['update_cache'])));
+        foreach ($r['items'] as $i) {
+            $mediaObject = new Pressmind\ORM\Object\MediaObject($i['id_media_object'], false, (!empty($_GET['no_cache']) || !empty($_GET['update_cache'])));
+            if(empty($_GET['preview']) && !in_array($mediaObject->visibility, [30])) {
+                continue;
+            }
+            $id_media_objects[] = $i['id_media_object'];
             if(!empty($_GET['update_cache'])){
-                $mediaObject->updateCache($i->id);
+                $mediaObject->updateCache($i['id_media_object']);
             }
             if($mediaObject->isCached()){
                 $mediaObjectCachedKeys[] = $mediaObject->getCacheInfo();
             }
-            $mediaObjects[] = $mediaObject ;
+            $mediaObjects[] = $mediaObject;
         }
-
-
-        // 404
-        if (empty($_GET['preview']) === true && $mediaObjects[0]->visibility != 30) {
-            WPFunctions::throw404();
+        if (empty($id_media_objects) === true) {
+            WPFunctions::throw404(410);
         }
-
-
         // Add custom headers, for better debugging
         header('X-TS-id-pressmind: ' . implode(',', $id_media_objects));
-
         // set cache headers  (remove in strong production env)
         if(count($mediaObjectCachedKeys) > 0){
             $cached_dates = [];
@@ -195,38 +195,23 @@ function ts_detail_hook($data)
             }
             header('X-TS-Object-Cache: ' . implode(',', $cached_keys).' ; '.implode(',', $cached_dates));
         }
-
         // Add meta data
-        // set the page title
-        $the_title = $mediaObjects[0]->name . ' | ' . get_bloginfo('name');
-        $meta_description = $mediaObjects[0]->name;
-
-        /**
-         * If you need meta data from custom fields, use this code example.
-         * Be aware:
-         * if you have multiple media object types, you have to switch this for each object type if the properties have not the same names
-         */
-        //$moc = $mediaObjects[0]->getDataForLanguage(TS_LANGUAGE_CODE);
-        //$the_title = strip_tags($moc->title_default);
-        //$meta_description = strip_tags($moc->meta_description_default);
-
-
+        $args = [
+            'media_objects' => $mediaObjects
+        ];
+        $meta_description = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/meta-description-detail.php', $args);
+        $the_title = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/meta-title-detail.php', $args);
         add_filter('pre_get_document_title', function ($title_parts) use ($the_title) {
             return $the_title;
         });
-
-        // set meta description
-        $meta_desc = '<meta name="description" content="' . $meta_description . '">' . "\r\n";
-        add_action('wp_head', function () use ($meta_desc) {
-            echo $meta_desc;
+        add_action('wp_head', function () use ($meta_description) {
+            echo $meta_description;
         });
-
         // set canonical url
         $canonical = '<link rel="canonical" href="' . site_url() . $mediaObjects[0]->getPrettyUrl() . '">' . "\r\n";
         add_action('wp_head', function () use ($canonical) {
             echo $canonical;
         });
-
         // set alternate languages
         if(MULTILANGUAGE_SITE){
             add_action('wp_head', function () use ($mediaObjects) {
@@ -235,7 +220,6 @@ function ts_detail_hook($data)
                 }
             });
         }
-
         $wp_query->set('media_objects', $mediaObjects);
         add_filter( 'body_class', function( $classes ) {
             $classes[] = 'pm-detail-page';
