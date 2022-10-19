@@ -25,6 +25,10 @@ foreach (Info::STATIC_MODELS as $model_name) {
             echo $line . "\n";
             foreach ($check as $difference) {
                 switch($difference['action']) {
+                    case 'create_table':
+                        $Scaffolder = new DB\Scaffolder\Mysql(new $model_name());
+                        $Scaffolder->run(true);
+                        break;
                     case 'alter_column_null':
                         modifyDatabaseTableNull($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
                         break;
