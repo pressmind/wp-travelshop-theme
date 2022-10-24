@@ -1,6 +1,38 @@
 jQuery(function ($) {
 
     // ------------------------------------------------
+    // -- User Leaves Popup
+    // ------------------------------------------------
+    if($('#modal-id-post-userleavesmodal').length) {
+        let aboutToleave = false;
+        let timeoutId;
+        let active = true;
+        if(localStorage.getItem('leaveMessageFired') == 'true' && $('#leave-modal-content').attr('data-multiple') == 'false') {
+            active = false;
+        }
+        if(active) {
+            $(document).mouseleave(function () {
+                timeoutId = setTimeout(() => {
+                    aboutToleave = true;
+                }, $('#leave-modal-content').attr('data-delay'))
+            });
+            $(document).mouseenter(function () {
+                clearTimeout(timeoutId);
+                aboutToleave = false;
+            });
+            let leaveMessageInt = setInterval(() => {
+                if(aboutToleave) {
+                    $('#modal-id-post-userleavesmodal').addClass('is--open');
+                    if($('#leave-modal-content').attr('data-multiple') == 'false') {
+                        localStorage.setItem('leaveMessageFired', 'true');
+                        clearInterval(leaveMessageInt);
+                    }
+                }
+            }, 500);
+        }
+
+    }
+    // ------------------------------------------------
     // -- smooth scroll
     // ------------------------------------------------
 
