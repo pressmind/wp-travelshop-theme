@@ -396,6 +396,7 @@ define('TS_FILTERS', []);
  *     'active' => true,
  *     'delay' => 1000,
  *     'multiple' => false,
+ *     'output' => 'home', // Can be 'home', 'all' or specific Post ID / Array of IDs
  *     'heading' => 'Stop Leaving!',
  *     'text' => 'Lorem Ipsum...',
  *     'button' => [
@@ -410,12 +411,13 @@ define('TS_USERLEAVES_POPUP', [
     'active' => true,
     'delay' => 1000,
     'multiple' => false,
+    'output' => 'home',
     'heading' => 'Stop Leaving!',
     'text' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-    aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
-    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
-    sanctus est Lorem ipsum dolor sit amet.',
+     sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+     aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
+     duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
+     sanctus est Lorem ipsum dolor sit amet.',
     'button' => [
         'text' => 'Mehr erfahren',
         'link' => 'https://google.com',

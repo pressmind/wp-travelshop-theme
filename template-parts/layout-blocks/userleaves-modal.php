@@ -1,6 +1,6 @@
 <?php
 use Pressmind\Travelshop\Template;
-if(TS_USERLEAVES_POPUP['active']) {
+if(TS_USERLEAVES_POPUP['active'] && (TS_USERLEAVES_POPUP['output'] == 'home' ? is_front_page() : (TS_USERLEAVES_POPUP['output'] == 'all' ? true : is_page(TS_USERLEAVES_POPUP['output'])))) {
 ob_start();
 ?>
 <div id="leave-modal-content" data-multiple="<?php echo TS_USERLEAVES_POPUP['multiple'] ? 'true' : 'false'; ?>" data-delay="<?php echo TS_USERLEAVES_POPUP['delay']; ?>">
