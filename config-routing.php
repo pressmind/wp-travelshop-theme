@@ -158,7 +158,7 @@ function ts_detail_hook($data)
         if(!empty($_GET['preview'])){
             $preview_date = new DateTime();
         }
-        $r = Search::getResult($q,2,1,false,false, null, null, null, $preview_date);
+        $r = Search::getResult($q,2,10,false,false, null, null, null, $preview_date);
         if (empty($r['total_result'])) {
             WPFunctions::throw404(410); // 410 = page/product has gone
         }
