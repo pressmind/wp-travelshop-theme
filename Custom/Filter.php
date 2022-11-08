@@ -27,15 +27,20 @@ class Filter
      */
     public static function firstPicture($array, $derivate, $section = null)
     {
-        if (!empty($array[0])) {
-            $Picture = new Picture();
-            $Picture->fromArray($array[0]);
-            return [
-                'url' => $Picture->getUri($derivate, false, $section),
-                'size' => $Picture->getSizes($derivate, false),
-                'copyright' => $Picture->copyright,
-                'caption' => $Picture->caption
-            ];
+        if(empty($array)){
+            return null;
+        }
+        foreach($array as $fst_valid_picture){
+            if(!$fst_valid_picture->disabled){
+                $Picture = new Picture();
+                $Picture->fromArray($fst_valid_picture);
+                return [
+                    'url' => $Picture->getUri($derivate, false, $section),
+                    'size' => $Picture->getSizes($derivate, false),
+                    'copyright' => $Picture->copyright,
+                    'caption' => $Picture->caption
+                ];
+            }
         }
         return null;
     }

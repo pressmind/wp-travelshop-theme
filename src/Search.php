@@ -124,6 +124,7 @@ class Search
                     }
                     $item['cheapest_price']->earlybird_discount_date_to = new \DateTime($document['prices']['earlybird_discount_date_to']);
                     $item['cheapest_price']->option_board_type = $document['prices']['option_board_type'];
+                    $item['cheapest_price']->transport_type = $document['prices']['transport_type'];
                 } else {
                     $item['cheapest_price'] = null;
                     $document['prices'] = null;

@@ -30,7 +30,7 @@ if(!empty($_GET['sensor'])){
 }
 
 define('WP_USE_THEMES', false);
-require_once('../../../../wp/wp-load.php');
+require_once('../../../../wp-load.php');
 
 define('DONOTCACHE', true);
 

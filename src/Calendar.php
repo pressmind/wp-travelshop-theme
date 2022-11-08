@@ -52,6 +52,7 @@ class Calendar
                             ' . implode('', $joins) . '
                         where 
                             date_departure > now() 
+                            and mo.visibility = 30
                             order by date_departure limit 500;';
         $items = $db->fetchAll($sql);
         return $items;

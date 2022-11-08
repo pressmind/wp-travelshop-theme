@@ -140,7 +140,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     exit;
 } else if($_GET['action'] == 'bookingoffers') {
     $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_GET['pm-id']);
-    $args['url'] = $args['media_object']->getPrettyUrl();
+    $args['url'] = SITE_URL.$args['media_object']->getPrettyUrl();
     $filters = new stdClass();
     $filters->id_option = null;
     $filters->id_date = null;
