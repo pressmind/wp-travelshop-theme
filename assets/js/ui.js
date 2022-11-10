@@ -1,20 +1,21 @@
 jQuery(function ($) {
 
     // ------------------------------------------------
-    // -- User Leaves Popup
+    // -- Auto Popup
     // ------------------------------------------------
-    if($('#modal-id-post-userleavesmodal').length) {
+    if($('#modal-id-post-automodal').length) {
         let aboutToleave = false;
         let timeoutId;
         let active = true;
-        if(localStorage.getItem('leaveMessageFired') == 'true' && $('#leave-modal-content').attr('data-multiple') == 'false') {
-            active = false;
-        }
-        if(active) {
+
+        if(active && $('#auto-modal-content').attr('data-type') == 'leave') {
+            if(localStorage.getItem('leaveMessageFired') == 'true' && $('#auto-modal-content').attr('data-multiple') == 'false') {
+                active = false;
+            }
             $(document).mouseleave(function () {
                 timeoutId = setTimeout(() => {
                     aboutToleave = true;
-                }, $('#leave-modal-content').attr('data-delay'))
+                }, $('#auto-modal-content').attr('data-delay'))
             });
             $(document).mouseenter(function () {
                 clearTimeout(timeoutId);
@@ -22,13 +23,18 @@ jQuery(function ($) {
             });
             let leaveMessageInt = setInterval(() => {
                 if(aboutToleave) {
-                    $('#modal-id-post-userleavesmodal').addClass('is--open');
-                    if($('#leave-modal-content').attr('data-multiple') == 'false') {
+                    $('#modal-id-post-automodal').addClass('is--open');
+                    if($('#auto-modal-content').attr('data-multiple') == 'false') {
                         localStorage.setItem('leaveMessageFired', 'true');
                         clearInterval(leaveMessageInt);
                     }
                 }
             }, 500);
+        }
+        if(active && $('#auto-modal-content').attr('data-type') == 'delay') {
+            timeoutId = setTimeout(() => {
+                $('#modal-id-post-automodal').addClass('is--open');
+            }, $('#auto-modal-content').attr('data-delay'))
         }
 
     }

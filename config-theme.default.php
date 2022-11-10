@@ -390,10 +390,11 @@ define('TS_FILTERS', []);
 /**
  *
  * Optional Modal Pop-Up, when the User is about to leave the website
- * see template-parts/layout-blocks/userleaves-modal.php
+ * see template-parts/layout-blocks/auto-modal.php
  * <code>
- * define('TS_USERLEAVES_POPUP', [
+ * define('TS_POPUP', [
  *     'active' => true,
+ *     'type' => 'delay', // Can be 'leave' or 'delay'
  *     'delay' => 1000,
  *     'multiple' => false,
  *     'output' => 'home', // Can be 'home', 'all' or specific Post ID / Array of IDs
@@ -407,8 +408,9 @@ define('TS_FILTERS', []);
  * ]);
  * </code>
  */
-define('TS_USERLEAVES_POPUP', [
+define('TS_POPUP', [
     'active' => true,
+    'type' => 'delay',
     'delay' => 1000,
     'multiple' => false,
     'output' => 'home',
