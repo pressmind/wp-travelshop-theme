@@ -38,9 +38,6 @@ foreach (Info::STATIC_MODELS as $model_name) {
                     case 'create_column':
                         addDatabaseTableColumn($object->getDbTableName(), $difference['column_name'], $difference['column_type'], $difference['column_null']);
                         break;
-                    case 'drop_column':
-                        dropColumn($object->getDbTableName(), $difference['column_name']);
-                        break;
                 }
             }
             foreach ($check as $difference) {
@@ -56,6 +53,13 @@ foreach (Info::STATIC_MODELS as $model_name) {
                         break;
                     case 'alter_primary_key':
                         alterPrimaryKey($object->getDbTableName(), $difference['column_names'], $difference['old_column_names']);
+                        break;
+                }
+            }
+            foreach ($check as $difference) {
+                switch($difference['action']) {
+                    case 'drop_column':
+                        dropColumn($object->getDbTableName(), $difference['column_name']);
                         break;
                 }
             }
