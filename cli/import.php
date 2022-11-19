@@ -203,6 +203,23 @@ switch ($args[1]) {
             echo "WARNING: Import threw errors:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
         }
         break;
+    case 'offer':
+        if(!empty($args[2])) {
+            Writer::write('Regenerate offers for mediaobject ID(s): ' . $args[2], Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+            $ids = array_map('trim', explode(',', $args[2]));
+            foreach ($ids as $id) {
+                try {
+                    $media_object = new MediaObject($id);
+                    $media_object->insertCheapestPrice();
+                    $media_object->createMongoDBIndex();
+                    Writer::write('Mediaobject offers (cheapestPrices) for ' . $id . ' successfully regenerated', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+                } catch (Exception $e) {
+                    Writer::write($e->getMessage(), Writer::OUTPUT_BOTH, 'import', Writer::TYPE_ERROR);
+                    echo "WARNING: Regenerate offers for id " . $id . "  failed:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
+                }
+            }
+        }
+        break;
     case 'help':
     case '--help':
     case '-h':
@@ -215,6 +232,7 @@ switch ($args[1]) {
         $helptext .= "php import.php itinerary 12345,12346    <single/multiple ids allowed / imports itineraries for the given media object types>\n";
         $helptext .= "php import.php destroy 12345,12346      <single/multiple ids allowed / removes the given media objects from the database>\n";
         $helptext .= "php import.php depublish 12345,12346    <single/multiple ids allowed / sets the given media objects to the visibility=10/nobody state>\n";
+        $helptext .= "php import.php offer 12345,12346    <single/multiple ids allowed / recalculates offers/cheapestPrices\n";
         $helptext .= "php import.php remove_orphans           <removes all orphans from the database that are not delivered by the pressmind api>\n";
         $helptext .= "php import.php update_tags 12345        <single media object type id required>\n";
 
