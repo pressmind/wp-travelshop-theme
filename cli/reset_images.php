@@ -5,6 +5,9 @@ use Pressmind\Log\Writer;
 use Pressmind\Storage\Bucket;
 use \Pressmind\Search\MongoDB\Indexer;
 
+ini_set('display_errors', 'On');
+error_reporting(-1);
+
 if (php_sapi_name() !== 'cli') {
     die("This file is meant to be run from command line");
 }
@@ -22,12 +25,12 @@ if(readline("Type 'yes' and this script will delete all files in this folders '"
 
 Writer::write('starting delete', WRITER::OUTPUT_BOTH, 'image_reset', Writer::TYPE_INFO);
 
-$ImageStorage = new Bucket($config['image_handling']['storage']['bucket']);
+$ImageStorage = new Bucket($config['image_handling']['storage']);
 if($ImageStorage->removeAll()){
     echo "images deleted\n";
 }
 
-$FileStorage = new Bucket($config['file_handling']['storage']['bucket']);
+$FileStorage = new Bucket($config['file_handling']['storage']);
 if($FileStorage->removeAll()){
     echo "files deleted\n";
 }
