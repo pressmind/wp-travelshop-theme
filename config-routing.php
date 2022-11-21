@@ -150,10 +150,6 @@ function ts_detail_hook($data)
         }else{
             exit('route type not valid');
         }
-        // support for multisite products
-        if(defined('TS_SEARCH_GROUP_KEYS')){
-            $q['pm-gr'] = TS_SEARCH_GROUP_KEYS;
-        }
         $preview_date = null;
         if(!empty($_GET['preview'])){
             $preview_date = new DateTime();
