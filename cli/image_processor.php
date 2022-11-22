@@ -30,7 +30,6 @@ try {
     $result =  array_merge(
         Picture::listAll(array('download_successful' => 0)),
         DocumentMediaObject::listAll(array('download_successful' => 0)),
-        Picture\Section::listAll(array('download_successful' => 0))
     );
 } catch (Exception $e) {
     Writer::write($e->getMessage(), WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_ERROR);
@@ -51,10 +50,11 @@ foreach ($result as $image) {
         if($image->exists()){
             $image->download_successful = true;
             $image->update();
-            Writer::write('File exists ('.$image->file_name.'), continue', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
-            continue;
+            Writer::write('File exists ('.$image->file_name.'), no download required', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+            $binary_image = $image->getBinaryFile();
+        }else{
+            $binary_image = $image->downloadOriginal();
         }
-        $binary_image = $image->downloadOriginal();
     } catch (Exception $e) {
         Writer::write($e->getMessage(), WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_ERROR);
         continue;
