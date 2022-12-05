@@ -470,4 +470,16 @@ jQuery(function ($) {
         });
     }
 
+    // -----------------------
+    // --- FAQ Schema Accordion
+    // -----------------------
+    if($('.content-block-schema-accordion').length) {
+        $('.accordion-item').each((ind, item) => {
+            $(item).on('click', '.accordion-question', (e) => {
+                $(item).hasClass('active') ? '' : $('.accordion-item').removeClass('active');
+                $(item).toggleClass('active');
+            });
+        });
+    }
+
 });
