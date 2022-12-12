@@ -44,9 +44,6 @@ require_once($wp_path . 'wp-admin/includes/admin.php');
 
 global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 
-
-
-
 if(in_array('debug', $args)){
     define('PM_SDK_DEBUG', true);
 }
@@ -239,6 +236,7 @@ switch ($args[1]) {
         $helptext = "usage: import.php [fullimport | mediaobject | itinerary | objecttypes | remove_orphans | destroy | depublish | update_tags] [<single id or commaseparated list of ids>] [debug]\n";
         $helptext .= "Example usages:\n";
         $helptext .= "php import.php fullimport\n";
+        $helptext .= "php import.php fullimport -c=pm-config-example.php <loads the defined config>\n";
         $helptext .= "php import.php mediaobject 12345,12346  <single/multiple ids allowed  / imports one or more media objects>\n";
         $helptext .= "php import.php objecttypes 12345,12346  <single/multiple ids allowed / imports media objects by given object types>\n";
         $helptext .= "php import.php itinerary 12345,12346    <single/multiple ids allowed / imports itineraries for the given media object types>\n";
