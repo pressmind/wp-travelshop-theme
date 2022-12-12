@@ -418,7 +418,10 @@ class BuildSearch
             $conditions[] = new \Pressmind\Search\Condition\MongoDB\Group(TS_SEARCH_GROUP_KEYS);
         }
 
-        $allowed_orders = array('rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc', 'score-asc', 'score-desc');
+        $allowed_orders = array(
+            'rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc',
+            'score-asc', 'score-desc', 'recommendation_rate-asc', 'recommendation_rate-desc'
+        );
         if (empty($request[$prefix.'-o']) === false && in_array($request[$prefix.'-o'], $allowed_orders) === true) {
 
             if($request[$prefix.'-o'] == 'rand'){

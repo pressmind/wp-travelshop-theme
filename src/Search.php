@@ -94,6 +94,7 @@ class Search
                 $item['id_media_object'] = $document['id_media_object'];
                 $item['id_object_type'] = $document['id_object_type'];
                 $item['url'] = $document['url'];
+                $item['recommendation_rate'] = $document['recommendation_rate'];
                 $item['dates_per_month'] = [];
                 if (!empty($document['dates_per_month'])) {
                     $item['dates_per_month'] = $document['dates_per_month'];

@@ -10,6 +10,7 @@
             <option value="date_departure-desc"<?php echo (!empty($_GET['pm-o']) && $_GET['pm-o'] == 'date_departure-desc') ? ' selected' : '';?>>späteste Abreise</option>
             <option value="price-asc"<?php echo (!empty($_GET['pm-o']) && $_GET['pm-o'] == 'price-asc') ? ' selected' : '';?>>niedrigster Preis</option>
             <option value="price-desc"<?php echo (!empty($_GET['pm-o']) && $_GET['pm-o'] == 'price-desc') ? ' selected' : '';?>>höchster Preis</option>
+            <option value="recommendation_rate-desc"<?php echo (!empty($_GET['pm-o']) && $_GET['pm-o'] == 'recommendation_rate-desc') ? ' selected' : '';?>>beste Weiterempfehlung</option>
         </select>
     </div>
 

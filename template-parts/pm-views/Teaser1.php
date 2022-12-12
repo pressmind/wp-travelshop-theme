@@ -52,6 +52,7 @@ if (empty($filteredParams) === false) {
                     'cheapest_price' => $args['cheapest_price'],
                     'id_media_object' => $args['id_media_object'],
                     'id_object_type' => $args['id_object_type'],
+                    'recommendation_rate' => $args['recommendation_rate'],
                 ]);
                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/wishlist-heart.php', [
                     'cheapest_price' => $args['cheapest_price'],
