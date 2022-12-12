@@ -71,6 +71,33 @@ $dotenv->safeLoad();
  * @See the generated pm-config.php file (which is created during the install process) for the required structure and options
  * @See the different config adapters for further information on YAML, XML and INI files (Pressmind\Config\Adapter)
  */
+
+if(empty(getenv('PM_CONFIG'))){
+    if (php_sapi_name() === "cli") {
+        /**
+         * This is in some multisite setups required (to make the cli tools running save).
+         */
+        echo 'constant "PM_CONFIG ist not set", select a the config file to use'."\n";
+        $possible_config_files = [];
+        foreach(glob(APPLICATION_PATH.'/pm-config*.php') as $f){
+            $possible_config_files[] = basename($f);
+        }
+        foreach($possible_config_files as $k => $f){
+            echo $k.'. '.$f."\n";
+        }
+        $selection = readline("Type the number to select a config-file: ");
+        if(!isset($possible_config_files[$selection])){
+            echo "aborted by user\n";
+            exit;
+        }
+        putenv('PM_CONFIG='.$possible_config_files[$selection]);
+        echo "done, config file is set: ".getenv('PM_CONFIG')."\n";
+    }else{
+        echo 'constant "PM_CONFIG" is not set';
+        exit;
+    }
+}
+
 $config_adapter = new Config('php', HelperFunctions::buildPathString([APPLICATION_PATH, getenv('PM_CONFIG')]), getenv('APP_ENV')  === false ? 'development' : getenv('APP_ENV'));
 $config = $config_adapter->read();
 
@@ -81,6 +108,7 @@ if (php_sapi_name() != "cli") {
      * WebP Support, if support of older Browsers like IE10 is required you can turn off WebP support here by using a conditional state based on request headers fo example
      */
     if (empty($_SERVER['HTTP_ACCEPT']) === false) {
+        // @TODO prüfen! darf eigentlich nich an sein, da wir die Steuerung für WEBP via HTACCESS machen!
         define('WEBP_SUPPORT', in_array('image/webp', explode(',', $_SERVER['HTTP_ACCEPT'])));
     }
 } else {
