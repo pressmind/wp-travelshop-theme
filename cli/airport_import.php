@@ -35,7 +35,7 @@ while ($data = fgetcsv($import, 0, ',')) {
     $Airport->longitude = $data[5];
     $Airport->country = $data[8];
     $Airport->city = $data[10];
-    $Airport->city = str_replace('Munich', 'München',  $Airport->city);
+    $Airport->city = str_replace('Munich', 'München',  (string)$Airport->city);
     $Airport->iata = $data[13];
     $Airport->create();
     $c++;
