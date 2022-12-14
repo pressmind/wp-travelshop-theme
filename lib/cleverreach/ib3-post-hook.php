@@ -24,7 +24,8 @@ if ((htmlspecialchars($_POST['api_key'])) && (htmlspecialchars($_POST['email']))
         "postdata" => "title:" . htmlspecialchars($_POST['title']) . ",firstname:" . htmlspecialchars($_POST['first_name']) . ",lastname:" . htmlspecialchars($_POST['last_name']) . ",country:" . htmlspecialchars($_POST['nationality']) . ",salutation:" . htmlspecialchars($_POST['gender']),
         "info" => "IB3",
     );
-    $result = $api->formsSendActivationMail(htmlspecialchars($_POST['api_key']), htmlspecialchars($_GET['formid']), htmlspecialchars($_POST['email']), $doidata);
+    // $result = $api->formsSendActivationMail(htmlspecialchars($_POST['api_key']), htmlspecialchars($_GET['formid']), htmlspecialchars($_POST['email']), $doidata);
+    $result = $api->formsActivationMail(htmlspecialchars($_POST['api_key']), htmlspecialchars($_GET['formid']), htmlspecialchars($_POST['email']));
     if($result->status == "SUCCESS") {
         $output['success'] = true;
     }
