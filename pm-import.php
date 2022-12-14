@@ -74,7 +74,12 @@ if($request->isGet()) {
             $importer->postImport();
             $media_object = new ORM\Object\MediaObject($request->getParameter('id_media_object'));
             $media_object->updateCache($request->getParameter('id_media_object'));
-            $url = WEBSERVER_HTTP.$media_object->getPrettyUrl().'?preview=1&no_cache='.uniqid();
+            $detail_url = $media_object->getPrettyUrl();
+            if(empty($detail_url)){
+                $url = WEBSERVER_HTTP.'/id/'.$request->getParameter('id_media_object').'?preview=1&no_cache='.uniqid();
+            }else{
+                $url = WEBSERVER_HTTP.$detail_url.'?preview=1&no_cache='.uniqid();
+            }
             if($request->getParameter('preview') == "1") {
                 $config = Registry::getInstance()->get('config');
                 $response->setContentType('text/html');
