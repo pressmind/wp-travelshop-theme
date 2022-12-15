@@ -9,8 +9,9 @@
 require_once('../../../wp-load.php');
 ?>
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="de" dir="ltr" xml:lang="de">
+<meta http-equiv="Content-Language" content="de">
+<meta name="google" content="notranslate">
 <head>
 
     <meta charset="utf-8">
