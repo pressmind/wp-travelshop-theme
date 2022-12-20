@@ -11,53 +11,6 @@
   .layout-block-search-header--search {
     z-index: 10;
 
-    .search-wrapper {
-      padding: 1rem 0 1rem 0;
 
-      .h1 {
-        font-size: 1.5rem;
-        color: #fff;
-        text-align: center;
-        font-weight: 500;
-        font-family: inherit;
-      }
-
-      @include media-breakpoint-up(md) {
-        padding: $grid-gutter-width 0;
-
-        .h1 {
-          font-size: 2.5rem;
-          text-shadow: 0 5px 10px rgba(#000, .25);
-        }
-      }
-    }
-
-    .search-wrapper--inner {
-      padding: 0;
-      padding: $grid-gutter-width;
-      background-color: #ffffff7a;
-      box-shadow: 0 5px 10px rgba(#000, .25);
-      @include border-radius($card-border-radius);
-
-      label {
-        color: #212529;
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 0px;
-        height: 38px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        svg {
-          margin-right: .25rem;
-        }
-        .loader {
-          width: 25px;
-          display: none;
-        }
-      }
-    }
   }
 }
