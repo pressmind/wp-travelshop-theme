@@ -126,7 +126,7 @@
         </div>
     </div>
 </footer>
-<?php load_template(get_template_directory() . '/template-parts/layout-blocks/auto-modal.php'); ?>
+<?php //load_template(get_template_directory() . '/template-parts/layout-blocks/auto-modal.php'); ?>
 <?php
 wp_footer();
 ?>
