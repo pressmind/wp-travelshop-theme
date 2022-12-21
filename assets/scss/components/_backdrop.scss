@@ -1,0 +1,20 @@
+%backdrop-default {
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: $zindex-modal-backdrop;
+
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
+  transition: opacity .3s;
+
+  pointer-events: none;
+  opacity:0;
+
+  &.open {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
