@@ -15,75 +15,29 @@
 @import "utils/mixins";
 
 // -- base
-@import "base/typography";
-@import "base/container";
-@import "base/beaverbuilder";
+//@import "base/_backup/typography";
+//@import "base/_backup/container";
+//@import "base/_backup/beaverbuilder";
 
 // -- icons
-@import "icons/_tabler-icons";
+//@import "icons/_tabler-icons";
 
 // -- components
-@import "components/offcanvas";
-@import "components/travel-teaser";
-@import "components/travel-teaser-mega-stripe";
-@import "components/travel-slider";
-@import "components/list-filter";
-@import "components/detail-gallery";
-@import "components/detail-booking";
-@import "components/detail-booking-calendar";
-@import "components/content-blocks";
-@import "components/teaser";
-@import "components/image-teaser";
-@import "components/breadcrumb";
-@import "components/badges";
-@import "components/forms";
-@import "components/search-header";
-@import "components/jumbotron";
-@import "components/daterangepicker";
-@import "components/search-bar";
-@import "components/search-bar";
-@import "components/autocomplete-suggestions";
-@import "components/accordion";
-@import "components/service-hotline-batch";
-@import "components/spinner";
-@import "components/string-search";
-@import "components/pagination";
-@import "components/button";
-@import "components/blog-list";
-@import "components/cf7";
-@import "components/modals";
-@import "components/product-category-teaser";
-@import "components/image-slider";
-@import "components/price-box";
-@import "components/gmaps-box";
-@import "components/map-box";
-@import "components/itinerary";
-@import "components/contact-box";
-@import "components/mobile-bar";
-@import "components/description-block";
-@import "components/product-calendar";
-@import "components/month-teaser";
-@import "components/content-slider";
-@import "components/history";
-@import "components/team";
-@import "components/trust-box";
-@import "components/category-header";
-@import "components/share-box";
-@import "components/booking-on-request";
-@import "components/faq-schema-accordion";
 @import "components/backdrop";
+@import "components/field-daterange-picker";
+@import "components/list-filter";
 
 // -- layout
-@import "layout/footer";
-@import "layout/header";
-@import "layout/navigation";
-@import "layout/content";
+//@import "layout/_backup/footer";
+//@import "layout/_backup/header";
+//@import "layout/_backup/navigation";
+//@import "layout/_backup/content";
 
 // -- pages
-@import "pages/home";
-@import "pages/list";
-@import "pages/detail";
-@import "pages/detail2";
+//@import "pages/_backup/home";
+//@import "pages/_backup/list";
+//@import "pages/_backup/detail";
+//@import "pages/_backup/detail2";
 
 // -- themes
 // this just an example for you're theme starting point

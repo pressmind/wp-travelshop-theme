@@ -12,8 +12,8 @@
 @import "utils/mixins";
 
 // -- base
-@import "base/typography";
-@import "base/container";
+@import "base/_backup/typography";
+@import "base/_backup/container";
 
 // -- icons
 //@import "icons/tabler-icons.css";
@@ -24,11 +24,11 @@
 @import "components/forms";
 
 // -- layout
-@import "layout/footer";
-@import "layout/header";
-@import "layout/navigation";
+@import "layout/_backup/footer";
+@import "layout/_backup/header";
+@import "layout/_backup/navigation";
 
 // -- pages
-@import "pages/home";
+@import "pages/_backup/home";
 
 // -- themes
