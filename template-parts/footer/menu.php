@@ -16,14 +16,14 @@ if (has_nav_menu($args['menu_location'])) {
     <div class="h5">
         <?php echo !empty($footer_menu->name) ? $footer_menu->name : ''; ?>
     </div>
-    <nav class="nav flex-column">
-        <ul class="">
+    <nav class="nav">
+        <ul class=" flex-column">
             <?php
             wp_nav_menu(
                 array(
                     'container' => '',
                     'depth' => 1,
-                    'items_wrap' => '<div>%3$s</div>',
+                    'items_wrap' => '%3$s',
                     'theme_location' => $args['menu_location'],
                 )
             );
