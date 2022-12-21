@@ -23,7 +23,7 @@ if (has_nav_menu($args['menu_location'])) {
                 array(
                     'container' => '',
                     'depth' => 1,
-                    'items_wrap' => null,
+                    'items_wrap' => '<div>%3$s</div>',
                     'theme_location' => $args['menu_location'],
                 )
             );
