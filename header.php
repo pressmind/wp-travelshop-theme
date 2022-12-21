@@ -179,3 +179,5 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
         </div>
     </div>
 </header>
+
+<div class="datepicker-backdrop"></div>
