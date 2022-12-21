@@ -1,29 +1,4 @@
 /***
  ** Define own variables in this file
  ***/
-// -- header heights
-$header-height:                70px !default;
-$header-height-md:             80px !default;
-$header-height-lg:             90px !default;
-$header-height-xl:             100px !default;
-
-// -- add text-color
-$body-color-light:            $gray-500 !default;
-
-// -- colors
-$primary:                   #0066ff; // the main color
-$cta-detail-page:           #27ae60; // booking button on the detail-page
-
-// booking btn colors for each state
-$booking-button-green:          $cta-detail-page;
-$booking-button-green-txt:      white;
-$booking-button-red:            #a40505;
-$booking-button-red-txt:        white;
-$booking-button-orange:         #e85900;
-$booking-button-orange-txt:     white;
-$booking-button-gray:           #262626;
-$booking-button-gray-txt:       white;
-
-
-// -- z-index
-$zindex-offcanvas:            $zindex-tooltip !default;
+$body-color-light: lighten($body-color, 15%);

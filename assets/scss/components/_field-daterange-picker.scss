@@ -116,24 +116,24 @@ div.daterangepicker {
                     display: inline-block;
                     margin: .125rem;
 
-                    border: 1px solid $hr-color;
+                    border: 1px solid $hr-border-color;
 
                     transition: background-color .3s, color .3s, border .3s;
 
 
                     &:hover, &:focus, &:active {
-                        color: $dark-blue;
-                        border: 1px solid $dark-blue;
-                        background-color: rgba($dark-blue, .1);
+                        color: $primary;
+                        border: 1px solid $primary;
+                        background-color: rgba($primary, .1);
                     }
 
                     &.active,
                     &.active:hover,
                     &.active:focus,
                     &.active:active {
-                        border: 1px solid $dark-blue;
+                        border: 1px solid $primary;
                         color: #fff;
-                        background-color: $dark-blue;
+                        background-color: $primary;
                         font-weight: $font-weight-bold;
                     }
                 }
@@ -236,7 +236,7 @@ div.daterangepicker {
                                 &.active:hover {
                                     border-radius: 0 !important;
 
-                                    background-color: $dark-blue;
+                                    background-color: $primary;
                                 }
 
                                 &.off,
@@ -246,11 +246,11 @@ div.daterangepicker {
                                 }
 
                                 &.in-range:not(.off) {
-                                    background-color: rgba($dark-blue, .1);
+                                    background-color: rgba($primary, .1);
                                 }
 
                                 &.in-range:not(.off).active {
-                                    background-color: $dark-blue;
+                                    background-color: $primary;
                                 }
                             }
                         }
@@ -284,7 +284,7 @@ div.daterangepicker {
     // -- header
     .daterangepicker-header {
         padding: 0 1.5rem;
-        border-bottom: 1px solid $hr-color;
+        border-bottom: 1px solid $hr-border-color;
 
         @include media-breakpoint-up(md) {
             padding: 0 2rem;
@@ -317,7 +317,7 @@ div.daterangepicker {
         }
 
         .h3 {
-            font-size: $font-size-l;
+            font-size: $font-size-lg;
             margin: 0;
             color: #333;
             height: 3.5rem;
@@ -325,7 +325,7 @@ div.daterangepicker {
 
             @include media-breakpoint-up(lg) {
                 h1.teaser-title {
-                    font-size: $font-size-xl;
+                    font-size: $font-size-lg;
                 }
             }
         }
@@ -355,7 +355,7 @@ div.daterangepicker {
         top: 50% !important;
         left: 50% !important;
 
-        box-shadow: $box-shadow-dropdown !important;
+        box-shadow: $box-shadow !important;
         max-width: 47.5rem !important; // 760px
 
         transform: translate(-50%, -50%) !important;
