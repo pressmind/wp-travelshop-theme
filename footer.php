@@ -12,6 +12,8 @@
                             SSL-Schutz
                         </div>
                     </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item">
                         <div class="trust-item--icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#percent"></use></svg>
@@ -20,6 +22,8 @@
                             Bester Preis
                         </div>
                     </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item">
                         <div class="trust-item--icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#credit-card"></use></svg>
@@ -28,6 +32,8 @@
                             Sichere Zahlung
                         </div>
                     </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item">
                         <div class="trust-item--icon">
 
