@@ -24,9 +24,10 @@ if (empty($_GET['pm-tr']) === false) {
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="<?php echo $uuid; ?>"
                        data-id="<?php echo $item->name; ?>"
-                    <?php echo in_array($item->name, $selected) ? 'checked' : ''; ?><?php echo !empty($is_open) ? 'disabled' : ''; ?>><span><i
-                    ><svg class="icon icon-tabler icon-tabler-check"><use
-                                    xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg></i></span>
+                    <?php echo in_array($item->name, $selected) ? 'checked' : ''; ?><?php echo !empty($is_open) ? 'disabled' : ''; ?>>
+                <span>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
+                </span>
                 <label class="form-check-label" for="<?php echo $uuid; ?>">
                     <?php echo ucfirst(strtolower($item->name)); ?>
                 </label>

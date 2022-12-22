@@ -89,10 +89,8 @@ if (empty($travel_months)) {
                                         'date' => $item['from']
                                     ]);
                                     ?>
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         x="0px" y="0px" viewBox="0 0 407.437 407.437"
-                                         style="enable-background:new 0 0 407.437 407.437;" xml:space="preserve"> <polygon
-                                                points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/></svg>
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
+
                                 </div>
                             </a>
                         </div>
