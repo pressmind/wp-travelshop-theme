@@ -6,7 +6,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item">
                         <div class="trust-item--icon">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#shield-check"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#shield-check"></use></svg>
                         </div>
                         <div class="trust-item--title">
                             SSL-Schutz
@@ -16,7 +16,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item">
                         <div class="trust-item--icon">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#percent"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#percent"></use></svg>
                         </div>
                         <div class="trust-item--title">
                             Bester Preis
@@ -26,7 +26,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item">
                         <div class="trust-item--icon">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#credit-card"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#credit-card"></use></svg>
                         </div>
                         <div class="trust-item--title">
                             Sichere Zahlung
@@ -37,7 +37,7 @@
                     <div class="trust-item">
                         <div class="trust-item--icon">
 
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#envelope"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                         </div>
                         <div class="trust-item--title">
                             Reise-Infos
@@ -63,14 +63,14 @@
                     <p>
                         <a href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>" title="<?php echo do_shortcode('[ts-company-name]');?> anrufen" class="icon-link">
                     <div class="icon">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#phone-call"></use></svg>
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
                     </div>
                     <?php echo do_shortcode('[ts-company-hotline]');?>
                     </a>
 
                     <a href="mailto:<?php echo do_shortcode('[ts-company-mail]');?>" title="E-Mail an <?php echo do_shortcode('[ts-company-name]');?>" class="icon-link">
                         <div class="icon">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#envelope"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                         </div>
                         <?php echo do_shortcode('[ts-company-email]');?>
                     </a>

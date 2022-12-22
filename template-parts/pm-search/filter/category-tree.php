@@ -52,7 +52,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                             <?php echo !empty($is_open) ? 'disabled' : '';?>
                     >
                     <span>
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#check"></use></svg>
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
                     </span>
                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                         <?php echo $item->name; ?>
@@ -75,7 +75,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                                         <?php echo in_array($child_item->id_item, $selected) ? 'checked' : '';?>
                                            >
                                     <span>
-                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#check"></use></svg>
+                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
                                     </span>
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                                         <?php echo $child_item->name; ?>
