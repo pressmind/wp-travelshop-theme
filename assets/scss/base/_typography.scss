@@ -1,0 +1,39 @@
+// -- redefine headings placeholder, to eventually add stuff like <small>, subline, style elements like border bottom etc..
+%headings {
+  font: {
+    family: $headings-font-family;
+    weight: $headings-font-weight;
+  }
+
+  margin-bottom: $headings-margin-bottom;
+  color: $headings-color;
+  line-height: $headings-line-height;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  @extend %headings;
+}
+
+h1, .h1 {
+  @include font-size-generator($h1-font-sizes);
+}
+
+h2, .h2 {
+  @include font-size-generator($h2-font-sizes);
+}
+
+h3, .h3 {
+  @include font-size-generator($h2-font-sizes);
+}
+
+h4, .h4 {
+  @include font-size-generator($h2-font-sizes);
+}
+
+h5, .h5 {
+  @include font-size-generator($h2-font-sizes);
+}
+
+h6, .h6 {
+  @include font-size-generator($h2-font-sizes);
+}

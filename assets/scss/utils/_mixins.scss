@@ -1,174 +1,48 @@
-/*****
- ** Own mixins here
- *****/
-
 /**
- * Disabling select
- **/
-@mixin noselect() {
-   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
-}
-
-/**
- * Generating aspect-ratio for elements.
- **/
-@mixin aspect-ratio($width, $height) {
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: $height / $width * 100%;
-  }
-}
-/**
- *  Reset button style
- **/
-@mixin resetbutton() {
-  border: 0;
-  box-shadow: 0;
-  outline: none;
-  background: transparent;
-
-  padding: 0;
-  margin: 0;
-
-  &:hover, &:focus, &:active {
-    box-shadow: 0;
-    outline: none;
-  }
-}
-
-/**
-Creates a strike trough price
-<span class="discount-label">
-  <span class="price">701&nbsp;€</span>
-  <span class="discount">-4%</span>
-  </span>
-*/
-
-@mixin discount_label(){
-  .discount-label {
-    background-color: lightgray;
-    color: black;
-    border-radius: 10px;
-    width: auto;
-    position: relative;
-    font-size: 0.8rem;
-    padding: 2px 10px;
-    white-space: nowrap;
-
-    .price {
-      width: 30px;
-      position: relative;
+ * Mixin to generate font sizes with scss maps
+ * this can be used with px values + bootstrap breakpoints.
+ * =============================================================
+ * Given variables
+ * -------------------------------------------------------------
+ * $font-size-map: scss map with font sizes, key can be px value or bootstrap breakpoint ( see $grid-breakpoints for keys )
+ * $breakpoints: $grid-breakpoints defined by bootstrap. Can be overwritten by custom breakpoint scss map
+ * =============================================================
+ * Usage
+ * -------------------------------------------------------------
+ * For example h1
+ * h1, .h1 { @include font-size-generator($h1-font-sizes);
+ * You can also use it for different views like travelboxes or something else.
+ *
+ * To use it you need to setup a scss map:
+ * $travel-box-headlines: (
+ *  null: 1rem, ( default value, from 0 - infinity )
+ *  lg: 2rem ( 32px if screen > lg breakpoint )
+ * );
+ *
+ * Use sizes on element:
+ * .travel-box h1.travel-box--title { @include font-size-generator($travel-box-headlines); }
+ *
+ * Enjoy responsive font sizes! ;)
+ */
+@mixin font-size-generator($font-size-map, $breakpoints: $grid-breakpoints) {
+  // loop through set font sizes
+  @each $breakpoint, $font-size in $font-size-map {
+    // check if breakpoint defined as zero to render "default" value ( mobile )
+    @if $breakpoint == null {
+      font-size: $font-size;
     }
+    @else {
+      // if not null use $breakpoint as breakpoint to set font size
 
-    // strike-trough
-    .price:before {
-      position: absolute;
-      content: "";
-      top: 0.5em;
-      background: linear-gradient(to right,
-              rgba(230, 0, 0, 0.8) 50%,
-              rgba(230, 0, 0, 0) 100%);
-      border-bottom-right-radius: 50%;
-      border-bottom-left-radius: 2px;
-      transform: rotate(-20deg);
-      width: 110%;
-      height: 0.15em;
-    }
+      // check if breakpoint with key is defined + set $breakpoint by $grid-breakpoints
+      @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+      }
 
-    .discount {
-      color: rgb(230, 0, 0);
-      font-weight: bold;
+      // set media query + font size for view.
+      @media ( min-width: $breakpoint ) {
+        font-size: $font-size;
+      }
     }
   }
-
-}
-@mixin booking_btn(){
-
-  .booking-btn {
-    font-weight: bold;
-
-    &.green {
-      color: $booking-button-green-txt;
-      background-color: $booking-button-green;
-      border-color: $booking-button-green;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-green, 15%) !important;
-        border-color: lighten($booking-button-green, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-green, 30%) !important;
-        border-color: lighten($booking-button-green, 30%) !important;
-      }
-    }
-
-    &.red {
-      color: $booking-button-red-txt;
-      background-color: $booking-button-red;
-      border-color: $booking-button-red;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-red, 15%) !important;
-        border-color: lighten($booking-button-red, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-red, 30%) !important;
-        border-color: lighten($booking-button-red, 30%) !important;
-      }
-      pointer-events: none;
-      cursor: default;
-    }
-
-    &.orange {
-      color: $booking-button-orange-txt;
-      background-color: $booking-button-orange;
-      border-color: $booking-button-orange;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-orange, 15%) !important;
-        border-color: lighten($booking-button-orange, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-orange, 30%) !important;
-        border-color: lighten($booking-button-orange, 30%) !important;
-      }
-      pointer-events: none;
-      cursor: default;
-    }
-
-    &.gray {
-      color: $booking-button-gray-txt;
-      background-color: $booking-button-gray;
-      border-color: $booking-button-gray;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-gray, 15%) !important;
-        border-color: lighten($booking-button-gray, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-gray, 30%) !important;
-        border-color: lighten($booking-button-gray, 30%) !important;
-      }
-      pointer-events: none;
-      cursor: default;
-    }
-    .loader {
-      width: 25px;
-      display: none;
-    }
-
-  }
-
 }
