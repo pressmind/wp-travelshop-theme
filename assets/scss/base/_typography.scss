@@ -23,17 +23,17 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  @include font-size-generator($h2-font-sizes);
+  @include font-size-generator($h3-font-sizes);
 }
 
 h4, .h4 {
-  @include font-size-generator($h2-font-sizes);
+  @include font-size-generator($h4-font-sizes);
 }
 
 h5, .h5 {
-  @include font-size-generator($h2-font-sizes);
+  @include font-size-generator($h5-font-sizes);
 }
 
 h6, .h6 {
-  @include font-size-generator($h2-font-sizes);
+  @include font-size-generator($h6-font-sizes);
 }
