@@ -10078,6 +10078,148 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
+.dropdown .dropdown-toggle:after {
+  display: none; }
+
+/**
+ * Booking button
+ */
+.btn .loader {
+  width: 25px;
+  display: none; }
+
+.btn.booking-btn.green,
+.booking-btn.green {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745; }
+  .btn.booking-btn.green:hover,
+  .booking-btn.green:hover {
+    color: #212529;
+    background-color: #48d368;
+    border-color: #48d368; }
+  .btn.booking-btn.green:focus, .btn.booking-btn.green.focus,
+  .booking-btn.green:focus,
+  .booking-btn.green.focus {
+    box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5); }
+  .btn.booking-btn.green.disabled, .btn.booking-btn.green:disabled,
+  .booking-btn.green.disabled,
+  .booking-btn.green:disabled {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745; }
+  .btn.booking-btn.green:not(:disabled):not(.disabled):active, .btn.booking-btn.green:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.green.dropdown-toggle,
+  .booking-btn.green:not(:disabled):not(.disabled):active,
+  .booking-btn.green:not(:disabled):not(.disabled).active, .show >
+  .booking-btn.green.dropdown-toggle {
+    color: #fff;
+    background-color: #0a2c12;
+    border-color: #0a2c12; }
+    .btn.booking-btn.green:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.green:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.green.dropdown-toggle:focus,
+    .booking-btn.green:not(:disabled):not(.disabled):active:focus,
+    .booking-btn.green:not(:disabled):not(.disabled).active:focus, .show >
+    .booking-btn.green.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5); }
+.btn.booking-btn.red,
+.booking-btn.red {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545; }
+  .btn.booking-btn.red:hover,
+  .booking-btn.red:hover {
+    color: #212529;
+    background-color: #e77681;
+    border-color: #e77681; }
+  .btn.booking-btn.red:focus, .btn.booking-btn.red.focus,
+  .booking-btn.red:focus,
+  .booking-btn.red.focus {
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+  .btn.booking-btn.red.disabled, .btn.booking-btn.red:disabled,
+  .booking-btn.red.disabled,
+  .booking-btn.red:disabled {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545; }
+  .btn.booking-btn.red:not(:disabled):not(.disabled):active, .btn.booking-btn.red:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.red.dropdown-toggle,
+  .booking-btn.red:not(:disabled):not(.disabled):active,
+  .booking-btn.red:not(:disabled):not(.disabled).active, .show >
+  .booking-btn.red.dropdown-toggle {
+    color: #fff;
+    background-color: #66121a;
+    border-color: #66121a; }
+    .btn.booking-btn.red:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.red:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.red.dropdown-toggle:focus,
+    .booking-btn.red:not(:disabled):not(.disabled):active:focus,
+    .booking-btn.red:not(:disabled):not(.disabled).active:focus, .show >
+    .booking-btn.red.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+.btn.booking-btn.orange,
+.booking-btn.orange {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107; }
+  .btn.booking-btn.orange:hover,
+  .booking-btn.orange:hover {
+    color: #212529;
+    background-color: #ffd454;
+    border-color: #ffd454; }
+  .btn.booking-btn.orange:focus, .btn.booking-btn.orange.focus,
+  .booking-btn.orange:focus,
+  .booking-btn.orange.focus {
+    box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5); }
+  .btn.booking-btn.orange.disabled, .btn.booking-btn.orange:disabled,
+  .booking-btn.orange.disabled,
+  .booking-btn.orange:disabled {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107; }
+  .btn.booking-btn.orange:not(:disabled):not(.disabled):active, .btn.booking-btn.orange:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.orange.dropdown-toggle,
+  .booking-btn.orange:not(:disabled):not(.disabled):active,
+  .booking-btn.orange:not(:disabled):not(.disabled).active, .show >
+  .booking-btn.orange.dropdown-toggle {
+    color: #fff;
+    background-color: #6d5200;
+    border-color: #6d5200; }
+    .btn.booking-btn.orange:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.orange.dropdown-toggle:focus,
+    .booking-btn.orange:not(:disabled):not(.disabled):active:focus,
+    .booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show >
+    .booking-btn.orange.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5); }
+.btn.booking-btn.gray,
+.booking-btn.gray {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529; }
+  .btn.booking-btn.gray:hover,
+  .booking-btn.gray:hover {
+    color: #fff;
+    background-color: #495057;
+    border-color: #495057; }
+  .btn.booking-btn.gray:focus, .btn.booking-btn.gray.focus,
+  .booking-btn.gray:focus,
+  .booking-btn.gray.focus {
+    box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
+  .btn.booking-btn.gray.disabled, .btn.booking-btn.gray:disabled,
+  .booking-btn.gray.disabled,
+  .booking-btn.gray:disabled {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529; }
+  .btn.booking-btn.gray:not(:disabled):not(.disabled):active, .btn.booking-btn.gray:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.gray.dropdown-toggle,
+  .booking-btn.gray:not(:disabled):not(.disabled):active,
+  .booking-btn.gray:not(:disabled):not(.disabled).active, .show >
+  .booking-btn.gray.dropdown-toggle {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529; }
+    .btn.booking-btn.gray:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.gray:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.gray.dropdown-toggle:focus,
+    .booking-btn.gray:not(:disabled):not(.disabled):active:focus,
+    .booking-btn.gray:not(:disabled):not(.disabled).active:focus, .show >
+    .booking-btn.gray.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
+
+.add-to-wishlist svg {
+  pointer-events: none !important; }
+
 .travelshop-datepicker > div {
   position: relative; }
   .travelshop-datepicker > div svg {
@@ -10315,11 +10457,5 @@ div.daterangepicker {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
       max-width: 47.5rem !important;
       transform: translate(-50%, -50%) !important; } }
-
-.dropdown .dropdown-toggle:after {
-  display: none; }
-
-.add-to-wishlist svg {
-  pointer-events: none !important; }
 
 /*# sourceMappingURL=app.css.map */
