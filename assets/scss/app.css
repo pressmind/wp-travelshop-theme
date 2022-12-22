@@ -4774,7 +4774,7 @@ button.bg-dark:focus {
   clear: both;
   content: ""; }
 
-.d-none {
+.d-none, .add-to-wishlist svg.heart-filled, .add-to-wishlist.active svg.heart-stroke {
   display: none !important; }
 
 .d-inline {
@@ -4783,7 +4783,7 @@ button.bg-dark:focus {
 .d-inline-block {
   display: inline-block !important; }
 
-.d-block {
+.d-block, .add-to-wishlist.active svg.heart-filled {
   display: block !important; }
 
 .d-table {

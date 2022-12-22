@@ -1,5 +1,21 @@
 .add-to-wishlist {
   svg {
     pointer-events: none !important;
+
+    &.heart-filled {
+      @extend .d-none;
+    }
+  }
+
+  &.active {
+    svg {
+      &.heart-filled {
+        @extend .d-block;
+      }
+
+      &.heart-stroke {
+        @extend .d-none;
+      }
+    }
   }
 }
