@@ -23,11 +23,9 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                             data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <span class="selected-options" data-placeholder="bitte wählen">bitte wählen</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x dropdown-clear" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0066ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <line x1="18" y1="6" x2="6" y2="18" />
-                            <line x1="6" y1="6" x2="18" y2="18" />
-                        </svg>
+
+                        <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+
                     </button>
                     <div class="dropdown-menu dropdown-menu-select"
                          aria-labelledby="dropdownReiseziel">
@@ -49,9 +47,12 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                                            data-id-parent="" data-id="<?php echo $item->id_item; ?>"
                                            data-name="<?php echo $args['fieldname']; ?>"
                                            id="<?php echo $uuid; ?>"
-                                        <?php echo in_array($item->id_item, $selected) ? 'checked' : ''; ?>><span><i>
-                                            <svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg>
-                                        </i></span>
+                                        <?php echo in_array($item->id_item, $selected) ? 'checked' : ''; ?>>
+
+                                    <span>
+                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iconoir-sprite.svg#check"></use></svg>
+                                    </span>
+
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                                         <?php echo $item->name; ?>
                                     </label>

@@ -58,12 +58,10 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
             <line x1="12" y1="15" x2="12" y2="18" />
         </svg>
         <?php } ?>
-        <svg xmlns="http://www.w3.org/2000/svg"
-            <?php if (!empty($_GET['pm-dr']) && $use_ajax == "1") { echo 'style="display: block;"'; } else { echo 'style="display: none;"'; } ?>
-             class="icon icon-tabler icon-tabler-x datepicker-clear" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0066ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
+
+
+        <svg <?php if (!empty($_GET['pm-dr']) && $use_ajax == "1") { echo 'style="display: block;"'; } else { echo 'style="display: none;"'; } ?> class="input-clear datepicker-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+
+
     </div>
 </div>

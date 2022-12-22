@@ -15,6 +15,16 @@ ini_set('display_startup_errors', 0);
 error_reporting(0);
 
 define('DOING_AJAX', true);
+
+// -- little fix for icon paths
+if ( !function_exists('get_stylesheet_directory_uri') ) {
+
+    function get_stylesheet_directory_uri() {
+        return '/wp-content/themes/travelshop';
+    }
+
+}
+
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->safeLoad();
