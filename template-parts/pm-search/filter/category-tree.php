@@ -60,13 +60,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                     </label>
                     <?php if ($has_childs === true) { ?>
                         <button type="button" class="toggle-second-level" >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler-dots-circle-horizontal" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"/>
-                                <circle cx="12" cy="12" r="9" />
-                                <line x1="8" y1="12" x2="8" y2="12.01" />
-                                <line x1="12" y1="12" x2="12" y2="12.01" />
-                                <line x1="16" y1="12" x2="16" y2="12.01" />
-                            </svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
                         </button>
                         <div class="list-filter-second-level">
                             <?php foreach ($childs[$item->id_item] as $child_item) {
