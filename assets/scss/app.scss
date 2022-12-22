@@ -15,6 +15,7 @@
 @import "utils/mixins";
 
 // -- base
+@import "base/body";
 @import "base/typography";
 @import "base/beaverbuilder";
 //@import "base/_backup/typography";
@@ -29,6 +30,7 @@
 @import "components/field-daterange-picker";
 @import "components/list-filter";
 @import "components/dropdown";
+@import "components/wishlist-add";
 
 // -- layout
 //@import "layout/_backup/footer";
@@ -46,11 +48,8 @@
 // this just an example for you're theme starting point
 // @import "pages/themes/theme-ananas";
 
-body {
-	font-display: swap !important;
-}
 
-// -- fix for wishlist issues
-.add-to-wishlist svg {
-	pointer-events: none !important;
-}
+//// -- fix for wishlist issues
+//.add-to-wishlist svg {
+//	pointer-events: none !important;
+//}

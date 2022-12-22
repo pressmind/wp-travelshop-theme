@@ -1,342 +1,342 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
-}
-
-body {
-	line-height: 1;
-}
-
-ol,
-ul {
-	list-style: none;
-}
-
-blockquote,
-q {
-	quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-@import "vendors/bootstrap/bootstrap";
-@import "utils/variables";
-@import "utils/mixins";
-@import "components/offcanvas";
-@import "layout/_backup/header";
-@import "layout/_backup/footer";
-
-/* IBE TEMPLATE STYLES START */
-
-.container {
-	width: 100% !important;
-	max-width: 1360px !important;
-}
-
-.header-main {
-	.header-main-row {
-		div {
-			&:nth-child(3) {
-				padding: 0;
-			}
-		}
-
-		.ibe_template_hotline {
-			background: #165d9c;
-			color: #fff;
-			text-align: left;
-			padding: 0.75rem 0.75rem 0.75rem 2.8rem;
-			position: relative;
-			line-height: 1;
-			border-radius: 5px;
-
-			small {
-				font-weight: bold;
-				display: inline-block;
-			}
-
-			a {
-				color: #fff;
-				display: inline-block;
-				text-decoration: none;
-				font-size: 0.8rem;
-			}
-
-			.phone-link {
-				position: absolute;
-				left: 0.75rem;
-				top: 50%;
-				transform: translateY(-50%);
-
-				svg {
-					width: 25px;
-					height: auto;
-				}
-			}
-		}
-
-		@media only screen and (min-width: 900px) {
-			.ibe_template_hotline {
-				display: inline-block;
-				padding: 0.5rem 0.5rem 0.5rem 3rem;
-
-				.phone-link {
-					left: 0.5rem;
-
-					svg {
-						width: 35px;
-						height: auto;
-					}
-				}
-			}
-		}
-
-		@media only screen and (min-width: 900px) {
-			div {
-				&:nth-child(3) {
-					padding: 0 10px;
-				}
-			}
-		}
-	}
-}
-
-main {
-	// overwrite some style in the pressmind ib3 styles
-
-	#app_loading_spinner {
-		opacity: 1 !important;
-	}
-
-	#pressmind_ib3 {
-		padding-left: 0px;
-		padding-right: 0px;
-
-		margin: 80px auto;
-
-		@media only screen and (min-width: 900px) {
-			margin: 120px auto;
-		}
-
-		.pmi3-step {
-			.pmi3-step--header-wrapper {
-				top: 50px;
-
-				@media only screen and (min-width: 900px) {
-					top: 80px;
-				}
-			}
-		}
-
-		.pmi3-trust-box {
-			margin: 0px;
-		}
-
-		.pmi3-main-container {
-			padding-bottom: 0px;
-		}
-	}
-}
-
-footer {
-	.ibe_above_footer {
-		background-color: #e9ecef;
-		color: #6c757d;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-		position: relative;
-		z-index: 500;
-
-		.container {
-			display: flex;
-			flex-direction: row;
-			align-items: flex-start;
-			flex-wrap: wrap;
-
-			.ibe_trust_item {
-				text-align: center;
-				padding: 1rem;
-				flex: 0 0 25%;
-
-				div {
-					background: #bdc3c7; /* fallback for old browsers */
-					background: -webkit-radial-gradient(
-						#fff,
-						#e9ecef
-					); /* Chrome 10-25, Safari 5.1-6 */
-					background: radial-gradient(
-						#fff,
-						#e9ecef
-					); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-					box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-						0 1px 2px rgba(0, 0, 0, 0.24);
-					padding: 0.25rem;
-					border-radius: 50%;
-					display: inline-block;
-				}
-
-				span {
-					display: block;
-					margin-top: 0.5rem;
-					font-size: 0.7rem;
-					line-height: 1.3;
-				}
-
-				svg {
-					max-width: 40px;
-					height: auto;
-
-					path,
-					circle,
-					line {
-					}
-				}
-			}
-		}
-	}
-
-	.footer-main {
-		background: #edf1f4;
-	}
-
-	@media only screen and (min-width: 900px) {
-		.ibe_above_footer {
-			.container {
-				.ibe_trust_item {
-					flex: 0 0 25%;
-					padding: 2rem 1rem;
-
-					div {
-						padding: 1rem;
-					}
-
-					span {
-						font-size: 1.2rem;
-					}
-
-					svg {
-						max-width: 100px;
-					}
-				}
-			}
-		}
-	}
-}
+///* http://meyerweb.com/eric/tools/css/reset/
+//   v2.0 | 20110126
+//   License: none (public domain)
+//*/
+//
+//html,
+//body,
+//div,
+//span,
+//applet,
+//object,
+//iframe,
+//h1,
+//h2,
+//h3,
+//h4,
+//h5,
+//h6,
+//p,
+//blockquote,
+//pre,
+//a,
+//abbr,
+//acronym,
+//address,
+//big,
+//cite,
+//code,
+//del,
+//dfn,
+//em,
+//img,
+//ins,
+//kbd,
+//q,
+//s,
+//samp,
+//small,
+//strike,
+//strong,
+//sub,
+//sup,
+//tt,
+//var,
+//b,
+//u,
+//i,
+//center,
+//dl,
+//dt,
+//dd,
+//ol,
+//ul,
+//li,
+//fieldset,
+//form,
+//label,
+//legend,
+//table,
+//caption,
+//tbody,
+//tfoot,
+//thead,
+//tr,
+//th,
+//td,
+//article,
+//aside,
+//canvas,
+//details,
+//embed,
+//figure,
+//figcaption,
+//footer,
+//header,
+//hgroup,
+//menu,
+//nav,
+//output,
+//ruby,
+//section,
+//summary,
+//time,
+//mark,
+//audio,
+//video {
+//	margin: 0;
+//	padding: 0;
+//	border: 0;
+//	font-size: 100%;
+//	font: inherit;
+//	vertical-align: baseline;
+//	box-sizing: border-box;
+//	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+//		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+//		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+//}
+//
+///* HTML5 display-role reset for older browsers */
+//article,
+//aside,
+//details,
+//figcaption,
+//figure,
+//footer,
+//header,
+//hgroup,
+//menu,
+//nav,
+//section {
+//	display: block;
+//}
+//
+//body {
+//	line-height: 1;
+//}
+//
+//ol,
+//ul {
+//	list-style: none;
+//}
+//
+//blockquote,
+//q {
+//	quotes: none;
+//}
+//
+//blockquote:before,
+//blockquote:after,
+//q:before,
+//q:after {
+//	content: "";
+//	content: none;
+//}
+//
+//table {
+//	border-collapse: collapse;
+//	border-spacing: 0;
+//}
+//
+//@import "vendors/bootstrap/bootstrap";
+//@import "utils/variables";
+//@import "utils/mixins";
+//@import "components/offcanvas";
+//@import "layout/_backup/header";
+//@import "layout/_backup/footer";
+//
+///* IBE TEMPLATE STYLES START */
+//
+//.container {
+//	width: 100% !important;
+//	max-width: 1360px !important;
+//}
+//
+//.header-main {
+//	.header-main-row {
+//		div {
+//			&:nth-child(3) {
+//				padding: 0;
+//			}
+//		}
+//
+//		.ibe_template_hotline {
+//			background: #165d9c;
+//			color: #fff;
+//			text-align: left;
+//			padding: 0.75rem 0.75rem 0.75rem 2.8rem;
+//			position: relative;
+//			line-height: 1;
+//			border-radius: 5px;
+//
+//			small {
+//				font-weight: bold;
+//				display: inline-block;
+//			}
+//
+//			a {
+//				color: #fff;
+//				display: inline-block;
+//				text-decoration: none;
+//				font-size: 0.8rem;
+//			}
+//
+//			.phone-link {
+//				position: absolute;
+//				left: 0.75rem;
+//				top: 50%;
+//				transform: translateY(-50%);
+//
+//				svg {
+//					width: 25px;
+//					height: auto;
+//				}
+//			}
+//		}
+//
+//		@media only screen and (min-width: 900px) {
+//			.ibe_template_hotline {
+//				display: inline-block;
+//				padding: 0.5rem 0.5rem 0.5rem 3rem;
+//
+//				.phone-link {
+//					left: 0.5rem;
+//
+//					svg {
+//						width: 35px;
+//						height: auto;
+//					}
+//				}
+//			}
+//		}
+//
+//		@media only screen and (min-width: 900px) {
+//			div {
+//				&:nth-child(3) {
+//					padding: 0 10px;
+//				}
+//			}
+//		}
+//	}
+//}
+//
+//main {
+//	// overwrite some style in the pressmind ib3 styles
+//
+//	#app_loading_spinner {
+//		opacity: 1 !important;
+//	}
+//
+//	#pressmind_ib3 {
+//		padding-left: 0px;
+//		padding-right: 0px;
+//
+//		margin: 80px auto;
+//
+//		@media only screen and (min-width: 900px) {
+//			margin: 120px auto;
+//		}
+//
+//		.pmi3-step {
+//			.pmi3-step--header-wrapper {
+//				top: 50px;
+//
+//				@media only screen and (min-width: 900px) {
+//					top: 80px;
+//				}
+//			}
+//		}
+//
+//		.pmi3-trust-box {
+//			margin: 0px;
+//		}
+//
+//		.pmi3-main-container {
+//			padding-bottom: 0px;
+//		}
+//	}
+//}
+//
+//footer {
+//	.ibe_above_footer {
+//		background-color: #e9ecef;
+//		color: #6c757d;
+//		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+//		position: relative;
+//		z-index: 500;
+//
+//		.container {
+//			display: flex;
+//			flex-direction: row;
+//			align-items: flex-start;
+//			flex-wrap: wrap;
+//
+//			.ibe_trust_item {
+//				text-align: center;
+//				padding: 1rem;
+//				flex: 0 0 25%;
+//
+//				div {
+//					background: #bdc3c7; /* fallback for old browsers */
+//					background: -webkit-radial-gradient(
+//						#fff,
+//						#e9ecef
+//					); /* Chrome 10-25, Safari 5.1-6 */
+//					background: radial-gradient(
+//						#fff,
+//						#e9ecef
+//					); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+//					box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+//						0 1px 2px rgba(0, 0, 0, 0.24);
+//					padding: 0.25rem;
+//					border-radius: 50%;
+//					display: inline-block;
+//				}
+//
+//				span {
+//					display: block;
+//					margin-top: 0.5rem;
+//					font-size: 0.7rem;
+//					line-height: 1.3;
+//				}
+//
+//				svg {
+//					max-width: 40px;
+//					height: auto;
+//
+//					path,
+//					circle,
+//					line {
+//					}
+//				}
+//			}
+//		}
+//	}
+//
+//	.footer-main {
+//		background: #edf1f4;
+//	}
+//
+//	@media only screen and (min-width: 900px) {
+//		.ibe_above_footer {
+//			.container {
+//				.ibe_trust_item {
+//					flex: 0 0 25%;
+//					padding: 2rem 1rem;
+//
+//					div {
+//						padding: 1rem;
+//					}
+//
+//					span {
+//						font-size: 1.2rem;
+//					}
+//
+//					svg {
+//						max-width: 100px;
+//					}
+//				}
+//			}
+//		}
+//	}
+//}

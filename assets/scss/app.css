@@ -9933,6 +9933,12 @@ html.force--consent.show--consent body {
 /***
  ** Define own variables in this file
  ***/
+/**
+ * Body
+ */
+/**
+ * Headlines
+ */
 /*****
  ** Own mixins here
  *****/
@@ -9952,6 +9958,9 @@ Creates a strike trough price
   <span class="discount">-4%</span>
   </span>
 */
+body {
+  font-display: swap !important; }
+
 body.fl-builder .content-block.content-page > .container, body.fl-builder .fl-builder-content .content-block.content-page > .fl-row.fl-row-fixed-width, .fl-builder-content body.fl-builder .content-block.content-page > .fl-row.fl-row-fixed-width, body.fl-builder .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .content-block.content-page > .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap body.fl-builder .content-block.content-page > .fl-row-content.fl-row-fixed-width {
   width: 100% !important;
   max-width: 100% !important;
@@ -10243,9 +10252,6 @@ div.daterangepicker {
 
 .dropdown .dropdown-toggle:after {
   display: none; }
-
-body {
-  font-display: swap !important; }
 
 .add-to-wishlist svg {
   pointer-events: none !important; }

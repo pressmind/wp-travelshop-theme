@@ -1,4 +1,49 @@
 /***
  ** Define own variables in this file
  ***/
+
+/**
+ * Body
+ */
 $body-color-light: lighten($body-color, 15%);
+
+/**
+ * Headlines
+ */
+
+// -- sizes ( maps for responsive )
+$h1-font-sizes: (
+        null: 1.25rem, // 20px
+        sm: 1.5rem, // 24px
+        md: 2rem, // 32px
+        lg: $h1-font-size // 40px
+);
+
+$h2-font-sizes: (
+        null: 1.125rem, // 18px
+        sm:   1.25rem, // 20px
+        md: 1.5rem, // 24px
+        lg: $h2-font-size // 32px
+);
+
+$h3-font-sizes: (
+        null: 1.125rem, // 18px
+        sm:   1.25rem, // 20px
+        md: 1.5rem, // 24px
+        lg: $h3-font-size // 32px
+);
+
+$h4-font-sizes: (
+        null: 1rem, // 16px
+        sm:   1.25rem, // 20px
+        lg: $h4-font-size // 24px
+);
+
+$h5-font-sizes: (
+        null: 1rem, // 16px
+        lg: $h5-font-size // 20px
+);
+
+$h6-font-sizes: (
+        null: $h6-font-size // 16px
+);
