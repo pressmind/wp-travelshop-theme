@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="trust-item">
+                    <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#shield-check"></use></svg>
                         </div>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="trust-item">
+                    <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#percent"></use></svg>
                         </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="trust-item">
+                    <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#credit-card"></use></svg>
                         </div>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="trust-item">
+                    <div class="trust-item text-center">
                         <div class="trust-item--icon">
 
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
