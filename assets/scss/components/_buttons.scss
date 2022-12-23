@@ -12,13 +12,13 @@
 .btn.booking-btn,
 .booking-btn {
   &.green {
-    @include button-variant($success, $success, lighten($success, 15%), lighten($success, 15%), darken($success, 30%), darken($success, 30%));
+    @include button-variant($success, $success, lighten($success, 15%), lighten($success, 15%), darken($success, 10%), darken($success, 10%));
   }
   &.red {
-    @include button-variant($danger, $danger, lighten($danger, 15%), lighten($danger, 15%), darken($danger, 30%), darken($danger, 30%));
+    @include button-variant($danger, $danger, lighten($danger, 15%), lighten($danger, 15%), darken($danger, 10%), darken($danger, 10%));
   }
   &.orange {
-    @include button-variant($warning, $warning, lighten($warning, 15%), lighten($warning, 15%), darken($warning, 30%), darken($warning, 30%));
+    @include button-variant($warning, $warning, lighten($warning, 15%), lighten($warning, 15%), darken($warning, 10%), darken($warning, 10%));
   }
   &.gray {
     @include button-variant($gray-900, $gray-900, $gray-700, $gray-700, $gray-900, $gray-900);

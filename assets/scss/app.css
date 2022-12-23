@@ -10119,8 +10119,8 @@ body.fl-builder .content-block.content-page {
   .booking-btn.green:not(:disabled):not(.disabled).active, .show >
   .booking-btn.green.dropdown-toggle {
     color: #fff;
-    background-color: #0a2c12;
-    border-color: #0a2c12; }
+    background-color: #1e7e34;
+    border-color: #1e7e34; }
     .btn.booking-btn.green:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.green:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.green.dropdown-toggle:focus,
     .booking-btn.green:not(:disabled):not(.disabled):active:focus,
     .booking-btn.green:not(:disabled):not(.disabled).active:focus, .show >
@@ -10151,8 +10151,8 @@ body.fl-builder .content-block.content-page {
   .booking-btn.red:not(:disabled):not(.disabled).active, .show >
   .booking-btn.red.dropdown-toggle {
     color: #fff;
-    background-color: #66121a;
-    border-color: #66121a; }
+    background-color: #bd2130;
+    border-color: #bd2130; }
     .btn.booking-btn.red:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.red:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.red.dropdown-toggle:focus,
     .booking-btn.red:not(:disabled):not(.disabled):active:focus,
     .booking-btn.red:not(:disabled):not(.disabled).active:focus, .show >
@@ -10182,9 +10182,9 @@ body.fl-builder .content-block.content-page {
   .booking-btn.orange:not(:disabled):not(.disabled):active,
   .booking-btn.orange:not(:disabled):not(.disabled).active, .show >
   .booking-btn.orange.dropdown-toggle {
-    color: #fff;
-    background-color: #6d5200;
-    border-color: #6d5200; }
+    color: #212529;
+    background-color: #d39e00;
+    border-color: #d39e00; }
     .btn.booking-btn.orange:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.orange.dropdown-toggle:focus,
     .booking-btn.orange:not(:disabled):not(.disabled):active:focus,
     .booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show >
@@ -10473,10 +10473,5 @@ div.daterangepicker {
   @media (min-width: 768px) {
     .card-travel-wrapper .card.card-travel {
       background: red !important; } }
-  .card-travel-wrapper .card.card-travel h1.card-title {
-    font-size: 1rem; }
-    @media (min-width: 992px) {
-      .card-travel-wrapper .card.card-travel h1.card-title {
-        font-size: 1.125rem; } }
 
 /*# sourceMappingURL=app.css.map */
