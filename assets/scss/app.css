@@ -9930,6 +9930,9 @@ html.force--consent.show--consent body {
 /**
  * Headlines
  */
+/**
+ * Buttons
+ */
 /***
  ** Define own variables in this file
  ***/
@@ -10107,7 +10110,7 @@ body.fl-builder .content-block.content-page {
   .btn.booking-btn.green:focus, .btn.booking-btn.green.focus,
   .booking-btn.green:focus,
   .booking-btn.green.focus {
-    box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5); }
+    box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5); }
   .btn.booking-btn.green.disabled, .btn.booking-btn.green:disabled,
   .booking-btn.green.disabled,
   .booking-btn.green:disabled {
@@ -10125,7 +10128,7 @@ body.fl-builder .content-block.content-page {
     .booking-btn.green:not(:disabled):not(.disabled):active:focus,
     .booking-btn.green:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.green.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5); }
+      box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5); }
 .btn.booking-btn.red,
 .booking-btn.red {
   color: #fff;
@@ -10139,7 +10142,7 @@ body.fl-builder .content-block.content-page {
   .btn.booking-btn.red:focus, .btn.booking-btn.red.focus,
   .booking-btn.red:focus,
   .booking-btn.red.focus {
-    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+    box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5); }
   .btn.booking-btn.red.disabled, .btn.booking-btn.red:disabled,
   .booking-btn.red.disabled,
   .booking-btn.red:disabled {
@@ -10157,7 +10160,7 @@ body.fl-builder .content-block.content-page {
     .booking-btn.red:not(:disabled):not(.disabled):active:focus,
     .booking-btn.red:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.red.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+      box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5); }
 .btn.booking-btn.orange,
 .booking-btn.orange {
   color: #212529;
@@ -10171,7 +10174,7 @@ body.fl-builder .content-block.content-page {
   .btn.booking-btn.orange:focus, .btn.booking-btn.orange.focus,
   .booking-btn.orange:focus,
   .booking-btn.orange.focus {
-    box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5); }
+    box-shadow: 0 0 0 0 rgba(222, 170, 12, 0.5); }
   .btn.booking-btn.orange.disabled, .btn.booking-btn.orange:disabled,
   .booking-btn.orange.disabled,
   .booking-btn.orange:disabled {
@@ -10189,7 +10192,7 @@ body.fl-builder .content-block.content-page {
     .booking-btn.orange:not(:disabled):not(.disabled):active:focus,
     .booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.orange.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5); }
+      box-shadow: 0 0 0 0 rgba(222, 170, 12, 0.5); }
 .btn.booking-btn.gray,
 .booking-btn.gray {
   color: #fff;
@@ -10203,7 +10206,7 @@ body.fl-builder .content-block.content-page {
   .btn.booking-btn.gray:focus, .btn.booking-btn.gray.focus,
   .booking-btn.gray:focus,
   .booking-btn.gray.focus {
-    box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
+    box-shadow: 0 0 0 0 rgba(66, 70, 73, 0.5); }
   .btn.booking-btn.gray.disabled, .btn.booking-btn.gray:disabled,
   .booking-btn.gray.disabled,
   .booking-btn.gray:disabled {
@@ -10221,7 +10224,7 @@ body.fl-builder .content-block.content-page {
     .booking-btn.gray:not(:disabled):not(.disabled):active:focus,
     .booking-btn.gray:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.gray.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
+      box-shadow: 0 0 0 0 rgba(66, 70, 73, 0.5); }
 
 .add-to-wishlist svg {
   pointer-events: none !important; }
