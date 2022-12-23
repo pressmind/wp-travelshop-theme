@@ -46,3 +46,21 @@
     }
   }
 }
+
+/**
+ * Used for custom breakpoint / bootstrap breakpoint to use for various of elements to break them into another layout
+ */
+
+@mixin get-custom-breakpoint($breakpoint, $breakpoints: $grid-breakpoints) {
+  @if $breakpoint == null {
+    @content;
+  }
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint: map-get($breakpoints, $breakpoint);
+  }
+
+  @media ( min-width: $breakpoint ) {
+    @content;
+  }
+}

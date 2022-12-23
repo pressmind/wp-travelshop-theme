@@ -1,0 +1,20 @@
+.card-travel-wrapper {
+
+  .card.card-travel {
+
+    /**
+     * define flex settings here
+     * they're used for "travel-box-break" into stripe on small devices
+     */
+
+    @if $travel-box-use-break {
+      background-color: green;
+    }
+
+    // -- break teaser into common teaser
+    @include get-custom-breakpoint($travel-box-break) {
+      background: red !important;
+    }
+  }
+
+}

@@ -9940,6 +9940,9 @@ html.force--consent.show--consent body {
  * Headlines
  */
 /**
+ * Travelbox
+ */
+/**
  * Mixin to generate font sizes with scss maps
  * this can be used with px values + bootstrap breakpoints.
  * =============================================================
@@ -9964,6 +9967,9 @@ html.force--consent.show--consent body {
  * .travel-box h1.travel-box--title { @include font-size-generator($travel-box-headlines); }
  *
  * Enjoy responsive font sizes! ;)
+ */
+/**
+ * Used for custom breakpoint / bootstrap breakpoint to use for various of elements to break them into another layout
  */
 body {
   font-display: swap !important; }
@@ -10457,5 +10463,15 @@ div.daterangepicker {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
       max-width: 47.5rem !important;
       transform: translate(-50%, -50%) !important; } }
+
+.card-travel-wrapper .card.card-travel {
+  /**
+   * define flex settings here
+   * they're used for "travel-box-break" into stripe on small devices
+   */
+  background-color: green; }
+  @media (min-width: 576px) {
+    .card-travel-wrapper .card.card-travel {
+      background: red !important; } }
 
 /*# sourceMappingURL=app.css.map */
