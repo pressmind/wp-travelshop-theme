@@ -1,3 +1,10 @@
+
+
+$teaser-title-sizes: (
+        null: 1rem, // 16px
+        lg: 1.125rem // 18px
+) !default;
+
 .card-travel-wrapper {
 
   .card.card-travel {
@@ -17,7 +24,7 @@
     }
 
     h1.card-title {
-      @extend .h5;
+      @include font-size-generator($teaser-title-sizes);
     }
   }
 
