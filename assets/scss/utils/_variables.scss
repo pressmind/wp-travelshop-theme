@@ -54,5 +54,5 @@ $h6-font-sizes: (
 
 // -- travelbox break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
 // -- you can set bootstrap breakpoint key or px value
-$travel-box-use-break: true;
-$travel-box-break: sm;
+$travel-box-use-break: false;
+$travel-box-break: null;

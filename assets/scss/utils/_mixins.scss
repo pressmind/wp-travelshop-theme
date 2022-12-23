@@ -55,12 +55,13 @@
   @if $breakpoint == null {
     @content;
   }
+  @else {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $breakpoint: map-get($breakpoints, $breakpoint);
+    }
 
-  @if map-has-key($breakpoints, $breakpoint) {
-    $breakpoint: map-get($breakpoints, $breakpoint);
-  }
-
-  @media ( min-width: $breakpoint ) {
-    @content;
+    @media ( min-width: $breakpoint ) {
+      @content;
+    }
   }
 }
