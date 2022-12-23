@@ -11,7 +11,9 @@
     "mongodb/mongodb": "*",
     "ext-imagick": "*",
     "vlucas/phpdotenv" : "*",
-    "aws/aws-sdk-php" : "^3.211",
     "geoip2/geoip2": "~2.0"
+  },
+  "suggest" : {
+    "aws/aws-sdk-php" : "Allows you to store media assets on S3"
   }
 }
