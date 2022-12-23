@@ -1,3 +1,6 @@
+// -- abstracts
+@import "abstracts/variables";
+
 // -- vendors
 @import "vendors/bootstrap/bootstrap";
 @import "vendors/ion-rangeslider/range-slider";
@@ -6,9 +9,6 @@
 @import "vendors/pretty-dropdowns/prettydropdowns.css";
 @import "vendors/lightbox2/lightbox.min.css";
 @import "vendors/cookieconsent/cookieconsent";
-
-// -- abstracts
-@import "abstracts/variables";
 
 // -- utls
 @import "utils/variables";
