@@ -10469,6 +10469,9 @@ div.daterangepicker {
    * define flex settings here
    * they're used for "travel-box-break" into stripe on small devices
    */
-  background: red !important; }
+  background-color: green; }
+  @media (min-width: 768px) {
+    .card-travel-wrapper .card.card-travel {
+      background: red !important; } }
 
 /*# sourceMappingURL=app.css.map */
