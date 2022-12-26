@@ -10278,6 +10278,7 @@ body.fl-builder .content-block.content-page {
   align-items: center;
   position: relative; }
   .discount-wrapper.discount-wrapper--border hr {
+    display: block;
     position: absolute;
     margin: 0;
     top: 50%;
@@ -10563,6 +10564,7 @@ div.daterangepicker {
         align-items: center;
         position: relative; }
         .card-travel-wrapper .card.card-travel .discount-wrapper hr {
+          display: block;
           position: absolute;
           margin: 0;
           top: 50%;

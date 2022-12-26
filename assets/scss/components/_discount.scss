@@ -73,6 +73,7 @@
 
   // -- set border on position 50% top in background
   hr {
+    display: block; // its display none by default
     position: absolute;
     margin:0;
 
