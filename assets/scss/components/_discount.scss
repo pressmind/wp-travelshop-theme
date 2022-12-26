@@ -2,10 +2,14 @@
  * SCSS definition for discount elements
  */
 
-%discount-wrapper {
-  
+%discount-base {
+  .discount-wrapper--inner {
+    display: flex;
+    flex-direction: row;
+    gap: .25rem;
+  }
 }
 
 .discount-wrapper {
-  @extend %discount-wrapper;
+  @extend %discount-base;
 }
