@@ -10238,11 +10238,23 @@ body.fl-builder .content-block.content-page {
 /**
  * SCSS definition for discount elements
  */
+.discount-wrapper .discount-wrapper--inner .discount-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0.25em 0.4em;
+  border-radius: 0.25rem;
+  background-color: #e9ecef; }
+
 .discount-wrapper .discount-wrapper--inner {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: .25rem;
-  font-size: 0.75rem; }
+  font-size: 0.75rem;
+  line-height: 1; }
 
 .travelshop-datepicker > div {
   position: relative; }

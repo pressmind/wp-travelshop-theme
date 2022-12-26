@@ -2,12 +2,32 @@
  * SCSS definition for discount elements
  */
 
+%discount-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  padding: $badge-padding-y $badge-padding-x;
+
+  @include border-radius($badge-border-radius);
+
+  background-color: $hr-border-color;
+}
+
 %discount-base {
   .discount-wrapper--inner {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: .25rem;
     font-size: $font-size-xs;
+    line-height: 1;
+
+    .discount-label {
+      @extend %discount-label;
+    }
   }
 }
 
