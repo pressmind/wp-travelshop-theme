@@ -13,13 +13,36 @@
       flex-direction: row;
       gap: 1rem;
 
+      .card-image {
+        flex: 0 0 ((100% / 12) * 5); // 5 of 12
+        width: 100%;
+        max-width: ((100% / 12) * 5);
+      }
 
+      .card-body {
+        flex: 0 0 ((100% / 12) * 7); // 5 of 12
+        width: 100%;
+        max-width: ((100% / 12) * 7);
+      }
     }
 
     // -- break teaser into common teaser
     @include get-custom-breakpoint($travel-box-break) {
       flex-direction: column;
       gap: 0;
+
+      // -- reset flex for normal teaser
+      .card-image {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .card-body {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+      }
     }
   }
 

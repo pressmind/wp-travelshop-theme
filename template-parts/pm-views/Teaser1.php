@@ -46,7 +46,7 @@ if (empty($filteredParams) === false) {
 ?>
 <article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper">
     <div class="card card-travel">
-            <div class="card-image-holder">
+            <div class="card-image">
                 <?php
                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/card-badge.php', [
                     'cheapest_price' => $args['cheapest_price'],

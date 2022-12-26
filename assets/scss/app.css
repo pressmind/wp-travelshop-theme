@@ -10475,9 +10475,25 @@ div.daterangepicker {
    */
   flex-direction: row;
   gap: 1rem; }
+  .card-travel-wrapper .card.card-travel .card-image {
+    flex: 0 0 41.6666666667%;
+    width: 100%;
+    max-width: 41.6666666667%; }
+  .card-travel-wrapper .card.card-travel .card-body {
+    flex: 0 0 58.3333333333%;
+    width: 100%;
+    max-width: 58.3333333333%; }
   @media (min-width: 768px) {
     .card-travel-wrapper .card.card-travel {
       flex-direction: column;
-      gap: 0; } }
+      gap: 0; }
+      .card-travel-wrapper .card.card-travel .card-image {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%; }
+      .card-travel-wrapper .card.card-travel .card-body {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%; } }
 
 /*# sourceMappingURL=app.css.map */
