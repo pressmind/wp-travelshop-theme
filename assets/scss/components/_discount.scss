@@ -58,16 +58,21 @@
   }
 }
 
-%discount-border {
+// -- create discount border mixin because we need it in some responsive functions with @content mixins.
+@mixin discount-border {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+%discount-border {
+  @include discount-border();
 }
 
 .discount-wrapper {
   @extend %discount-base;
 
   &.discount-wrapper--border {
-    @extend %discount-border;
+    @include discount-border();
   }
 }

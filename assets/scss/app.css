@@ -10542,6 +10542,10 @@ div.daterangepicker {
       .card-travel-wrapper .card.card-travel .card-body {
         flex: 0 0 100%;
         width: 100%;
-        max-width: 100%; } }
+        max-width: 100%; }
+      .card-travel-wrapper .card.card-travel .discount-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center; } }
 
 /*# sourceMappingURL=app.css.map */
