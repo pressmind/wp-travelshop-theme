@@ -10262,6 +10262,8 @@ body.fl-builder .content-block.content-page {
     font-weight: 700;
     color: #dc3545; }
 
+.discount-wrapper hr {
+  display: none; }
 .discount-wrapper .discount-wrapper--inner {
   display: flex;
   flex-direction: row;
@@ -10269,6 +10271,11 @@ body.fl-builder .content-block.content-page {
   align-items: center;
   gap: .25rem;
   font-size: 0.75rem; }
+
+.discount-wrapper.discount-wrapper--border {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .travelshop-datepicker > div {
   position: relative; }

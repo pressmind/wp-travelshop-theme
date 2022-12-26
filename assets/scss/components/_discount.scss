@@ -40,6 +40,10 @@
 }
 
 %discount-base {
+  hr {
+    display: none;
+  }
+
   .discount-wrapper--inner {
     display: flex;
     flex-direction: row;
@@ -54,6 +58,16 @@
   }
 }
 
+%discount-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .discount-wrapper {
   @extend %discount-base;
+
+  &.discount-wrapper--border {
+    @extend %discount-border;
+  }
 }
