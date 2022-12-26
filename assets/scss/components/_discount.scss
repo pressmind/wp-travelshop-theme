@@ -7,12 +7,36 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  gap: 0.25rem;
 
-  padding: $badge-padding-y $badge-padding-x;
+  padding: $badge-padding-y $badge-pill-padding-x;
 
-  @include border-radius($badge-border-radius);
+  @include border-radius($badge-pill-border-radius);
 
   background-color: $hr-border-color;
+
+  .price {
+    position: relative;
+
+    &:after {
+      content:'';
+      display: block;
+
+      width: 105%;
+
+      left:50%;
+      top: 50%;
+
+      height: 1px solid $danger;
+
+      transform: translate(-50%, -50%) rotate(-20deg);
+    }
+  }
+
+  .discount {
+    font-weight: $font-weight-bold;
+    color: $danger;
+  }
 }
 
 %discount-base {
@@ -23,7 +47,6 @@
     align-items: center;
     gap: .25rem;
     font-size: $font-size-xs;
-    line-height: 1;
 
     .discount-label {
       @extend %discount-label;

@@ -10243,9 +10243,23 @@ body.fl-builder .content-block.content-page {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  padding: 0.25em 0.4em;
-  border-radius: 0.25rem;
+  gap: 0.25rem;
+  padding: 0.25em 0.6em;
+  border-radius: 10rem;
   background-color: #e9ecef; }
+  .discount-wrapper .discount-wrapper--inner .discount-label .price {
+    position: relative; }
+    .discount-wrapper .discount-wrapper--inner .discount-label .price:after {
+      content: '';
+      display: block;
+      width: 105%;
+      left: 50%;
+      top: 50%;
+      height: 1px solid #dc3545;
+      transform: translate(-50%, -50%) rotate(-20deg); }
+  .discount-wrapper .discount-wrapper--inner .discount-label .discount {
+    font-weight: 700;
+    color: #dc3545; }
 
 .discount-wrapper .discount-wrapper--inner {
   display: flex;
@@ -10253,8 +10267,7 @@ body.fl-builder .content-block.content-page {
   flex-wrap: nowrap;
   align-items: center;
   gap: .25rem;
-  font-size: 0.75rem;
-  line-height: 1; }
+  font-size: 0.75rem; }
 
 .travelshop-datepicker > div {
   position: relative; }
