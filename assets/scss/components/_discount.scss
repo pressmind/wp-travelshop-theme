@@ -1,0 +1,11 @@
+/**
+ * SCSS definition for discount elements
+ */
+
+%discount-wrapper {
+  
+}
+
+.discount-wrapper {
+  @extend %discount-wrapper;
+}
