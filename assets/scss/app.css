@@ -10252,6 +10252,7 @@ body.fl-builder .content-block.content-page {
     .discount-wrapper .discount-wrapper--inner .discount-label .price:after {
       content: '';
       display: block;
+      position: absolute;
       width: 105%;
       left: 50%;
       top: 50%;
