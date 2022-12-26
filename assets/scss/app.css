@@ -10251,12 +10251,12 @@ body.fl-builder .content-block.content-page {
     position: relative; }
     .discount-wrapper .discount-wrapper--inner .discount-label .price:after {
       content: '';
-      display: block;
       position: absolute;
+      display: block;
       width: 105%;
+      border-top: 1px solid #dc3545;
       left: 50%;
       top: 50%;
-      height: 1px solid #dc3545;
       transform: translate(-50%, -50%) rotate(-20deg); }
   .discount-wrapper .discount-wrapper--inner .discount-label .discount {
     font-weight: 700;
