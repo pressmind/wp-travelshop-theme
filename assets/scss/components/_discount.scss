@@ -58,42 +58,6 @@
   }
 }
 
-// -- create discount border mixin because we need it in some responsive functions with @content mixins.
-@mixin discount-border-set-bg($bg: $card-bg) {
-  .discount-wrapper--inner {
-    background-color: $bg;
-  }
-}
-
-@mixin discount-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  // -- set border on position 50% top in background
-  hr {
-    display: block; // its display none by default
-    position: absolute;
-    margin:0;
-
-    top: 50%;
-    left: 0;
-    right:0;
-  }
-
-  .discount-wrapper--inner {
-    padding-left: .25rem;
-    padding-right: .25rem;
-
-    position: relative;
-    z-index: 2; // set it on top of background border..
-  }
-
-  // -- using mixin for this part cuz background color of various elements can be different. To avoid bugs we redefine it in various elements by variables of them.
-  @include discount-border-set-bg($card-bg);
-}
-
 %discount-border {
   @include discount-border();
 }

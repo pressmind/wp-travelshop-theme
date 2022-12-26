@@ -9980,6 +9980,9 @@ html.force--consent.show--consent body {
 /**
  * Used for custom breakpoint / bootstrap breakpoint to use for various of elements to break them into another layout
  */
+/**
+ * Mixins for discounts - we need this cuz we using it in varius breakpoints with different styles. + we need to reset bg-colors of discount inner from time to time for some elemnets
+ */
 body {
   font-display: swap !important; }
 

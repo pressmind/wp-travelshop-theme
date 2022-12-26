@@ -65,3 +65,43 @@
     }
   }
 }
+
+/**
+ * Mixins for discounts - we need this cuz we using it in varius breakpoints with different styles. + we need to reset bg-colors of discount inner from time to time for some elemnets
+ */
+// -- set discount border bg for inner element, to make border not shine through.
+@mixin discount-border-set-bg($bg: $card-bg) {
+  .discount-wrapper--inner {
+    background-color: $bg;
+  }
+}
+
+// -- discount border style. in normal usage just use @extend %discount-border; to not produce more css as we need. This just for usage in breakpoints.
+@mixin discount-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  // -- set border on position 50% top in background
+  hr {
+    display: block; // its display none by default
+    position: absolute;
+    margin:0;
+
+    top: 50%;
+    left: 0;
+    right:0;
+  }
+
+  .discount-wrapper--inner {
+    padding-left: .25rem;
+    padding-right: .25rem;
+
+    position: relative;
+    z-index: 2; // set it on top of background border..
+  }
+
+  // -- using mixin for this part cuz background color of various elements can be different. To avoid bugs we redefine it in various elements by variables of them.
+  @include discount-border-set-bg($card-bg);
+}
