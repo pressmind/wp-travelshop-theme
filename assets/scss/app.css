@@ -10275,7 +10275,21 @@ body.fl-builder .content-block.content-page {
 .discount-wrapper.discount-wrapper--border {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
+  .discount-wrapper.discount-wrapper--border hr {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 0;
+    right: 0; }
+  .discount-wrapper.discount-wrapper--border .discount-wrapper--inner {
+    padding-left: .25rem;
+    padding-right: .25rem;
+    position: relative;
+    z-index: 2; }
+    .discount-wrapper.discount-wrapper--border .discount-wrapper--inner .discount-wrapper--inner {
+      background-color: #fff; }
 
 .travelshop-datepicker > div {
   position: relative; }
@@ -10546,6 +10560,20 @@ div.daterangepicker {
       .card-travel-wrapper .card.card-travel .discount-wrapper {
         display: flex;
         justify-content: center;
-        align-items: center; } }
+        align-items: center;
+        position: relative; }
+        .card-travel-wrapper .card.card-travel .discount-wrapper hr {
+          position: absolute;
+          margin: 0;
+          top: 50%;
+          left: 0;
+          right: 0; }
+        .card-travel-wrapper .card.card-travel .discount-wrapper .discount-wrapper--inner {
+          padding-left: .25rem;
+          padding-right: .25rem;
+          position: relative;
+          z-index: 2; }
+          .card-travel-wrapper .card.card-travel .discount-wrapper .discount-wrapper--inner .discount-wrapper--inner {
+            background-color: #fff; } }
 
 /*# sourceMappingURL=app.css.map */
