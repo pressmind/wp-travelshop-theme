@@ -1,7 +1,5 @@
-// -- abstracts
-@import "abstracts/variables";
-
 // -- vendors
+// -- Load vendors first, cuz we need those vendors varialbes/settings/mixins for abstracts
 @import "vendors/bootstrap/bootstrap";
 @import "vendors/ion-rangeslider/range-slider";
 @import "vendors/tiny-slider/tiny-slider";
@@ -9,6 +7,9 @@
 @import "vendors/pretty-dropdowns/prettydropdowns.css";
 @import "vendors/lightbox2/lightbox.min.css";
 @import "vendors/cookieconsent/cookieconsent";
+
+// -- abstracts
+@import "abstracts/variables";
 
 // -- utls
 @import "utils/variables";
