@@ -88,10 +88,10 @@
 
     position: relative;
     z-index: 2; // set it on top of background border..
-
-    // -- using mixin for this part cuz background color of various elements can be different. To avoid bugs we redefine it in various elements by variables of them.
-    @include discount-border-set-bg($card-bg);
   }
+
+  // -- using mixin for this part cuz background color of various elements can be different. To avoid bugs we redefine it in various elements by variables of them.
+  @include discount-border-set-bg($card-bg);
 }
 
 %discount-border {

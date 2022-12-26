@@ -10289,8 +10289,8 @@ body.fl-builder .content-block.content-page {
     padding-right: .25rem;
     position: relative;
     z-index: 2; }
-    .discount-wrapper.discount-wrapper--border .discount-wrapper--inner .discount-wrapper--inner {
-      background-color: #fff; }
+  .discount-wrapper.discount-wrapper--border .discount-wrapper--inner {
+    background-color: #fff; }
 
 .travelshop-datepicker > div {
   position: relative; }
@@ -10575,7 +10575,7 @@ div.daterangepicker {
           padding-right: .25rem;
           position: relative;
           z-index: 2; }
-          .card-travel-wrapper .card.card-travel .discount-wrapper .discount-wrapper--inner .discount-wrapper--inner {
-            background-color: #fff; } }
+        .card-travel-wrapper .card.card-travel .discount-wrapper .discount-wrapper--inner {
+          background-color: #fff; } }
 
 /*# sourceMappingURL=app.css.map */
