@@ -2,18 +2,24 @@
 
   .card.card-travel {
 
+    display: flex;
+
     /**
      * define flex settings here
      * they're used for "travel-box-break" into stripe on small devices
      */
 
     @if $travel-box-use-break {
-      background-color: green;
+      flex-direction: row;
+      gap: 1rem;
+
+
     }
 
     // -- break teaser into common teaser
     @include get-custom-breakpoint($travel-box-break) {
-      background: red !important;
+      flex-direction: column;
+      gap: 0;
     }
   }
 

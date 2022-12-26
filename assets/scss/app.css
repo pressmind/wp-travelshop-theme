@@ -10468,13 +10468,16 @@ div.daterangepicker {
       transform: translate(-50%, -50%) !important; } }
 
 .card-travel-wrapper .card.card-travel {
+  display: flex;
   /**
    * define flex settings here
    * they're used for "travel-box-break" into stripe on small devices
    */
-  background-color: green; }
+  flex-direction: row;
+  gap: 1rem; }
   @media (min-width: 768px) {
     .card-travel-wrapper .card.card-travel {
-      background: red !important; } }
+      flex-direction: column;
+      gap: 0; } }
 
 /*# sourceMappingURL=app.css.map */

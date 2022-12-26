@@ -46,7 +46,7 @@ if (empty($filteredParams) === false) {
 ?>
 <article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper">
     <div class="card card-travel">
-            <div class="card-image-holder col-5 col-sm-5 col-md-12 p-0">
+            <div class="card-image-holder">
                 <?php
                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/card-badge.php', [
                     'cheapest_price' => $args['cheapest_price'],
@@ -70,7 +70,7 @@ if (empty($filteredParams) === false) {
                 </a>
             </div>
 
-        <section class="card-body col-7 col-sm-7 col-md-12">
+        <section class="card-body">
             <?php
                 if(!empty($_GET['debug'])){
                     echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/debug-textsearch.php', $args);
