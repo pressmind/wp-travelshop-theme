@@ -23,9 +23,11 @@
 
       // -- set offset left top bottom to make image lay above border if border width not 0
       @if $travel-card-border-width != 0 {
-        margin-left: -$travel-card-border-width;
-        margin-top: -$travel-card-border-width;
-        margin-bottom: -$travel-card-border-width;
+        img {
+          margin-left: -$travel-card-border-width;
+          margin-top: -$travel-card-border-width;
+          margin-bottom: -$travel-card-border-width;
+        }
       }
 
       // -- set border-radius for stripe teaser element
@@ -55,10 +57,12 @@
 
       // -- set offset left top bottom to make image lay above border if border width not 0
       @if $travel-card-border-width != 0 {
-        margin-left: -$travel-card-border-width;
-        margin-top: -$travel-card-border-width;
-        margin-bottom: 0;
-        right: -$travel-card-border-width;
+        img {
+          margin-left: -$travel-card-border-width;
+          margin-top: -$travel-card-border-width;
+          margin-bottom: 0;
+          right: -$travel-card-border-width;
+        }
       }
 
       // -- set border-radius for stripe teaser element
@@ -81,7 +85,7 @@
 
   // -- image
   .card-image {
-    overflow: hidden;
+
   }
 
   // -- body
