@@ -10655,6 +10655,7 @@ div.daterangepicker {
       position: absolute;
       top: 0.75rem;
       left: 0.75rem;
+      line-height: 1;
       padding: 0.25em 0.4em;
       border-radius: 0.25rem;
       font-size: 75%;

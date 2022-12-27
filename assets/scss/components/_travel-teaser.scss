@@ -93,6 +93,7 @@
       top: $travel-card-spacer-y;
       left: $travel-card-spacer-y;
 
+      line-height: 1;
       padding: $badge-padding-y $badge-padding-x;
 
       @include border-radius($badge-border-radius);
