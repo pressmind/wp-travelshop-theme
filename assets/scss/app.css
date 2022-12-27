@@ -10647,6 +10647,8 @@ div.daterangepicker {
     flex: 0 0 58.3333333333%;
     width: 100%;
     max-width: 58.3333333333%; }
+    .card-travel .card-body .card-body--bottom .btn.btn-primary {
+      display: inline-block; }
   @media (min-width: 768px) {
     .card-travel {
       flex-direction: column;
@@ -10669,6 +10671,8 @@ div.daterangepicker {
         flex: 0 0 100%;
         width: 100%;
         max-width: 100%; }
+        .card-travel .card-body .card-body--bottom .btn.btn-primary {
+          display: block; }
       .card-travel .discount-wrapper {
         display: flex;
         justify-content: center;

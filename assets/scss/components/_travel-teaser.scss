@@ -43,6 +43,12 @@
       flex: 0 0 ((100% / 12) * 7); // 5 of 12
       width: 100%;
       max-width: ((100% / 12) * 7);
+
+      .card-body--bottom {
+        .btn.btn-primary {
+          display: inline-block;
+        }
+      }
     }
   }
 
@@ -80,6 +86,12 @@
       flex: 0 0 100%;
       width: 100%;
       max-width: 100%;
+
+      .card-body--bottom {
+        .btn.btn-primary {
+          display: block;
+        }
+      }
     }
 
     .discount-wrapper {
