@@ -73,26 +73,32 @@ $travel-box-break: md !default;
 
 /**
  * Travel cards
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
  */
 
-$card-spacer-y: 0.75rem !default;
-$card-spacer-x: 1.25rem !default;
-$card-border-width: $border-width !default;
-$card-border-radius: $border-radius !default;
-$card-border-color: rgba($black, 0.125) !default;
-$card-inner-border-radius: calc(
-        #{$card-border-radius} - #{$card-border-width}
+$travel-card-spacer-y: $card-spacer-y !default;
+$travel-card-spacer-x: $card-spacer-x !default;
+$travel-card-border-width: $card-border-width !default;
+$travel-card-border-radius: $card-border-radius !default;
+$travel-card-border-color: $card-border-color !default;
+$travel-card-bg: $card-bg !default;
+
+$travel-card-body-sizes: (
+  null: $font-size-sm,
+  lg: $font-size-base
 ) !default;
-$card-cap-bg: rgba($black, 0.03) !default;
-$card-cap-color: null !default;
-$card-color: null !default;
-$card-bg: $white !default;
 
-$card-img-overlay-padding: 1.25rem !default;
+$travel-card-title-color: $headings-color;
+$travel-card-title-hover-color: $primary;
+$travel-card-title-active-color: $primary;
 
-$card-group-margin: $grid-gutter-width / 2 !default;
-$card-deck-margin: $card-group-margin !default;
-
-$card-columns-count: 3 !default;
-$card-columns-gap: 1.25rem !default;
-$card-columns-margin: $card-spacer-y !default;
+$travel-card-title-sizes: (
+        null: 1rem, // 16px
+        lg: $h5-font-size // 20px
+) !default; // its similar to $h5-font-sizes

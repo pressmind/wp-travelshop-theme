@@ -1,53 +1,88 @@
-.card-travel-wrapper {
+.card-travel {
 
-  .card-travel {
+  display: flex;
+  background-color: $travel-card-bg;
+  border: $travel-card-border-width solid $travel-card-border-color;
 
-    display: flex;
+  // -- set global element border radius
+  @include border-radius($travel-card-border-radius);
 
-    /**
-     * define flex settings here
-     * they're used for "travel-box-break" into stripe on small devices
-     */
+  /**
+   * define flex settings here
+   * they're used for "travel-box-break" into stripe on small devices
+   */
 
-    @if $travel-box-use-break {
-      flex-direction: row;
-      gap: 1rem;
+  @if $travel-box-use-break {
+    flex-direction: row;
+    gap: 1rem;
 
-      .card-image {
-        flex: 0 0 ((100% / 12) * 5); // 5 of 12
-        width: 100%;
-        max-width: ((100% / 12) * 5);
-      }
-
-      .card-body {
-        flex: 0 0 ((100% / 12) * 7); // 5 of 12
-        width: 100%;
-        max-width: ((100% / 12) * 7);
-      }
+    .card-image {
+      flex: 0 0 ((100% / 12) * 5); // 5 of 12
+      width: 100%;
+      max-width: ((100% / 12) * 5);
     }
 
-    // -- break teaser into common teaser
-    @include get-custom-breakpoint($travel-box-break) {
-      flex-direction: column;
-      gap: 0;
-
-      // -- reset flex for normal teaser
-      .card-image {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .card-body {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .discount-wrapper {
-        @include discount-border();
-      }
+    .card-body {
+      flex: 0 0 ((100% / 12) * 7); // 5 of 12
+      width: 100%;
+      max-width: ((100% / 12) * 7);
     }
   }
 
+  // -- break teaser into common teaser
+  @include get-custom-breakpoint($travel-box-break) {
+    flex-direction: column;
+    gap: 0;
+
+    // -- reset flex for normal teaser
+    .card-image {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .card-body {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .discount-wrapper {
+      @include discount-border();
+    }
+  }
+
+  // -- body
+  .card-body {
+    padding: $travel-card-spacer-y;
+
+    @include font-size-generator($travel-card-body-sizes);
+
+    h1.card-title {
+      // -- set font sizes
+      @include font-size-generator($travel-card-title-sizes);
+
+      color: $travel-card-title-color;
+      margin: 0 0 $travel-card-spacer-x 0;
+
+      // set link settings for better optik + reading / usage
+      > a {
+        color: inherit;
+        transition: color .3s;
+        text-decoration: none;
+
+        &:hover {
+          color: $travel-card-title-hover-color;
+        }
+
+        &:active, &:focus {
+          color: $travel-card-title-active-color;
+        }
+
+        &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }

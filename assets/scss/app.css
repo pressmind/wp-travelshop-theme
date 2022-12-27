@@ -9960,6 +9960,13 @@ html.force--consent.show--consent body {
  */
 /**
  * Travel cards
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
  */
 /**
  * Mixin to generate font sizes with scss maps
@@ -10543,52 +10550,77 @@ div.daterangepicker {
       max-width: 47.5rem !important;
       transform: translate(-50%, -50%) !important; } }
 
-.card-travel-wrapper .card-travel {
+.card-travel {
   display: flex;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
   /**
    * define flex settings here
    * they're used for "travel-box-break" into stripe on small devices
    */
   flex-direction: row;
   gap: 1rem; }
-  .card-travel-wrapper .card-travel .card-image {
+  .card-travel .card-image {
     flex: 0 0 41.6666666667%;
     width: 100%;
     max-width: 41.6666666667%; }
-  .card-travel-wrapper .card-travel .card-body {
+  .card-travel .card-body {
     flex: 0 0 58.3333333333%;
     width: 100%;
     max-width: 58.3333333333%; }
   @media (min-width: 768px) {
-    .card-travel-wrapper .card-travel {
+    .card-travel {
       flex-direction: column;
       gap: 0; }
-      .card-travel-wrapper .card-travel .card-image {
+      .card-travel .card-image {
         flex: 0 0 100%;
         width: 100%;
         max-width: 100%; }
-      .card-travel-wrapper .card-travel .card-body {
+      .card-travel .card-body {
         flex: 0 0 100%;
         width: 100%;
         max-width: 100%; }
-      .card-travel-wrapper .card-travel .discount-wrapper {
+      .card-travel .discount-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative; }
-        .card-travel-wrapper .card-travel .discount-wrapper hr {
+        .card-travel .discount-wrapper hr {
           display: block;
           position: absolute;
           margin: 0;
           top: 50%;
           left: 0;
           right: 0; }
-        .card-travel-wrapper .card-travel .discount-wrapper .discount-wrapper--inner {
+        .card-travel .discount-wrapper .discount-wrapper--inner {
           padding-left: .25rem;
           padding-right: .25rem;
           position: relative;
           z-index: 2; }
-        .card-travel-wrapper .card-travel .discount-wrapper .discount-wrapper--inner {
+        .card-travel .discount-wrapper .discount-wrapper--inner {
           background-color: #fff; } }
+  .card-travel .card-body {
+    padding: 0.75rem;
+    font-size: 0.875rem; }
+    @media (min-width: 992px) {
+      .card-travel .card-body {
+        font-size: 1rem; } }
+    .card-travel .card-body h1.card-title {
+      font-size: 1rem;
+      margin: 0 0 1.25rem 0; }
+      @media (min-width: 992px) {
+        .card-travel .card-body h1.card-title {
+          font-size: 1.25rem; } }
+      .card-travel .card-body h1.card-title > a {
+        color: inherit;
+        transition: color .3s;
+        text-decoration: none; }
+        .card-travel .card-body h1.card-title > a:hover {
+          color: #007bff; }
+        .card-travel .card-body h1.card-title > a:active, .card-travel .card-body h1.card-title > a:focus {
+          color: #007bff; }
+        .card-travel .card-body h1.card-title > a:active {
+          text-decoration: underline; }
 
 /*# sourceMappingURL=app.css.map */

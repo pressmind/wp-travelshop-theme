@@ -71,28 +71,30 @@ if (empty($filteredParams) === false) {
             </div>
 
         <section class="card-body">
-            <?php
+            <div class="card-body--top">
+                <?php
                 if(!empty($_GET['debug'])){
                     echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/debug-textsearch.php', $args);
                 }
-            ?>
-            <h1 class="card-title">
-                <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
-            </h1>
-            <?php
-            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
-                'attributes' => array_filter([$args['travel_type'] ?? [], $args['destination'] ?? []]),
-            ]);
-            ?>
-            <?php if (empty($args['subline']) === false) { ?>
-                <p class="card-text subline">
-                    <?php echo $args['subline']; ?>
-                    <span class="fade-out"></span>
-                </p>
-            <?php } ?>
-            <div class="bottom-aligned">
+                ?>
+                <h1 class="card-title">
+                    <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
+                </h1>
+                <?php
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
+                    'attributes' => array_filter([$args['travel_type'] ?? [], $args['destination'] ?? []]),
+                ]);
+                ?>
+                <?php if (empty($args['subline']) === false) { ?>
+                    <p class="card-text card-text--fade-out lh-3">
+                        <?php echo $args['subline']; ?>
+                        <span class="fade-out"></span>
+                    </p>
+                <?php } ?>
+            </div>
+            <div class="card-body--bottom">
                 <?php if(!is_null($args['cheapest_price'])){ ?>
-                <div class="card-text date-row">
+                <div class=" date-row">
                     <span class="small">
                         <span>
                         <?php
@@ -115,7 +117,7 @@ if (empty($filteredParams) === false) {
                     ?>
                 </div>
                 <?php } ?>
-                <div class="card-text price-row">
+                <div class="price-row">
                         <?php
                         if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
                             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
@@ -127,8 +129,7 @@ if (empty($filteredParams) === false) {
                             ], 0);
                         }
                         ?>
-                        <a href="<?php echo $args['url']; ?>" class="travel-teaser-link">
-                            <div class="btn btn-primary">
+                        <a href="<?php echo $args['url']; ?>" class="btn btn-primary">
                             <?php
                             if(!is_null($args['cheapest_price'])) {
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
@@ -138,7 +139,6 @@ if (empty($filteredParams) === false) {
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
                             }
                             ?>
-                            </div>
                         </a>
                 </div>
             </div>
