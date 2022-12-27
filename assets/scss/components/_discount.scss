@@ -13,7 +13,7 @@
 
   @include border-radius($badge-pill-border-radius);
 
-  background-color: $hr-border-color;
+  background-color: $body-bg-highlight;
 
   .price {
     position: relative;

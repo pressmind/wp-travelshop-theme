@@ -3,10 +3,21 @@
  ***/
 
 /**
+ * Booking color set
+ * ------------------------------
+ * using bootstrap $success, $danger, $warning
+ * to make sure to change those variables to
+ * not have different colors in various elements.
+ */
+$booking-green: $success !default;
+$booking-red: $danger !default;
+$booking-orange: $warning !default;
+
+/**
  * Body
  */
 $body-color-light: lighten($body-color, 15%) !default;
-$body-bg-highlight: $gray-200;
+$body-bg-highlight: $gray-200 !default;
 
 /**
  * Headlines
@@ -55,5 +66,33 @@ $h6-font-sizes: (
 
 // -- travelbox break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
 // -- you can set bootstrap breakpoint key or px value
-$travel-box-use-break: true;
-$travel-box-break: md;
+$travel-box-use-break: true !default;
+$travel-box-break: md !default;
+
+
+
+/**
+ * Travel cards
+ */
+
+$card-spacer-y: 0.75rem !default;
+$card-spacer-x: 1.25rem !default;
+$card-border-width: $border-width !default;
+$card-border-radius: $border-radius !default;
+$card-border-color: rgba($black, 0.125) !default;
+$card-inner-border-radius: calc(
+        #{$card-border-radius} - #{$card-border-width}
+) !default;
+$card-cap-bg: rgba($black, 0.03) !default;
+$card-cap-color: null !default;
+$card-color: null !default;
+$card-bg: $white !default;
+
+$card-img-overlay-padding: 1.25rem !default;
+
+$card-group-margin: $grid-gutter-width / 2 !default;
+$card-deck-margin: $card-group-margin !default;
+
+$card-columns-count: 3 !default;
+$card-columns-gap: 1.25rem !default;
+$card-columns-margin: $card-spacer-y !default;
