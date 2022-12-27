@@ -47,6 +47,7 @@
       .card-body--bottom {
         .btn.btn-primary {
           display: inline-block;
+          margin-top: 0;
         }
       }
     }
@@ -90,6 +91,7 @@
       .card-body--bottom {
         .btn.btn-primary {
           display: block;
+          margin-top: $travel-card-spacer-x;
         }
       }
     }
