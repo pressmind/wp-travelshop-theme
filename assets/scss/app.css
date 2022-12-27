@@ -10564,7 +10564,14 @@ div.daterangepicker {
   .card-travel .card-image {
     flex: 0 0 41.6666666667%;
     width: 100%;
-    max-width: 41.6666666667%; }
+    max-width: 41.6666666667%;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0; }
   .card-travel .card-body {
     flex: 0 0 58.3333333333%;
     width: 100%;
@@ -10576,7 +10583,15 @@ div.daterangepicker {
       .card-travel .card-image {
         flex: 0 0 100%;
         width: 100%;
-        max-width: 100%; }
+        max-width: 100%;
+        margin-left: -1px;
+        margin-top: -1px;
+        margin-bottom: 0;
+        right: -1px;
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; }
       .card-travel .card-body {
         flex: 0 0 100%;
         width: 100%;
@@ -10600,6 +10615,8 @@ div.daterangepicker {
           z-index: 2; }
         .card-travel .discount-wrapper .discount-wrapper--inner {
           background-color: #fff; } }
+  .card-travel .card-image {
+    overflow: hidden; }
   .card-travel .card-body {
     padding: 0.75rem;
     font-size: 0.875rem; }

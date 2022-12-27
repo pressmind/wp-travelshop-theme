@@ -20,6 +20,19 @@
       flex: 0 0 ((100% / 12) * 5); // 5 of 12
       width: 100%;
       max-width: ((100% / 12) * 5);
+
+      // -- set offset left top bottom to make image lay above border if border width not 0
+      @if $travel-card-border-width != 0 {
+        margin-left: -$travel-card-border-width;
+        margin-top: -$travel-card-border-width;
+        margin-bottom: -$travel-card-border-width;
+      }
+
+      // -- set border-radius for stripe teaser element
+      @include border-top-right-radius(0);
+      @include border-top-left-radius($travel-card-border-radius);
+      @include border-bottom-left-radius($travel-card-border-radius);
+      @include border-bottom-right-radius(0);
     }
 
     .card-body {
@@ -39,6 +52,20 @@
       flex: 0 0 100%;
       width: 100%;
       max-width: 100%;
+
+      // -- set offset left top bottom to make image lay above border if border width not 0
+      @if $travel-card-border-width != 0 {
+        margin-left: -$travel-card-border-width;
+        margin-top: -$travel-card-border-width;
+        margin-bottom: 0;
+        right: -$travel-card-border-width;
+      }
+
+      // -- set border-radius for stripe teaser element
+      @include border-top-right-radius($travel-card-border-radius);
+      @include border-top-left-radius($travel-card-border-radius);
+      @include border-bottom-left-radius(0);
+      @include border-bottom-right-radius(0);
     }
 
     .card-body {
@@ -50,6 +77,11 @@
     .discount-wrapper {
       @include discount-border();
     }
+  }
+
+  // -- image
+  .card-image {
+    overflow: hidden;
   }
 
   // -- body
