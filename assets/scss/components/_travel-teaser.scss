@@ -94,8 +94,8 @@
     // -- set card badge settings
     .card-badge {
       position:absolute;
-      top: $travel-card-spacer-y;
-      left: $travel-card-spacer-y;
+      top: $travel-card-spacer-x;
+      left: $travel-card-spacer-x;
 
       line-height: 1;
       padding: $badge-padding-y $badge-padding-x;
@@ -124,8 +124,8 @@
     // -- positioning add to wishlist
     .add-to-wishlist {
       position: absolute;
-      top: $travel-card-spacer-y;
-      right: $travel-card-spacer-y;
+      top: $travel-card-spacer-x;
+      right: $travel-card-spacer-x;
 
       z-index: 2;
 
@@ -140,7 +140,7 @@
 
   // -- body
   .card-body {
-    padding: $travel-card-spacer-y;
+    padding: $travel-card-spacer-x;
 
     @include font-size-generator($travel-card-body-sizes);
 
@@ -149,7 +149,7 @@
       @include font-size-generator($travel-card-title-sizes);
 
       color: $travel-card-title-color;
-      margin: 0 0 $travel-card-spacer-x 0;
+      margin: 0 0 $travel-card-spacer-y 0;
 
       // set link settings for better optik + reading / usage
       > a {
