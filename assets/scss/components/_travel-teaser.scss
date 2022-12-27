@@ -31,10 +31,12 @@
       }
 
       // -- set border-radius for stripe teaser element
-      @include border-top-right-radius(0);
-      @include border-top-left-radius($travel-card-border-radius);
-      @include border-bottom-left-radius($travel-card-border-radius);
-      @include border-bottom-right-radius(0);
+      img {
+        @include border-top-right-radius(0);
+        @include border-top-left-radius($travel-card-border-radius);
+        @include border-bottom-left-radius($travel-card-border-radius);
+        @include border-bottom-right-radius(0);
+      }
     }
 
     .card-body {
@@ -66,10 +68,12 @@
       }
 
       // -- set border-radius for stripe teaser element
-      @include border-top-right-radius($travel-card-border-radius);
-      @include border-top-left-radius($travel-card-border-radius);
-      @include border-bottom-left-radius(0);
-      @include border-bottom-right-radius(0);
+      img {
+        @include border-top-right-radius($travel-card-border-radius);
+        @include border-top-left-radius($travel-card-border-radius);
+        @include border-bottom-left-radius(0);
+        @include border-bottom-right-radius(0);
+      }
     }
 
     .card-body {
