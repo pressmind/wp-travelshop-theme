@@ -23,7 +23,7 @@
 
       // -- set offset left top bottom to make image lay above border if border width not 0
       @if $travel-card-border-width != 0 {
-        img {
+        > a {
           margin-left: -$travel-card-border-width;
           margin-top: -$travel-card-border-width;
           margin-bottom: -$travel-card-border-width;
@@ -57,7 +57,7 @@
 
       // -- set offset left top bottom to make image lay above border if border width not 0
       @if $travel-card-border-width != 0 {
-        img {
+        > a {
           margin-left: -$travel-card-border-width;
           margin-top: -$travel-card-border-width;
           margin-bottom: 0;
@@ -85,7 +85,20 @@
 
   // -- image
   .card-image {
+    position: relative;
 
+    // -- positioning add to wishlist
+    .add-to-wishlist {
+      position: absolute;
+      top: $travel-card-spacer-y;
+      right: $travel-card-spacer-y;
+
+      z-index: 2;
+    }
+
+    > a {
+      display: block;
+    }
   }
 
   // -- body

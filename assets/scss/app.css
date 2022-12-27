@@ -10569,7 +10569,7 @@ div.daterangepicker {
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0; }
-    .card-travel .card-image img {
+    .card-travel .card-image > a {
       margin-left: -1px;
       margin-top: -1px;
       margin-bottom: -1px; }
@@ -10589,7 +10589,7 @@ div.daterangepicker {
         border-top-left-radius: 0.25rem;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; }
-        .card-travel .card-image img {
+        .card-travel .card-image > a {
           margin-left: -1px;
           margin-top: -1px;
           margin-bottom: 0;
@@ -10617,6 +10617,15 @@ div.daterangepicker {
           z-index: 2; }
         .card-travel .discount-wrapper .discount-wrapper--inner {
           background-color: #fff; } }
+  .card-travel .card-image {
+    position: relative; }
+    .card-travel .card-image .add-to-wishlist {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 2; }
+    .card-travel .card-image > a {
+      display: block; }
   .card-travel .card-body {
     padding: 0.75rem;
     font-size: 0.875rem; }
