@@ -1,4 +1,7 @@
 .add-to-wishlist {
+  // -- default position: relative
+  position: relative;
+
   svg {
     pointer-events: none !important;
 
@@ -17,5 +20,21 @@
         @extend .d-none;
       }
     }
+  }
+
+  // set sizes ( default )
+  // 32px widht/hight cuz touch item
+  width: 2rem;
+  height: 2rem;
+
+  // @todo: maybe add icon sizes as variables + base elements?
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
   }
 }
