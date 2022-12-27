@@ -1,0 +1,24 @@
+/**
+ * Strip unit
+ */
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/**
+ * Convert rem to px
+ */
+@function remToPx($remValue) {
+  @return ( 16px * strip-unit($remValue));
+}
+
+/**
+ * Convert px to rem
+ */
+@function pxToRem($pxValue) {
+  @return ( strip-unit($pxValue) / 16rem );
+}

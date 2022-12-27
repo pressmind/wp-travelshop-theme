@@ -10711,8 +10711,8 @@ div.daterangepicker {
         background-color: #dc3545; }
     .card-travel .card-image .add-to-wishlist {
       position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
+      top: 1rem;
+      right: 1rem;
       z-index: 2; }
     .card-travel .card-image > a {
       display: block; }

@@ -138,8 +138,11 @@
     // -- positioning add to wishlist
     .add-to-wishlist {
       position: absolute;
-      top: $travel-card-spacer-x;
-      right: $travel-card-spacer-x;
+
+      // -- simple calculation to position in "border" of contents of card
+      // -- this makes the aligment of icon inside similar to the size of $travel-card-spacer-x
+      top: ($travel-card-spacer-x - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+      right: ($travel-card-spacer-x - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
 
       z-index: 2;
 

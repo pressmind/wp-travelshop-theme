@@ -55,13 +55,13 @@
 
   // set sizes ( default )
   // 32px widht/hight cuz touch item
-  width: 2rem;
-  height: 2rem;
+  width: $add-to-wishlist-size;
+  height: $add-to-wishlist-size;
 
   // @todo: maybe add icon sizes as variables + base elements?
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: $add-to-wishlist-icon-size;
+    height: $add-to-wishlist-icon-size;
 
     position: absolute;
 

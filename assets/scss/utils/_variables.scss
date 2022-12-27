@@ -111,10 +111,13 @@ $travel-card-title-sizes: (
  * set colors on image / default
  */
 
-$add-to-wishlist-color: $body-color;
-$add-to-wishlist-hover-color: $primary;
-$add-to-wishlist-active-color: $primary;
+$add-to-wishlist-size: 2rem !default; // 32px for touch events
+$add-to-wishlist-icon-size: 1.5rem !default; // 24px for good seeable icon
 
-$add-to-wishlist-on-image-color: #fff;
-$add-to-wishlist-on-image-hover-color: rgba(#fff, .75);
-$add-to-wishlist-on-image-active-color: #fff;
+$add-to-wishlist-color: $body-color !default;
+$add-to-wishlist-hover-color: $primary !default;
+$add-to-wishlist-active-color: $primary !default;
+
+$add-to-wishlist-on-image-color: #fff !default;
+$add-to-wishlist-on-image-hover-color: rgba(#fff, .75) !default;
+$add-to-wishlist-on-image-active-color: #fff !default;
