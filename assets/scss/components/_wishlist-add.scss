@@ -1,6 +1,37 @@
+%add-to-wishlist-color {
+
+  color: $add-to-wishlist-color;
+
+  &:hover {
+    color: $add-to-wishlist-hover-color;
+  }
+
+  &:active, &:focus, &.active {
+    color: $add-to-wishlist-active-color;
+  }
+
+}
+
+%add-to-wishlist-on-image-color {
+
+  color: $add-to-wishlist-on-image-color;
+
+  &:hover {
+    color: $add-to-wishlist-on-image-hover-color;
+  }
+
+  &:active, &:focus, &.active {
+    color: $add-to-wishlist-on-image-active-color;
+  }
+
+}
+
 .add-to-wishlist {
   // -- default position: relative
   position: relative;
+  cursor: pointer;
+
+  transition: color .3s;
 
   svg {
     pointer-events: none !important;
@@ -32,9 +63,13 @@
     width: 1.25rem;
     height: 1.25rem;
 
+    position: absolute;
+
     top: 50%;
     left: 50%;
 
     transform: translate(-50%, -50%);
   }
+
+  @extend %add-to-wishlist-color;
 }

@@ -87,6 +87,13 @@
   .card-image {
     position: relative;
 
+    // -- set card badge settings
+    .card-badge {
+      position:absolute;
+      top: $travel-card-spacer-y;
+      left: $travel-card-spacer-y;
+    }
+
     // -- positioning add to wishlist
     .add-to-wishlist {
       position: absolute;
@@ -94,6 +101,9 @@
       right: $travel-card-spacer-y;
 
       z-index: 2;
+
+      // -- color settings on image
+      @extend %add-to-wishlist-on-image-color;
     }
 
     > a {
