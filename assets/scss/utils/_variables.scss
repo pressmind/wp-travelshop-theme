@@ -89,6 +89,8 @@ $travel-card-border-radius: $card-border-radius !default;
 $travel-card-border-color: $card-border-color !default;
 $travel-card-bg: $card-bg !default;
 
+$travel-card-badge-pill: false !default;
+
 $travel-card-body-sizes: (
   null: $font-size-sm,
   lg: $font-size-base

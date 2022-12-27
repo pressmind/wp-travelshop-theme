@@ -10654,7 +10654,15 @@ div.daterangepicker {
     .card-travel .card-image .card-badge {
       position: absolute;
       top: 0.75rem;
-      left: 0.75rem; }
+      left: 0.75rem;
+      padding: 0.25em 0.4em;
+      border-radius: 0.25rem;
+      font-size: 75%;
+      font-weight: 700;
+      background-color: #495057;
+      color: #fff; }
+      .card-travel .card-image .card-badge--new {
+        background-color: #dc3545; }
     .card-travel .card-image .add-to-wishlist {
       position: absolute;
       top: 0.75rem;

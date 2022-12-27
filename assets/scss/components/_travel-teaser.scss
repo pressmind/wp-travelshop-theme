@@ -92,6 +92,28 @@
       position:absolute;
       top: $travel-card-spacer-y;
       left: $travel-card-spacer-y;
+
+      padding: $badge-padding-y $badge-padding-x;
+
+      @include border-radius($badge-border-radius);
+
+      // -- if show as pill
+      @if $travel-card-badge-pill {
+        padding: $badge-padding-y $badge-pill-padding-x;
+        @include border-radius($badge-pill-border-radius);
+      }
+
+      font: {
+        size: $badge-font-size;
+        weight: $badge-font-weight;
+      }
+
+      background-color: $gray-700;
+      color: #fff;
+
+      &--new {
+        background-color: $danger; // @todo: maybe green better? Cuz read is danger, in every shop new == green
+      }
     }
 
     // -- positioning add to wishlist
