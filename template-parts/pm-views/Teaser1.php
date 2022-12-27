@@ -64,7 +64,7 @@ if (empty($filteredParams) === false) {
                     <?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/image.php', [
                         'image' => $args['image'],
-                        'class' => 'card-img-top',
+                        'class' => '',
                     ]);
                     ?>
                 </a>
