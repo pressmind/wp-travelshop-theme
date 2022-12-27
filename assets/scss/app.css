@@ -10154,6 +10154,10 @@ body.fl-builder .content-block.content-page {
 .dropdown .dropdown-toggle:after {
   display: none; }
 
+.responsive-image {
+  width: 100% !important;
+  height: auto !important; }
+
 /**
  * Booking button
  */

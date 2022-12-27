@@ -64,7 +64,7 @@ if (empty($filteredParams) === false) {
                     <?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/image.php', [
                         'image' => $args['image'],
-                        'class' => 'img-responsive',
+                        'class' => 'responsive-image',
                     ]);
                     ?>
                 </a>
