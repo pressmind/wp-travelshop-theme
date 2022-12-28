@@ -50,6 +50,16 @@
       }
 
       .card-body--bottom {
+        .price-row {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+
+          gap: .5rem;
+        }
+
         .btn.btn-primary {
           display: inline-block;
           margin-top: 0;
@@ -118,6 +128,15 @@
       }
 
       .card-body--bottom {
+        .price-row {
+          display: flex;
+          flex-direction: column;
+          align-items: unset;
+          justify-content: unset;
+
+          gap: 0;
+        }
+
         .btn.btn-primary {
           display: block;
           margin-top: $travel-card-spacer-y;

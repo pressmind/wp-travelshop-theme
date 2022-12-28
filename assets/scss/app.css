@@ -10656,6 +10656,13 @@ div.daterangepicker {
     padding: 0 0 0 1.25rem; }
     .card-travel .card-body .attribute-row {
       display: none; }
+    .card-travel .card-body .card-body--bottom .price-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem; }
     .card-travel .card-body .card-body--bottom .btn.btn-primary {
       display: inline-block;
       margin-top: 0; }
@@ -10694,6 +10701,12 @@ div.daterangepicker {
         justify-content: space-between; }
         .card-travel .card-body .attribute-row {
           display: block; }
+        .card-travel .card-body .card-body--bottom .price-row {
+          display: flex;
+          flex-direction: column;
+          align-items: unset;
+          justify-content: unset;
+          gap: 0; }
         .card-travel .card-body .card-body--bottom .btn.btn-primary {
           display: block;
           margin-top: 0.75rem; }
