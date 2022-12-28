@@ -113,7 +113,7 @@
  */
 @mixin fade-out-text($font-size: $font-size-base, $line-height: $line-height-base, $lines: 3, $background: #fff) {
   $calculatedHeight: ( $font-size * $line-height ) * $lines;
-  $calculateFadeoutPercentage: calc(100% / $lines);
+  $calculateFadeoutPercentage: 100% / $lines;
 
   position: relative;
 
