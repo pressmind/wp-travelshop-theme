@@ -166,6 +166,15 @@
   .card-body {
     @include font-size-generator($travel-card-body-sizes);
 
+    .card-text--fade-out {
+      // -- default is 3 lines, font-size-base + line-height-base
+      @include fade-out-text($font-size-sm);
+
+      @include media-breakpoint-up(lg) {
+        @include fade-out-text();
+      }
+    }
+
     p {
       margin: 0 0 $travel-card-spacer-y 0;
     }

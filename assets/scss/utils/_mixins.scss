@@ -106,3 +106,35 @@
   // -- using mixin for this part cuz background color of various elements can be different. To avoid bugs we redefine it in various elements by variables of them.
   @include discount-border-set-bg($card-bg);
 }
+
+/**
+ * Generates fadeout text based on font size, line-height and lines to show
+ * last line is faded out!
+ */
+@mixin fade-out-text($font-size: $font-size-base, $line-height: $line-height-base, $lines: 3, $background: #fff) {
+  $calculatedHeight: ( $font-size * $line-height ) * $lines;
+  $calculateFadeoutPercentage: 100% / $lines;
+
+  position: relative;
+
+  max-height: $calculatedHeight;
+  overflow: hidden;
+
+  // -- setting up fadeout effect based on background + calculated heighs + lines ( last line will be faded out )
+  &:after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    z-index: 2;
+
+    top:0;
+    left:0;
+    right:0;
+
+    width: 100%;
+    height: $calculatedHeight;
+
+    @include gradient-y(green, $calculateFadeoutPercentage, red);
+  }
+}
