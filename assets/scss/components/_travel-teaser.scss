@@ -53,6 +53,10 @@
         .btn.btn-primary {
           display: inline-block;
           margin-top: 0;
+
+          > small span {
+            display: none;
+          }
         }
       }
     }
@@ -117,6 +121,10 @@
         .btn.btn-primary {
           display: block;
           margin-top: $travel-card-spacer-y;
+
+          > small span {
+            display: inline;
+          }
         }
       }
     }

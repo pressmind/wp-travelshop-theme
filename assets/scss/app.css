@@ -10659,6 +10659,8 @@ div.daterangepicker {
     .card-travel .card-body .card-body--bottom .btn.btn-primary {
       display: inline-block;
       margin-top: 0; }
+      .card-travel .card-body .card-body--bottom .btn.btn-primary > small span {
+        display: none; }
   @media (min-width: 768px) {
     .card-travel {
       flex-direction: column;
@@ -10695,6 +10697,8 @@ div.daterangepicker {
         .card-travel .card-body .card-body--bottom .btn.btn-primary {
           display: block;
           margin-top: 0.75rem; }
+          .card-travel .card-body .card-body--bottom .btn.btn-primary > small span {
+            display: inline; }
       .card-travel .discount-wrapper {
         display: flex;
         justify-content: center;
