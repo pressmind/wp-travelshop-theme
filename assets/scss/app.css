@@ -10743,7 +10743,7 @@ div.daterangepicker {
         right: 0;
         width: 100%;
         height: 3.9375rem;
-        background-image: linear-gradient(to bottom, green 0, red calc(100% / $lines));
+        background-image: linear-gradient(to bottom, green 0, red 33.3333333333%);
         background-repeat: repeat-x; }
       @media (min-width: 992px) {
         .card-travel .card-body .card-text--fade-out {
@@ -10761,7 +10761,7 @@ div.daterangepicker {
             right: 0;
             width: 100%;
             height: 4.5rem;
-            background-image: linear-gradient(to bottom, green 0, red calc(100% / $lines));
+            background-image: linear-gradient(to bottom, green 0, red 33.3333333333%);
             background-repeat: repeat-x; } }
     .card-travel .card-body p {
       margin: 0 0 0.75rem 0; }
