@@ -10655,7 +10655,7 @@ div.daterangepicker {
       flex-direction: column;
       gap: 0; }
       .card-travel .card-image {
-        flex: 0 0 100%;
+        flex: 0;
         width: 100%;
         max-width: 100%; }
         .card-travel .card-image > a {
@@ -10669,9 +10669,13 @@ div.daterangepicker {
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0; }
       .card-travel .card-body {
-        flex: 0 0 100%;
+        flex: 1;
         width: 100%;
-        max-width: 100%; }
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between; }
         .card-travel .card-body .card-body--bottom .btn.btn-primary {
           display: block;
           margin-top: 0.75rem; }

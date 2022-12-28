@@ -60,7 +60,7 @@
 
     // -- reset flex for normal teaser
     .card-image {
-      flex: 0 0 100%;
+      flex: 0;
       width: 100%;
       max-width: 100%;
 
@@ -84,9 +84,15 @@
     }
 
     .card-body {
-      flex: 0 0 100%;
+      flex: 1;
       width: 100%;
       max-width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      justify-content: space-between;
 
       .card-body--bottom {
         .btn.btn-primary {
