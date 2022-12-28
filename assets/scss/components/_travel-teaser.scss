@@ -33,10 +33,7 @@
 
       // -- set border-radius for stripe teaser element
       img {
-        @include border-top-right-radius(0);
-        @include border-top-left-radius($travel-card-border-radius);
-        @include border-bottom-left-radius($travel-card-border-radius);
-        @include border-bottom-right-radius(0);
+        @include border-radius($travel-card-border-radius);
       }
     }
 
@@ -44,6 +41,8 @@
       flex: 0 0 ((100% / 12) * 7); // 5 of 12
       width: 100%;
       max-width: ((100% / 12) * 7);
+
+      padding: 0 0 0 $travel-card-spacer-x;
 
       .card-body--bottom {
         .btn.btn-primary {
@@ -88,6 +87,7 @@
       flex: 1;
       width: 100%;
       max-width: 100%;
+      padding: $travel-card-spacer-x;
 
       display: flex;
       flex-direction: column;
@@ -164,8 +164,6 @@
 
   // -- body
   .card-body {
-    padding: $travel-card-spacer-x;
-
     @include font-size-generator($travel-card-body-sizes);
 
     h1.card-title {
