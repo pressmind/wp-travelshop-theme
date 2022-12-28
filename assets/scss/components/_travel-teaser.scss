@@ -57,6 +57,7 @@
   @include get-custom-breakpoint($travel-box-break) {
     flex-direction: column;
     gap: 0;
+    height: 100%;
 
     // -- reset flex for normal teaser
     .card-image {

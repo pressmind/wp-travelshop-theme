@@ -10653,7 +10653,8 @@ div.daterangepicker {
   @media (min-width: 768px) {
     .card-travel {
       flex-direction: column;
-      gap: 0; }
+      gap: 0;
+      height: 100%; }
       .card-travel .card-image {
         flex: 0;
         width: 100%;
