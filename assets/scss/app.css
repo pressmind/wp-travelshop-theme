@@ -10629,13 +10629,15 @@ div.daterangepicker {
 .card-travel {
   display: flex;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
   /**
    * define flex settings here
    * they're used for "travel-box-break" into stripe on small devices
    */
-  flex-direction: row; }
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0; }
   .card-travel .card-image {
     flex: 0 0 41.6666666667%;
     width: 100%;
@@ -10658,7 +10660,11 @@ div.daterangepicker {
   @media (min-width: 768px) {
     .card-travel {
       flex-direction: column;
-      height: 100%; }
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-radius: 0.25rem; }
       .card-travel .card-image {
         flex: 0;
         width: 100%;

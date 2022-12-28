@@ -2,10 +2,6 @@
 
   display: flex;
   background-color: $travel-card-bg;
-  border: $travel-card-border-width solid $travel-card-border-color;
-
-  // -- set global element border radius
-  @include border-radius($travel-card-border-radius);
 
   /**
    * define flex settings here
@@ -14,6 +10,11 @@
 
   @if $travel-box-use-break {
     flex-direction: row;
+    border-bottom: $travel-card-border-width solid $travel-card-border-color;
+    padding-bottom: $travel-card-spacer-x;
+    margin-bottom: $travel-card-spacer-x;
+
+    @include border-radius(0);
 
     .card-image {
       flex: 0 0 ((100% / 12) * 5); // 5 of 12
@@ -57,6 +58,15 @@
   @include get-custom-breakpoint($travel-box-break) {
     flex-direction: column;
     height: 100%;
+
+    border: $travel-card-border-width solid $travel-card-border-color;
+
+    // -- reset
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    // -- set global element border radius
+    @include border-radius($travel-card-border-radius);
 
     // -- reset flex for normal teaser
     .card-image {
