@@ -108,6 +108,14 @@
 }
 
 /**
+ * Additional gradient mixn for another direction ( to top )
+ */
+@mixin gradient-y-top($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to top, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+}
+
+/**
  * Generates fadeout text based on font size, line-height and lines to show
  * last line is faded out!
  */
@@ -137,6 +145,6 @@
     width: 100%;
     height: $calculatedHeight;
 
-    @include gradient-y(green, red, 0, $calculateFadeoutPercentage);
+    @include gradient-y-top(green, red, 0, $calculateFadeoutPercentage);
   }
 }
