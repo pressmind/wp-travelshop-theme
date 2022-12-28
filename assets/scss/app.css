@@ -10636,7 +10636,8 @@ div.daterangepicker {
     .card-travel .card-image > a {
       margin-left: -1px;
       margin-top: -1px;
-      margin-bottom: -1px; }
+      margin-bottom: -1px;
+      display: flex; }
     .card-travel .card-image img {
       border-top-right-radius: 0;
       border-top-left-radius: 0.25rem;
