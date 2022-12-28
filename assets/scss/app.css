@@ -10654,6 +10654,8 @@ div.daterangepicker {
     width: 100%;
     max-width: 58.3333333333%;
     padding: 0 0 0 1.25rem; }
+    .card-travel .card-body .attribute-row {
+      display: none; }
     .card-travel .card-body .card-body--bottom .btn.btn-primary {
       display: inline-block;
       margin-top: 0; }
@@ -10688,6 +10690,8 @@ div.daterangepicker {
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: space-between; }
+        .card-travel .card-body .attribute-row {
+          display: block; }
         .card-travel .card-body .card-body--bottom .btn.btn-primary {
           display: block;
           margin-top: 0.75rem; }

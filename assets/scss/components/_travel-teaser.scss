@@ -45,6 +45,10 @@
 
       padding: 0 0 0 $travel-card-spacer-x;
 
+      .attribute-row {
+        display: none;
+      }
+
       .card-body--bottom {
         .btn.btn-primary {
           display: inline-block;
@@ -104,6 +108,10 @@
       flex-wrap: nowrap;
 
       justify-content: space-between;
+
+      .attribute-row {
+        display: block;
+      }
 
       .card-body--bottom {
         .btn.btn-primary {
