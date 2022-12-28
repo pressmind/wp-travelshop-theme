@@ -10628,8 +10628,7 @@ div.daterangepicker {
    * define flex settings here
    * they're used for "travel-box-break" into stripe on small devices
    */
-  flex-direction: row;
-  gap: 1rem; }
+  flex-direction: row; }
   .card-travel .card-image {
     flex: 0 0 41.6666666667%;
     width: 100%;
@@ -10653,7 +10652,6 @@ div.daterangepicker {
   @media (min-width: 768px) {
     .card-travel {
       flex-direction: column;
-      gap: 0;
       height: 100%; }
       .card-travel .card-image {
         flex: 0;
