@@ -145,6 +145,6 @@
     width: 100%;
     height: $calculatedHeight;
 
-    @include gradient-y-top(green, red, 0, $calculateFadeoutPercentage);
+    @include gradient-y-top($background, rgba($background, 0), 0, $calculateFadeoutPercentage);
   }
 }
