@@ -166,6 +166,10 @@
   .card-body {
     @include font-size-generator($travel-card-body-sizes);
 
+    p {
+      margin: 0 0 $travel-card-spacer-y 0;
+    }
+
     h1.card-title {
       // -- set font sizes
       @include font-size-generator($travel-card-title-sizes);

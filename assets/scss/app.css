@@ -10724,6 +10724,8 @@ div.daterangepicker {
     @media (min-width: 992px) {
       .card-travel .card-body {
         font-size: 1rem; } }
+    .card-travel .card-body p {
+      margin: 0 0 0.75rem 0; }
     .card-travel .card-body h1.card-title {
       font-size: 1rem;
       margin: 0 0 0.75rem 0; }
