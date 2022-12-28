@@ -14,8 +14,8 @@ class TSWPCategoryHeader extends FLBuilderModule {
             'editor_export'   => false,
             'partial_refresh' => true,
             'icon'            => 'slides.svg',
-            'dir'           => BB_MODULE_TS_DIR . 'modules/category-header/',
-            'url'           => BB_MODULE_TS_URL . 'modules/category-header/',
+            'dir'           => BB_MODULE_TS_DIR . 'modules/category-header-jumbotron/',
+            'url'           => BB_MODULE_TS_URL . 'modules/category-header-jumbotron/',
         ));
     }
 
@@ -112,7 +112,7 @@ FLBuilder::register_module('TSWPCategoryHeader', array(
                         'help' => 'Tip: use the alpha channel to create transparent overlays!',
                         'preview' => array(
                             'type'     => 'css',
-                            'selector' => '.category-header-overlay',
+                            'selector' => '.category-header-jumbotron-overlay',
                             'property' => 'background-image',
                         ),
                     ),

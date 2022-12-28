@@ -45,7 +45,7 @@ class BeaverBuilderModuleLoader{
         //require_once BB_MODULE_TS_DIR . 'modules/example/example.php';
         require_once BB_MODULE_TS_DIR . 'modules/wp-image-teaser/wp-image-teaser.php';
         require_once BB_MODULE_TS_DIR . 'modules/wp-info-teaser/wp-info-teaser.php';
-        require_once BB_MODULE_TS_DIR . 'modules/jumbotron/jumbotron.php';
+        // require_once BB_MODULE_TS_DIR . 'modules/jumbotron/jumbotron.php';
         require_once BB_MODULE_TS_DIR . 'modules/pm-search-bar/pm-search-bar.php';
         require_once BB_MODULE_TS_DIR . 'modules/pm-search-header/pm-search-header.php';
         require_once BB_MODULE_TS_DIR . 'modules/icon-teaser/icon-teaser.php';
@@ -56,7 +56,7 @@ class BeaverBuilderModuleLoader{
         require_once BB_MODULE_TS_DIR . 'modules/slider-mixed-content/slider-mixed-content.php';
         require_once BB_MODULE_TS_DIR . 'modules/history/history.php';
         require_once BB_MODULE_TS_DIR . 'modules/team/team.php';
-        require_once BB_MODULE_TS_DIR . 'modules/category-header/category-header.php';
+        require_once BB_MODULE_TS_DIR . 'modules/category-header-jumbotron/category-header-jumbotron.php';
         require_once BB_MODULE_TS_DIR . 'modules/faq-schema-accordion/faq-schema-accordion.php';
     }
 
