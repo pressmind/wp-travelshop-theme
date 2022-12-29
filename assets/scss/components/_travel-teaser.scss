@@ -161,9 +161,7 @@
    */
 
   @if $travel-box-use-break {
-    &:not(.slider-item) {
-      @extend %card-travel-small;
-    }
+    @extend %card-travel-small;
   }
 
   // -- break teaser into common teaser

@@ -10629,41 +10629,41 @@ div.daterangepicker {
 /**
  * small ( 2 column ) travel card
  */
-.card-travel:not(.slider-item) {
+.card-travel {
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
   border-radius: 0; }
-  .card-travel:not(.slider-item) .card-image {
+  .card-travel .card-image {
     flex: 0 0 41.6666666667%;
     width: 100%;
     max-width: 41.6666666667%; }
-    .card-travel:not(.slider-item) .card-image > a {
+    .card-travel .card-image > a {
       margin-left: -1px;
       margin-top: -1px;
       margin-bottom: -1px;
       display: flex; }
-    .card-travel:not(.slider-item) .card-image img {
+    .card-travel .card-image img {
       border-radius: 0.25rem; }
-  .card-travel:not(.slider-item) .card-body {
+  .card-travel .card-body {
     flex: 0 0 58.3333333333%;
     width: 100%;
     max-width: 58.3333333333%;
     padding: 0 0 0 1.25rem; }
-    .card-travel:not(.slider-item) .card-body .attribute-row {
+    .card-travel .card-body .attribute-row {
       display: none; }
-    .card-travel:not(.slider-item) .card-body .card-body--bottom .price-row {
+    .card-travel .card-body .card-body--bottom .price-row {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: .5rem; }
-    .card-travel:not(.slider-item) .card-body .card-body--bottom .btn.btn-primary {
+    .card-travel .card-body .card-body--bottom .btn.btn-primary {
       display: inline-block;
       margin-top: 0; }
-      .card-travel:not(.slider-item) .card-body .card-body--bottom .btn.btn-primary > small span {
+      .card-travel .card-body .card-body--bottom .btn.btn-primary > small span {
         display: none; }
 
 /**
