@@ -226,6 +226,8 @@
     @include font-size-generator($travel-card-body-sizes);
 
     .card-text--fade-out {
+      margin-bottom: 0;
+
       // -- default is 3 lines, font-size-base + line-height-base
       @include fade-out-text($font-size-sm);
 

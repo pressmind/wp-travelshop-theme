@@ -10768,6 +10768,7 @@ div.daterangepicker {
       .card-travel .card-body {
         font-size: 1rem; } }
     .card-travel .card-body .card-text--fade-out {
+      margin-bottom: 0;
       position: relative;
       max-height: 3.9375rem;
       overflow: hidden; }
