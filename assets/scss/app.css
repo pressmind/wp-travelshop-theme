@@ -10388,6 +10388,9 @@ body.fl-builder .content-block.content-page {
   .discount-wrapper.discount-wrapper--border .discount-wrapper--inner {
     background-color: #fff; }
 
+.card-travel .card-body .card-body--bottom .date-row .dropdown {
+  margin: 0; }
+
 .travelshop-datepicker > div {
   position: relative; }
   .travelshop-datepicker > div svg {
@@ -10767,6 +10770,8 @@ div.daterangepicker {
     @media (min-width: 992px) {
       .card-travel .card-body {
         font-size: 1rem; } }
+    .card-travel .card-body p {
+      margin: 0 0 0.75rem 0; }
     .card-travel .card-body .card-text--fade-out {
       margin-bottom: 0;
       position: relative;
@@ -10803,8 +10808,6 @@ div.daterangepicker {
             height: 4.5rem;
             background-image: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 33.3333333333%);
             background-repeat: repeat-x; } }
-    .card-travel .card-body p {
-      margin: 0 0 0.75rem 0; }
     .card-travel .card-body h1.card-title {
       font-size: 1rem;
       margin: 0 0 0.75rem 0; }
@@ -10821,5 +10824,10 @@ div.daterangepicker {
           color: #007bff; }
         .card-travel .card-body h1.card-title > a:active {
           text-decoration: underline; }
+    .card-travel .card-body .card-body--bottom {
+      padding-top: 0.75rem;
+      /**
+       * Date row
+       */ }
 
 /*# sourceMappingURL=app.css.map */

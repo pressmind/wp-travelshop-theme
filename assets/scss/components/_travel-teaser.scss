@@ -225,6 +225,10 @@
   .card-body {
     @include font-size-generator($travel-card-body-sizes);
 
+    p {
+      margin: 0 0 $travel-card-spacer-y 0;
+    }
+
     .card-text--fade-out {
       margin-bottom: 0;
 
@@ -234,10 +238,6 @@
       @include media-breakpoint-up(lg) {
         @include fade-out-text();
       }
-    }
-
-    p {
-      margin: 0 0 $travel-card-spacer-y 0;
     }
 
     h1.card-title {
@@ -263,6 +263,19 @@
 
         &:active {
           text-decoration: underline;
+        }
+      }
+    }
+
+    .card-body--bottom {
+      padding-top: $travel-card-spacer-y;
+
+      /**
+       * Date row
+       */
+      .date-row {
+        .dropdown {
+          @extend %date-dropdown;
         }
       }
     }
