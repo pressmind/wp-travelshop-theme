@@ -1,78 +1,74 @@
-.card-travel {
+/**
+ * small ( 2 column ) travel card
+ */
+%card-travel-small {
+  flex-direction: row;
+  border-bottom: $travel-card-border-width solid $travel-card-border-color;
+  padding-bottom: $travel-card-spacer-x;
+  margin-bottom: $travel-card-spacer-x;
 
-  display: flex;
-  background-color: $travel-card-bg;
+  @include border-radius(0);
 
-  /**
-   * define flex settings here
-   * they're used for "travel-box-break" into stripe on small devices
-   */
+  .card-image {
+    flex: 0 0 ((100% / 12) * 5); // 5 of 12
+    width: 100%;
+    max-width: ((100% / 12) * 5);
 
-  @if $travel-box-use-break {
-    flex-direction: row;
-    border-bottom: $travel-card-border-width solid $travel-card-border-color;
-    padding-bottom: $travel-card-spacer-x;
-    margin-bottom: $travel-card-spacer-x;
+    // -- set offset left top bottom to make image lay above border if border width not 0
+    @if $travel-card-border-width != 0 {
+      > a {
+        margin-left: -$travel-card-border-width;
+        margin-top: -$travel-card-border-width;
+        margin-bottom: -$travel-card-border-width;
 
-    @include border-radius(0);
-
-    .card-image {
-      flex: 0 0 ((100% / 12) * 5); // 5 of 12
-      width: 100%;
-      max-width: ((100% / 12) * 5);
-
-      // -- set offset left top bottom to make image lay above border if border width not 0
-      @if $travel-card-border-width != 0 {
-        > a {
-          margin-left: -$travel-card-border-width;
-          margin-top: -$travel-card-border-width;
-          margin-bottom: -$travel-card-border-width;
-
-          display: flex;
-        }
-      }
-
-      // -- set border-radius for stripe teaser element
-      img {
-        @include border-radius($travel-card-border-radius);
+        display: flex;
       }
     }
 
-    .card-body {
-      flex: 0 0 ((100% / 12) * 7); // 5 of 12
-      width: 100%;
-      max-width: ((100% / 12) * 7);
+    // -- set border-radius for stripe teaser element
+    img {
+      @include border-radius($travel-card-border-radius);
+    }
+  }
 
-      padding: 0 0 0 $travel-card-spacer-x;
+  .card-body {
+    flex: 0 0 ((100% / 12) * 7); // 5 of 12
+    width: 100%;
+    max-width: ((100% / 12) * 7);
 
-      .attribute-row {
-        display: none;
+    padding: 0 0 0 $travel-card-spacer-x;
+
+    .attribute-row {
+      display: none;
+    }
+
+    .card-body--bottom {
+      .price-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: .5rem;
       }
 
-      .card-body--bottom {
-        .price-row {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
+      .btn.btn-primary {
+        display: inline-block;
+        margin-top: 0;
 
-          gap: .5rem;
-        }
-
-        .btn.btn-primary {
-          display: inline-block;
-          margin-top: 0;
-
-          > small span {
-            display: none;
-          }
+        > small span {
+          display: none;
         }
       }
     }
   }
+}
 
-  // -- break teaser into common teaser
+/**
+ * normal travel card teaser
+ */
+%card-travel-default {
   @include get-custom-breakpoint($travel-box-break) {
     flex-direction: column;
     height: 100%;
@@ -152,6 +148,26 @@
       @include discount-border();
     }
   }
+}
+
+.card-travel {
+
+  display: flex;
+  background-color: $travel-card-bg;
+
+  /**
+   * define flex settings here
+   * they're used for "travel-box-break" into stripe on small devices
+   */
+
+  @if $travel-box-use-break {
+    &:not(.slider-item) {
+      @extend %card-travel-small;
+    }
+  }
+
+  // -- break teaser into common teaser
+  @extend %card-travel-default;
 
   // -- image
   .card-image {
