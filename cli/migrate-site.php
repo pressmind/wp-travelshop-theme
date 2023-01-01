@@ -94,6 +94,9 @@ class Migrate{
         self::generateModRewrite();
         self::flushCaches();
 
+        if($is_multisite){
+            echo 'please check wp-config.php constant \'DOMAIN_CURRENT_SITE\' (this value must match to one of the pages)'."\n";
+        }
     }
 
     public static function migrateOptions(){
