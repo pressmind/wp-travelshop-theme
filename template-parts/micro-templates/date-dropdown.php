@@ -42,6 +42,10 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
                         echo '<i class="circle green"></i>';
                         echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                             'date_departure' => $date['date_departure'],
+                            'duration' => $date['duration'],
+                            'price_total' => $date['price_total'],
+                            'price_regular_before_discount' => $date['price_regular_before_discount'],
+                            'durations_from_this_departure' => $date['durations_from_this_departure'],
                             'date_from_format ' => $date_format
                         ]);
                         ?>

@@ -102,6 +102,10 @@ class Search
                         foreach ($month['five_dates_in_month'] as $k1 => $date) {
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure'] = new \DateTime($date['date_departure']);
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_arrival'] = new \DateTime($date['date_arrival']);
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['duration'] = $date['duration'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] = $date['price_total'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_regular_before_discount'] = $date['price_regular_before_discount'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['durations_from_this_departure'] = $date['durations_from_this_departure'];
                         }
                     }
                 }

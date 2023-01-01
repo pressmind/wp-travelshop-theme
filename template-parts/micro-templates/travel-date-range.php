@@ -1,11 +1,17 @@
 <?php
 use Pressmind\HelperFunctions;
+use Pressmind\Travelshop\PriceHandler;
+use Pressmind\Travelshop\Template;
+
 /**
  * <code>
  * $args['date_departure']
  * $args['date_arrival']
  * $args['date_from_format']
  * $args['date_to_format']
+ * $args['duration']
+ * $args['price_total']
+ * $args['price_regular_before_discount']
  * </code>
  * @var array $args
  */
@@ -33,4 +39,15 @@ if(!empty($args['date_arrival']) && $args['date_departure']->format('d.m.y') != 
     echo ' - ';
     echo HelperFunctions::dayNumberToLocalDayName($args['date_arrival']->format('N'), 'short').'. ';
     echo $args['date_arrival']->format($args['date_to_format']);
+}
+
+if(!empty($args['duration'])){
+    echo ' '.Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
+            'duration' => $args['duration']
+        ]
+    );
+}
+
+if(!empty($args['price_total'])){
+    echo ' ab '.PriceHandler::format($args['price_total']);
 }
