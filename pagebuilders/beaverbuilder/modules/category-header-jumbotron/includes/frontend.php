@@ -20,4 +20,4 @@ if (empty($args['content_alignment_horizontal_responsive'])) {
 if (empty($args['content_alignment_horizontal_medium'])) {
     $args['content_alignment_horizontal_medium'] = $args['content_alignment_horizontal'];
 }
-load_template_transient(get_template_directory() . '/template-parts/layout-blocks/category-header.php', false,  $args);
+load_template_transient(get_template_directory() . '/template-parts/layout-blocks/category-header-jumbotron.php', false,  $args);

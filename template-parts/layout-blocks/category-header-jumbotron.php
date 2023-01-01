@@ -21,8 +21,8 @@
 } ?> <?php if ($args['content_box_type'] == 'docked') { ?> category-header-docked--<?php echo $args['content_alignment_horizontal']; ?> <?php } ?>">
     <?php
     // Media handling
-    $video = empty($args['video']) && $args['media_type'] == 'video' ? SITE_URL . "/placeholder.svg?wh=1200x800&text=image is not set" : wp_get_attachment_url($args['video']);
-    $image = empty($args['image']) && $args['media_type'] == 'image' ? SITE_URL . "/placeholder.svg?wh=1200x800&text=image is not set" : wp_get_attachment_image_url($args['image'], 'bigslide');
+    $video = $args['media_type'] == 'video' && empty($args['video']) ? SITE_URL . "/placeholder.svg?wh=1200x800&text=image is not set" : (empty($args['video']) ? ( $args['media_type'] == 'video' ? wp_get_attachment_url($args['video']) : null) : $args['video']);
+    $image = $args['media_type'] == 'image' && empty($args['image']) ? SITE_URL . "/placeholder.svg?wh=1200x800&text=image is not set" : (empty($args['image']) ? ( $args['media_type'] == 'image' ? wp_get_attachment_image_url($args['image'], 'bigslide') : null) : $args['image']);
     ?>
     <div class="category-header-media category-header-media--<?php echo $args['media_type']; ?>">
         <div class="category-header-media-holder">

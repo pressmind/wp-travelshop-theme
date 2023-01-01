@@ -1073,11 +1073,15 @@ jQuery(function ($) {
                     let modalId = $(e.target).data('modal-id');
                     // -- show modal
                     $('body').find('#modal-id-post-' + modalId).addClass('is--open');
-                    modalId != 'bofilters' ? _this.loadFilters() : '';
-                    $('.modal-loader').css('display', 'flex');
-                    setTimeout(() => {
-                        _this.loadOffers(e);
-                    }, 200);
+                    if($(e.target).hasClass('booking-btn') || $(e.target).hasClass('stretched-link')) {
+                        $('.modal-loader').css('display', 'flex');
+                        setTimeout(() => {
+                            modalId != 'bofilters' ? _this.loadFilters() : '';
+                            setTimeout(() => {
+                                _this.loadOffers(e);
+                            }, 200);
+                        }, 500);
+                    }
                     let target = document.querySelector('.is--open .modal-body-outer');
                     bodyScrollLock.disableBodyScroll(target);
                     e.stopPropagation();
