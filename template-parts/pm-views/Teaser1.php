@@ -17,6 +17,7 @@ use Pressmind\Travelshop\Template;
  *  'departure_date_count' => 12
  *  'possible_durations' => []
  *  'dates_per_month' => []
+ *  'fst_date_departure'
  *  'class' => ''
  * ];
  * </code>
@@ -43,6 +44,7 @@ if (empty($filteredParams) === false) {
     $query_string = http_build_query($filteredParams);
     $args['url'] .= '?' . $query_string;
 }
+$args['cheapest_price']->url = $args['url'].(!strpos($args['url'], '?') ? '?' : '&') . 'pm-du=' . $args['cheapest_price']->duration.'&pm-dr=' . $args['cheapest_price']->date_departures[0]->format('Ymd');
 ?>
 <article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper">
     <div class="card card-travel">
@@ -60,7 +62,7 @@ if (empty($filteredParams) === false) {
                     'id_object_type' => $args['id_object_type'],
                 ]);
                 ?>
-                <a href="<?php echo $args['url']; ?>">
+                <a href="<?php echo $args['cheapest_price']->url; ?>">
                     <?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/image.php', [
                         'image' => $args['image'],
@@ -77,7 +79,7 @@ if (empty($filteredParams) === false) {
                 }
             ?>
             <h1 class="card-title">
-                <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
+                <a href="<?php echo $args['cheapest_price']->url; ?>"><?php echo $args['headline']; ?></a>
             </h1>
             <?php
             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
@@ -127,7 +129,7 @@ if (empty($filteredParams) === false) {
                             ], 0);
                         }
                         ?>
-                        <a href="<?php echo $args['url']; ?>" class="travel-teaser-link">
+                        <a href="<?php echo $args['cheapest_price']->url;?>" class="travel-teaser-link">
                             <div class="btn btn-primary">
                             <?php
                             if(!is_null($args['cheapest_price'])) {
