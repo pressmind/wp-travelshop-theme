@@ -220,6 +220,9 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 } else if($_GET['action'] == 'bookingoffersfilter') {
     $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_GET['pm-id']);
     $args['booking_offers_intersection'] = $args['media_object']->getCheapestPricesOptions();
+    function sort_lowest($a, $b) { return strtotime($a) - strtotime($b); }
+    usort($args['booking_offers_intersection']->date_departure_from, "sort_lowest");
+    usort($args['booking_offers_intersection']->date_departure_to, "sort_lowest");
     ob_start();
     require 'template-parts/pm-views/detail-blocks/booking-offers-filter.php';
     $Output->html['booking-filter'] = ob_get_contents();
