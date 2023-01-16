@@ -36,8 +36,8 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
                 echo '<p class="dropdown-header">' . HelperFunctions::monthNumberToLocalMonthName($month['month']) . '</p>';
                 foreach ($month['five_dates_in_month'] as $date) {
                     ?>
-                    <a class="dropdown-item<?php //echo ($date->id == $args['cheapest_price']->id_date) ? ' active' : ''; ?>"
-                       href="<?php echo $args['url']; /* . (!strpos($args['url'], '?') ? '?' : '&') . 'idd=' . $date->id . '&idbp=' . $booking_package->id; */?>">
+                    <a class="dropdown-item<?php echo $date['active'] ? ' active' : ''; ?>"
+                       href="<?php echo $args['url'].(!strpos($args['url'], '?') ? '?' : '&') . 'pm-dr=' . $date['date_departure']->format('Ymd'); ?>">
                         <?php
                         echo '<i class="circle green"></i>';
                         echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [

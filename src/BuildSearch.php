@@ -371,7 +371,7 @@ class BuildSearch
                         $delimiter = ',';
                         $operator = 'OR';
                     }elseif(preg_match('/^[0-9a-zA-Z\-\+]+$/', $item_ids) > 0){ // search by AND, marked by "+"
-                        $delimiter = '+'; // be ware, this sign is reserverd by php. urls must use the escaped sign %2B
+                        $delimiter = '+'; // be aware, this sign is reserverd by php. urls must use the escaped sign %2B
                         $operator = 'AND';
                     }else{ // not valid
                         echo 'operator not valid';
@@ -491,7 +491,9 @@ class BuildSearch
 
     /**
      * Accepts the following formats
-     * YYYYMMDD-YYYYMMDD
+     * YYYYMMDD-YYYYMMDD (departure range from/to)
+     * or
+     * YYYYMMDD (exact departure match)
      * or
      * {relative offset from today}-{relative offset from today} eg. "+90-+120" or "90-120"
      * or
@@ -503,6 +505,8 @@ class BuildSearch
     public static function extractDaterange($str){
         if(preg_match('/^([0-9]{4}[0-9]{2}[0-9]{2})\-([0-9]{4}[0-9]{2}[0-9 ]{2})$/', $str, $m) > 0){
             return array(new DateTime($m[1]), new DateTime($m[2]));
+        }elseif(preg_match('/^([0-9]{4}[0-9]{2}[0-9]{2})$/', $str, $m) > 0){
+            return array(new DateTime($m[1]), null);
         }elseif(preg_match('/^([\+\-]?[0-9]+)$/', $str, $m) > 0) {
             $to = new DateTime('now');
             $to->modify($m[1].' day');

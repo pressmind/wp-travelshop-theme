@@ -96,19 +96,7 @@ class Search
                 $item['url'] = $document['url'];
                 $item['recommendation_rate'] = $document['recommendation_rate'];
                 $item['dates_per_month'] = [];
-                if (!empty($document['dates_per_month'])) {
-                    $item['dates_per_month'] = $document['dates_per_month'];
-                    foreach ($document['dates_per_month'] as $k => $month) {
-                        foreach ($month['five_dates_in_month'] as $k1 => $date) {
-                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure'] = new \DateTime($date['date_departure']);
-                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_arrival'] = new \DateTime($date['date_arrival']);
-                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['duration'] = $date['duration'];
-                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] = $date['price_total'];
-                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_regular_before_discount'] = $date['price_regular_before_discount'];
-                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['durations_from_this_departure'] = $date['durations_from_this_departure'];
-                        }
-                    }
-                }
+                $item['fst_date_departure'] = !empty($document['fst_date_departure']) ? new \DateTime($document['fst_date_departure']) : null;
                 $item['possible_durations'] = !empty($document['possible_durations']) ? $document['possible_durations'] : [];
                 $item['last_modified_date'] = $document['last_modified_date'];
                 if (!empty($document['prices'])) {
@@ -117,7 +105,7 @@ class Search
                     }
                     $item['cheapest_price'] = new \stdClass();
                     $item['cheapest_price']->duration = $document['prices']['duration'];
-                    $item['cheapest_price']->price_total = $document['prices']['price_total'];
+                    $item['cheapest_price']->price_total = (float)$document['prices']['price_total'];
                     $item['cheapest_price']->price_regular_before_discount = $document['prices']['price_regular_before_discount'];
                     $item['cheapest_price']->earlybird_discount = $document['prices']['earlybird_discount'];
                     $item['cheapest_price']->earlybird_discount_f = $document['prices']['earlybird_discount_f'];
@@ -133,6 +121,26 @@ class Search
                 } else {
                     $item['cheapest_price'] = null;
                     $document['prices'] = null;
+                }
+                if (!empty($document['dates_per_month'])) {
+                    $item['dates_per_month'] = $document['dates_per_month'];
+                    foreach ($document['dates_per_month'] as $k => $month) {
+                        foreach ($month['five_dates_in_month'] as $k1 => $date) {
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure'] = new \DateTime($date['date_departure']);
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_arrival'] = new \DateTime($date['date_arrival']);
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['duration'] = $date['duration'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] = (float)$date['price_total'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_regular_before_discount'] = $date['price_regular_before_discount'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['durations_from_this_departure'] = $date['durations_from_this_departure'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = false;
+                            if(!empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure']->format('Y-m-d') === $item['fst_date_departure']->format('Y-m-d')){
+                                $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = true;
+                            }
+                            if(empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] === $item['cheapest_price']->price_total){
+                                $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = true;
+                            }
+                        }
+                    }
                 }
                 $item['departure_date_count'] = $document['departure_date_count'];
                 $item['possible_durations'] = !empty($document['possible_durations']) ? $document['possible_durations'] : [];
