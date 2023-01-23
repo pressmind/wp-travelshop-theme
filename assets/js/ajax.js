@@ -1068,7 +1068,7 @@ jQuery(function ($) {
 
         this.initModals = function() {
             if ($('.modal-wrapper').length > 0) {
-                $('a[data-modal="true"]').on('click', function (e) {
+                $('a[data-modal="true"]').unbind().on('click', function (e) {
                     e.preventDefault();
                     let modalId = $(e.target).data('modal-id');
                     // -- show modal
@@ -1087,7 +1087,7 @@ jQuery(function ($) {
                     e.stopPropagation();
                 })
 
-                $('.modal-close, .modal-close-btn').on('click', function (e) {
+                $('.modal-close, .modal-close-btn').unbind().on('click', function (e) {
                     e.preventDefault();
                     let target = document.querySelector('.is--open .modal-body-outer');
                     $(e.target).closest('.is--open').removeClass('is--open');
