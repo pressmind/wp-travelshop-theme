@@ -87,6 +87,7 @@
 }
 #booking-offers {
 	padding-bottom: 2rem;
+	min-height: 300px;
 	.month-name,
 	.additional-offers {
 		@include media-breakpoint-down(md) {

@@ -36,7 +36,7 @@ if(empty($args['cheapest_price'])){
             <div class="mobile-bar-date">
                         <span class="date">
                             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', ['transport_type' => $args['cheapest_price']->transport_type]);?>
-                            <a class="show-dates" data-modal="true" data-anchor="<?php echo $args['cheapest_price']->id; ?>" data-modal-id="<?php echo $args['id_modal_price_box']; ?>">
+                            <a class="show-dates booking-btn" data-modal="true" data-anchor="<?php echo $args['cheapest_price']->id; ?>" data-modal-id="<?php echo $args['id_modal_price_box']; ?>">
                                  <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                                      'date_departure' => $args['cheapest_price']->date_departure,
                                      'date_arrival' => $args['cheapest_price']->date_arrival

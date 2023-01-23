@@ -41,7 +41,9 @@ $args['filter_data'] = [];
             ?>
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/pm-search/filter/checkbox-dropdown.php', $args); ?>
         <?php } ?>
-        <?php if(count($args['booking_offers_intersection']->option_board_type) > 1) { ?>
+        <?php
+            // TODO: Implement option_board_type in SDK Function "getCheapestPricesOptions"
+            /* if(count($args['booking_offers_intersection']->option_board_type) > 1) { ?>
             <?php
             $args['label'] = 'Verpflegung';
             $args['filter_param'] = 'pm-bt';
@@ -54,7 +56,7 @@ $args['filter_data'] = [];
             }
             ?>
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/pm-search/filter/checkbox-dropdown.php', $args); ?>
-        <?php } ?>
+        <?php } */ ?>
         <?php if(count($args['booking_offers_intersection']->transport_type) > 1) { ?>
             <?php
             $args['label'] = 'Anreiseart';
