@@ -175,8 +175,8 @@ jQuery(function ($) {
                     $('#' + key).html(data.html[key]);
                 }
 
-                if (key == 'search-filter' && $('.js-range-slider').length > 0) {
-                    $(".js-range-slider").ionRangeSlider({});
+                if (key == 'search-filter') {
+                    _this.priceRangeSliderInit();
                 }
             }
 
@@ -617,9 +617,42 @@ jQuery(function ($) {
             }
         }
 
+        this.priceRangeSliderInit = function() {
+            if($('.js-range-slider').length > 0) {
+                new rSlider({
+                    target: '#js-range-slider',
+                    values: { min: parseInt($(".js-range-slider").attr('data-min')), max: parseInt($(".js-range-slider").attr('data-max'))},
+                    step: parseInt($(".js-range-slider").attr('data-step')),
+                    set: [parseInt($(".js-range-slider").attr('data-val-from')), parseInt($(".js-range-slider").attr('data-val-to'))],
+                    range: true,
+                    tooltip: true,
+                    scale: true,
+                    labels: false,
+                    disabled: $(".js-range-slider").attr('data-disable') == 'true'
+                });
+                let timeout;
+                let timestamp = + new Date();
+                if($(window).width() >= 768) {
+                    document.querySelector('#js-range-slider').addEventListener('change', (e) => {
+                        if(((+ new Date()) - timestamp) <= 1000) {
+                            clearTimeout(timeout);
+                        }
+                        timestamp = + new Date;
+                        timeout = setTimeout(() => {
+                            let form = $('#js-range-slider').closest('form');
+                            let query_string = _this.buildSearchQuery(form);
+                            _this.setSpinner('#pm-search-result');
+                            _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                            e.preventDefault();
+                        }, 1000);
+                    });
+                }
+            }
+        }
+
         _this.picker = [];
 
-        this.dateRangePickerInit = function (){
+        this.dateRangePickerInit = function() {
 
             if ($('[data-type="daterange"]').length > 0) {
 
@@ -1245,6 +1278,7 @@ jQuery(function ($) {
             _this.searchboxSwitch();
             _this.autoCompleteInit();
             _this.dateRangePickerInit();
+            _this.priceRangeSliderInit();
             _this.initCategoryTreeSearchBarFields();
             _this.initCalendarRowClick();
             _this.initBookingBtnClickHandler();

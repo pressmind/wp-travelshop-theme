@@ -23,12 +23,14 @@ if (isset($_GET['pm-pr']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $_GET
         <?php
         // ion.rangeSlider is used here, see API Docu: @link http://ionden.com/a/plugins/ion.rangeSlider/api.html
         ?>
-        <input type="text" class="js-range-slider" name="pm-pr" value=""
+        <input id="js-range-slider" type="text" class="js-range-slider" name="pm-pr" value=""
                data-type="double"
                data-min="<?php echo empty($args['price_min']) ? 0 : $args['price_min']; ?>"
                data-max="<?php echo empty($args['price_max']) ? 1000 : $args['price_max']; ?>"
                data-from="<?php echo $from; ?>"
                data-to="<?php echo $to; ?>"
+               data-val-from="<?php echo !empty($_GET['pm-pr']) ? explode('-', $_GET['pm-pr'])[0] : $args['price_min']; ?>"
+               data-val-to="<?php echo !empty($_GET['pm-pr']) ? explode('-', $_GET['pm-pr'])[1] : $args['price_max']; ?>"
                data-grid="false"
                data-prefix="€ "
                data-step="100"
@@ -42,6 +44,5 @@ if (isset($_GET['pm-pr']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $_GET
                echo ($args['price_min'] == $args['price_max'] || ($args['price_max'] - $args['price_min']) == 100) ? 'true' : 'false';
                ?>"
         />
-
     </div>
 </div>

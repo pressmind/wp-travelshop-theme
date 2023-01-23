@@ -109,18 +109,4 @@ jQuery(function ($) {
             $searchWrapper.addClass('is--open');
         });
     }
-
-// ------------------------------------------
-// --- rangeslider
-// ------------------------------------------
-
-    if ($('.js-range-slider').length > 0) {
-        $(".js-range-slider").ionRangeSlider();
-    }
-
-
-
-
-
-
 });
