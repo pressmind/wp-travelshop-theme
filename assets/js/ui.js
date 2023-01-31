@@ -1,44 +1,6 @@
 jQuery(function ($) {
 
     // ------------------------------------------------
-    // -- Auto Popup
-    // ------------------------------------------------
-    if($('#modal-id-post-automodal').length) {
-        let aboutToleave = false;
-        let timeoutId;
-        let active = true;
-
-        if(active && $('#auto-modal-content').attr('data-type') == 'leave') {
-            if(localStorage.getItem('leaveMessageFired') == 'true' && $('#auto-modal-content').attr('data-multiple') == 'false') {
-                active = false;
-            }
-            $(document).mouseleave(function () {
-                timeoutId = setTimeout(() => {
-                    aboutToleave = true;
-                }, $('#auto-modal-content').attr('data-delay'))
-            });
-            $(document).mouseenter(function () {
-                clearTimeout(timeoutId);
-                aboutToleave = false;
-            });
-            let leaveMessageInt = setInterval(() => {
-                if(aboutToleave) {
-                    $('#modal-id-post-automodal').addClass('is--open');
-                    if($('#auto-modal-content').attr('data-multiple') == 'false') {
-                        localStorage.setItem('leaveMessageFired', 'true');
-                        clearInterval(leaveMessageInt);
-                    }
-                }
-            }, 500);
-        }
-        if(active && $('#auto-modal-content').attr('data-type') == 'delay') {
-            timeoutId = setTimeout(() => {
-                $('#modal-id-post-automodal').addClass('is--open');
-            }, $('#auto-modal-content').attr('data-delay'))
-        }
-
-    }
-    // ------------------------------------------------
     // -- smooth scroll
     // ------------------------------------------------
 
