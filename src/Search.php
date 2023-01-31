@@ -136,7 +136,7 @@ class Search
                             if(!empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure']->format('Y-m-d') === $item['fst_date_departure']->format('Y-m-d')){
                                 $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = true;
                             }
-                            if(empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] === $item['cheapest_price']->price_total){
+                            if(!empty($item['cheapest_price']->price_total) && empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] === $item['cheapest_price']->price_total){
                                 $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = true;
                             }
                         }
