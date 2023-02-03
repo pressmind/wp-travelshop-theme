@@ -343,13 +343,15 @@ class RedisPageCache
     {
         $iterator = null;
         $keys = [];
-        self::$redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY);
-        while ($scanned_keys = self::$redis->scan($iterator, $pattern)) {
-            foreach($scanned_keys as $str_key) {
-                $keys[] = $str_key;
+        if(!isset(self::$redis)) {
+            self::$redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY);
+            while ($scanned_keys = self::$redis->scan($iterator, $pattern)) {
+                foreach ($scanned_keys as $str_key) {
+                    $keys[] = $str_key;
+                }
             }
+            return $keys;
         }
-        return $keys;
     }
     public static function del_by_pattern($redis_pattern, $level = null){
         $keys = self::get_by_pattern($redis_pattern);
