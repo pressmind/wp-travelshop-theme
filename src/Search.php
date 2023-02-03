@@ -35,12 +35,12 @@ class Search
      *            ]
      *           ];
      * </code>
+     * @param int[] $allowed_visibilities e.g. 30 = public, 60 = hidden
      * @return array
      * @throws \Exception
      */
-    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null, $output = null, $preview_date = null, $custom_conditions = [])
+    public static function getResult($request, $occupancy = 2, $page_size = 12, $getFilters = false, $returnFiltersOnly = false, $ttl_filter = null, $ttl_search = null, $output = null, $preview_date = null, $custom_conditions = [], $allowed_visibilities = [30])
     {
-        $allowed_visibilities = [30];
         $cache_key = md5(serialize(func_get_args()));
         if(isset(self::$_run_time_cache_full[$cache_key])){
             return self::$_run_time_cache_full[$cache_key];

@@ -154,7 +154,7 @@ function ts_detail_hook($data)
         if(!empty($_GET['preview'])){
             $preview_date = new DateTime();
         }
-        $r = Search::getResult($q,2,10,false,false, null, null, null, $preview_date);
+        $r = Search::getResult($q,2,10,false,false, null, null, null, $preview_date, [], [30,60]);
         if (empty($r['total_result'])) {
             WPFunctions::throw404(410); // 410 = page/product has gone
         }
@@ -162,9 +162,10 @@ function ts_detail_hook($data)
         $id_media_objects = [];
         $mediaObjects = [];
         $mediaObjectCachedKeys = [];
+        $id_hidden = false;
         foreach ($r['items'] as $i) {
             $mediaObject = new Pressmind\ORM\Object\MediaObject($i['id_media_object'], false, (!empty($_GET['no_cache']) || !empty($_GET['update_cache'])));
-            if(empty($_GET['preview']) && !in_array($mediaObject->visibility, [30])) {
+            if(empty($_GET['preview']) && !in_array($mediaObject->visibility, [30,60])) {
                 continue;
             }
             $id_media_objects[] = $i['id_media_object'];
@@ -173,6 +174,9 @@ function ts_detail_hook($data)
             }
             if($mediaObject->isCached()){
                 $mediaObjectCachedKeys[] = $mediaObject->getCacheInfo();
+            }
+            if($mediaObject->visibility == 60){
+                $is_hidden = true;
             }
             $mediaObjects[] = $mediaObject;
         }
@@ -214,6 +218,12 @@ function ts_detail_hook($data)
                 foreach($mediaObjects[0]->getPrettyUrls() as $url){
                     echo '<link rel="alternate" hreflang="'.$url->language.'" href="'.SITE_URL.$url->route.'" />'."\r\n";
                 }
+            });
+        }
+        // index or not?
+        if($is_hidden){
+            add_action('wp_head', function () use ($canonical) {
+                echo '<meta name="robots" content="noindex, nofollow">';
             });
         }
         $wp_query->set('media_objects', $mediaObjects);
