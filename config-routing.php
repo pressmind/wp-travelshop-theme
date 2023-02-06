@@ -162,7 +162,7 @@ function ts_detail_hook($data)
         $id_media_objects = [];
         $mediaObjects = [];
         $mediaObjectCachedKeys = [];
-        $id_hidden = false;
+        $is_hidden = false;
         foreach ($r['items'] as $i) {
             $mediaObject = new Pressmind\ORM\Object\MediaObject($i['id_media_object'], false, (!empty($_GET['no_cache']) || !empty($_GET['update_cache'])));
             if(empty($_GET['preview']) && !in_array($mediaObject->visibility, [30,60])) {
