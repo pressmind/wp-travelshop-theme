@@ -10851,5 +10851,9 @@ div.daterangepicker {
   @media (min-width: 768px) {
     .teaser.month-teaser {
       margin-bottom: 30px; } }
+  .teaser.month-teaser > a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
 
 /*# sourceMappingURL=app.css.map */
