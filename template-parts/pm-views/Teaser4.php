@@ -56,7 +56,7 @@ if (empty($filteredParams) === false) {
                     'id_object_type' => $args['id_object_type'],
                 ]);
         ?>
-        <section class="card-travel card-travel-small">
+        <section class="category-travel-card">
 
             <h1 class="card-title">
                 <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
