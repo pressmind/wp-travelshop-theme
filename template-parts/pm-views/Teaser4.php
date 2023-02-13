@@ -48,7 +48,7 @@ if (empty($filteredParams) === false) {
     $args['url'] .= '?' . $query_string;
 }
 ?>
-<article class="<?php echo $args['class']; ?> card-category-travel-wrapper">
+<article class="card-category-travel-wrapper">
        <?php
        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/wishlist-heart.php', [
                     'cheapest_price' => $args['cheapest_price'],
@@ -56,7 +56,7 @@ if (empty($filteredParams) === false) {
                     'id_object_type' => $args['id_object_type'],
                 ]);
         ?>
-        <section class="card-body">
+        <section class="card-travel card-travel-small">
 
             <h1 class="card-title">
                 <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>

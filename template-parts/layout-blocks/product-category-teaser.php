@@ -88,7 +88,7 @@ use Pressmind\Travelshop\Template;
                     if(count($result['items']) > 0){
                     ?>
                         <div class="teaser-body">
-                            <div class="row teaser-products">
+                            <div class="teaser-products">
                                 <?php
                                 foreach ($result['items'] as $item) {
                                     echo Template::render(__DIR__.'/../pm-views/'.($args['view'] ?? 'Teaser4').'.php', $item);
