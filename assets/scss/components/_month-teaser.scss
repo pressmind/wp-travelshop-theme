@@ -58,8 +58,30 @@
       justify-content: space-between;
       align-items: center;
 
+      transition: color .3s;
+
       @include font-size-generator($h5-font-sizes);
       font-weight: $headings-font-weight;
+
+      // -- icon settings
+      svg {
+        width: $h5-font-size; // use h5 font size, cuz of heading size
+        height: $h5-font-size;
+
+        color: $body-color-light;
+        transition: transform .3s;
+      }
+    }
+
+    // -- make block link hover
+    &:hover {
+      div.month-teaser-title {
+        color: $primary;
+
+        svg {
+          transform: translateX(($teaser-spacer-x / 2));
+        }
+      }
     }
   }
 }
