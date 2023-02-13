@@ -10873,7 +10873,11 @@ div.daterangepicker {
   .teaser.month-teaser > a {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    color: inherit;
+    text-decoration: none; }
+    .teaser.month-teaser > a:hover, .teaser.month-teaser > a:focus, .teaser.month-teaser > a:active {
+      text-decoration: none; }
     .teaser.month-teaser > a div.month-teaser-image {
       flex: 0 0 30%;
       width: 100%;
