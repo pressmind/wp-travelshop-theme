@@ -10921,15 +10921,19 @@ div.daterangepicker {
         margin: 0; }
     .teaser.category-product-teaser .teaser-category-image > a:hover, .teaser.category-product-teaser .teaser-category-image > a:focus, .teaser.category-product-teaser .teaser-category-image > a:active {
       text-decoration: none; }
+  .teaser.category-product-teaser .teaser-products .card-category-travel-wrapper {
+    padding: 1.25rem; }
+    .teaser.category-product-teaser .teaser-products .card-category-travel-wrapper + .card-category-travel-wrapper {
+      border-top: 1px solid rgba(0, 0, 0, 0.125); }
   .teaser.category-product-teaser .teaser-products .category-travel-card {
-    padding: 1.25rem;
+    padding: 0;
     font-size: 0.875rem; }
     @media (min-width: 992px) {
       .teaser.category-product-teaser .teaser-products .category-travel-card {
         font-size: 1rem; } }
     .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title {
       font-size: 1rem;
-      margin: 0 0 0.75rem 0; }
+      margin: 0 0 0.25rem 0; }
       .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a {
         color: inherit;
         transition: color .3s;

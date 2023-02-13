@@ -62,9 +62,17 @@
 
   // -- products
   .teaser-products {
-    .category-travel-card {
+
+    .card-category-travel-wrapper {
       padding: $teaser-category-product-spacer-x;
 
+      + .card-category-travel-wrapper {
+        border-top: $teaser-category-product-border-width solid $teaser-category-product-border-color;
+      }
+    }
+
+    .category-travel-card {
+      padding: 0;
 
       @include font-size-generator($teaser-category-product-body-sizes);
 
