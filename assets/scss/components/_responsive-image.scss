@@ -1,9 +1,0 @@
-// -- little helper to make sure image is 100% x auto in responsive elements
-%responsive-image {
-  width: 100% !important;
-  height: auto !important;
-}
-
-.responsive-image {
-  @extend %responsive-image;
-}
