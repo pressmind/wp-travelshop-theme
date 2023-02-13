@@ -1,0 +1,14 @@
+/**
+ * Defines look of month teaser
+ */
+.teaser.month-teaser {
+  @include border-radius($teaser-border-radius);
+  background-color: $teaser-bg;
+  border: $teaser-border-width solid $teaser-border-color;
+
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: $grid-gutter-width;
+  }
+}

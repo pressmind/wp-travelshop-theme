@@ -9992,6 +9992,16 @@ html.force--consent.show--consent body {
  * Travelbox
  */
 /**
+ * Teasers
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+/**
  * Travel cards
  * --------------------------------------------
  * useing bootstrap card variables by default,
@@ -10829,5 +10839,17 @@ div.daterangepicker {
       /**
        * Date row
        */ }
+
+/**
+ * Defines look of month teaser
+ */
+.teaser.month-teaser {
+  border-radius: 0.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 1rem; }
+  @media (min-width: 768px) {
+    .teaser.month-teaser {
+      margin-bottom: 30px; } }
 
 /*# sourceMappingURL=app.css.map */

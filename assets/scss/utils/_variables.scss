@@ -70,6 +70,23 @@ $travel-box-use-break: true !default;
 $travel-box-break: md !default;
 
 
+/**
+ * Teasers
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+$teaser-spacer-y: $card-spacer-y !default;
+$teaser-spacer-x: $card-spacer-x !default;
+$teaser-border-width: $card-border-width !default;
+$teaser-border-radius: $card-border-radius !default;
+$teaser-border-color: $card-border-color !default;
+$teaser-bg: $card-bg !default;
+
 
 /**
  * Travel cards
