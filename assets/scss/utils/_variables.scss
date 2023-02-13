@@ -110,6 +110,20 @@ $teaser-category-product-border-radius: $card-border-radius !default;
 $teaser-category-product-border-color: $card-border-color !default;
 $teaser-category-product-bg: $card-bg !default;
 
+$teaser-category-product-travel-card-title-sizes: (
+        null: 1rem, // 16px
+) !default; // its similar to $h5-font-sizes
+
+$teaser-category-product-body-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+
+$teaser-category-product-travel-card-title-color: $headings-color;
+$teaser-category-product-travel-card-title-hover-color: $primary;
+$teaser-category-product-travel-card-title-active-color: $primary;
+
 /**
  * Travel cards
  * --------------------------------------------

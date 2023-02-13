@@ -65,12 +65,15 @@
     .category-travel-card {
       padding: $teaser-category-product-spacer-x;
 
+
+      @include font-size-generator($teaser-category-product-body-sizes);
+
       h1.card-title {
         // -- set font sizes
-        @include font-size-generator($travel-card-title-sizes);
+        @include font-size-generator($teaser-category-product-travel-card-title-sizes);
 
-        color: $travel-card-title-color;
-        margin: 0 0 $travel-card-spacer-y 0;
+        color: $teaser-category-product-travel-card-title-color;
+        margin: 0 0 $teaser-category-product-spacer-y 0;
 
         // set link settings for better optik + reading / usage
         > a {
@@ -79,11 +82,11 @@
           text-decoration: none;
 
           &:hover {
-            color: $travel-card-title-hover-color;
+            color: $teaser-category-product-travel-card-title-hover-color;
           }
 
           &:active, &:focus {
-            color: $travel-card-title-active-color;
+            color: $teaser-category-product-travel-card-title-active-color;
           }
 
           &:active {
