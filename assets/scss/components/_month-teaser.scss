@@ -11,4 +11,11 @@
   @include media-breakpoint-up(md) {
     margin-bottom: $grid-gutter-width;
   }
+
+  // -- make it 2 column
+  > a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
