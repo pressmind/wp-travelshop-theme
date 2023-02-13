@@ -10894,6 +10894,7 @@ div.daterangepicker {
     display: block;
     color: inherit;
     text-decoration: none;
+    position: relative;
     margin-left: -1px;
     margin-top: -1px;
     margin-bottom: 0;
