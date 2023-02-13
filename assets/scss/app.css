@@ -10870,6 +10870,24 @@ div.daterangepicker {
        */ }
 
 /**
+ * Styling for category product teaser
+ */
+.teaser.category-product-teaser {
+  border-radius: 0.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 1rem; }
+  @media (min-width: 768px) {
+    .teaser.category-product-teaser {
+      margin-bottom: 30px; } }
+  .teaser.category-product-teaser .teaser-category-image > a {
+    display: block;
+    color: inherit;
+    text-decoration: none; }
+    .teaser.category-product-teaser .teaser-category-image > a:hover, .teaser.category-product-teaser .teaser-category-image > a:focus, .teaser.category-product-teaser .teaser-category-image > a:active {
+      text-decoration: none; }
+
+/**
  * Defines look of month teaser
  */
 .teaser.month-teaser {
