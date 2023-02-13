@@ -61,7 +61,7 @@ use Pressmind\Travelshop\Template;
                         <div class="teaser-category-image">
                             <a href="<?php echo $teaser['link'];?>" target="<?php echo !empty($teaser['link_target']) ? $teaser['link_target'] : '_self';?>">
                                 <div class="teaser-image">
-                                    <img src="<?php echo $image; ?>" title="<?php echo !empty($teaser['headline']) ? $teaser['headline'] : ''; ?>" />
+                                    <img src="<?php echo $image; ?>" loading="lazy" title="<?php echo !empty($teaser['headline']) ? $teaser['headline'] : ''; ?>" />
                                 </div>
                                 <div class="teaser-body">
                                     <?php if(!empty($teaser['headline'])){ ?>
