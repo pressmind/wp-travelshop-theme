@@ -100,8 +100,7 @@ $price-small-color: $body-color !default;
 $price-small-price-color: $headings-color !default;
 $price-small-price-font-weight: $font-weight-bold !default;
 $price-small-font-sizes: (
-        null: $font-size-sm,
-        lg: $font-size-base
+        null: $font-size-sm
 ) !default;
 $price-small-price-font-sizes: (
         null: $font-size-base,
