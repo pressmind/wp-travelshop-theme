@@ -19,6 +19,22 @@
       color: inherit;
       text-decoration: none;
 
+      @if $teaser-category-product-border-width != 0 {
+        margin-left: -$teaser-category-product-border-width;
+        margin-top: -$teaser-category-product-border-width;
+        margin-bottom: 0;
+        margin-right: -$teaser-category-product-border-width;
+      }
+
+      .teaser-image {
+        @include border-top-radius($teaser-category-product-border-radius);
+        @include aspect-ratio(16, 10);
+
+        overflow: hidden;
+
+        @extend %media-cover;
+      }
+
       // - reset link behaviour to prevent unwondated underlines by hovering block link
       &:hover, &:focus, &:active {
         text-decoration: none;
