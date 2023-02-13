@@ -65,6 +65,18 @@
 
     .card-category-travel-wrapper {
       padding: $teaser-category-product-spacer-x;
+      position: relative;
+
+      .add-to-wishlist {
+        position: absolute;
+
+        // -- simple calculation to position in "border" of contents of card
+        // -- this makes the aligment of icon inside similar to the size of $travel-card-spacer-x
+        top: ($teaser-category-product-spacer-x - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+        right: ($teaser-category-product-spacer-x - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+
+        z-index: 2;
+      }
 
       + .card-category-travel-wrapper {
         border-top: $teaser-category-product-border-width solid $teaser-category-product-border-color;
@@ -88,6 +100,8 @@
           color: inherit;
           transition: color .3s;
           text-decoration: none;
+
+          padding-right: $add-to-wishlist-size;
 
           &:hover {
             color: $teaser-category-product-travel-card-title-hover-color;

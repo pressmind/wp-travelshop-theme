@@ -10922,7 +10922,13 @@ div.daterangepicker {
     .teaser.category-product-teaser .teaser-category-image > a:hover, .teaser.category-product-teaser .teaser-category-image > a:focus, .teaser.category-product-teaser .teaser-category-image > a:active {
       text-decoration: none; }
   .teaser.category-product-teaser .teaser-products .card-category-travel-wrapper {
-    padding: 1.25rem; }
+    padding: 1.25rem;
+    position: relative; }
+    .teaser.category-product-teaser .teaser-products .card-category-travel-wrapper .add-to-wishlist {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 2; }
     .teaser.category-product-teaser .teaser-products .card-category-travel-wrapper + .card-category-travel-wrapper {
       border-top: 1px solid rgba(0, 0, 0, 0.125); }
   .teaser.category-product-teaser .teaser-products .category-travel-card {
@@ -10937,7 +10943,8 @@ div.daterangepicker {
       .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a {
         color: inherit;
         transition: color .3s;
-        text-decoration: none; }
+        text-decoration: none;
+        padding-right: 2rem; }
         .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:hover {
           color: #007bff; }
         .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active, .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:focus {
