@@ -10882,12 +10882,11 @@ div.daterangepicker {
       flex: 0 0 30%;
       width: 100%;
       max-width: 30%;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
       margin-left: -1px;
       margin-top: -1px;
       margin-bottom: -1px; }
-      .teaser.month-teaser > a div.month-teaser-image > img {
-        border-top-left-radius: 0.25rem;
-        border-bottom-left-radius: 0.25rem; }
     .teaser.month-teaser > a div.month-teaser-title {
       flex: 1;
       padding: 1.25rem;

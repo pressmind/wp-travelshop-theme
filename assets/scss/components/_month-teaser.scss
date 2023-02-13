@@ -33,6 +33,8 @@
       width: 100%;
       max-width: 30%;
 
+      @include border-left-radius($teaser-border-radius);
+
       @if $teaser-border-width != 0 {
           margin-left: -$teaser-border-width;
           margin-top: -$teaser-border-width;
@@ -40,10 +42,6 @@
       }
 
       @extend %media-cover;
-
-      > img {
-        @include border-left-radius($teaser-border-radius);
-      }
     }
 
     div.month-teaser-title {
