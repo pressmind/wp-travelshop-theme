@@ -29,8 +29,9 @@
           margin-bottom: -$teaser-border-width;
       }
 
+      @extend %media-cover;
+
       > img {
-        @extend %media-responsive;
         @include border-left-radius($teaser-border-radius);
       }
     }

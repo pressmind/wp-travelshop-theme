@@ -10168,9 +10168,17 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
-.teaser.month-teaser > a div.month-teaser-image > img {
-  width: 100%;
-  height: auto; }
+.teaser.month-teaser > a div.month-teaser-image {
+  position: relative; }
+  .teaser.month-teaser > a div.month-teaser-image > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
 
 .dropdown .dropdown-toggle:after {
   display: none; }
