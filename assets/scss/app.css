@@ -10903,8 +10903,9 @@ div.daterangepicker {
         .teaser.month-teaser > a div.month-teaser-title {
           font-size: 1.25rem; } }
       .teaser.month-teaser > a div.month-teaser-title svg {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        opacity: .5;
         color: #434b53;
         transition: transform .3s; }
     .teaser.month-teaser > a:hover div.month-teaser-title {

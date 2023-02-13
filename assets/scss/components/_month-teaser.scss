@@ -65,8 +65,10 @@
 
       // -- icon settings
       svg {
-        width: $h5-font-size; // use h5 font size, cuz of heading size
-        height: $h5-font-size;
+        width: 1.5rem;
+        height: 1.5rem;
+
+        opacity: .5;
 
         color: $body-color-light;
         transition: transform .3s;
