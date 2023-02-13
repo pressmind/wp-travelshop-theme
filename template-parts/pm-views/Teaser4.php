@@ -84,7 +84,7 @@ if (empty($filteredParams) === false) {
                                  <?php
                                  echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
                                      'duration' => $args['cheapest_price']->duration,
-                                     'suffix' => 'Reise'
+                                     'suffix' => ' Reise'
                                  ]);
                                  ?>
                             </span><br>
