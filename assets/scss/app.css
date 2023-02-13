@@ -10951,6 +10951,11 @@ div.daterangepicker {
           color: #007bff; }
         .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active {
           text-decoration: underline; }
+    .teaser.category-product-teaser .teaser-products .category-travel-card .price-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline; }
 
 /**
  * Defines look of month teaser
