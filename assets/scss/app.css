@@ -10168,6 +10168,10 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
+.teaser.month-teaser > a div.month-teaser-image > img {
+  width: 100%;
+  height: auto; }
+
 .dropdown .dropdown-toggle:after {
   display: none; }
 
@@ -10855,5 +10859,17 @@ div.daterangepicker {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap; }
+    .teaser.month-teaser > a div.month-teaser-image {
+      flex: 0 0 30%;
+      width: 100%;
+      max-width: 30%;
+      margin-left: -1px;
+      margin-top: -1px;
+      margin-bottom: -1px; }
+      .teaser.month-teaser > a div.month-teaser-image > img {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem; }
+    .teaser.month-teaser > a div.month-teaser-title {
+      flex: 1; }
 
 /*# sourceMappingURL=app.css.map */
