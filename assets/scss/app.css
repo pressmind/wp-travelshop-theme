@@ -10169,7 +10169,8 @@ body.fl-builder .content-block.content-page {
   padding-top: 0 !important; }
 
 .media-cover, .teaser.month-teaser > a div.month-teaser-image {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .media-cover > img, .teaser.month-teaser > a div.month-teaser-image > img {
     position: absolute;
     left: 0;
@@ -10179,6 +10180,12 @@ body.fl-builder .content-block.content-page {
     object-fit: cover;
     width: 100%;
     height: 100%; }
+
+.media-hover-scale img, .teaser.month-teaser > a img {
+  transition: transform .3s;
+  transform: scale(0); }
+.media-hover-scale:hover img, .teaser.month-teaser > a:hover img {
+  transition: scale 1.1; }
 
 .responsive-image {
   width: 100% !important;
@@ -10878,6 +10885,12 @@ div.daterangepicker {
         border-top-left-radius: 0.25rem;
         border-bottom-left-radius: 0.25rem; }
     .teaser.month-teaser > a div.month-teaser-title {
-      flex: 1; }
+      flex: 1;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      flex-direction: row;
+      gap: .5rem;
+      justify-content: space-between;
+      align-items: center; }
 
 /*# sourceMappingURL=app.css.map */
