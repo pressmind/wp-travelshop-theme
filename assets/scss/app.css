@@ -10002,6 +10002,16 @@ html.force--consent.show--consent body {
  * cards.
  */
 /**
+ * Category product teaser
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+/**
  * Travel cards
  * --------------------------------------------
  * useing bootstrap card variables by default,

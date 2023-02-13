@@ -87,6 +87,22 @@ $teaser-border-radius: $card-border-radius !default;
 $teaser-border-color: $card-border-color !default;
 $teaser-bg: $card-bg !default;
 
+/**
+ * Category product teaser
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+$teaser-category-product-spacer-y: $card-spacer-y !default;
+$teaser-category-product-spacer-x: $card-spacer-x !default;
+$teaser-category-product-border-width: $card-border-width !default;
+$teaser-category-product-border-radius: $card-border-radius !default;
+$teaser-category-product-border-color: $card-border-color !default;
+$teaser-category-product-bg: $card-bg !default;
 
 /**
  * Travel cards

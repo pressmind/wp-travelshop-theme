@@ -56,7 +56,7 @@ use Pressmind\Travelshop\Template;
                 $image = !empty($teaser['image']) ? $teaser['image'] : get_stylesheet_directory_uri() . '/assets/img/slide-1-mobile.jpg';
                 ?>
                 <div class="col-12 col-sm-6 <?php echo 'col-lg-'.(12/$args['teaser_count_desktop']); ?>">
-                    <article class="teaser category-teaser">
+                    <article class="teaser category-product-teaser">
 
                         <div class="teaser-category-image">
                             <a href="<?php echo $teaser['link'];?>" target="<?php echo !empty($teaser['link_target']) ? $teaser['link_target'] : '_self';?>">
