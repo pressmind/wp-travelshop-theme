@@ -59,4 +59,38 @@
       }
     }
   }
+
+  // -- products
+  .teaser-products {
+    .category-travel-card {
+      padding: $teaser-category-product-spacer-x;
+
+      h1.card-title {
+        // -- set font sizes
+        @include font-size-generator($travel-card-title-sizes);
+
+        color: $travel-card-title-color;
+        margin: 0 0 $travel-card-spacer-y 0;
+
+        // set link settings for better optik + reading / usage
+        > a {
+          color: inherit;
+          transition: color .3s;
+          text-decoration: none;
+
+          &:hover {
+            color: $travel-card-title-hover-color;
+          }
+
+          &:active, &:focus {
+            color: $travel-card-title-active-color;
+          }
+
+          &:active {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }

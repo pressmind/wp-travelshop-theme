@@ -10920,6 +10920,24 @@ div.daterangepicker {
         margin: 0; }
     .teaser.category-product-teaser .teaser-category-image > a:hover, .teaser.category-product-teaser .teaser-category-image > a:focus, .teaser.category-product-teaser .teaser-category-image > a:active {
       text-decoration: none; }
+  .teaser.category-product-teaser .teaser-products .category-travel-card {
+    padding: 1.25rem; }
+    .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title {
+      font-size: 1rem;
+      margin: 0 0 0.75rem 0; }
+      @media (min-width: 992px) {
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title {
+          font-size: 1.25rem; } }
+      .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a {
+        color: inherit;
+        transition: color .3s;
+        text-decoration: none; }
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:hover {
+          color: #007bff; }
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active, .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:focus {
+          color: #007bff; }
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active {
+          text-decoration: underline; }
 
 /**
  * Defines look of month teaser
