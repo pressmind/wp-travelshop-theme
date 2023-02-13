@@ -10389,6 +10389,7 @@ body.fl-builder .content-block.content-page {
   flex-wrap: nowrap;
   align-items: center;
   gap: 0.25rem;
+  line-height: 1;
   padding: 0.375rem 0.6em;
   border-radius: 10rem;
   background-color: #e9ecef; }
