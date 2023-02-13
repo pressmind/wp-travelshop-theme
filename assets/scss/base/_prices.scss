@@ -1,0 +1,16 @@
+%price-small {
+  color: $price-small-color;
+  @include font-size-generator($price-small-font-sizes);
+
+  small {
+    color: $price-small-color;
+    @include font-size-generator($price-small-font-sizes);
+  }
+
+  strong {
+    color: $price-small-price-color;
+    font-weight: $price-small-price-font-weight;
+
+    @include font-size-generator($price-small-price-font-sizes);
+  }
+}

@@ -122,6 +122,19 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
+
+        .product-price {
+          display: flex;
+          align-items: baseline;
+          color: inherit;
+          text-decoration: none;
+
+          &:hover, &:focus, &:active {
+            text-decoration: none;
+          }
+
+          @extend %price-small;
+        }
       }
     }
   }

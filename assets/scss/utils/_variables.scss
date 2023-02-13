@@ -94,6 +94,21 @@ $teaser-border-color: $card-border-color !default;
 $teaser-bg: $card-bg !default;
 
 /**
+ * Price settings
+ */
+$price-small-color: $body-color !default;
+$price-small-price-color: $headings-color !default;
+$price-small-price-font-weight: $font-weight-bold !default;
+$price-small-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+$price-small-price-font-sizes: (
+        null: $font-size-base,
+        lg: $font-size-lg
+) !default;
+
+/**
  * Category product teaser
  * --------------------------------------------
  * useing bootstrap card variables by default,

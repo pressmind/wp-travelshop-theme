@@ -10005,6 +10005,9 @@ html.force--consent.show--consent body {
  * cards.
  */
 /**
+ * Price settings
+ */
+/**
  * Category product teaser
  * --------------------------------------------
  * useing bootstrap card variables by default,
@@ -10210,6 +10213,25 @@ body.fl-builder .content-block.content-page {
 .responsive-image {
   width: 100% !important;
   height: auto !important; }
+
+.teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price {
+  color: #212529;
+  font-size: 0.875rem; }
+  @media (min-width: 992px) {
+    .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price {
+      font-size: 1rem; } }
+  .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price small {
+    color: #212529;
+    font-size: 0.875rem; }
+    @media (min-width: 992px) {
+      .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price small {
+        font-size: 1rem; } }
+  .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price strong {
+    font-weight: 700;
+    font-size: 1rem; }
+    @media (min-width: 992px) {
+      .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price strong {
+        font-size: 1.125rem; } }
 
 .dropdown .dropdown-toggle:after {
   display: none; }
@@ -10956,6 +10978,13 @@ div.daterangepicker {
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline; }
+      .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price {
+        display: flex;
+        align-items: baseline;
+        color: inherit;
+        text-decoration: none; }
+        .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price:hover, .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price:focus, .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price:active {
+          text-decoration: none; }
 
 /**
  * Defines look of month teaser
