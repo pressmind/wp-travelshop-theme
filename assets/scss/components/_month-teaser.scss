@@ -41,14 +41,17 @@
     div.month-teaser-title {
       flex: 1;
 
-      padding: $teaser-spacer-y $teaser-spacer-x;
+      padding: $teaser-spacer-x;
       display: flex;
       flex-direction: row;
 
-      gap: .5rem;
+      gap: $teaser-spacer-y;
 
       justify-content: space-between;
       align-items: center;
+
+      @include font-size-generator($h5-font-sizes);
+      font-weight: $headings-font-weight;
     }
   }
 }

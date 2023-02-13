@@ -10183,9 +10183,9 @@ body.fl-builder .content-block.content-page {
 
 .media-hover-scale img, .teaser.month-teaser > a img {
   transition: transform .3s;
-  transform: scale(0); }
+  transform: scale(1); }
 .media-hover-scale:hover img, .teaser.month-teaser > a:hover img {
-  transition: scale 1.1; }
+  transform: scale(1.1); }
 
 .responsive-image {
   width: 100% !important;
@@ -10886,11 +10886,16 @@ div.daterangepicker {
         border-bottom-left-radius: 0.25rem; }
     .teaser.month-teaser > a div.month-teaser-title {
       flex: 1;
-      padding: 0.75rem 1.25rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: row;
-      gap: .5rem;
+      gap: 0.75rem;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500; }
+      @media (min-width: 992px) {
+        .teaser.month-teaser > a div.month-teaser-title {
+          font-size: 1.25rem; } }
 
 /*# sourceMappingURL=app.css.map */
