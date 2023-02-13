@@ -95,13 +95,13 @@
         color: $teaser-category-product-travel-card-title-color;
         margin: 0 0 $teaser-category-product-spacer-y 0;
 
+        padding-right: $add-to-wishlist-size;
+
         // set link settings for better optik + reading / usage
         > a {
           color: inherit;
           transition: color .3s;
           text-decoration: none;
-
-          padding-right: $add-to-wishlist-size;
 
           &:hover {
             color: $teaser-category-product-travel-card-title-hover-color;
