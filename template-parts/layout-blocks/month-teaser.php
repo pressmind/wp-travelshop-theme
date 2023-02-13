@@ -75,13 +75,11 @@ if (empty($travel_months)) {
                             <a href='<?php echo RouteHelper::get_url_by_object_type($args['id_object_type']) . '/?pm-o=date_departure-asc&pm-dr='.$item['from']->format('Ymd').'-'.$item['to']->format('Ymd'); ?>'
                                title="<?php echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', ['date' => $item['from']]); ?>">
                                 <div class="month-teaser-image">
-                                    <div>
                                         <img src="<?php echo $image_url; ?>"
                                                  title="<?php echo $image_copyright; ?>"
                                                  alt="<?php echo strip_tags($mo->name); ?>"
                                                  class=""
                                                  loading="lazy">
-                                    </div>
                                 </div>
                                 <div class="month-teaser-title">
                                     <?php
