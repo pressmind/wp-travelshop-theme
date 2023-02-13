@@ -8,8 +8,11 @@
   }
 
   strong {
-    color: $price-small-price-color;
     font-weight: $price-small-price-font-weight;
+  }
+
+  > strong {
+    color: $price-small-price-color;
 
     @include font-size-generator($price-small-price-font-sizes);
   }
