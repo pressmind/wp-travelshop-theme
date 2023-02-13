@@ -20,6 +20,12 @@ $body-color-light: lighten($body-color, 15%) !default;
 $body-bg-highlight: $gray-200 !default;
 
 /**
+ * Text on image
+ */
+$text-on-image-color: #fff !default;
+$text-on-image-shadow: 0 0 .5rem rgba(#000, .5) !default;
+
+/**
  * Headlines
  */
 

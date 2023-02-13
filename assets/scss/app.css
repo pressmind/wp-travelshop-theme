@@ -9986,6 +9986,9 @@ html.force--consent.show--consent body {
  * Body
  */
 /**
+ * Text on image
+ */
+/**
  * Headlines
  */
 /**
@@ -10075,6 +10078,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.2; }
+
+.teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title {
+  color: #fff;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5); }
 
 h1, .h1 {
   font-size: 1.25rem; }
@@ -10901,6 +10908,15 @@ div.daterangepicker {
         content: "";
         width: 100%;
         padding-top: 62.5%; }
+    .teaser.category-product-teaser .teaser-category-image > a .teaser-body {
+      padding: 1.25rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2; }
+      .teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title {
+        margin: 0; }
     .teaser.category-product-teaser .teaser-category-image > a:hover, .teaser.category-product-teaser .teaser-category-image > a:focus, .teaser.category-product-teaser .teaser-category-image > a:active {
       text-decoration: none; }
 

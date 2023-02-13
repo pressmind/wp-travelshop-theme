@@ -35,6 +35,23 @@
         @extend %media-cover;
       }
 
+      .teaser-body {
+        padding: $teaser-category-product-spacer-x;
+
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+
+        z-index: 2;
+
+        .teaser-title {
+          margin: 0;
+
+          @extend %text-on-image;
+        }
+      }
+
       // - reset link behaviour to prevent unwondated underlines by hovering block link
       &:hover, &:focus, &:active {
         text-decoration: none;
