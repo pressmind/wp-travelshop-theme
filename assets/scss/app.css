@@ -10181,10 +10181,10 @@ body.fl-builder .content-block.content-page {
     width: 100%;
     height: 100%; }
 
-.media-hover-scale img, .teaser.month-teaser > a img {
+.media-hover-scale img {
   transition: transform .3s;
   transform: scale(1); }
-.media-hover-scale:hover img, .teaser.month-teaser > a:hover img {
+.media-hover-scale:hover img {
   transform: scale(1.1); }
 
 .responsive-image {
