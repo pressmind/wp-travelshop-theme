@@ -140,7 +140,9 @@
     &.is--open {
 
       button.toggle-second-level {
-        transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2)) scaleY(-1);
+        svg {
+          transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2)) scaleY(-1);
+        }
       }
 
       .list-filter-second-level {
