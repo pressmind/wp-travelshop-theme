@@ -40,7 +40,7 @@
 
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
-    top: ( ( $font-size-base - ($font-size-base * $line-height-base) ) / 2 );
+    top: ( ( ($font-size-base * $line-height-base) - $font-size-base ) / 2 );
 
     @if ( $custom-checkbox-input-border-width != 0 ) {
       border: $custom-checkbox-input-border-width solid $custom-checkbox-input-border-color;

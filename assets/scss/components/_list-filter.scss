@@ -14,27 +14,27 @@
 
       .list-filter-box {
 
+        // -- category definition, board-type definition, transport-type definition
+        &.category-tree,
+        &.board-type,
+        &.transport-typ {
+          .category-tree-field-items {
+            .form-check {
+              @extend %custom-checkbox;
+
+              + .form-check {
+                margin-top: $custom-checkbox-spacer;
+              }
+            }
+          }
+        }
+
         + .list-filter-box {
           padding-top: $filter-spacer-y;
 
           @if ( $filter-box-divider ) {
             margin-top: $filter-spacer-y;
             border-top: $filter-box-divider-width solid $filter-box-divider-color;
-          }
-
-          // -- category definition, board-type definition, transport-type definition
-          &.category-tree,
-          &.board-type,
-          &.transport-typ {
-            .category-tree-field-items {
-              .form-check {
-                @extend %custom-checkbox;
-
-                + .form-check {
-                  margin-top: $custom-checkbox-spacer;
-                }
-              }
-            }
           }
         }
       }
