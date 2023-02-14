@@ -10247,15 +10247,15 @@ body.fl-builder .content-block.content-page {
  * as placeholders. These are defined by variables + extended
  * in every state/position wich needs this styling
  */
-.content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check {
+.content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 0.25rem;
   cursor: pointer; }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check input[type='checkbox'] {
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check input[type='checkbox'] {
     display: none; }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check > span {
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check > span {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
@@ -10265,7 +10265,7 @@ body.fl-builder .content-block.content-page {
     background-color: #fff;
     border: 1px solid #adb5bd;
     transition: background-color .3s, border-color .3s; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check > span svg {
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check > span svg {
       width: 0.875rem;
       height: 0.875rem;
       display: none;
@@ -10275,16 +10275,16 @@ body.fl-builder .content-block.content-page {
       top: 50%;
       left: 50%;
       transform: translate(-0.4375rem, -0.4375rem); }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check:hover > span {
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check:hover > span {
     background-color: #fff;
     border: 1px solid #007bff; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check:hover > span svg {
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check:hover > span svg {
       display: none;
       color: #fff; }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check input:checked + span {
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check input:checked + span {
     background-color: #007bff;
     border: 1px solid #007bff; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box .category-tree .category-tree-field-items .form-check input:checked + span svg {
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check input:checked + span svg {
       display: block;
       color: #fff; }
 

@@ -23,7 +23,7 @@
           }
 
           // -- category definition
-          .category-tree {
+          &.category-tree {
             .category-tree-field-items {
               .form-check {
                 @extend %custom-checkbox;
