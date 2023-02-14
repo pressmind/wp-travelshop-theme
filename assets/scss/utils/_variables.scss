@@ -86,6 +86,7 @@ $travel-box-break: md !default;
 // -- checkbox ( used for category tree checkboxes )
 
 $custom-checkbox-gutter: .5rem !default; // defines spacing between label and input
+$custom-checkbox-spacer: .25rem !default; // Defines spacing between 2 elements
 $custom-checkbox-input-border-radius: $custom-checkbox-indicator-border-radius !default;
 $custom-checkbox-input-size: $font-size-base !default; // little calculation to make it fitting to font size
 $custom-checkbox-input-icon-size: $font-size-sm !default;

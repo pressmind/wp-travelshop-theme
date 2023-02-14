@@ -31,7 +31,7 @@
                 @extend %custom-checkbox;
 
                 + .form-check {
-                  margin-top: $custom-checkbox-gutter;
+                  margin-top: $custom-checkbox-spacer;
                 }
               }
             }
