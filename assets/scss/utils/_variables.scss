@@ -83,11 +83,15 @@ $travel-box-break: md !default;
  * global bootstrap variables
  */
 $filter-border-radius: $border-radius !default;
-$filter-border-width: 1px !default;
+$filter-border-width: 0 !default;
 $filter-border-color: black !default;
 $filter-bg: $body-bg-highlight !default;
 $filter-spacer-x: $card-spacer-x !default;
 $filter-spacer-y: $card-spacer-y !default;
+
+$filter-mobile-view: true !default;
+$filter-mobile-break: md !default;
+$filter-mobile-view-type: 'modal' !default; // you can choose between 'apple-like' ( drop op ), 'modal' and 'offcanvas' it only changes filter wrapper style/animation in open-state
 
 
 /**

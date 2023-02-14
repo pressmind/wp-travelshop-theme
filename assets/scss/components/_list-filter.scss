@@ -2,7 +2,11 @@
   .list-filter {
     border-radius: $filter-border-radius;
     background-color: $filter-bg;
-    border: $filter-border-width solid $filter-border-color;
     padding: $filter-spacer-x;
+
+    // -- border only if not 0
+    @if ( $filter-border-width != 0 ) {
+      border: $filter-border-width solid $filter-border-color;
+    }
   }
 }
