@@ -10253,7 +10253,7 @@ body.fl-builder .content-block.content-page {
 .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding-left: 0;
   gap: 0.5rem;
   cursor: pointer; }
