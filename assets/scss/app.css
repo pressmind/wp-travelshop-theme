@@ -10235,6 +10235,11 @@ body.fl-builder .content-block.content-page {
       .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price > strong {
         font-size: 1.125rem; } }
 
+/**
+ * in this section essentials for form types are defined
+ * as placeholders. These are defined by variables + extended
+ * in every state/position wich needs this styling
+ */
 .dropdown .dropdown-toggle:after {
   display: none; }
 
@@ -11045,5 +11050,9 @@ div.daterangepicker {
   border-radius: 0.25rem;
   background-color: #e9ecef;
   padding: 1.25rem; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    border-top: 1px solid #dee2e6; }
 
 /*# sourceMappingURL=app.css.map */
