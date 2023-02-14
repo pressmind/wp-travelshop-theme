@@ -24,8 +24,11 @@
   // custom input
   > span {
     display: block;
-    width: $custom-checkbox-input-size;
+
+    width: 100%;
     height: $custom-checkbox-input-size;
+    max-width: $custom-checkbox-input-size;
+    flex: 0 0 $custom-checkbox-input-size;
 
     position: relative;
 
