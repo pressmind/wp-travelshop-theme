@@ -42,7 +42,6 @@
     border-radius: $custom-checkbox-input-border-radius;
     background-color: $custom-checkbox-input-bg;
 
-
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
     top: ( ( ($font-size-base * $line-height-base) - $font-size-base ) / 2 );
@@ -107,12 +106,25 @@
       @include button-reset();
 
       width: 100%;
+      height: $custom-checkbox-input-size;
       max-width: $custom-checkbox-input-size;
       flex: 0 0 $custom-checkbox-input-size;
+
+      position: relative;
+
+      // offset top to make it center with first line
+      // little calculation based on font size base and lineheight
+      top: ( ( ($font-size-base * $line-height-base) - $font-size-base ) / 2 );
 
       svg {
         width: $custom-checkbox-input-icon-size;
         height: $custom-checkbox-input-icon-size;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2));
       }
     }
   }
@@ -122,6 +134,8 @@
     flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
+
+    padding-top: $custom-checkbox-spacer;
 
     // padding left, icon input size + gutter
     padding-left: ( $custom-checkbox-input-size + $custom-checkbox-gutter );
