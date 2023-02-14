@@ -124,6 +124,8 @@
         top: 50%;
         left: 50%;
 
+        transition: transform .3s;
+
         transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2));
       }
     }
@@ -134,7 +136,13 @@
     }
 
     // -- show if open state
+    //    and icon state if opened
     &.is--open {
+
+      button.toggle-second-level {
+        transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2)) scaleY(-1);
+      }
+
       .list-filter-second-level {
         display: block;
       }
