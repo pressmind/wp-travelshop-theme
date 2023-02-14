@@ -116,4 +116,14 @@
       }
     }
   }
+
+  // second level definition
+  .list-filter-second-level {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+
+    // padding left, icon input size + gutter
+    padding-left: ( $custom-checkbox-input-size + $custom-checkbox-gutter );
+  }
 }

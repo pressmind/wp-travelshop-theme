@@ -10308,6 +10308,11 @@ body.fl-builder .content-block.content-page {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
       width: 0.875rem;
       height: 0.875rem; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1.5rem; }
 
 .dropdown .dropdown-toggle:after {
   display: none; }
