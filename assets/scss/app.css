@@ -10299,7 +10299,13 @@ body.fl-builder .content-block.content-page {
     outline: none;
     box-shadow: none;
     background: transparent;
-    padding: 0; }
+    padding: 0;
+    width: 100%;
+    max-width: 1rem;
+    flex: 0 0 1rem; }
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
+      width: 0.875rem;
+      height: 0.875rem; }
 
 .dropdown .dropdown-toggle:after {
   display: none; }

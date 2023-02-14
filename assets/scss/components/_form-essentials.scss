@@ -97,8 +97,18 @@
   // additional if second level exists. toggle button
 
   &.has-second-level {
+    // uses definitions of input check. to make it even in styling / sizes
     button.toggle-second-level {
       @include button-reset();
+
+      width: 100%;
+      max-width: $custom-checkbox-input-size;
+      flex: 0 0 $custom-checkbox-input-size;
+
+      svg {
+        width: $custom-checkbox-input-icon-size;
+        height: $custom-checkbox-input-icon-size;
+      }
     }
   }
 }
