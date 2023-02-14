@@ -5,10 +5,11 @@
  */
 
 %custom-checkbox {
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+
+  padding-left: 0;
 
   gap: $custom-checkbox-gutter;
 

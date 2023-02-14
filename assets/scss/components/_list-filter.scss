@@ -29,12 +29,15 @@
             .category-tree-field-items {
               .form-check {
                 @extend %custom-checkbox;
+
+                + .form-check {
+                  margin-top: $custom-checkbox-gutter;
+                }
               }
             }
           }
         }
       }
-
     }
   }
 }

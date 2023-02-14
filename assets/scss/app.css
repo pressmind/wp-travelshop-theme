@@ -10251,14 +10251,15 @@ body.fl-builder .content-block.content-page {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 0.25rem;
+  padding-left: 0;
+  gap: 0.5rem;
   cursor: pointer; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.board-type .category-tree-field-items .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.transport-typ .category-tree-field-items .form-check input[type='checkbox'] {
     display: none; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.board-type .category-tree-field-items .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.transport-typ .category-tree-field-items .form-check > span {
     display: block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
     position: relative;
     line-height: 0;
     border-radius: 0.25rem;
@@ -11102,5 +11103,7 @@ div.daterangepicker {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.category-tree .category-tree-field-items .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.board-type .category-tree-field-items .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box.transport-typ .category-tree-field-items .form-check + .form-check {
+      margin-top: 0.5rem; }
 
 /*# sourceMappingURL=app.css.map */
