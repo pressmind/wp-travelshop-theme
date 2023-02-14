@@ -1,0 +1,8 @@
+.content-block.content-block-list-filter {
+  .list-filter {
+    border-radius: $filter-border-radius;
+    background-color: $filter-bg;
+    border: $filter-border-width solid $filter-border-color;
+    padding: $filter-spacer-x;
+  }
+}

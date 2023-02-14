@@ -9995,6 +9995,13 @@ html.force--consent.show--consent body {
  * Travelbox
  */
 /**
+ * Filter
+ * --------------------------------------------
+ * filter is using various bootstrap varialbes
+ * for styling to make filter style change by
+ * global bootstrap variables
+ */
+/**
  * Teasers
  * --------------------------------------------
  * useing bootstrap card variables by default,
@@ -11033,5 +11040,11 @@ div.daterangepicker {
       color: #007bff; }
       .teaser.month-teaser > a:hover div.month-teaser-title svg {
         transform: translateX(0.625rem); }
+
+.content-block.content-block-list-filter .list-filter {
+  border-radius: 0.25rem;
+  background-color: #e9ecef;
+  border: 1px solid black;
+  padding: 1.25rem; }
 
 /*# sourceMappingURL=app.css.map */

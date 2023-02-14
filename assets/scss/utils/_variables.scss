@@ -75,6 +75,20 @@ $h6-font-sizes: (
 $travel-box-use-break: true !default;
 $travel-box-break: md !default;
 
+/**
+ * Filter
+ * --------------------------------------------
+ * filter is using various bootstrap varialbes
+ * for styling to make filter style change by
+ * global bootstrap variables
+ */
+$filter-border-radius: $border-radius !default;
+$filter-border-width: 1px !default;
+$filter-border-color: black !default;
+$filter-bg: $body-bg-highlight !default;
+$filter-spacer-x: $card-spacer-x !default;
+$filter-spacer-y: $card-spacer-y !default;
+
 
 /**
  * Teasers
