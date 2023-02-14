@@ -22,8 +22,10 @@
             border-top: $filter-box-divider-width solid $filter-box-divider-color;
           }
 
-          // -- category definition
-          &.category-tree {
+          // -- category definition, board-type definition, transport-type definition
+          &.category-tree,
+          &.board-type,
+          &.transport-type {
             .category-tree-field-items {
               .form-check {
                 @extend %custom-checkbox;
