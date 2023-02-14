@@ -127,6 +127,18 @@
         transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2));
       }
     }
+
+    // -- hide by default
+    .list-filter-second-level {
+      display: none;
+    }
+
+    // -- show if open state
+    &.is--open {
+      .list-filter-second-level {
+        display: block;
+      }
+    }
   }
 
   // second level definition

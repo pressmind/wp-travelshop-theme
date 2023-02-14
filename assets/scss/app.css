@@ -10315,6 +10315,10 @@ body.fl-builder .content-block.content-page {
       top: 50%;
       left: 50%;
       transform: translate(-0.4375rem, -0.4375rem); }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check .list-filter-second-level {
+    display: none; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check .list-filter-second-level {
+    display: block; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
     flex: 0 0 100%;
     width: 100%;
