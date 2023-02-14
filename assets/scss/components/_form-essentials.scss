@@ -21,6 +21,11 @@
     display: none;
   }
 
+  // label
+  > label {
+    flex: 1;
+  }
+
   // custom input
   > span {
     display: block;
