@@ -135,7 +135,7 @@
     width: 100%;
     max-width: 100%;
 
-    padding-top: $custom-checkbox-spacer;
+    margin-top: ( $custom-checkbox-spacer - $custom-checkbox-gutter );
 
     // padding left, icon input size + gutter
     padding-left: ( $custom-checkbox-input-size + $custom-checkbox-gutter );

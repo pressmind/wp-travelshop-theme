@@ -10319,7 +10319,7 @@ body.fl-builder .content-block.content-page {
     flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
-    padding-top: 0.25rem;
+    margin-top: -0.25rem;
     padding-left: 1.5rem; }
 
 .dropdown .dropdown-toggle:after {
