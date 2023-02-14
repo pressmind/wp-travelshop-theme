@@ -21,6 +21,15 @@
             margin-top: $filter-spacer-y;
             border-top: $filter-box-divider-width solid $filter-box-divider-color;
           }
+
+          // -- category definition
+          .category-tree {
+            .category-tree-field-items {
+              .form-check {
+                @extend %custom-checkbox;
+              }
+            }
+          }
         }
       }
 

@@ -76,6 +76,35 @@ $travel-box-use-break: true !default;
 $travel-box-break: md !default;
 
 /**
+ * Custom form items
+ * --------------------------------------------
+ * defines various custom form items globally,
+ * to change them without searching scss/overriding
+ * it manually.
+ */
+
+// -- checkbox ( used for category tree checkboxes )
+
+$custom-checkbox-gutter: .25rem !default; // defines spacing between label and input
+$custom-checkbox-input-border-radius: $custom-checkbox-indicator-border-radius !default;
+$custom-checkbox-input-size: $font-size-base * $line-height-base !default; // little calculation to make it fitting to font size
+$custom-checkbox-input-icon-size: $font-size-sm !default;
+$custom-checkbox-input-bg: $custom-control-indicator-bg !default;
+$custom-checkbox-input-border-width: $custom-control-indicator-border-width !default;
+$custom-checkbox-input-border-color: $custom-control-indicator-border-color !default;
+$custom-checkbox-input-icon-color: $white !default;
+
+$custom-checkbox-input-hover-border-color: $primary !default;
+$custom-checkbox-input-hover-bg: $custom-control-indicator-bg !default;
+$custom-checkbox-input-hover-icon-color: $white !default;
+
+$custom-checkbox-input-active-border-color: $primary !default;
+$custom-checkbox-input-active-bg: $primary !default;
+$custom-checkbox-input-active-icon-color: $white !default;
+
+
+
+/**
  * Filter
  * --------------------------------------------
  * filter is using various bootstrap varialbes
