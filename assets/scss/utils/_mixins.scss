@@ -161,3 +161,14 @@
     padding-top: ($height / $width) * 100%;
   }
 }
+
+/**
+ * Button reset
+ */
+@mixin button-reset() {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+}

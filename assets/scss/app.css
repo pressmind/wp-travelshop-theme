@@ -10088,6 +10088,9 @@ html.force--consent.show--consent body {
 /**
  * Aspect ratio
  */
+/**
+ * Button reset
+ */
 body {
   font-display: swap !important; }
 
@@ -10291,6 +10294,12 @@ body.fl-builder .content-block.content-page {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span svg {
       display: block;
       color: #fff; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0; }
 
 .dropdown .dropdown-toggle:after {
   display: none; }

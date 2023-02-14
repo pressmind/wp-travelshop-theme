@@ -93,4 +93,12 @@
       color: $custom-checkbox-input-active-icon-color;
     }
   }
+
+  // additional if second level exists. toggle button
+
+  &.has-second-level {
+    button.toggle-second-level {
+      @include button-reset();
+    }
+  }
 }
