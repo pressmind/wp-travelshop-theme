@@ -18,13 +18,11 @@
         &.category-tree,
         &.board-type,
         &.transport-typ {
-          .category-tree-field-items {
-            .form-check {
-              @extend %custom-checkbox;
+          .form-check {
+            @extend %custom-checkbox;
 
-              + .form-check {
-                margin-top: $custom-checkbox-spacer;
-              }
+            + .form-check {
+              margin-top: $custom-checkbox-spacer;
             }
           }
         }
