@@ -17,7 +17,7 @@
         // -- category definition, board-type definition, transport-type definition
         &.category-tree,
         &.board-type,
-        &.transport-typ {
+        &.transport-type {
           .form-check {
             @extend %custom-checkbox;
 
