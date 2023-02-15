@@ -10,7 +10,7 @@ nav#navbar {
 
     > li.nav-item {
       > a.nav-link {
-        color: $navbar-dark-color;
+        color: $navbar-light-color;
         transition: color .3s;
         text-decoration: none;
 
@@ -34,7 +34,7 @@ nav#navbar {
 
         &:hover, &:focus, &:active {
           text-decoration: none;
-          color: $navbar-dark-hover-color;
+          color: $navbar-light-hover-color;
         }
       }
 
@@ -49,7 +49,7 @@ nav#navbar {
 
       // -- active state
       &.active > a.nav-link {
-        color: $navbar-dark-active-color;
+        color: $navbar-light-active-color;
 
         font: {
           weight: $navbar-active-font-weight;

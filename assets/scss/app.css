@@ -11309,7 +11309,7 @@ header.header-main {
 nav#navbar ul.navbar-nav {
   align-items: baseline; }
   nav#navbar ul.navbar-nav > li.nav-item > a.nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: #434b53;
     transition: color .3s;
     text-decoration: none;
     font-weight: 400;
@@ -11323,11 +11323,11 @@ nav#navbar ul.navbar-nav {
       transition: transform .3s; }
     nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:hover, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:focus, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:active {
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.75); }
+      color: #007bff; }
   nav#navbar ul.navbar-nav > li.nav-item.show > a.nav-link.dropdown-toggle svg {
     transform: scaleY(-1); }
   nav#navbar ul.navbar-nav > li.nav-item.active > a.nav-link {
-    color: #fff;
+    color: #007bff;
     font-weight: 700; }
 
 /*# sourceMappingURL=app.css.map */
