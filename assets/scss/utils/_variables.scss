@@ -84,7 +84,11 @@ $header-action-height: 2.5rem !default; // 30px;
 $header-action-icon-width: 1.5rem !default; // 24px;
 $header-action-icon-height: 1.5rem !default; // 24px;
 
-$header-action-color: $body-color-light;
+$header-action-color: $body-color-light !default;
+$header-action-hover-color: $primary !default;
+$header-action-icon-color: $body-color-light !default;
+$header-action-hover-icon-color: $primary !default;
+
 
 /**
  * Travelbox
