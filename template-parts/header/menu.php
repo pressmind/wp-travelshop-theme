@@ -1,7 +1,7 @@
 <?php
 if (has_nav_menu('primary') === true) {
     ?>
-    <nav class="navbar" id="navbar">
+    <nav class="navbar navbar-expand-lg" id="navbar">
         <ul class="navbar-nav mr-auto ml-auto">
 
                 <?php
