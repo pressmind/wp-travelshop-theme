@@ -78,7 +78,12 @@ $header-bg: $body-bg !default;
 $header-color: $body-color !default;
 $header-sticky: true !default;
 $header-small: true !default;
+$header-breakpoint: lg !default; // used for switch mobile/desktop header
 $header-box-shadow: 0 .125rem .25rem rgba(0,0,0,.15) !default;
+
+// -- paddings
+$header-padding-y: 1rem !default;
+$header-small-padding-y: 1rem !default;
 
 // -- header action definitions
 $header-action-width: 2rem !default; // 32px
@@ -110,9 +115,10 @@ $header-wishlist-count-font-size: .6rem !default; // 10px
  * add some variables to extend bootstrap navbar
  */
 
-$navbar-font-weight: $font-weight-base;
-$navbar-active-font-weight: $font-weight-bold;
+$navbar-font-weight: $font-weight-base !default;
+$navbar-active-font-weight: $font-weight-bold !default;
 
+$navbar-font-size: $font-size-lg !default;
 
 /**
  * Travelbox

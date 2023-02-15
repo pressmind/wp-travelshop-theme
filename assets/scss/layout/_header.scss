@@ -3,12 +3,33 @@
     background-color: $header-bg;
     color: $header-color;
 
+    padding-top: $header-small-padding-y;
+    padding-bottom: $header-small-padding-y;
+
+    // -- use default padding for desktop header
+    @include get-custom-breakpoint($header-breakpoint) {
+      padding-top: $header-padding-y;
+      padding-bottom: $header-padding-y;
+    }
+
+    // -- small version?
+    @if ( $header-small ) {
+      transition: padding-top .3s, padding-bottom .3s;
+
+      &.affix {
+        padding-top: $header-small-padding-y;
+        padding-bottom: $header-small-padding-y;
+      }
+    }
+
+    // -- sticky?
     @if ( $header-sticky ) {
       position: sticky;
       top:0;
       z-index: $zindex-sticky;
     }
 
+    // -- box-shadow?
     @if ( $header-box-shadow != null ) {
       box-shadow: $header-box-shadow;
     }

@@ -3027,7 +3027,7 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 0 0; }
   .navbar > .container, .fl-builder-content .navbar > .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .navbar > .fl-row-content.fl-row-fixed-width,
   .navbar > .container-fluid,
   .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .navbar > .fl-row-content.fl-row-full-width {
@@ -3040,7 +3040,7 @@ input[type="button"].btn-block {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  margin-right: 0;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap; }
@@ -11210,10 +11210,20 @@ div.daterangepicker {
 header.header-main {
   background-color: #fff;
   color: #212529;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: padding-top .3s, padding-bottom .3s;
   position: sticky;
   top: 0;
   z-index: 1020;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
+  @media (min-width: 992px) {
+    header.header-main {
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
+  header.header-main.affix {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
   header.header-main .header-action {
     border: 0;
     outline: none;
@@ -11312,6 +11322,7 @@ nav#navbar ul.navbar-nav {
     color: #434b53;
     transition: color .3s;
     text-decoration: none;
+    font-size: 1.125rem;
     font-weight: 400;
     display: flex;
     flex-direction: row;
