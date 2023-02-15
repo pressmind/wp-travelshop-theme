@@ -49,6 +49,8 @@
       flex-direction: row;
       flex-wrap: nowrap;
 
+      align-items: center;
+
       gap: .5rem;
 
       .hotline-icon {
@@ -91,13 +93,14 @@
 
         .hotline-number {
           color: $header-hotline-color;
+          font-weight: $font-weight-bold;
           transition: color .3s;
 
           font-size: $font-size-lg;
         }
 
         .hotline-number-title {
-          font-size: $font-size-sm;
+          font-size: $font-size-xs;
         }
       }
 
