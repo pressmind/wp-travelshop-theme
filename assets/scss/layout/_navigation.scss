@@ -14,6 +14,10 @@ nav#navbar {
         transition: color .3s;
         text-decoration: none;
 
+        font: {
+          weight: $navbar-font-weight;
+        }
+
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -29,6 +33,7 @@ nav#navbar {
         }
 
         &:hover, &:focus, &:active {
+          text-decoration: none;
           color: $navbar-dark-hover-color;
         }
       }
@@ -45,6 +50,10 @@ nav#navbar {
       // -- active state
       &.active > a.nav-link {
         color: $navbar-dark-active-color;
+
+        font: {
+          weight: $navbar-active-font-weight;
+        }
       }
     }
   }

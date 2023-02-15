@@ -10003,6 +10003,11 @@ html.force--consent.show--consent body {
  * some variables wich used for default header settings
  */
 /**
+ * Navigation
+ * ---------------------------------
+ * add some variables to extend bootstrap navbar
+ */
+/**
  * Travelbox
  */
 /**
@@ -11295,5 +11300,34 @@ header.header-main {
         color: #007bff; }
       header.header-main .hotline-link:hover .hotline-icon, header.header-main .hotline-link:focus .hotline-icon, header.header-main .hotline-link:active .hotline-icon {
         color: #007bff; }
+
+/**
+ * Navigation
+ * -------------------------
+ * based on navbar variables
+ */
+nav#navbar ul.navbar-nav {
+  align-items: baseline; }
+  nav#navbar ul.navbar-nav > li.nav-item > a.nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color .3s;
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .25rem; }
+    nav#navbar ul.navbar-nav > li.nav-item > a.nav-link.dropdown-toggle svg {
+      width: 1rem;
+      height: 1rem;
+      transition: transform .3s; }
+    nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:hover, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:focus, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:active {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.75); }
+  nav#navbar ul.navbar-nav > li.nav-item.show > a.nav-link.dropdown-toggle svg {
+    transform: scaleY(-1); }
+  nav#navbar ul.navbar-nav > li.nav-item.active > a.nav-link {
+    color: #fff;
+    font-weight: 700; }
 
 /*# sourceMappingURL=app.css.map */
