@@ -25,6 +25,9 @@
     top: 0;
     right:0;
 
+    // -- z-index to prevent bugs on focus/hover
+    z-index: 2;
+
     button.input-group-btn {
       @include button-reset();
 

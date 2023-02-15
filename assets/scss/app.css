@@ -10269,7 +10269,8 @@ form.form-string-search.input-group {
     line-height: 0;
     position: absolute;
     top: 0;
-    right: 0; }
+    right: 0;
+    z-index: 2; }
     form.form-string-search.input-group .input-group-append button.input-group-btn {
       border: 0;
       outline: none;
