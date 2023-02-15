@@ -37,6 +37,31 @@
           color: $header-action-hover-icon-color;
         }
       }
+
+      // specific action definitions
+      &--wishlist {
+        padding-right: ( $header-wishlist-count-size / 2 );
+        position: relative;
+
+        .wishlist-count {
+          width: $header-wishlist-count-size;
+          height: $header-wishlist-count-size;
+
+          position: absolute;
+          right:0;
+          top:0;
+
+          background-color: $header-wishlist-count-bg;
+          line-height: $header-wishlist-count-size;
+          text-align: center;
+
+          font-size: $header-wishlist-count-font-size;
+          font-weight: bold;
+          color: $header-wishlist-count-color;
+
+          @include border-radius(50%);
+        }
+      }
     }
 
     // -- hotline

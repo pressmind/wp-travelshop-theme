@@ -11221,6 +11221,22 @@ header.header-main {
       height: 1.5rem; }
     header.header-main .header-action:hover > svg, header.header-main .header-action:focus > svg, header.header-main .header-action:active > svg {
       color: #007bff; }
+    header.header-main .header-action--wishlist {
+      padding-right: 0.4375rem;
+      position: relative; }
+      header.header-main .header-action--wishlist .wishlist-count {
+        width: 0.875rem;
+        height: 0.875rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #007bff;
+        line-height: 0.875rem;
+        text-align: center;
+        font-size: 0.6125rem;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 50%; }
   header.header-main .hotline-link {
     color: #434b53;
     transition: color .3s;
