@@ -6,10 +6,32 @@
     padding-top: $header-small-padding-y;
     padding-bottom: $header-small-padding-y;
 
+    // -- mobile smaller row settings, to reduce spacings
+    .row.header-main-row {
+      margin-left: -($grid-gutter-width / 4);
+      margin-right: -($grid-gutter-width / 4);
+
+      > div {
+        padding-left: ($grid-gutter-width / 4);
+        padding-right: ($grid-gutter-width / 4);
+      }
+    }
+
     // -- use default padding for desktop header
     @include get-custom-breakpoint($header-breakpoint) {
       padding-top: $header-padding-y;
       padding-bottom: $header-padding-y;
+
+      // -- normal row settings
+      .row.header-main-row {
+        margin-left: -($grid-gutter-width / 2);
+        margin-right: -($grid-gutter-width / 2);
+
+        > div {
+          padding-left: ($grid-gutter-width / 2);
+          padding-right: ($grid-gutter-width / 2);
+        }
+      }
     }
 
     // -- small version?

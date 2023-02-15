@@ -80,7 +80,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </div>
                 </button>
             </div>
-            <div class="col-auto ">
+            <div class="col col-lg-auto">
                 <a class="navbar-brand" href="<?php echo site_url(); ?>">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg" height="24" width="142"
                          class="d-inline-block align-middle" alt="<?php echo get_bloginfo( 'name' );?>">
