@@ -71,7 +71,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 ?>
 <header class="header-main">
     <div class="container">
-        <div class="row header-main-row">
+        <div class="row header-main-row align-items-center">
             <div class="col-auto align-self-center d-block d-lg-none">
                 <button class="toggler navbar-toggler offcanvas-toggler" type="button" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
