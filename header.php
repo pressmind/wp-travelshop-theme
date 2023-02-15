@@ -106,10 +106,20 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 
             <div class="col-auto align-self-center">
                 <div class="travelshop_hotline_batch">
-                    <small>Service-Hotline</small><br/>
-                    <a href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>"><?php echo do_shortcode('[ts-company-hotline]');?></a>
-                    <a class="phone-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
+                    <a class="hotline-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
+                        <span class="hotline-icon">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
+                        </span>
+
+                        <div class="hotline-info">
+                            <div class="hotline-title">
+                                <?php echo do_shortcode('[ts-company-hotline-info]'); ?>
+                            </div>
+                            <div class="hotline-number">
+                                <?php echo do_shortcode('[ts-company-hotline]');?>
+                            </div>
+                        </div>
+
                     </a>
                 </div>
             </div>
