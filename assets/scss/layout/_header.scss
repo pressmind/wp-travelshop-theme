@@ -1,14 +1,82 @@
-header.header-main {
-  background-color: $header-bg;
-  color: $header-color;
+@if ( $header-use-default ) {
+  header.header-main {
+    background-color: $header-bg;
+    color: $header-color;
 
-  @if ( $header-sticky ) {
-    position: sticky;
-    top:0;
-    z-index: $zindex-sticky;
-  }
+    @if ( $header-sticky ) {
+      position: sticky;
+      top:0;
+      z-index: $zindex-sticky;
+    }
 
-  @if ( $header-box-shadow != null ) {
-    box-shadow: $header-box-shadow;
+    @if ( $header-box-shadow != null ) {
+      box-shadow: $header-box-shadow;
+    }
+
+    // -- hotline
+    .hotline-link {
+      color: $header-hotline-info-color;
+      transition: color .3s;
+      text-decoration: none;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      gap: .5rem;
+
+      .hotline-icon {
+        width: 100%;
+        max-width: $header-action-height;
+        flex: 0 0 $header-action-height;
+
+        color: $header-hotline-icon-color;
+        transition: color .3s;
+
+        height: $header-action-height;
+
+        display: flex;
+
+        svg {
+          width: $header-action-icon-width;
+          height: $header-action-icon-height;
+        }
+      }
+
+      .hotline-info {
+        flex: 1;
+        display: none;
+
+        @include get-custom-breakpoint($header-hotline-show-info) {
+          display: inline-flex;
+        }
+
+        .hotline-number {
+          color: $header-hotline-color;
+          transition: color .3s;
+
+          font-size: $font-size-lg;
+        }
+
+        .hotline-number-title {
+          font-size: $font-size-sm;
+        }
+      }
+
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+        color: $header-hotline-hover-info-color;
+
+        .hotline-info {
+          .hotline-number {
+            color: $header-hotline-hover-color;
+          }
+        }
+
+        .hotline-icon {
+          color: $header-hotline-hover-icon-color;
+        }
+      }
+    }
   }
 }

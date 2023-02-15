@@ -72,6 +72,8 @@ $h6-font-sizes: (
  * some variables wich used for default header settings
  */
 
+$header-use-default: true !default;
+
 $header-bg: $body-bg !default;
 $header-color: $body-color !default;
 $header-sticky: true !default;
@@ -88,6 +90,14 @@ $header-action-color: $body-color-light !default;
 $header-action-hover-color: $primary !default;
 $header-action-icon-color: $body-color-light !default;
 $header-action-hover-icon-color: $primary !default;
+
+$header-hotline-show-info: lg !default;
+$header-hotline-color: $body-color !default;
+$header-hotline-info-color: $header-action-color !default;
+$header-hotline-hover-color: $primary !default;
+$header-hotline-hover-info-color: $header-hotline-info-color !default;
+$header-hotline-icon-color: $primary !default;
+$header-hotline-hover-icon-color: $primary !default;
 
 
 /**

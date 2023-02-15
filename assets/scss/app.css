@@ -11203,5 +11203,43 @@ header.header-main {
   top: 0;
   z-index: 1020;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
+  header.header-main .hotline-link {
+    color: #434b53;
+    transition: color .3s;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .5rem; }
+    header.header-main .hotline-link .hotline-icon {
+      width: 100%;
+      max-width: 2.5rem;
+      flex: 0 0 2.5rem;
+      color: #007bff;
+      transition: color .3s;
+      height: 2.5rem;
+      display: flex; }
+      header.header-main .hotline-link .hotline-icon svg {
+        width: 1.5rem;
+        height: 1.5rem; }
+    header.header-main .hotline-link .hotline-info {
+      flex: 1;
+      display: none; }
+      @media (min-width: 992px) {
+        header.header-main .hotline-link .hotline-info {
+          display: inline-flex; } }
+      header.header-main .hotline-link .hotline-info .hotline-number {
+        color: #212529;
+        transition: color .3s;
+        font-size: 1.125rem; }
+      header.header-main .hotline-link .hotline-info .hotline-number-title {
+        font-size: 0.875rem; }
+    header.header-main .hotline-link:hover, header.header-main .hotline-link:focus, header.header-main .hotline-link:active {
+      text-decoration: none;
+      color: #434b53; }
+      header.header-main .hotline-link:hover .hotline-info .hotline-number, header.header-main .hotline-link:focus .hotline-info .hotline-number, header.header-main .hotline-link:active .hotline-info .hotline-number {
+        color: #007bff; }
+      header.header-main .hotline-link:hover .hotline-icon, header.header-main .hotline-link:focus .hotline-icon, header.header-main .hotline-link:active .hotline-icon {
+        color: #007bff; }
 
 /*# sourceMappingURL=app.css.map */
