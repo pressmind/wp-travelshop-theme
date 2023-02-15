@@ -105,23 +105,21 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 
 
             <div class="col-auto align-self-center">
-                <div class="travelshop_hotline_batch">
-                    <a class="hotline-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
-                        <span class="hotline-icon">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
-                        </span>
+                <a class="hotline-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
+                    <span class="hotline-icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
+                    </span>
 
-                        <div class="hotline-info">
-                            <div class="hotline-title">
-                                <?php echo do_shortcode('[ts-company-hotline-info]'); ?>
-                            </div>
-                            <div class="hotline-number">
-                                <?php echo do_shortcode('[ts-company-hotline]');?>
-                            </div>
+                    <div class="hotline-info">
+                        <div class="hotline-title">
+                            <?php echo do_shortcode('[ts-company-hotline-info]'); ?>
                         </div>
+                        <div class="hotline-number">
+                            <?php echo do_shortcode('[ts-company-hotline]');?>
+                        </div>
+                    </div>
 
-                    </a>
-                </div>
+                </a>
             </div>
             <div class="col-auto align-self-center p-r-0">
                 <a href="/calendar" title="Reisekalender" class="calendar calendar-link">
