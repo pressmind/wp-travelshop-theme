@@ -11214,6 +11214,12 @@ header.header-main {
     display: flex;
     justify-content: center;
     align-items: center; }
+    header.header-main .header-action .header-action--icon {
+      height: 2rem;
+      width: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     header.header-main .header-action > svg {
       color: #434b53;
       transition: color .3s;

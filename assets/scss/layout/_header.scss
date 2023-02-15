@@ -24,6 +24,15 @@
       justify-content: center;
       align-items: center;
 
+      .header-action--icon {
+        height: $header-action-height;
+        width: $header-action-width;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       > svg {
         color: $header-action-icon-color;
         transition: color .3s;
