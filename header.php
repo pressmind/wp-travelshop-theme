@@ -73,9 +73,11 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
     <div class="container">
         <div class="row header-main-row align-items-center">
             <div class="col-auto d-block d-lg-none">
-                <button class="toggler navbar-toggler offcanvas-toggler" type="button" data-target="#navbar"
+                <button class="header-action header-action--navtoggle toggler navbar-toggler offcanvas-toggler" type="button" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#list"></use></svg>
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#list"></use></svg>
+                    </div>
                 </button>
             </div>
             <div class="col-auto ">
