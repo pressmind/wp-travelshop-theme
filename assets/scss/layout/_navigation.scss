@@ -20,6 +20,7 @@ nav#navbar {
 
         display: flex;
         flex-direction: row;
+        align-items: center;
         flex-wrap: nowrap;
         gap: .25rem;
 
@@ -27,6 +28,8 @@ nav#navbar {
           svg {
             width: $font-size-base;
             height: $font-size-base;
+
+            color: $navbar-light-color;
 
             transition: transform .3s;
           }

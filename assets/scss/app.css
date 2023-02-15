@@ -11315,11 +11315,13 @@ nav#navbar ul.navbar-nav {
     font-weight: 400;
     display: flex;
     flex-direction: row;
+    align-items: center;
     flex-wrap: nowrap;
     gap: .25rem; }
     nav#navbar ul.navbar-nav > li.nav-item > a.nav-link.dropdown-toggle svg {
       width: 1rem;
       height: 1rem;
+      color: #434b53;
       transition: transform .3s; }
     nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:hover, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:focus, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:active {
       text-decoration: none;
