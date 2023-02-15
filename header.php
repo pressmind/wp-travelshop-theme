@@ -86,7 +86,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                          class="d-inline-block align-middle" alt="<?php echo get_bloginfo( 'name' );?>">
                 </a>
             </div>
-            <div class="col p-0 d-none d-lg-inline-flex">
+            <div class="col p-0 d-none d-lg-block">
                 <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
