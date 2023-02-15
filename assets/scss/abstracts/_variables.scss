@@ -19,6 +19,13 @@ $font-size-sm: $font-size-base * 0.875; // 14px
 $font-size-xs: $font-size-base * 0.75; // 12px - added cuz we need more font sizes
 
 /**
+ * Navbar
+ */
+$navbar-light-color: lighten($body-color, 15%);
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+
+/**
  * Headlines
  */
 $h1-font-size: 2.5rem; //$font-size-base * 2.5 !default;

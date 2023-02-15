@@ -1,0 +1,51 @@
+/**
+ * Navigation
+ * -------------------------
+ * based on navbar variables
+ */
+
+nav#navbar {
+  ul.navbar-nav {
+    align-items: baseline;
+
+    > li.nav-item {
+      > a.nav-link {
+        color: $navbar-dark-color;
+        transition: color .3s;
+        text-decoration: none;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: .25rem;
+
+        &.dropdown-toggle {
+          svg {
+            width: $font-size-base;
+            height: $font-size-base;
+
+            transition: transform .3s;
+          }
+        }
+
+        &:hover, &:focus, &:active {
+          color: $navbar-dark-hover-color;
+        }
+      }
+
+      // -- show state
+      &.show {
+        > a.nav-link.dropdown-toggle {
+          svg {
+            transform: scaleY(-1);
+          }
+        }
+      }
+
+      // -- active state
+      &.active > a.nav-link {
+        color: $navbar-dark-active-color;
+      }
+    }
+  }
+}
