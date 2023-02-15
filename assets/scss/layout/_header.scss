@@ -93,14 +93,13 @@
 
         .hotline-number {
           color: $header-hotline-color;
-          font-weight: $font-weight-bold;
           transition: color .3s;
 
           font-size: $font-size-lg;
         }
 
-        .hotline-number-title {
-          font-size: $font-size-xs;
+        .hotline-title {
+          font-size: $font-size-sm;
         }
       }
 

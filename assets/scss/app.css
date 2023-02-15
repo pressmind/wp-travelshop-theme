@@ -11257,11 +11257,10 @@ header.header-main {
         white-space: nowrap; }
       header.header-main .hotline-link .hotline-info .hotline-number {
         color: #212529;
-        font-weight: 700;
         transition: color .3s;
         font-size: 1.125rem; }
-      header.header-main .hotline-link .hotline-info .hotline-number-title {
-        font-size: 0.75rem; }
+      header.header-main .hotline-link .hotline-info .hotline-title {
+        font-size: 0.875rem; }
     header.header-main .hotline-link:hover, header.header-main .hotline-link:focus, header.header-main .hotline-link:active {
       text-decoration: none;
       color: #434b53; }
