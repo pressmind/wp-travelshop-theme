@@ -40,7 +40,7 @@
 
       // specific action definitions
       &--wishlist {
-        padding-right: ( $header-wishlist-count-size / 2 );
+        padding-right: ( ($header-wishlist-count-size / 4) * 3 );
         position: relative;
 
         .wishlist-count {
@@ -49,7 +49,7 @@
 
           position: absolute;
           right:0;
-          top:0;
+          top: 0;
 
           background-color: $header-wishlist-count-bg;
           line-height: $header-wishlist-count-size;

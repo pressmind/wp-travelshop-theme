@@ -11222,19 +11222,19 @@ header.header-main {
     header.header-main .header-action:hover > svg, header.header-main .header-action:focus > svg, header.header-main .header-action:active > svg {
       color: #007bff; }
     header.header-main .header-action--wishlist {
-      padding-right: 0.4375rem;
+      padding-right: 0.75rem;
       position: relative; }
       header.header-main .header-action--wishlist .wishlist-count {
-        width: 0.875rem;
-        height: 0.875rem;
+        width: 1rem;
+        height: 1rem;
         position: absolute;
         right: 0;
         top: 0;
         background-color: #007bff;
-        line-height: 0.875rem;
+        line-height: 1rem;
         text-align: center;
         font-size: 0.6125rem;
-        font-weight: bold;
+        font-weight: 700;
         color: #fff;
         border-radius: 50%; }
   header.header-main .hotline-link {
