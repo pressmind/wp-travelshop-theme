@@ -10263,9 +10263,13 @@ body.fl-builder .content-block.content-page {
 form.form-string-search.input-group {
   position: relative; }
   form.form-string-search.input-group .form-control {
-    border-radius: 0.25rem; }
+    border-radius: 0.25rem;
+    padding-right: 3rem; }
   form.form-string-search.input-group .input-group-append {
-    line-height: 0; }
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    right: 0; }
     form.form-string-search.input-group .input-group-append button.input-group-btn {
       border: 0;
       outline: none;
@@ -10274,11 +10278,14 @@ form.form-string-search.input-group {
       padding: 0;
       line-height: 0;
       color: #495057;
+      transition: color .3s;
       height: 2.25rem;
       width: 2.25rem; }
       form.form-string-search.input-group .input-group-append button.input-group-btn svg {
-        width: 1rem;
-        height: 1rem; }
+        width: 1.125rem;
+        height: 1.125rem; }
+      form.form-string-search.input-group .input-group-append button.input-group-btn:hover, form.form-string-search.input-group .input-group-append button.input-group-btn:focus, form.form-string-search.input-group .input-group-append button.input-group-btn:active {
+        color: #007bff; }
 
 /**
  * Custom checkbox , with second level

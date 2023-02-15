@@ -14,10 +14,16 @@
 
   .form-control {
     @include border-radius($input-border-radius);
+
+    // -- make padding right based of append square
+    padding-right: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 ) + $input-padding-x;
   }
 
   .input-group-append {
     line-height: 0;
+    position: absolute;
+    top: 0;
+    right:0;
 
     button.input-group-btn {
       @include button-reset();
@@ -25,12 +31,18 @@
       line-height: 0;
       color: $input-group-addon-color;
 
+      transition: color .3s;
+
       height: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
       width: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
 
       svg {
-        width: $input-font-size;
-        height: $input-font-size;
+        width: $font-size-lg;
+        height: $font-size-lg;
+      }
+
+      &:hover, &:focus, &:active {
+        color: $primary;
       }
     }
   }
