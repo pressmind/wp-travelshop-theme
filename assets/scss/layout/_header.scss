@@ -13,6 +13,32 @@
       box-shadow: $header-box-shadow;
     }
 
+    // -- actions
+    .header-action {
+      @include button-reset();
+
+      height: $header-action-height;
+      min-width: $header-action-width;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > svg {
+        color: $header-action-icon-color;
+        transition: color .3s;
+
+        width: $header-action-icon-width;
+        height: $header-action-icon-height;
+      }
+
+      &:hover, &:focus, &:active {
+        > svg {
+          color: $header-action-hover-icon-color;
+        }
+      }
+    }
+
     // -- hotline
     .hotline-link {
       color: $header-hotline-info-color;

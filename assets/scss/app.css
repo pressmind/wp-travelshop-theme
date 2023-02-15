@@ -11203,6 +11203,24 @@ header.header-main {
   top: 0;
   z-index: 1020;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
+  header.header-main .header-action {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    height: 2rem;
+    min-width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    header.header-main .header-action > svg {
+      color: #434b53;
+      transition: color .3s;
+      width: 1.5rem;
+      height: 1.5rem; }
+    header.header-main .header-action:hover > svg, header.header-main .header-action:focus > svg, header.header-main .header-action:active > svg {
+      color: #007bff; }
   header.header-main .hotline-link {
     color: #434b53;
     transition: color .3s;
