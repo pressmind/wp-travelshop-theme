@@ -10264,13 +10264,13 @@ form.form-string-search.input-group {
   position: relative; }
   form.form-string-search.input-group .form-control {
     border-radius: 0.25rem;
-    padding-right: 3rem; }
+    padding-right: 2.25rem; }
   form.form-string-search.input-group .input-group-append {
     line-height: 0;
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2; }
+    z-index: 4; }
     form.form-string-search.input-group .input-group-append button.input-group-btn {
       border: 0;
       outline: none;
