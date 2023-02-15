@@ -11218,11 +11218,11 @@ header.header-main {
   z-index: 1020;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
   header.header-main .row.header-main-row {
-    margin-left: -7.5px;
-    margin-right: -7.5px; }
+    margin-left: -5px;
+    margin-right: -5px; }
     header.header-main .row.header-main-row > div {
-      padding-left: 7.5px;
-      padding-right: 7.5px; }
+      padding-left: 5px;
+      padding-right: 5px; }
   @media (min-width: 992px) {
     header.header-main {
       padding-top: 1.5rem;

@@ -8,12 +8,12 @@
 
     // -- mobile smaller row settings, to reduce spacings
     .row.header-main-row {
-      margin-left: -($grid-gutter-width / 4);
-      margin-right: -($grid-gutter-width / 4);
+      margin-left: -($grid-gutter-width / 6);
+      margin-right: -($grid-gutter-width / 6);
 
       > div {
-        padding-left: ($grid-gutter-width / 4);
-        padding-right: ($grid-gutter-width / 4);
+        padding-left: ($grid-gutter-width / 6);
+        padding-right: ($grid-gutter-width / 6);
       }
     }
 
