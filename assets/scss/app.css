@@ -11213,19 +11213,23 @@ header.header-main {
     gap: .5rem; }
     header.header-main .hotline-link .hotline-icon {
       width: 100%;
-      max-width: 2.5rem;
-      flex: 0 0 2.5rem;
+      max-width: 2rem;
+      flex: 0 0 2rem;
       color: #007bff;
       transition: color .3s;
-      height: 2.5rem;
-      display: flex; }
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       header.header-main .hotline-link .hotline-icon svg {
         width: 1.5rem;
         height: 1.5rem; }
     header.header-main .hotline-link .hotline-info {
       flex: 1;
       display: none;
-      flex-direction: column; }
+      flex-direction: column;
+      line-height: 1;
+      gap: 0.25rem; }
       @media (min-width: 992px) {
         header.header-main .hotline-link .hotline-info {
           display: inline-flex; } }
