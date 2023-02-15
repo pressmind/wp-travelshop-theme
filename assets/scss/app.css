@@ -10052,6 +10052,15 @@ html.force--consent.show--consent body {
  * set colors on image / default
  */
 /**
+ * Strip unit
+ */
+/**
+ * Convert rem to px
+ */
+/**
+ * Convert px to rem
+ */
+/**
  * Mixin to generate font sizes with scss maps
  * this can be used with px values + bootstrap breakpoints.
  * =============================================================
@@ -10278,7 +10287,7 @@ form.form-string-search.input-group {
       background: transparent;
       padding: 0;
       line-height: 0;
-      color: #495057;
+      color: #434b53;
       transition: color .3s;
       height: 2.25rem;
       width: 2.25rem; }
