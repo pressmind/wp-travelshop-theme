@@ -11224,10 +11224,14 @@ header.header-main {
         height: 1.5rem; }
     header.header-main .hotline-link .hotline-info {
       flex: 1;
-      display: none; }
+      display: none;
+      flex-direction: column; }
       @media (min-width: 992px) {
         header.header-main .hotline-link .hotline-info {
           display: inline-flex; } }
+      header.header-main .hotline-link .hotline-info .hotline-number,
+      header.header-main .hotline-link .hotline-info .hotline-info {
+        white-space: nowrap; }
       header.header-main .hotline-link .hotline-info .hotline-number {
         color: #212529;
         transition: color .3s;

@@ -46,9 +46,15 @@
       .hotline-info {
         flex: 1;
         display: none;
+        flex-direction: column;
 
         @include get-custom-breakpoint($header-hotline-show-info) {
           display: inline-flex;
+        }
+
+        .hotline-number,
+        .hotline-info {
+          white-space: nowrap;
         }
 
         .hotline-number {
