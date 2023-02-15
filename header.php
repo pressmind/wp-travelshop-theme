@@ -94,7 +94,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
                            aria-label="Search" name="pm-t">
                     <div class="input-group-append">
-                        <button class="btn btn-link" aria-label="Suchen">
+                        <button class="input-group-btn" aria-label="Suchen">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
 
                         </button>

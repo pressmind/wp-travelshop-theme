@@ -10257,11 +10257,20 @@ body.fl-builder .content-block.content-page {
  */
 /**
  * Custom input group, used ie. for string search
+ * ----------------------------------------------
+ * its using variables from inputs + input groups
  */
 form.form-string-search.input-group {
   position: relative; }
   form.form-string-search.input-group .form-control {
     border-radius: 0.25rem; }
+  form.form-string-search.input-group .input-group-append button.input-group-btn {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    color: #495057; }
 
 /**
  * Custom checkbox , with second level
