@@ -11220,12 +11220,12 @@ header.header-main {
       display: flex;
       align-items: center;
       justify-content: center; }
-    header.header-main .header-action > svg {
-      color: #434b53;
-      transition: color .3s;
-      width: 1.5rem;
-      height: 1.5rem; }
-    header.header-main .header-action:hover > svg, header.header-main .header-action:focus > svg, header.header-main .header-action:active > svg {
+      header.header-main .header-action .header-action--icon > svg {
+        color: #434b53;
+        transition: color .3s;
+        width: 1.5rem;
+        height: 1.5rem; }
+    header.header-main .header-action:hover .header-action--icon > svg, header.header-main .header-action:focus .header-action--icon > svg, header.header-main .header-action:active .header-action--icon > svg {
       color: #007bff; }
     header.header-main .header-action--wishlist {
       padding-right: 0.75rem;
