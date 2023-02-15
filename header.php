@@ -123,13 +123,17 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
             </div>
             <div class="col-auto align-self-center p-r-0">
                 <a href="/calendar" title="Reisekalender" class="header-action header-action--calendar">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+                    </div>
                 </a>
             </div>
             <div class="col-auto align-self-center dropdown">
                 <button class="header-action header-action--wishlist toggler wishlist-toggler" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" data-offset="40,20">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#heart-straight"></use></svg>
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#heart-straight"></use></svg>
+                    </div>
 
                     <span class="wishlist-count">0</span>
                 </button>
@@ -149,7 +153,9 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
             <div class="col-auto align-self-center d-none">
                 <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
                         aria-expanded="false" aria-label="Toggle Search">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                    </div>
                 </button>
             </div>
         </div>
