@@ -10255,6 +10255,17 @@ body.fl-builder .content-block.content-page {
  * as placeholders. These are defined by variables + extended
  * in every state/position wich needs this styling
  */
+/**
+ * Custom input group, used ie. for string search
+ */
+form.form-string-search.input-group {
+  position: relative; }
+  form.form-string-search.input-group .form-control {
+    border-radius: 0.25rem; }
+
+/**
+ * Custom checkbox , with second level
+ */
 .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check {
   display: flex;
   flex-direction: row;

@@ -4,6 +4,24 @@
  * in every state/position wich needs this styling
  */
 
+/**
+ * Custom input group, used ie. for string search
+ */
+%custom-input-group {
+  position: relative;
+
+  .form-control {
+    @include border-radius($input-border-radius);
+  }
+
+  .input-group-append {
+
+  }
+}
+
+/**
+ * Custom checkbox , with second level
+ */
 %custom-checkbox {
   display: flex;
   flex-direction: row;
