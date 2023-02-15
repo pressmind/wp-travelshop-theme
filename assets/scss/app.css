@@ -10264,13 +10264,21 @@ form.form-string-search.input-group {
   position: relative; }
   form.form-string-search.input-group .form-control {
     border-radius: 0.25rem; }
-  form.form-string-search.input-group .input-group-append button.input-group-btn {
-    border: 0;
-    outline: none;
-    box-shadow: none;
-    background: transparent;
-    padding: 0;
-    color: #495057; }
+  form.form-string-search.input-group .input-group-append {
+    line-height: 0; }
+    form.form-string-search.input-group .input-group-append button.input-group-btn {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      line-height: 0;
+      color: #495057;
+      height: 2.25rem;
+      width: 2.25rem; }
+      form.form-string-search.input-group .input-group-append button.input-group-btn svg {
+        width: 1rem;
+        height: 1rem; }
 
 /**
  * Custom checkbox , with second level
