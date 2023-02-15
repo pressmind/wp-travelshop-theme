@@ -11219,8 +11219,8 @@ header.header-main {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
   @media (min-width: 992px) {
     header.header-main {
-      padding-top: 1rem;
-      padding-bottom: 1rem; } }
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem; } }
   header.header-main.affix {
     padding-top: 1rem;
     padding-bottom: 1rem; }

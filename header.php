@@ -72,23 +72,23 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 <header class="header-main">
     <div class="container">
         <div class="row header-main-row align-items-center">
-            <div class="col-auto align-self-center d-block d-lg-none">
+            <div class="col-auto d-block d-lg-none">
                 <button class="toggler navbar-toggler offcanvas-toggler" type="button" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#list"></use></svg>
                 </button>
             </div>
-            <div class="col-auto align-self-center ">
+            <div class="col-auto ">
                 <a class="navbar-brand" href="<?php echo site_url(); ?>">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg" height="24" width="142"
                          class="d-inline-block align-middle" alt="<?php echo get_bloginfo( 'name' );?>">
                 </a>
             </div>
-            <div class="col align-self-center p-0">
+            <div class="col p-0">
                 <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
-            <div class="col-auto align-self-center  d-none d-lg-block col-search" id="search">
+            <div class="col-auto  d-none d-lg-block col-search" id="search">
                 <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
                     <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
@@ -104,7 +104,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
             <?php } ?>
 
 
-            <div class="col-auto align-self-center">
+            <div class="col-auto">
                 <a class="hotline-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
                     <span class="hotline-icon">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
@@ -121,14 +121,14 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 
                 </a>
             </div>
-            <div class="col-auto align-self-center p-r-0">
+            <div class="col-auto p-r-0">
                 <a href="/calendar" title="Reisekalender" class="header-action header-action--calendar">
                     <div class="header-action--icon">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
                     </div>
                 </a>
             </div>
-            <div class="col-auto align-self-center dropdown">
+            <div class="col-auto dropdown">
                 <button class="header-action header-action--wishlist toggler wishlist-toggler" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" data-offset="40,20">
                     <div class="header-action--icon">
@@ -150,7 +150,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </div>
                 </div>
             </div>
-            <div class="col-auto align-self-center d-none">
+            <div class="col-auto d-none">
                 <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
                         aria-expanded="false" aria-label="Toggle Search">
                     <div class="header-action--icon">
