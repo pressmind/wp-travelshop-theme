@@ -11223,8 +11223,8 @@ header.header-main {
       header.header-main .header-action .header-action--icon > svg {
         color: #434b53;
         transition: color .3s;
-        width: 1.5rem;
-        height: 1.5rem; }
+        width: 1.75rem;
+        height: 1.75rem; }
     header.header-main .header-action:hover .header-action--icon > svg, header.header-main .header-action:focus .header-action--icon > svg, header.header-main .header-action:active .header-action--icon > svg {
       color: #007bff; }
     header.header-main .header-action--wishlist {
@@ -11262,8 +11262,8 @@ header.header-main {
       align-items: center;
       justify-content: center; }
       header.header-main .hotline-link .hotline-icon svg {
-        width: 1.5rem;
-        height: 1.5rem; }
+        width: 1.75rem;
+        height: 1.75rem; }
     header.header-main .hotline-link .hotline-info {
       flex: 1;
       display: none;
