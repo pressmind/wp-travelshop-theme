@@ -9992,6 +9992,11 @@ html.force--consent.show--consent body {
  * Headlines
  */
 /**
+ * Header
+ * ---------------------------------------
+ * some variables wich used for default header settings
+ */
+/**
  * Travelbox
  */
 /**
@@ -11145,5 +11150,13 @@ div.daterangepicker {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
+
+header.header-main {
+  background-color: #fff;
+  color: #212529;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
 
 /*# sourceMappingURL=app.css.map */

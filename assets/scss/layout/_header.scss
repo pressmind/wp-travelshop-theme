@@ -1,0 +1,14 @@
+header.header-main {
+  background-color: $header-bg;
+  color: $header-color;
+
+  @if ( $header-sticky ) {
+    position: sticky;
+    top:0;
+    z-index: $zindex-sticky;
+  }
+
+  @if ( $header-box-shadow != null ) {
+    box-shadow: $header-box-shadow;
+  }
+}
