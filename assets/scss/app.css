@@ -10901,7 +10901,7 @@ div.daterangepicker {
 /**
  * normal travel card teaser
  */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-travel {
     flex-direction: column;
     height: 100%;
