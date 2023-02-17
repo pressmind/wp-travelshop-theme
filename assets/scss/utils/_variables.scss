@@ -126,8 +126,8 @@ $navbar-font-size: $font-size-lg !default;
 
 // -- travelbox break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
 // -- you can set bootstrap breakpoint key or px value
-$travel-box-use-break: true !default;
-$travel-box-break: lg !default;
+$travel-box-use-break: false !default;
+$travel-box-break: md !default;
 
 /**
  * Custom form items
