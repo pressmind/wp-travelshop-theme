@@ -160,7 +160,7 @@
    * they're used for "travel-box-break" into stripe on small devices
    */
 
-  @if $travel-box-use-break {
+  @if ($travel-box-use-break == true) {
     @extend %card-travel-small;
   }
 
