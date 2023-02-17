@@ -10861,71 +10861,109 @@ div.daterangepicker {
 /**
  * small ( 2 column ) travel card
  */
-/**
- * normal travel card teaser
- */
 .card-travel {
-  flex-direction: column;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-radius: 0.25rem; }
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0; }
   .card-travel .card-image {
-    flex: 0;
+    flex: 0 0 41.6666666667%;
     width: 100%;
-    max-width: 100%; }
+    max-width: 41.6666666667%; }
     .card-travel .card-image > a {
       margin-left: -1px;
       margin-top: -1px;
-      margin-bottom: 0;
-      margin-right: -1px; }
+      margin-bottom: -1px;
+      display: flex; }
     .card-travel .card-image img {
-      border-top-right-radius: 0.25rem;
-      border-top-left-radius: 0.25rem;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0; }
+      border-radius: 0.25rem; }
   .card-travel .card-body {
-    flex: 1;
+    flex: 0 0 58.3333333333%;
     width: 100%;
-    max-width: 100%;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between; }
+    max-width: 58.3333333333%;
+    padding: 0 0 0 1.25rem; }
     .card-travel .card-body .attribute-row {
-      display: block; }
+      display: none; }
     .card-travel .card-body .card-body--bottom .price-row {
       display: flex;
-      flex-direction: column;
-      align-items: unset;
-      justify-content: unset;
-      gap: 0; }
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem; }
     .card-travel .card-body .card-body--bottom .btn.btn-primary {
-      display: block;
-      margin-top: 0.75rem; }
+      display: inline-block;
+      margin-top: 0; }
       .card-travel .card-body .card-body--bottom .btn.btn-primary > small span {
-        display: inline; }
-  .card-travel .discount-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; }
-    .card-travel .discount-wrapper hr {
-      display: block;
-      position: absolute;
-      margin: 0;
-      top: 50%;
-      left: 0;
-      right: 0; }
-    .card-travel .discount-wrapper .discount-wrapper--inner {
-      padding-left: .25rem;
-      padding-right: .25rem;
-      position: relative;
-      z-index: 2; }
-    .card-travel .discount-wrapper .discount-wrapper--inner {
-      background-color: #fff; }
+        display: none; }
+
+/**
+ * normal travel card teaser
+ */
+@media (min-width: 768px) {
+  .card-travel {
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem; }
+    .card-travel .card-image {
+      flex: 0;
+      width: 100%;
+      max-width: 100%; }
+      .card-travel .card-image > a {
+        margin-left: -1px;
+        margin-top: -1px;
+        margin-bottom: 0;
+        margin-right: -1px; }
+      .card-travel .card-image img {
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; }
+    .card-travel .card-body {
+      flex: 1;
+      width: 100%;
+      max-width: 100%;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-between; }
+      .card-travel .card-body .attribute-row {
+        display: block; }
+      .card-travel .card-body .card-body--bottom .price-row {
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        justify-content: unset;
+        gap: 0; }
+      .card-travel .card-body .card-body--bottom .btn.btn-primary {
+        display: block;
+        margin-top: 0.75rem; }
+        .card-travel .card-body .card-body--bottom .btn.btn-primary > small span {
+          display: inline; }
+    .card-travel .discount-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .card-travel .discount-wrapper hr {
+        display: block;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 0;
+        right: 0; }
+      .card-travel .discount-wrapper .discount-wrapper--inner {
+        padding-left: .25rem;
+        padding-right: .25rem;
+        position: relative;
+        z-index: 2; }
+      .card-travel .discount-wrapper .discount-wrapper--inner {
+        background-color: #fff; } }
 
 .card-travel {
   display: flex;
