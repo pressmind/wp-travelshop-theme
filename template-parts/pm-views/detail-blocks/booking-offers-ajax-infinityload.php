@@ -105,7 +105,8 @@ if (!empty($args['booking_offers'])) { ?>
                                         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
                                             'cheapest_price' => $offer,
                                             'url' => $args['url'],
-                                            'disable_id' => false
+                                            'disable_id' => false,
+                                            'booking_type' => $args['media_object']->booking_type
                                         ]);?>
                                         <?php if($randint < 10) { ?>
                                             <!-- Toggle in badge the class "active" to toggle status with animation -->

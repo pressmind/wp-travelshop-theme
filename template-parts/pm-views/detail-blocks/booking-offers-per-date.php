@@ -262,7 +262,7 @@ $cheapest_price = $args['cheapest_price'];
                                         </div>
                                         <div class="col-12 col-lg-2">
                                             <a class="btn btn-primary btn-block booking-btn green" target="_blank" rel="nofollow"
-                                               href="<?php echo IB3Tools::get_bookinglink($housing_options_cheapest_price_primary);?>"
+                                               href="<?php echo IB3Tools::get_bookinglink($housing_options_cheapest_price_primary, null, null, $args['booking_type']);?>"
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                     <polyline points="9 6 15 12 9 18" />

@@ -1019,7 +1019,11 @@ jQuery(function ($) {
                 $(booking_btn).addClass(data.class);
                 if(data.bookable === true){
                     $(booking_btn).find('svg').show();
-                    location.href = $(booking_btn).attr('href') + '&t='+data.booking_type;
+                    let href = new URL($(booking_btn).attr('href'));
+                    if(href.searchParams.get('t') != 'request'){
+                        href.searchParams.set('t', data.booking_type);
+                    }
+                    location.href = href.toString();
                 }
             }));
         }
