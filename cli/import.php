@@ -42,6 +42,10 @@ define('WP_USE_THEMES', false);
 require_once($wp_path . 'wp-load.php');
 require_once($wp_path . 'wp-admin/includes/admin.php');
 
+error_reporting(-1);
+ini_set('display_errors', 'On');
+ini_set('max_execution_time', 0);
+
 global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 
 if(in_array('debug', $args)){
