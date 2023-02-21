@@ -44,4 +44,8 @@
     opacity: 1;
   }
 
+  // -- clear X
+  .clear-dropdown {
+    @extend %input-clear;
+  }
 }
