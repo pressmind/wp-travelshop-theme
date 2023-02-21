@@ -10310,14 +10310,16 @@ input[type="search"]::-webkit-search-results-decoration {
 .select-from-control .input-clear {
   position: absolute;
   top: 50%;
-  right: 0.75rem;
+  right: 0.375rem;
   display: none;
+  margin-top: -0.5625rem;
   width: 1.125rem;
   height: 1.125rem;
   background-color: #fff;
   cursor: pointer;
   color: #212529;
-  transition: color .3s; }
+  transition: color .3s;
+  z-index: 5; }
   .select-from-control .input-clear:hover {
     color: #007bff; }
 
