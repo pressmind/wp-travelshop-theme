@@ -11223,7 +11223,8 @@ div.daterangepicker {
   border-width: 1px;
   border-color: #dee2e6;
   border-style: solid;
-  border-radius: 0.25rem; }
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
 .search-wrapper .search-wrapper--tabs + form .search-box {
   border-top-left-radius: 0; }
 .search-wrapper .search-wrapper--tabs {
@@ -11262,6 +11263,48 @@ div.daterangepicker {
       font-weight: 700;
       padding-bottom: 16px;
       margin-bottom: -1px; }
+
+/**
+ * color themes
+ */
+.transparent .search-wrapper .search-box {
+  border-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7); }
+.transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5); }
+  .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.7); }
+  .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.7); }
+
+.main-color .search-wrapper .search-box {
+  border-color: #007bff;
+  background-color: #007bff; }
+.main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn {
+  background-color: rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 123, 255, 0.5); }
+  .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
+    background-color: rgba(0, 123, 255, 0.7);
+    border-color: rgba(0, 123, 255, 0.7); }
+  .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+    background-color: #007bff;
+    border-color: #007bff; }
+
+.silver .search-wrapper .search-box {
+  border-color: #6c757d;
+  background-color: #6c757d; }
+.silver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn {
+  background-color: rgba(108, 117, 125, 0.5);
+  border-color: rgba(108, 117, 125, 0.5); }
+  .silver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
+    background-color: rgba(108, 117, 125, 0.7);
+    border-color: rgba(108, 117, 125, 0.7); }
+  .silver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+    background-color: #6c757d;
+    border-color: #6c757d; }
 
 header.header-main {
   background-color: #fff;

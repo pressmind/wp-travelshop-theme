@@ -160,6 +160,9 @@ $custom-checkbox-input-active-icon-color: $white !default;
  * own/custom style easier to fit/work
  */
 
+$search-bar-box-shadow: 0 .5rem 1rem rgba(#000, .15) !default;
+$search-bar-use-shadow: true !default;
+
 $search-bar-tabs-border-color: $gray-300 !default;
 $search-bar-tabs-border-width: $nav-tabs-border-width !default;
 $search-bar-tabs-border-radius: $nav-tabs-border-radius !default;
@@ -187,6 +190,11 @@ $search-bar-pane-border-color: $search-bar-tabs-link-active-border-color !defaul
 
 $search-bar-padding-y: $grid-gutter-width !default;
 $search-bar-padding-x: ($grid-gutter-width / 2) !default;
+
+// themes
+$search-bar-silver-theme-color: $gray-600 !default;
+$search-bar-main-theme-color: $primary !default;
+$search-bar-transparent-theme-color: #fff !default;
 
 /**
  * Filter
