@@ -15,11 +15,19 @@
       padding: $search-bar-padding-x $search-bar-padding-y;
       background-color: $search-bar-tabs-bg;
       border-color: $search-bar-tabs-border-color;
+      border-style: solid;
       color: $search-bar-tabs-color;
 
       font-weight: $search-bar-tabs-font-weight;
 
       transition: border-color .3s, color .3s, background-color .3s;
+
+      @if ( $search-bar-tabs-border-width != 0 ) {
+        border-top-width: $search-bar-tabs-border-width;
+        border-right-width: $search-bar-tabs-border-width;
+        border-left-width: $search-bar-tabs-border-width;
+        border-bottom-width: 0;
+      }
 
       // -- hover state
       &:hover {
