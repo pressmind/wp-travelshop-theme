@@ -11221,6 +11221,7 @@ div.daterangepicker {
   padding: 30px;
   background-color: #fff;
   border-width: 1px;
+  border-color: #dee2e6 #dee2e6 #fff;
   border-style: solid;
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;

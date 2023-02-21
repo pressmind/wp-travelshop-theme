@@ -5,6 +5,7 @@
     padding: $search-bar-padding-y;
     background-color: $search-bar-tabs-link-active-bg;
     border-width: $search-bar-tabs-border-width;
+    border-color: $search-bar-tabs-link-active-border-color;
     border-style: solid;
 
     @include border-bottom-radius($search-bar-tabs-border-radius);
