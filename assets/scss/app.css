@@ -10307,7 +10307,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /**
  * Define input clear button, by default / globally
  */
-.select-from-control .clear-dropdown {
+.select-from-control .input-clear {
   position: absolute;
   top: 50%;
   right: 0.75rem;
@@ -10318,7 +10318,7 @@ input[type="search"]::-webkit-search-results-decoration {
   cursor: pointer;
   color: #212529;
   transition: color .3s; }
-  .select-from-control .clear-dropdown:hover {
+  .select-from-control .input-clear:hover {
     color: #007bff; }
 
 /**
