@@ -71,6 +71,7 @@ foreach ($languages as $language) {
             $routename = 'ts_default_' . $route_prefix . '_route';
             $data = [];
             $data['id_object_types'] = $search_route['pm-ot'];
+            $data['order'] = !empty($search_route['pm-o']) ? $search_route['pm-o'] : 'price-asc';
             $data['type'] = 'search';
             $data['language'] = $language_code;
             $data['base_url'] = $route_prefix;
@@ -285,6 +286,7 @@ function ts_search_hook($data)
 
     // set the id of the current media object as wp parameter
     $wp_query->set('pm-ot', is_array($data['id_object_types']) ? implode(',', $data['id_object_types']) : $data['id_object_types']);
+    $wp_query->set('pm-o', $data['order']);
     add_filter( 'body_class', function( $classes ) {
         $classes[] = 'pm-search-page';
         return $classes;

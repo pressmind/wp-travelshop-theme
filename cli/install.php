@@ -341,6 +341,7 @@ if($args[1] != 'only_static') {
                 $config['data']['primary_media_type_ids'][] = $item->id_type;
                 $searchroute = [
                     'pm-ot' => $item->id_type,
+                    'pm-o' => 'price-asc',
                     'languages' => [
                         'default' => [
                             'route' => HelperFunctions::human_to_machine($item->type_name).'-suche',
@@ -358,6 +359,7 @@ if($args[1] != 'only_static') {
 
         $searchroutes = array_merge([[
             'pm-ot' => implode(',', $config['data']['primary_media_type_ids']),
+            'pm-o' => 'price-asc',
             'languages' => [
                 'default' => [
                     'route' => 'suche',

@@ -420,12 +420,14 @@ class BuildSearch
 
         $allowed_orders = array(
             'rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc',
-            'score-asc', 'score-desc', 'recommendation_rate-asc', 'recommendation_rate-desc'
+            'score-asc', 'score-desc', 'recommendation_rate-asc', 'recommendation_rate-desc', 'priority'
         );
         if (empty($request[$prefix.'-o']) === false && in_array($request[$prefix.'-o'], $allowed_orders) === true) {
 
             if($request[$prefix.'-o'] == 'rand'){
                 $order = array('rand' => '');
+            }elseif($request[$prefix.'-o'] == 'priority'){
+                $order = array('priority' => '');
             }else{
                 list($property, $direction) =  explode('-', $request[$prefix.'-o']);
                 $property = $property == 'price' ? 'price_total' : $property;
@@ -479,15 +481,12 @@ class BuildSearch
 
     }
 
-
-
-    public static function getCurrentQueryString($page = null, $page_size = null, $prefix = 'pm'){
-
+    public static function getCurrentQueryString($page = null, $page_size = null, $custom_params = [], $prefix = 'pm'){
         $page = empty($page) ? self::$page : $page;
         $page_size = empty($page_size) ? self::$page_size : $page_size;
-        return urldecode(http_build_query(self::$validated_search_parameters)).'&'.$prefix.'-l='.$page.','.$page_size;
+        $url = array_merge(self::$validated_search_parameters, [$prefix.'-l' => $page.','.$page_size], $custom_params);
+        return urldecode(http_build_query($url));
     }
-
 
     /**
      * Accepts the following formats

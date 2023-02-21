@@ -12,7 +12,7 @@ get_header();
     $args['search_box'] = 'default_search_box';
     $args['search_box_tab'] = 0;
     load_template(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $args);
-    $request = array_merge($_GET, ['pm-ot' => $wp_query->get('pm-ot')]);
+    $request = array_merge(['pm-ot' => $wp_query->get('pm-ot'), 'pm-o' => $wp_query->get('pm-o')], $_GET);
     $output = null;
     $view = 'Teaser1';
     if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){

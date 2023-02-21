@@ -53,6 +53,7 @@ class Search
             $request['pm-ho'] = $occupancy;
         }
         $id_object_type = empty($request['pm-ot']) ? false : \BuildSearch::extractObjectType($request['pm-ot']);
+        $order = empty($request['pm-o']) ? 'price-asc' : $request['pm-o'];
         if($getFilters){
             $FilterCondition = [];
             if(!empty($request['pm-ot'])){
@@ -94,11 +95,12 @@ class Search
                 $item['id_media_object'] = $document['id_media_object'];
                 $item['id_object_type'] = $document['id_object_type'];
                 $item['url'] = $document['url'];
-                $item['recommendation_rate'] = $document['recommendation_rate'];
+                $item['recommendation_rate'] = !empty($document['recommendation_rate']) ? $document['recommendation_rate'] : null;
                 $item['dates_per_month'] = [];
                 $item['fst_date_departure'] = !empty($document['fst_date_departure']) ? new \DateTime($document['fst_date_departure']) : null;
                 $item['possible_durations'] = !empty($document['possible_durations']) ? $document['possible_durations'] : [];
                 $item['last_modified_date'] = $document['last_modified_date'];
+                $item['sales_priority'] = $document['sales_priority'];
                 if (!empty($document['prices'])) {
                     if(!is_array($document['prices']['date_departures'])){
                         $document['prices']['date_departures'] = [$document['prices']['date_departures']];
@@ -184,21 +186,47 @@ class Search
 
         $board_types = [];
         if(!empty($result_filter->boardTypesGrouped)){
-            $boardTypes = json_decode(json_encode($result_filter->boardTypesGrouped));
-            foreach($boardTypes as $item){
-                    $tmp = new \stdClass();
-                    $tmp->name = $item->_id;
-                    $board_types[]= $tmp;
+            $matching_board_types_map = [];
+            if(!$returnFiltersOnly){
+                $matching_board_types = json_decode(json_encode($result->boardTypesGrouped));
+                foreach($matching_board_types as $item){
+                    if(empty($item->_id)){
+                        continue;
+                    }
+                    $matching_board_types_map[$item->_id] = $item;
+                }
+            }
+            foreach(json_decode(json_encode($result_filter->boardTypesGrouped)) as $item){
+                if(empty($item->_id)){
+                    continue;
+                }
+                $item->count_in_system = $item->count;
+                $item->count_in_search = 0;
+                $item->name = $item->_id;
+                if(isset($matching_board_types_map[$item->_id])){
+                    $item->count_in_search = $matching_board_types_map[$item->_id]->count;
+                }
+                $board_types[$item->_id] = $item;
             }
         }
 
         $transport_types = [];
         if(!empty($result_filter->transportTypesGrouped)){
-            $transportTypes = json_decode(json_encode($result_filter->transportTypesGrouped));
-            foreach($transportTypes as $item){
-                $tmp = new \stdClass();
-                $tmp->name = $item->_id;
-                $transport_types[]= $tmp;
+            $matching_transport_types_map = [];
+            if(!$returnFiltersOnly){
+                $matching_transport_types = json_decode(json_encode($result->transportTypesGrouped));
+                foreach($matching_transport_types as $item){
+                    $matching_transport_types_map[$item->_id] = $item;
+                }
+            }
+            foreach(json_decode(json_encode($result_filter->transportTypesGrouped)) as $item){
+                $item->count_in_system = $item->count;
+                $item->count_in_search = 0;
+                $item->name = $item->_id;
+                if(isset($matching_transport_types_map[$item->_id])){
+                    $item->count_in_search = $matching_transport_types_map[$item->_id]->count;
+                }
+                $transport_types[$item->_id] = $item;
             }
         }
 
@@ -235,6 +263,7 @@ class Search
                 'info' => []
             ],
             'id_object_type' => !$id_object_type ? [] : $id_object_type,
+            'order' => $order,
             'categories' => $categories,
             'board_types' => $board_types,
             'transport_types' => $transport_types,

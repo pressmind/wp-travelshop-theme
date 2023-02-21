@@ -82,6 +82,7 @@ define('TS_DESTINATIONS', null);
  *  define('TS_SEARCH_ROUTES', [
  *  [
  *      'pm-ot' => [TS_TOUR_PRODUCTS,TS_DAYTRIPS_PRODUCTS],
+ *      'pm-o' => 'price-asc',
  *      'languages' => [
  *          'default' => [
  *              'route' => 'suche',
@@ -91,7 +92,8 @@ define('TS_DESTINATIONS', null);
  *      ],
  *  ],
  *  [
- *  'pm-ot' => [TS_TOUR_PRODUCTS],
+ *      'pm-ot' => [TS_TOUR_PRODUCTS],
+ *      'pm-o' => 'priority',
  *      'languages' => [
  *          'default' => [
  *              'route' => 'reise-suche',
@@ -102,6 +104,7 @@ define('TS_DESTINATIONS', null);
  *  ],
  *  [
  *      'pm-ot' => [TS_DAYTRIPS_PRODUCTS],
+ *      'pm-o' => 'price-asc',
  *      'languages' => [
  *          'default' => [
  *              'route' => 'tagesfahrt-suche',
