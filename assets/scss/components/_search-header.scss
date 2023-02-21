@@ -24,5 +24,9 @@
   .layout-block-search-header--search {
     position: relative;
     z-index: 2;
+
+    .h1 {
+      @extend %text-on-image;
+    }
   }
 }

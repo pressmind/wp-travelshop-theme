@@ -10131,7 +10131,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-bottom: 0.5rem;
   line-height: 1.2; }
 
-.teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title {
+.teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title, .layout-block.layout-block-search-header .layout-block-search-header--search .h1 {
   color: #fff;
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5); }
 
