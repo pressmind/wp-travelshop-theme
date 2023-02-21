@@ -10284,6 +10284,27 @@ body.fl-builder .content-block.content-page {
  * in every state/position wich needs this styling
  */
 /**
+ * Remove X action from chrome + firefox + ms styles
+ */
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0; }
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none; }
+
+/**
  * Custom input group, used ie. for string search
  * ----------------------------------------------
  * its using variables from inputs + input groups
