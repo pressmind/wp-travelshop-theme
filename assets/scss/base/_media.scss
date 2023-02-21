@@ -1,19 +1,23 @@
 // -- little helper to make sure media is cover
+%media-cover-image {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+}
+
 %media-cover {
   position: relative;
   overflow: hidden;
 
   > img {
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    top:0;
-
-    object-fit: cover;
-
-    width: 100%;
-    height: 100%;
+    @extend %media-cover-image;
   }
 }
 
