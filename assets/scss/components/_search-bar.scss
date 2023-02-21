@@ -8,8 +8,12 @@
     border-color: $search-bar-pane-border-color;
     border-style: solid;
 
-    @include border-bottom-radius($search-bar-pane-border-radius);
-    @include border-top-right-radius($search-bar-pane-border-radius);
+    @include border-radius($search-bar-pane-border-radius);
+  }
+
+  // -- rest top left border radius if tabs given
+  .search-wrapper--tabs + form .search-box {
+    @include border-top-left-radius(0);
   }
 
   // -- tabs

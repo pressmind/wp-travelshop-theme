@@ -11223,9 +11223,9 @@ div.daterangepicker {
   border-width: 1px;
   border-color: #dee2e6;
   border-style: solid;
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem; }
+  border-radius: 0.25rem; }
+.search-wrapper .search-wrapper--tabs + form .search-box {
+  border-top-left-radius: 0; }
 .search-wrapper .search-wrapper--tabs {
   display: flex;
   flex-direction: row;
