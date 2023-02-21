@@ -160,7 +160,7 @@ $custom-checkbox-input-active-icon-color: $white !default;
  * own/custom style easier to fit/work
  */
 
-$search-bar-tabs-border-color: $nav-tabs-border-color !default;
+$search-bar-tabs-border-color: $gray-300 !default;
 $search-bar-tabs-border-width: $nav-tabs-border-width !default;
 $search-bar-tabs-border-radius: $nav-tabs-border-radius !default;
 
@@ -168,7 +168,7 @@ $search-bar-tabs-font-weight: $font-weight-base !default;
 $search-bar-tabs-color: $gray-600 !default;
 $search-bar-tabs-bg: #fff !default;
 
-$search-bar-tabs-link-hover-border-color: $nav-tabs-link-hover-border-color !default;
+$search-bar-tabs-link-hover-border-color: $gray-300 !default;
 $search-bar-tabs-link-hover-color: $nav-tabs-link-active-color !default;
 $search-bar-tabs-link-hover-bg: $nav-tabs-link-active-bg !default;
 $search-bar-tabs-link-hover-font-weight: $search-bar-tabs-font-weight !default;
@@ -176,13 +176,14 @@ $search-bar-tabs-link-hover-font-weight: $search-bar-tabs-font-weight !default;
 $search-bar-tabs-link-active-color: $nav-tabs-link-active-color !default;
 $search-bar-tabs-link-active-bg: $nav-tabs-link-active-bg !default;
 $search-bar-tabs-link-active-font-weight: $font-weight-bold !default;
-$search-bar-tabs-link-active-border-color: $nav-tabs-link-active-border-color !default;
+$search-bar-tabs-link-active-border-color: $gray-300 !default;
 
 $search-bar-tabs-gap: .125rem !default; // 2px
 
-$search-bar-pane-bg: $nav-tabs-link-active-bg !default;
-$search-bar-pane-border-width: $nav-tabs-border-width !default;
-$search-bar-pane-border-color: $nav-tabs-link-active-border-color !default;
+$search-bar-pane-border-radius: $search-bar-tabs-border-radius !default;
+$search-bar-pane-bg: $search-bar-tabs-link-active-bg !default;
+$search-bar-pane-border-width: $search-bar-tabs-border-width !default;
+$search-bar-pane-border-color: $search-bar-tabs-link-active-border-color !default;
 
 $search-bar-padding-y: $grid-gutter-width !default;
 $search-bar-padding-x: ($grid-gutter-width / 2) !default;

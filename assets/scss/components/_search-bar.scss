@@ -3,13 +3,13 @@
   // -- search-box
   .search-box {
     padding: $search-bar-padding-y;
-    background-color: $search-bar-tabs-link-active-bg;
-    border-width: $search-bar-tabs-border-width;
-    border-color: $search-bar-tabs-link-active-border-color;
+    background-color: $search-bar-pane-bg;
+    border-width: $search-bar-pane-border-width;
+    border-color: $search-bar-pane-border-color;
     border-style: solid;
 
-    @include border-bottom-radius($search-bar-tabs-border-radius);
-    @include border-top-right-radius($search-bar-tabs-border-radius);
+    @include border-bottom-radius($search-bar-pane-border-radius);
+    @include border-top-right-radius($search-bar-pane-border-radius);
   }
 
   // -- tabs
