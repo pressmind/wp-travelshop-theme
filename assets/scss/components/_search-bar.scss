@@ -57,7 +57,7 @@
         font-weight: $search-bar-tabs-link-active-font-weight;
 
         @if ( $search-bar-tabs-border-width != 0 ) {
-          padding-bottom: ( remToPx($search-bar-padding-x) + $search-bar-tabs-border-width );
+          padding-bottom: ( $search-bar-padding-x + $search-bar-tabs-border-width );
           margin-bottom: -$search-bar-tabs-border-width;
         }
       }
