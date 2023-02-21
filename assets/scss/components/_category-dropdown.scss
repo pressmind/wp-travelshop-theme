@@ -1,6 +1,9 @@
 .dropdown-menu.dropdown-menu-select {
 
   .category-tree-field-items {
+    padding-left: $dropdown-item-padding-x;
+    padding-right: $dropdown-item-padding-x;
+
     .form-check {
       @extend %custom-checkbox;
 
