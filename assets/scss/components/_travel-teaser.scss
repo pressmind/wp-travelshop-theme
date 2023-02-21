@@ -69,7 +69,7 @@
  * normal travel card teaser
  */
 %card-travel-default {
-  @include get-custom-breakpoint($travel-box-break) {
+  @include get-custom-breakpoint($travel-card-break) {
     flex-direction: column;
     height: 100%;
 
@@ -160,7 +160,7 @@
    * they're used for "travel-box-break" into stripe on small devices
    */
 
-  @if ($travel-box-use-break == true) {
+  @if ($travel-card-use-break == true) {
     @extend %card-travel-small;
   }
 

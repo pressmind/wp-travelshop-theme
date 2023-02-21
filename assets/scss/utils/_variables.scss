@@ -121,15 +121,6 @@ $navbar-active-font-weight: $font-weight-bold !default;
 $navbar-font-size: $font-size-lg !default;
 
 /**
- * Travelbox
- */
-
-// -- travelbox break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
-// -- you can set bootstrap breakpoint key or px value
-$travel-box-use-break: true !default;
-$travel-box-break: md !default;
-
-/**
  * Custom form items
  * --------------------------------------------
  * defines various custom form items globally,
@@ -157,6 +148,25 @@ $custom-checkbox-input-active-border-color: $primary !default;
 $custom-checkbox-input-active-bg: $primary !default;
 $custom-checkbox-input-active-icon-color: $white !default;
 
+
+/**
+ * Searchbar
+ * --------------------------------------------
+ * searchbar uses some default tab variables
+ * from bootstrap. can be overwritten in
+ * theme varialbes file by bootstrap tabs
+ * variables or by own variables.
+ * You can either reset variables to make
+ * own/custom style easier to fit/work
+ */
+
+$search-bar-tabs-border-color: $nav-tabs-border-color !default;
+$search-bar-tabs-border-width: $nav-tabs-border-width !default;
+$search-bar-tabs-border-radius: $nav-tabs-border-radius !default;
+$search-bar-tabs-link-hover-border-color: $nav-tabs-link-hover-border-color !default;
+$search-bar-tabs-link-active-color: $nav-tabs-link-active-color !default;
+$search-bar-tabs-link-active-bg: $nav-tabs-link-active-bg !default;
+$search-bar-tabs-link-active-border-color: $nav-tabs-link-active-border-color !default;
 
 
 /**
@@ -254,6 +264,11 @@ $teaser-category-product-travel-card-title-active-color: $primary;
  * to make travel cards different from default
  * cards.
  */
+
+// -- travelcard break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
+// -- you can set bootstrap breakpoint key or px value
+$travel-card-use-break: true !default;
+$travel-card-break: md !default;
 
 $travel-card-spacer-y: $card-spacer-y !default;
 $travel-card-spacer-x: $card-spacer-x !default;
