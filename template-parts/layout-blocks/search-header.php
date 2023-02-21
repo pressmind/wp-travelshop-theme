@@ -9,7 +9,7 @@
  */
 ?>
 <section class="layout-block layout-block-search-header">
-    <div class="layout-block-search-header--search">
+    <div class="layout-block-search-header--search transparent">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-11 col-xl-10">
