@@ -11217,11 +11217,19 @@ div.daterangepicker {
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
 
+.search-wrapper .search-box {
+  padding: 30px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem; }
 .search-wrapper .search-wrapper--tabs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.25rem; }
+  gap: 0.125rem; }
   .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn {
     border: 0;
     outline: none;
@@ -11250,7 +11258,9 @@ div.daterangepicker {
       background-color: #fff;
       border-color: #dee2e6 #dee2e6 #fff;
       color: #495057;
-      font-weight: 700; }
+      font-weight: 700;
+      padding-bottom: 241px;
+      margin-bottom: -1px; }
 
 header.header-main {
   background-color: #fff;
