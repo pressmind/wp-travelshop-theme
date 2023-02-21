@@ -21,11 +21,20 @@
 
       transition: border-color .3s, color .3s, background-color .3s;
 
+      // -- hover state
       &:hover {
         background-color: $search-bar-tabs-link-hover-bg;
         border-color: $search-bar-tabs-link-hover-border-color;
         color: $search-bar-tabs-link-hover-color;
         font-weight: $search-bar-tabs-link-hover-font-weight;
+      }
+
+      // -- active state
+      &.is--active {
+        background-color: $search-bar-tabs-link-active-bg;
+        border-color: $search-bar-tabs-link-active-border-color;
+        color: $search-bar-tabs-link-active-color;
+        font-weight: $search-bar-tabs-link-active-font-weight;
       }
     }
   }

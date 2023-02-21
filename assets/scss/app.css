@@ -11241,6 +11241,11 @@ div.daterangepicker {
       border-color: #e9ecef #e9ecef #dee2e6;
       color: #495057;
       font-weight: 400; }
+    .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+      background-color: #fff;
+      border-color: #dee2e6 #dee2e6 #fff;
+      color: #495057;
+      font-weight: 700; }
 
 header.header-main {
   background-color: #fff;
