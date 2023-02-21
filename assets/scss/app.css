@@ -10324,6 +10324,22 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #007bff; }
 
 /**
+ * Define fadeout right, to make text longer than input fadeout into form bg-color
+ */
+.select-from-control .selected-options:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4rem;
+  pointer-events: none;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #fff 70%);
+  background-repeat: repeat-x;
+  z-index: 2; }
+
+/**
  * Custom input group, used ie. for string search
  * ----------------------------------------------
  * its using variables from inputs + input groups
@@ -10476,6 +10492,11 @@ form.form-string-search.input-group {
   .select-from-control:disabled, .select-from-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
+  .select-from-control .selected-options {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative; }
 
 .dropdown .dropdown-toggle:after {
   display: none; }

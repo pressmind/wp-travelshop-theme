@@ -45,6 +45,25 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 /**
+ * Define fadeout right, to make text longer than input fadeout into form bg-color
+ */
+
+%input-fadeout {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4rem; // 64px
+  pointer-events: none;
+
+  @include gradient-x(rgba($input-bg, 0), $input-bg, 0, 70%);
+
+  z-index: 2;
+}
+
+/**
  * Custom input group, used ie. for string search
  * ----------------------------------------------
  * its using variables from inputs + input groups

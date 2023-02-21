@@ -48,4 +48,17 @@
   .input-clear {
     @extend %input-clear;
   }
+
+  // -- selected options
+  .selected-options {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+
+    // -- white fadeout
+    &:after {
+      @extend %input-fadeout;
+    }
+  }
 }
