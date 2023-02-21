@@ -11217,6 +11217,31 @@ div.daterangepicker {
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
 
+.search-wrapper .search-wrapper--tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem; }
+  .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #6c757d;
+    font-weight: 400;
+    transition: border-color .3s, color .3s, background-color .3s; }
+    .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
+      background-color: #fff;
+      border-color: #e9ecef #e9ecef #dee2e6;
+      color: #495057;
+      font-weight: 400; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;
