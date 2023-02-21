@@ -11,6 +11,9 @@
   border-style: solid;
   border-color: $input-border-color;
 
+  // -- define text align left, cuz select-form-controls mostly buttons
+  text-align: left;
+
   color: $input-color;
   height: $input-height;
   line-height: $input-line-height;

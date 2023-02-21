@@ -10431,6 +10431,7 @@ form.form-string-search.input-group {
   border-width: 1px;
   border-style: solid;
   border-color: #ced4da;
+  text-align: left;
   color: #495057;
   height: calc( 1.5em + 0.75rem + 2px );
   line-height: 1.5;
