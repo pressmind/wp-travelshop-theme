@@ -11317,6 +11317,9 @@ div.daterangepicker {
     padding-bottom: 15px;
     margin-bottom: 0; }
 
+.layout-block.layout-block-search-header {
+  padding: 30px 0; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;
