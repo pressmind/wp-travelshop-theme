@@ -11306,6 +11306,17 @@ div.daterangepicker {
     background-color: #adb5bd;
     border-color: #adb5bd; }
 
+.sliver .search-wrapper .search-box, .main-color .search-wrapper .search-box, .transparent .search-wrapper .search-box {
+  border-width: 0; }
+.sliver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn, .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn, .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0; }
+  .sliver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active, .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active, .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+    padding-bottom: 15px;
+    margin-bottom: 0; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;

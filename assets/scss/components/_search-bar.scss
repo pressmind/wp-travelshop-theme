@@ -169,3 +169,30 @@
     }
   }
 }
+
+// remove borders, for color themes, not needed
+.sliver, .main-color, .transparent {
+  .search-wrapper {
+
+    // -- search-box
+    .search-box {
+      border-width: 0;
+    }
+
+    // -- tabs
+    .search-wrapper--tabs {
+      button.search-wrapper--tabs_btn {
+        border-top-width: 0;
+        border-right-width: 0;
+        border-left-width: 0;
+        border-bottom-width: 0;
+
+        // -- active state
+        &.is--active {
+            padding-bottom: $search-bar-padding-x;
+            margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
