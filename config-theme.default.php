@@ -363,7 +363,70 @@ define('TS_SEARCH_AUTOCOMPLETE', []);
  * ]);
  * </code>
  */
-define('TS_SEARCH', []);
+
+define('TS_SEARCH', [
+     'default_search_box' => [
+         'tabs' => [
+             [
+                 'name' => 'Reisen',
+                 'search' => [
+                     'pm-ot' => '609,607'
+                 ],
+                 'route' => 'suche',
+                 'fields' => [
+                     [
+                         'fieldname' => 'date_picker',
+                         'name' => '1 Zeitraum',
+                     ],
+                     [
+                         'fieldname' => 'string_search',
+                         'name' => 'Suche',
+                         'params' => TS_SEARCH_AUTOCOMPLETE,
+                     ],
+                     [
+                         'fieldname' => 'reiseart_default',
+                         'name' => 'Reiseart',
+                         'behavior' => 'OR',
+                     ],
+                     [
+                         'fieldname' => 'zielgebiet_default',
+                         'name' => 'Zielgebiet',
+                         'behavior' => 'OR',
+                     ],
+                 ],
+             ],
+             [
+                 'name' => 'Reisen',
+                 'search' => [
+                     'pm-ot' => '609,607'
+                 ],
+                 'route' => 'suche',
+                 'fields' => [
+                     [
+                         'fieldname' => 'date_picker',
+                         'name' => '1 Zeitraum',
+                     ],
+                     [
+                         'fieldname' => 'string_search',
+                         'name' => 'Suche',
+                         'params' => TS_SEARCH_AUTOCOMPLETE,
+                     ],
+                     [
+                         'fieldname' => 'reiseart_default',
+                         'name' => 'Reiseart',
+                         'behavior' => 'OR',
+                     ],
+                     [
+                         'fieldname' => 'zielgebiet_default',
+                         'name' => 'Zielgebiet',
+                         'behavior' => 'OR',
+                     ],
+                 ],
+             ],
+         ]
+
+     ],
+ ]);
 
 /**
  * the possible category tree item filters
