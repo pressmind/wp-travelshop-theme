@@ -26,6 +26,8 @@
       position: relative;
 
       > svg {
+        position: absolute;
+
         width: $font-size-base;
         height: $font-size-base;
         color: $body-color;
@@ -35,7 +37,7 @@
 
         z-index: 4;
 
-        transform: translateX(-50%);
+        transform: translateY(-50%);
       }
     }
   }
