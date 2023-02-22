@@ -11395,9 +11395,6 @@ form.form-string-search.input-group {
       margin: 0; }
     .teaser.icon-teaser .teaser-body p {
       margin: 0; }
-    .teaser.icon-teaser .teaser-body h1 + p,
-    .teaser.icon-teaser .teaser-body p + p {
-      margin-top: 0.75rem; }
     .teaser.icon-teaser .teaser-body .btn .btn-icon {
       line-height: 1; }
       .teaser.icon-teaser .teaser-body .btn .btn-icon svg {
