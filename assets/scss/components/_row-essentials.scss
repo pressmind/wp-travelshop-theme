@@ -13,3 +13,27 @@
     }
   }
 }
+
+.row.row-introduction {
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+
+    + p {
+      margin-top: 1rem;
+    }
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+}

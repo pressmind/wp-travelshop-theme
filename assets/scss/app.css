@@ -10497,6 +10497,20 @@ form.form-string-search.input-group {
       .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
         margin-bottom: 30px; } }
 
+.row.row-introduction {
+  margin-bottom: 1rem; }
+  @media (min-width: 768px) {
+    .row.row-introduction {
+      margin-bottom: 30px; } }
+  .row.row-introduction p {
+    margin-bottom: 0; }
+  .row.row-introduction h1, .row.row-introduction h2, .row.row-introduction h3, .row.row-introduction h4, .row.row-introduction h5, .row.row-introduction h6 {
+    margin-bottom: 0; }
+    .row.row-introduction h1 + p, .row.row-introduction h2 + p, .row.row-introduction h3 + p, .row.row-introduction h4 + p, .row.row-introduction h5 + p, .row.row-introduction h6 + p {
+      margin-top: 1rem; }
+  .row.row-introduction p + p {
+    margin-top: 1rem; }
+
 .dropdown .dropdown-toggle:after {
   display: none; }
 
