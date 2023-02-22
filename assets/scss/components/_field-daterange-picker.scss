@@ -8,6 +8,13 @@
         background: $input-bg;
         opacity: 1;
       }
+
+      // -- input clear
+      .input-clear {
+        display: none;
+
+        @extend %input-clear;
+      }
     }
   }
 }
