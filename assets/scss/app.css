@@ -11337,6 +11337,16 @@ div.daterangepicker {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
 .search-wrapper .search-wrapper--tabs + form .search-box {
   border-top-left-radius: 0; }
+.search-wrapper .string-search > div {
+  position: relative; }
+  .search-wrapper .string-search > div > svg {
+    width: 1rem;
+    height: 1rem;
+    color: #212529;
+    right: 0.75rem;
+    top: 50%;
+    z-index: 4;
+    transform: translateX(-50%); }
 .search-wrapper .search-wrapper--tabs {
   display: flex;
   flex-direction: row;

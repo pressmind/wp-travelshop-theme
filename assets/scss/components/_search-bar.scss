@@ -20,6 +20,26 @@
     @include border-top-left-radius(0);
   }
 
+  // -- string search change
+  .string-search {
+    > div {
+      position: relative;
+
+      > svg {
+        width: $font-size-base;
+        height: $font-size-base;
+        color: $body-color;
+        right: $input-padding-x;
+        top: 50%;
+
+
+        z-index: 4;
+
+        transform: translateX(-50%);
+      }
+    }
+  }
+
   // -- tabs
   .search-wrapper--tabs {
     display: flex;
