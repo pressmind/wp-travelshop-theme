@@ -11306,10 +11306,17 @@ form.form-string-search.input-group {
 
 .teaser.icon-teaser {
   flex-direction: row; }
+  .teaser.icon-teaser .teaser-icon {
+    padding: 1.25rem 0 1.25rem 1.25rem; }
 
 @media (min-width: 576px) {
   .teaser.icon-teaser {
-    flex-direction: column; } }
+    flex-direction: column; }
+    .teaser.icon-teaser .teaser-icon {
+      padding: 1.25rem 1.25rem 0 1.25rem; } }
+
+.teaser.icon-teaser .teaser-body {
+  padding: 1.25rem; }
 
 /**
  * Image teaser

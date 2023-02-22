@@ -1,17 +1,32 @@
 // -- settings for small variant of icon teaser
 %icon-teaser-small {
   flex-direction: row;
+
+  // -- teaser icon
+  .teaser-icon {
+    padding: $icon-teaser-spacer-x 0 $icon-teaser-spacer-x $icon-teaser-spacer-x;
+  }
 }
 
 // -- settings for default variant of icon teaser
 %icon-teaser-default {
   @include get-custom-breakpoint($icon-teaser-break) {
     flex-direction: column;
+
+    // -- teaser icon
+    .teaser-icon {
+      padding: $icon-teaser-spacer-x $icon-teaser-spacer-x 0 $icon-teaser-spacer-x;
+    }
   }
 }
 
 .teaser.icon-teaser {
+  // -- defaults
+  .teaser-body {
+    padding: $icon-teaser-spacer-x;
+  }
 
+  // -- layout handling
   @if ( $icon-teaser-break != null ) {
     @extend %icon-teaser-small;
   }
