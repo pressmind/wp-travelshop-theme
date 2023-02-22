@@ -21,8 +21,8 @@ if(count($postsObject) == 0){
 }
 ?>
 <section class="content-block content-block-teaser-group">
-    <div class="row">
-        <?php if(!empty($args['headline']) || !empty($args['intro'])){?>
+    <?php if(!empty($args['headline']) || !empty($args['intro'])){?>
+        <div class="row">
             <div class="col-12">
                 <?php if(!empty($args['headline'])){?>
                     <h2 class="mt-0"><?php echo $args['headline']; ?></h2>
@@ -31,7 +31,9 @@ if(count($postsObject) == 0){
                     <p><?php echo $args['text']; ?></p>
                 <?php } ?>
             </div>
-        <?php } ?>
+        </div>
+    <?php } ?>
+    <div class="row row-products">
         <?php
         foreach($postsObject as $p){
             load_template(get_template_directory().'/template-parts/wp-views/info-teaser-view.php', false, $p);

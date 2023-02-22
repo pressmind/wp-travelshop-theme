@@ -19,7 +19,7 @@ if(count($postobjects) == 0){
 }
 ?>
 <section class="content-block content-block-teaser-group">
-    <div class="row">
+    <div class="row row-introduction">
         <?php if(!empty($args['headline']) || !empty($args['intro'])){?>
             <div class="col-12">
                 <?php if(!empty($args['headline'])){?>
@@ -30,6 +30,8 @@ if(count($postobjects) == 0){
                 <?php } ?>
             </div>
         <?php } ?>
+    </div>
+    <div class="row row-products">
         <?php
         foreach($postobjects as $p){
             load_template(get_template_directory().'/template-parts/wp-views/image-teaser-view.php', false, $p);
