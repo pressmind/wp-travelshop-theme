@@ -10712,7 +10712,6 @@ form.form-string-search.input-group {
     box-shadow: none;
     background: transparent;
     padding: 0;
-    margin: 0.75rem 0 0 0;
     font-size: 80%;
     color: #212529;
     line-height: 1;
@@ -10983,6 +10982,8 @@ form.form-string-search.input-group {
       /**
        * Date row
        */ }
+      .card-travel .card-body .card-body--bottom .date-row {
+        margin: .25rem 0 0 0; }
 
 /**
  * Styling for category product teaser

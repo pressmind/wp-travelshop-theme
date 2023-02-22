@@ -4,8 +4,6 @@
   > button {
     @include button-reset();
 
-    margin: $travel-card-spacer-y 0 0 0;
-
     font-size: $small-font-size;
     color: $body-color;
     line-height: 1;
