@@ -5,6 +5,16 @@
   // -- teaser icon
   .teaser-icon {
     padding: $icon-teaser-spacer-x 0 $icon-teaser-spacer-x $icon-teaser-spacer-x;
+
+    .icon-inner {
+      width: $icon-teaser-icon-outer-size-small;
+      height: $icon-teaser-icon-outer-size-small;
+
+      > svg {
+        width: $icon-teaser-icon-size-small;
+        height: $icon-teaser-icon-size-small;
+      }
+    }
   }
 
   // -- teaser body manipulation
@@ -29,6 +39,16 @@
     // -- teaser icon
     .teaser-icon {
       padding: $icon-teaser-spacer-x $icon-teaser-spacer-x 0 $icon-teaser-spacer-x;
+
+      .icon-inner {
+        width: $icon-teaser-icon-outer-size;
+        height: $icon-teaser-icon-outer-size;
+
+        > svg {
+          width: $icon-teaser-icon-size;
+          height: $icon-teaser-icon-size;
+        }
+      }
     }
 
     // -- teaser body manipulation
@@ -58,6 +78,23 @@
 
   text-align: $icon-teaser-text-align;
 
+  // -- teaser-icon
+  .teaser-icon {
+    display: flex;
+    justify-content: center;
+
+    .icon-inner {
+      @include border-radius(50%);
+      background-color: $icon-teaser-icon-bg;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+    }
+  }
+
+  // -- teaser-body
   .teaser-body {
     padding: $icon-teaser-spacer-x;
   }

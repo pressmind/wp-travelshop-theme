@@ -348,7 +348,16 @@ $wp-teaser-image-aspect-ratio-height: 9 !default;
  * Icon teaser
  */
 
-$icon-teaser-bg: $card-bg !important;
+$icon-teaser-icon-bg: $gray-300 !default; // defines default background - without primary/secondary theming
+$icon-teaser-icon-outer-size: 5rem !default;
+$icon-teaser-icon-outer-size-small: 2.5rem !default;
+
+$icon-teaser-icon-size: 3rem !default;
+$icon-teaser-icon-size-small: 2rem !default;
+
+$icon-teaser-icon-color: #fff !default;
+
+$icon-teaser-bg: $card-bg !default;
 $icon-teaser-break: sm !default;
 $icon-teaser-text-align: center !default;
 $icon-teaser-border-radius: $card-border-radius !default;

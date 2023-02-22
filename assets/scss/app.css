@@ -11309,6 +11309,12 @@ form.form-string-search.input-group {
   flex-direction: row; }
   .teaser.icon-teaser .teaser-icon {
     padding: 1.25rem 0 1.25rem 1.25rem; }
+    .teaser.icon-teaser .teaser-icon .icon-inner {
+      width: 2.5rem;
+      height: 2.5rem; }
+      .teaser.icon-teaser .teaser-icon .icon-inner > svg {
+        width: 2rem;
+        height: 2rem; }
   .teaser.icon-teaser .teaser-body a.btn .btn-text {
     display: none; }
   .teaser.icon-teaser .teaser-body a.btn .btn-icon {
@@ -11319,6 +11325,12 @@ form.form-string-search.input-group {
     flex-direction: column; }
     .teaser.icon-teaser .teaser-icon {
       padding: 1.25rem 1.25rem 0 1.25rem; }
+      .teaser.icon-teaser .teaser-icon .icon-inner {
+        width: 5rem;
+        height: 5rem; }
+        .teaser.icon-teaser .teaser-icon .icon-inner > svg {
+          width: 3rem;
+          height: 3rem; }
     .teaser.icon-teaser .teaser-body a.btn .btn-text {
       display: block; }
     .teaser.icon-teaser .teaser-body a.btn .btn-icon {
@@ -11329,8 +11341,18 @@ form.form-string-search.input-group {
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.125);
-  background-color: #fff !important;
+  background-color: #fff;
   text-align: center; }
+  .teaser.icon-teaser .teaser-icon {
+    display: flex;
+    justify-content: center; }
+    .teaser.icon-teaser .teaser-icon .icon-inner {
+      border-radius: 50%;
+      background-color: #dee2e6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0; }
   .teaser.icon-teaser .teaser-body {
     padding: 1.25rem; }
 
