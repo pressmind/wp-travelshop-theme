@@ -10728,11 +10728,12 @@ form.form-string-search.input-group {
 .card-travel .card-body .card-body--bottom .date-row .dropdown {
   margin: 0; }
 
-.dropdown-menu.dropdown-menu-select .category-tree-field-items {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem; }
-  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {
-    margin-top: 0.25rem; }
+.dropdown-menu.dropdown-menu-select {
+  padding: 1rem; }
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items {
+    padding: 0; }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {
+      margin-top: 0.25rem; }
 
 .travelshop-datepicker > div {
   position: relative; }
