@@ -278,6 +278,7 @@
       .date-row {
         .dropdown {
           @extend %date-dropdown;
+          line-height: 1;
           margin: .25rem 0 0 0;
         }
       }
