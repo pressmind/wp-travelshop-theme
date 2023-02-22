@@ -6,6 +6,19 @@
   .teaser-icon {
     padding: $icon-teaser-spacer-x 0 $icon-teaser-spacer-x $icon-teaser-spacer-x;
   }
+
+  // -- teaser body manipulation
+  .teaser-body {
+    a.btn {
+      .btn-text {
+        display: none;
+      }
+
+      .btn-icon {
+        display: block;
+      }
+    }
+  }
 }
 
 // -- settings for default variant of icon teaser
@@ -16,6 +29,19 @@
     // -- teaser icon
     .teaser-icon {
       padding: $icon-teaser-spacer-x $icon-teaser-spacer-x 0 $icon-teaser-spacer-x;
+    }
+
+    // -- teaser body manipulation
+    .teaser-body {
+      a.btn {
+        .btn-text {
+          display: block;
+        }
+
+        .btn-icon {
+          display: none;
+        }
+      }
     }
   }
 }

@@ -11309,12 +11309,20 @@ form.form-string-search.input-group {
   flex-direction: row; }
   .teaser.icon-teaser .teaser-icon {
     padding: 1.25rem 0 1.25rem 1.25rem; }
+  .teaser.icon-teaser .teaser-body a.btn .btn-text {
+    display: none; }
+  .teaser.icon-teaser .teaser-body a.btn .btn-icon {
+    display: block; }
 
 @media (min-width: 576px) {
   .teaser.icon-teaser {
     flex-direction: column; }
     .teaser.icon-teaser .teaser-icon {
-      padding: 1.25rem 1.25rem 0 1.25rem; } }
+      padding: 1.25rem 1.25rem 0 1.25rem; }
+    .teaser.icon-teaser .teaser-body a.btn .btn-text {
+      display: block; }
+    .teaser.icon-teaser .teaser-body a.btn .btn-icon {
+      display: none; } }
 
 .teaser.icon-teaser {
   border-width: 1px;
