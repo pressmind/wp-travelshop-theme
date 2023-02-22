@@ -2,6 +2,9 @@
 %icon-teaser-small {
   flex-direction: row;
 
+  // -- text align left, in every case, b.o. column-layout ( small variant )
+  text-align: left;
+
   // -- teaser icon
   .teaser-icon {
     padding: $icon-teaser-spacer-x 0 $icon-teaser-spacer-x $icon-teaser-spacer-x;
