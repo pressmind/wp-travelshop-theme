@@ -1,0 +1,13 @@
+.travelshop-datepicker {
+  .list-filter-box {
+    > div {
+      position: relative;
+
+      // -- make input normal behaviour, remove the readonly behaviour
+      input.form-control[readonly] {
+        background: $input-bg;
+        opacity: 1;
+      }
+    }
+  }
+}
