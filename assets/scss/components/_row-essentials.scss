@@ -1,5 +1,5 @@
 .row.row-products:not(.is-slider) {
-  > div {
+  > div, > article {
     margin-bottom: 1rem;
 
     @include media-breakpoint-up(md) {
