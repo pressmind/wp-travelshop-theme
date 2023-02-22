@@ -8,3 +8,11 @@ hr + .content-block {
     margin-top: $grid-gutter-width;
   }
 }
+
+.content-main > .container {
+  padding-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: $grid-gutter-width;
+  }
+}
