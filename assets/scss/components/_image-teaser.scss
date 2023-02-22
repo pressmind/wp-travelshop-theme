@@ -46,5 +46,9 @@
     *:not(.btn) {
       @extend %text-on-image;
     }
+
+    h1 {
+      margin: 0 0 $image-teaser-spacer-y 0;
+    }
   }
 }

@@ -333,6 +333,18 @@ $image-teaser-image-overlay: true !default;
 $image-teaser-image-overlay-color: rgba(#000, .15) !default;
 
 /**
+ * WP teaser
+ */
+
+$wp-teaser-border-radius: $card-border-radius !default;
+$wp-teaser-border-width: $card-border-width !default;
+$wp-teaser-border-color: $card-border-color !default;
+$wp-teaser-spacer-y: $card-spacer-y !default;
+$wp-teaser-spacer-x: $card-spacer-x !default;
+$wp-teaser-image-aspect-ratio-width: 16 !default;
+$wp-teaser-image-aspect-ratio-height: 9 !default;
+
+/**
  * Add to wishlist
  * ----------------------------
  * set colors on image / default
