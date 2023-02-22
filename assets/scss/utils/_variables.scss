@@ -321,6 +321,18 @@ $travel-card-title-sizes: (
 ) !default; // its similar to $h5-font-sizes
 
 /**
+ * Image teaser
+ */
+
+$image-teaser-spacer-y: $card-spacer-y !default;
+$image-teaser-spacer-x: $card-spacer-x !default;
+$image-teaser-border-radius: $card-border-radius !default;
+$image-teaser-image-aspect-ratio-width: 16 !default;
+$image-teaser-image-aspect-ratio-height: 9 !default;
+$image-teaser-image-overlay: true !default;
+$image-teaser-image-overlay-color: rgba(#000, .15) !default;
+
+/**
  * Add to wishlist
  * ----------------------------
  * set colors on image / default
