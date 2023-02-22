@@ -10279,11 +10279,17 @@ body.fl-builder .content-block.content-page {
         font-size: 1.125rem; } }
 
 i.circle {
-  width: 0.875rem;
-  height: 0.875rem;
+  width: 0.75rem;
+  height: 0.75rem;
   display: block;
   border-radius: 0.875rem;
   background-color: #dee2e6; }
+  i.circle.green {
+    background-color: #28a745; }
+  i.circle.red {
+    background-color: #dc3545; }
+  i.circle.orange {
+    background-color: #ffc107; }
 
 /**
  * in this section essentials for form types are defined

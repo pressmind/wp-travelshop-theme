@@ -1,9 +1,21 @@
 i.circle {
-  width: $font-size-sm;
-  height: $font-size-sm;
+  width: $font-size-xs;
+  height: $font-size-xs;
   display: block;
 
   @include border-radius($font-size-sm);
 
   background-color: $gray-300;
+
+  &.green {
+    background-color: $booking-green;
+  }
+
+  &.red {
+    background-color: $booking-red;
+  }
+
+  &.orange {
+    background-color: $booking-orange;
+  }
 }
