@@ -10713,7 +10713,8 @@ form.form-string-search.input-group {
     background: transparent;
     padding: 0;
     font-size: 0.875rem;
-    color: #212529; }
+    color: #212529;
+    opacity: 1; }
 
 .dropdown-menu.dropdown-menu-select {
   padding: 1rem; }
