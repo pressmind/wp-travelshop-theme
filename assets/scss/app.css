@@ -11314,8 +11314,8 @@ form.form-string-search.input-group {
       width: 2.5rem;
       height: 2.5rem; }
       .teaser.icon-teaser .teaser-icon .icon-inner > svg {
-        width: 2rem;
-        height: 2rem; }
+        width: 1.75rem;
+        height: 1.75rem; }
   .teaser.icon-teaser .teaser-body {
     position: relative;
     padding-right: 1.25rem + 48px;
@@ -11397,6 +11397,9 @@ form.form-string-search.input-group {
       margin: 0; }
     .teaser.icon-teaser .teaser-body .btn .btn-icon {
       line-height: 1; }
+      .teaser.icon-teaser .teaser-body .btn .btn-icon svg {
+        width: 1.5rem;
+        height: 1.5rem; }
 
 /**
  * Image teaser
