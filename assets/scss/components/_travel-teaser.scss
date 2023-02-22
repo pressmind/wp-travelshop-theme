@@ -276,10 +276,9 @@
        * Date row
        */
       .date-row {
-        margin: .25rem 0 0 0;
-
         .dropdown {
           @extend %date-dropdown;
+          margin: .25rem 0 0 0;
         }
       }
     }

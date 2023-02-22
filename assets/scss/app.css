@@ -10982,7 +10982,7 @@ form.form-string-search.input-group {
       /**
        * Date row
        */ }
-      .card-travel .card-body .card-body--bottom .date-row {
+      .card-travel .card-body .card-body--bottom .date-row .dropdown {
         margin: .25rem 0 0 0; }
 
 /**
