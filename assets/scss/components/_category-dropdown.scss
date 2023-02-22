@@ -4,6 +4,9 @@
   .category-tree-field-items {
     padding: 0;
 
+    overflow-y: auto;
+    max-height: 21rem;
+
     .form-check {
       @extend %custom-checkbox;
 
@@ -11,6 +14,10 @@
         margin-top: $custom-checkbox-spacer;
       }
     }
+  }
+
+  .btn.filter-prompt {
+    font-size: $font-size-sm;
   }
 
 }
