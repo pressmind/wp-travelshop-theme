@@ -35,7 +35,7 @@
     }
 
     // -- small version?
-    @if ( $header-small ) {
+    @if ( $header-small == true ) {
       transition: padding-top .3s, padding-bottom .3s;
 
       &.affix {
@@ -44,8 +44,8 @@
       }
     }
 
-    // -- sticky?
-    @if ( $header-sticky ) {
+    // -- sticky? @todo: make headerfixed, cuz of layout shifts by makingheader smaller
+    @if ( $header-sticky == true ) {
       position: sticky;
       top:0;
       z-index: $zindex-sticky;
