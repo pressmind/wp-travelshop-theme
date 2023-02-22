@@ -24,8 +24,11 @@
   .teaser-body {
     position: relative;
     padding-right: $icon-teaser-spacer-x + #{remToPx(3rem)};
+    flex: 1;
 
     a.btn {
+      @include border-left-radius(0);
+
       position: absolute;
       width: 3rem;
       top: 0;
@@ -78,6 +81,14 @@
         .btn-icon {
           display: none;
         }
+
+        // -- make changes from small teaser "removed" when is used
+        @if ( $icon-teaser-break != null ) {
+          position: static;
+          width: auto;
+
+          @include border-left-radius($btn-border-radius);
+        }
       }
     }
   }
@@ -124,6 +135,19 @@
   // -- teaser-body
   .teaser-body {
     padding: $icon-teaser-spacer-x;
+
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    h1 + p,
+    p + p {
+      margin-top: $icon-teaser-spacer-y;
+    }
 
     .btn {
       .btn-icon {

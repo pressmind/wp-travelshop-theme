@@ -11318,8 +11318,11 @@ form.form-string-search.input-group {
         height: 2rem; }
   .teaser.icon-teaser .teaser-body {
     position: relative;
-    padding-right: 1.25rem + 48px; }
+    padding-right: 1.25rem + 48px;
+    flex: 1; }
     .teaser.icon-teaser .teaser-body a.btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
       position: absolute;
       width: 3rem;
       top: 0;
@@ -11345,10 +11348,15 @@ form.form-string-search.input-group {
         .teaser.icon-teaser .teaser-icon .icon-inner > svg {
           width: 3rem;
           height: 3rem; }
-    .teaser.icon-teaser .teaser-body a.btn .btn-text {
-      display: block; }
-    .teaser.icon-teaser .teaser-body a.btn .btn-icon {
-      display: none; } }
+    .teaser.icon-teaser .teaser-body a.btn {
+      position: static;
+      width: auto;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem; }
+      .teaser.icon-teaser .teaser-body a.btn .btn-text {
+        display: block; }
+      .teaser.icon-teaser .teaser-body a.btn .btn-icon {
+        display: none; } }
 
 .teaser.icon-teaser {
   border-radius: 0.25rem;
@@ -11374,6 +11382,13 @@ form.form-string-search.input-group {
         background-color: #6c757d; }
   .teaser.icon-teaser .teaser-body {
     padding: 1.25rem; }
+    .teaser.icon-teaser .teaser-body h1 {
+      margin: 0; }
+    .teaser.icon-teaser .teaser-body p {
+      margin: 0; }
+    .teaser.icon-teaser .teaser-body h1 + p,
+    .teaser.icon-teaser .teaser-body p + p {
+      margin-top: 0.75rem; }
     .teaser.icon-teaser .teaser-body .btn .btn-icon {
       line-height: 1; }
       .teaser.icon-teaser .teaser-body .btn .btn-icon svg {
