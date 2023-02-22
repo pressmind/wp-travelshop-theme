@@ -86,11 +86,21 @@
     .icon-inner {
       @include border-radius(50%);
       background-color: $icon-teaser-icon-bg;
+      color: $icon-teaser-icon-color;
 
       display: flex;
       align-items: center;
       justify-content: center;
       line-height: 0;
+
+      // -- color themes
+      &-primary {
+        background-color: $primary;
+      }
+
+      &-secondary {
+        background-color: $secondary;
+      }
     }
   }
 

@@ -11349,10 +11349,15 @@ form.form-string-search.input-group {
     .teaser.icon-teaser .teaser-icon .icon-inner {
       border-radius: 50%;
       background-color: #dee2e6;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       line-height: 0; }
+      .teaser.icon-teaser .teaser-icon .icon-inner-primary {
+        background-color: #007bff; }
+      .teaser.icon-teaser .teaser-icon .icon-inner-secondary {
+        background-color: #6c757d; }
   .teaser.icon-teaser .teaser-body {
     padding: 1.25rem; }
 
