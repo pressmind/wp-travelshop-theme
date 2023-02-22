@@ -90,6 +90,11 @@
           @include border-left-radius($btn-border-radius);
         }
       }
+
+      h1 + a.btn,
+      p + a.btn {
+        margin-top: $icon-teaser-spacer-y;
+      }
     }
   }
 }

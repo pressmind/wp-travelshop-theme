@@ -11356,7 +11356,10 @@ form.form-string-search.input-group {
       .teaser.icon-teaser .teaser-body a.btn .btn-text {
         display: block; }
       .teaser.icon-teaser .teaser-body a.btn .btn-icon {
-        display: none; } }
+        display: none; }
+    .teaser.icon-teaser .teaser-body h1 + a.btn,
+    .teaser.icon-teaser .teaser-body p + a.btn {
+      margin-top: 0.75rem; } }
 
 .teaser.icon-teaser {
   border-radius: 0.25rem;
