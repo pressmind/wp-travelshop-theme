@@ -2,6 +2,7 @@
 .content-block + hr,
 hr + .content-block {
   margin-top: 1rem;
+  margin-bottom: 0;
 
   @include media-breakpoint-up(md) {
     margin-top: $grid-gutter-width;

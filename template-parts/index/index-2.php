@@ -58,7 +58,7 @@ get_header();
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/image-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [
                     'headline' => 'Reise-Empfehlungen',
@@ -77,7 +77,7 @@ get_header();
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/product-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [
                     'headline' => 'Reise-Themen',
@@ -121,14 +121,14 @@ get_header();
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/product-category-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [
                     'headline' => 'Info Teaser',
                     'text' => 'Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.'
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/info-teaser.php', false, $args);?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                     $args = [
                             'headline' => 'Icon-Teaser',

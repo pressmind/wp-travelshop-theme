@@ -10307,7 +10307,8 @@ i.circle {
 .content-block + .content-block,
 .content-block + hr,
 hr + .content-block {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  margin-bottom: 0; }
   @media (min-width: 768px) {
     .content-block + .content-block,
     .content-block + hr,
