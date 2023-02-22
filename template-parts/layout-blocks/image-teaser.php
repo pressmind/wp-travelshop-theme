@@ -19,8 +19,8 @@ if(count($postobjects) == 0){
 }
 ?>
 <section class="content-block content-block-teaser-group">
+    <?php if(!empty($args['headline']) || !empty($args['text'])){?>
     <div class="row row-introduction">
-        <?php if(!empty($args['headline']) || !empty($args['intro'])){?>
             <div class="col-12">
                 <?php if(!empty($args['headline'])){?>
                     <h2 class="mt-0"><?php echo $args['headline']; ?></h2>
@@ -29,8 +29,8 @@ if(count($postobjects) == 0){
                     <p><?php echo $args['text']; ?></p>
                 <?php } ?>
             </div>
-        <?php } ?>
     </div>
+    <?php } ?>
     <div class="row row-products">
         <?php
         foreach($postobjects as $p){

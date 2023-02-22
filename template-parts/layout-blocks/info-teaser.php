@@ -21,7 +21,7 @@ if(count($postsObject) == 0){
 }
 ?>
 <section class="content-block content-block-teaser-group">
-    <?php if(!empty($args['headline']) || !empty($args['intro'])){?>
+    <?php if(!empty($args['headline']) || !empty($args['text'])){?>
         <div class="row">
             <div class="col-12">
                 <?php if(!empty($args['headline'])){?>
