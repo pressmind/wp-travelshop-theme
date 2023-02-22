@@ -11000,11 +11000,7 @@ form.form-string-search.input-group {
 .teaser.category-product-teaser {
   border-radius: 0.25rem;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  margin-bottom: 1rem; }
-  @media (min-width: 768px) {
-    .teaser.category-product-teaser {
-      margin-bottom: 30px; } }
+  border: 1px solid rgba(0, 0, 0, 0.125); }
   .teaser.category-product-teaser .teaser-category-image > a {
     display: block;
     color: inherit;
@@ -11084,11 +11080,7 @@ form.form-string-search.input-group {
 .teaser.month-teaser {
   border-radius: 0.25rem;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  margin-bottom: 1rem; }
-  @media (min-width: 768px) {
-    .teaser.month-teaser {
-      margin-bottom: 30px; } }
+  border: 1px solid rgba(0, 0, 0, 0.125); }
   .teaser.month-teaser > a {
     display: flex;
     flex-direction: row;

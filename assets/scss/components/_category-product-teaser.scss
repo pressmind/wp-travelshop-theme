@@ -6,12 +6,6 @@
   background-color: $teaser-category-product-bg;
   border: $teaser-category-product-border-width solid $teaser-category-product-border-color;
 
-  margin-bottom: 1rem;
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: $grid-gutter-width;
-  }
-
   // -- top element
   .teaser-category-image {
     > a {
