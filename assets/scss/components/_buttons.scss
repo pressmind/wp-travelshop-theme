@@ -3,7 +3,7 @@
  */
 
 .btn {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   gap: .25rem;
   align-items: center;
@@ -19,6 +19,7 @@
   }
 
   &.btn-block {
+    display: flex;
     justify-content: center;
   }
 }

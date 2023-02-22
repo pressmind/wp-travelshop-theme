@@ -10131,7 +10131,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-bottom: 0.5rem;
   line-height: 1.2; }
 
-.teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title, .layout-block.layout-block-search-header .layout-block-search-header--search .h1 {
+.teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title, .layout-block.layout-block-search-header .layout-block-search-header--search .h1, .jumbotron > .container > :not(.btn), .fl-builder-content .jumbotron > .fl-row.fl-row-fixed-width > :not(.btn), .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .jumbotron > .fl-row-content.fl-row-fixed-width > :not(.btn) {
   color: #fff;
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5); }
 
@@ -10240,7 +10240,7 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
-.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img {
+.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img {
   position: absolute;
   left: 0;
   right: 0;
@@ -10474,7 +10474,7 @@ form.form-string-search.input-group {
  * Booking button
  */
 .btn {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   gap: .25rem;
   align-items: center; }
@@ -10485,6 +10485,7 @@ form.form-string-search.input-group {
     width: 1rem;
     height: 1rem; }
   .btn.btn-block {
+    display: flex;
     justify-content: center; }
 
 .btn.booking-btn.green,
@@ -11259,6 +11260,18 @@ form.form-string-search.input-group {
   .layout-block.layout-block-search-header .layout-block-search-header--search {
     position: relative;
     z-index: 2; }
+
+.jumbotron {
+  position: relative; }
+  .jumbotron .jumbotron-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .jumbotron > .container, .fl-builder-content .jumbotron > .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .jumbotron > .fl-row-content.fl-row-fixed-width {
+    position: relative;
+    z-index: 4; }
 
 header.header-main {
   background-color: #fff;

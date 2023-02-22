@@ -1,0 +1,26 @@
+.jumbotron {
+  position: relative;
+
+  // -- background
+  .jumbotron-background {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    > img {
+      @extend %media-cover-image;
+    }
+  }
+
+  // -- content
+  > .container {
+    position: relative;
+    z-index: 4;
+
+    > *:not(.btn) {
+      @extend %text-on-image;
+    }
+  }
+}
