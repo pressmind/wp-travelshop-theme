@@ -11305,39 +11305,39 @@ form.form-string-search.input-group {
     .teaser.wp-teaser .teaser-body h1 {
       margin: 0 0 0.75rem 0; }
 
-.teaser.icon-teaser {
+.icon-teaser {
   flex-direction: row;
   text-align: left; }
-  .teaser.icon-teaser .teaser-icon {
+  .icon-teaser .teaser-icon {
     padding: 1.25rem 0 1.25rem 1.25rem; }
-    .teaser.icon-teaser .teaser-icon .icon-inner {
+    .icon-teaser .teaser-icon .icon-inner {
       width: 2.5rem;
       height: 2.5rem; }
-      .teaser.icon-teaser .teaser-icon .icon-inner > svg {
+      .icon-teaser .teaser-icon .icon-inner > svg {
         width: 2rem;
         height: 2rem; }
-  .teaser.icon-teaser .teaser-body a.btn .btn-text {
+  .icon-teaser .teaser-body a.btn .btn-text {
     display: none; }
-  .teaser.icon-teaser .teaser-body a.btn .btn-icon {
+  .icon-teaser .teaser-body a.btn .btn-icon {
     display: block; }
 
 @media (min-width: 576px) {
-  .teaser.icon-teaser {
+  .icon-teaser {
     flex-direction: column; }
-    .teaser.icon-teaser .teaser-icon {
+    .icon-teaser .teaser-icon {
       padding: 1.25rem 1.25rem 0 1.25rem; }
-      .teaser.icon-teaser .teaser-icon .icon-inner {
+      .icon-teaser .teaser-icon .icon-inner {
         width: 5rem;
         height: 5rem; }
-        .teaser.icon-teaser .teaser-icon .icon-inner > svg {
+        .icon-teaser .teaser-icon .icon-inner > svg {
           width: 3rem;
           height: 3rem; }
-    .teaser.icon-teaser .teaser-body a.btn .btn-text {
+    .icon-teaser .teaser-body a.btn .btn-text {
       display: block; }
-    .teaser.icon-teaser .teaser-body a.btn .btn-icon {
+    .icon-teaser .teaser-body a.btn .btn-icon {
       display: none; } }
 
-.teaser.icon-teaser {
+.icon-teaser {
   border-radius: 0.25rem;
   border-width: 1px;
   border-style: solid;
@@ -11345,10 +11345,10 @@ form.form-string-search.input-group {
   background-color: #fff;
   text-align: center;
   display: flex; }
-  .teaser.icon-teaser .teaser-icon {
+  .icon-teaser .teaser-icon {
     display: flex;
     justify-content: center; }
-    .teaser.icon-teaser .teaser-icon .icon-inner {
+    .icon-teaser .teaser-icon .icon-inner {
       border-radius: 50%;
       background-color: #dee2e6;
       color: #fff;
@@ -11356,11 +11356,11 @@ form.form-string-search.input-group {
       align-items: center;
       justify-content: center;
       line-height: 0; }
-      .teaser.icon-teaser .teaser-icon .icon-inner-primary {
+      .icon-teaser .teaser-icon .icon-inner-primary {
         background-color: #007bff; }
-      .teaser.icon-teaser .teaser-icon .icon-inner-secondary {
+      .icon-teaser .teaser-icon .icon-inner-secondary {
         background-color: #6c757d; }
-  .teaser.icon-teaser .teaser-body {
+  .icon-teaser .teaser-body {
     padding: 1.25rem; }
 
 /**
