@@ -4,7 +4,7 @@
   > button {
     @include button-reset();
 
-    padding: $travel-card-spacer-x 0;
+    padding: .5rem 0;
 
     font-size: $small-font-size;
     color: $body-color;
