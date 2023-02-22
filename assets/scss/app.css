@@ -10460,9 +10460,18 @@ form.form-string-search.input-group {
 /**
  * Booking button
  */
-.btn .loader {
-  width: 25px;
-  display: none; }
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap: .25rem; }
+  .btn .loader {
+    width: 25px;
+    display: none; }
+  .btn > svg {
+    width: 1rem;
+    height: 1rem; }
+  .btn.btn-block {
+    justify-content: center; }
 
 .btn.booking-btn.green,
 .booking-btn.green {

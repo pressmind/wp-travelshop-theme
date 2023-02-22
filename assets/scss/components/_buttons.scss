@@ -3,9 +3,22 @@
  */
 
 .btn {
+  display: flex;
+  flex-direction: row;
+  gap: .25rem;
+
   .loader {
     width: 25px;
     display: none;
+  }
+
+  > svg {
+    width: $btn-font-size;
+    height: $btn-font-size;
+  }
+
+  &.btn-block {
+    justify-content: center;
   }
 }
 
