@@ -48,6 +48,7 @@
 
 .teaser.icon-teaser {
   // -- defaults
+  @include border-radius($icon-teaser-border-radius);
 
   border-width: $icon-teaser-border-width;
   border-style: solid;

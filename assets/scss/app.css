@@ -11325,6 +11325,7 @@ form.form-string-search.input-group {
       display: none; } }
 
 .teaser.icon-teaser {
+  border-radius: 0.25rem;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.125);
