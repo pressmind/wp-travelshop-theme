@@ -4,8 +4,11 @@
   > button {
     @include button-reset();
 
-    font-size: $font-size-sm;
+    padding: $travel-card-spacer-x 0;
+
+    font-size: $small-font-size;
     color: $body-color;
+    line-height: 1;
 
     opacity: 1;
   }

@@ -10279,8 +10279,8 @@ body.fl-builder .content-block.content-page {
         font-size: 1.125rem; } }
 
 i.circle {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: .6125rem;
+  height: .6125rem;
   display: block;
   border-radius: 0.875rem;
   background-color: #dee2e6; }
@@ -10712,8 +10712,10 @@ form.form-string-search.input-group {
     box-shadow: none;
     background: transparent;
     padding: 0;
-    font-size: 0.875rem;
+    padding: 1.25rem 0;
+    font-size: 80%;
     color: #212529;
+    line-height: 1;
     opacity: 1; }
 
 .dropdown-menu.dropdown-menu-select {

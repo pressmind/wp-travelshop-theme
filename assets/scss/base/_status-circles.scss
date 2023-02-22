@@ -1,6 +1,6 @@
 i.circle {
-  width: $font-size-xs;
-  height: $font-size-xs;
+  width: .6125rem; // 10px
+  height: .6125rem; // 10px
   display: block;
 
   @include border-radius($font-size-sm);
