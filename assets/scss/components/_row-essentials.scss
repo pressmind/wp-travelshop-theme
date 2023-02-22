@@ -1,4 +1,10 @@
 .row.row-products:not(.is-slider) {
+  margin-bottom: -1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: -$grid-gutter-width;
+  }
+
   > div, > article {
     margin-bottom: 1rem;
 

@@ -10480,11 +10480,16 @@ form.form-string-search.input-group {
     margin-top: -0.25rem;
     padding-left: 1.5rem; }
 
-.row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
-  margin-bottom: 1rem; }
+.row.row-products:not(.is-slider) {
+  margin-bottom: -1rem; }
   @media (min-width: 768px) {
-    .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
-      margin-bottom: 30px; } }
+    .row.row-products:not(.is-slider) {
+      margin-bottom: -30px; } }
+  .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
+    margin-bottom: 1rem; }
+    @media (min-width: 768px) {
+      .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
+        margin-bottom: 30px; } }
 
 .dropdown .dropdown-toggle:after {
   display: none; }
