@@ -11320,6 +11320,9 @@ form.form-string-search.input-group {
     position: relative;
     padding-right: 1.25rem + 48px;
     flex: 1; }
+    .teaser.icon-teaser .teaser-body h1 + p,
+    .teaser.icon-teaser .teaser-body p + p {
+      margin-top: .5rem; }
     .teaser.icon-teaser .teaser-body a.btn {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;

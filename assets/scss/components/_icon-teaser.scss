@@ -26,6 +26,11 @@
     padding-right: $icon-teaser-spacer-x + #{remToPx(3rem)};
     flex: 1;
 
+    h1 + p,
+    p + p {
+      margin-top: .5rem; // smaller margin between text items for small variant.
+    }
+
     a.btn {
       @include border-left-radius(0);
 
