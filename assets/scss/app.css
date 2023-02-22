@@ -11285,7 +11285,8 @@ form.form-string-search.input-group {
  */
 .teaser.image-teaser {
   border-radius: 0.25rem;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   .teaser.image-teaser .teaser-image {
     position: relative; }
     .teaser.image-teaser .teaser-image:before {
