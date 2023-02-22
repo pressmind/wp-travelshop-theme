@@ -38,6 +38,7 @@
 %icon-teaser-default {
   @include get-custom-breakpoint($icon-teaser-break) {
     flex-direction: column;
+    text-align: $icon-teaser-text-align;
 
     // -- teaser icon
     .teaser-icon {
@@ -69,7 +70,7 @@
   }
 }
 
-.icon-teaser {
+.teaser.icon-teaser {
   // -- defaults
   @include border-radius($icon-teaser-border-radius);
 
@@ -78,8 +79,6 @@
   border-color: $icon-teaser-border-color;
 
   background-color: $icon-teaser-bg;
-
-  text-align: $icon-teaser-text-align;
 
   display: flex;
 
