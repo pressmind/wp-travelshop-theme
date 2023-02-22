@@ -11345,7 +11345,7 @@ form.form-string-search.input-group {
           height: 3rem; }
     .teaser.icon-teaser .teaser-body h1 + p,
     .teaser.icon-teaser .teaser-body p + p {
-      margin-top: 1.25rem; }
+      margin-top: 0.75rem; }
     .teaser.icon-teaser .teaser-body a.btn {
       position: static;
       width: auto;
