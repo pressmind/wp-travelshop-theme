@@ -10463,7 +10463,8 @@ form.form-string-search.input-group {
 .btn {
   display: flex;
   flex-direction: row;
-  gap: .25rem; }
+  gap: .25rem;
+  align-items: center; }
   .btn .loader {
     width: 25px;
     display: none; }
