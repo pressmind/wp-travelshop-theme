@@ -22,7 +22,20 @@
 
   // -- teaser body manipulation
   .teaser-body {
+    position: relative;
+    padding-right: $icon-teaser-spacer-x + #{remToPx(3rem)};
+
     a.btn {
+      position: absolute;
+      width: 3rem;
+      top: 0;
+      right:0;
+      bottom:0;
+      align-items: center;
+      justify-content: center;
+
+      display: flex;
+
       .btn-text {
         display: none;
       }
@@ -111,6 +124,17 @@
   // -- teaser-body
   .teaser-body {
     padding: $icon-teaser-spacer-x;
+
+    .btn {
+      .btn-icon {
+        line-height: 1;
+
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
   }
 
   // -- layout handling

@@ -11316,10 +11316,22 @@ form.form-string-search.input-group {
       .teaser.icon-teaser .teaser-icon .icon-inner > svg {
         width: 2rem;
         height: 2rem; }
-  .teaser.icon-teaser .teaser-body a.btn .btn-text {
-    display: none; }
-  .teaser.icon-teaser .teaser-body a.btn .btn-icon {
-    display: block; }
+  .teaser.icon-teaser .teaser-body {
+    position: relative;
+    padding-right: 1.25rem + 48px; }
+    .teaser.icon-teaser .teaser-body a.btn {
+      position: absolute;
+      width: 3rem;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      align-items: center;
+      justify-content: center;
+      display: flex; }
+      .teaser.icon-teaser .teaser-body a.btn .btn-text {
+        display: none; }
+      .teaser.icon-teaser .teaser-body a.btn .btn-icon {
+        display: block; }
 
 @media (min-width: 576px) {
   .teaser.icon-teaser {
@@ -11362,6 +11374,11 @@ form.form-string-search.input-group {
         background-color: #6c757d; }
   .teaser.icon-teaser .teaser-body {
     padding: 1.25rem; }
+    .teaser.icon-teaser .teaser-body .btn .btn-icon {
+      line-height: 1; }
+      .teaser.icon-teaser .teaser-body .btn .btn-icon svg {
+        width: 1.5rem;
+        height: 1.5rem; }
 
 /**
  * Image teaser
