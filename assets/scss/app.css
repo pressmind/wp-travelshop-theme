@@ -10737,7 +10737,8 @@ form.form-string-search.input-group {
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {
       margin-top: 0.25rem; }
   .dropdown-menu.dropdown-menu-select .btn.filter-prompt {
-    font-size: 0.875rem; }
+    font-size: 0.875rem;
+    white-space: nowrap; }
 
 .travelshop-datepicker > div {
   position: relative; }
