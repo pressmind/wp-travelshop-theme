@@ -14,7 +14,7 @@ get_header();
         $args['headline'] = 'Finde deine Traumreise!';
         load_template_transient(get_template_directory().'/template-parts/layout-blocks/search-header.php', false, $args);
         ?>
-        <div class="content-main">
+        <div class="content-main" id="content-main">
             <div class="container">
                 <?php
                 $args = [

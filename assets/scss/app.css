@@ -10316,9 +10316,11 @@ hr + .content-block {
       margin-top: 30px; } }
 
 .content-main > .container, .fl-builder-content .content-main > .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .content-main > .fl-row-content.fl-row-fixed-width {
-  padding-bottom: 1rem; }
+  padding-bottom: 1rem;
+  padding-top: 1rem; }
   @media (min-width: 768px) {
     .content-main > .container, .fl-builder-content .content-main > .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .content-main > .fl-row-content.fl-row-fixed-width {
+      padding-top: 30px;
       padding-bottom: 30px; } }
 
 /**

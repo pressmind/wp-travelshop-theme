@@ -49,7 +49,7 @@ get_header();
         $args['class'] = 'silver mt-mb-offset mt-2rem';
         load_template_transient(get_template_directory().'/template-parts/layout-blocks/search-bar.php', false, $args);
         ?>
-        <div class="content-main">
+        <div class="content-main" id="content-main">
             <div class="container">
                 <?php
                 $args = [

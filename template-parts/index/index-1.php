@@ -15,7 +15,7 @@ get_header();
         $args['search_box_tab'] = 0;
         load_template(get_template_directory().'/template-parts/layout-blocks/search-header.php', false, $args);
         ?>
-        <div class="content-main">
+        <div class="content-main" id="content-main">
             <div class="container">
                 <?php
                 $args = [

@@ -58,7 +58,7 @@ $CheapestPriceFilter->occupancies = [2];
 $cheapest_price = $mo->getCheapestPrice($CheapestPriceFilter);
 
 ?>
-    <div class="content-main">
+    <div class="content-main" id="content-main">
 
         <?php
 

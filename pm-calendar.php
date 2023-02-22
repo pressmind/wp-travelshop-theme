@@ -15,7 +15,7 @@ get_header();
             $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
             $result['calendarpage'] = true;
             ?>
-        <div class="content-main">
+        <div class="content-main" id="content-main">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

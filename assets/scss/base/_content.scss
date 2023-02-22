@@ -11,8 +11,10 @@ hr + .content-block {
 
 .content-main > .container {
   padding-bottom: 1rem;
+  padding-top: 1rem;
 
   @include media-breakpoint-up(md) {
+    padding-top: $grid-gutter-width;
     padding-bottom: $grid-gutter-width;
   }
 }
