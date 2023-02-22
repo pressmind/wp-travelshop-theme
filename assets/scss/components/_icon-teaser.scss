@@ -1,15 +1,20 @@
 // -- settings for small variant of icon teaser
 %icon-teaser-small {
-
+  flex-direction: row;
 }
 
 // -- settings for default variant of icon teaser
 %icon-teaser-default {
-
+  @include get-custom-breakpoint($icon-teaser-break) {
+    flex-direction: column;
+  }
 }
 
 .teaser.icon-teaser {
 
+  @if ( $icon-teaser-break != null ) {
+    @extend %icon-teaser-small;
+  }
 
-
+  @extend %icon-teaser-default;
 }

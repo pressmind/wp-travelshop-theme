@@ -10071,6 +10071,9 @@ html.force--consent.show--consent body {
  * WP teaser
  */
 /**
+ * Icon teaser
+ */
+/**
  * Add to wishlist
  * ----------------------------
  * set colors on image / default
@@ -11300,6 +11303,13 @@ form.form-string-search.input-group {
     padding: 1.25rem; }
     .teaser.wp-teaser .teaser-body h1 {
       margin: 0 0 0.75rem 0; }
+
+.teaser.icon-teaser {
+  flex-direction: row; }
+
+@media (min-width: 576px) {
+  .teaser.icon-teaser {
+    flex-direction: column; } }
 
 /**
  * Image teaser

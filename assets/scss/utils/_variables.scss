@@ -294,7 +294,6 @@ $teaser-category-product-travel-card-title-active-color: $primary;
 
 // -- travelcard break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
 // -- you can set bootstrap breakpoint key or px value
-$travel-card-use-break: true !default;
 $travel-card-break: md !default;
 
 $travel-card-spacer-y: $card-spacer-y !default;
@@ -343,6 +342,18 @@ $wp-teaser-spacer-y: $card-spacer-y !default;
 $wp-teaser-spacer-x: $card-spacer-x !default;
 $wp-teaser-image-aspect-ratio-width: 16 !default;
 $wp-teaser-image-aspect-ratio-height: 9 !default;
+
+/**
+ * Icon teaser
+ */
+
+$icon-teaser-break: sm !default;
+$icon-teaser-text-align: center !default;
+$icon-teaser-border-radius: $card-border-radius !default;
+$icon-teaser-border-width: $card-border-width !default;
+$icon-teaser-border-color: $card-border-color !default;
+$icon-teaser-spacer-y: $card-spacer-y !default;
+$icon-teaser-spacer-x: $card-spacer-x !default;
 
 /**
  * Add to wishlist
