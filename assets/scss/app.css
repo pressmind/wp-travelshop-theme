@@ -10231,7 +10231,7 @@ body.fl-builder .content-block.content-page > .container, body.fl-builder .fl-bu
  * Some defaults for beaverbuilder and block usage
  */
 .fl-builder-content .content-block {
-  padding-top: 0 !important; }
+  margin-top: 0 !important; }
 
 #content-main {
   overflow-x: hidden; }
@@ -10303,6 +10303,12 @@ i.circle {
     background-color: #dc3545; }
   i.circle.orange {
     background-color: #ffc107; }
+
+.content-block + .content-block {
+  margin-top: 1rem; }
+  @media (min-width: 768px) {
+    .content-block + .content-block {
+      margin-top: 30px; } }
 
 /**
  * in this section essentials for form types are defined

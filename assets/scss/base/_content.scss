@@ -1,0 +1,7 @@
+.content-block + .content-block{
+  margin-top: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: $grid-gutter-width;
+  }
+}
