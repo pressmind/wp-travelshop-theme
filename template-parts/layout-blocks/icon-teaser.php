@@ -52,7 +52,7 @@
                 </div>
                 <div class="teaser-body">
                     <?php if(!empty($teaser['headline'])){?>
-                    <h1 class="teaser-title">
+                    <h1 class="teaser-title h5">
                         <?php echo $teaser['headline'];?>
                     </h1>
                 <?php } ?>
