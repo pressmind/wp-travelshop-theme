@@ -1,0 +1,9 @@
+i.circle {
+  width: $font-size-sm;
+  height: $font-size-sm;
+  display: block;
+
+  @include border-radius($font-size-sm);
+
+  background-color: $gray-300;
+}
