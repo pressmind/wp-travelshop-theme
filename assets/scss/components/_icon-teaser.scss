@@ -36,9 +36,19 @@
 
       position: absolute;
       width: 3rem;
-      top: 0;
-      right:0;
-      bottom:0;
+
+      @if ( $icon-teaser-border-width != 0 ) {
+        top: -$icon-teaser-border-width;
+        right: -$icon-teaser-border-width;
+        bottom: -$icon-teaser-border-width;
+      }
+
+      @if ( $icon-teaser-border-width == 0 ) {
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+
       align-items: center;
       justify-content: center;
 
@@ -97,6 +107,10 @@
         @if ( $icon-teaser-break != null ) {
           position: static;
           width: auto;
+
+          top: unset;
+          right: unset;
+          bottom: unset;
 
           @include border-left-radius($btn-border-radius);
         }

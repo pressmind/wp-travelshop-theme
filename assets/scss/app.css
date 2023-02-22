@@ -11328,9 +11328,9 @@ form.form-string-search.input-group {
       border-bottom-left-radius: 0;
       position: absolute;
       width: 3rem;
-      top: 0;
-      right: 0;
-      bottom: 0;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
       align-items: center;
       justify-content: center;
       display: flex; }
@@ -11357,6 +11357,9 @@ form.form-string-search.input-group {
     .teaser.icon-teaser .teaser-body a.btn {
       position: static;
       width: auto;
+      top: unset;
+      right: unset;
+      bottom: unset;
       border-top-left-radius: 0.25rem;
       border-bottom-left-radius: 0.25rem; }
       .teaser.icon-teaser .teaser-body a.btn .btn-text {
