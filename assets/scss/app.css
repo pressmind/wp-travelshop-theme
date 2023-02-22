@@ -10712,7 +10712,7 @@ form.form-string-search.input-group {
     box-shadow: none;
     background: transparent;
     padding: 0;
-    padding: .5rem 0;
+    margin: 0.75rem 0 0 0;
     font-size: 80%;
     color: #212529;
     line-height: 1;
@@ -10870,6 +10870,7 @@ form.form-string-search.input-group {
         .card-travel .card-body .card-body--bottom .btn.btn-primary > small span {
           display: inline; }
     .card-travel .discount-wrapper {
+      margin-top: 0.75rem;
       display: flex;
       justify-content: center;
       align-items: center;

@@ -145,6 +145,8 @@
     }
 
     .discount-wrapper {
+      margin-top: $travel-card-spacer-y;
+
       @include discount-border();
     }
   }
