@@ -64,13 +64,10 @@
                 <?php if(!empty($teaser['btn_link'])){?>
                     <a href="<?php echo $teaser['btn_link'];?>" target="<?php echo !empty($teaser['btn_link_target']) ? $teaser['btn_link_target'] : '_self';?>"
                        class="btn btn-primary btn-block">
-                        <span><?php echo !empty($teaser['btn_label']) ? $teaser['btn_label'] : 'Button';?></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right"
-                             width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                             stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M18 15l-6 -6l-6 6h12" transform="rotate(90 12 12)" />
-                        </svg>
+                        <span class="btn-text"><?php echo !empty($teaser['btn_label']) ? $teaser['btn_label'] : 'Button';?></span>
+                        <span class="btn-icon">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
+                        </span>
                     </a>
                 <?php } ?>
                 </div>
