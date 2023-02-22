@@ -11351,6 +11351,9 @@ form.form-string-search.input-group {
         .teaser.icon-teaser .teaser-icon .icon-inner > svg {
           width: 3rem;
           height: 3rem; }
+    .teaser.icon-teaser .teaser-body h1 + p,
+    .teaser.icon-teaser .teaser-body p + p {
+      margin-top: 1.25rem; }
     .teaser.icon-teaser .teaser-body a.btn {
       position: static;
       width: auto;
