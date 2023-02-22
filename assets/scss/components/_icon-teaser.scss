@@ -79,12 +79,9 @@
     // -- teaser body manipulation
     .teaser-body {
 
-      // -- make changes from small teaser "removed" when is used
-      @if ( $icon-teaser-break != null ) {
-        h1 + p,
-        p + p {
-          margin-top: $icon-teaser-spacer-x; // smaller margin between text items for small variant.
-        }
+      h1 + p,
+      p + p {
+        margin-top: $icon-teaser-spacer-x; // smaller margin between text items for small variant.
       }
 
       a.btn {
@@ -161,11 +158,6 @@
 
     p {
       margin: 0;
-    }
-
-    h1 + p,
-    p + p {
-      margin-top: $icon-teaser-spacer-y;
     }
 
     .btn {
