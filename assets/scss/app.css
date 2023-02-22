@@ -9982,6 +9982,10 @@ html.force--consent.show--consent body {
  ** Define own variables in this file
  ***/
 /**
+ * to-do
+ * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
+ */
+/**
  * Booking color set
  * ------------------------------
  * using bootstrap $success, $danger, $warning
