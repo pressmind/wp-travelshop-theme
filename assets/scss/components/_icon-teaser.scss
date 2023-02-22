@@ -22,6 +22,15 @@
 
 .teaser.icon-teaser {
   // -- defaults
+
+  border-width: $icon-teaser-border-width;
+  border-style: solid;
+  border-color: $icon-teaser-border-color;
+
+  background-color: $icon-teaser-bg;
+
+  text-align: $icon-teaser-text-align;
+
   .teaser-body {
     padding: $icon-teaser-spacer-x;
   }

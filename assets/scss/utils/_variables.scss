@@ -335,6 +335,7 @@ $image-teaser-image-overlay-color: rgba(#000, .15) !default;
  * WP teaser
  */
 
+$wp-teaser-bg: $card-bg !important;
 $wp-teaser-border-radius: $card-border-radius !default;
 $wp-teaser-border-width: $card-border-width !default;
 $wp-teaser-border-color: $card-border-color !default;
@@ -347,6 +348,7 @@ $wp-teaser-image-aspect-ratio-height: 9 !default;
  * Icon teaser
  */
 
+$icon-teaser-bg: $card-bg !important;
 $icon-teaser-break: sm !default;
 $icon-teaser-text-align: center !default;
 $icon-teaser-border-radius: $card-border-radius !default;

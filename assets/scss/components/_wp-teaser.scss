@@ -3,6 +3,7 @@
   border-color: $wp-teaser-border-color;
   border-style: solid;
   border-width: $wp-teaser-border-width;
+  background-color: $wp-teaser-bg;
 
   .teaser-image {
     @if ( $wp-teaser-border-width != 0 ) {
