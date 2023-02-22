@@ -9,8 +9,10 @@
   align-items: center;
 
   .loader {
-    width: 25px;
     display: none;
+    width: auto;
+
+    height: $btn-font-size * $btn-line-height;
   }
 
   > svg {

@@ -10479,8 +10479,9 @@ form.form-string-search.input-group {
   gap: .25rem;
   align-items: center; }
   .btn .loader {
-    width: 25px;
-    display: none; }
+    display: none;
+    width: auto;
+    height: 1.5rem; }
   .btn > svg {
     width: 1rem;
     height: 1rem; }
