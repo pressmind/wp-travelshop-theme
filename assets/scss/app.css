@@ -10304,10 +10304,14 @@ i.circle {
   i.circle.orange {
     background-color: #ffc107; }
 
-.content-block + .content-block {
+.content-block + .content-block,
+.content-block + hr,
+hr + .content-block {
   margin-top: 1rem; }
   @media (min-width: 768px) {
-    .content-block + .content-block {
+    .content-block + .content-block,
+    .content-block + hr,
+    hr + .content-block {
       margin-top: 30px; } }
 
 /**

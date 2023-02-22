@@ -1,4 +1,6 @@
-.content-block + .content-block{
+.content-block + .content-block,
+.content-block + hr,
+hr + .content-block {
   margin-top: 1rem;
 
   @include media-breakpoint-up(md) {
