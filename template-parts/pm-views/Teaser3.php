@@ -45,7 +45,7 @@ if (empty($filteredParams) === false) {
 }
 ?>
 <article class="col-12 card-travel-wrapper">
-    <div class="card-travel">
+    <div class="card-travel card-travel--stripe">
         <div class="card-image">
             <?php
             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/card-badge.php', [
