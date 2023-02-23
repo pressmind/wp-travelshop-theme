@@ -88,5 +88,7 @@
 }
 
 @mixin modal-footer {
-
+  padding: $modal-inner-padding;
+  border-top: $modal-footer-border-width solid $modal-footer-border-color;
+  @include border-bottom-radius($modal-content-border-radius);
 }

@@ -86,6 +86,11 @@
         .list-filter-boxes {
           @include modal-body();
         }
+
+        .list-filter-footer {
+          margin-top: 0;
+          @include modal-footer();
+        }
       }
 
       // apple like

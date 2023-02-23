@@ -11405,7 +11405,13 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter-boxes {
       position: relative;
       min-height: 100%;
-      padding: 1rem; } }
+      padding: 1rem; }
+    .content-block.content-block-list-filter .list-filter-footer {
+      margin-top: 0;
+      padding: 1rem;
+      border-top: 1px solid #dee2e6;
+      border-bottom-right-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem; } }
 
 .search-wrapper .search-box {
   padding: 30px;
