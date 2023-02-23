@@ -172,3 +172,46 @@
   background: transparent;
   padding: 0;
 }
+
+/**
+ * Placeholder generator
+ * ------------------------------
+ * generate placeholders dynaimically by breakpoints
+ * up and down to make sure not use mixins and generate
+ * same quellcode everytime
+ */
+
+@mixin placeholder($name) {
+  @if not index($placeholders, $name) {
+    // store name
+    $placeholders: append($placeholders, $name) !global;
+
+    // At root level
+    @at-root {
+      @each $breakpoint, $value in $grid-breakpoints {
+        // Opening media query block up + down
+        %#{$name}-up-#{$breakpoint} {
+          @include media-breakpoint-up($breakpoint) {
+            @content;
+          }
+        }
+
+        %#{$name}-down-#{$breakpoint} {
+          @include media-breakpoint-down($breakpoint) {
+            @content;
+          }
+        }
+      }
+
+      // -- generating placeholder without breakpoint aswell
+      %#{$name} {
+        @content;
+      }
+    }
+  }
+
+  // If placeholder already exists, warn user
+  @else {
+    @warn "Placeholder `#{$name}` already exists.";
+  }
+}

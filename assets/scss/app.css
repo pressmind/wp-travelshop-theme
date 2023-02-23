@@ -10146,6 +10146,13 @@ html.force--consent.show--consent body {
 /**
  * Button reset
  */
+/**
+ * Placeholder generator
+ * ------------------------------
+ * generate placeholders dynaimically by breakpoints
+ * up and down to make sure not use mixins and generate
+ * same quellcode everytime
+ */
 body {
   font-display: swap !important; }
 
