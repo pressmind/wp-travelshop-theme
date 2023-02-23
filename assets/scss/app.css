@@ -11329,7 +11329,7 @@ form.form-string-search.input-group {
         transform: translateX(0.625rem); }
 
 .content-block.content-block-list-filter {
-  background-color: red; }
+  border: red 10px solid; }
   .content-block.content-block-list-filter .list-filter {
     border-radius: 0.25rem;
     background-color: #e9ecef;

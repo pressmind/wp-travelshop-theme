@@ -50,18 +50,18 @@
 
     // modal
     @if ( $filter-mobile-view-type == 'modal' ) {
-      background-color: red;
+      border: red 10px solid;
     }
 
     // apple like
     @if ( $filter-mobile-view-type == 'apple-like' ) {
-      background-color: green;
+      border: green 10px solid;
 
     }
 
     // offcanvas
     @if ( $filter-mobile-view-type == 'offcanvas' ) {
-      background-color: yellow;
+      border: yellow 10px solid;
 
     }
   }
