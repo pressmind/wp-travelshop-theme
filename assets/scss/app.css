@@ -11358,7 +11358,7 @@ form.form-string-search.input-group {
     height: 100%;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    overflow-x: hidden;
+    overflow: hidden;
     transition: opacity .3s;
     pointer-events: none;
     opacity: 0;
@@ -11411,7 +11411,6 @@ form.form-string-search.input-group {
       position: relative;
       min-height: 100%;
       padding: 1rem;
-      display: flex;
       overflow-y: auto;
       overflow-x: hidden; }
     .content-block.content-block-list-filter .list-filter-footer {

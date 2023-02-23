@@ -43,8 +43,6 @@
   position: relative;
   min-height: 100%;
   padding: $modal-inner-padding;
-
-  display: flex;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -83,7 +81,7 @@
 
   background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
 
-  overflow-x: hidden;
+  overflow: hidden;
 
   transition: opacity .3s;
   pointer-events: none;
