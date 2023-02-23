@@ -125,7 +125,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
             </div>
         </div>
     <?php } else { ?>
-        <div id="pm-search-result" class="row">
+        <div id="pm-search-result" class="row row-products">
             <?php
             foreach ($args['items'] as $item) {
                 $item['class'] = 'col-12 col-md-6 col-lg-4';
