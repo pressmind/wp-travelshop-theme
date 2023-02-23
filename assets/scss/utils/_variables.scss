@@ -202,6 +202,28 @@ $search-bar-main-theme-color: $primary !default;
 $search-bar-transparent-theme-color: #fff !default;
 
 /**
+ * Popups/Popouts
+ * --------------------------------------------
+ * Defines basic Popup/Popout styles for
+ * apple like popup and offcanvas popup style
+ * most variables came from modals
+ */
+
+// -- apple like
+$apple-like-border-radius: $modal-content-border-radius !default;
+$apple-like-bg: $modal-content-bg !default;
+$apple-like-box-shadow: $box-shadow-lg !default;
+
+$apple-like-zindex: $zindex-modal !default;
+
+$apple-like-header-padding: $modal-header-padding !default;
+$apple-like-header-border-width: $modal-header-border-width !default;
+$apple-like-header-border-color: $modal-header-border-color !default;
+
+$apple-like-max-height: 75vh !default;
+$apple-like-inner-padding: $modal-inner-padding !default;
+
+/**
  * Filter
  * --------------------------------------------
  * filter is using various bootstrap varialbes

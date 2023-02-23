@@ -10029,6 +10029,13 @@ html.force--consent.show--consent body {
  * own/custom style easier to fit/work
  */
 /**
+ * Popups/Popouts
+ * --------------------------------------------
+ * Defines basic Popup/Popout styles for
+ * apple like popup and offcanvas popup style
+ * most variables came from modals
+ */
+/**
  * Filter
  * --------------------------------------------
  * filter is using various bootstrap varialbes
