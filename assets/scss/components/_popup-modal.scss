@@ -63,6 +63,11 @@
   // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
   // See also https://github.com/twbs/bootstrap/issues/17695
 
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
   transition: opacity .3s;
   pointer-events: none;
   opacity:0;

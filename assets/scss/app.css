@@ -11358,6 +11358,9 @@ form.form-string-search.input-group {
     height: 100%;
     overflow: hidden;
     outline: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    overflow-y: auto;
     transition: opacity .3s;
     pointer-events: none;
     opacity: 0; }
