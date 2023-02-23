@@ -66,6 +66,14 @@
       @if ( $filter-mobile-view-type == 'modal' ) {
         @include modal-wrapper();
 
+        > form {
+          @include modal-inner();
+        }
+
+        .list-filter {
+          @include modal-body();
+        }
+
         &.is--open {
           @include modal-open();
         }

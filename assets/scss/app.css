@@ -11361,6 +11361,22 @@ form.form-string-search.input-group {
     transition: opacity .3s;
     pointer-events: none;
     opacity: 0; }
+    .content-block.content-block-list-filter > form {
+      position: relative;
+      width: auto;
+      margin: 0.5rem;
+      pointer-events: none; }
+    .content-block.content-block-list-filter .list-filter {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      pointer-events: auto;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 0.3rem;
+      outline: 0; }
     .content-block.content-block-list-filter.is--open {
       opacity: 1;
       pointer-events: auto;
