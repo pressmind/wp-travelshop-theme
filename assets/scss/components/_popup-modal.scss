@@ -24,6 +24,8 @@
   > button {
     @include button-reset();
 
+    line-height: 1;
+
     // -- make visible, important!
     display: block !important;
 
