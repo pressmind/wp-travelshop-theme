@@ -11376,7 +11376,6 @@ form.form-string-search.input-group {
       display: flex;
       flex-direction: column;
       width: 100%;
-      pointer-events: auto;
       background-color: #fff;
       background-clip: padding-box;
       border: 1px solid rgba(0, 0, 0, 0.2);
