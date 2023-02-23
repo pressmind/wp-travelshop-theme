@@ -11353,16 +11353,18 @@ form.form-string-search.input-group {
     top: 0;
     left: 0;
     z-index: 1050;
-    display: none;
+    display: flex;
     width: 100%;
     height: 100%;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow-x: hidden;
-    overflow-y: auto;
     transition: opacity .3s;
     pointer-events: none;
-    opacity: 0; }
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
     .content-block.content-block-list-filter > form {
       position: relative;
       width: auto;
@@ -11382,8 +11384,7 @@ form.form-string-search.input-group {
       outline: 0; }
     .content-block.content-block-list-filter.is--open {
       opacity: 1;
-      pointer-events: auto;
-      display: block; }
+      pointer-events: auto; }
     .content-block.content-block-list-filter .list-filter-header {
       display: flex;
       align-items: flex-start;
@@ -11410,7 +11411,10 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter-boxes {
       position: relative;
       min-height: 100%;
-      padding: 1rem; }
+      padding: 1rem;
+      display: flex;
+      overflow-y: auto;
+      overflow-x: hidden; }
     .content-block.content-block-list-filter .list-filter-footer {
       margin-top: 0;
       padding: 1rem;
