@@ -66,6 +66,10 @@
       @if ( $filter-mobile-view-type == 'modal' ) {
         @include modal-wrapper();
 
+        &.is--open {
+          @include modal-open();
+        }
+
         .list-filter-header {
           @include modal-header();
         }
