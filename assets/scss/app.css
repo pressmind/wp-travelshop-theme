@@ -11408,9 +11408,7 @@ form.form-string-search.input-group {
           color: #007bff; }
     .content-block.content-block-list-filter .list-filter-boxes {
       position: relative;
-      min-height: 100%;
       padding: 1rem;
-      display: flex;
       overflow-y: auto;
       overflow-x: hidden; }
     .content-block.content-block-list-filter .list-filter-footer {

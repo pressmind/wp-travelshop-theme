@@ -42,10 +42,8 @@
 
 @mixin modal-body {
   position: relative;
-  min-height: 100%;
   padding: $modal-inner-padding;
 
-  display: flex;
   overflow-y: auto;
   overflow-x: hidden;
 }
