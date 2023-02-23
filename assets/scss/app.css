@@ -11405,12 +11405,7 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter-boxes {
       position: relative;
       min-height: 100%;
-      justify-content: center;
-      flex: 1 1 auto;
       padding: 1rem; } }
-    @media (max-width: 767.98px) and (max-width: 991.98px) {
-      .content-block.content-block-list-filter .list-filter-boxes {
-        display: flex; } }
 
 .search-wrapper .search-box {
   padding: 30px;
