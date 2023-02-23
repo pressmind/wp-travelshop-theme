@@ -11,6 +11,22 @@
     @include media-breakpoint-up(md) {
       margin-bottom: $grid-gutter-width;
     }
+
+    // -- little change for card travel wrapper, to make margins another way if small teaser / break is active
+    &.card-travel-wrapper {
+      @if ( $travel-card-break != null ) {
+        margin-bottom: 0;
+
+        @include get-custom-breakpoint($travel-card-break) {
+          margin-bottom: 1rem;
+        }
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: $grid-gutter-width;
+        }
+
+      }
+    }
   }
 }
 

@@ -10509,6 +10509,14 @@ form.form-string-search.input-group {
     @media (min-width: 768px) {
       .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
         margin-bottom: 30px; } }
+    .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
+      margin-bottom: 0; }
+      @media (min-width: 768px) {
+        .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
+          margin-bottom: 1rem; } }
+      @media (min-width: 768px) {
+        .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
+          margin-bottom: 30px; } }
 
 .row.row-introduction {
   margin-bottom: 1rem; }
