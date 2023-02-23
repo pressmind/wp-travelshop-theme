@@ -1,7 +1,8 @@
 <?php
+
+use Pressmind\Registry;
 use Pressmind\Travelshop\PriceHandler;
 use Pressmind\Travelshop\Template;
-
 /**
  * <code>
  * $args = [
@@ -27,8 +28,10 @@ use Pressmind\Travelshop\Template;
  * DON'T USE WordPress Stuff here
  */
 
+$config = Registry::getInstance()->get('config');
+
 // only this search params are transmitted, price range (pm-pr), date range (pm-dr), duration range (pm-du), housingoption occupancy (pm-ho)
-$allowedParams = ['pm-pr', 'pm-dr', 'pm-du', 'pm-ho'];
+$allowedParams = ['pm-pr', 'pm-dr', 'pm-du', 'pm-ho', 'pm-tr'];
 $filteredParams = array_filter($_GET,
     function ($key) use ($allowedParams) {
         return in_array($key, $allowedParams);
@@ -41,87 +44,101 @@ if (empty($filteredParams) === false) {
     $args['url'] .= '?' . $query_string;
 }
 ?>
-<article class="travelshop-teaser-mega-stripe col-12">
-    <div class="stripe-inner">
-        <div class="stripe-image"
-             role="img" aria-label="<?php echo $args['headline']; ?>"
-             style="background-image:url(<?php echo !empty($args['image_square']['url']) ? $args['image_square']['url'] : '/placeholder.svg?wh=250x170&text=bilder_default%20not%20found'; ?>);">
+<article class="col-12 card-travel-wrapper">
+    <div class="card-travel">
+        <div class="card-image">
             <?php
+            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/card-badge.php', [
+                'cheapest_price' => $args['cheapest_price'],
+                'id_media_object' => $args['id_media_object'],
+                'id_object_type' => $args['id_object_type'],
+                'recommendation_rate' => $args['recommendation_rate'],
+            ]);
             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/wishlist-heart.php', [
-                   'cheapest_price' => $args['cheapest_price'],
-                   'id_media_object' => $args['id_media_object'],
-                   'id_object_type' => $args['id_object_type'],
-               ]);
-           ?>
-            <?php if(!is_null($args['cheapest_price'])){ ?>
-            <div class='stripe-duration'>
+                'cheapest_price' => $args['cheapest_price'],
+                'id_media_object' => $args['id_media_object'],
+                'id_object_type' => $args['id_object_type'],
+            ]);
+            ?>
+            <a href="<?php echo $args['url']; ?>">
                 <?php
-                if($args['cheapest_price']->duration == 1){ ?>
-                    <small><?php
-                        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
-                                'duration' => $args['cheapest_price']->duration]
-                        );
-                        ?>
-                    </small>
-                <?php }else{ ?>
-                    <strong><?php echo $args['cheapest_price']->duration; ?></strong>
-                    <br/>
-                    <small>Tage</small>
-                <?php } ?>
-            </div>
-            <?php } ?>
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/image.php', [
+                    'image' => $args['image'],
+                    'class' => 'responsive-image',
+                ]);
+                ?>
+            </a>
         </div>
-        <section class="stripe-content">
-            <div class="stripe-content-head">
-                <h1>
+
+        <section class="card-body">
+            <div class="card-body--top">
+                <?php
+                if(!empty($_GET['debug'])){
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/debug-textsearch.php', $args);
+                }
+                ?>
+                <h1 class="card-title">
                     <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
                 </h1>
-            </div>
-            <div class="stripe-content-body">
-                <p><?php echo $args['subline']; ?></p>
                 <?php
                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
                     'attributes' => array_filter([$args['travel_type'] ?? [], $args['destination'] ?? []]),
                 ]);
                 ?>
-            </div>
-            <div class="stripe-content-footer">
-                <?php if(!is_null($args['cheapest_price'])){  ?>
-                <div class="stripe-departure">
-                    <strong>Abreise</strong>
-                    <?php
-                    echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/date-dropdown.php', [
-                        'date_departures' => $args['cheapest_price']->date_departures,
-                        'dates_per_month' => $args['dates_per_month'],
-                        'departure_date_count' => $args['departure_date_count'],
-                        'url' => $args['url']
-                    ]);
-                    ?>
-                </div>
+                <?php if (empty($args['subline']) === false) { ?>
+                    <p class="card-text card-text--fade-out lh-3">
+                        <?php echo $args['subline']; ?>
+                        <span class="fade-out"></span>
+                    </p>
                 <?php } ?>
-                <div class="stripe-cta">
+            </div>
+            <div class="card-body--bottom">
+                <?php if(!is_null($args['cheapest_price'])){ ?>
+                    <div class=" date-row">
+                    <span class="small">
+                        <span>
+                        <?php
+                        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
+                                'duration' => $args['cheapest_price']->duration]
+                        );
+                        if(!empty($args['cheapest_price']->option_board_type)){
+                            echo ', inkl. '.$args['cheapest_price']->option_board_type;
+                        }
+                        ?><br>
+                        </span>
+                    </span>
+                        <?php
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/date-dropdown.php', [
+                            'date_departures' => $args['cheapest_price']->date_departures,
+                            'dates_per_month' => $args['dates_per_month'],
+                            'departure_date_count' => $args['departure_date_count'],
+                            'url' => $args['url']
+                        ]);
+                        ?>
+                    </div>
+                <?php } ?>
+                <div class="price-row">
                     <?php
                     if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
                         echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
+                            'prefix' => '<hr>',
                             'cheapest_price' => $args['cheapest_price'],
                             'discount' => $discount,
                             'hide-price-total' => true,
                             'hide-discount-valid-to' => true,
-                        ]);
+                        ], 0);
                     }
                     ?>
-                    <a href="<?php echo $args['url']; ?>" class="travel-teaser-link">
-                        <div class="btn btn-primary">
-                            <?php
-                            if(!is_null($args['cheapest_price'])) {
-                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
-                                    'cheapest_price' => $args['cheapest_price'],
-                                ]);
-                            }else{
-                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
-                            }
-                            ?>
-                        </div>
+                    <a href="<?php echo $args['url']; ?>" class="btn btn-primary">
+                        <?php
+                        if(!is_null($args['cheapest_price'])) {
+                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
+                                'cheapest_price' => $args['cheapest_price'],
+                            ]);
+                        }else{
+                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                        }
+                        ?>
                     </a>
                 </div>
             </div>
