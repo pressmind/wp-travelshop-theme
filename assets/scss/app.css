@@ -10860,7 +10860,7 @@ form.form-string-search.input-group {
 /**
  * small ( 2 column ) travel card
  */
-.card-travel {
+.card-travel, .card-travel.card-travel--stripe {
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding-bottom: 1.25rem;

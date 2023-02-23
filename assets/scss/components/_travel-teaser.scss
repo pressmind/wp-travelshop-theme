@@ -282,6 +282,12 @@
       }
     }
   }
+
+  // -- stripe travel card
+  &.card-travel--stripe {
+    // -- as default
+    @extend %card-travel-small;
+  }
 }
 
 // -- reset border/padding/margin-bottom when small teaser for last child
