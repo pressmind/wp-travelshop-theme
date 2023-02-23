@@ -1,4 +1,5 @@
 .content-block.content-block-list-filter {
+
   .list-filter {
     border-radius: $filter-border-radius;
     background-color: $filter-bg;
@@ -36,6 +37,13 @@
           }
         }
       }
+    }
+  }
+
+  // -- mobile view
+  @if  ( $filter-mobile-break != null ) {
+    @include media-breakpoint-down($filter-mobile-break) {
+      display: none;
     }
   }
 }

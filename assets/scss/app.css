@@ -10907,6 +10907,18 @@ form.form-string-search.input-group {
     font-size: 0.875rem;
     white-space: nowrap; }
 
+/**
+ * File defines usable placeholders for apple-like elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
+/**
+ * File defines usable placeholders for offcanvas elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
+/**
+ * File defines usable placeholders for modal elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
 .travelshop-datepicker .list-filter-box > div {
   position: relative; }
   .travelshop-datepicker .list-filter-box > div input.form-control[readonly] {
@@ -11326,6 +11338,9 @@ form.form-string-search.input-group {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter {
+    display: none; } }
 
 .search-wrapper .search-box {
   padding: 30px;
@@ -11773,5 +11788,11 @@ nav#navbar ul.navbar-nav {
   nav#navbar ul.navbar-nav > li.nav-item.active > a.nav-link {
     color: #007bff;
     font-weight: 700; }
+
+#search-result .list-filter-toggle {
+  display: none; }
+  @media (max-width: 767.98px) {
+    #search-result .list-filter-toggle {
+      display: block; } }
 
 /*# sourceMappingURL=app.css.map */

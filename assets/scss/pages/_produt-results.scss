@@ -1,0 +1,11 @@
+#search-result {
+  .list-filter-toggle {
+    display: none;
+
+    @if  ( $filter-mobile-break != null ) {
+      @include media-breakpoint-down($filter-mobile-break) {
+        display: block;
+      }
+    }
+  }
+}
