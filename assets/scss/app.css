@@ -10518,13 +10518,13 @@ form.form-string-search.input-group {
         .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
           margin-bottom: 30px; } }
 
-.content-block.content-block-travel-cols .row.row-products {
+.content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
   margin-bottom: 0; }
   @media (min-width: 768px) {
-    .content-block.content-block-travel-cols .row.row-products {
+    .content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
       margin-bottom: -1rem; } }
   @media (min-width: 768px) {
-    .content-block.content-block-travel-cols .row.row-products {
+    .content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
       margin-bottom: -30px; } }
 
 .row.row-introduction {
@@ -11058,6 +11058,11 @@ form.form-string-search.input-group {
       /**
        * Date row
        */ }
+
+.card-travel-wrapper:last-child .card-travel {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0; }
 
 /**
  * Styling for category product teaser

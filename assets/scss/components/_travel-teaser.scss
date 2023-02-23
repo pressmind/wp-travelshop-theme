@@ -283,3 +283,14 @@
     }
   }
 }
+
+// -- reset border/padding/margin-bottom when small teaser for last child
+@if ( $travel-card-break != null ) {
+  .card-travel-wrapper:last-child {
+    .card-travel {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}

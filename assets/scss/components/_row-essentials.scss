@@ -33,7 +33,7 @@
 // -- little change on offset .row.row-products if break
 @if ( $travel-card-break != null ) {
   .content-block.content-block-travel-cols {
-    .row.row-products {
+    .row.row-products:not(.is-slider) {
       margin-bottom: 0;
 
       @include get-custom-breakpoint($travel-card-break) {
