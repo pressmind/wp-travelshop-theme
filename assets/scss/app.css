@@ -11413,6 +11413,9 @@ form.form-string-search.input-group {
       border-bottom-right-radius: 0.3rem;
       border-bottom-left-radius: 0.3rem; } }
 
+#wpadminbar {
+  z-index: 1039 !important; }
+
 .search-wrapper .search-box {
   padding: 30px;
   background-color: #fff;

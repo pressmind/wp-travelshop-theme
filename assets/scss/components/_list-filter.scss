@@ -106,3 +106,8 @@
     }
   }
 }
+
+// @todo: decline it outside here, ans basic element
+#wpadminbar {
+  z-index: ($zindex-modal-backdrop - 1) !important;
+}
