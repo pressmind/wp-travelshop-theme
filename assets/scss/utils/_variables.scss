@@ -220,7 +220,7 @@ $filter-box-divider-width: 1px !default;
 $filter-box-divider-color: $gray-300 !default;
 
 $filter-mobile-break: sm !default; // down breakpoint, not up
-$filter-mobile-view-type: 'modal-fullscreen' !default; // you can choose between 'apple-like' ( drop op ), 'modal', 'modal-fullscreen' and 'offcanvas' it only changes filter wrapper style/animation in open-state
+$filter-mobile-view-type: 'apple-like' !default; // you can choose between 'apple-like' ( drop op ), 'modal', 'modal-fullscreen' and 'offcanvas' it only changes filter wrapper style/animation in open-state
 
 
 /**
