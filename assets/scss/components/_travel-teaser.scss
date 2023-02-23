@@ -162,12 +162,14 @@
    * they're used for "travel-box-break" into stripe on small devices
    */
 
-  @if ($travel-card-break != null) {
-    @extend %card-travel-small;
-  }
+  &:not(.card-travel--stripe) {
+    @if ($travel-card-break != null) {
+      @extend %card-travel-small;
+    }
 
-  // -- break teaser into common teaser
-  @extend %card-travel-default;
+    // -- break teaser into common teaser
+    @extend %card-travel-default;
+  }
 
   // -- image
   .card-image {
