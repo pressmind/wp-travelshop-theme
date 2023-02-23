@@ -45,6 +45,8 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
             data-ajax="<?php echo $use_ajax; ?>"
             data-departures='<?php echo $departures_dates;?>'
             value="<?php echo $human_readable_str; ?>"/>
+
+        <?php // @todo: this is needed/used for what? ?>
         <?php if($use_ajax == "0") { ?>
         <svg xmlns="http://www.w3.org/2000/svg"
             <?php if (!empty($_GET['pm-dr'])) { echo 'style="display: none;"'; } else { echo 'style="display: block;"'; } ?>
