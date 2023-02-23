@@ -65,6 +65,7 @@
       // modal
       @if ( $filter-mobile-view-type == 'modal' ) {
         @include modal-wrapper();
+        @include modal-wrapper-fullscreen();
 
         > form {
           @include modal-inner();
@@ -73,6 +74,7 @@
         .list-filter {
           padding: 0;
           @include modal-content();
+          @include modal-content-fullscreen();
         }
 
         &.is--open {

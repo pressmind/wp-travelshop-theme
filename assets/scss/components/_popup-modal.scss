@@ -65,6 +65,12 @@
   outline: 0;
 }
 
+@mixin modal-content-fullscreen {
+  @include border-radius(0);
+  border: 0;
+  box-shadow: none;
+}
+
 @mixin modal-wrapper {
   position: fixed;
   top: 0;
@@ -90,6 +96,10 @@
   opacity:0;
 
   padding: $modal-dialog-margin;
+}
+
+@mixin modal-wrapper-fullscreen {
+  padding: 0;
 }
 
 @mixin modal-inner {
