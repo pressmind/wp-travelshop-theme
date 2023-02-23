@@ -44,7 +44,7 @@ if (empty($filteredParams) === false) {
     $args['url'] .= '?' . $query_string;
 }
 ?>
-<article class="col-12 card-travel-wrapper">
+<article class="col-12 card-travel-wrapper mb-0">
     <div class="card-travel card-travel--stripe">
         <div class="card-image">
             <?php
