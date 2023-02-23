@@ -59,14 +59,14 @@
 
   // -- mobile view
   @if  ( $filter-mobile-break != null ) {
-    @include media-breakpoint-down($filter-mobile-break) {
-      display: none;
-
+    @media (max-width: getMediaBreakpointDown($filter-mobile-break)) {
 
       // -- make mobile view by mobile-view key
       // modal
       @if ( $filter-mobile-view-type == 'modal' ) {
-        border: red 10px solid;
+        .list-filter-header {
+          @include modal-header();
+        }
       }
 
       // apple like

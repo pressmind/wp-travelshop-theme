@@ -10083,6 +10083,9 @@ html.force--consent.show--consent body {
  * set colors on image / default
  */
 /**
+ * Get max breakpoint
+ */
+/**
  * Strip unit
  */
 /**
@@ -10916,7 +10919,7 @@ form.form-string-search.input-group {
  * Used for various elements for mobile views / UI|UX
  */
 /**
- * File defines usable placeholders for modal elements + transitions
+ * File defines usable mixins for modal elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
 .list-filter-box.datepicker > div {
@@ -11345,9 +11348,22 @@ form.form-string-search.input-group {
   margin-top: 0.75rem;
   border-top: 1px solid #dee2e6; }
 @media (max-width: 767.98px) {
-  .content-block.content-block-list-filter {
-    display: none;
-    border: red 10px solid; } }
+  .content-block.content-block-list-filter .list-filter-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem; }
+    .content-block.content-block-list-filter .list-filter-header > button {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      padding: 1rem 1rem;
+      margin: -1rem -1rem -1rem auto; } }
 
 .search-wrapper .search-box {
   padding: 30px;

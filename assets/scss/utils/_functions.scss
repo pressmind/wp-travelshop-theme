@@ -1,4 +1,14 @@
 /**
+ * Get max breakpoint
+ */
+
+@function getMediaBreakpointDown($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+
+  @return $max;
+}
+
+/**
  * Strip unit
  */
 @function strip-unit($number) {
