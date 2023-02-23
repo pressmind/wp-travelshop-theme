@@ -10352,7 +10352,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /**
  * Define input clear button, by default / globally
  */
-.list-filter-box.travelshop-datepicker > div .input-clear, .select-from-control .input-clear {
+.list-filter-box.datepicker > div .input-clear, .select-from-control .input-clear {
   position: absolute;
   top: 50%;
   right: 0.375rem;
@@ -10365,7 +10365,7 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #212529;
   transition: color .3s;
   z-index: 5; }
-  .list-filter-box.travelshop-datepicker > div .input-clear:hover, .select-from-control .input-clear:hover {
+  .list-filter-box.datepicker > div .input-clear:hover, .select-from-control .input-clear:hover {
     color: #007bff; }
 
 /**
@@ -10919,12 +10919,12 @@ form.form-string-search.input-group {
  * File defines usable placeholders for modal elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
-.list-filter-box.travelshop-datepicker > div {
+.list-filter-box.datepicker > div {
   position: relative; }
-  .list-filter-box.travelshop-datepicker > div input.form-control[readonly] {
+  .list-filter-box.datepicker > div input.form-control[readonly] {
     background: #fff;
     opacity: 1; }
-  .list-filter-box.travelshop-datepicker > div .input-clear {
+  .list-filter-box.datepicker > div .input-clear {
     display: none; }
 
 .select-from-control {
