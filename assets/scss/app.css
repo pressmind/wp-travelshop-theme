@@ -11063,8 +11063,18 @@ form.form-string-search.input-group {
     flex-direction: column;
     justify-content: space-between; }
     @media (min-width: 768px) {
-      .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary > small span {
-        display: inline; } }
+      .card-travel.card-travel--stripe .card-body .card-body--bottom {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        .card-travel.card-travel--stripe .card-body .card-body--bottom .date-row {
+          flex: 1;
+          text-align: right; }
+        .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
+          flex-direction: column;
+          flex: 0; }
+          .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary > small span {
+            display: inline; } }
 
 .card-travel-wrapper:last-child .card-travel {
   margin-bottom: 0;
