@@ -11400,6 +11400,7 @@ form.form-string-search.input-group {
         box-shadow: none;
         background: transparent;
         padding: 0;
+        display: block;
         padding: 1rem 1rem;
         margin: -1rem -1rem -1rem auto; }
     .content-block.content-block-list-filter .list-filter-boxes {
