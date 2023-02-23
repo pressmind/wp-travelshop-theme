@@ -11340,6 +11340,10 @@ form.form-string-search.input-group {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
+.content-block.content-block-list-filter .list-filter-footer {
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #dee2e6; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
     display: none;
