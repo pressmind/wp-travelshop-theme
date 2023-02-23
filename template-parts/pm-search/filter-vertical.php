@@ -28,16 +28,20 @@
     <form id="filter" action="" method="GET">
         <input type="hidden" name="pm-ot" value="<?php echo implode(',', $args['id_object_type']); ?>">
         <div class="list-filter">
-            <div class="h4 mt-0 mb-4"><i class="la la-filter"></i> Suche verfeinern</div>
-            <button class="list-filter-close">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="28" height="28"
-                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z"/>
-                    <line x1="18" y1="6" x2="6" y2="18"/>
-                    <line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-            </button>
+            <div class="list-filter-header">
+
+                <div class="h4">Suche verfeinern</div>
+
+                <button class="list-filter-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="28" height="28"
+                         viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z"/>
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
             <div class="list-filter-boxes">
                 <?php
                 // require 'search/string-search.php';
@@ -58,6 +62,9 @@
                     require 'filter/category-tree.php';
                 }
                 ?>
+            </div>
+
+            <div class="list-filter-footer">
                 <div class="list-filter-box list-filter-box-submit">
                     <button type="button" class="btn btn-primary btn-block filter-prompt">Filter anwenden</button>
                 </div>
