@@ -83,19 +83,24 @@
 
   background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
 
-  overflow-x: hidden;
+  overflow: hidden;
 
   transition: opacity .3s;
   pointer-events: none;
   opacity:0;
+
+  padding: $modal-dialog-margin;
 }
 
 @mixin modal-inner {
   position: relative;
   width: auto;
-  margin: $modal-dialog-margin;
+  margin: 0;
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
+
+  display: flex;
+  height: 100%;
 }
 
 @mixin modal-footer {
