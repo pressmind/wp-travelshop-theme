@@ -30,6 +30,23 @@
   }
 }
 
+// -- little change on offset .row.row-products if break
+@if ( $travel-card-break != null ) {
+  .content-block.content-block-travel-cols {
+    .row.row-products {
+      margin-bottom: 0;
+
+      @include get-custom-breakpoint($travel-card-break) {
+        margin-bottom: -1rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: -$grid-gutter-width;
+      }
+    }
+  }
+}
+
 .row.row-introduction {
   margin-bottom: 1rem;
 
