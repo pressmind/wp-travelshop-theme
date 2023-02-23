@@ -72,7 +72,7 @@
 
         .list-filter {
           padding: 0;
-          @include modal-body();
+          @include modal-content();
         }
 
         &.is--open {
@@ -81,6 +81,10 @@
 
         .list-filter-header {
           @include modal-header();
+        }
+
+        .list-filter-boxes {
+          @include modal-body();
         }
       }
 
