@@ -11369,6 +11369,7 @@ form.form-string-search.input-group {
       margin: 0.5rem;
       pointer-events: none; }
     .content-block.content-block-list-filter .list-filter {
+      padding: 0;
       position: relative;
       display: flex;
       flex-direction: column;

@@ -71,6 +71,7 @@
         }
 
         .list-filter {
+          padding: 0;
           @include modal-body();
         }
 
