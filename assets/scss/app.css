@@ -11066,10 +11066,10 @@ form.form-string-search.input-group {
       .card-travel.card-travel--stripe .card-body .card-body--bottom {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap; }
+        flex-wrap: nowrap;
+        align-items: flex-end; }
         .card-travel.card-travel--stripe .card-body .card-body--bottom .date-row {
-          flex: 1;
-          text-align: right; }
+          flex: 1; }
         .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
           flex-direction: column;
           flex: 0; }

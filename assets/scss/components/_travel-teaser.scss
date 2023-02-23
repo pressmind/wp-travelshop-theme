@@ -303,9 +303,10 @@
           flex-direction: row;
           flex-wrap: nowrap;
 
+          align-items: flex-end;
+
           .date-row {
             flex: 1;
-            text-align: right;
           }
 
           .price-row {
