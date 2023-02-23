@@ -64,6 +64,8 @@
       // -- make mobile view by mobile-view key
       // modal
       @if ( $filter-mobile-view-type == 'modal' ) {
+        @include modal-wrapper();
+
         .list-filter-header {
           @include modal-header();
         }
