@@ -11063,6 +11063,8 @@ form.form-string-search.input-group {
     flex-direction: column;
     justify-content: space-between; }
     @media (min-width: 768px) {
+      .card-travel.card-travel--stripe .card-body .card-body--top .attribute-row {
+        display: block; }
       .card-travel.card-travel--stripe .card-body .card-body--bottom {
         display: flex;
         flex-direction: row;

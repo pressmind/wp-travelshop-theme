@@ -297,6 +297,12 @@
       justify-content: space-between;
 
       @include media-breakpoint-up(md) {
+        .card-body--top {
+          .attribute-row {
+            display: block;
+          }
+        }
+
         .card-body--bottom {
 
           display: flex;
