@@ -226,6 +226,24 @@ $apple-like-footer-border-color: $modal-footer-border-color !default;
 $apple-like-max-height: 75vh !default;
 $apple-like-inner-padding: $modal-inner-padding !default;
 
+// -- offcanvas
+
+$offcanvas-border-radius: $modal-content-border-radius !default;
+$offcanvas-bg: $modal-content-bg !default;
+$offcanvas-box-shadow: $box-shadow-lg !default;
+
+$offcanvas-zindex: $zindex-modal !default;
+
+$offcanvas-header-padding: $modal-header-padding !default;
+$offcanvas-header-border-width: $modal-header-border-width !default;
+$offcanvas-header-border-color: $modal-header-border-color !default;
+
+$offcanvas-footer-border-width: $modal-footer-border-width !default;
+$offcanvas-footer-border-color: $modal-footer-border-color !default;
+
+$offcanvas-max-width: 20rem !default;
+$offcanvas-inner-padding: $modal-inner-padding !default;
+
 /**
  * Filter
  * --------------------------------------------
