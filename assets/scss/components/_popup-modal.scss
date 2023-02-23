@@ -15,6 +15,10 @@
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
   @include border-top-radius($modal-content-border-radius);
 
+  > *:not(button) {
+    margin-bottom:0;
+  }
+
   > button {
     @include button-reset();
 
