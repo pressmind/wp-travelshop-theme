@@ -11411,6 +11411,9 @@ form.form-string-search.input-group {
         margin: -1rem -1rem -1rem auto;
         color: #212529;
         transition: color .3s; }
+        .content-block.content-block-list-filter .list-filter-header > button svg {
+          width: 1.125rem;
+          height: 1.125rem; }
         .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
           color: #007bff; }
     .content-block.content-block-list-filter .list-filter-boxes {

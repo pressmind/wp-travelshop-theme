@@ -34,6 +34,12 @@
     color: $body-color;
     transition: color .3s;
 
+    // -- svg size
+    svg {
+      width: $font-size-lg;
+      height: $font-size-lg;
+    }
+
     &:hover, &:focus, &:active {
       color: $primary;
     }
