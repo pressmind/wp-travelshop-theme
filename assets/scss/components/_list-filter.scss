@@ -10,6 +10,13 @@
       border: $filter-border-width solid $filter-border-color;
     }
 
+    // -- filter header
+    .list-filter-header {
+      > button.list-filter-close {
+        display: none;
+      }
+    }
+
     // -- filter boxes
     .list-filter-boxes {
 
@@ -44,25 +51,24 @@
   @if  ( $filter-mobile-break != null ) {
     @include media-breakpoint-down($filter-mobile-break) {
       display: none;
-    }
 
-    // -- make mobile view by mobile-view key
 
-    // modal
-    @if ( $filter-mobile-view-type == 'modal' ) {
-      border: red 10px solid;
-    }
+      // -- make mobile view by mobile-view key
+      // modal
+      @if ( $filter-mobile-view-type == 'modal' ) {
+        border: red 10px solid;
+      }
 
-    // apple like
-    @if ( $filter-mobile-view-type == 'apple-like' ) {
-      border: green 10px solid;
+      // apple like
+      @if ( $filter-mobile-view-type == 'apple-like' ) {
+        border: green 10px solid;
 
-    }
+      }
 
-    // offcanvas
-    @if ( $filter-mobile-view-type == 'offcanvas' ) {
-      border: yellow 10px solid;
-
+      // offcanvas
+      @if ( $filter-mobile-view-type == 'offcanvas' ) {
+        border: yellow 10px solid;
+      }
     }
   }
 }
