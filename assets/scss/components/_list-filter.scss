@@ -45,5 +45,24 @@
     @include media-breakpoint-down($filter-mobile-break) {
       display: none;
     }
+
+    // -- make mobile view by mobile-view key
+
+    // modal
+    @if ( $filter-mobile-view-type == 'modal' ) {
+      background-color: red;
+    }
+
+    // apple like
+    @if ( $filter-mobile-view-type == 'apple-like' ) {
+      background-color: green;
+
+    }
+
+    // offcanvas
+    @if ( $filter-mobile-view-type == 'offcanvas' ) {
+      background-color: yellow;
+
+    }
   }
 }
