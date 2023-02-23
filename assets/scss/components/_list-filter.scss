@@ -63,9 +63,12 @@
 
       // -- make mobile view by mobile-view key
       // modal
-      @if ( $filter-mobile-view-type == 'modal' ) {
+      @if ( $filter-mobile-view-type == 'modal' or $filter-mobile-view-type == 'modal-fullscreen' ) {
         @include modal-wrapper();
-        @include modal-wrapper-fullscreen();
+
+        @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+          @include modal-wrapper-fullscreen();
+        }
 
         > form {
           @include modal-inner();
@@ -74,7 +77,10 @@
         .list-filter {
           padding: 0;
           @include modal-content();
-          @include modal-content-fullscreen();
+
+          @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+            @include modal-content-fullscreen();
+          }
         }
 
         &.is--open {
