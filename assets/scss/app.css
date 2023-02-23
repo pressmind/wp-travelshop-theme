@@ -11353,18 +11353,15 @@ form.form-string-search.input-group {
     top: 0;
     left: 0;
     z-index: 1050;
-    display: flex;
+    display: none;
     width: 100%;
     height: 100%;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+    overflow-x: hidden;
     transition: opacity .3s;
     pointer-events: none;
-    opacity: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
+    opacity: 0; }
     .content-block.content-block-list-filter > form {
       position: relative;
       width: auto;
@@ -11376,6 +11373,7 @@ form.form-string-search.input-group {
       display: flex;
       flex-direction: column;
       width: 100%;
+      pointer-events: auto;
       background-color: #fff;
       background-clip: padding-box;
       border: 1px solid rgba(0, 0, 0, 0.2);
@@ -11383,7 +11381,8 @@ form.form-string-search.input-group {
       outline: 0; }
     .content-block.content-block-list-filter.is--open {
       opacity: 1;
-      pointer-events: auto; }
+      pointer-events: auto;
+      display: block; }
     .content-block.content-block-list-filter .list-filter-header {
       display: flex;
       align-items: flex-start;
@@ -11411,6 +11410,7 @@ form.form-string-search.input-group {
       position: relative;
       min-height: 100%;
       padding: 1rem;
+      display: flex;
       overflow-y: auto;
       overflow-x: hidden; }
     .content-block.content-block-list-filter .list-filter-footer {

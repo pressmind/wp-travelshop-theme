@@ -6,6 +6,7 @@
 @mixin modal-open {
   opacity: 1;
   pointer-events: auto;
+  display: block;
 }
 
 @mixin modal-header {
@@ -43,6 +44,8 @@
   position: relative;
   min-height: 100%;
   padding: $modal-inner-padding;
+
+  display: flex;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -54,6 +57,7 @@
   width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
   // counteract the pointer-events: none; in the .modal-dialog
   color: $modal-content-color;
+  pointer-events: auto;
   background-color: $modal-content-bg;
   background-clip: padding-box;
   border: $modal-content-border-width solid $modal-content-border-color;
@@ -68,7 +72,7 @@
   top: 0;
   left: 0;
   z-index: $zindex-modal;
-  display: flex;
+  display: none;
   width: 100%;
   height: 100%;
 
@@ -81,15 +85,11 @@
 
   background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
 
-  overflow: hidden;
+  overflow-x: hidden;
 
   transition: opacity .3s;
   pointer-events: none;
   opacity:0;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 @mixin modal-inner {
