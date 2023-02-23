@@ -11058,6 +11058,13 @@ form.form-string-search.input-group {
       /**
        * Date row
        */ }
+  .card-travel.card-travel--stripe .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    @media (min-width: 768px) {
+      .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary > small span {
+        display: inline; } }
 
 .card-travel-wrapper:last-child .card-travel {
   margin-bottom: 0;

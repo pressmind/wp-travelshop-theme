@@ -289,6 +289,22 @@
   &.card-travel--stripe {
     // -- as default
     @extend %card-travel-small;
+
+    // -- some changes for the stripe teaser
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .card-body--bottom {
+        .btn.btn-primary > small span {
+          @include media-breakpoint-up(md) {
+            display: inline;
+          }
+        }
+      }
+    }
+
   }
 }
 
