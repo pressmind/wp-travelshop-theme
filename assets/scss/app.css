@@ -11177,8 +11177,10 @@ form.form-string-search.input-group {
         .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
           flex-direction: column;
           flex: 0; }
-          .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary > small span {
-            display: inline; } }
+          .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary {
+            white-space: nowrap; }
+            .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary > small span {
+              display: inline; } }
 
 .card-travel-wrapper:last-child .card-travel {
   margin-bottom: 0;

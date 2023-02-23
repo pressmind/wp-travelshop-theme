@@ -319,8 +319,12 @@
             flex-direction: column;
             flex: 0;
 
-            .btn.btn-primary > small span {
-              display: inline;
+            .btn.btn-primary {
+              white-space: nowrap;
+
+              > small span {
+                display: inline;
+              }
             }
           }
         }
