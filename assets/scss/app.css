@@ -10982,7 +10982,7 @@ form.form-string-search.input-group {
     overflow-x: hidden; } }
 
 @media (max-width: 767.98px) {
-  .content-block.content-block-list-filter .list-filter {
+  .content-block.content-block-list-filter > form .list-filter {
     position: relative;
     display: flex;
     flex-direction: column;
