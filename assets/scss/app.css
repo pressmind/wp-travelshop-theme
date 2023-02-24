@@ -10941,13 +10941,13 @@ form.form-string-search.input-group {
  * Used for various elements for mobile views / UI|UX
  */
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select.show {
+  .dropdown-menu.dropdown-menu-select.show, .content-block.content-block-list-filter.is--open {
     opacity: 1;
     pointer-events: auto; }
-    .dropdown-menu.dropdown-menu-select.show * {
+    .dropdown-menu.dropdown-menu-select.show *, .content-block.content-block-list-filter.is--open * {
       pointer-events: auto; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-header {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-header, .content-block.content-block-list-filter .list-filter-header {
     display: flex !important;
     align-items: flex-start;
     justify-content: space-between;
@@ -10955,9 +10955,9 @@ form.form-string-search.input-group {
     border-bottom: 1px solid #dee2e6;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button) {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button), .content-block.content-block-list-filter .list-filter-header > *:not(button) {
       margin-bottom: 0; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button, .content-block.content-block-list-filter .list-filter-header > button {
       border: 0;
       outline: none;
       box-shadow: none;
@@ -10969,13 +10969,13 @@ form.form-string-search.input-group {
       margin: -1rem -1rem -1rem auto;
       color: #212529;
       transition: color .3s; }
-      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .content-block.content-block-list-filter .list-filter-header > button svg {
         width: 1.125rem;
         height: 1.125rem; }
-      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .content-block.content-block-list-filter .list-filter-header > button:active {
         color: #007bff; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select {
+  .dropdown-menu.dropdown-menu-select, .content-block.content-block-list-filter {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -10997,10 +10997,10 @@ form.form-string-search.input-group {
     border: 0;
     margin: 0;
     border-radius: 0; }
-    .dropdown-menu.dropdown-menu-select * {
+    .dropdown-menu.dropdown-menu-select *, .content-block.content-block-list-filter * {
       pointer-events: none; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-content {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-content, .content-block.content-block-list-filter > form .list-filter {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -11021,17 +11021,17 @@ form.form-string-search.input-group {
     right: 0;
     top: auto; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select.show .dropdown-menu-content {
+  .dropdown-menu.dropdown-menu-select.show .dropdown-menu-content, .content-block.content-block-list-filter.is--open > form .list-filter {
     transform: translateY(0);
     opacity: 1; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-footer {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-footer, .content-block.content-block-list-filter .list-filter-footer {
     padding: 1rem;
     border-top: 1px solid #dee2e6; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-footer * {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-footer *, .content-block.content-block-list-filter .list-filter-footer * {
       margin-top: 0 !important; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .category-tree-field-items {
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items, .content-block.content-block-list-filter .list-filter-boxes {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
@@ -11046,117 +11046,6 @@ form.form-string-search.input-group {
  * File defines usable mixins for modal elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter.is--open {
-    opacity: 1;
-    display: flex;
-    pointer-events: auto; }
-    .content-block.content-block-list-filter.is--open * {
-      pointer-events: auto; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter .list-filter-header {
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid #dee2e6;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
-    display: flex !important; }
-    .content-block.content-block-list-filter .list-filter-header > *:not(button) {
-      margin-bottom: 0; }
-    .content-block.content-block-list-filter .list-filter-header > button {
-      border: 0;
-      outline: none;
-      box-shadow: none;
-      background: transparent;
-      padding: 0;
-      line-height: 1;
-      display: block !important;
-      padding: 1rem 1rem;
-      margin: -1rem -1rem -1rem auto;
-      color: #212529;
-      transition: color .3s; }
-      .content-block.content-block-list-filter .list-filter-header > button svg {
-        width: 1.125rem;
-        height: 1.125rem; }
-      .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
-        color: #007bff; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter .list-filter-boxes {
-    position: relative;
-    padding: 1rem;
-    margin: 0 !important;
-    max-height: unset !important;
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter > form .list-filter {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    background-clip: padding-box;
-    padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0.3rem;
-    outline: 0; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter > form .list-filter {
-    border-radius: 0;
-    border: 0;
-    box-shadow: none; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    z-index: 1050;
-    display: flex;
-    width: 100% !important;
-    height: 100% !important;
-    transform: none !important;
-    will-change: unset !important;
-    align-items: center;
-    justify-content: center;
-    outline: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    transition: opacity .3s;
-    opacity: 0;
-    padding: 0.5rem;
-    pointer-events: none;
-    border: 0;
-    margin: 0;
-    border-radius: 0; }
-    .content-block.content-block-list-filter * {
-      pointer-events: none; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter {
-    padding: 0;
-    align-items: unset;
-    justify-content: unset; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter > form {
-    position: relative;
-    margin: 0;
-    pointer-events: none;
-    display: flex;
-    height: auto;
-    max-height: 100%;
-    width: 100%; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter > form {
-    height: 100%; } }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter .list-filter-footer {
-    padding: 1rem;
-    border-top: 1px solid #dee2e6;
-    border-bottom-right-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem; }
-    .content-block.content-block-list-filter .list-filter-footer * {
-      margin-top: 0 !important; } }
 .list-filter-box.datepicker > div {
   position: relative; }
   .list-filter-box.datepicker > div input.form-control[readonly] {
