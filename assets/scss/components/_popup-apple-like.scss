@@ -3,26 +3,56 @@
  * Used for various elements for mobile views / UI|UX
  */
 
-%apple-like-open {
+@include placeholder('apple-like-open') {
+  opacity: 1;
+  pointer-events: auto;
+
+  * {
+    pointer-events: auto;
+  }
+}
+
+@include placeholder('apple-like-header') {
 
 }
 
-%apple-like-header {
+@include placeholder('apple-like-wrapper') {
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: $apple-like-zindex;
+
+  display: block;
+  outline: 0;
+
+  background-color: rgba($apple-like-backdrop-bg, $apple-like-backdrop-opacity);
+
+  overflow: hidden;
+  transition: opacity .3s;
+  opacity: 0;
+
+  padding:0;
+  pointer-events: none;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+@include placeholder('apple-like-inner') {
 
 }
 
-%apple-like-wrapper {
+@include placeholder('apple-like-footer') {
 
 }
 
-%apple-like-inner {
-
-}
-
-%apple-like-footer {
-
-}
-
-%apple-like-body {
+@include placeholder('apple-like-body') {
 
 }

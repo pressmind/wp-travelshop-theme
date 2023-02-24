@@ -99,8 +99,12 @@
 
     // apple like
     @if ( $filter-mobile-view-type == 'apple-like' ) {
-      border: green 10px solid;
+      @extend %apple-like-wrapper-down-#{$filter-mobile-break};
 
+      // -- open state
+      &.is--open {
+        @extend %apple-like-open-down-#{$filter-mobile-break};
+      }
     }
 
     // offcanvas

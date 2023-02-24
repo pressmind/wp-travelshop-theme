@@ -10931,6 +10931,34 @@ form.form-string-search.input-group {
  * File defines usable placeholders for apple-like elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter.is--open {
+    opacity: 1;
+    pointer-events: auto; }
+    .content-block.content-block-list-filter.is--open * {
+      pointer-events: auto; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    display: block;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: opacity .3s;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none; }
+    .content-block.content-block-list-filter * {
+      pointer-events: none; } }
+
 /**
  * File defines usable placeholders for offcanvas elements + transitions
  * Used for various elements for mobile views / UI|UX
@@ -11348,24 +11376,22 @@ form.form-string-search.input-group {
       .teaser.month-teaser > a:hover div.month-teaser-title svg {
         transform: translateX(0.625rem); }
 
-.content-block.content-block-list-filter {
-  border: green 10px solid; }
-  .content-block.content-block-list-filter .list-filter {
-    border-radius: 0.25rem;
-    background-color: #e9ecef;
-    padding: 1.25rem; }
-    .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
-      display: none; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
-      margin-top: 0.25rem; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
-      padding-top: 0.75rem;
-      margin-top: 0.75rem;
-      border-top: 1px solid #dee2e6; }
-  .content-block.content-block-list-filter .list-filter-footer {
+.content-block.content-block-list-filter .list-filter {
+  border-radius: 0.25rem;
+  background-color: #e9ecef;
+  padding: 1.25rem; }
+  .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
+    display: none; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
+    margin-top: 0.25rem; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
+.content-block.content-block-list-filter .list-filter-footer {
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #dee2e6; }
 
 #wpadminbar {
   z-index: 1039 !important; }

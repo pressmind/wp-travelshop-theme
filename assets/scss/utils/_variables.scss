@@ -222,6 +222,10 @@ $popup-close-icon-size: $font-size-lg !default;
 $apple-like-border-radius: $border-radius !default;
 $apple-like-bg: $modal-content-bg !default;
 $apple-like-box-shadow: $box-shadow-lg !default;
+$apple-like-offset: 2rem !default; // defines animation length from bottom to top
+
+$apple-like-backdrop-bg: $modal-backdrop-bg !default;
+$apple-like-backdrop-opacity: $modal-backdrop-opacity !default;
 
 $apple-like-zindex: $zindex-modal !default;
 
@@ -239,6 +243,7 @@ $apple-like-inner-padding: $modal-inner-padding !default;
 $offcanvas-border-radius: 0 !default;
 $offcanvas-bg: $modal-content-bg !default;
 $offcanvas-box-shadow: $box-shadow-lg !default;
+$offcanvas-direction: 'left' !default;
 
 $offcanvas-zindex: $zindex-modal !default;
 
