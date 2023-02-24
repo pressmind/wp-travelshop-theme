@@ -10938,10 +10938,6 @@ form.form-string-search.input-group {
  * File defines usable placeholders for apple-like elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
-/**
- * File defines usable placeholders for offcanvas elements + transitions
- * Used for various elements for mobile views / UI|UX
- */
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter.is--open {
     opacity: 1;
@@ -10956,7 +10952,8 @@ form.form-string-search.input-group {
     justify-content: space-between;
     padding: 1rem 1rem;
     border-bottom: 1px solid #dee2e6;
-    border-radius: 0; }
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
     .content-block.content-block-list-filter .list-filter-header > *:not(button) {
       margin-bottom: 0; }
     .content-block.content-block-list-filter .list-filter-header > button {
@@ -11004,20 +11001,21 @@ form.form-string-search.input-group {
     flex-direction: column;
     position: fixed;
     transition: opacity .3s, transform .3s;
+    transform: translateY(2rem);
     opacity: 0;
     background-color: #fff;
-    border-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     padding: 0;
-    width: 20rem;
+    max-height: 75vh;
+    height: auto;
     bottom: 0;
-    top: 0; } }
-
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter > form .list-filter {
+    left: 0;
     right: 0;
-    left: auto;
-    transform: translateX(20rem); } }
+    top: auto; } }
 
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter.is--open > form .list-filter {
@@ -11036,6 +11034,10 @@ form.form-string-search.input-group {
     overflow-y: auto;
     overflow-x: hidden; } }
 
+/**
+ * File defines usable placeholders for offcanvas elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
 /**
  * File defines usable mixins for modal elements + transitions
  * Used for various elements for mobile views / UI|UX
