@@ -165,7 +165,7 @@ $custom-checkbox-input-active-icon-color: $white !default;
  * and point to break
  */
 
-$category-dropdown-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$category-dropdown-mobile-view-type: 'offcanvas' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
 $category-dropdown-mobile-break: md !default; // defines breakpoint down where dropdown should break into mobile friendly UX
 $category-dropdown-offcanvas-direction: 'left' !default;
 
