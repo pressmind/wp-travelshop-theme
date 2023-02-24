@@ -59,59 +59,57 @@
 
   // -- mobile view
   @if  ( $filter-mobile-break != null ) {
-    @media (max-width: getMediaBreakpointDown($filter-mobile-break)) {
 
-      // -- make mobile view by mobile-view key
-      // modal
-      @if ( $filter-mobile-view-type == 'modal' or $filter-mobile-view-type == 'modal-fullscreen' ) {
-        @include modal-wrapper();
+    @if ( $filter-mobile-view-type == 'modal' or $filter-mobile-view-type == 'modal-fullscreen' ) {
+      @extend %modal-wrapper-down-#{$filter-mobile-break};
+
+      @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+        @extend %modal-wrapper-fullscreen-down-#{$filter-mobile-break};
+      }
+
+      > form {
+        @extend %modal-inner-down-#{$filter-mobile-break};
+      }
+
+      .list-filter {
+        padding: 0;
+        @extend %modal-content();
 
         @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
-          @include modal-wrapper-fullscreen();
-        }
-
-        > form {
-          @include modal-inner();
-        }
-
-        .list-filter {
-          padding: 0;
-          @include modal-content();
-
-          @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
-            @include modal-content-fullscreen();
-          }
-        }
-
-        &.is--open {
-          @include modal-open();
-        }
-
-        .list-filter-header {
-          @include modal-header();
-        }
-
-        .list-filter-boxes {
-          @include modal-body();
-        }
-
-        .list-filter-footer {
-          margin-top: 0;
-          @include modal-footer();
+          @extend %modal-content-fullscreen-down-#{$filter-mobile-break};
         }
       }
 
-      // apple like
-      @if ( $filter-mobile-view-type == 'apple-like' ) {
-        border: green 10px solid;
-
+      &.is--open {
+        @extend %modal-open-down-#{$filter-mobile-break};
       }
 
-      // offcanvas
-      @if ( $filter-mobile-view-type == 'offcanvas' ) {
-        border: yellow 10px solid;
+      .list-filter-header {
+        @extend %modal-header-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-boxes {
+        @extend %modal-body-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-footer {
+        margin-top: 0;
+        @extend %modal-footer-down-#{$filter-mobile-break};
       }
     }
+
+    // apple like
+    @if ( $filter-mobile-view-type == 'apple-like' ) {
+      border: green 10px solid;
+
+    }
+
+    // offcanvas
+    @if ( $filter-mobile-view-type == 'offcanvas' ) {
+      border: yellow 10px solid;
+    }
+
+
   }
 }
 

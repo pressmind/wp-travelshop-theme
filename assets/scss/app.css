@@ -9986,6 +9986,9 @@ html.force--consent.show--consent body {
  * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
  */
 /**
+ * Blank for placeholders
+ */
+/**
  * Booking color set
  * ------------------------------
  * using bootstrap $success, $danger, $warning
@@ -11345,25 +11348,24 @@ form.form-string-search.input-group {
       .teaser.month-teaser > a:hover div.month-teaser-title svg {
         transform: translateX(0.625rem); }
 
-.content-block.content-block-list-filter .list-filter {
-  border-radius: 0.25rem;
-  background-color: #e9ecef;
-  padding: 1.25rem; }
-  .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
-    display: none; }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
-    margin-top: 0.25rem; }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
+.content-block.content-block-list-filter {
+  border: green 10px solid; }
+  .content-block.content-block-list-filter .list-filter {
+    border-radius: 0.25rem;
+    background-color: #e9ecef;
+    padding: 1.25rem; }
+    .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
+      display: none; }
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
+      margin-top: 0.25rem; }
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
+      padding-top: 0.75rem;
+      margin-top: 0.75rem;
+      border-top: 1px solid #dee2e6; }
+  .content-block.content-block-list-filter .list-filter-footer {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
-.content-block.content-block-list-filter .list-filter-footer {
-  padding-top: 0.75rem;
-  margin-top: 0.75rem;
-  border-top: 1px solid #dee2e6; }
-@media (max-width: 767.98px) {
-  .content-block.content-block-list-filter {
-    border: green 10px solid; } }
 
 #wpadminbar {
   z-index: 1039 !important; }

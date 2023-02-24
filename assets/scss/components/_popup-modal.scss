@@ -3,13 +3,13 @@
  * Used for various elements for mobile views / UI|UX
  */
 
-@mixin modal-open {
+@include placeholder('modal-open') {
   opacity: 1;
   pointer-events: auto;
   display: block;
 }
 
-@mixin modal-header {
+@include placeholder('modal-header') {
   display: flex;
   align-items: flex-start; // so the close btn always stays on the upper right corner
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
@@ -48,7 +48,7 @@
   }
 }
 
-@mixin modal-body {
+@include placeholder('modal-body') {
   position: relative;
   padding: $modal-inner-padding;
 
@@ -56,7 +56,7 @@
   overflow-x: hidden;
 }
 
-@mixin modal-content {
+@include placeholder('modal-content') {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,13 +73,13 @@
   outline: 0;
 }
 
-@mixin modal-content-fullscreen {
+@include placeholder('modal-content-fullscreen') {
   @include border-radius(0);
   border: 0;
   box-shadow: none;
 }
 
-@mixin modal-wrapper {
+@include placeholder('modal-wrapper') {
   position: fixed;
   top: 0;
   left: 0;
@@ -106,11 +106,11 @@
   padding: $modal-dialog-margin;
 }
 
-@mixin modal-wrapper-fullscreen {
+@include placeholder('modal-wrapper-fullscreen') {
   padding: 0;
 }
 
-@mixin modal-inner {
+@include placeholder('modal-inner') {
   position: relative;
   width: auto;
   margin: 0;
@@ -121,7 +121,7 @@
   height: 100%;
 }
 
-@mixin modal-footer {
+@include placeholder('modal-footer') {
   padding: $modal-inner-padding;
   border-top: $modal-footer-border-width solid $modal-footer-border-color;
   @include border-bottom-radius($modal-content-border-radius);
