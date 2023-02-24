@@ -74,7 +74,7 @@
   @if ( $category-dropdown-mobile-view-type == 'apple-like' ) {
     @extend %apple-like-wrapper-down-#{$category-dropdown-mobile-break};
 
-    .dropdown-menu-inner {
+    .dropdown-menu-content {
       @extend %apple-like-content-down-#{$category-dropdown-mobile-break};
     }
 
@@ -95,7 +95,7 @@
     &.show {
       @extend %apple-like-open-down-#{$category-dropdown-mobile-break};
 
-      .dropdown-menu-inner {
+      .dropdown-menu-content {
         @extend %apple-like-content-open-down-#{$category-dropdown-mobile-break};
       }
     }

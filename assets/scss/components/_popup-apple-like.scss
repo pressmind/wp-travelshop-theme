@@ -124,6 +124,10 @@
 @include placeholder('apple-like-footer') {
   padding: $apple-like-inner-padding;
   border-top: $apple-like-footer-border-width solid $apple-like-footer-border-color;
+  // -- resets for dropdown behaviour
+  * {
+    margin-top: 0 !important;
+  }
 }
 
 @include placeholder('apple-like-body') {
