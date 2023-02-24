@@ -10939,6 +10939,35 @@ form.form-string-search.input-group {
       pointer-events: auto; } }
 
 @media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1rem 1rem solid #dee2e6;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
+    .content-block.content-block-list-filter .list-filter-header > *:not(button) {
+      margin-bottom: 0; }
+    .content-block.content-block-list-filter .list-filter-header > button {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      line-height: 1;
+      display: block !important;
+      padding: 1rem 1rem;
+      margin: -1rem -1rem -1rem auto;
+      color: #212529;
+      transition: color .3s; }
+      .content-block.content-block-list-filter .list-filter-header > button svg {
+        width: 1.125rem;
+        height: 1.125rem; }
+      .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
+        color: #007bff; } }
+
+@media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
     position: fixed;
     top: 0;
