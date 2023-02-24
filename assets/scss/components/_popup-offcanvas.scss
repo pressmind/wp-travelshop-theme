@@ -3,26 +3,127 @@
  * Used for various elements for mobile views / UI|UX
  */
 
-%offcanvas-open {
 
+@include placeholder('offcanvas-open') {
+  opacity: 1;
+  pointer-events: auto;
+
+  * {
+    pointer-events: auto;
+  }
 }
 
-%offcanvas-header {
+@include placeholder('offcanvas-header') {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: $offcanvas-header-padding;
+  border-bottom: $offcanvas-header-border-width solid $offcanvas-header-border-color;
 
+  @include border-top-radius($offcanvas-border-radius);
+
+  > *:not(button) {
+    margin-bottom: 0;
+  }
+
+  > button {
+    @include button-reset();
+
+    line-height: 1;
+
+    // -- make visible, important!
+    display: block !important;
+
+    padding: $offcanvas-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$offcanvas-header-padding-y) (-$offcanvas-header-padding-x) (-$offcanvas-header-padding-y) auto;
+
+    color: $popup-close-color;
+    transition: color .3s;
+
+    // -- svg size
+    svg {
+      width: $popup-close-icon-size;
+      height: $popup-close-icon-size;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $popup-close-hover-color;
+    }
+  }
 }
 
-%offcanvas-wrapper {
+@include placeholder('offcanvas-wrapper') {
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
 
+  width: 100%;
+  height: 100%;
+
+  z-index: $offcanvas-zindex;
+
+  display: block;
+  outline: 0;
+
+  background-color: rgba($offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
+
+  overflow: hidden;
+  transition: opacity .3s;
+  opacity: 0;
+
+  padding:0;
+  pointer-events: none;
+
+  * {
+    pointer-events: none;
+  }
 }
 
-%offcanvas-inner {
+@include placeholder('offcanvas-content') {
+  display: flex;
+  flex-direction: column;
 
+  position: fixed;
+  transition: opacity .3s, transform .3s;
+
+  transform: translateY($offcanvas-offset);
+  opacity:0;
+
+  background-color: $offcanvas-bg;
+
+  @include border-bottom-radius(0);
+  @include border-top-radius($offcanvas-border-radius);
+
+  box-shadow: $offcanvas-box-shadow;
+  padding:0;
+
+  max-height: $offcanvas-max-height;
+  height: auto;
+
+  bottom:0;
+  left:0;
+  right: 0;
+  top: auto;
 }
 
-%offcanvas-footer {
-
+@include placeholder('offcanvas-content-open') {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-%offcanvas-body {
 
+@include placeholder('offcanvas-footer') {
+  padding: $offcanvas-inner-padding;
+  border-top: $offcanvas-footer-border-width solid $offcanvas-footer-border-color;
+}
+
+@include placeholder('offcanvas-body') {
+  position: relative;
+  padding: $offcanvas-inner-padding;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 }
