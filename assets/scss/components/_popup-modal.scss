@@ -5,7 +5,7 @@
 
 @include placeholder('modal-open') {
   opacity: 1;
-  display: block;
+  display: flex;
   pointer-events: auto;
 
   * {
@@ -93,11 +93,13 @@
   top: 0 !important;
   left: 0 !important;
   z-index: $zindex-modal;
-  display: block;
+  display: flex;
   width: 100% !important;
   height: 100% !important;
   transform: none !important;
   will-change: unset !important;
+  align-items: center;
+  justify-content: center;
 
   // Prevent Chrome on Windows from adding a focus outline. For details, see
   // https://github.com/twbs/bootstrap/pull/10951.

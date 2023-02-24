@@ -11043,7 +11043,7 @@ form.form-string-search.input-group {
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select.show {
     opacity: 1;
-    display: block;
+    display: flex;
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-select.show * {
       pointer-events: auto; } }
@@ -11105,11 +11105,13 @@ form.form-string-search.input-group {
     top: 0 !important;
     left: 0 !important;
     z-index: 1050;
-    display: block;
+    display: flex;
     width: 100% !important;
     height: 100% !important;
     transform: none !important;
     will-change: unset !important;
+    align-items: center;
+    justify-content: center;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
