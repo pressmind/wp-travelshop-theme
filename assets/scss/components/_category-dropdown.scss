@@ -50,7 +50,7 @@
       }
 
       .category-tree-field-items {
-        @extend %modal-header-down-#{$category-dropdown-mobile-break};
+        @extend %modal-body-down-#{$category-dropdown-mobile-break};
       }
 
       .dropdown-menu-footer {

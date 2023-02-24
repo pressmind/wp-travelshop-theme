@@ -11049,7 +11049,7 @@ form.form-string-search.input-group {
       pointer-events: auto; } }
 
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-select .category-tree-field-items {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -11057,9 +11057,9 @@ form.form-string-search.input-group {
     border-bottom: 1px solid #dee2e6;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button), .dropdown-menu.dropdown-menu-select .category-tree-field-items > *:not(button) {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button) {
       margin-bottom: 0; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button, .dropdown-menu.dropdown-menu-select .category-tree-field-items > button {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button {
       border: 0;
       outline: none;
       box-shadow: none;
@@ -11071,11 +11071,18 @@ form.form-string-search.input-group {
       margin: -1rem -1rem -1rem auto;
       color: #212529;
       transition: color .3s; }
-      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-select .category-tree-field-items > button svg {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg {
         width: 1.125rem;
         height: 1.125rem; }
-      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .category-tree-field-items > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .category-tree-field-items > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-select .category-tree-field-items > button:active {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active {
         color: #007bff; } }
+
+@media (max-width: 767.98px) {
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items {
+    position: relative;
+    padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden; } }
 
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-inner .dropdown-menu-content {
