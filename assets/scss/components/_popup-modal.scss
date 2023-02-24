@@ -56,7 +56,9 @@
 @include placeholder('modal-body') {
   position: relative;
   padding: $modal-inner-padding;
+
   margin: 0 !important;
+  max-height: unset !important;
 
   overflow-y: auto;
   overflow-x: hidden;
@@ -131,7 +133,8 @@
   pointer-events: none;
 
   display: flex;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
 }
 
 @include placeholder('modal-footer') {
