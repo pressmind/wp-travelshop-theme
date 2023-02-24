@@ -45,9 +45,27 @@
   }
 }
 
-@include placeholder('apple-like-inner') {
+@include placeholder('apple-like-content') {
+  position: fixed;
+  transition: opacity .3s, transform .3s;
 
+  transform: translateX($apple-like-offset);
+  opacity:0;
+
+  background-color: $apple-like-bg;
+
+  @include border-bottom-radius(0);
+  @include border-top-radius($apple-like-border-radius);
+
+  max-height: $apple-like-max-height;
+  height: auto;
 }
+
+@include placeholder('apple-like-content-open') {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 
 @include placeholder('apple-like-footer') {
 

@@ -101,9 +101,18 @@
     @if ( $filter-mobile-view-type == 'apple-like' ) {
       @extend %apple-like-wrapper-down-#{$filter-mobile-break};
 
+      // -- inner
+      > form .list-filter {
+        @extend %apple-like-content-down-#{$filter-mobile-break};
+      }
+
       // -- open state
       &.is--open {
         @extend %apple-like-open-down-#{$filter-mobile-break};
+
+        > form .list-filter {
+          @extend %apple-like-content-open-down-#{$filter-mobile-break};
+        }
       }
     }
 
