@@ -10940,24 +10940,21 @@ form.form-string-search.input-group {
  * File defines usable placeholders for apple-like elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
-/**
- * File defines usable placeholders for offcanvas elements + transitions
- * Used for various elements for mobile views / UI|UX
- */
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select.show {
     opacity: 1;
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-select.show * {
       pointer-events: auto; } }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-header {
     display: flex !important;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem 1rem;
     border-bottom: 1px solid #dee2e6;
-    border-radius: 0; }
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
     .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button) {
       margin-bottom: 0; }
     .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button {
@@ -10977,7 +10974,7 @@ form.form-string-search.input-group {
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active {
         color: #007bff; } }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select {
     position: fixed !important;
     top: 0 !important;
@@ -11002,44 +10999,49 @@ form.form-string-search.input-group {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-select * {
       pointer-events: none; } }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-content {
     display: flex;
     flex-direction: column;
     position: fixed;
     transition: opacity .3s, transform .3s;
+    transform: translateY(2rem);
     opacity: 0;
     background-color: #fff;
-    border-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     padding: 0;
-    width: 20rem;
+    max-height: 75vh;
+    height: auto;
     bottom: 0;
-    top: 0; } }
-@media (max-width: 991.98px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-content {
+    left: 0;
     right: 0;
-    left: auto;
-    transform: translateX(20rem); } }
-@media (max-width: 991.98px) {
+    top: auto; } }
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select.show .dropdown-menu-content {
     transform: translateY(0);
     opacity: 1; } }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-footer {
     padding: 1rem;
     border-top: 1px solid #dee2e6; }
     .dropdown-menu.dropdown-menu-select .dropdown-menu-footer * {
       margin-top: 0 !important; } }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items {
     position: relative;
     padding: 1rem;
-    flex: 1;
     margin: 0 !important;
     max-height: unset !important;
     overflow-y: auto;
     overflow-x: hidden; } }
+/**
+ * File defines usable placeholders for offcanvas elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
 /**
  * File defines usable mixins for modal elements + transitions
  * Used for various elements for mobile views / UI|UX
