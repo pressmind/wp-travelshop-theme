@@ -10942,7 +10942,8 @@ form.form-string-search.input-group {
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter.is--open {
     opacity: 1;
-    display: block; }
+    display: block;
+    pointer-events: auto; }
     .content-block.content-block-list-filter.is--open * {
       pointer-events: auto; } }
 
@@ -11009,7 +11010,8 @@ form.form-string-search.input-group {
     overflow: hidden;
     transition: opacity .3s;
     opacity: 0;
-    padding: 0.5rem; }
+    padding: 0.5rem;
+    pointer-events: none; }
     .content-block.content-block-list-filter * {
       pointer-events: none; } }
 

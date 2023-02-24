@@ -6,6 +6,7 @@
 @include placeholder('modal-open') {
   opacity: 1;
   display: block;
+  pointer-events: auto;
 
   * {
     pointer-events: auto;
@@ -107,6 +108,7 @@
   opacity:0;
 
   padding: $modal-dialog-margin;
+  pointer-events: none;
 
   * {
     pointer-events: none;
