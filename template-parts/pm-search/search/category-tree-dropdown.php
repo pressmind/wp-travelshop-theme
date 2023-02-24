@@ -30,8 +30,8 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                     <?php // @todo: did some changes to quellcode to use different view types for dropdowns ?>
                     <div class="dropdown-menu dropdown-menu-select"
                          aria-labelledby="dropdownReiseziel">
-                        <div class="dropdown-menu-outer">
-                            <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-inner">
+                            <div class="dropdown-menu-content">
                                 <div class="dropdown-menu-header d-none">
                                     <div class="h4">
                                         <?php echo $args['name']; ?>
