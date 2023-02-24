@@ -101,19 +101,19 @@
 
   bottom:0;
   top: 0;
+}
 
-  @if ( $offcanvas-direction == 'left' ) {
-    right: 0;
-    left: auto;
+@include placeholder('offcanvas-direction-left') {
+  right: 0;
+  left: auto;
 
-    transform: translateX($offcanvas-max-width);
-  }
+  transform: translateX($offcanvas-max-width);
+}
 
-  @if ( $offcanvas-direction == 'right' ) {
-    left: 0;
-    right: auto;
-    transform: translateX(-$offcanvas-max-width);
-  }
+@include placeholder('offcanvas-direction-right') {
+  left: 0;
+  right: auto;
+  transform: translateX(-$offcanvas-max-width);
 }
 
 @include placeholder('offcanvas-content-open') {

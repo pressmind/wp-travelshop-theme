@@ -136,6 +136,7 @@
       // -- inner
       > form .list-filter {
         @extend %offcanvas-content-down-#{$filter-mobile-break};
+        @extend %offcanvas-direction-#{$filter-offcanvas-direction}-down-#{$filter-mobile-break};
       }
 
       .list-filter-header {
