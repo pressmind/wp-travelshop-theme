@@ -94,6 +94,7 @@
   @include border-top-radius($apple-like-border-radius);
 
   box-shadow: $apple-like-box-shadow;
+  padding:0;
 
   max-height: $apple-like-max-height;
   height: auto;
@@ -111,7 +112,8 @@
 
 
 @include placeholder('apple-like-footer') {
-
+  padding: $apple-like-inner-padding;
+  border-top: $apple-like-footer-border-width solid $apple-like-footer-border-color;
 }
 
 @include placeholder('apple-like-body') {

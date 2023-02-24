@@ -110,6 +110,11 @@
         @extend %apple-like-header-down-#{$filter-mobile-break};
       }
 
+      .list-filter-footer {
+        margin-top: 0;
+        @extend %apple-like-footer-down-#{$filter-mobile-break};
+      }
+
       // -- open state
       &.is--open {
         @extend %apple-like-open-down-#{$filter-mobile-break};

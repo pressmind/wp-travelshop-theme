@@ -11000,6 +11000,7 @@ form.form-string-search.input-group {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    padding: 0;
     max-height: 75vh;
     height: auto;
     bottom: 0;
@@ -11011,6 +11012,11 @@ form.form-string-search.input-group {
   .content-block.content-block-list-filter.is--open > form .list-filter {
     transform: translateY(0);
     opacity: 1; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6; } }
 
 /**
  * File defines usable placeholders for offcanvas elements + transitions
@@ -11445,6 +11451,8 @@ form.form-string-search.input-group {
   padding-top: 0.75rem;
   margin-top: 0.75rem;
   border-top: 1px solid #dee2e6; }
+.content-block.content-block-list-filter .list-filter-footer {
+  margin-top: 0; }
 
 #wpadminbar {
   z-index: 1039 !important; }
