@@ -229,8 +229,8 @@ $apple-like-backdrop-opacity: $modal-backdrop-opacity !default;
 
 $apple-like-zindex: $zindex-modal !default;
 
-$apple-like-header-padding-y: 1rem !default;
-$apple-like-header-padding-x: 1rem !default;
+$apple-like-header-padding-y: $modal-header-padding-y !default;
+$apple-like-header-padding-x: $modal-header-padding-x !default;
 $apple-like-header-padding: $apple-like-header-padding-y $apple-like-header-padding-x !default;
 $apple-like-header-border-width: $modal-header-border-width !default;
 $apple-like-header-border-color: $modal-header-border-color !default;
@@ -252,8 +252,8 @@ $offcanvas-backdrop-opacity: $modal-backdrop-opacity !default;
 
 $offcanvas-zindex: $zindex-modal !default;
 
-$offcanvas-header-padding-y: 1rem !default;
-$offcanvas-header-padding-x: 1rem !default;
+$offcanvas-header-padding-y: $modal-header-padding-y !default;
+$offcanvas-header-padding-x: $modal-header-padding-x !default;
 $offcanvas-header-padding: $offcanvas-header-padding-y $offcanvas-header-padding-x !default;
 $offcanvas-header-border-width: $modal-header-border-width !default;
 $offcanvas-header-border-color: $modal-header-border-color !default;
