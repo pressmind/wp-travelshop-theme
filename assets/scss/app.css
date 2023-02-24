@@ -10940,13 +10940,13 @@ form.form-string-search.input-group {
  * File defines usable placeholders for apple-like elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select.show {
     opacity: 1;
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-select.show * {
       pointer-events: auto; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-header {
     display: flex !important;
     align-items: flex-start;
@@ -10974,7 +10974,7 @@ form.form-string-search.input-group {
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active {
         color: #007bff; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select {
     position: fixed !important;
     top: 0 !important;
@@ -10999,7 +10999,7 @@ form.form-string-search.input-group {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-select * {
       pointer-events: none; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-content {
     display: flex;
     flex-direction: column;
@@ -11020,17 +11020,17 @@ form.form-string-search.input-group {
     left: 0;
     right: 0;
     top: auto; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select.show .dropdown-menu-content {
     transform: translateY(0);
     opacity: 1; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-footer {
     padding: 1rem;
     border-top: 1px solid #dee2e6; }
     .dropdown-menu.dropdown-menu-select .dropdown-menu-footer * {
       margin-top: 0 !important; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items {
     position: relative;
     padding: 1rem;
