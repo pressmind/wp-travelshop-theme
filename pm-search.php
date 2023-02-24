@@ -27,7 +27,7 @@ get_header();
     <div class="content-main" id="content-main">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-md-4 col-lg-3">
                     <nav id="search-filter">
                         <?php
                             // this content will be replaced by ajax during the search, @see travelshop/assets/js/ajax.js
@@ -35,7 +35,7 @@ get_header();
                             ?>
                     </nav>
                 </div>
-                <div class="col-12 col-lg-9">
+                <div class="col-12 col-md-8 col-lg-9">
                     <div id="search-result">
                         <?php
                             // this content will be replaced by ajax during the search, @see travelshop/assets/js/ajax.js
