@@ -190,14 +190,14 @@
     @at-root {
       @each $breakpoint, $value in $grid-breakpoints {
         // Opening media query block up + down
-        %#{$name}-up-#{$breakpoint} {
-          @include media-breakpoint-up($breakpoint) {
+        @include media-breakpoint-up($breakpoint) {
+          %#{$name}-up-#{$breakpoint} {
             @content;
           }
         }
 
-        %#{$name}-down-#{$breakpoint} {
-          @include media-breakpoint-down($breakpoint) {
+        @include media-breakpoint-down($breakpoint) {
+          %#{$name}-down-#{$breakpoint} {
             @content;
           }
         }
