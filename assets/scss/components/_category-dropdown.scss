@@ -58,7 +58,7 @@
       }
 
       // -- open state
-      &.open {
+      &.show {
         @extend %modal-open-down-#{$category-dropdown-mobile-break};
       }
     }

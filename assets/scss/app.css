@@ -11041,11 +11041,11 @@ form.form-string-search.input-group {
  * Used for various elements for mobile views / UI|UX
  */
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select.open {
+  .dropdown-menu.dropdown-menu-select.show {
     opacity: 1;
     display: block;
     pointer-events: auto; }
-    .dropdown-menu.dropdown-menu-select.open * {
+    .dropdown-menu.dropdown-menu-select.show * {
       pointer-events: auto; } }
 
 @media (max-width: 767.98px) {
