@@ -10944,7 +10944,7 @@ form.form-string-search.input-group {
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem 1rem;
-    border-bottom: 1rem 1rem solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; }
     .content-block.content-block-list-filter .list-filter-header > *:not(button) {
@@ -10990,6 +10990,8 @@ form.form-string-search.input-group {
 
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter > form .list-filter {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     transition: opacity .3s, transform .3s;
     transform: translateY(2rem);

@@ -82,6 +82,9 @@
 }
 
 @include placeholder('apple-like-content') {
+  display: flex;
+  flex-direction: column;
+
   position: fixed;
   transition: opacity .3s, transform .3s;
 
