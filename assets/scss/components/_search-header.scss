@@ -10,7 +10,7 @@
     right:0;
     bottom:0;
 
-    z-index: 1;
+    z-index: 0;
 
     width: 100%;
     height: 100%;
@@ -23,7 +23,6 @@
   // -- search
   .layout-block-search-header--search {
     position: relative;
-    z-index: 2;
 
     .h1 {
       @extend %text-on-image;
