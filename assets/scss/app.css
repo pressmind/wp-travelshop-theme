@@ -10535,23 +10535,6 @@ form.form-string-search.input-group {
     @media (min-width: 768px) {
       .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
         margin-bottom: 30px; } }
-    .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
-      margin-bottom: 0; }
-      @media (min-width: 768px) {
-        .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
-          margin-bottom: 1rem; } }
-      @media (min-width: 768px) {
-        .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
-          margin-bottom: 30px; } }
-
-.content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
-  margin-bottom: 0; }
-  @media (min-width: 768px) {
-    .content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
-      margin-bottom: -1rem; } }
-  @media (min-width: 768px) {
-    .content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
-      margin-bottom: -30px; } }
 
 .row.row-introduction {
   margin-bottom: 1rem; }
@@ -11098,110 +11081,109 @@ form.form-string-search.input-group {
 /**
  * small ( 2 column ) travel card
  */
-.card-travel:not(.card-travel--stripe), .card-travel.card-travel--stripe {
+.card-travel.card-travel--stripe {
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
   border-radius: 0; }
-  .card-travel:not(.card-travel--stripe) .card-image, .card-travel.card-travel--stripe .card-image {
+  .card-travel.card-travel--stripe .card-image {
     flex: 0 0 41.6666666667%;
     width: 100%;
     max-width: 41.6666666667%; }
-    .card-travel:not(.card-travel--stripe) .card-image > a, .card-travel.card-travel--stripe .card-image > a {
+    .card-travel.card-travel--stripe .card-image > a {
       margin-left: -1px;
       margin-top: -1px;
       margin-bottom: -1px;
       display: flex; }
-    .card-travel:not(.card-travel--stripe) .card-image img, .card-travel.card-travel--stripe .card-image img {
+    .card-travel.card-travel--stripe .card-image img {
       border-radius: 0.25rem; }
-  .card-travel:not(.card-travel--stripe) .card-body, .card-travel.card-travel--stripe .card-body {
+  .card-travel.card-travel--stripe .card-body {
     flex: 0 0 58.3333333333%;
     width: 100%;
     max-width: 58.3333333333%;
     padding: 0 0 0 1.25rem; }
-    .card-travel:not(.card-travel--stripe) .card-body .attribute-row, .card-travel.card-travel--stripe .card-body .attribute-row {
+    .card-travel.card-travel--stripe .card-body .attribute-row {
       display: none; }
-    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .price-row, .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
+    .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: .5rem; }
-    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary, .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary {
+    .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary {
       display: inline-block;
       margin-top: 0; }
-      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary > small span, .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary > small span {
+      .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary > small span {
         display: none; }
 
 /**
  * normal travel card teaser
  */
-@media (min-width: 768px) {
-  .card-travel:not(.card-travel--stripe) {
+.card-travel:not(.card-travel--stripe) {
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem; }
+  .card-travel:not(.card-travel--stripe) .card-image {
+    flex: 0;
+    width: 100%;
+    max-width: 100%; }
+    .card-travel:not(.card-travel--stripe) .card-image > a {
+      margin-left: -1px;
+      margin-top: -1px;
+      margin-bottom: 0;
+      margin-right: -1px; }
+    .card-travel:not(.card-travel--stripe) .card-image img {
+      border-top-right-radius: 0.25rem;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; }
+  .card-travel:not(.card-travel--stripe) .card-body {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+    display: flex;
     flex-direction: column;
-    height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-radius: 0.25rem; }
-    .card-travel:not(.card-travel--stripe) .card-image {
-      flex: 0;
-      width: 100%;
-      max-width: 100%; }
-      .card-travel:not(.card-travel--stripe) .card-image > a {
-        margin-left: -1px;
-        margin-top: -1px;
-        margin-bottom: 0;
-        margin-right: -1px; }
-      .card-travel:not(.card-travel--stripe) .card-image img {
-        border-top-right-radius: 0.25rem;
-        border-top-left-radius: 0.25rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0; }
-    .card-travel:not(.card-travel--stripe) .card-body {
-      flex: 1;
-      width: 100%;
-      max-width: 100%;
-      padding: 1.25rem;
+    flex-wrap: nowrap;
+    justify-content: space-between; }
+    .card-travel:not(.card-travel--stripe) .card-body .attribute-row {
+      display: block; }
+    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .price-row {
       display: flex;
       flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: space-between; }
-      .card-travel:not(.card-travel--stripe) .card-body .attribute-row {
-        display: block; }
-      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .price-row {
-        display: flex;
-        flex-direction: column;
-        align-items: unset;
-        justify-content: unset;
-        gap: 0; }
-      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary {
-        display: block;
-        margin-top: 0.75rem; }
-        .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary > small span {
-          display: inline; }
-    .card-travel:not(.card-travel--stripe) .discount-wrapper {
-      margin-top: 0.75rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative; }
-      .card-travel:not(.card-travel--stripe) .discount-wrapper hr {
-        display: block;
-        position: absolute;
-        margin: 0;
-        top: 50%;
-        left: 0;
-        right: 0; }
-      .card-travel:not(.card-travel--stripe) .discount-wrapper .discount-wrapper--inner {
-        padding-left: .25rem;
-        padding-right: .25rem;
-        position: relative;
-        z-index: 2; }
-      .card-travel:not(.card-travel--stripe) .discount-wrapper .discount-wrapper--inner {
-        background-color: #fff; } }
+      align-items: unset;
+      justify-content: unset;
+      gap: 0; }
+    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary {
+      display: block;
+      margin-top: 0.75rem; }
+      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary > small span {
+        display: inline; }
+  .card-travel:not(.card-travel--stripe) .discount-wrapper {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .card-travel:not(.card-travel--stripe) .discount-wrapper hr {
+      display: block;
+      position: absolute;
+      margin: 0;
+      top: 50%;
+      left: 0;
+      right: 0; }
+    .card-travel:not(.card-travel--stripe) .discount-wrapper .discount-wrapper--inner {
+      padding-left: .25rem;
+      padding-right: .25rem;
+      position: relative;
+      z-index: 2; }
+    .card-travel:not(.card-travel--stripe) .discount-wrapper .discount-wrapper--inner {
+      background-color: #fff; }
 
 .card-travel {
   display: flex;
@@ -11317,11 +11299,6 @@ form.form-string-search.input-group {
             white-space: nowrap; }
             .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary > small span {
               display: inline; } }
-
-.card-travel-wrapper:last-child .card-travel {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: 0; }
 
 /**
  * Styling for category product teaser

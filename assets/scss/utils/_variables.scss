@@ -372,7 +372,7 @@ $teaser-category-product-travel-card-title-active-color: $primary;
 
 // -- travelcard break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
 // -- you can set bootstrap breakpoint key or px value
-$travel-card-break: md !default;
+$travel-card-break: null !default;
 
 $travel-card-spacer-y: $card-spacer-y !default;
 $travel-card-spacer-x: $card-spacer-x !default;
