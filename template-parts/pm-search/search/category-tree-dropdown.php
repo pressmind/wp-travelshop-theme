@@ -31,7 +31,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                     <div class="dropdown-menu dropdown-menu-select"
                          aria-labelledby="dropdownReiseziel">
                         <div class="dropdown-menu-inner">
-                            <div class="dropdown-menu-header">
+                            <div class="dropdown-menu-header d-none">
                                 <div class="h4">
                                     <?php echo $args['name']; ?>
                                 </div>
