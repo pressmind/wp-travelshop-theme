@@ -10939,6 +10939,94 @@ form.form-string-search.input-group {
  * File defines usable mixins for modal elements + transitions
  * Used for various elements for mobile views / UI|UX
  */
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter.is--open {
+    opacity: 1;
+    pointer-events: auto;
+    display: block; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem; }
+    .content-block.content-block-list-filter .list-filter-header > *:not(button) {
+      margin-bottom: 0; }
+    .content-block.content-block-list-filter .list-filter-header > button {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      line-height: 1;
+      display: block !important;
+      padding: 1rem 1rem;
+      margin: -1rem -1rem -1rem auto;
+      color: #212529;
+      transition: color .3s; }
+      .content-block.content-block-list-filter .list-filter-header > button svg {
+        width: 1.125rem;
+        height: 1.125rem; }
+      .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
+        color: #007bff; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter-boxes {
+    position: relative;
+    padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: opacity .3s;
+    pointer-events: none;
+    opacity: 0;
+    padding: 0.5rem; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter > form {
+    position: relative;
+    width: auto;
+    margin: 0;
+    pointer-events: none;
+    display: flex;
+    height: 100%; } }
+
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem; } }
+
 .list-filter-box.datepicker > div {
   position: relative; }
   .list-filter-box.datepicker > div input.form-control[readonly] {
@@ -11348,24 +11436,26 @@ form.form-string-search.input-group {
       .teaser.month-teaser > a:hover div.month-teaser-title svg {
         transform: translateX(0.625rem); }
 
-.content-block.content-block-list-filter {
-  border: green 10px solid; }
-  .content-block.content-block-list-filter .list-filter {
-    border-radius: 0.25rem;
-    background-color: #e9ecef;
-    padding: 1.25rem; }
-    .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
-      display: none; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
-      margin-top: 0.25rem; }
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
-      padding-top: 0.75rem;
-      margin-top: 0.75rem;
-      border-top: 1px solid #dee2e6; }
-  .content-block.content-block-list-filter .list-filter-footer {
+.content-block.content-block-list-filter .list-filter {
+  border-radius: 0.25rem;
+  background-color: #e9ecef;
+  padding: 1.25rem; }
+  .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
+    display: none; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
+    margin-top: 0.25rem; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid #dee2e6; }
+.content-block.content-block-list-filter .list-filter-footer {
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #dee2e6; }
+.content-block.content-block-list-filter .list-filter {
+  padding: 0; }
+.content-block.content-block-list-filter .list-filter-footer {
+  margin-top: 0; }
 
 #wpadminbar {
   z-index: 1039 !important; }
