@@ -110,6 +110,10 @@
         @extend %apple-like-header-down-#{$filter-mobile-break};
       }
 
+      .list-filter-boxes {
+        @extend %apple-like-body-down-#{$filter-mobile-break};
+      }
+
       .list-filter-footer {
         margin-top: 0;
         @extend %apple-like-footer-down-#{$filter-mobile-break};

@@ -117,5 +117,9 @@
 }
 
 @include placeholder('apple-like-body') {
+  position: relative;
+  padding: $apple-like-inner-padding;
 
+  overflow-y: auto;
+  overflow-x: hidden;
 }
