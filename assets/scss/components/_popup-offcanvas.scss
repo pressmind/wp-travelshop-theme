@@ -20,7 +20,7 @@
   padding: $offcanvas-header-padding;
   border-bottom: $offcanvas-header-border-width solid $offcanvas-header-border-color;
 
-  @include border-top-radius($offcanvas-border-radius);
+  @include border-radius(0);
 
   > *:not(button) {
     margin-bottom: 0;
@@ -88,25 +88,32 @@
 
   position: fixed;
   transition: opacity .3s, transform .3s;
-
-  transform: translateY($offcanvas-offset);
   opacity:0;
 
   background-color: $offcanvas-bg;
 
-  @include border-bottom-radius(0);
-  @include border-top-radius($offcanvas-border-radius);
+  @include border-radius(0);
 
   box-shadow: $offcanvas-box-shadow;
   padding:0;
 
-  max-height: $offcanvas-max-height;
-  height: auto;
+  width: $offcanvas-max-width;
 
   bottom:0;
-  left:0;
-  right: 0;
-  top: auto;
+  top: 0;
+
+  @if ( $offcanvas-direction == 'left' ) {
+    right: 0;
+    left: auto;
+
+    transform: translateX($offcanvas-max-width);
+  }
+
+  @if ( $offcanvas-direction == 'right' ) {
+    left: 0;
+    right: auto;
+    transform: translateX(-$offcanvas-max-width);
+  }
 }
 
 @include placeholder('offcanvas-content-open') {

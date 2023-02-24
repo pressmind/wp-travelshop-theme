@@ -131,7 +131,34 @@
 
     // offcanvas
     @if ( $filter-mobile-view-type == 'offcanvas' ) {
-      border: yellow 10px solid;
+      @extend %offcanvas-wrapper-down-#{$filter-mobile-break};
+
+      // -- inner
+      > form .list-filter {
+        @extend %offcanvas-content-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-header {
+        @extend %offcanvas-header-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-boxes {
+        @extend %offcanvas-body-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-footer {
+        margin-top: 0;
+        @extend %offcanvas-footer-down-#{$filter-mobile-break};
+      }
+
+      // -- open state
+      &.is--open {
+        @extend %offcanvas-open-down-#{$filter-mobile-break};
+
+        > form .list-filter {
+          @extend %offcanvas-content-open-down-#{$filter-mobile-break};
+        }
+      }
     }
 
 
