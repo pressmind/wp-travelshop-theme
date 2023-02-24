@@ -129,7 +129,6 @@
 
 @include placeholder('modal-inner') {
   position: relative;
-  width: auto;
   margin: 0;
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
@@ -137,6 +136,7 @@
   display: flex;
   height: auto;
   max-height: 100%;
+  width: 100%;
 }
 
 @include placeholder('modal-inner-fullscreen') {

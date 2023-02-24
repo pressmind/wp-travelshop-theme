@@ -11125,12 +11125,12 @@ form.form-string-search.input-group {
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-inner {
     position: relative;
-    width: auto;
     margin: 0;
     pointer-events: none;
     display: flex;
     height: auto;
-    max-height: 100%; } }
+    max-height: 100%;
+    width: 100%; } }
 
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-footer {
