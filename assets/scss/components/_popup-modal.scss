@@ -66,7 +66,7 @@
   width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
   // counteract the pointer-events: none; in the .modal-dialog
   color: $modal-content-color;
-  pointer-events: auto;
+  //pointer-events: auto;
   background-color: $modal-content-bg;
   background-clip: padding-box;
   padding: 0;
