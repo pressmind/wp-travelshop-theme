@@ -10990,6 +10990,7 @@ form.form-string-search.input-group {
     pointer-events: auto;
     background-color: #fff;
     background-clip: padding-box;
+    padding: 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     outline: 0; } }
@@ -11452,8 +11453,6 @@ form.form-string-search.input-group {
   padding-top: 0.75rem;
   margin-top: 0.75rem;
   border-top: 1px solid #dee2e6; }
-.content-block.content-block-list-filter .list-filter {
-  padding: 0; }
 .content-block.content-block-list-filter .list-filter-footer {
   margin-top: 0; }
 

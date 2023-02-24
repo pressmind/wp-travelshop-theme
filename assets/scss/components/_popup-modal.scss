@@ -66,6 +66,7 @@
   pointer-events: auto;
   background-color: $modal-content-bg;
   background-clip: padding-box;
+  padding: 0;
   border: $modal-content-border-width solid $modal-content-border-color;
   @include border-radius($modal-content-border-radius);
   @include box-shadow($modal-content-box-shadow-xs);

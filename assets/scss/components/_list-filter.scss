@@ -72,7 +72,6 @@
       }
 
       .list-filter {
-        padding: 0;
         @extend %modal-content-down-#{$filter-mobile-break};
 
         @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
