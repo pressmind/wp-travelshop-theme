@@ -36,6 +36,11 @@
       .dropdown-menu-inner {
         @extend %modal-inner-down-#{$category-dropdown-mobile-break};
 
+
+        @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-inner-fullscreen-down-#{$category-dropdown-mobile-break};
+        }
+
         .dropdown-menu-content {
           @extend %modal-content-down-#{$category-dropdown-mobile-break};
 

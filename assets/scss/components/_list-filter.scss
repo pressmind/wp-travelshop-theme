@@ -69,6 +69,10 @@
 
       > form {
         @extend %modal-inner-down-#{$filter-mobile-break};
+
+        @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-inner-fullscreen-down-#{$filter-mobile-break};
+        }
       }
 
       > form .list-filter {

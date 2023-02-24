@@ -137,6 +137,10 @@
   max-height: 100%;
 }
 
+@include placeholder('modal-inner-fullscreen') {
+  height: 100%;
+}
+
 @include placeholder('modal-footer') {
   padding: $modal-inner-padding;
   border-top: $modal-footer-border-width solid $modal-footer-border-color;
