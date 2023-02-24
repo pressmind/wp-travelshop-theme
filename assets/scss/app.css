@@ -10022,6 +10022,12 @@ html.force--consent.show--consent body {
  * it manually.
  */
 /**
+ * Category dropdown behaviour
+ * ------------------------------------
+ * defines UX for moible friendly views
+ * and point to break
+ */
+/**
  * Searchbar
  * --------------------------------------------
  * searchbar uses some default tab variables
@@ -10918,7 +10924,8 @@ form.form-string-search.input-group {
 .dropdown-menu.dropdown-menu-select {
   padding: 1rem; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items {
-    padding: 0;
+    padding: 0 1rem;
+    margin: 0 -1rem;
     overflow-y: auto;
     max-height: 21rem; }
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {

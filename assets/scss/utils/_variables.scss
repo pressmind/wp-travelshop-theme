@@ -158,6 +158,16 @@ $custom-checkbox-input-active-border-color: $primary !default;
 $custom-checkbox-input-active-bg: $primary !default;
 $custom-checkbox-input-active-icon-color: $white !default;
 
+/**
+ * Category dropdown behaviour
+ * ------------------------------------
+ * defines UX for moible friendly views
+ * and point to break
+ */
+
+$category-dropdown-behaviour: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$category-dropdown-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
+$category-dropdown-offcanvas-direction: 'left' !default;
 
 /**
  * Searchbar
@@ -200,10 +210,6 @@ $search-bar-pane-border-color: $search-bar-tabs-link-active-border-color !defaul
 
 $search-bar-padding-y: $grid-gutter-width !default;
 $search-bar-padding-x: ($grid-gutter-width / 2) !default;
-
-// dropdown behaviour
-$search-bar-dropdown-behaviour: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
-$search-bar-dropdown-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
 
 // themes
 $search-bar-silver-theme-color: $gray-500 !default;
