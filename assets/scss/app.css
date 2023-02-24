@@ -10948,7 +10948,7 @@ form.form-string-search.input-group {
       pointer-events: auto; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .dropdown-menu-header {
-    display: flex;
+    display: flex !important;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem 1rem;
@@ -11032,6 +11032,8 @@ form.form-string-search.input-group {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items {
     position: relative;
     padding: 1rem;
+    margin: 0 !important;
+    max-height: unset !important;
     overflow-y: auto;
     overflow-x: hidden; } }
 /**

@@ -13,7 +13,7 @@
 }
 
 @include placeholder('apple-like-header') {
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
   justify-content: space-between;
   padding: $apple-like-header-padding;
@@ -129,6 +129,9 @@
 @include placeholder('apple-like-body') {
   position: relative;
   padding: $apple-like-inner-padding;
+
+  margin: 0 !important;
+  max-height: unset !important;
 
   overflow-y: auto;
   overflow-x: hidden;
