@@ -13,7 +13,43 @@
 }
 
 @include placeholder('apple-like-header') {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: $apple-like-header-padding;
+  border-bottom: $apple-like-header-border-width solid $apple-like-header-border-color;
 
+  @include border-top-radius($apple-like-border-radius);
+
+  > *:not(button) {
+    margin-bottom: 0;
+  }
+
+  > button {
+    @include button-reset();
+
+    line-height: 1;
+
+    // -- make visible, important!
+    display: block !important;
+
+    padding: $apple-like-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$apple-like-header-padding-y) (-$apple-like-header-padding-x) (-$apple-like-header-padding-y) auto;
+
+    color: $popup-close-color;
+    transition: color .3s;
+
+    // -- svg size
+    svg {
+      width: $popup-close-icon-size;
+      height: $popup-close-icon-size;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $popup-close-hover-color;
+    }
+  }
 }
 
 @include placeholder('apple-like-wrapper') {
@@ -49,7 +85,7 @@
   position: fixed;
   transition: opacity .3s, transform .3s;
 
-  transform: translateX($apple-like-offset);
+  transform: translateY($apple-like-offset);
   opacity:0;
 
   background-color: $apple-like-bg;
@@ -57,12 +93,19 @@
   @include border-bottom-radius(0);
   @include border-top-radius($apple-like-border-radius);
 
+  box-shadow: $apple-like-box-shadow;
+
   max-height: $apple-like-max-height;
   height: auto;
+
+  bottom:0;
+  left:0;
+  right: 0;
+  top: auto;
 }
 
 @include placeholder('apple-like-content-open') {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
 }
 

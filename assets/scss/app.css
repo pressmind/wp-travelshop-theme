@@ -10963,19 +10963,24 @@ form.form-string-search.input-group {
   .content-block.content-block-list-filter > form .list-filter {
     position: fixed;
     transition: opacity .3s, transform .3s;
-    transform: translateX(2rem);
+    transform: translateY(2rem);
     opacity: 0;
     background-color: #fff;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     max-height: 75vh;
-    height: auto; } }
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto; } }
 
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter.is--open > form .list-filter {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1; } }
 
 /**

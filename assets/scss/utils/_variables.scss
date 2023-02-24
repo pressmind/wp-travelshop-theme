@@ -229,8 +229,10 @@ $apple-like-backdrop-opacity: $modal-backdrop-opacity !default;
 
 $apple-like-zindex: $zindex-modal !default;
 
+$apple-like-header-padding-y: 1rem !default;
+$apple-like-header-padding-x: 1rem !default;
 $apple-like-header-padding: $modal-header-padding !default;
-$apple-like-header-border-width: $modal-header-border-width !default;
+$apple-like-header-border-width: $apple-like-header-padding-y $apple-like-header-padding-x !default;
 $apple-like-header-border-color: $modal-header-border-color !default;
 
 $apple-like-footer-border-width: $modal-footer-border-width !default;
