@@ -214,6 +214,10 @@ $search-bar-transparent-theme-color: #fff !default;
  * most variables came from modals
  */
 
+$popup-close-color: $body-color !default;
+$popup-close-hover-color: $primary !default;
+$popup-close-icon-size: $font-size-lg !default;
+
 // -- apple like
 $apple-like-border-radius: $border-radius !default;
 $apple-like-bg: $modal-content-bg !default;
@@ -267,7 +271,7 @@ $filter-box-divider-width: 1px !default;
 $filter-box-divider-color: $gray-300 !default;
 
 $filter-mobile-break: sm !default; // down breakpoint, not up
-$filter-mobile-view-type: 'modal-fullscreen' !default; // you can choose between 'apple-like' ( drop op ), 'modal', 'modal-fullscreen' and 'offcanvas' it only changes filter wrapper style/animation in open-state
+$filter-mobile-view-type: 'apple-like' !default; // you can choose between 'apple-like' ( drop op ), 'modal', 'modal-fullscreen' and 'offcanvas' it only changes filter wrapper style/animation in open-state
 
 
 /**

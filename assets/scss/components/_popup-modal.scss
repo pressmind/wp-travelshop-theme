@@ -37,17 +37,17 @@
     // auto on the left force icon to the right even when there is no .modal-title
     margin: (-$modal-header-padding-y) (-$modal-header-padding-x) (-$modal-header-padding-y) auto;
 
-    color: $body-color;
+    color: $popup-close-color;
     transition: color .3s;
 
     // -- svg size
     svg {
-      width: $font-size-lg;
-      height: $font-size-lg;
+      width: $popup-close-icon-size;
+      height: $popup-close-icon-size;
     }
 
     &:hover, &:focus, &:active {
-      color: $primary;
+      color: $popup-close-hover-color;
     }
   }
 }
