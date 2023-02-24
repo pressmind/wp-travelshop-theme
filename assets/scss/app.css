@@ -11103,6 +11103,11 @@ form.form-string-search.input-group {
     border-radius: 0.3rem;
     outline: 0; } }
 @media (max-width: 767.98px) {
+  .content-block.content-block-list-filter > form .list-filter {
+    border-radius: 0;
+    border: 0;
+    box-shadow: none; } }
+@media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
     position: fixed !important;
     top: 0 !important;
@@ -11128,6 +11133,11 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter * {
       pointer-events: none; } }
 @media (max-width: 767.98px) {
+  .content-block.content-block-list-filter {
+    padding: 0;
+    align-items: unset;
+    justify-content: unset; } }
+@media (max-width: 767.98px) {
   .content-block.content-block-list-filter > form {
     position: relative;
     margin: 0;
@@ -11136,6 +11146,9 @@ form.form-string-search.input-group {
     height: auto;
     max-height: 100%;
     width: 100%; } }
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter > form {
+    height: 100%; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-footer {
     padding: 1rem;
