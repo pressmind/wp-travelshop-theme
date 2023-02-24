@@ -11035,6 +11035,7 @@ form.form-string-search.input-group {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items {
     position: relative;
     padding: 1rem;
+    flex: 1;
     margin: 0 !important;
     max-height: unset !important;
     overflow-y: auto;
@@ -11084,6 +11085,7 @@ form.form-string-search.input-group {
     padding: 1rem;
     margin: 0 !important;
     max-height: unset !important;
+    flex: 1;
     overflow-y: auto;
     overflow-x: hidden; } }
 @media (max-width: 767.98px) {

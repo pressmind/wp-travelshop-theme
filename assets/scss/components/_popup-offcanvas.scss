@@ -141,6 +141,7 @@
 @include placeholder('offcanvas-body') {
   position: relative;
   padding: $offcanvas-inner-padding;
+  flex: 1;
 
   margin: 0 !important;
   max-height: unset !important;
