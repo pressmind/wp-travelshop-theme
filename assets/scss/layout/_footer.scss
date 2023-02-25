@@ -1,10 +1,17 @@
 @if ( $footer-use-default == true ) {
   footer.footer-main {
+    background-color: $footer-bg;
+    color: $footer-color;
+
+    line-height: $footer-line-height;
+
+    @include font-size-generator($footer-font-sizes);
 
     // -- footer trust items
     @if ( $footer-use-trust == true ) {
       .footer-main--trust {
         @include spacing-generator($footer-paddings-y, 'top');
+        background-color: $footer-trust-bg;
 
         .trust-item{
           @include spacing-generator($footer-paddings-y, 'bottom');

@@ -84,10 +84,23 @@ $h6-font-sizes: (
 
 $footer-use-default: true !default;
 $footer-use-trust: true !default;
+
+// -- global footer variables
 $footer-paddings-y: (
         null: 1rem,
         lg: $grid-gutter-width,
 ) !default;
+$footer-bg: $body-bg-highlight !default;
+$footer-color: $body-color !default;
+$footer-line-height: $line-height-base !default;
+$footer-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+// -- trust footer
+$footer-trust-bg: #fff !default;
+
 
 /**
  * Header

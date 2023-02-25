@@ -117,12 +117,6 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                     ];
                     load_template_transient(get_template_directory().'/template-parts/footer/menu.php', false, $args);
                     ?>
-                    <div class="h5">
-                        Searchroutes
-                    </div>
-                    <?php
-                    // For Example purposes only, output all search routes
-                    echo do_shortcode('[ts-searchroutes]');
                     ?>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 col-footer-box">
