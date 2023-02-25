@@ -157,7 +157,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                                 </div>
 
                                 <button class="close-wishlist">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="https://development-travelshop-theme-mb-de.pressmind.dev/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                                 </button>
                             </div>
 
