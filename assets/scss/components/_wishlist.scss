@@ -32,9 +32,9 @@
       .wishlist-item-image {
         position: relative;
 
-        flex: 0 0 25%;
+        flex: 0 0 20%;
         width: 100%;
-        max-width: 25%;
+        max-width: 20%;
 
         > a {
           @include border-radius($travel-card-border-radius);

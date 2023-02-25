@@ -11925,9 +11925,9 @@ form.form-string-search.input-group {
     gap: 1rem; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
       position: relative;
-      flex: 0 0 25%;
+      flex: 0 0 20%;
       width: 100%;
-      max-width: 25%; }
+      max-width: 20%; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a {
         border-radius: 0.25rem;
         overflow: hidden;
