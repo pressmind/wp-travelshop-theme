@@ -149,14 +149,28 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 </button>
 
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-wishlist">
-                    <div id="wishlist-result" class="wishlist-items">
-                        <p>Keine Reisen auf der Merkliste</p>
-                    </div>
+                    <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-content">
+                            <div class="dropdown-menu-header d-none">
+                                Merkliste
 
-                    <div style="display: none;" class="wishlist-actions">
-                        <a href='#' class="btn btn-outline-primary btn-block">
-                            Zur Merkliste
-                        </a>
+                                <button class="close-wishlist">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="https://development-travelshop-theme-mb-de.pressmind.dev/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                </button>
+                            </div>
+
+                            <div class="dropdown-menu-body">
+                                <div id="wishlist-result" class="wishlist-items">
+                                    <p>Keine Reisen auf der Merkliste</p>
+                                </div>
+                            </div>
+
+                            <div style="display: none;" class="dropdown-menu-footer">
+                                <a href='#' class="btn btn-outline-primary btn-block">
+                                    Zur Merkliste
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
