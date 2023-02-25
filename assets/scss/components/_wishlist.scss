@@ -67,7 +67,34 @@
         justify-content: space-between;
 
         flex: 1;
+        position: relative;
 
+        // -- remove
+        .remove-from-wishlist {
+          color: $body-color-light;
+          position: absolute;
+          bottom:0;
+          right:0;
+
+          line-height: 1;
+          width: $font-size-base;
+          height: $font-size-base;
+
+          transition: color;
+          cursor: pointer;
+
+          > svg {
+            pointer-events: none;
+            width: $font-size-base;
+            height: $font-size-base;
+          }
+
+          &:hover {
+            color: $danger;
+          }
+        }
+
+        // -- title
         .name {
           font-size: $font-size-base;
           font-weight: $headings-font-weight;

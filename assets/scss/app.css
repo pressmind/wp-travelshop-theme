@@ -11949,7 +11949,24 @@ form.form-string-search.input-group {
       flex-direction: column;
       flex-wrap: nowrap;
       justify-content: space-between;
-      flex: 1; }
+      flex: 1;
+      position: relative; }
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist {
+        color: #434b53;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        line-height: 1;
+        width: 1rem;
+        height: 1rem;
+        transition: color;
+        cursor: pointer; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist > svg {
+          pointer-events: none;
+          width: 1rem;
+          height: 1rem; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist:hover {
+          color: #dc3545; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name {
         font-size: 1rem;
         font-weight: 500;
