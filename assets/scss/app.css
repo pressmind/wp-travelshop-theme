@@ -10922,7 +10922,9 @@ form.form-string-search.input-group {
     opacity: 1; }
 
 .dropdown-menu.dropdown-menu-select {
-  padding: 1rem; }
+  padding: 1rem;
+  width: 100%;
+  min-width: 16rem; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items {
     padding: 0 1rem;
     margin: 0 -1rem;
@@ -10982,6 +10984,7 @@ form.form-string-search.input-group {
     right: 0;
     bottom: 0;
     width: 100%;
+    min-width: unset !important;
     height: 100%;
     transform: none !important;
     will-change: unset !important;
@@ -11115,6 +11118,7 @@ form.form-string-search.input-group {
     z-index: 1050;
     display: flex;
     width: 100% !important;
+    min-width: unset !important;
     height: 100% !important;
     transform: none !important;
     will-change: unset !important;
