@@ -343,7 +343,7 @@
       border-bottom: 0;
 
       @include get-custom-breakpoint($travel-card-break) {
-        border-width: $travel-card-border-width solid $travel-card-border-color;
+        border-bottom: $travel-card-border-width solid $travel-card-border-color;
       }
     }
   }

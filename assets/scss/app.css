@@ -11456,7 +11456,7 @@ form.form-string-search.input-group {
   border-bottom: 0; }
   @media (min-width: 768px) {
     .card-travel-wrapper:last-child .card-travel {
-      border-width: 1px solid rgba(0, 0, 0, 0.125); } }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125); } }
 
 /**
  * Styling for category product teaser
