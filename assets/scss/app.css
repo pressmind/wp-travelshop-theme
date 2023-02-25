@@ -11973,13 +11973,17 @@ form.form-string-search.input-group {
         margin: 0 0 .5rem 0;
         display: block; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a {
-          text-decoration: none; }
+          color: inherit;
+          text-decoration: none;
+          transition: color .3s; }
           .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
             text-decoration: none; }
           .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
             color: #007bff; }
           .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus:hover {
             color: #007bff; }
+          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active {
+            text-decoration: underline; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price {
       color: #212529; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price > a {

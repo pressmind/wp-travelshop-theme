@@ -104,8 +104,9 @@
           display: block;
 
           > a {
-            color: $travel-card-title-color;
+            color: inherit;
             text-decoration: none;
+            transition: color .3s;
 
             &:active, &:hover, &:focus {
               text-decoration: none;
@@ -117,6 +118,10 @@
 
             &:hover, &:active:hover, &:focus:hover {
               color: $travel-card-title-hover-color;
+            }
+
+            &:active {
+              text-decoration: underline;
             }
           }
         }
