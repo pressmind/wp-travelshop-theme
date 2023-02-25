@@ -246,7 +246,7 @@ jQuery(function ($) {
             } else {
                 _this.wishlistEventListeners();
                 $('.wishlist-count').text(0);
-                $('.wishlist-items').html(`<p>Keine Reisen auf der Merkliste</p>`);
+                $('.wishlist-items').html(`<div class="alert alert-info" role="alert">Keine Reisen auf der Merkliste</div>`);
             }
         }
 
