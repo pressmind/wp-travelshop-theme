@@ -341,6 +341,10 @@
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: 0;
+
+      @include get-custom-breakpoint($travel-card-break) {
+        border-bottom-width: $travel-card-border-width;
+      }
     }
   }
 }
