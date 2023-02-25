@@ -10293,7 +10293,7 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
-.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img {
+.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img {
   position: absolute;
   left: 0;
   right: 0;
@@ -11919,13 +11919,36 @@ form.form-string-search.input-group {
   @media (min-width: 1200px) {
     .dropdown-menu.dropdown-menu-wishlist {
       right: 15px !important; } }
-  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
+  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
     display: flex;
     flex-direction: row;
-    gap: .5rem;
-    margin-top: .5rem;
-    padding-top: .5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.125); }
+    gap: .5rem; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
+      border-radius: 0.25rem;
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 25%;
+      width: 100%;
+      max-width: 25%; }
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        position: relative; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a:before {
+          display: block;
+          content: "";
+          width: 100%;
+          padding-top: 100%; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data {
+      flex: 1; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
+      margin-top: .5rem;
+      padding-top: .5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.125); }
 
 header.header-main {
   background-color: #fff;
