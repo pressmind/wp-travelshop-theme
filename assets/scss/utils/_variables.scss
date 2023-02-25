@@ -77,6 +77,19 @@ $h6-font-sizes: (
 ) !default;
 
 /**
+ * Footer
+ * ---------------------------------------
+ * some variables wich used for default footer settings
+ */
+
+$footer-use-default: true !default;
+$footer-use-trust: true !default;
+$footer-paddings-y: (
+        null: 1rem,
+        lg: $grid-gutter-width,
+) !default;
+
+/**
  * Header
  * ---------------------------------------
  * some variables wich used for default header settings

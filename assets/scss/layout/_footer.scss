@@ -1,0 +1,25 @@
+@if ( $footer-use-default == true ) {
+  footer.footer-main {
+
+    // -- footer trust items
+    @if ( $footer-use-trust == true ) {
+      .footer-main--trust {
+        @include spacing-generator($footer-paddings-y, 'top');
+
+        .trust-item{
+          @include spacing-generator($footer-paddings-y, 'bottom');
+        }
+      }
+    }
+
+    // -- footer boxes
+    .footer-main--boxes {
+      @include spacing-generator($footer-paddings-y, 'top');
+
+      .col-footer-box {
+        @include spacing-generator($footer-paddings-y, 'bottom');
+      }
+    }
+
+  }
+}

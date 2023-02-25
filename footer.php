@@ -76,7 +76,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
     <div class="footer-main--boxes">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3 col-footer-box">
                     <div class="h5">
                         Kontakt
                     </div>
@@ -101,7 +101,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                     </a>
                     </p>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3 col-footer-box">
                     <?php
                     $args = [
                         'menu_location' => 'footer_column_1'
@@ -110,7 +110,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                     ?>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3 col-footer-box">
                     <?php
                     $args = [
                         'menu_location' => 'footer_column_2'
@@ -125,7 +125,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                     echo do_shortcode('[ts-searchroutes]');
                     ?>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3 col-footer-box">
                     <div class="h5">
                         <?php echo do_shortcode('[ts-company-name]');?>
                     </div>
