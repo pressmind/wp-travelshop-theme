@@ -84,7 +84,8 @@ $h6-font-sizes: (
 
 // -- for offset padding in body, for sticky header.
 $header-heights: (
-
+        null: 72px,
+        lg: 91px,
 ) !default;
 
 $header-use-default: true !default;

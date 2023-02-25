@@ -10168,7 +10168,11 @@ html.force--consent.show--consent body {
  * same quellcode everytime
  */
 body {
-  font-display: swap !important; }
+  font-display: swap !important;
+  padding-top: 72px; }
+  @media (min-width: 992px) {
+    body {
+      padding-top: 91px; } }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 500;
