@@ -163,7 +163,10 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 
                             <div class="dropdown-menu-body">
                                 <div id="wishlist-result" class="wishlist-items">
-                                    <p>Keine Reisen auf der Merkliste</p>
+
+                                    <div class="alert alert-info" role="alert">
+                                        Keine Reisen auf der Merkliste
+                                    </div>
                                 </div>
                             </div>
 
