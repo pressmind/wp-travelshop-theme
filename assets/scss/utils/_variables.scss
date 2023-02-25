@@ -94,6 +94,7 @@ $header-color: $body-color !default;
 $header-sticky: true !default;
 $header-small: true !default;
 $header-breakpoint: lg !default; // used for switch mobile/desktop header
+$header-reduce-paddings: xl !default; // used for reduce paddings to 1/3 of normal grid gutter
 $header-box-shadow: 0 .125rem .25rem rgba(0,0,0,.15) !default;
 
 // -- paddings
