@@ -11913,16 +11913,17 @@ header.header-main {
     header.header-main .row.header-main-row > div {
       padding-left: 5px;
       padding-right: 5px; }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     header.header-main {
       padding-top: 1.5rem;
-      padding-bottom: 1.5rem; }
-      header.header-main .row.header-main-row {
-        margin-left: -15px;
-        margin-right: -15px; }
-        header.header-main .row.header-main-row > div {
-          padding-left: 15px;
-          padding-right: 15px; } }
+      padding-bottom: 1.5rem; } }
+  @media (min-width: 1200px) {
+    header.header-main .row.header-main-row {
+      margin-left: -15px;
+      margin-right: -15px; }
+      header.header-main .row.header-main-row > div {
+        padding-left: 15px;
+        padding-right: 15px; } }
   header.header-main.affix {
     padding-top: 1rem;
     padding-bottom: 1rem; }

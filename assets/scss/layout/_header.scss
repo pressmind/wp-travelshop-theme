@@ -18,10 +18,13 @@
     }
 
     // -- use default padding for desktop header
-    @include get-custom-breakpoint($header-reduce-paddings) {
+    @include get-custom-breakpoint($header-breakpoint) {
       padding-top: $header-padding-y;
       padding-bottom: $header-padding-y;
+    }
 
+    // -- normal row settings by break defined in variables
+    @include get-custom-breakpoint($header-reduce-paddings) {
       // -- normal row settings
       .row.header-main-row {
         margin-left: -($grid-gutter-width / 2);
