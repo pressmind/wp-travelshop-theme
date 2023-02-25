@@ -102,6 +102,11 @@ $header-box-shadow: 0 .125rem .25rem rgba(0,0,0,.15) !default;
 $header-padding-y: 1.5rem !default;
 $header-small-padding-y: 1rem !default;
 
+$header-paddings-y: (
+        null: $header-small-padding-y,
+        #{$header-breakpoint}: $header-padding-y
+) !default;
+
 // -- header action definitions
 $header-action-width: 2rem !default; // 32px
 $header-action-height: 2rem !default; // 32px;

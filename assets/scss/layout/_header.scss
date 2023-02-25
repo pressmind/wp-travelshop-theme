@@ -3,8 +3,7 @@
     background-color: $header-bg;
     color: $header-color;
 
-    padding-top: $header-small-padding-y;
-    padding-bottom: $header-small-padding-y;
+    @include padding-generator($header-paddings-y, 'y');
 
     // -- mobile smaller row settings, to reduce spacings
     .row.header-main-row {
@@ -15,12 +14,6 @@
         padding-left: ($grid-gutter-width / 6);
         padding-right: ($grid-gutter-width / 6);
       }
-    }
-
-    // -- use default padding for desktop header
-    @include get-custom-breakpoint($header-breakpoint) {
-      padding-top: $header-padding-y;
-      padding-bottom: $header-padding-y;
     }
 
     // -- normal row settings by break defined in variables

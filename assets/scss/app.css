@@ -11911,16 +11911,16 @@ header.header-main {
   top: 0;
   z-index: 1020;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
+  @media (min-width: 992px) {
+    header.header-main {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem; } }
   header.header-main .row.header-main-row {
     margin-left: -5px;
     margin-right: -5px; }
     header.header-main .row.header-main-row > div {
       padding-left: 5px;
       padding-right: 5px; }
-  @media (min-width: 992px) {
-    header.header-main {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem; } }
   @media (min-width: 1200px) {
     header.header-main .row.header-main-row {
       margin-left: -15px;
