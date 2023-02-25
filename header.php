@@ -123,14 +123,14 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 
                 </a>
             </div>
-            <div class="col-auto p-r-0">
+            <div class="col-auto pr-0">
                 <a href="/calendar" title="Reisekalender" class="header-action header-action--calendar">
                     <div class="header-action--icon">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
                     </div>
                 </a>
             </div>
-            <div class="col-auto d-block d-xl-none">
+            <div class="col-auto d-block pr-0 d-xl-none">
                 <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
                         aria-expanded="false" aria-label="Toggle Search">
                     <div class="header-action--icon">
