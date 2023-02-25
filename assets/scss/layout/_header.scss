@@ -18,7 +18,7 @@
     }
 
     // -- use default padding for desktop header
-    @include get-custom-breakpoint($header-breakpoint) {
+    @include get-custom-breakpoint(xl) {
       padding-top: $header-padding-y;
       padding-bottom: $header-padding-y;
 

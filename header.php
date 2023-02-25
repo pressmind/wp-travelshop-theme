@@ -130,6 +130,14 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </div>
                 </a>
             </div>
+            <div class="col-auto d-block d-xl-none">
+                <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
+                        aria-expanded="false" aria-label="Toggle Search">
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                    </div>
+                </button>
+            </div>
             <div class="col-auto dropdown">
                 <button class="header-action header-action--wishlist toggler wishlist-toggler" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" data-offset="40,20">
@@ -151,14 +159,6 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-auto d-block d-xl-none">
-                <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
-                        aria-expanded="false" aria-label="Toggle Search">
-                    <div class="header-action--icon">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
-                    </div>
-                </button>
             </div>
         </div>
     </div>
