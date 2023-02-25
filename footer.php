@@ -1,3 +1,28 @@
+<?php
+// for dev, shows actual breakpoint key
+$breakpoints = array('sm', 'md', 'lg', 'xl', 'xxl');
+$showbreakpoints = true;
+
+if ( $showbreakpoints ) {
+?>
+
+<div class="show-breakpoint-key" style="position: fixed; padding: .5rem; bottom:0;
+left:0; z-index: 999; color: #fff; background: black; display: flex; flex-direction: row; flex-wrap: nowrap; gap: .5rem;">
+    <div class="badge">
+        XS
+    </div>
+
+    <?php foreach ( $breakpoints as $key ) { ?>
+    <div class="badge d-none d-<?php echo $key; ?>-block">
+        <?php echo $key; ?>
+    </div>
+    <?php } ?>
+</div>
+
+<?php
+}
+?>
+
 <footer class="footer-main">
 
     <div class="footer-main--trust">
