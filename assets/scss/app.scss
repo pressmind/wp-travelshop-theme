@@ -80,6 +80,18 @@
 // @import "pages/themes/theme-ananas";
 
 
+// -- manipulation admin bar
+html #wpadminbar {
+  top: auto !important;
+  bottom: 0 !important;
+
+  position: fixed !important;
+}
+
+html[lang="de"], html, html#html {
+  margin-top: 0 !important;
+}
+
 //// -- fix for wishlist issues
 //.add-to-wishlist svg {
 //	pointer-events: none !important;

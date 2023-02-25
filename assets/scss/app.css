@@ -11896,7 +11896,9 @@ header.header-main {
   padding-top: 1rem;
   padding-bottom: 1rem;
   transition: padding-top .3s, padding-bottom .3s;
-  position: sticky;
+  position: fixed;
+  right: 0;
+  left: 0;
   top: 0;
   z-index: 1020;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15); }
@@ -12043,5 +12045,13 @@ nav#navbar ul.navbar-nav {
   @media (max-width: 767.98px) {
     #search-result .list-filter-toggle {
       display: block; } }
+
+html #wpadminbar {
+  top: auto !important;
+  bottom: 0 !important;
+  position: fixed !important; }
+
+html[lang="de"], html, html#html {
+  margin-top: 0 !important; }
 
 /*# sourceMappingURL=app.css.map */
