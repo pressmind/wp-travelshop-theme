@@ -11908,6 +11908,12 @@ form.form-string-search.input-group {
  * File deifnes style of wishlist dropdown and the items inside.
  * + handling of "view-type"
  */
+.dropdown-menu.dropdown-menu-wishlist {
+  left: auto;
+  right: -0.75rem;
+  width: 100%;
+  min-width: 16rem; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;

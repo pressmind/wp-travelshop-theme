@@ -5,6 +5,14 @@
 
 .dropdown-menu.dropdown-menu-wishlist {
 
+  // -- make wishlsit dropdown right aligned
+  left: auto;
+  right: -( ($header-wishlist-count-size / 4) * 3 );
+
+  // -- set widht/min-width for better optic
+  width: 100%;
+  min-width: 16rem;
+
   // -- wishlist items
 
 }
