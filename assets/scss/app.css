@@ -11922,7 +11922,7 @@ form.form-string-search.input-group {
   .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
     display: flex;
     flex-direction: row;
-    gap: .5rem; }
+    gap: 1rem; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
       position: relative;
       flex: 0 0 25%;
@@ -11958,7 +11958,7 @@ form.form-string-search.input-group {
         line-height: 0;
         width: 1.125rem;
         height: 1.125rem;
-        transition: color;
+        transition: color .3s;
         cursor: pointer; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist > svg {
           pointer-events: none;
@@ -11985,13 +11985,14 @@ form.form-string-search.input-group {
           .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active {
             text-decoration: underline; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price {
-      color: #212529; }
+      color: #212529;
+      line-height: 1; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price > a {
         color: inherit;
         text-decoration: none; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
-      margin-top: .5rem;
-      padding-top: .5rem;
+      margin-top: .75rem;
+      padding-top: .75rem;
       border-top: 1px solid rgba(0, 0, 0, 0.125); }
 
 header.header-main {

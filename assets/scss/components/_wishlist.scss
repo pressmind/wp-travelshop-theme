@@ -26,7 +26,7 @@
     .wishlist-item{
       display: flex;
       flex-direction: row;
-      gap: .5rem;
+      gap: 1rem;
 
       // -- image
       .wishlist-item-image {
@@ -79,7 +79,7 @@
           width: $font-size-lg;
           height: $font-size-lg;
 
-          transition: color;
+          transition: color .3s;
           cursor: pointer;
 
           > svg {
@@ -130,6 +130,7 @@
 
       .price {
         color: $body-color;
+        line-height: 1;
 
         > a {
           color: inherit;
@@ -139,8 +140,8 @@
 
       // -- add divider
       + .wishlist-item {
-        margin-top: .5rem;
-        padding-top: .5rem;
+        margin-top: .75rem;
+        padding-top: .75rem;
 
         border-top: $travel-card-border-width solid $travel-card-border-color;
       }
