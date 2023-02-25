@@ -11909,7 +11909,7 @@ form.form-string-search.input-group {
  * + handling of "view-type"
  */
 .dropdown-menu.dropdown-menu-wishlist {
-  left: auto;
+  left: auto !important;
   right: 0 !important;
   transform: none !important;
   width: 100%;
