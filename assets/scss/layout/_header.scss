@@ -3,7 +3,7 @@
     background-color: $header-bg;
     color: $header-color;
 
-    @include padding-generator($header-paddings-y, 'y');
+    @include spacing-generator($header-paddings-y, 'y');
 
     // -- mobile smaller row settings, to reduce spacings
     .row.header-main-row {

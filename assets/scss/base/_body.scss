@@ -2,6 +2,6 @@ body {
   font-display: swap !important;
 
   @if ( $header-sticky == true ) {
-    @include padding-generator($header-heights, 'top');
+    @include spacing-generator($header-heights, 'top');
   }
 }
