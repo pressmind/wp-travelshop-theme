@@ -11912,7 +11912,8 @@ form.form-string-search.input-group {
   left: auto;
   right: -0.75rem;
   width: 100%;
-  min-width: 16rem; }
+  min-width: 16rem;
+  padding: 1rem; }
 
 header.header-main {
   background-color: #fff;
