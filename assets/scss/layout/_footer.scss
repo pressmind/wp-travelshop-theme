@@ -28,5 +28,10 @@
       }
     }
 
+    // -- footer meta
+    .footer-main--meta {
+      @include spacing-generator($footer-paddings-y, 'bottom');
+    }
+
   }
 }

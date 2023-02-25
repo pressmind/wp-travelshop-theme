@@ -12084,6 +12084,11 @@ footer.footer-main {
       @media (min-width: 992px) {
         footer.footer-main .footer-main--boxes .col-footer-box {
           padding-bottom: 30px; } }
+  footer.footer-main .footer-main--meta {
+    padding-bottom: 1rem; }
+    @media (min-width: 992px) {
+      footer.footer-main .footer-main--meta {
+        padding-bottom: 30px; } }
 
 #search-result .list-filter-toggle {
   display: none; }
