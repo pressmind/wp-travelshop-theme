@@ -3522,7 +3522,7 @@ input[type="button"].btn-block {
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  line-height: 1.5; }
+  line-height: 1.2; }
 .pagination-sm .page-item:first-child .page-link {
   border-top-left-radius: 0.2rem;
   border-bottom-left-radius: 0.2rem; }
@@ -11921,17 +11921,16 @@ form.form-string-search.input-group {
       right: 15px !important; } }
   .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
     display: flex;
-    align-items: flex-start;
     flex-direction: row;
     gap: .5rem; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
-      border-radius: 0.25rem;
       position: relative;
-      overflow: hidden;
       flex: 0 0 25%;
       width: 100%;
       max-width: 25%; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a {
+        border-radius: 0.25rem;
+        overflow: hidden;
         position: absolute;
         top: 0;
         left: 0;
@@ -11971,6 +11970,7 @@ form.form-string-search.input-group {
         font-size: 1rem;
         font-weight: 500;
         margin: 0 0 .5rem 0;
+        line-height: 1.2;
         display: block; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a {
           color: inherit;
