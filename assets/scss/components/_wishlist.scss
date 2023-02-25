@@ -60,12 +60,21 @@
 
       // -- data
       .wishlist-item-data {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        justify-content: space-between;
+
         flex: 1;
 
         .name {
-          @extend h1;
+          font-size: $font-size-base;
+          font-weight: $headings-font-weight;
 
-          @include font-size-generator($travel-card-title-sizes);
+          margin: 0 0 .5rem 0;
+
+          display: block;
 
           > a {
             color: $travel-card-title-color;
@@ -83,6 +92,15 @@
               color: $travel-card-title-hover-color;
             }
           }
+        }
+      }
+
+      .price {
+        color: $body-color;
+
+        > a {
+          color: inherit;
+          text-decoration: none;
         }
       }
 
