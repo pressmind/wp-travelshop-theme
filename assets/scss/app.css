@@ -10137,6 +10137,11 @@ html.force--consent.show--consent body {
  * Enjoy responsive font sizes! ;)
  */
 /**
+ * Simple mixin to generate paddings out if a scss map combined with breakpoints + custom breakpoints
+ * you can use 'around' ( top, left, bottom, right ), 'y' ( top and bottom ), 'x' (left and right )
+ * 'left', 'top', 'bottom' and 'right'
+ */
+/**
  * Used for custom breakpoint / bootstrap breakpoint to use for various of elements to break them into another layout
  */
 /**

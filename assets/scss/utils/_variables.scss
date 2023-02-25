@@ -82,6 +82,11 @@ $h6-font-sizes: (
  * some variables wich used for default header settings
  */
 
+// -- for offset padding in body, for sticky header.
+$header-heights: (
+
+) !default;
+
 $header-use-default: true !default;
 
 $header-bg: $body-bg !default;

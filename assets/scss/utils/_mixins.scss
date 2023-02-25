@@ -48,6 +48,55 @@
 }
 
 /**
+ * Simple mixin to generate paddings out if a scss map combined with breakpoints + custom breakpoints
+ * you can use 'around' ( top, left, bottom, right ), 'y' ( top and bottom ), 'x' (left and right )
+ * 'left', 'top', 'bottom' and 'right'
+ */
+@mixin padding-set($padding, $direction) {
+  @if ( $direction == 'around' ) {
+    padding: $padding;
+  }
+
+  @if ( $direction == 'y' ) {
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  @if ( $direction == 'x' ) {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+
+  @if ( $direction == 'top' or $direction == 'left' or $direction == 'right' or $direction == 'bottom' ) {
+    padding-#{$direction}: $padding;
+  }
+}
+
+@mixin padding-generator($padding-map, $direction: 'around', $breakpoints: $grid-breakpoints) {
+
+  // loop through set paddings
+  @each $breakpoint, $padding in $padding-map {
+    // check if breakpoint defined as zero to render "default" value ( mobile )
+    @if $breakpoint == null {
+      @include padding-set($padding, $direction);
+    }
+    @else {
+      // if not null use $breakpoint as breakpoint to set font size
+
+      // check if breakpoint with key is defined + set $breakpoint by $grid-breakpoints
+      @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+      }
+
+      // set media query + padding for view.
+      @media ( min-width: $breakpoint ) {
+        @include padding-set($padding, $direction);
+      }
+    }
+  }
+}
+
+/**
  * Used for custom breakpoint / bootstrap breakpoint to use for various of elements to break them into another layout
  */
 

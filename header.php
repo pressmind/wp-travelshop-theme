@@ -90,7 +90,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
-            <div class="col-auto  d-none d-lg-block col-search" id="search">
+            <div class="col-auto  d-none d-xl-block col-search" id="search">
                 <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
                     <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
@@ -152,7 +152,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </div>
                 </div>
             </div>
-            <div class="col-auto d-none">
+            <div class="col-auto d-block d-xl-none">
                 <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
                         aria-expanded="false" aria-label="Toggle Search">
                     <div class="header-action--icon">
