@@ -11910,11 +11910,15 @@ form.form-string-search.input-group {
  */
 .dropdown-menu.dropdown-menu-wishlist {
   left: auto !important;
-  right: 0 !important;
+  right: 5px !important;
+  top: 100% !important;
   transform: none !important;
   width: 100%;
   min-width: 16rem;
   padding: 1rem; }
+  @media (min-width: 1200px) {
+    .dropdown-menu.dropdown-menu-wishlist {
+      right: 15px !important; } }
 
 header.header-main {
   background-color: #fff;

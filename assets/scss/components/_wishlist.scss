@@ -7,8 +7,14 @@
 
   // -- make wishlsit dropdown right aligned
   left: auto !important;
-  right: 0 !important;
+  right: ($grid-gutter-width / 6) !important;
+  top: 100% !important;
   transform: none !important;
+
+
+  @include get-custom-breakpoint($header-reduce-paddings) {
+    right: ($grid-gutter-width / 2) !important;
+  }
 
   // -- set widht/min-width for better optic
   width: 100%;
