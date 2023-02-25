@@ -11955,15 +11955,15 @@ form.form-string-search.input-group {
         position: absolute;
         bottom: 0;
         right: 0;
-        line-height: 1;
-        width: 1rem;
-        height: 1rem;
+        line-height: 0;
+        width: 1.125rem;
+        height: 1.125rem;
         transition: color;
         cursor: pointer; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist > svg {
           pointer-events: none;
-          width: 1rem;
-          height: 1rem; }
+          width: 1.125rem;
+          height: 1.125rem; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist:hover {
           color: #dc3545; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name {

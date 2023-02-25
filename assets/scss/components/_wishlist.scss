@@ -75,17 +75,17 @@
           bottom:0;
           right:0;
 
-          line-height: 1;
-          width: $font-size-base;
-          height: $font-size-base;
+          line-height: 0;
+          width: $font-size-lg;
+          height: $font-size-lg;
 
           transition: color;
           cursor: pointer;
 
           > svg {
             pointer-events: none;
-            width: $font-size-base;
-            height: $font-size-base;
+            width: $font-size-lg;
+            height: $font-size-lg;
           }
 
           &:hover {
