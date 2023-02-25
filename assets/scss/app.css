@@ -90,7 +90,7 @@ hr {
   height: 0;
   overflow: visible; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
@@ -319,13 +319,13 @@ template {
 [hidden] {
   display: none !important; }
 
-h1, h2, h3, h4, h5, h6,
+h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2; }
 
-h1, .h1 {
+h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .h1 {
   font-size: 2.5rem; }
 
 h2, .h2 {
@@ -10179,7 +10179,7 @@ body {
     body {
       padding-top: 91px; } }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.2; }
@@ -10188,16 +10188,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: #fff;
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5); }
 
-h1, .h1 {
+h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .h1 {
   font-size: 1.25rem; }
   @media (min-width: 576px) {
-    h1, .h1 {
+    h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .h1 {
       font-size: 1.5rem; } }
   @media (min-width: 768px) {
-    h1, .h1 {
+    h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .h1 {
       font-size: 2rem; } }
   @media (min-width: 992px) {
-    h1, .h1 {
+    h1, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .h1 {
       font-size: 2.5rem; } }
 
 h2, .h2 {
@@ -10574,9 +10574,9 @@ form.form-string-search.input-group {
       margin-bottom: 30px; } }
   .row.row-introduction p {
     margin-bottom: 0; }
-  .row.row-introduction h1, .row.row-introduction h2, .row.row-introduction h3, .row.row-introduction h4, .row.row-introduction h5, .row.row-introduction h6 {
+  .row.row-introduction h1, .row.row-introduction .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .row.row-introduction .name, .row.row-introduction h2, .row.row-introduction h3, .row.row-introduction h4, .row.row-introduction h5, .row.row-introduction h6 {
     margin-bottom: 0; }
-    .row.row-introduction h1 + p, .row.row-introduction h2 + p, .row.row-introduction h3 + p, .row.row-introduction h4 + p, .row.row-introduction h5 + p, .row.row-introduction h6 + p {
+    .row.row-introduction h1 + p, .row.row-introduction .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name + p, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .row.row-introduction .name + p, .row.row-introduction h2 + p, .row.row-introduction h3 + p, .row.row-introduction h4 + p, .row.row-introduction h5 + p, .row.row-introduction h6 + p {
       margin-top: 1rem; }
   .row.row-introduction p + p {
     margin-top: 1rem; }
@@ -11407,21 +11407,21 @@ form.form-string-search.input-group {
             height: 4.5rem;
             background-image: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 33.3333333333%);
             background-repeat: repeat-x; } }
-    .card-travel .card-body h1.card-title {
+    .card-travel .card-body h1.card-title, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name {
       font-size: 1rem;
       margin: 0 0 0.75rem 0; }
       @media (min-width: 992px) {
-        .card-travel .card-body h1.card-title {
+        .card-travel .card-body h1.card-title, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name {
           font-size: 1.25rem; } }
-      .card-travel .card-body h1.card-title > a {
+      .card-travel .card-body h1.card-title > a, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name > a {
         color: inherit;
         transition: color .3s;
         text-decoration: none; }
-        .card-travel .card-body h1.card-title > a:hover {
+        .card-travel .card-body h1.card-title > a:hover, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name > a:hover {
           color: #007bff; }
-        .card-travel .card-body h1.card-title > a:active, .card-travel .card-body h1.card-title > a:focus {
+        .card-travel .card-body h1.card-title > a:active, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name > a:active, .card-travel .card-body h1.card-title > a:focus, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:focus, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name > a:focus {
           color: #007bff; }
-        .card-travel .card-body h1.card-title > a:active {
+        .card-travel .card-body h1.card-title > a:active, .card-travel .card-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-travel .card-body .card-title.name > a:active {
           text-decoration: underline; }
     .card-travel .card-body .card-body--bottom {
       padding-top: 0.75rem;
@@ -11508,19 +11508,19 @@ form.form-string-search.input-group {
     @media (min-width: 992px) {
       .teaser.category-product-teaser .teaser-products .category-travel-card {
         font-size: 1rem; } }
-    .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title {
+    .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title, .teaser.category-product-teaser .teaser-products .category-travel-card .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.category-product-teaser .teaser-products .category-travel-card .card-title.name {
       font-size: 1rem;
       margin: 0 0 0.25rem 0;
       padding-right: 2rem; }
-      .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a {
+      .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a, .teaser.category-product-teaser .teaser-products .category-travel-card .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.category-product-teaser .teaser-products .category-travel-card .card-title.name > a {
         color: inherit;
         transition: color .3s;
         text-decoration: none; }
-        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:hover {
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:hover, .teaser.category-product-teaser .teaser-products .category-travel-card .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.category-product-teaser .teaser-products .category-travel-card .card-title.name > a:hover {
           color: #007bff; }
-        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active, .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:focus {
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active, .teaser.category-product-teaser .teaser-products .category-travel-card .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.category-product-teaser .teaser-products .category-travel-card .card-title.name > a:active, .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:focus, .teaser.category-product-teaser .teaser-products .category-travel-card .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:focus, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.category-product-teaser .teaser-products .category-travel-card .card-title.name > a:focus {
           color: #007bff; }
-        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active {
+        .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:active, .teaser.category-product-teaser .teaser-products .category-travel-card .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .card-title.name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.category-product-teaser .teaser-products .category-travel-card .card-title.name > a:active {
           text-decoration: underline; }
     .teaser.category-product-teaser .teaser-products .category-travel-card .price-row {
       display: flex;
@@ -11765,7 +11765,7 @@ form.form-string-search.input-group {
       padding-top: 56.25%; }
   .teaser.wp-teaser .teaser-body {
     padding: 1.25rem; }
-    .teaser.wp-teaser .teaser-body h1 {
+    .teaser.wp-teaser .teaser-body h1, .teaser.wp-teaser .teaser-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.wp-teaser .teaser-body .name {
       margin: 0 0 0.75rem 0; }
 
 .teaser.icon-teaser {
@@ -11783,7 +11783,7 @@ form.form-string-search.input-group {
     position: relative;
     padding-right: 1.25rem + 48px;
     flex: 1; }
-    .teaser.icon-teaser .teaser-body h1 + p,
+    .teaser.icon-teaser .teaser-body h1 + p, .teaser.icon-teaser .teaser-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name + p, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.icon-teaser .teaser-body .name + p,
     .teaser.icon-teaser .teaser-body p + p {
       margin-top: .5rem; }
     .teaser.icon-teaser .teaser-body a.btn {
@@ -11814,7 +11814,7 @@ form.form-string-search.input-group {
         .teaser.icon-teaser .teaser-icon .icon-inner > svg {
           width: 3rem;
           height: 3rem; }
-    .teaser.icon-teaser .teaser-body h1 + p,
+    .teaser.icon-teaser .teaser-body h1 + p, .teaser.icon-teaser .teaser-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name + p, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.icon-teaser .teaser-body .name + p,
     .teaser.icon-teaser .teaser-body p + p {
       margin-top: 0.75rem; }
     .teaser.icon-teaser .teaser-body a.btn {
@@ -11829,7 +11829,7 @@ form.form-string-search.input-group {
         display: block; }
       .teaser.icon-teaser .teaser-body a.btn .btn-icon {
         display: none; }
-    .teaser.icon-teaser .teaser-body h1 + a.btn,
+    .teaser.icon-teaser .teaser-body h1 + a.btn, .teaser.icon-teaser .teaser-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name + a.btn, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.icon-teaser .teaser-body .name + a.btn,
     .teaser.icon-teaser .teaser-body p + a.btn {
       margin-top: 0.75rem; } }
 
@@ -11857,7 +11857,7 @@ form.form-string-search.input-group {
         background-color: #6c757d; }
   .teaser.icon-teaser .teaser-body {
     padding: 1.25rem; }
-    .teaser.icon-teaser .teaser-body h1 {
+    .teaser.icon-teaser .teaser-body h1, .teaser.icon-teaser .teaser-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.icon-teaser .teaser-body .name {
       margin: 0; }
     .teaser.icon-teaser .teaser-body p {
       margin: 0; }
@@ -11901,7 +11901,7 @@ form.form-string-search.input-group {
     left: 0;
     right: 0;
     padding: 1.25rem; }
-    .teaser.image-teaser .teaser-body h1 {
+    .teaser.image-teaser .teaser-body h1, .teaser.image-teaser .teaser-body .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .teaser.image-teaser .teaser-body .name {
       margin: 0 0 0.75rem 0; }
 
 /**
@@ -11921,6 +11921,7 @@ form.form-string-search.input-group {
       right: 15px !important; } }
   .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
     gap: .5rem; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
@@ -11945,6 +11946,19 @@ form.form-string-search.input-group {
           padding-top: 100%; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data {
       flex: 1; }
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name {
+        font-size: 1rem; }
+        @media (min-width: 992px) {
+          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name {
+            font-size: 1.25rem; } }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a {
+          text-decoration: none; }
+          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
+            text-decoration: none; }
+          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
+            color: #007bff; }
+          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus:hover {
+            color: #007bff; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
       margin-top: .5rem;
       padding-top: .5rem;

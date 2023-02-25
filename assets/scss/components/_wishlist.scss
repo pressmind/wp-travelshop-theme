@@ -25,6 +25,7 @@
   #wishlist-result {
     .wishlist-item{
       display: flex;
+      align-items: flex-start;
       flex-direction: row;
       gap: .5rem;
 
@@ -60,6 +61,29 @@
       // -- data
       .wishlist-item-data {
         flex: 1;
+
+        .name {
+          @extend h1;
+
+          @include font-size-generator($travel-card-title-sizes);
+
+          > a {
+            color: $travel-card-title-color;
+            text-decoration: none;
+
+            &:active, &:hover, &:focus {
+              text-decoration: none;
+            }
+
+            &:active, &:focus {
+              color: $travel-card-title-active-color;
+            }
+
+            &:hover, &:active:hover, &:focus:hover {
+              color: $travel-card-title-hover-color;
+            }
+          }
+        }
       }
 
       // -- add divider
