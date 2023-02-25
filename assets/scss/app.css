@@ -11922,7 +11922,7 @@ form.form-string-search.input-group {
   .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
     display: flex;
     flex-direction: row;
-    gap: 1rem; }
+    gap: .75rem; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
       position: relative;
       flex: 0 0 20%;
