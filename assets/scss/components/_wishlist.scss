@@ -22,5 +22,19 @@
   padding: 1rem; // default padding
 
   // -- wishlist items
+  #wishlist-result {
+    .wishlist-item{
 
+      + .wishlist-item {
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
+
+        margin-top: .5rem;
+        padding-top: .5rem;
+
+        border-top: $travel-card-border-width solid $travel-card-border-color;
+      }
+    }
+  }
 }

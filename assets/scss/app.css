@@ -11919,6 +11919,13 @@ form.form-string-search.input-group {
   @media (min-width: 1200px) {
     .dropdown-menu.dropdown-menu-wishlist {
       right: 15px !important; } }
+  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    margin-top: .5rem;
+    padding-top: .5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.125); }
 
 header.header-main {
   background-color: #fff;
