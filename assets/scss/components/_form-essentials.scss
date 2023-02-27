@@ -155,7 +155,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
-    top: ( ( ($custom-checkbox-font-size * $custom-checkbox-line-height) - $custom-checkbox-font-size ) / 2 );
+    top: ( ($custom-checkbox-font-size * $custom-checkbox-line-height) / 2 );
+    transform: translateY(-($custom-checkbox-large-input-size / 2));
 
     @if ( $custom-checkbox-input-border-width != 0 ) {
       border: $custom-checkbox-input-border-width solid $custom-checkbox-input-border-color;
@@ -225,7 +226,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
       // offset top to make it center with first line
       // little calculation based on font size base and lineheight
-      top: ( ( ($custom-checkbox-font-size * $custom-checkbox-line-height) - $custom-checkbox-font-size ) / 2 );
+      top: ( ($custom-checkbox-font-size * $custom-checkbox-line-height) / 2 );
+      transform: translateY(-($custom-checkbox-large-input-size / 2));
 
       svg {
         width: $custom-checkbox-input-icon-size;
@@ -287,7 +289,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
-    top: ( ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) - $custom-checkbox-large-font-size ) / 2 );
+    top: ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) / 2 );
+    transform: translateY(-($custom-checkbox-large-input-size / 2));
 
     svg {
       width: $custom-checkbox-large-input-icon-size;
@@ -306,7 +309,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       max-width: $custom-checkbox-large-input-size;
       flex: 0 0 $custom-checkbox-large-input-size;
 
-      top: ( ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) - $custom-checkbox-large-font-size ) / 2 );
+      top: ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) / 2 );
+      transform: translateY(-($custom-checkbox-large-input-size / 2));
 
       svg {
         width: $custom-checkbox-large-input-icon-size;
