@@ -33,12 +33,14 @@
               margin-top: $custom-checkbox-spacer;
             }
 
-
+            // -- bigger checkboxes if mobile view
             @if ( $filter-mobile-break != null ) {
               @extend %custom-checkbox-large-down-#{$filter-mobile-break};
 
-              + .form-check {
-                margin-top: $custom-checkbox-large-spacer;
+              @include media-breakpoint-down($filter-mobile-break) {
+                + .form-check {
+                  margin-top: $custom-checkbox-large-spacer;
+                }
               }
             }
           }

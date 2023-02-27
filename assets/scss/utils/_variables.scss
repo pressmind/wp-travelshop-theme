@@ -216,7 +216,7 @@ $custom-checkbox-input-active-icon-color: $white !default;
  * defines UX for moible friendly views
  * and point to break
  */
-$category-dropdown-modal: false !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$category-dropdown-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
 $category-dropdown-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
 $category-dropdown-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
 $category-dropdown-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX

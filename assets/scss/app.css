@@ -11277,6 +11277,37 @@ form.form-string-search.input-group {
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
       margin-top: 0rem;
       padding-left: 2rem; } }
+@media (min-width: 768px) {
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check {
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.5; }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span {
+      height: 1.5rem;
+      max-width: 1.5rem;
+      flex: 0 0 1.5rem;
+      top: 0.9375rem;
+      transform: translateY(-0.75rem); }
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        transform: translate(-0.5625rem, -0.5625rem); }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level {
+      width: 100%;
+      height: 1.5rem;
+      max-width: 1.5rem;
+      flex: 0 0 1.5rem;
+      top: 0.9375rem;
+      transform: translateY(-0.75rem); }
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        transform: translate(-0.5625rem, -0.5625rem); }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg {
+      transform: translate(-0.5625rem, -0.5625rem) scaleY(-1); }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check .list-filter-second-level {
+      margin-top: 0rem;
+      padding-left: 2rem; } }
 .row.row-products:not(.is-slider) {
   margin-bottom: -1rem; }
   @media (min-width: 768px) {
@@ -11684,12 +11715,18 @@ form.form-string-search.input-group {
     max-height: 21rem; }
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {
       margin-top: 0.25rem; }
+    @media (min-width: 768px) {
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {
+        margin-top: 0.5rem; } }
     @media (max-width: 767.98px) {
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check + .form-check {
         margin-top: 0.5rem; } }
   .dropdown-menu.dropdown-menu-select .btn.filter-prompt {
     font-size: 0.875rem;
     white-space: nowrap; }
+  @media (min-width: 768px) {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-inner {
+      max-width: 576px; } }
   .dropdown-menu.dropdown-menu-select .dropdown-menu-footer {
     margin-top: 0; }
 
@@ -11812,11 +11849,11 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter.is--open * {
       pointer-events: auto; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist.show {
+  .dropdown-menu.dropdown-menu-select.show, .dropdown-menu.dropdown-menu-wishlist.show {
     opacity: 1;
     display: flex;
     pointer-events: auto; }
-    .dropdown-menu.dropdown-menu-wishlist.show * {
+    .dropdown-menu.dropdown-menu-select.show *, .dropdown-menu.dropdown-menu-wishlist.show * {
       pointer-events: auto; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-header {
@@ -11847,7 +11884,7 @@ form.form-string-search.input-group {
       .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
         color: #c8102e; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header {
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem 1rem;
@@ -11855,9 +11892,9 @@ form.form-string-search.input-group {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     display: flex !important; }
-    .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > *:not(button) {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button), .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > *:not(button) {
       margin-bottom: 0; }
-    .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button {
       border: 0;
       outline: none;
       box-shadow: none;
@@ -11869,10 +11906,10 @@ form.form-string-search.input-group {
       margin: -1rem -1rem -1rem auto;
       color: #212529;
       transition: color .3s; }
-      .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg {
         width: 1.125rem;
         height: 1.125rem; }
-      .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
         color: #c8102e; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-boxes {
@@ -11884,7 +11921,7 @@ form.form-string-search.input-group {
     overflow-y: auto;
     overflow-x: hidden; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body {
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
@@ -11905,7 +11942,7 @@ form.form-string-search.input-group {
     border-radius: 0;
     outline: 0; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner .dropdown-menu-content {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-inner .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner .dropdown-menu-content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -11948,7 +11985,7 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter * {
       pointer-events: none; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist {
+  .dropdown-menu.dropdown-menu-select, .dropdown-menu.dropdown-menu-wishlist {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -11971,7 +12008,7 @@ form.form-string-search.input-group {
     border: 0;
     margin: 0;
     border-radius: 0; }
-    .dropdown-menu.dropdown-menu-wishlist * {
+    .dropdown-menu.dropdown-menu-select *, .dropdown-menu.dropdown-menu-wishlist * {
       pointer-events: none; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
@@ -11988,7 +12025,7 @@ form.form-string-search.input-group {
     max-height: 100%;
     width: 100%; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-inner, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
     position: relative;
     margin: 0;
     pointer-events: none;
@@ -12008,12 +12045,12 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter-footer * {
       margin-top: 0 !important; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-footer, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer {
     padding: 1rem;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-    .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer * {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer * {
       margin-top: 0 !important; } }
 .list-filter-box.datepicker > div {
   position: relative; }
@@ -12435,8 +12472,9 @@ form.form-string-search.input-group {
     display: none; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
     margin-top: 0.25rem; }
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
-    margin-top: 0.5rem; }
+  @media (max-width: 767.98px) {
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
+      margin-top: 0.5rem; } }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
     padding-top: 0.75rem;
     margin-top: 0.75rem;
