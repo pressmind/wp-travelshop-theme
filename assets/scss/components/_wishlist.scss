@@ -166,9 +166,11 @@
     }
 
     @extend %modal-wrapper#{$temp-wishlist-modal-string};
+    @extend %modal-wrapper-desktop;
 
     .dropdown-menu-inner {
       @extend %modal-inner#{$temp-wishlist-modal-string};
+      @extend %modal-inner-desktop;
 
 
       .dropdown-menu-content {
