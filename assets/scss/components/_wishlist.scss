@@ -187,7 +187,14 @@
 
     .dropdown-menu-inner {
       @extend %modal-inner#{$temp-wishlist-modal-string};
-      @extend %modal-inner-width-#{$wishlist-modal-max-width};
+
+      @if ( $wishlist-mobile-break != null ) {
+        @include media-breakpoint-up($wishlist-mobile-break) {
+          max-width: #{getMediaBreakpointUp($wishlist-modal-max-width)};
+        }
+      } @else {
+        @extend %modal-inner-width-#{$wishlist-modal-max-width};
+      }
 
 
       .dropdown-menu-content {

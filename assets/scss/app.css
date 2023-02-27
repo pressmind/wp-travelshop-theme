@@ -11243,9 +11243,6 @@ form.form-string-search.input-group {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-wishlist * {
       pointer-events: none; } }
-@media (min-width: 576px) {
-  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
-    max-width: 576px; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter, .dropdown-menu.dropdown-menu-wishlist {
     padding: 0;
@@ -12099,6 +12096,9 @@ form.form-string-search.input-group {
     margin-top: .75rem;
     padding-top: .75rem;
     border-top: 1px solid rgba(0, 0, 0, 0.125); }
+@media (min-width: 576px) {
+  .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
+    max-width: 576px; } }
 
 header.header-main {
   background-color: #fff;
