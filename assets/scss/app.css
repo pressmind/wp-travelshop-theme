@@ -11247,34 +11247,34 @@ form.form-string-search.input-group {
     padding-left: 1.5rem; }
 
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check {
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check {
     gap: 0.5rem;
     font-size: 1.25rem;
     line-height: 1.5; }
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span {
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span {
       height: 1.5rem;
       max-width: 1.5rem;
       flex: 0 0 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
-      .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span svg {
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span svg {
         width: 1.125rem;
         height: 1.125rem;
         transform: translate(-0.5625rem, -0.5625rem); }
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level {
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level {
       width: 100%;
       height: 1.5rem;
       max-width: 1.5rem;
       flex: 0 0 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
-      .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg {
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
         width: 1.125rem;
         height: 1.125rem;
         transform: translate(-0.5625rem, -0.5625rem); }
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg {
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check button.toggle-second-level svg {
       transform: translate(-0.5625rem, -0.5625rem) scaleY(-1); }
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check .list-filter-second-level {
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
       margin-top: -0.25rem;
       padding-left: 2rem; } }
 .row.row-products:not(.is-slider) {
@@ -12433,6 +12433,8 @@ form.form-string-search.input-group {
   padding: 1.25rem; }
   .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
     display: none; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
+    margin-top: 0.25rem; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
     margin-top: 0.25rem; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box + .list-filter-box {
