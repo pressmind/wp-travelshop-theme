@@ -482,6 +482,16 @@ $icon-teaser-border-color: $card-border-color !default;
 $icon-teaser-spacer-y: $card-spacer-y !default;
 $icon-teaser-spacer-x: $card-spacer-x !default;
 
+
+/**
+ * Wishlist
+ * ----------------------------
+ * defines wishlist dropdown/modal/modal-fullscreen/apple-like behaviour
+ */
+$wishlist-desktop-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$wishlist-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
+$wishlist-mobile-view-type: 'modal-fullscreen' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+
 /**
  * Add to wishlist
  * ----------------------------

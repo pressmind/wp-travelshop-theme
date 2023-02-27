@@ -32,3 +32,47 @@
 @function pxToRem($pxValue) {
   @return ( strip-unit($pxValue) / 16rem );
 }
+
+/**
+ * Get next breakpoint
+ */
+@function getNextBreakpoint($breakpoint, $breakpoints: $grid-breakpoints) {
+
+  // if map is valid
+  @if type-of($breakpoints) == map {
+    // -- check if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+      // init index
+      $i: 0;
+      // key index
+      $key-index: false;
+
+      @each $breakpoint-key, $breakpoint-value in $breakpoints {
+        // update index
+        $i: $i + 1;
+
+        // if map key found, set key index
+        @if $breakpoint-key == $breakpoint {
+          $key-index: $i;
+        }
+
+        // if next index return next key
+        @if $i == $key-index + 1 {
+          @return $breakpoint-key;
+        }
+
+        // return breakpoint if breakpoint == length of breakpoints map
+        @if $i == length($breakpoints) {
+          @return $breakpoint;
+        }
+      }
+    }
+
+    @warn 'No valid key #{$breakpoint} in $breakpoints ( default: $grid-breakpoints )';
+    @return $breakpoint;
+  }
+
+  @warn 'Breakpoint map is not valid';
+  @return $breakpoint;
+
+}

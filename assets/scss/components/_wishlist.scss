@@ -147,4 +147,14 @@
       }
     }
   }
+
+  // -- manipulate views
+  @if ( $wishlist-desktop-modal == true ) {
+    @if ( $wishlist-mobile-break != null ) {
+      &:after {
+        content: '#{getNextBreakpoint($wishlist-mobile-break)}';
+      }
+    } @else {
+    }
+  }
 }

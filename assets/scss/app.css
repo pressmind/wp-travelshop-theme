@@ -10099,6 +10099,11 @@ html.force--consent.show--consent body {
  * Icon teaser
  */
 /**
+ * Wishlist
+ * ----------------------------
+ * defines wishlist dropdown/modal/modal-fullscreen/apple-like behaviour
+ */
+/**
  * Add to wishlist
  * ----------------------------
  * set colors on image / default
@@ -10114,6 +10119,9 @@ html.force--consent.show--consent body {
  */
 /**
  * Convert px to rem
+ */
+/**
+ * Get next breakpoint
  */
 /**
  * Mixin to generate font sizes with scss maps
@@ -11997,6 +12005,8 @@ form.form-string-search.input-group {
       margin-top: .75rem;
       padding-top: .75rem;
       border-top: 1px solid rgba(0, 0, 0, 0.125); }
+  .dropdown-menu.dropdown-menu-wishlist:after {
+    content: "md"; }
 
 header.header-main {
   background-color: #fff;
