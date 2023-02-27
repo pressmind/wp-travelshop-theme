@@ -11243,9 +11243,9 @@ form.form-string-search.input-group {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-wishlist * {
       pointer-events: none; } }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
-    max-width: 576px; } }
+    max-width: 768px; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
     padding: 0;
