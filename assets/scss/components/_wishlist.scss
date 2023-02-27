@@ -169,6 +169,7 @@
   // if $wishlist-mobile-break is defined
   // with bootstrap breakpoint.
 
+  // -- desktop modal view
   @if ( $wishlist-modal == true ) {
     $temp-wishlist-modal-string: '';
 
@@ -203,6 +204,120 @@
     // -- open state
     &.show {
       @extend %modal-open#{$temp-wishlist-modal-string};
+    }
+  }
+
+  // -- mobile friendly views
+  @if ( $wishlist-mobile-break != null ) {
+
+    // -- modal view
+    @if ( $wishlist-mobile-view-type == 'modal' or $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+      @extend %modal-wrapper-down-#{$wishlist-mobile-break};
+
+      @if ( $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+        @extend %modal-wrapper-fullscreen-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-inner {
+        @extend %modal-inner-down-#{$wishlist-mobile-break};
+
+
+        @if ( $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-inner-fullscreen-down-#{$wishlist-mobile-break};
+        }
+
+        .dropdown-menu-content {
+          @extend %modal-content-down-#{$wishlist-mobile-break};
+
+          @if ( $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+            @extend %modal-content-fullscreen-down-#{$wishlist-mobile-break};
+          }
+        }
+      }
+
+      .dropdown-menu-header {
+        @extend %modal-header-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-body {
+        @extend %modal-body-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-footer {
+        @extend %modal-footer-down-#{$wishlist-mobile-break};
+      }
+
+      // -- open state
+      &.show {
+        @extend %modal-open-down-#{$wishlist-mobile-break};
+      }
+    }
+
+
+
+    // -- apple-like view
+    @if ( $wishlist-mobile-view-type == 'apple-like' ) {
+      @extend %apple-like-wrapper-down-#{$wishlist-mobile-break};
+
+      .dropdown-menu-content {
+        @extend %apple-like-content-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-header {
+        @extend %apple-like-header-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-body {
+        @extend %apple-like-body-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-footer {
+        margin-top: 0;
+        @extend %apple-like-footer-down-#{$wishlist-mobile-break};
+      }
+
+      // -- open state
+      &.show {
+        @extend %apple-like-open-down-#{$wishlist-mobile-break};
+
+        .dropdown-menu-content {
+          @extend %apple-like-content-open-down-#{$wishlist-mobile-break};
+        }
+      }
+
+    }
+
+    // -- offcanvas view
+    @if ( $wishlist-mobile-view-type == 'offcanvas' ) {
+      @extend %offcanvas-wrapper-down-#{$wishlist-mobile-break};
+
+      .dropdown-menu-content {
+        @extend %offcanvas-content-down-#{$wishlist-mobile-break};
+        @extend %offcanvas-direction-#{$category-dropdown-offcanvas-direction}-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-header {
+        @extend %offcanvas-header-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-body {
+        @extend %offcanvas-body-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-footer {
+        margin-top: 0;
+        @extend %offcanvas-footer-down-#{$wishlist-mobile-break};
+      }
+
+      // -- open state
+      &.show {
+        @extend %offcanvas-open-down-#{$wishlist-mobile-break};
+
+        .dropdown-menu-content {
+          @extend %offcanvas-content-open-down-#{$wishlist-mobile-break};
+        }
+      }
+
     }
   }
 }
