@@ -3,22 +3,30 @@
  * + handling of "view-type"
  */
 
+@include placeholder('wishlist-dropdown-manipulation') {
+  left: auto !important;
+  right: ($grid-gutter-width / 6) !important;
+  top: 100% !important;
+  transform: none !important;
+
+  // -- set widht/min-width for better optic
+  width: 100%;
+  min-width: 20rem;
+  padding: 1rem; // default padding
+
+  @include get-custom-breakpoint($header-reduce-paddings) {
+    right: ($grid-gutter-width / 2) !important;
+  }
+}
+
 .dropdown-menu.dropdown-menu-wishlist {
 
   // -- make wishlsit dropdown right aligned
   @if ( $wishlist-modal != true ) {
-    left: auto !important;
-    right: ($grid-gutter-width / 6) !important;
-    top: 100% !important;
-    transform: none !important;
-
-    // -- set widht/min-width for better optic
-    width: 100%;
-    min-width: 20rem;
-    padding: 1rem; // default padding
-
-    @include get-custom-breakpoint($header-reduce-paddings) {
-      right: ($grid-gutter-width / 2) !important;
+    @extend  %wishlist-dropdown-manipulation;
+  } @else {
+    @if ( $wishlist-mobile-break != null ) {
+      @extend %wishlist-dropdown-manipulation-up-#{getNextBreakpoint($wishlist-mobile-break)};
     }
   }
 
