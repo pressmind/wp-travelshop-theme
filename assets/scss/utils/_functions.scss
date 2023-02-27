@@ -7,6 +7,14 @@
 
   @return $max;
 }
+/**
+ * Get min breakpoint breakpoint
+ */
+@function getMediaBreakpointUp($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
 
 /**
  * Strip unit

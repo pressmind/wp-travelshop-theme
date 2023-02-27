@@ -129,6 +129,19 @@
   }
 }
 
+%modal-wrapper-desktop {
+  @media ( min-width: getMediaBreakpointUp(sm) ) {
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+  }
+}
+
+%modal-inner-desktop {
+  @media ( min-width: getMediaBreakpointUp(sm) ) {
+    max-width: #{getMediaBreakpointUp(sm)};
+  }
+}
+
 @include placeholder('modal-wrapper-fullscreen') {
   padding: 0;
   align-items: unset;
