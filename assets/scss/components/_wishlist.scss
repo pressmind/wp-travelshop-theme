@@ -148,13 +148,63 @@
     }
   }
 
-  // -- manipulate views
-  @if ( $wishlist-desktop-modal == true ) {
+  // Manipulate views
+  // -------------------------
+  // manipulation of wishlist view.
+  // mobile view can be overwritten by
+  // $wishlist-mobile-view-type
+  // if $wishlist-mobile-break is defined
+  // with bootstrap breakpoint.
+
+  @if ( $wishlist-modal == true ) {
+    $temp-wishlist-modal-string: 'hi';
+
     @if ( $wishlist-mobile-break != null ) {
-      &:after {
-        content: '#{getNextBreakpoint($wishlist-mobile-break)}';
-      }
-    } @else {
+      $temp-wishlist-modal-string: '-up-#{getNextBreakpoint($wishlist-mobile-break)}';
+    }
+
+    &:after {
+      content: '#{getNextBreakpoint($temp-wishlist-modal-string)}';
     }
   }
 }
+//
+//@extend %modal-wrapper-down-#{$category-dropdown-mobile-break};
+//
+//@if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+//  @extend %modal-wrapper-fullscreen-down-#{$category-dropdown-mobile-break};
+//}
+//
+//.dropdown-menu-inner {
+//  @extend %modal-inner-down-#{$category-dropdown-mobile-break};
+//
+//
+//  @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+//    @extend %modal-inner-fullscreen-down-#{$category-dropdown-mobile-break};
+//  }
+//
+//  .dropdown-menu-content {
+//    @extend %modal-content-down-#{$category-dropdown-mobile-break};
+//
+//    @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+//      @extend %modal-content-fullscreen-down-#{$category-dropdown-mobile-break};
+//    }
+//  }
+//}
+//
+//.dropdown-menu-header {
+//  @extend %modal-header-down-#{$category-dropdown-mobile-break};
+//}
+//
+//.category-tree-field-items {
+//  @extend %modal-body-down-#{$category-dropdown-mobile-break};
+//}
+//
+//.dropdown-menu-footer {
+//  @extend %modal-footer-down-#{$category-dropdown-mobile-break};
+//}
+//
+//// -- open state
+//&.show {
+//  @extend %modal-open-down-#{$category-dropdown-mobile-break};
+//}

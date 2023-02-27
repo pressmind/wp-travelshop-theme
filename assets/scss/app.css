@@ -12006,7 +12006,7 @@ form.form-string-search.input-group {
       padding-top: .75rem;
       border-top: 1px solid rgba(0, 0, 0, 0.125); }
   .dropdown-menu.dropdown-menu-wishlist:after {
-    content: "md"; }
+    content: "-up-md"; }
 
 header.header-main {
   background-color: #fff;
