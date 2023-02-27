@@ -170,7 +170,7 @@
   // with bootstrap breakpoint.
 
   @if ( $wishlist-modal == true ) {
-    $temp-wishlist-modal-string: 'hi';
+    $temp-wishlist-modal-string: '';
 
     @if ( $wishlist-mobile-break != null ) {
       $temp-wishlist-modal-string: '-up-#{getNextBreakpoint($wishlist-mobile-break)}';
