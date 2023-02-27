@@ -11145,9 +11145,9 @@ form.form-string-search.input-group {
     top: 0; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-content {
-    right: 0;
-    left: auto;
-    transform: translateX(20rem); } }
+    left: 0;
+    right: auto;
+    transform: translateX(-20rem); } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-wishlist.show .dropdown-menu-content {
     transform: translateY(0);
