@@ -12096,7 +12096,7 @@ form.form-string-search.input-group {
     margin-top: .75rem;
     padding-top: .75rem;
     border-top: 1px solid rgba(0, 0, 0, 0.125); }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
     max-width: 576px; } }
 

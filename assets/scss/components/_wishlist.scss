@@ -189,7 +189,7 @@
       @extend %modal-inner#{$temp-wishlist-modal-string};
 
       @if ( $wishlist-mobile-break != null ) {
-        @include media-breakpoint-up($wishlist-mobile-break) {
+        @include media-breakpoint-up(getNextBreakpoint($wishlist-mobile-break)) {
           max-width: #{getMediaBreakpointUp($wishlist-modal-max-width)};
         }
       } @else {
