@@ -163,48 +163,32 @@
       $temp-wishlist-modal-string: '-up-#{getNextBreakpoint($wishlist-mobile-break)}';
     }
 
-    &:after {
-      content: '#{getNextBreakpoint($temp-wishlist-modal-string)}';
+    @extend %modal-wrapper#{$temp-wishlist-modal-string};
+
+    .dropdown-menu-inner {
+      @extend %modal-inner#{$temp-wishlist-modal-string};
+
+
+      .dropdown-menu-content {
+        @extend %modal-content#{$temp-wishlist-modal-string};
+      }
+    }
+
+    .dropdown-menu-header {
+      @extend %modal-header#{$temp-wishlist-modal-string};
+    }
+
+    .dropdown-menu-body {
+      @extend %modal-body#{$temp-wishlist-modal-string};
+    }
+
+    .dropdown-menu-footer {
+      @extend %modal-footer#{$temp-wishlist-modal-string};
+    }
+
+    // -- open state
+    &.show {
+      @extend %modal-open#{$temp-wishlist-modal-string};
     }
   }
 }
-//
-//@extend %modal-wrapper-down-#{$category-dropdown-mobile-break};
-//
-//@if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-//  @extend %modal-wrapper-fullscreen-down-#{$category-dropdown-mobile-break};
-//}
-//
-//.dropdown-menu-inner {
-//  @extend %modal-inner-down-#{$category-dropdown-mobile-break};
-//
-//
-//  @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-//    @extend %modal-inner-fullscreen-down-#{$category-dropdown-mobile-break};
-//  }
-//
-//  .dropdown-menu-content {
-//    @extend %modal-content-down-#{$category-dropdown-mobile-break};
-//
-//    @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-//      @extend %modal-content-fullscreen-down-#{$category-dropdown-mobile-break};
-//    }
-//  }
-//}
-//
-//.dropdown-menu-header {
-//  @extend %modal-header-down-#{$category-dropdown-mobile-break};
-//}
-//
-//.category-tree-field-items {
-//  @extend %modal-body-down-#{$category-dropdown-mobile-break};
-//}
-//
-//.dropdown-menu-footer {
-//  @extend %modal-footer-down-#{$category-dropdown-mobile-break};
-//}
-//
-//// -- open state
-//&.show {
-//  @extend %modal-open-down-#{$category-dropdown-mobile-break};
-//}
