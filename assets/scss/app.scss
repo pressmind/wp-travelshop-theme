@@ -1,3 +1,5 @@
+@import "themes/theme-ananas/abstracts/variables";
+
 // -- vendors
 // -- Load vendors first, cuz we need those vendors varialbes/settings/mixins for abstracts
 @import "vendors/bootstrap/bootstrap";
@@ -10,7 +12,6 @@
 
 // -- abstracts
 @import "abstracts/variables";
-@import "themes/theme-ananas/abstracts/variables";
 
 // -- utls
 @import "utils/variables";
