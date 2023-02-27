@@ -11187,7 +11187,7 @@ form.form-string-search.input-group {
     border-radius: 0;
     background-color: #fff;
     top: 0.75rem;
-    transform: translateY(-0.75rem);
+    transform: translateY(-0.5rem);
     border: 1px solid #adb5bd;
     transition: background-color .3s, border-color .3s; }
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span svg {
@@ -11224,7 +11224,7 @@ form.form-string-search.input-group {
     flex: 0 0 1rem;
     position: relative;
     top: 0.75rem;
-    transform: translateY(-0.75rem); }
+    transform: translateY(-0.5rem); }
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
       width: 0.875rem;
       height: 0.875rem;
