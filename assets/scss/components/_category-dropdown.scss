@@ -25,6 +25,50 @@
     white-space: nowrap;
   }
 
+  // -- desktop modal view
+  @if ( $category-dropdown-modal == true ) {
+    $temp-category-dropdown-modal-string: '';
+
+    @if ( $category-dropdown-mobile-break != null ) {
+      $temp-category-dropdown-modal-string: '-up-#{getNextBreakpoint($category-dropdown-mobile-break)}';
+    }
+
+    @extend %modal-wrapper#{$temp-category-dropdown-modal-string};
+
+    .dropdown-menu-inner {
+      @extend %modal-inner#{$temp-category-dropdown-modal-string};
+
+      @if ( $category-dropdown-mobile-break != null ) {
+        @include media-breakpoint-up(getNextBreakpoint($category-dropdown-mobile-break)) {
+          max-width: #{getMediaBreakpointUp($category-dropdown-modal-max-width)};
+        }
+      } @else {
+        @extend %modal-inner-width-#{$category-dropdown-modal-max-width};
+      }
+
+
+      .dropdown-menu-content {
+        @extend %modal-content#{$temp-category-dropdown-modal-string};
+      }
+    }
+
+    .dropdown-menu-header {
+      @extend %modal-header#{$temp-category-dropdown-modal-string};
+    }
+
+    .category-tree-field-items {
+      @extend %modal-body#{$temp-category-dropdown-modal-string};
+    }
+
+    .dropdown-menu-footer {
+      @extend %modal-footer#{$temp-category-dropdown-modal-string};
+    }
+
+    // -- open state
+    &.show {
+      @extend %modal-open#{$temp-category-dropdown-modal-string};
+    }
+  }
 
   // -- mobile friendly views
   @if ( $category-dropdown-mobile-break != null ) {
