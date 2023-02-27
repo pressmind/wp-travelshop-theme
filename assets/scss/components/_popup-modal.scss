@@ -129,16 +129,11 @@
   }
 }
 
-%modal-wrapper-desktop {
-  @media ( min-width: getMediaBreakpointUp(sm) ) {
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
-  }
-}
-
-%modal-inner-desktop {
-  @media ( min-width: getMediaBreakpointUp(sm) ) {
-    max-width: #{getMediaBreakpointUp(sm)};
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+  @include media-breakpoint-up($breakpoint-key) {
+    %modal-inner-width-#{$breakpoint-key} {
+      max-width: #{getMediaBreakpointUp($breakpoint-key)};
+    }
   }
 }
 
