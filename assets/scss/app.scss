@@ -10,9 +10,11 @@
 
 // -- abstracts
 @import "abstracts/variables";
+@import "themes/theme-ananas/abstracts/variables";
 
 // -- utls
 @import "utils/variables";
+@import "themes/theme-ananas/utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
 
@@ -78,7 +80,7 @@
 
 // -- themes
 // this just an example for you're theme starting point
-// @import "pages/themes/theme-ananas";
+@import "themes/theme-ananas/ananas";
 
 
 // -- manipulation admin bar
