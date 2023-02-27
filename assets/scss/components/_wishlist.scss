@@ -23,12 +23,14 @@
 
   // -- make wishlsit dropdown right aligned
   @if ( $wishlist-modal != true ) {
-    @if ( $wishlist-mobile-break != null ) {
+    @if ( $wishlist-mobile-break == null ) {
       @extend %wishlist-dropdown-manipulation;
+    } @else {
+      @extend %wishlist-dropdown-manipulation-up-#{getNextBreakpoint($wishlist-mobile-break)};
     }
   } @else {
     @if ( $wishlist-mobile-break != null ) {
-      @extend %wishlist-dropdown-manipulation-up-#{getNextBreakpoint($wishlist-mobile-break)};
+      @extend %wishlist-dropdown-manipulation-down-#{$wishlist-mobile-break};
     }
   }
 

@@ -12024,7 +12024,7 @@ form.form-string-search.input-group {
  * File deifnes style of wishlist dropdown and the items inside.
  * + handling of "view-type"
  */
-@media (min-width: 768px) {
+@media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-wishlist {
     left: auto !important;
     right: 5px !important;
@@ -12033,7 +12033,7 @@ form.form-string-search.input-group {
     width: 100%;
     min-width: 20rem;
     padding: 1rem; } }
-  @media (min-width: 768px) and (min-width: 1200px) {
+  @media (max-width: 767.98px) and (min-width: 1200px) {
     .dropdown-menu.dropdown-menu-wishlist {
       right: 15px !important; } }
 
