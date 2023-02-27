@@ -18,6 +18,7 @@
         margin-top: $custom-checkbox-spacer;
       }
 
+      // -- behaviour to show big checkboxes, by view type
       @if ( $category-dropdown-modal == true ) {
         @if ( $category-dropdown-mobile-break != null ) {
           @extend %custom-checkbox-large-up-#{getNextBreakpoint($category-dropdown-mobile-break)};
