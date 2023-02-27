@@ -12018,92 +12018,81 @@ form.form-string-search.input-group {
  * File deifnes style of wishlist dropdown and the items inside.
  * + handling of "view-type"
  */
-.dropdown-menu.dropdown-menu-wishlist {
-  left: auto !important;
-  right: 5px !important;
-  top: 100% !important;
-  transform: none !important;
-  width: 100%;
-  min-width: 20rem;
-  padding: 1rem; }
-  @media (min-width: 1200px) {
-    .dropdown-menu.dropdown-menu-wishlist {
-      right: 15px !important; } }
-  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
-    display: flex;
-    flex-direction: row;
-    gap: .75rem; }
-    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
-      position: relative;
-      flex: 0 0 20%;
-      width: 100%;
-      max-width: 20%; }
-      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a {
-        border-radius: 0.25rem;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: block;
-        position: relative; }
-        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a:before {
-          display: block;
-          content: "";
-          width: 100%;
-          padding-top: 100%; }
-    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      flex: 1;
+.dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item {
+  display: flex;
+  flex-direction: row;
+  gap: .75rem; }
+  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image {
+    position: relative;
+    flex: 0 0 20%;
+    width: 100%;
+    max-width: 20%; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a {
+      border-radius: 0.25rem;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
       position: relative; }
-      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist {
-        color: #434b53;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        line-height: 0;
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: 100%; }
+  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex: 1;
+    position: relative; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist {
+      color: #434b53;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      line-height: 0;
+      width: 1.125rem;
+      height: 1.125rem;
+      transition: color .3s;
+      cursor: pointer; }
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist > svg {
+        pointer-events: none;
         width: 1.125rem;
-        height: 1.125rem;
-        transition: color .3s;
-        cursor: pointer; }
-        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist > svg {
-          pointer-events: none;
-          width: 1.125rem;
-          height: 1.125rem; }
-        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist:hover {
-          color: #dc3545; }
-      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name {
-        font-size: 1rem;
-        font-weight: 500;
-        margin: 0 0 .5rem 0;
-        line-height: 1.2;
-        display: block; }
-        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a {
-          color: inherit;
-          text-decoration: none;
-          transition: color .3s; }
-          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
-            text-decoration: none; }
-          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
-            color: #007bff; }
-          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus:hover {
-            color: #007bff; }
-          .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active {
-            text-decoration: underline; }
-    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price {
-      color: #212529;
-      line-height: 1; }
-      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price > a {
+        height: 1.125rem; }
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist:hover {
+        color: #dc3545; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0 0 .5rem 0;
+      line-height: 1.2;
+      display: block; }
+      .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a {
         color: inherit;
-        text-decoration: none; }
-    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
-      margin-top: .75rem;
-      padding-top: .75rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.125); }
+        text-decoration: none;
+        transition: color .3s; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
+          text-decoration: none; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
+          color: #007bff; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus:hover {
+          color: #007bff; }
+        .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active {
+          text-decoration: underline; }
+  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price {
+    color: #212529;
+    line-height: 1; }
+    .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .price > a {
+      color: inherit;
+      text-decoration: none; }
+  .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item + .wishlist-item {
+    margin-top: .75rem;
+    padding-top: .75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.125); }
 
 header.header-main {
   background-color: #fff;
