@@ -17,6 +17,34 @@
       + .form-check {
         margin-top: $custom-checkbox-spacer;
       }
+
+      @if ( $category-dropdown-modal == true ) {
+        @if ( $category-dropdown-mobile-break != null ) {
+          @extend %custom-checkbox-large-up-#{getNextBreakpoint($category-dropdown-mobile-break)};
+
+          @include media-breakpoint-up(getNextBreakpoint($category-dropdown-mobile-break)) {
+            + .form-check {
+              margin-top: $custom-checkbox-large-spacer;
+            }
+          }
+        } @else {
+          @extend %custom-checkbox-large;
+
+          + .form-check {
+            margin-top: $custom-checkbox-large-spacer;
+          }
+        }
+      }
+
+      @if ( $category-dropdown-mobile-break != null ) {
+        @extend %custom-checkbox-large-down-#{$category-dropdown-mobile-break};
+
+        @include media-breakpoint-down($category-dropdown-mobile-break) {
+          + .form-check {
+            margin-top: $custom-checkbox-large-spacer;
+          }
+        }
+      }
     }
   }
 

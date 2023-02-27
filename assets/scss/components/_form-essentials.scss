@@ -121,6 +121,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   padding-left: 0;
 
   gap: $custom-checkbox-gutter;
+  font-size: $custom-checkbox-font-size;
+  line-height: $custom-checkbox-line-height;
 
   // clickable element!
   cursor: pointer;
@@ -153,7 +155,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
-    top: ( ( ($font-size-base * $line-height-base) - $font-size-base ) / 2 );
+    top: ( ( ($custom-checkbox-font-size * $custom-checkbox-line-height) - $custom-checkbox-font-size ) / 2 );
 
     @if ( $custom-checkbox-input-border-width != 0 ) {
       border: $custom-checkbox-input-border-width solid $custom-checkbox-input-border-color;
@@ -223,7 +225,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
       // offset top to make it center with first line
       // little calculation based on font size base and lineheight
-      top: ( ( ($font-size-base * $line-height-base) - $font-size-base ) / 2 );
+      top: ( ( ($custom-checkbox-font-size * $custom-checkbox-line-height) - $custom-checkbox-font-size ) / 2 );
 
       svg {
         width: $custom-checkbox-input-icon-size;
@@ -269,5 +271,67 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     // padding left, icon input size + gutter
     padding-left: ( $custom-checkbox-input-size + $custom-checkbox-gutter );
+  }
+}
+
+@include placeholder('custom-checkbox-large') {
+  gap: $custom-checkbox-large-gutter;
+  font-size: $custom-checkbox-large-font-size;
+  line-height: $custom-checkbox-large-line-height;
+
+  // custom input
+  > span {
+    height: $custom-checkbox-large-input-size;
+    max-width: $custom-checkbox-large-input-size;
+    flex: 0 0 $custom-checkbox-large-input-size;
+
+    // offset top to make it center with first line
+    // little calculation based on font size base and lineheight
+    top: ( ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) - $custom-checkbox-large-font-size ) / 2 );
+
+    svg {
+      width: $custom-checkbox-large-input-icon-size;
+      height: $custom-checkbox-large-input-icon-size;
+      transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2));
+    }
+  }
+
+  // additional if second level exists. toggle button
+
+  &.has-second-level {
+    // uses definitions of input check. to make it even in styling / sizes
+    button.toggle-second-level {
+      width: 100%;
+      height: $custom-checkbox-large-input-size;
+      max-width: $custom-checkbox-large-input-size;
+      flex: 0 0 $custom-checkbox-large-input-size;
+
+      top: ( ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) - $custom-checkbox-large-font-size ) / 2 );
+
+      svg {
+        width: $custom-checkbox-large-input-icon-size;
+        height: $custom-checkbox-large-input-icon-size;
+        transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2));
+      }
+    }
+
+
+    // -- show if open state
+    //    and icon state if opened
+    &.is--open {
+      button.toggle-second-level {
+        svg {
+          transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2)) scaleY(-1);
+        }
+      }
+    }
+  }
+
+  // second level definition
+  .list-filter-second-level {
+    margin-top: ( $custom-checkbox-large-spacer - $custom-checkbox-large-gutter );
+
+    // padding left, icon input size + gutter
+    padding-left: ( $custom-checkbox-large-input-size + $custom-checkbox-large-gutter );
   }
 }

@@ -188,6 +188,18 @@ $custom-checkbox-input-border-width: $custom-control-indicator-border-width !def
 $custom-checkbox-input-border-color: $custom-control-indicator-border-color !default;
 $custom-checkbox-input-icon-color: $white !default;
 
+$custom-checkbox-font-size: $font-size-base !default;
+$custom-checkbox-line-height: $line-height-base !default;
+
+// -- big variant
+$custom-checkbox-large-spacer: $custom-checkbox-spacer !default;
+$custom-checkbox-large-gutter: $custom-checkbox-gutter !default;
+$custom-checkbox-large-input-size: $font-size-xl !default;
+$custom-checkbox-large-input-icon-size: $font-size-base !default;
+$custom-checkbox-large-font-size: $font-size-lg !default;
+$custom-checkbox-large-line-height: $custom-checkbox-line-height !default;
+
+// -- states
 $custom-checkbox-input-hover-border-color: $primary !default;
 $custom-checkbox-input-hover-bg: $custom-control-indicator-bg !default;
 $custom-checkbox-input-hover-icon-color: $white !default;
