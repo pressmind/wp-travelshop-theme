@@ -299,7 +299,7 @@
 
       .dropdown-menu-content {
         @extend %offcanvas-content-down-#{$wishlist-mobile-break};
-        @extend %offcanvas-direction-#{$category-dropdown-offcanvas-direction}-down-#{$wishlist-mobile-break};
+        @extend %offcanvas-direction-#{$wishlistoffcanvas-direction}-down-#{$wishlist-mobile-break};
       }
 
       .dropdown-menu-header {

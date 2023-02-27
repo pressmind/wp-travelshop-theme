@@ -492,6 +492,7 @@ $wishlist-modal: true !default; // sets wishlist as modal in desktop - if breakp
 $wishlist-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
 $wishlist-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
 $wishlist-mobile-view-type: 'modal-fullscreen' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$wishlistoffcanvas-direction: 'left' !default; // direction of offcanvs, u can use 'left' and 'right'
 
 /**
  * Add to wishlist
