@@ -488,7 +488,7 @@ $icon-teaser-spacer-x: $card-spacer-x !default;
  * ----------------------------
  * defines wishlist dropdown/modal/modal-fullscreen/apple-like behaviour
  */
-$wishlist-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$wishlist-modal: false !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
 $wishlist-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
 $wishlist-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
 $wishlist-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
