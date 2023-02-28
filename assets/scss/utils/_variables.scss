@@ -86,13 +86,13 @@ $footer-use-default: true !default;
 $footer-use-trust: true !default;
 
 $footer-trust-item-icon-bg: $body-bg-highlight !default;
-$footer-trust-item-color: $body-color-light !default;
+$footer-trust-item-color: $body-color !default;
 $footer-trust-item-icon-max-widths: (
       null: 2.5rem,
       lg: 6rem
 ) !default;
 $footer-trust-item-icon-border-radius: 50% !default;
-$footer-trust-item-icon-color: $body-color !default;
+$footer-trust-item-icon-color: $body-color-light !default;
 $footer-trust-item-icon-paddings: (
         null: .25rem,
         lg: 1rem

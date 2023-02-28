@@ -31,7 +31,9 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                 <div class="col-12">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#shield-check"></use></svg>
+                            <div class="icon-holder">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#shield-check"></use></svg>
+                            </div>
                         </div>
                         <div class="trust-item--title">
                             SSL-Schutz
@@ -41,7 +43,9 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
+                            <div class="icon-holder">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#percent"></use></svg>
+                            </div>
                         </div>
                         <div class="trust-item--title">
                             Bester Preis
@@ -51,7 +55,9 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
+                            <div class="icon-holder">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#credit-card"></use></svg>
+                            </div>
                         </div>
                         <div class="trust-item--title">
                             Sichere Zahlung
@@ -61,8 +67,9 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
-
+                            <div class="icon-holder">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
+                            </div>
                         </div>
                         <div class="trust-item--title">
                             Reise-Infos
