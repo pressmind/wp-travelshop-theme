@@ -13053,14 +13053,17 @@ footer.footer-main {
   background-color: #e9ecef;
   color: #212529;
   line-height: 1.5;
-  font-size: 0.875rem;
-  padding-bottom: 0.5rem; }
+  font-size: 0.875rem; }
   @media (min-width: 992px) {
     footer.footer-main {
       font-size: 1rem; } }
-  @media (min-width: 992px) {
-    footer.footer-main {
-      padding-bottom: 1rem; } }
+  footer.footer-main p {
+    margin: 0; }
+    footer.footer-main p + p {
+      padding-top: 0.5rem; }
+      @media (min-width: 992px) {
+        footer.footer-main p + p {
+          padding-top: 1rem; } }
   footer.footer-main .footer-main--trust {
     padding-top: 1rem;
     background-color: #fff; }

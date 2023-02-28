@@ -103,7 +103,10 @@ $footer-headings-bottom-margins: (
         lg: 1rem
 ) !default;
 
-$footer-paragraph-bottom-paddings: $footer-headings-bottom-margins;
+$footer-paragraph-margins: (
+        null: .5rem,
+        lg: 1rem
+) !default;
 
 $footer-heading-color: $headings-color !default;
 

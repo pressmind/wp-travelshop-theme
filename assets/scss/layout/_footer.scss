@@ -7,7 +7,13 @@
     @include font-size-generator($footer-font-sizes);
 
     // -- different spacings for paragraphs
-    @include spacing-generator($footer-paragraph-bottom-paddings, 'bottom', 'margin');
+    p {
+      margin: 0;
+
+      + p {
+        @include spacing-generator($footer-paragraph-margins, 'top', 'margin');
+      }
+    }
 
     // -- footer trust items
     @if ( $footer-use-trust == true ) {
