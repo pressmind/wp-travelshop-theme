@@ -13081,8 +13081,15 @@ footer.footer-main {
           font-size: 1rem; } }
       footer.footer-main .footer-main--trust .trust-item .trust-item--icon {
         border-radius: 50%;
-        max-width: 2.5rem;
-        color: #212529; }
+        padding: 0.25rem;
+        color: #212529;
+        max-width: 2.5rem; }
+        @media (min-width: 992px) {
+          footer.footer-main .footer-main--trust .trust-item .trust-item--icon {
+            padding: 1rem; } }
+        @media (min-width: 992px) {
+          footer.footer-main .footer-main--trust .trust-item .trust-item--icon {
+            max-width: 6rem; } }
       footer.footer-main .footer-main--trust .trust-item .trust-item--title {
         margin: 1rem auto 0 auto; }
   footer.footer-main .footer-main--boxes {
