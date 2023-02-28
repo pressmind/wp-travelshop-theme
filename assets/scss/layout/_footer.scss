@@ -19,8 +19,29 @@
 
         .trust-item{
           @include spacing-generator($footer-paddings-y, 'bottom');
+          @include font-size-generator($footer-trust-item-font-sizes);
 
           // -- trust item settings
+          text-align: center;
+          color: $footer-trust-item-color;
+
+
+          .trust-item--icon {
+            @include border-radius($footer-trust-item-icon-border-radius);
+            @include spacing-generator($footer-trust-item-icon-max-width, 'around', 'padding');
+
+            max-width: $footer-trust-item-icon-max-width;
+            color: $footer-trust-item-icon-color;
+
+            @if ( $footer-trust-item-icon-bg == null ) {
+              background-color: $footer-trust-item-icon-bg;
+              padding-bottom: 0 !important;
+            }
+          }
+
+          .trust-item--title {
+            margin: 1rem auto 0 auto;
+          }
         }
       }
     }

@@ -28,7 +28,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
     <div class="footer-main--trust">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#shield-check"></use></svg>
