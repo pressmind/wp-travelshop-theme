@@ -122,8 +122,11 @@ $footer-meta-font-sizes: (
         null: $font-size-sm
 ) !default;
 
-$footer-nav-link-spacer: .5rem !default;
-$footer-meta-nav-link-spacer: $footer-nav-link-spacer !default;
+$footer-nav-link-spacers: (
+        null: .25rem,
+        lg: .5rem
+) !default;
+$footer-meta-nav-link-spacer: .5rem !default;
 
 // -- trust footer
 $footer-trust-bg: #fff !default;

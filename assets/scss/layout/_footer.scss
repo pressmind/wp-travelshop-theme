@@ -39,13 +39,15 @@
 
       .h5 {
         color: $footer-heading-color;
+        margin-bottom: 0;
 
         @include spacing-generator($footer-headings-bottom-margins, 'bottom', 'padding');
       }
 
       // -- nav
       .nav.flex-column {
-        gap: $footer-nav-link-spacer;
+
+        @include spacing-generator($footer-nav-link-spacers, 'around', 'gap');
 
         a {
           color: $footer-nav-link-color;

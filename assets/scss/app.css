@@ -13086,12 +13086,16 @@ footer.footer-main {
         footer.footer-main .footer-main--boxes .col-footer-box {
           padding-bottom: 30px; } }
     footer.footer-main .footer-main--boxes .h5 {
+      margin-bottom: 0;
       padding-bottom: 0.5rem; }
       @media (min-width: 992px) {
         footer.footer-main .footer-main--boxes .h5 {
           padding-bottom: 1rem; } }
     footer.footer-main .footer-main--boxes .nav.flex-column {
-      gap: 0.5rem; }
+      padding: 0.25rem; }
+      @media (min-width: 992px) {
+        footer.footer-main .footer-main--boxes .nav.flex-column {
+          padding: 0.5rem; } }
       footer.footer-main .footer-main--boxes .nav.flex-column a {
         color: #212529;
         transition: color .3s;
