@@ -98,6 +98,24 @@ $footer-font-sizes: (
         lg: $font-size-base
 ) !default;
 
+$footer-heading-margin: 1rem !default;
+$footer-heading-color: $headings-color !default;
+
+$footer-nav-link-color: $body-color !default;
+$footer-nav-link-hover-color: $primary !default;
+$footer-nav-link-active-color: $footer-nav-link-hover-color !default;
+
+$footer-meta-nav-link-color: $body-color-light !default;
+$footer-meta-nav-link-hover-color: $body-color !default;
+$footer-meta-nav-link-active-color: $footer-meta-nav-link-hover-color !default;
+
+$footer-meta-font-sizes: (
+        null: $font-size-sm
+) !default;
+
+$footer-nav-link-spacer: .5rem !default;
+$footer-meta-nav-link-spacer: $footer-nav-link-spacer !default;
+
 // -- trust footer
 $footer-trust-bg: #fff !default;
 

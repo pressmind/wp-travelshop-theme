@@ -2,7 +2,6 @@
   footer.footer-main {
     background-color: $footer-bg;
     color: $footer-color;
-
     line-height: $footer-line-height;
 
     @include font-size-generator($footer-font-sizes);
@@ -28,11 +27,58 @@
       .col-footer-box {
         @include spacing-generator($footer-paddings-y, 'bottom');
       }
+
+      .h5 {
+        margin: 0 0 $footer-heading-margin 0;
+        color: $footer-heading-color;
+      }
+
+      // -- nav
+      .nav.flex-column {
+        gap: $footer-nav-link-spacer;
+
+        > a {
+          color: $footer-nav-link-color;
+          transition: color .3s;
+          text-decoration: none;
+
+          &:hover {
+            color: $footer-nav-link-hover-color;
+          }
+
+          &:active, &:hover {
+            color: $footer-nav-link-active-color;
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
     // -- footer meta
     .footer-main--meta {
       @include spacing-generator($footer-paddings-y, 'bottom');
+
+      // -- nav
+      .nav.flex-row {
+        gap: $footer-meta-nav-link-spacer;
+
+        @include font-size-generator($footer-meta-font-sizes);
+
+        > a {
+          color: $footer-meta-nav-link-color;
+          transition: color .3s;
+          text-decoration: none;
+
+          &:hover {
+            color: $footer-meta-nav-link-hover-color;
+          }
+
+          &:active, &:hover {
+            color: $footer-meta-nav-link-active-color;
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
   }
