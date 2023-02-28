@@ -6,6 +6,9 @@
 
     @include font-size-generator($footer-font-sizes);
 
+    // -- different spacings for paragraphs
+    @include spacing-generator($footer-paragraph-bottom-paddings, 'bottom', 'margin');
+
     // -- footer trust items
     @if ( $footer-use-trust == true ) {
       .footer-main--trust {
@@ -31,7 +34,7 @@
       .h5 {
         color: $footer-heading-color;
 
-        @include spacing-generator($footer-headings-bottom-margins, 'bottom', 'margin');
+        @include spacing-generator($footer-headings-bottom-margins, 'bottom', 'padding');
       }
 
       // -- nav

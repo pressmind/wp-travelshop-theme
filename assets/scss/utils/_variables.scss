@@ -103,6 +103,8 @@ $footer-headings-bottom-margins: (
         lg: 1rem
 ) !default;
 
+$footer-paragraph-bottom-paddings: $footer-headings-bottom-margins;
+
 $footer-heading-color: $headings-color !default;
 
 $footer-nav-link-color: $body-color !default;
