@@ -874,11 +874,11 @@ jQuery(function ($) {
 
                     // function to hide/show the clear-button
                     if (!allEmpty) {
-                        $(this).parent().parent().parent().parent().find('.dropdown-clear').show();
-                        $(this).parent().parent().parent().parent().find('.dropdown-icon').hide();
+                        $(this).parents('.dropdown').find('.dropdown-clear').show();
+                        $(this).parents('.dropdown').find('.dropdown-icon').hide();
                     } else {
-                        $(this).parent().parent().parent().parent().find('.dropdown-clear').hide();
-                        $(this).parent().parent().parent().parent().find('.dropdown-icon').show();
+                        $(this).parents('.dropdown').find('.dropdown-clear').hide();
+                        $(this).parents('.dropdown').find('.dropdown-icon').show();
                     }
 
                     if (that.prop('checked') === true) {
