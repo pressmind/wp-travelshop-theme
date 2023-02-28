@@ -6,15 +6,38 @@
   align-items: center;
   gap: .25rem;
 
+  color: $body-color;
+  transition: color .3s;
+
+  text-decoration: none;
+
   .icon {
     width: $font-size-lg;
     height: $font-size-lg;
     line-height: 0;
 
+    color: $primary;
+
     > svg {
       width: $font-size-lg;
       height: $font-size-lg;
     }
+  }
+
+  &:hover, &:focus, &:active {
+    color: $primary;
+
+    .icon {
+      color: $primary;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus, &:active {
+    text-decoration: underline;
   }
 }
 

@@ -11071,14 +11071,26 @@ hr + .content-block {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  gap: .25rem; }
+  gap: .25rem;
+  color: #212529;
+  transition: color .3s;
+  text-decoration: none; }
   .icon-link .icon {
     width: 1.125rem;
     height: 1.125rem;
-    line-height: 0; }
+    line-height: 0;
+    color: #c8102e; }
     .icon-link .icon > svg {
       width: 1.125rem;
       height: 1.125rem; }
+  .icon-link:hover, .icon-link:focus, .icon-link:active {
+    color: #c8102e; }
+    .icon-link:hover .icon, .icon-link:focus .icon, .icon-link:active .icon {
+      color: #c8102e; }
+  .icon-link:hover {
+    text-decoration: none; }
+  .icon-link:focus, .icon-link:active {
+    text-decoration: underline; }
 
 /**
  * in this section essentials for form types are defined
