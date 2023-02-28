@@ -68,7 +68,7 @@
           }
 
           .trust-item--title {
-            margin: 1rem auto 0 auto;
+            @include spacing-generator($footer-trust-item-title-margins, 'top', 'margin');
           }
         }
       }
