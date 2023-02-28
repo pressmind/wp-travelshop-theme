@@ -1,0 +1,23 @@
+%icon-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  align-items: center;
+  gap: .25rem;
+
+  .icon {
+    width: $font-size-lg;
+    height: $font-size-lg;
+    line-height: 0;
+
+    > svg {
+      width: $font-size-lg;
+      height: $font-size-lg;
+    }
+  }
+}
+
+.icon-link {
+  @extend %icon-link;
+}

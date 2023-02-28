@@ -11066,6 +11066,20 @@ hr + .content-block {
       padding-top: 30px;
       padding-bottom: 30px; } }
 
+.icon-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: .25rem; }
+  .icon-link .icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    line-height: 0; }
+    .icon-link .icon > svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+
 /**
  * in this section essentials for form types are defined
  * as placeholders. These are defined by variables + extended
