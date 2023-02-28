@@ -46,6 +46,7 @@
               background-color: $footer-trust-item-icon-bg;
             } @else {
               padding-bottom: 0 !important;
+              padding-top: 0 !important;
             }
 
             .icon-holder {

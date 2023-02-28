@@ -85,7 +85,7 @@ $h6-font-sizes: (
 $footer-use-default: true !default;
 $footer-use-trust: true !default;
 
-$footer-trust-item-icon-bg: transparent !default;
+$footer-trust-item-icon-bg: $body-bg-highlight !default;
 $footer-trust-item-color: $body-color !default;
 $footer-trust-item-icon-max-widths: (
       null: 2.5rem,
