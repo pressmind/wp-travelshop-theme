@@ -51,3 +51,29 @@ $btn-focus-width: 0;
 $badge-padding-x: .375rem;
 $badge-padding-y: .375rem;
 
+/**
+ * Grid & breakpoints
+ */
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1360px,
+        xxxl: 1560px,
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1300px,
+        xxxl: 1500px
+);
+

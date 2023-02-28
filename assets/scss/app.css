@@ -26,6 +26,9 @@
 /**
  * Badges
  */
+/**
+ * Grid & breakpoints
+ */
 @import url(vendors/pretty-dropdowns/prettydropdowns.css);
 @import url(vendors/lightbox2/lightbox.min.css);
 :root {
@@ -11358,6 +11361,9 @@ html.force--consent.show--consent body {
 /**
  * Badges
  */
+/**
+ * Grid & breakpoints
+ */
 /***
  ** Define own variables in this file
  ***/
@@ -13773,9 +13779,10 @@ footer.footer-main {
         border-radius: 50%;
         padding: 0.25rem;
         margin: 0 auto;
-        color: #434b53;
+        color: #c8102e;
         max-width: 2.5rem;
-        background-color: #e9ecef; }
+        padding-bottom: 0 !important;
+        padding-top: 0 !important; }
         @media (min-width: 992px) {
           footer.footer-main .footer-main--trust .trust-item .trust-item--icon {
             padding: 1rem; } }
