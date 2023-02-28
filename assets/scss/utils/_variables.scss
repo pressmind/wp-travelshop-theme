@@ -98,7 +98,11 @@ $footer-font-sizes: (
         lg: $font-size-base
 ) !default;
 
-$footer-heading-margin: 1rem !default;
+$footer-headings-bottom-margins: (
+  null: .5rem,
+        lg: 1rem
+) !default;
+
 $footer-heading-color: $headings-color !default;
 
 $footer-nav-link-color: $body-color !default;

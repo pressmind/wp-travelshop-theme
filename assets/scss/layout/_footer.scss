@@ -29,8 +29,9 @@
       }
 
       .h5 {
-        margin: 0 0 $footer-heading-margin 0;
         color: $footer-heading-color;
+
+        @include spacing-generator($footer-headings-bottom-margins, 'bottom', 'margin');
       }
 
       // -- nav
@@ -44,6 +45,7 @@
 
           &:hover {
             color: $footer-nav-link-hover-color;
+            text-decoration: none;
           }
 
           &:active, &:hover {
@@ -71,6 +73,7 @@
 
           &:hover {
             color: $footer-meta-nav-link-hover-color;
+            text-decoration: none;
           }
 
           &:active, &:hover {
