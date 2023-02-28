@@ -13058,12 +13058,10 @@ footer.footer-main {
     footer.footer-main {
       font-size: 1rem; } }
   footer.footer-main p {
-    margin: 0; }
-    footer.footer-main p + p {
-      padding-top: 0.5rem; }
-      @media (min-width: 992px) {
-        footer.footer-main p + p {
-          padding-top: 1rem; } }
+    padding-bottom: 0.5rem; }
+    @media (min-width: 992px) {
+      footer.footer-main p {
+        padding-bottom: 1rem; } }
   footer.footer-main .footer-main--trust {
     padding-top: 1rem;
     background-color: #fff; }

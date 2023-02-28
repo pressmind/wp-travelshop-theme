@@ -8,11 +8,7 @@
 
     // -- different spacings for paragraphs
     p {
-      margin: 0;
-
-      + p {
-        @include spacing-generator($footer-paragraph-margins, 'top', 'margin');
-      }
+      @include spacing-generator($footer-paragraph-margins, 'bottom', 'margin');
     }
 
     // -- footer trust items
