@@ -13082,8 +13082,10 @@ footer.footer-main {
       footer.footer-main .footer-main--trust .trust-item .trust-item--icon {
         border-radius: 50%;
         padding: 0.25rem;
+        margin: 0 auto;
         color: #434b53;
         max-width: 2.5rem;
+        border: 0.25rem solid #c8102e;
         background-color: #e9ecef; }
         @media (min-width: 992px) {
           footer.footer-main .footer-main--trust .trust-item .trust-item--icon {

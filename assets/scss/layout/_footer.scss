@@ -30,11 +30,18 @@
             @include border-radius($footer-trust-item-icon-border-radius);
             @include spacing-generator($footer-trust-item-icon-paddings, 'around', 'padding');
 
+            margin: 0 auto;
             color: $footer-trust-item-icon-color;
 
             // -- spacing generator with 'around' can be used for various attributes in responsive behaviour
             @include spacing-generator($footer-trust-item-icon-max-widths, 'around', 'max-width');
 
+            // border
+            @if ( $footer-trust-item-icon-border-width != 0 ) {
+              border: $footer-trust-item-icon-border-width solid $footer-trust-item-icon-border-color;
+            }
+
+            // bg
             @if ( $footer-trust-item-icon-bg != null ) {
               background-color: $footer-trust-item-icon-bg;
             } @else {

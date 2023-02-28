@@ -92,6 +92,8 @@ $footer-trust-item-icon-max-widths: (
       lg: 6rem
 ) !default;
 $footer-trust-item-icon-border-radius: 50% !default;
+$footer-trust-item-icon-border-width: .25rem !default;
+$footer-trust-item-icon-border-color: $primary;
 $footer-trust-item-icon-color: $body-color-light !default;
 $footer-trust-item-icon-paddings: (
         null: .25rem,
