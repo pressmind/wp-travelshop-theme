@@ -42,7 +42,7 @@
             }
 
             // bg
-            @if ( $footer-trust-item-icon-bg != null ) {
+            @if ( $footer-trust-item-icon-bg != transparent ) {
               background-color: $footer-trust-item-icon-bg;
             } @else {
               padding-bottom: 0 !important;
