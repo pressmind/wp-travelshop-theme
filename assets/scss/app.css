@@ -13781,8 +13781,8 @@ footer.footer-main {
         margin: 0 auto;
         color: #c8102e;
         max-width: 2.5rem;
-        padding-bottom: 0 !important;
-        padding-top: 0 !important; }
+        border: 2px solid #c8102e;
+        background-color: #fff; }
         @media (min-width: 992px) {
           footer.footer-main .footer-main--trust .trust-item .trust-item--icon {
             padding: 1rem; } }
