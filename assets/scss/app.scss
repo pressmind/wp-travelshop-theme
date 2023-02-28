@@ -1,4 +1,4 @@
-//@import "themes/theme-ananas/abstracts/variables";
+@import "themes/theme-ananas/abstracts/variables";
 
 // -- vendors
 // -- Load vendors first, cuz we need those vendors varialbes/settings/mixins for abstracts
@@ -15,7 +15,7 @@
 
 // -- utls
 @import "utils/variables";
-//@import "themes/theme-ananas/utils/variables";
+@import "themes/theme-ananas/utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
 
@@ -82,7 +82,7 @@
 
 // -- themes
 // this just an example for you're theme starting point
-//@import "themes/theme-ananas/ananas";
+@import "themes/theme-ananas/ananas";
 
 
 // -- manipulation admin bar
