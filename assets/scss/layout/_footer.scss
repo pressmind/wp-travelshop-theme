@@ -35,8 +35,9 @@
             // -- spacing generator with 'around' can be used for various attributes in responsive behaviour
             @include spacing-generator($footer-trust-item-icon-max-widths, 'around', 'max-width');
 
-            @if ( $footer-trust-item-icon-bg == null ) {
+            @if ( $footer-trust-item-icon-bg != null ) {
               background-color: $footer-trust-item-icon-bg;
+            } @else {
               padding-bottom: 0 !important;
             }
           }
