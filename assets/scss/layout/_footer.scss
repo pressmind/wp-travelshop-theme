@@ -104,7 +104,7 @@
             text-decoration: none;
           }
 
-          &:active, &:hover {
+          &:active, &:focus {
             color: $footer-nav-link-active-color;
             text-decoration: underline;
           }
@@ -132,7 +132,7 @@
             text-decoration: none;
           }
 
-          &:active, &:hover {
+          &:active, &:focus {
             color: $footer-meta-nav-link-active-color;
             text-decoration: underline;
           }

@@ -12447,7 +12447,7 @@ footer.footer-main {
         footer.footer-main .footer-main--boxes .nav.flex-column a:hover {
           color: #007bff;
           text-decoration: none; }
-        footer.footer-main .footer-main--boxes .nav.flex-column a:active, footer.footer-main .footer-main--boxes .nav.flex-column a:hover {
+        footer.footer-main .footer-main--boxes .nav.flex-column a:active, footer.footer-main .footer-main--boxes .nav.flex-column a:focus {
           color: #007bff;
           text-decoration: underline; }
   footer.footer-main .footer-main--meta {
@@ -12465,7 +12465,7 @@ footer.footer-main {
         footer.footer-main .footer-main--meta .nav.flex-row a:hover {
           color: #212529;
           text-decoration: none; }
-        footer.footer-main .footer-main--meta .nav.flex-row a:active, footer.footer-main .footer-main--meta .nav.flex-row a:hover {
+        footer.footer-main .footer-main--meta .nav.flex-row a:active, footer.footer-main .footer-main--meta .nav.flex-row a:focus {
           color: #212529;
           text-decoration: underline; }
 
