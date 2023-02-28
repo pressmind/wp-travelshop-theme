@@ -13082,13 +13082,13 @@ footer.footer-main {
       margin: 0 0 1rem 0; }
     footer.footer-main .footer-main--boxes .nav.flex-column {
       gap: 0.5rem; }
-      footer.footer-main .footer-main--boxes .nav.flex-column > a {
+      footer.footer-main .footer-main--boxes .nav.flex-column a {
         color: #212529;
         transition: color .3s;
         text-decoration: none; }
-        footer.footer-main .footer-main--boxes .nav.flex-column > a:hover {
+        footer.footer-main .footer-main--boxes .nav.flex-column a:hover {
           color: #c8102e; }
-        footer.footer-main .footer-main--boxes .nav.flex-column > a:active, footer.footer-main .footer-main--boxes .nav.flex-column > a:hover {
+        footer.footer-main .footer-main--boxes .nav.flex-column a:active, footer.footer-main .footer-main--boxes .nav.flex-column a:hover {
           color: #c8102e;
           text-decoration: underline; }
   footer.footer-main .footer-main--meta {
@@ -13099,13 +13099,13 @@ footer.footer-main {
     footer.footer-main .footer-main--meta .nav.flex-row {
       gap: 0.5rem;
       font-size: 0.875rem; }
-      footer.footer-main .footer-main--meta .nav.flex-row > a {
+      footer.footer-main .footer-main--meta .nav.flex-row a {
         color: #434b53;
         transition: color .3s;
         text-decoration: none; }
-        footer.footer-main .footer-main--meta .nav.flex-row > a:hover {
+        footer.footer-main .footer-main--meta .nav.flex-row a:hover {
           color: #212529; }
-        footer.footer-main .footer-main--meta .nav.flex-row > a:active, footer.footer-main .footer-main--meta .nav.flex-row > a:hover {
+        footer.footer-main .footer-main--meta .nav.flex-row a:active, footer.footer-main .footer-main--meta .nav.flex-row a:hover {
           color: #212529;
           text-decoration: underline; }
 

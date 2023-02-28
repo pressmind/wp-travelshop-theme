@@ -37,7 +37,7 @@
       .nav.flex-column {
         gap: $footer-nav-link-spacer;
 
-        > a {
+        a {
           color: $footer-nav-link-color;
           transition: color .3s;
           text-decoration: none;
@@ -64,7 +64,7 @@
 
         @include font-size-generator($footer-meta-font-sizes);
 
-        > a {
+        a {
           color: $footer-meta-nav-link-color;
           transition: color .3s;
           text-decoration: none;
