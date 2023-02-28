@@ -1,4 +1,4 @@
-@if ( $header-use-default ) {
+@if ( $header-use-default == true ) {
   header.header-main {
     background-color: $header-bg;
     color: $header-color;
