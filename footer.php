@@ -28,7 +28,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
     <div class="footer-main--trust">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <div class="icon-holder">
@@ -40,7 +40,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <div class="icon-holder">
@@ -52,7 +52,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <div class="icon-holder">
@@ -64,7 +64,7 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-3">
                     <div class="trust-item text-center">
                         <div class="trust-item--icon">
                             <div class="icon-holder">
