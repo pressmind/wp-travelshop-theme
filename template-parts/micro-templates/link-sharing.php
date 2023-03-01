@@ -4,13 +4,7 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 ?>
 <div class="share">
     <label class="btn btn-primary" style="display:inline-flex; align-items: center;" for="sharemodal">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-share" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <circle cx="6" cy="12" r="3" />
-            <circle cx="18" cy="6" r="3" />
-            <circle cx="18" cy="18" r="3" />
-            <line x1="8.7" y1="10.7" x2="15.3" y2="7.3" />
-            <line x1="8.7" y1="13.3" x2="15.3" y2="16.7" />
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share"></use></svg>
         </svg> <span style="margin-left:.5rem;">Teilen</span>
     </label>
     <input class="d-none" id="sharemodal" type="checkbox" />
