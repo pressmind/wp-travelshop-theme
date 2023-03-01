@@ -71,7 +71,7 @@
     // -- info items
     .share-copy-info {
       @include border-radius($border-radius);
-      padding: .25rem $badge-padding-x;
+      padding: $badge-padding-y $badge-padding-x;
 
       display: flex;
       flex-direction: row;

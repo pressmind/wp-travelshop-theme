@@ -67,7 +67,7 @@ jQuery(function ($) {
         // -- close modal after timeout when button clicked
         sharePage.find('.share-button:not(.share-button--copy)').on('click', function(e) {
             setTimeout(function() {
-                sharePage.removeClass('open');
+                sharePage.removeClass('is-open');
             }, 2500);
         });
 
@@ -85,7 +85,7 @@ jQuery(function ($) {
                 }, 1500);
 
                 setTimeout(function() {
-                    sharePage.removeClass('open');
+                    sharePage.removeClass('is-open');
                 }, 2500);
             }, function(err) {
                 sharePage.find('.share-copy-info--error').fadeIn(250);
