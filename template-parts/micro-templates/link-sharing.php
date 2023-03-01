@@ -9,6 +9,7 @@ if ( !isset ( $args['share_options'] ) ) {
         'text' => 'Ich empfehle die Reise',
         'buttons' => [
             'facebook' => true,
+            'facebook-messenger' => true,
             'twitter' => true,
             'whatsapp' => true,
             'telegram' => true,
@@ -46,6 +47,13 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#facebook-logo-fill"></use></svg>
 
                                 Facebook
+                            </a>
+                        <?php } ?>
+                        <?php if ( isset($args['share_options']['buttons']['facebook-messenger']) && $args['share_options']['buttons']['facebook-messenger'] ) { ?>
+                            <a href="" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#messenger-logo"></use></svg>
+
+                                Messenger
                             </a>
                         <?php } ?>
 
