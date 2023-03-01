@@ -100,7 +100,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                         <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
                             <div class="share-buttons-col">
                                 <a href="" title="Link kopieren" data-link="<?php echo $actual_link; ?>" class="share-button share-button--copy">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#copy"></use></svg>
                                     Link kopieren
                                 </a>
                             </div>
