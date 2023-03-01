@@ -12,6 +12,8 @@
       margin: -.5rem;
     }
 
+    position: relative;
+
     .share-buttons-col {
       width: 100%;
       padding: .25rem;
@@ -66,6 +68,41 @@
       }
     }
 
+    // -- info items
+    .share-copy-info {
+      @include border-radius($border-radius);
+      padding: $badge-padding-y $badge-padding-x;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      font-weight: $font-weight-bold;
+
+      z-index: 10;
+      pointer-events: none;
+
+      position:absolute;
+      bottom:0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      gap: .25rem;
+
+      color: #fff;
+
+      svg {
+        width: $font-size-base;
+        height: $font-size-base;
+      }
+
+      &--success {
+        background-color: $success;
+      }
+
+      &--error {
+        background-color: $danger;
+      }
+    }
   }
 
   // -- fallback as modal
