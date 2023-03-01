@@ -25,7 +25,7 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
 ?>
 
 <div class="page-share">
-    <a href="" title="<?php echo $share_title; ?>" class="btn btn-link page-share-toggler px-0" data-share-link="<?php echo $actual_link; ?>">
+    <a href="" title="<?php echo $share_title; ?>" class="btn btn-link btn-link-light page-share-toggler px-0" data-share-link="<?php echo $actual_link; ?>">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share-network"></use></svg>
         Teilen
     </a>

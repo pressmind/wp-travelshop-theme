@@ -24,6 +24,33 @@
     display: flex;
     justify-content: center;
   }
+
+  // -- change look & feel of btn-link
+  &.btn-link, &.btn-link-light {
+    color: $body-color;
+    transition: color .3s;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active, &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &.btn-link-light {
+    color: $body-color-light;
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+    }
+  }
 }
 
 .btn.booking-btn,
