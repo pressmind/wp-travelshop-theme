@@ -55,7 +55,7 @@ jQuery(function ($) {
         });
 
         // -- close mechanism for share modal
-        sharePage.find('close-share').on('click', function(e){
+        sharePage.find('.close-share').on('click', function(e){
             e.preventDefault();
 
             $(this).parents('.page-share').removeClass('is-open');
