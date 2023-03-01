@@ -26,3 +26,14 @@ hr + .content-block {
     padding-bottom: $grid-gutter-width;
   }
 }
+
+// -- rest container inside container
+.container .container,
+.container .container-fluid,
+.container-fluid .container-fluid,
+.container-fluid .container {
+  max-width: unset;
+  width: unset;
+  padding:0;
+  margin:0;
+}
