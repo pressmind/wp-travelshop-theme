@@ -84,29 +84,22 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                                 per E-Mail senden
                             </a>
                         <?php } ?>
-                    </div>
 
-                    <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
-                        <div class="share-copy">
-                            <div class="input-group input-group-copy">
-                                <input type="text" readonly class="form-control" value="<?php echo $actual_link; ?>">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" title="Link kopieren" type="button" id="share-page--copy">
 
-                                        <div class="icon">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#copy"></use></svg>
-                                        </div>
-                                    </button>
-                                </div>
+                        <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
+                            <a target="_blank" href="" title="Link kopieren" data-link="<?php echo $actual_link; ?>" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
+                                Link kopieren
+                            </a>
 
-                                <div class="share-copy-info">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
-                                    Der Link wurde kopiert
-                                </div>
+                            <div class="share-copy-info">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
+                                Link kopiert
                             </div>
+                        <?php } ?>
 
-                        </div>
-                    <?php } ?>
+
+                    </div>
                 </div>
             </div>
         </div>
