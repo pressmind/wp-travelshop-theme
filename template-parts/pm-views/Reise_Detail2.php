@@ -1,0 +1,490 @@
+<?php
+
+global $PMTravelShop;
+
+use Pressmind\HelperFunctions;
+use Pressmind\Search\CheapestPrice;
+use Pressmind\Travelshop\PriceHandler;
+use Pressmind\Travelshop\RouteHelper;
+use Pressmind\Travelshop\Template;
+
+/**
+ * @var array $data
+ */
+
+/**
+ * @var Pressmind\ORM\Object\MediaObject $mo
+ */
+$mo = $data['media_object'];
+
+/**
+ * @var Custom\MediaType\###CLASSNAME### $moc
+ */
+$moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
+
+
+$args = [];
+$args['pictures'] = [];
+foreach($moc->bilder_default as $item){
+    $args['pictures'][] = [
+        'caption' => $item->caption,
+        'copyright' => $item->copyright,
+        'url_detail' => $item->getUri('detail', null, 'base'),
+        'url_detail_gallery' => $item->getUri('detail_gallery', null, 'base'),
+        'url_thumbnail' => $item->getUri('detail_thumb', null, 'square'),
+    ];
+}
+
+
+$args['id_media_object'] = $mo->id;
+$args['media_object'] = $mo;
+$args['id_object_type'] = $mo->id_object_type;
+$args['booking_on_request'] = $mo->touristic_base->booking_on_request;
+$args['code'] = $mo->code;
+$args['name'] = $mo->name;
+$args['headline'] = strip_tags($moc->headline_default);
+$args['subline'] = strip_tags($moc->subline_default);
+$args['usps'] = $moc->usp_default;
+$args['services_included'] = $moc->leistungen_default;
+$args['intro'] = $moc->einleitung_default;
+
+/**
+ * Set the Cheapest Price, based on the current search parameters
+ * @todo add idd and idbp to the cheapest price filter
+ */
+
+$CheapestPriceFilter = new CheapestPrice();
+$valid_params = [];
+if (empty($_GET['pm-dr']) === false) {
+    $dateRange = BuildSearch::extractDaterange($_GET['pm-dr']);
+    if ($dateRange !== false) {
+        $valid_params['pm-dr'] = $_GET['pm-dr'];
+        $CheapestPriceFilter->date_from = $dateRange[0];
+        $CheapestPriceFilter->date_to = $dateRange[1];
+    }
+}
+if (empty($_GET['pm-du']) === false) {
+    $durationRange = BuildSearch::extractDurationRange($_GET['pm-du']);
+    if ($durationRange !== false) {
+        $valid_params['pm-du'] = $_GET['pm-du'];
+        $CheapestPriceFilter->duration_from = $durationRange[0];
+        $CheapestPriceFilter->duration_to = $durationRange[1];
+    }
+}
+if (empty($_GET['pm-pr']) === false) {
+    $priceRange = BuildSearch::extractPriceRange($_GET['pm-pr']);
+    if ($priceRange !== false) {
+        $valid_params['pm-pr'] = $_GET['pm-pr'];
+        $CheapestPriceFilter->price_from = $priceRange[0];
+        $CheapestPriceFilter->price_to = $priceRange[1];
+    }
+}
+
+if (empty($_GET['pm-tr']) === false) {
+    $transport_types = BuildSearch::extractTransportTypes($_GET['pm-tr']);
+    if(!empty($transport_types)){
+        $valid_params['pm-tr'] = $_GET['pm-tr'];
+        $CheapestPriceFilter->transport_types = $transport_types;
+    }
+}
+
+if($mo->id_object_type != TS_DAYTRIPS_PRODUCTS){
+    $CheapestPriceFilter->occupancies = [2];
+}
+$args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
+
+$args['url'] = $mo->getPrettyUrl(TS_LANGUAGE_CODE).(!empty($valid_params) ? '?'.http_build_query($valid_params) : '');
+
+$args['destination'] = !empty($moc->zielgebiet_default[0]->item->name) ? $moc->zielgebiet_default[0]->item->name : null;
+$args['travel_type'] = !empty($moc->reiseart_default[0]->item->name) ? $moc->reiseart_default[0]->item->name : null;
+
+// GTM DATA LAYER DATA
+$dataLayerData = [];
+$dataLayerData['name'] = $args['name'] ? $args['name'] : 'null';
+$dataLayerData['id'] = $args['id_media_object'] ? $args['id_media_object'] : 'null';
+$dataLayerData['code'] = $args['code'] ? $args['code'] : 'null';
+$dataLayerData['price'] = !empty($args['cheapest_price']->price_total) ? $args['cheapest_price']->price_total : null;
+$dataLayerData['category'] = $args['travel_type'] ? $args['travel_type'] : 'null';
+$dataLayerData['destination'] = $args['destination'] ? $args['destination'] : 'null';
+
+echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gtm-detail-datalayer.php', $dataLayerData);
+
+$args['map_markers'] = [];
+foreach ($args['media_object']->getItinerarySteps() as $step) {
+    foreach ($step->geopoints as $geopoint) {
+        if (!empty($geopoint->lat) && !empty($geopoint->lng)) {
+            $args['map_markers'][] = [
+                'title' => strip_tags($geopoint->title),
+                'lat' => $geopoint->lat,
+                'lng' => $geopoint->lng
+            ];
+
+        }
+    }
+}
+if(!empty($moc->karte_default[0]) && is_object($moc->karte_default[0])){
+    $args['map_url_detail'] = $moc->karte_default[0]->getUri('detail');
+    $args['map_url_detail_thumb'] = $moc->karte_default[0]->getUri('detail_thumb');
+}
+/**
+ * Add decriptions blocks
+ * <code>
+ * $args['descriptions'][] = [
+ *          'headline' => '',
+ *          'items' => [[
+ *              'name' => '',
+ * '            text' => '',
+ * '            icons' => '',
+ * '            pictures' => [
+ *              [
+ *                  'caption' => '',
+ *                  'copyright' => null,
+ *                  'url_detail' => null,
+ *                  'url_teaser' => null,
+ *              ]
+ *          ]
+ *          ]
+ *      ]
+ * ];
+ * </code>
+ *
+ */
+
+$args['descriptions'] = [];
+$args['descriptions'][] = [
+    'headline' => null,
+    'items' => [[
+        'name' => !empty(strip_tags($moc->beschreibung_headline_default)) ? strip_tags($moc->beschreibung_headline_default) : 'Beschreibung',
+        'text' => preg_replace(['/<span[^>]*?class="Head_1"[^>]*>(.*?)<\/span>/', '/\<ul\>/'], ['<h5>$1</h5>', '<ul class="checked-list">'], $moc->beschreibung_text_default),
+        'icons' => null,
+    ]
+
+    ]
+];
+
+if($mo->isCached()){
+    $cacheinfo = $mo->getCacheInfo();
+    $cachetime = new DateTime($cacheinfo['date']);
+    $args['is_cached_since'] = $cachetime->format('d.m.Y H:i');
+}
+
+if(!empty($mo->booking_packages[0]->created)){
+    $args['booking_package_created_date'] = $mo->booking_packages[0]->created->format('d.m.Y H:i');
+}
+/**
+ * List Housings/Hotels from object link
+ */
+
+if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsverknuepfung_default)){
+    $housings = [];
+    foreach ($moc->unterkunftsverknuepfung_default as $key => $link) {
+        $linked_mo = new \Pressmind\ORM\Object\MediaObject($link->id_media_object_link, true);
+        // if the linked object is not available (in most cases it must be public)
+        if (empty($linked_mo->id)) {
+            continue;
+        }
+        /**
+         * this is for better code complementation in lovely phpstorm and other ide's
+         * @var $linked_moc \Custom\MediaType\Unterkunft
+         */
+        $linked_moc = $linked_mo->getDataForLanguage(TS_LANGUAGE_CODE);
+        $tmp = [];
+        $tmp['name'] = strip_tags($linked_mo->name);
+        // draw hotel stars if available
+        if(!empty($linked_moc->sterne_default[0]->item->name) && intval($linked_moc->sterne_default[0]->item->name) > 0){
+            $tmp['icons'] = str_repeat('<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="#ffbf00" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg>',
+                intval($linked_moc->sterne_default[0]->item->name));
+        }
+        $tmp['text'] = $linked_moc->beschreibung_text_default;
+        $tmp['pictures']  = [];
+        foreach($linked_moc->bilder_default as $item){
+            $tmp['pictures'][] = [
+                'caption' => $item->caption,
+                'copyright' => $item->copyright,
+                'url_detail' => $item->getUri('detail'),
+                'url_teaser' => $item->getUri('teaser'),
+            ];
+        }
+        $housings[] = $tmp;
+    }
+
+    if(count($housings) > 0){
+        $args['descriptions'][] = [
+            'headline' => count($housings) == 1 ? 'Unterkunft' : 'Unterkünfte',
+            'items' => $housings
+        ];
+    }
+}
+/**
+ * List Textbausteine/Textbricks from object links
+ */
+
+if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsverknuepfung_default)){
+    $textbricks = [];
+    foreach ($moc->textbaustein_default as $key => $link) {
+        $linked_mo = new \Pressmind\ORM\Object\MediaObject($link->id_media_object_link, true);
+        // if the linked object is not available (in most cases it must be public)
+        if (empty($linked_mo->id)) {
+            continue;
+        }
+        /**
+         * this is for better code complementation in lovely phpstorm and other ide's
+         * @var $linked_moc \Custom\MediaType\Textbaustein
+         */
+        $linked_moc = $linked_mo->getDataForLanguage(TS_LANGUAGE_CODE);
+        $tmp = [];
+        $tmp['name'] = strip_tags($linked_mo->name);
+        $tmp['text'] = $linked_moc->text_default;
+        $textbricks[] = $tmp;
+    }
+
+    if(count($textbricks) > 0){
+        $args['descriptions'][] = [
+            'headline' => count($textbricks) == 1 ? 'Textbaustein' : 'Textbausteine',
+            'items' => $textbricks
+        ];
+    }
+}
+
+/**
+ * Example for Tables
+ */
+$tables = $moc->tabelle_default;
+if(is_array($tables) && count($tables) > 0){
+    $table_html = $tables[0]->asHTML('table table-hover', true);
+    /**
+     * if you don't need a html table, try this:
+     * table_as_array = $tables[0]->get();
+     */
+    if(!empty($table_html)){
+        $args['descriptions'][] = [
+            'headline' => '',
+            'items' => [[
+                'name' => 'Route',
+                'text' => $table_html
+            ]]
+        ];
+    }
+}
+
+/**
+ * Example for Key Value Fields
+ */
+$key_value_tables = $moc->key_value_default;
+if(is_array($key_value_tables) && count($key_value_tables) > 0){
+    $key_value_table_html = $moc->key_value_default[0]->asHTML('table table-hover', true, [
+            [
+                'value' => 'headline 1',
+                'class' => 'red'
+            ],
+            [
+                'value' => 'headline 2',
+                'class' => 'red'
+            ],
+            [
+                'value' => 'headline 3',
+                'class' => 'red'
+            ],
+            [
+                'value' => 'headline 4',
+                'class' => 'red'
+            ]
+            ,[
+                'value' => 'headline 5',
+                'class' => 'red'
+            ]
+
+        ]
+    );
+    /**
+     * if you don't need a html table, try this:
+     * table_as_array = $tables[0]->get();
+     */
+    if(!empty($key_value_table_html)){
+        $args['descriptions'][] = [
+            'headline' => '',
+            'items' => [[
+                'name' => 'Key Value Table Beispiel',
+                'text' => $key_value_table_html
+            ]]
+        ];
+    }
+}
+
+/**
+ * Breadcrumb
+ */
+$args['breadcrumb'] = [];
+$tmp = new stdClass();
+$tmp->name = 'Startseite';
+$tmp->url = site_url();
+$args['breadcrumb'][] = $tmp;
+$breadcrumb_search_url = site_url() . '/' . RouteHelper::get_url_by_object_type($mo->id_object_type) . '/';
+if (is_array($moc->reiseart_default)) {
+    foreach ($moc->reiseart_default as $item) {
+        $reiseart = $item->toStdClass();
+        $tmp = new stdClass();
+        $tmp->name = $reiseart->item->name;
+        $tmp->url = $breadcrumb_search_url . '?pm-c[reiseart_default]=' . $reiseart->item->id;
+        $args['breadcrumb'][] = $tmp;
+    }
+}
+if (is_array($moc->zielgebiet_default)) {
+    foreach ($moc->zielgebiet_default as $item) {
+        $zielgebiet = $item->toStdClass();
+        $tmp = new stdClass();
+        $tmp->name = $zielgebiet->item->name;
+        $tmp->url = $breadcrumb_search_url . '?pm-c[zielgebiet_default]=' . $zielgebiet->item->id;;
+        $args['breadcrumb'][] = $tmp;
+    }
+}
+$tmp = new stdClass();
+$tmp->name = strip_tags($moc->headline_default);
+$tmp->url = null;
+$args['breadcrumb'][] = $tmp;
+?>
+<div class="content-main" id="content-main">
+    <article class="detail-page-v2-container">
+        <section class="container">
+            <div class="row">
+                <div class="col-12 col-md-10">
+                    <?php
+                    // = = = > load the breadcrumb  < = = =
+                    the_breadcrumb(null, null, $args['breadcrumb']);
+                    ?>
+                </div>
+                <div class="d-none d-md-block col-md-2">
+                    <?php
+                    // = = = > simple share button < = = =
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', $args);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <?php
+                    // = = = > detail header < = = =
+                    $args['galleryOverlayCount'] = 0;
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
+                    ?>
+                </div>
+                <div class="col-12 col-lg-4 detail-info">
+                    <div class="detail-info-head">
+                        <h2><?php echo $args['name']; ?></h2>
+                        <?php if (!empty($args['subline'])) { ?>
+                            <p><?php echo $args['subline']; ?></p>
+                        <?php } ?>
+                        <?php if (!empty($args['usps'])) { ?>
+                            <div class="detail-services-desktop">
+                                <?php echo $args['usps']; ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <?php
+                    // = = = > load the price box < = = =
+                    $id_price_box_modal = uniqid();
+                    $args['id_modal_price_box'] = $id_price_box_modal;
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+
+                    // = = = > load the on request row (only shown if the full product is on request < = = =
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
+                    ?>
+                </div>
+            </div>
+            <?php
+            // = = = > load booking offers modal window < = = =
+            $args_modal = [];
+            $args_modal['title'] = 'Angebot wählen';
+            $args_modal['id_modal'] = $args['id_modal_price_box'];
+            $args['hide_options'] = false;
+            $args_modal['content'] = '<div id="booking-filter"></div><div id="booking-offers"></div>';
+            echo Template::render(APPLICATION_PATH . '/template-parts/layout-blocks/modalscreen.php', $args_modal);
+            ?>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-12">
+                    <?php
+                    // = = = > load booking calendar < = = =
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
+                    ?>
+                </div>
+            </div>
+        </section>
+
+        <section class="container detail-content-wrapper">
+            <div class="row flex-column-reverse flex-lg-row">
+                <div class="col-12 col-lg-8">
+                    <h2><span><?php echo $args['headline']; ?></span></h2>
+                    <hr />
+                    <?php if (!empty($args['subline'])) { ?>
+                        <p class="mb-0"><strong><?php echo $args['subline']; ?></strong></p>
+                    <?php } ?>
+                    <?php if (!empty($args['usps'])) { ?>
+                        <div class="detail-usps">
+                            <?php echo $args['usps']; ?>
+                        </div>
+                    <?php } ?>
+                    <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
+                        <p><?php echo $args['intro']; ?></p>
+                    <?php } ?>
+                    <?php
+                    // = = = > itinerary < = = =
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
+
+                    // = = = > load common description blocks < = = =
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/description-block.php', $args);
+
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/info-line.php', $args);
+
+                    ?>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="detail-sidebar">
+                        <?php
+                        // = = = > load google maps image < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gmaps-box.php', $args);
+
+                        // = = = > load static map image (NOT GOOGLE, just an image) < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/map-box.php', $args);
+                        if(!empty($args['services_included'])) { ?>
+                            <div class="detail-services">
+                                <h2>Leistungen</h2>
+                                <?php echo $args['services_included']; ?>
+                            </div>
+                        <?php } ?>
+                        <?php
+                        // = = = > load contact box < = = =
+                        load_template(get_template_directory().'/template-parts/pm-views/detail-blocks/contact-box.php', false, $args);
+                        // = = = > load contact box < = = =
+                        $args_trust = ['name' => $args['headline']];
+                        load_template_transient(get_template_directory().'/template-parts/pm-views/detail-blocks/trust-box.php', false, $args_trust, 0);
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <?php
+        // = = = > load sticky footer bar < = = =
+        echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/mobile-bar.php', $args);
+        ?>
+    </article>
+    <hr>
+    <div class="container">
+        <?php
+        // = = = > load similiar products < = = =
+        $args_similiar = [
+            'headline' => 'Kunden buchten auch:',
+            'text' => 'Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.',
+            'search' => [
+                'pm-li' => '0,4',
+                'pm-o' => 'rand',
+                'pm-ot' => TS_TOUR_PRODUCTS
+            ]
+        ];
+        echo Template::render(APPLICATION_PATH.'/template-parts/layout-blocks/product-teaser.php', $args_similiar);
+        ?>
+    </div>
+
+</div>
