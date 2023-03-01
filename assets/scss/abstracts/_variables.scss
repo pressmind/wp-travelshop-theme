@@ -64,10 +64,9 @@ $grid-breakpoints: (
         xxxl: 1560px,
 );
 
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
+/**
+ * Grid containers
+ */
 $container-max-widths: (
         sm: 540px,
         md: 720px,
@@ -77,3 +76,8 @@ $container-max-widths: (
         xxxl: 1500px
 );
 
+/**
+ * Breadcrumb
+ */
+$breadcrumb-padding-x: 0;
+$breadcrumb-bg: transparent;

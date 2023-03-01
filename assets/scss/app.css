@@ -28,6 +28,12 @@
 /**
  * Grid & breakpoints
  */
+/**
+ * Grid containers
+ */
+/**
+ * Breadcrumb
+ */
 @import url(vendors/pretty-dropdowns/prettydropdowns.css);
 @import url(vendors/lightbox2/lightbox.min.css);
 :root {
@@ -3817,10 +3823,10 @@ input[type="button"].btn-block {
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color: transparent;
   border-radius: 0.25rem; }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -10822,6 +10828,12 @@ html.force--consent.show--consent body {
  */
 /**
  * Grid & breakpoints
+ */
+/**
+ * Grid containers
+ */
+/**
+ * Breadcrumb
  */
 /***
  ** Define own variables in this file
