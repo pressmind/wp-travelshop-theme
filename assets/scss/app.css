@@ -13315,9 +13315,9 @@ form.form-string-search.input-group {
     z-index: 10;
     pointer-events: none;
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
     gap: .25rem;
     color: #fff; }
     .page-share .share-buttons .share-copy-info svg {
