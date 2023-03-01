@@ -87,14 +87,19 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
 
 
                         <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
-                            <a href="" title="Link kopieren" data-link="<?php echo $actual_link; ?>" class="share-button">
+                            <a href="" title="Link kopieren" data-link="<?php echo $actual_link; ?>" class="share-button share-button--copy">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                 Link kopieren
                             </a>
 
-                            <div class="share-copy-info">
+                            <div class="share-copy-info share-copy-info-success hide">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
                                 Link kopiert
+                            </div>
+
+                            <div class="share-copy-info share-copy-info--error hide">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#warning-circle"></use></svg>
+                                Kopieren fehlgeschlagen
                             </div>
                         <?php } ?>
 

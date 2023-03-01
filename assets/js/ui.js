@@ -63,6 +63,29 @@ jQuery(function ($) {
             e.stopPropagation();
         });
 
+        // -- share options
+        // -- close modal after timeout when button clicked
+        sharePage.find('.share-button:not(.share-button--copy)').on('click', function(e) {
+            setTimeout(function() {
+                $(this).parents('page-share').removeClass('open');
+            }, 2500);
+        });
+
+        // -- copy functionality
+        sharePage.find('.share-button--copy').on('click', function(e) {
+            e.preventDefault();
+
+            var linkToCopy = $(this).parents('.page-share').find('.page-share-toggler').data('share-link');
+
+            navigator.clipboard.writeText(linkToCopy).then(function() {
+
+            }, function(err) {
+
+            });
+
+            e.stopPropagation();
+        });
+
     }
 
     // ------------------------------------------------
