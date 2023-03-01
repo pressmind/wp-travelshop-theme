@@ -13248,17 +13248,21 @@ form.form-string-search.input-group {
   margin-top: 0; }
 
 .page-share .share-buttons {
-  gap: 0.5rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: -.25rem; }
   @media (min-width: 768px) {
     .page-share .share-buttons {
-      gap: 1rem; } }
+      margin: -.5rem; } }
   .page-share .share-buttons .share-buttons-col {
     width: 100%;
+    padding: .25rem;
     flex: 0 0 100%;
     max-width: 100%; }
+    @media (min-width: 768px) {
+      .page-share .share-buttons .share-buttons-col {
+        padding: .5rem; } }
     @media (min-width: 768px) {
       .page-share .share-buttons .share-buttons-col {
         flex: 0 0 50%; } }

@@ -2,13 +2,24 @@
 
   // -- share items
   .share-buttons {
-    @include spacing-generator($share-items-gaps, 'around', 'gap');
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
+    margin: -.25rem;
+
+    @include media-breakpoint-up(md) {
+      margin: -.5rem;
+    }
+
     .share-buttons-col {
       width: 100%;
+      padding: .25rem;
+
+      @include media-breakpoint-up(md) {
+        padding: .5rem;
+      }
+
       @include spacing-generator($share-items-flex, 'around', 'flex');
       @include spacing-generator($share-items-max-widths, 'around', 'max-width');
     }
