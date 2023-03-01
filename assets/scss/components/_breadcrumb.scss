@@ -1,0 +1,11 @@
+/**
+ * change breadcrumb in some aspects
+ */
+
+.breadcrumb-wrapper {
+  .breadcrumb {
+    li {
+      @include font-size-generator($breadcrumb-font-sizes);
+    }
+  }
+}

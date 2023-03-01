@@ -81,3 +81,6 @@ $container-max-widths: (
  */
 $breadcrumb-padding-x: 0;
 $breadcrumb-bg: transparent;
+$breadcrumb-font-sizes: (
+  null: $font-size-sm
+) !default;

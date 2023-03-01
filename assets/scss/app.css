@@ -12278,6 +12278,12 @@ form.form-string-search.input-group {
     border-bottom-left-radius: 0.3rem; }
     .dropdown-menu.dropdown-menu-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer * {
       margin-top: 0 !important; } }
+/**
+ * change breadcrumb in some aspects
+ */
+.breadcrumb-wrapper .breadcrumb li {
+  font-size: 0.875rem; }
+
 .list-filter-box.datepicker > div {
   position: relative; }
   .list-filter-box.datepicker > div input.form-control[readonly] {
