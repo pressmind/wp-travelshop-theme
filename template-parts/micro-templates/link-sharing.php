@@ -22,7 +22,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
 ?>
 
 <div class="page-share">
-    <a href="" title="<?php echo $share_title; ?>" class="btn btn-primary">
+    <a href="" title="<?php echo $share_title; ?>" class="btn btn-link">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share-network"></use></svg>
         Teilen
     </a>
