@@ -12283,6 +12283,8 @@ form.form-string-search.input-group {
  */
 .breadcrumb-wrapper .breadcrumb li {
   font-size: 0.875rem; }
+  .breadcrumb-wrapper .breadcrumb li.bc-separator {
+    display: none; }
 
 .list-filter-box.datepicker > div {
   position: relative; }

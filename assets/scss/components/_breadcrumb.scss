@@ -6,6 +6,12 @@
   .breadcrumb {
     li {
       @include font-size-generator($breadcrumb-font-sizes);
+
+      // -- mobile variant
+      // this is the "back"-link wich shows up in mobile views
+      &.bc-separator {
+        display: none;
+      }
     }
   }
 }
