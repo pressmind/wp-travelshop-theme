@@ -43,14 +43,14 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                 <div class="page-share-fallback-body">
                     <div class="share-buttons">
                         <?php if ( isset($args['share_options']['buttons']['facebook']) && $args['share_options']['buttons']['facebook'] ) { ?>
-                            <a href="" class="share-button">
+                            <a target="_blank" href="" title="Auf Facebook teilen" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#facebook-logo-fill"></use></svg>
 
                                 Facebook
                             </a>
                         <?php } ?>
                         <?php if ( isset($args['share_options']['buttons']['facebook-messenger']) && $args['share_options']['buttons']['facebook-messenger'] ) { ?>
-                            <a href="" class="share-button">
+                            <a target="_blank" href="" title="Per Messenger teilen" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#messenger-logo"></use></svg>
 
                                 Messenger
@@ -58,28 +58,28 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['twitter']) && $args['share_options']['buttons']['twitter'] ) { ?>
-                            <a href="" class="share-button">
+                            <a target="_blank" href="" title="Auf Twitter teilen" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#twitter-logo-fill"></use></svg>
                                 Twitter
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['whatsapp']) && $args['share_options']['buttons']['whatsapp'] ) { ?>
-                            <a href="" class="share-button">
+                            <a target="_blank" href="" title="per WhatsApp teilen" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#whatsapp-logo"></use></svg>
                                 WhatsApp
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['telegram']) && $args['share_options']['buttons']['telegram'] ) { ?>
-                            <a href="" class="share-button">
+                            <a target="_blank" href="" title="Per Telegram teilen" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#telegram-logo"></use></svg>
                                 Telegram
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['mail']) && $args['share_options']['buttons']['mail'] ) { ?>
-                            <a href="" class="share-button">
+                            <a target="_blank" href="" title="Per E-Mail senden" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                 per E-Mail senden
                             </a>
@@ -91,7 +91,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                             <div class="input-group input-group-copy">
                                 <input type="text" readonly class="form-control" value="<?php echo $args['url']; ?>">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" id="share-page--copy">
+                                    <button class="btn btn-primary" title="Link kopieren" type="button" id="share-page--copy">
 
                                         <div class="icon">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#copy"></use></svg>
