@@ -231,6 +231,37 @@ jQuery(function ($) {
             _this.filter();
         }
 
+        if ($('.js-range-slider').length > 0) {
+            var rSliderElement = new rSlider({
+                target: '#js-range-slider',
+                values: { min: parseInt($(".js-range-slider").attr('data-min')), max: parseInt($(".js-range-slider").attr('data-max'))},
+                step: parseInt($(".js-range-slider").attr('data-step')),
+                set: [parseInt($(".js-range-slider").attr('data-val-from')), parseInt($(".js-range-slider").attr('data-val-to'))],
+                range: true,
+                tooltip: true,
+                scale: false,
+                labels: false,
+                disabled: $(".js-range-slider").attr('data-disable') == 'true'
+            });
+            let timeout;
+            let timestamp = + new Date();
+            if($(window).width() >= 768) {
+                document.querySelector('#js-range-slider').addEventListener('change', (e) => {
+                    if(((+ new Date()) - timestamp) <= 1000) {
+                        clearTimeout(timeout);
+                    }
+                    timestamp = + new Date;
+                    timeout = setTimeout(() => {
+                        let form = $('#js-range-slider').closest('form');
+                        let query_string = _this.buildSearchQuery(form);
+                        _this.setSpinner('#pm-search-result');
+                        _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                        e.preventDefault();
+                    }, 1000);
+                });
+            }
+        }
+
         this.scrollTo = function (scrollto) {
             $('html, body').stop().animate({
                 'scrollTop': $(scrollto).offset().top - $('header.affix').height()
@@ -273,7 +304,7 @@ jQuery(function ($) {
             } else {
                 _this.wishlistEventListeners();
                 $('.wishlist-count').text(0);
-                $('.wishlist-items').html(`<div class="alert alert-info p-2 m-0" role="alert">Keine Reisen auf der Merkliste</div>`);
+                $('.wishlist-items').html(`<p>Keine Reisen auf der Merkliste</p>`);
             }
         }
 
@@ -429,6 +460,7 @@ jQuery(function ($) {
 
             // check and set price-range
             let price_range = $(form).find('input[name=pm-pr]').val();
+            price_range.replace(',', '-');
             let price_mm_range = $(form).find('input[name=pm-pr]').data('min') + '-' + $(form).find('input[name=pm-pr]').data('max');
             if (price_range && price_mm_range != price_range && price_range != '') {
                 query.push('pm-pr=' + price_range);
@@ -498,6 +530,13 @@ jQuery(function ($) {
                     _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
                     e.preventDefault();
                 });
+                $('.js-range-slider').on('mouseup', () => {
+                    let form = $(this).closest('form');
+                    let query_string = _this.buildSearchQuery(form);
+                    _this.setSpinner('#pm-search-result');
+                    _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                    e.preventDefault();
+                });
             }
 
             $("#search-filter").one('click', ".list-filter-box-submit", function (e) {
@@ -531,6 +570,10 @@ jQuery(function ($) {
              * If the search box is on the same site as the search result, than the ajax search query is fired
              */
             $('#main-search').on('change', '.search-box input, .search-box select', function (e) {
+
+                if($(e.target).parent().hasClass('has-second-level')) {
+                    $(e.target).is(':checked') ? $(e.target).parent().addClass('active') : $(e.target).parent().removeClass('active');
+                }
 
                 let form = $('#main-search');
                 // build the query string and set him on the search button
@@ -674,7 +717,7 @@ jQuery(function ($) {
                             'Abreise in 30 Tagen': [dayjs().add(30, 'days'), dayjs().add(1, 'month')],
                             'Abreise in 60 Tagen': [dayjs().add(60, 'days'), dayjs().add(1, 'month')],
                             'in diesem Monat': [dayjs().startOf('month'), dayjs().endOf('month')],
-                            'über Rosenmontag': [rosenmontagDate.subtract(7, 'days'), rosenmontagDate],
+                            // 'über Rosenmontag': [rosenmontagDate.subtract(7, 'days'), rosenmontagDate],
                             'über Ostern': [easterDate.subtract(7, 'days'), easterDate],
                             'über Pfingsten': [pfingstenDate.subtract(7, 'days'), pfingstenDate],
                             'über Weihnachten': [dayjs().date(15).month(11), dayjs().date(24).month(11)],
@@ -860,7 +903,7 @@ jQuery(function ($) {
                 $('.dropdown-menu-select .filter-prompt').on('click', function (e) {
                     e.preventDefault();
 
-                    $(this).parents('.dropdown').find('.dropdown-toggle').trigger('click');
+                    $(e.target).parents('.dropdown').find('.dropdown-menu-select').removeClass('show');
 
                     e.stopPropagation();
                 })
@@ -874,69 +917,71 @@ jQuery(function ($) {
                     }
                 });
 
-
                 // -- create label text on input change, put it into span
                 $('.dropdown-menu-select').find('input').on('click change', function (e) {
-                    var placeHolderTag = $(e.target).parents('.dropdown').find('.selected-options'),
-                        placeHolderDefaultText = placeHolderTag.data('placeholder'),
-                        placeHolderGetText = placeHolderTag.text(),
-                        placeHolderOptionsText = '',
-                        that = $(this);
+                    $(e.target).parent().siblings().find('.form-check-input').prop('checked', false);
+                    setTimeout( () => {
+                        var placeHolderTag = $(e.target).parents('.dropdown').find('.selected-options'),
+                            placeHolderDefaultText = placeHolderTag.data('placeholder'),
+                            placeHolderGetText = placeHolderTag.text(),
+                            placeHolderOptionsText = '',
+                            that = $(this);
 
-                    if (placeHolderGetText != placeHolderDefaultText) {
-                        placeHolderOptionsText = placeHolderGetText;
-                    }
-
-                    var thatValue = that.parent().find('> label').text();
-                    thatValue = $.trim(thatValue);
-
-                    var allBoxes = $(this).parent().parent().find('input');
-                    var allEmpty = true;
-
-                    $(allBoxes).each(function (key, input) {
-                        if (input.checked) {
-                            allEmpty = false;
+                        if (placeHolderGetText != placeHolderDefaultText) {
+                            placeHolderOptionsText = placeHolderGetText;
                         }
-                    });
 
-                    // function to hide/show the clear-button
-                    if (!allEmpty) {
-                        $(this).parents('.dropdown').find('.dropdown-clear').show();
-                        $(this).parents('.dropdown').find('.dropdown-icon').hide();
-                    } else {
-                        $(this).parents('.dropdown').find('.dropdown-clear').hide();
-                        $(this).parents('.dropdown').find('.dropdown-icon').show();
-                    }
+                        var thatValue = that.parent().find('> label').text();
+                        thatValue = $.trim(thatValue);
 
-                    if (that.prop('checked') === true) {
-                        if(that.attr('type') == 'radio') {
-                            placeHolderOptionsText = thatValue;
+                        var allBoxes = $(this).parent().parent().find('input');
+                        var allEmpty = true;
+
+                        $(allBoxes).each(function (key, input) {
+                            if (input.checked) {
+                                allEmpty = false;
+                            }
+                        });
+
+                        // function to hide/show the clear-button
+                        if (!allEmpty) {
+                            $(this).parent().parent().parent().parent().find('.dropdown-clear').show();
+                            $(this).parent().parent().parent().parent().find('.dropdown-icon').hide();
                         } else {
-                            if (placeHolderOptionsText != '' && !placeHolderOptionsText.includes(thatValue)) {
-                                placeHolderOptionsText = placeHolderOptionsText + ', ' + thatValue;
+                            $(this).parent().parent().parent().parent().find('.dropdown-clear').hide();
+                            $(this).parent().parent().parent().parent().find('.dropdown-icon').show();
+                        }
+
+                        if (that.prop('checked') === true) {
+                            if(that.attr('type') == 'radio') {
+                                placeHolderOptionsText = thatValue;
                             } else {
-                                if(!placeHolderOptionsText.includes(thatValue)) {
-                                    placeHolderOptionsText = thatValue;
+                                if (placeHolderOptionsText != '' && !placeHolderOptionsText.includes(thatValue)) {
+                                    placeHolderOptionsText = /*placeHolderOptionsText + ', ' +*/ thatValue;
+                                } else {
+                                    if(!placeHolderOptionsText.includes(thatValue)) {
+                                        placeHolderOptionsText = thatValue;
+                                    }
+                                }
+                            }
+                        } else {
+                            if (placeHolderGetText.indexOf(',') != -1) {
+                                if (placeHolderGetText.indexOf(thatValue) == 0) {
+                                    placeHolderOptionsText = placeHolderOptionsText.replace(thatValue + ', ', '');
+                                } else {
+                                    placeHolderOptionsText = placeHolderOptionsText.replace(', ' + thatValue, '');
+                                }
+                            } else {
+                                if (allEmpty) {
+                                    placeHolderOptionsText = $.trim(placeHolderDefaultText);
+                                } else {
+                                    placeHolderOptionsText = placeHolderOptionsText;
                                 }
                             }
                         }
-                    } else {
-                        if (placeHolderGetText.indexOf(',') != -1) {
-                            if (placeHolderGetText.indexOf(thatValue) == 0) {
-                                placeHolderOptionsText = placeHolderOptionsText.replace(thatValue + ', ', '');
-                            } else {
-                                placeHolderOptionsText = placeHolderOptionsText.replace(', ' + thatValue, '');
-                            }
-                        } else {
-                            if (allEmpty) {
-                                placeHolderOptionsText = $.trim(placeHolderDefaultText);
-                            } else {
-                                placeHolderOptionsText = placeHolderOptionsText;
-                            }
-                        }
-                    }
 
-                    placeHolderTag.text(placeHolderOptionsText);
+                        placeHolderTag.text(placeHolderOptionsText);
+                    }, 250);
                 });
 
                 $('.dropdown-clear').on('click', function (e) {
@@ -1001,9 +1046,9 @@ jQuery(function ($) {
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify({'checks' : [{
-                    'id_offer' : id_offer,
-                    'quantity' : quantity
-                }]}),
+                        'id_offer' : id_offer,
+                        'quantity' : quantity
+                    }]}),
             }).done(function (response) {
                 let data = response.data[0];
                 $(booking_btn).find('span').html(data.btn_msg);
@@ -1011,9 +1056,15 @@ jQuery(function ($) {
                 $(booking_btn).find('.loader').hide();
                 $(booking_btn).removeClass('green');
                 $(booking_btn).addClass(data.class);
-                if(data.bookable === true){
+                if(data.bookable === true && data.booking_type != 'request'){
                     $(booking_btn).find('svg').show();
-                    location.href = $(booking_btn).attr('href') + '&t='+data.booking_type;
+                    let href = new URL($(booking_btn).attr('href'));
+                    if(href.searchParams.get('t') != 'request'){
+                        href.searchParams.set('t', data.booking_type);
+                    }
+                    location.href = href.toString();
+                } else if(data.bookable === true) {
+                    $(booking_btn).click(() => {location.href = $(booking_btn).attr('href') + '&t='+data.booking_type});
                 }
             }));
         }
@@ -1035,7 +1086,7 @@ jQuery(function ($) {
                     _this.lastScroll = _this.nowScroll;
                 });
             }
-            $('.clear-filter').unbind().click((e) => {
+            $('.clear-filter').unbind().on('click', (e) => {
                 $('.modal-loader').css('display', 'flex');
                 $('.datepicker-clear').trigger('click');
                 $('input:checked').prop('checked', false).trigger('change');
@@ -1095,26 +1146,31 @@ jQuery(function ($) {
 
         this.initModals = function() {
             if ($('.modal-wrapper').length > 0) {
-                $('a[data-modal="true"]').unbind().on('click', function (e) {
+                $('a[data-modal="true"]').on('click', function (e) {
+                    console.log('Modal open');
                     e.preventDefault();
                     let modalId = $(e.target).data('modal-id');
                     // -- show modal
                     $('body').find('#modal-id-post-' + modalId).addClass('is--open');
-                    modalId != 'bofilters' ? _this.loadFilters() : '';
-                    $('.modal-loader').css('display', 'flex');
-                    setTimeout(() => {
-                        _this.loadOffers(e);
-                    }, 200);
+                    if($(e.target).hasClass('booking-btn') || $(e.target).hasClass('stretched-link')) {
+                        $('.modal-loader').css('display', 'flex');
+                        setTimeout(() => {
+                            modalId != 'bofilters' ? _this.loadFilters() : '';
+                            setTimeout(() => {
+                                _this.loadOffers(e);
+                            }, 200);
+                        }, 500);
+                    }
                     let target = document.querySelector('.is--open .modal-body-outer');
                     bodyScrollLock.disableBodyScroll(target);
                     e.stopPropagation();
                 })
 
-                $('.modal-close, .modal-close-btn').unbind().on('click', function (e) {
+                $('.modal-close, .modal-close-btn').on('click', function (e) {
                     e.preventDefault();
                     let target = document.querySelector('.is--open .modal-body-outer');
                     $(e.target).closest('.is--open').removeClass('is--open');
-                    bodyScrollLock.enableBodyScroll(target);
+                    bodyScrollLock.enableBodyScroll;
                     e.stopPropagation();
                 })
 
@@ -1213,7 +1269,7 @@ jQuery(function ($) {
 
         this.initBookingBtnClickHandler = function (){
             if ($('.booking-btn').length > 0) {
-                $('.booking-btn').unbind().on('click', function (e) {
+                $('.booking-btn').on('click', function (e) {
                     if($(this).data('modal') === true){
                         return true;
                     }
@@ -1222,7 +1278,7 @@ jQuery(function ($) {
                     $(this).find('.loader').show();
                     $(this).find('svg').hide();
                     $(this).find('span').html('');
-                    _this.checkAvailability($(this).data('id-offer'), 1, this);
+                    _this.checkAvailability($(this).data('id-offer'), 1, $(e.target));
                 });
             }
         }
@@ -1233,10 +1289,10 @@ jQuery(function ($) {
                     sURLVariables = sPageURL.split('&'),
                     sParameterName,
                     i;
-            
+
                 for (i = 0; i < sURLVariables.length; i++) {
                     sParameterName = sURLVariables[i].split('=');
-            
+
                     if (sParameterName[0] === sParam) {
                         return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
                     }
@@ -1245,7 +1301,7 @@ jQuery(function ($) {
             };
             if(getUrlParameter(partnerParam)) {
                 localStorage.setItem('partnerParam', getUrlParameter(partnerParam));
-                localStorage.setItem('partnerTimestamp', + new Date()); 
+                localStorage.setItem('partnerTimestamp', + new Date());
             }
             if(localStorage.getItem('partnerParam') && localStorage.getItem('partnerTimestamp')) {
                 if(localStorage.getItem('partnerTimestamp') >= (+ new Date() - (partnerTimeout * 86400000) )) {
@@ -1254,7 +1310,7 @@ jQuery(function ($) {
                         $(item).attr('href', href + '&ida=' + localStorage.getItem('partnerParam'));
                     });
                 }
-                
+
             }
         }
 
