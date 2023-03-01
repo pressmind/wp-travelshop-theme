@@ -591,6 +591,9 @@ jQuery(function ($) {
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
             console.log('is-backdrop element');
+
+            // -- trigger click on data-type="popup-close", to hide item by klick on close button..
+            // -- @todo: best way?
         }
     });
 });
