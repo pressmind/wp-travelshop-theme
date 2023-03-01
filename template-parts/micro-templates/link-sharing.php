@@ -1,7 +1,89 @@
 <?php
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 // var_dump($actual_link);
+
+if ( !isset ( $args['share_options'] ) ) {
+    $args['share_options'] = [
+        'title' => 'Reisetipp',
+        'name' => '',
+        'text' => 'Ich empfehle die Reise',
+        'buttons' => [
+            'facebook' => true,
+            'twitter' => true,
+            'whatsapp' => true,
+            'mail' => true,
+            'copy' => true,
+        ]
+    ];
+}
+
+$share_title = !empty($args['share_options']['name']) ? $args['share_options']['name'] . ' teilen' : 'Seite teilen';
 ?>
+
+<div class="page-share">
+    <a href="" title="<?php echo $share_title; ?>" class="btn btn-primary">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share-network"></use></svg>
+        Teilen
+    </a>
+
+    <div class="page-share-fallback">
+        <div class="page-share-fallback-inner">
+            <div class="page-share-fallback-content">
+                <div class="page-share-fallback-header">
+                    <div class="h4">
+                        <?php echo $share_title; ?>
+                    </div>
+
+                    <button class="close-share">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                    </button>
+                </div>
+                <div class="page-share-fallback-body">
+                    <div class="share-buttons">
+                        <?php if ( isset($args['share_options']['buttons']['facebook']) && $args['share_options']['buttons']['facebook'] ) { ?>
+
+                        <?php } ?>
+
+                        <?php if ( isset($args['share_options']['buttons']['twitter']) && $args['share_options']['buttons']['twitter'] ) { ?>
+
+                        <?php } ?>
+
+                        <?php if ( isset($args['share_options']['buttons']['whatsapp']) && $args['share_options']['buttons']['whatsapp'] ) { ?>
+
+                        <?php } ?>
+
+                        <?php if ( isset($args['share_options']['buttons']['mail']) && $args['share_options']['buttons']['mail'] ) { ?>
+
+                        <?php } ?>
+                    </div>
+
+                    <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
+                        <div class="share-copy">
+                            <div class="input-group input-group-copy">
+                                <input type="text" readonly class="form-control" value="<?php echo $args['url']; ?>">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" id="share-page--copy">
+
+                                        <div class="icon">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#copy"></use></svg>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div class="share-copy-info">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
+                                    Der Link wurde kopiert
+                                </div>
+                            </div>
+
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php /*
 <div class="share">
     <label class="btn btn-primary" style="display:inline-flex; align-items: center;" for="sharemodal">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share-network"></use></svg>
@@ -47,3 +129,4 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
         </ul>
     </div>
 </div>
+ */ ?>
