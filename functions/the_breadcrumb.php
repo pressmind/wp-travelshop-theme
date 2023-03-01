@@ -66,7 +66,7 @@ function the_breadcrumb($sep = ' › ', $home_title = 'Startseite', $custom_path
                         $c++;
                         if($c == 2) {
                             echo '<li class="bc-separator">'; ?>
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#chevron-left"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-left"></use></svg>
                             <?php
                             echo '<a itemprop="item" href="' . $item->url . '">' . $item->name . ' anzeigen</a>';
                             echo '</li>';
@@ -80,7 +80,7 @@ function the_breadcrumb($sep = ' › ', $home_title = 'Startseite', $custom_path
                                     <span class="breadcrumb-sep">
                                         <?php if(count($path) != $c) { ?>
 
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#chevron-right"></use></svg>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
 
                                         <?php } ?>
                                     </span>
