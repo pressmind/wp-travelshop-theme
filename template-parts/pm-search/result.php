@@ -60,23 +60,8 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
         <label class="pm-switch">
             <input class="pm-switch-checkbox" type="checkbox" value="Teaser3" <?php echo $view == 'Teaser3' ? 'checked' : '';?>>
             <span class="pm-switch-slider">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-list" width="20"
-                      height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                      stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <rect x="4" y="4" width="16" height="6" rx="2" />
-                    <rect x="4" y="14" width="16" height="6" rx="2" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid" width="20"
-                    height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <rect x="4" y="4" width="6" height="6" rx="1" />
-                    <rect x="14" y="4" width="6" height="6" rx="1" />
-                    <rect x="4" y="14" width="6" height="6" rx="1" />
-                    <rect x="14" y="14" width="6" height="6" rx="1" />
-                </svg>
-
+               <svg class="layout-list"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#rows"></use></svg>
+                <svg class="layout-grid"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#squares-four"></use></svg>
             </span>
         </label>
     </div>
