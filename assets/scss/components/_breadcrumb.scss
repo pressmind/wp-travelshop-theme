@@ -4,13 +4,56 @@
 
 .breadcrumb-wrapper {
   .breadcrumb {
+    gap: $breadcrumb-item-padding;
+
     li {
-      @include font-size-generator($breadcrumb-font-sizes);
+      font-size: $breadcrumb-font-size;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      gap: $breadcrumb-item-padding;
 
       // -- mobile variant
       // this is the "back"-link wich shows up in mobile views
       &.bc-separator {
         display: none;
+      }
+
+      a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        color: $breadcrumb-color;
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+          color: $breadcrumb-color;
+          text-decoration: underline;
+        }
+
+        span.breadcrumb-name {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          gap: $breadcrumb-item-padding;
+        }
+
+        span.breadcrumb-sep {
+          line-height: 1;
+          color: $breadcrumb-divider-color;
+
+          > svg {
+            width: $breadcrumb-font-size;
+            height: $breadcrumb-font-size;
+          }
+        }
+      }
+
+      &:last-child {
+        color: $breadcrumb-active-color;
       }
     }
   }

@@ -3830,10 +3830,10 @@ input[type="button"].btn-block {
   border-radius: 0.25rem; }
 
 .breadcrumb-item + .breadcrumb-item {
-  padding-left: 0.5rem; }
+  padding-left: 0.25rem; }
   .breadcrumb-item + .breadcrumb-item::before {
     display: inline-block;
-    padding-right: 0.5rem;
+    padding-right: 0.25rem;
     color: #6c757d;
     content: "/"; }
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -3841,7 +3841,7 @@ input[type="button"].btn-block {
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: none; }
 .breadcrumb-item.active {
-  color: #6c757d; }
+  color: #212529; }
 
 .pagination {
   display: flex;
@@ -12281,10 +12281,38 @@ form.form-string-search.input-group {
 /**
  * change breadcrumb in some aspects
  */
-.breadcrumb-wrapper .breadcrumb li {
-  font-size: 0.875rem; }
-  .breadcrumb-wrapper .breadcrumb li.bc-separator {
-    display: none; }
+.breadcrumb-wrapper .breadcrumb {
+  gap: 0.25rem; }
+  .breadcrumb-wrapper .breadcrumb li {
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.25rem; }
+    .breadcrumb-wrapper .breadcrumb li.bc-separator {
+      display: none; }
+    .breadcrumb-wrapper .breadcrumb li a {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      color: #6c757d;
+      text-decoration: none; }
+      .breadcrumb-wrapper .breadcrumb li a:hover, .breadcrumb-wrapper .breadcrumb li a:focus, .breadcrumb-wrapper .breadcrumb li a:active {
+        color: #6c757d;
+        text-decoration: underline; }
+      .breadcrumb-wrapper .breadcrumb li a span.breadcrumb-name {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.25rem; }
+      .breadcrumb-wrapper .breadcrumb li a span.breadcrumb-sep {
+        line-height: 1;
+        color: #6c757d; }
+        .breadcrumb-wrapper .breadcrumb li a span.breadcrumb-sep > svg {
+          width: 0.875rem;
+          height: 0.875rem; }
+    .breadcrumb-wrapper .breadcrumb li:last-child {
+      color: #212529; }
 
 .list-filter-box.datepicker > div {
   position: relative; }

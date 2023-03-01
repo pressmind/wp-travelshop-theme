@@ -81,6 +81,12 @@ $container-max-widths: (
  */
 $breadcrumb-padding-x: 0;
 $breadcrumb-bg: transparent;
-$breadcrumb-font-sizes: (
-  null: $font-size-sm
-) !default;
+
+$breadcrumb-color: $gray-600;
+$breadcrumb-divider-color: $gray-600;
+$breadcrumb-active-color: $body-color;
+
+
+$breadcrumb-item-padding: .25rem;
+
+$breadcrumb-font-size: $font-size-sm !default;
