@@ -48,7 +48,7 @@ jQuery(function ($) {
                     console.log("Vielen Dank für's teilen!");
                 });
             } else {
-                $(this).parents('.page-share').addClass('is-open');
+                sharePage.addClass('is-open');
             }
 
             e.stopPropagation();
@@ -58,7 +58,7 @@ jQuery(function ($) {
         sharePage.find('.close-share').on('click', function(e){
             e.preventDefault();
 
-            $(this).parents('.page-share').removeClass('is-open');
+            sharePage.removeClass('is-open');
 
             e.stopPropagation();
         });
@@ -67,7 +67,7 @@ jQuery(function ($) {
         // -- close modal after timeout when button clicked
         sharePage.find('.share-button:not(.share-button--copy)').on('click', function(e) {
             setTimeout(function() {
-                $(this).parents('.page-share').removeClass('open');
+                sharePage.removeClass('open');
             }, 2500);
         });
 
@@ -75,23 +75,23 @@ jQuery(function ($) {
         sharePage.find('.share-button--copy').on('click', function(e) {
             e.preventDefault();
 
-            var linkToCopy = $(this).parents('.page-share').find('.page-share-toggler').data('share-link');
+            var linkToCopy = sharePage.find('.page-share-toggler').data('share-link');
 
             navigator.clipboard.writeText(linkToCopy).then(function() {
-                $(this).parents('.page-share').find('.share-copy-info--success').fadeIn(250);
+                sharePage.find('.share-copy-info--success').fadeIn(250);
 
                 setTimeout(function() {
-                    $(this).parents('.page-share').find('.share-copy-info--success').fadeOut(250);
+                    sharePage.find('.share-copy-info--success').fadeOut(250);
                 }, 1500);
 
                 setTimeout(function() {
-                    $(this).parents('.page-share').removeClass('open');
+                    sharePage.removeClass('open');
                 }, 2500);
             }, function(err) {
-                $(this).parents('.page-share').find('.share-copy-info--error').fadeIn(250);
+                sharePage.find('.share-copy-info--error').fadeIn(250);
 
                 setTimeout(function() {
-                    $(this).parents('.page-share').find('.share-copy-info--error').fadeOut(250);
+                    sharePage.find('.share-copy-info--error').fadeOut(250);
                 }, 1500);
             });
 
