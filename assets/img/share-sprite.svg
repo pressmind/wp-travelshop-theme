@@ -1,9 +1,11 @@
 <svg width="0" height="0" class="hidden">
-    <symbol version="1.1" id="share-telegram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 512 512">
-    <rect y="0" width="512" height="512"></rect>
-        <path d="M199,404c-11,0-10-4-13-14l-32-105l245-144"></path>
-        <path d="M199,404c7,0,11-4,16-8l45-43l-56-34"></path>
-        <path d="M204,319l135,99c14,9,26,4,30-14l55-258c5-22-9-32-24-25L79,245c-21,8-21,21-4,26l83,26l190-121c9-5,17-3,11,4"></path>
+    <symbol id="share-telegram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 512 512">
+
+        <rect y="0" fill="#37AEE2" width="512" height="512"/>
+        <path fill="#C8DAEA" d="M199,404c-11,0-10-4-13-14l-32-105l245-144"/>
+        <path fill="#A9C9DD" d="M199,404c7,0,11-4,16-8l45-43l-56-34"/>
+        <path fill="#F6FBFE" d="M204,319l135,99c14,9,26,4,30-14l55-258c5-22-9-32-24-25L79,245c-21,8-21,21-4,26l83,26l190-121c9-5,17-3,11,4"
+        />
   </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" viewBox="0 0 32 32" id="share-twitter">
         <path fill="#1DA1F2" d="M0 0H32V32H0z"></path>
