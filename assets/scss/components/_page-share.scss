@@ -71,13 +71,14 @@
     // -- info items
     .share-copy-info {
       @include border-radius($border-radius);
-      padding: $badge-padding-y $badge-padding-x;
+      padding: .25rem $badge-padding-x;
 
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
-      font-size: $font-size-sm;
+      font-size: $font-size-xs;
+      line-height: 1;
 
       z-index: 10;
       pointer-events: none;
