@@ -31,6 +31,10 @@
             size: $filter-box-title-font-size;
           }
           margin: 0 0 $filter-spacer-y 0;
+
+          > strong {
+            font-weight: $font-weight-bold;
+          }
         }
 
         // -- category definition, board-type definition, transport-type definition
