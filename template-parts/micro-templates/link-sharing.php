@@ -11,6 +11,7 @@ if ( !isset ( $args['share_options'] ) ) {
             'facebook' => true,
             'twitter' => true,
             'whatsapp' => true,
+            'telegram' => true,
             'mail' => true,
             'copy' => true,
         ]
@@ -41,19 +42,33 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                 <div class="page-share-fallback-body">
                     <div class="share-buttons">
                         <?php if ( isset($args['share_options']['buttons']['facebook']) && $args['share_options']['buttons']['facebook'] ) { ?>
-
+                            <a href="" class="share-button">
+                                Facebook
+                            </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['twitter']) && $args['share_options']['buttons']['twitter'] ) { ?>
-
+                            <a href="" class="share-button">
+                                Twitter
+                            </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['whatsapp']) && $args['share_options']['buttons']['whatsapp'] ) { ?>
+                            <a href="" class="share-button">
+                                WhatsApp
+                            </a>
+                        <?php } ?>
 
+                        <?php if ( isset($args['share_options']['buttons']['telegram']) && $args['share_options']['buttons']['telegram'] ) { ?>
+                            <a href="" class="share-button">
+                                Telegram
+                            </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['mail']) && $args['share_options']['buttons']['mail'] ) { ?>
-
+                            <a href="" class="share-button">
+                                Mail
+                            </a>
                         <?php } ?>
                     </div>
 
