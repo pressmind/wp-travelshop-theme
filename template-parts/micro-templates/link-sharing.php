@@ -89,7 +89,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                     <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
                         <div class="share-copy">
                             <div class="input-group input-group-copy">
-                                <input type="text" readonly class="form-control" value="<?php echo $args['url']; ?>">
+                                <input type="text" readonly class="form-control" value="<?php echo $actual_link; ?>">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" title="Link kopieren" type="button" id="share-page--copy">
 
