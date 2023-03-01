@@ -114,10 +114,19 @@ jQuery(function ($) {
 // --- rangeslider
 // ------------------------------------------
 
-    if ($('.js-range-slider').length > 0) {
-        $(".js-range-slider").ionRangeSlider();
+    if (false && $('.js-range-slider').length > 0) {
+        var rSliderElement = new rSlider({
+            target: '#js-range-slider',
+            values: { min: parseInt($(".js-range-slider").attr('data-min')), max: parseInt($(".js-range-slider").attr('data-max'))},
+            step: parseInt($(".js-range-slider").attr('data-step')),
+            set: [parseInt($(".js-range-slider").attr('data-val-from')), parseInt($(".js-range-slider").attr('data-val-to'))],
+            range: true,
+            tooltip: true,
+            scale: false,
+            labels: false,
+            disabled: $(".js-range-slider").attr('data-disable') == 'true'
+        });
     }
-
 
 
 
