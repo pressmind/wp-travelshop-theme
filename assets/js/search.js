@@ -9,6 +9,7 @@ jQuery(function ($) {
         $(this).parent().toggleClass('is--open');
     });
 
+
     // Filter toggle
     $('.list-filter-close').on('click', function (e) {
         e.preventDefault();
@@ -22,7 +23,7 @@ jQuery(function ($) {
 
     // -- make filter span-checkboxes clickable
     function addFilterCheckboxEventListener() {
-        $('#search-filter').on('click','#filter .form-check span', function (e) {
+        $('#search-filter').on('click','#filter .form-check>span', function (e) {
             if ($(e.target).siblings('input').is(':disabled')) {
                 return;
             }
@@ -127,6 +128,7 @@ jQuery(function ($) {
             disabled: $(".js-range-slider").attr('data-disable') == 'true'
         });
     }
+
 
 
 
