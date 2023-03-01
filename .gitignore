@@ -1,7 +1,6 @@
 .idea
 vendor
 composer.lock
-Custom/MediaType/*.php
 docs/objecttypes/*.html
 assets/scss/*.map
 assets/scss/.sass-cache/
