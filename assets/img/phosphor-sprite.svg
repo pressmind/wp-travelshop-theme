@@ -2488,6 +2488,9 @@
     <path d="M168,88H152a23.9,23.9,0,0,0-24,24V224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
     <line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="facebook-logo-fill" viewBox="0 0 24 24">
+    <path fill="currentColor" d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+  </symbol>
   <symbol fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="face-mask">
     <rect width="256" height="256" fill="none"></rect>
     <path d="M216,136c0,51.5-74.4,69.2-86.4,71.7a8.6,8.6,0,0,1-3.2,0C114.4,205.2,40,187.5,40,136V77.6a7.9,7.9,0,0,1,5.3-7.5l80-29.1a8.3,8.3,0,0,1,5.4,0l80,29.1a7.9,7.9,0,0,1,5.3,7.5Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
@@ -6400,6 +6403,10 @@
   <symbol fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="twitter-logo">
     <rect width="256" height="256" fill="none"></rect>
     <path d="M128,88c0-22,18.5-40.3,40.5-40a40,40,0,0,1,36.2,24H240l-32.3,32.3A127.9,127.9,0,0,1,80,224c-32,0-40-12-40-12s32-12,48-36c0,0-64-32-48-120,0,0,40,40,88,48Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+  </symbol>
+  <symbol fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="twitter-logo-fill">
+    <rect width="256" height="256" fill="none"></rect>
+    <path d="M128,88c0-22,18.5-40.3,40.5-40a40,40,0,0,1,36.2,24H240l-32.3,32.3A127.9,127.9,0,0,1,80,224c-32,0-40-12-40-12s32-12,48-36c0,0-64-32-48-120,0,0,40,40,88,48Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
   </symbol>
   <symbol fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="umbrella">
     <rect width="256" height="256" fill="none"></rect>
