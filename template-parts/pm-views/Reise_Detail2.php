@@ -343,8 +343,7 @@ $tmp->name = strip_tags($moc->headline_default);
 $tmp->url = null;
 $args['breadcrumb'][] = $tmp;
 ?>
-<h1>Test test 123</h1>
-<div class="content-main" id="content-main">
+<div class="content-main">
     <article class="detail-page-v2-container">
         <section class="container">
             <div class="row">
