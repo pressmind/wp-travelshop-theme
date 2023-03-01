@@ -582,4 +582,15 @@ jQuery(function ($) {
         });
     }
 
+    // -----------------------
+    // -- click handling document
+    // -----------------------
+    $(document).click(function(event) {
+        var $target = $(event.target);
+
+        // -- backdrop checker
+        if ( $target.css('container-name') === 'backdrop' ) {
+            console.log('is-backdrop element');
+        }
+    });
 });

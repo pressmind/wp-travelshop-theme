@@ -12027,6 +12027,7 @@ form.form-string-search.input-group {
     display: block;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    container-name: backdrop;
     overflow: hidden;
     transition: opacity .3s;
     opacity: 0;
@@ -12267,6 +12268,7 @@ form.form-string-search.input-group {
     will-change: unset !important;
     align-items: center;
     justify-content: center;
+    container-name: backdrop;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -12293,6 +12295,7 @@ form.form-string-search.input-group {
     will-change: unset !important;
     align-items: center;
     justify-content: center;
+    container-name: backdrop;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -12318,6 +12321,7 @@ form.form-string-search.input-group {
   will-change: unset !important;
   align-items: center;
   justify-content: center;
+  container-name: backdrop;
   outline: 0;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;

@@ -66,6 +66,7 @@
 
   transform: none !important;
   will-change: unset !important;
+  container-name: backdrop;
 
   z-index: $offcanvas-zindex;
 
