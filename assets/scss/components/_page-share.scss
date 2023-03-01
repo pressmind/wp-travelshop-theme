@@ -76,7 +76,8 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      font-weight: $font-weight-bold;
+      align-items: center;
+      font-size: $font-size-sm;
 
       z-index: 10;
       pointer-events: none;

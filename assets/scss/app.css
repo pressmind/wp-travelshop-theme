@@ -13309,7 +13309,8 @@ form.form-string-search.input-group {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    font-weight: 700;
+    align-items: center;
+    font-size: 0.875rem;
     z-index: 10;
     pointer-events: none;
     position: absolute;
