@@ -9,6 +9,14 @@ hr + .content-block {
   }
 }
 
+.mt-cb {
+  margin-top: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: $grid-gutter-width;
+  }
+}
+
 .content-main > .container {
   padding-bottom: 1rem;
   padding-top: 1rem;

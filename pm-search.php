@@ -44,7 +44,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <hr class="mt-0 mb-0">
+            <hr class="mt-cb mb-0">
             <?php load_template_transient(get_template_directory() . '/template-parts/layout-blocks/info-teaser.php'); ?>
         </div>
     </div>
