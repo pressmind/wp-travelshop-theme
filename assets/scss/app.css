@@ -13877,7 +13877,7 @@ footer.footer-main {
   #search-result .content-block-list-header .pm-switch-result-view .pm-switch {
     position: relative;
     display: inline-block;
-    width: 4rem;
+    width: 3.5rem;
     height: 2rem;
     margin: 0; }
     #search-result .content-block-list-header .pm-switch-result-view .pm-switch .pm-switch-checkbox {
@@ -13897,7 +13897,7 @@ footer.footer-main {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #e9ecef;
+      background-color: #ced4da;
       -webkit-transition: 0.4s;
       transition: 0.4s;
       border-radius: 2rem;
@@ -13905,6 +13905,8 @@ footer.footer-main {
       align-items: center;
       justify-content: space-between;
       padding: 0 0.45rem; }
+      #search-result .content-block-list-header .pm-switch-result-view .pm-switch .pm-switch-slider > svg {
+        color: #fff; }
       #search-result .content-block-list-header .pm-switch-result-view .pm-switch .pm-switch-slider:before {
         position: absolute;
         content: "";

@@ -18,7 +18,7 @@
       .pm-switch {
         position: relative;
         display: inline-block;
-        width: 4rem;
+        width: 3.5rem;
         height: 2rem;
         margin: 0;
 
@@ -46,7 +46,7 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background-color: $body-bg-highlight;
+          background-color: $gray-400;
           -webkit-transition: 0.4s;
           transition: 0.4s;
           border-radius: 2rem;
@@ -54,6 +54,10 @@
           align-items: center;
           justify-content: space-between;
           padding: 0 0.45rem;
+
+          > svg {
+            color: #fff;
+          }
 
           &:before {
             position: absolute;
