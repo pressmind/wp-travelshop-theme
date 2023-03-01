@@ -22,6 +22,17 @@
 
       .list-filter-box {
 
+        // -- title
+        .list-filter-box-title,
+        > label {
+          display: block;
+          font: {
+            weight: $filter-box-title-font-weight;
+            size: $filter-box-title-font-size;
+          }
+          margin: 0 0 $filter-spacer-y 0;
+        }
+
         // -- category definition, board-type definition, transport-type definition
         &.category-tree,
         &.board-type,

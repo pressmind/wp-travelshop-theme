@@ -13192,6 +13192,12 @@ form.form-string-search.input-group {
   padding: 1.25rem; }
   .content-block.content-block-list-filter .list-filter .list-filter-header > button.list-filter-close {
     display: none; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-title,
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box > label {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 0.75rem 0; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
     margin-top: 0.25rem; }
   @media (max-width: 767.98px) {
