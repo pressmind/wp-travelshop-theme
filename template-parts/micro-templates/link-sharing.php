@@ -14,7 +14,7 @@ if ( !isset ( $args['share_options'] ) ) {
             'facebook-messenger' => true,
             'twitter' => true,
             'whatsapp' => true,
-            'telegram' => true,
+            'telegram' => false,
             'mail' => true,
             'copy' => true,
         ]
