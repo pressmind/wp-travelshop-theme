@@ -1,0 +1,31 @@
+.page-share {
+
+  // -- fallback as modal
+  .page-share-fallback {
+    @extend %modal-wrapper;
+
+    .page-share-fallback-inner {
+      @extend %modal-inner;
+      @extend %modal-inner-width-md;
+
+      .page-share-fallback-content {
+        @extend %modal-content;
+      }
+    }
+
+    .page-share-fallback-header {
+      @extend %modal-header;
+    }
+
+    .page-share-fallback-body {
+      @extend %modal-body;
+    }
+  }
+
+  // -- open state
+  &.is-open {
+    .page-share-fallback {
+      @extend %modal-open;
+    }
+  }
+}

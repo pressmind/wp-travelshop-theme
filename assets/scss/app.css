@@ -12081,6 +12081,12 @@ form.form-string-search.input-group {
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-select.show *, .dropdown-menu.dropdown-menu-wishlist.show * {
       pointer-events: auto; } }
+.page-share.is-open .page-share-fallback {
+  opacity: 1;
+  display: flex;
+  pointer-events: auto; }
+  .page-share.is-open .page-share-fallback * {
+    pointer-events: auto; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-header {
     align-items: center;
@@ -12137,6 +12143,33 @@ form.form-string-search.input-group {
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
         color: #007bff; } }
+.page-share .page-share-fallback .page-share-fallback-header {
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  display: flex !important; }
+  .page-share .page-share-fallback .page-share-fallback-header > *:not(button) {
+    margin-bottom: 0; }
+  .page-share .page-share-fallback .page-share-fallback-header > button {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    line-height: 1;
+    display: block !important;
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto;
+    color: #212529;
+    transition: color .3s; }
+    .page-share .page-share-fallback .page-share-fallback-header > button svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+    .page-share .page-share-fallback .page-share-fallback-header > button:hover, .page-share .page-share-fallback .page-share-fallback-header > button:focus, .page-share .page-share-fallback .page-share-fallback-header > button:active {
+      color: #007bff; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-boxes {
     position: relative;
@@ -12155,6 +12188,14 @@ form.form-string-search.input-group {
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden; } }
+.page-share .page-share-fallback .page-share-fallback-body {
+  position: relative;
+  padding: 1rem;
+  margin: 0 !important;
+  max-height: unset !important;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter > form .list-filter {
     position: relative;
@@ -12179,6 +12220,17 @@ form.form-string-search.input-group {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     outline: 0; } }
+.page-share .page-share-fallback .page-share-fallback-inner .page-share-fallback-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  background-clip: padding-box;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter > form .list-filter {
     border-radius: 0;
@@ -12236,6 +12288,34 @@ form.form-string-search.input-group {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-select *, .dropdown-menu.dropdown-menu-wishlist * {
       pointer-events: none; } }
+.page-share .page-share-fallback {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1050;
+  display: flex;
+  width: 100% !important;
+  min-width: unset !important;
+  height: 100% !important;
+  transform: none !important;
+  will-change: unset !important;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: opacity .3s;
+  opacity: 0;
+  padding: 0.5rem;
+  pointer-events: none;
+  border: 0;
+  margin: 0;
+  border-radius: 0; }
+  .page-share .page-share-fallback * {
+    pointer-events: none; }
+@media (min-width: 768px) {
+  .page-share .page-share-fallback .page-share-fallback-inner {
+    max-width: 768px; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
     padding: 0;
@@ -12259,6 +12339,14 @@ form.form-string-search.input-group {
     height: auto;
     max-height: 100%;
     width: 100%; } }
+.page-share .page-share-fallback .page-share-fallback-inner {
+  position: relative;
+  margin: 0;
+  pointer-events: none;
+  display: flex;
+  height: auto;
+  max-height: 100%;
+  width: 100%; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter > form {
     height: 100%; } }
