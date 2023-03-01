@@ -14,7 +14,7 @@
 
 @include placeholder('apple-like-header') {
   display: flex !important;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: $apple-like-header-padding;
   border-bottom: $apple-like-header-border-width solid $apple-like-header-border-color;
