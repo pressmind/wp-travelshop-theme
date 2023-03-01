@@ -67,7 +67,7 @@ jQuery(function ($) {
         // -- close modal after timeout when button clicked
         sharePage.find('.share-button:not(.share-button--copy)').on('click', function(e) {
             setTimeout(function() {
-                $(this).parents('page-share').removeClass('open');
+                $(this).parents('.page-share').removeClass('open');
             }, 2500);
         });
 
@@ -78,9 +78,21 @@ jQuery(function ($) {
             var linkToCopy = $(this).parents('.page-share').find('.page-share-toggler').data('share-link');
 
             navigator.clipboard.writeText(linkToCopy).then(function() {
+                $(this).parents('.page-share').find('.share-copy-info--success').fadeIn(250);
 
+                setTimeout(function() {
+                    $(this).parents('.page-share').find('.share-copy-info--success').fadeOut(250);
+                }, 1500);
+
+                setTimeout(function() {
+                    $(this).parents('.page-share').removeClass('open');
+                }, 2500);
             }, function(err) {
+                $(this).parents('.page-share').find('.share-copy-info--error').fadeIn(250);
 
+                setTimeout(function() {
+                    $(this).parents('.page-share').find('.share-copy-info--error').fadeOut(250);
+                }, 1500);
             });
 
             e.stopPropagation();
