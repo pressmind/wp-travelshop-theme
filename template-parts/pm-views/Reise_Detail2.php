@@ -18,7 +18,7 @@ use Pressmind\Travelshop\Template;
 $mo = $data['media_object'];
 
 /**
- * @var Custom\MediaType\###CLASSNAME### $moc
+ * @var Custom\MediaType\Reise $moc
  */
 $moc = $mo->getDataForLanguage(TS_LANGUAGE_CODE);
 
