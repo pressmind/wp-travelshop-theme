@@ -43,30 +43,36 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                     <div class="share-buttons">
                         <?php if ( isset($args['share_options']['buttons']['facebook']) && $args['share_options']['buttons']['facebook'] ) { ?>
                             <a href="" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#facebook-logo-fill"></use></svg>
+
                                 Facebook
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['twitter']) && $args['share_options']['buttons']['twitter'] ) { ?>
                             <a href="" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#twitter-logo-fill"></use></svg>
                                 Twitter
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['whatsapp']) && $args['share_options']['buttons']['whatsapp'] ) { ?>
                             <a href="" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#whatsapp-logo"></use></svg>
                                 WhatsApp
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['telegram']) && $args['share_options']['buttons']['telegram'] ) { ?>
                             <a href="" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#telegram-logo"></use></svg>
                                 Telegram
                             </a>
                         <?php } ?>
 
                         <?php if ( isset($args['share_options']['buttons']['mail']) && $args['share_options']['buttons']['mail'] ) { ?>
                             <a href="" class="share-button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                 Mail
                             </a>
                         <?php } ?>
