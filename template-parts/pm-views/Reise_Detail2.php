@@ -343,17 +343,18 @@ $tmp->name = strip_tags($moc->headline_default);
 $tmp->url = null;
 $args['breadcrumb'][] = $tmp;
 ?>
+<h1>Test test 123</h1>
 <div class="content-main" id="content-main">
     <article class="detail-page-v2-container">
         <section class="container">
             <div class="row">
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-md">
                     <?php
                     // = = = > load the breadcrumb  < = = =
                     the_breadcrumb(null, null, $args['breadcrumb']);
                     ?>
                 </div>
-                <div class="d-none d-md-block col-md-2">
+                <div class="d-none d-md-block col-md-auto">
                     <?php
                     // = = = > simple share button < = = =
                     echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', $args);
