@@ -18,6 +18,17 @@
       // this is the "back"-link wich shows up in mobile views
       &.bc-separator {
         display: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        gap: $breadcrumb-item-padding;
+
+        > svg {
+          color: $breadcrumb-divider-color;
+          width: $breadcrumb-font-size;
+          height: $breadcrumb-font-size;
+        }
       }
 
       a {
@@ -37,12 +48,13 @@
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
+          align-items: center;
 
           gap: $breadcrumb-item-padding;
         }
 
         span.breadcrumb-sep {
-          line-height: 1;
+          line-height: 0;
           color: $breadcrumb-divider-color;
 
           > svg {
