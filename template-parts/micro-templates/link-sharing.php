@@ -4,7 +4,7 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 ?>
 <div class="share">
     <label class="btn btn-primary" style="display:inline-flex; align-items: center;" for="sharemodal">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share"></use></svg>
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share-network"></use></svg>
         </svg> <span style="margin-left:.5rem;">Teilen</span>
     </label>
     <input class="d-none" id="sharemodal" type="checkbox" />
