@@ -81,7 +81,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
                         <?php if ( isset($args['share_options']['buttons']['mail']) && $args['share_options']['buttons']['mail'] ) { ?>
                             <a href="" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
-                                Mail
+                                per E-Mail senden
                             </a>
                         <?php } ?>
                     </div>
