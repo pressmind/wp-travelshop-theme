@@ -23,7 +23,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
 ?>
 
 <div class="page-share">
-    <a href="" title="<?php echo $share_title; ?>" class="btn btn-link px-0">
+    <a href="" title="<?php echo $share_title; ?>" class="btn btn-link page-share-toggler px-0" data-share-link="<?php echo $actual_link; ?>">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#share-network"></use></svg>
         Teilen
     </a>
@@ -87,7 +87,7 @@ $share_title = !empty($args['share_options']['name']) ? $args['share_options']['
 
 
                         <?php if ( isset($args['share_options']['buttons']['copy']) && $args['share_options']['buttons']['copy'] ) { ?>
-                            <a target="_blank" href="" title="Link kopieren" data-link="<?php echo $actual_link; ?>" class="share-button">
+                            <a href="" title="Link kopieren" data-link="<?php echo $actual_link; ?>" class="share-button">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                 Link kopieren
                             </a>
