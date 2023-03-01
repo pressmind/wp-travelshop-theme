@@ -10,6 +10,9 @@
   }
 
   .content-block-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     .pm-switch-result-view {
       display: flex;
@@ -57,6 +60,9 @@
 
           > svg {
             color: #fff;
+
+            width: 1.25rem;
+            height: 1.25rem;
           }
 
           &:before {

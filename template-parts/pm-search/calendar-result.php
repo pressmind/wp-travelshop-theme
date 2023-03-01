@@ -47,13 +47,13 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
 </div>
 <section class="content-block content-block-list-header">
     <div class="list-header-title h2 mt-0 mb-0 float-lg-left">
-        <p>
+
             <strong>
                 <?php
                 echo $args['total_result'] . ' ' . (($args['total_result'] > 1 || $args['total_result'] == 0) ? 'Reisen' : 'Reise');
                 ?>
             </strong> gefunden
-        </p>
+
     </div>
     <div class="pm-switch-result-view">
         <label class="pm-switch">
