@@ -77,6 +77,41 @@ $h6-font-sizes: (
 ) !default;
 
 /**
+ * Share page
+ */
+$share-items-gaps: (
+  null: .5rem,
+  md: 1rem
+) !default;
+$share-items-flex: (
+  null: 0 0 100%,
+  md: 0 0 50%
+) !default;
+$share-items-max-widths: (
+  null: 100%,
+  md: 100%
+) !default;
+
+$share-item-border-radius: $btn-border-radius !default;
+$share-item-spacing-y: .75rem !default;
+$share-item-spacing-x: 1rem !default;
+
+$share-item-border-width: 1px !default;
+$share-item-border-color: $hr-border-color !default;
+$share-item-bg: #fff !default;
+$share-item-color: $body-color !default;
+
+$share-item-hover-border-color: $body-color !default;
+$share-item-hover-bg: $body-bg-highlight !default;
+$share-item-hover-color: $body-color !default;
+
+$share-item-font-sizes: (
+  null: $font-size-base
+) !default;
+
+$share-item-font-weight: $font-weight-bold !default;
+
+/**
  * Footer
  * ---------------------------------------
  * some variables wich used for default footer settings

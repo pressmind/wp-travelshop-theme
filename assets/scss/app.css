@@ -10862,6 +10862,9 @@ html.force--consent.show--consent body {
  * Headlines
  */
 /**
+ * Share page
+ */
+/**
  * Footer
  * ---------------------------------------
  * some variables wich used for default footer settings
@@ -13243,6 +13246,58 @@ form.form-string-search.input-group {
     max-width: 576px; } }
 .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer {
   margin-top: 0; }
+
+.page-share .share-buttons {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media (min-width: 768px) {
+    .page-share .share-buttons {
+      gap: 1rem; } }
+  .page-share .share-buttons .share-buttons-col {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%; }
+    @media (min-width: 768px) {
+      .page-share .share-buttons .share-buttons-col {
+        flex: 0 0 50%; } }
+    @media (min-width: 768px) {
+      .page-share .share-buttons .share-buttons-col {
+        max-width: 100%; } }
+  .page-share .share-buttons .share-button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: #212529;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e9ecef;
+    background-color: #fff;
+    transition: border-color .3s, color .3s, background-color .3s;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    font-size: 1rem; }
+    @media (min-width: 768px) {
+      .page-share .share-buttons .share-button {
+        gap: 1rem; } }
+    .page-share .share-buttons .share-button > svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.25rem; }
+      @media (min-width: 768px) {
+        .page-share .share-buttons .share-button > svg {
+          height: 2rem;
+          width: 2rem; } }
+    .page-share .share-buttons .share-button:hover, .page-share .share-buttons .share-button:focus, .page-share .share-buttons .share-button:active {
+      color: #212529;
+      border-color: #212529;
+      background-color: #e9ecef;
+      text-decoration: none; }
 
 header.header-main {
   background-color: #fff;

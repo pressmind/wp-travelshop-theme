@@ -1,5 +1,62 @@
 .page-share {
 
+  // -- share items
+  .share-buttons {
+    @include spacing-generator($share-items-gaps, 'around', 'gap');
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .share-buttons-col {
+      width: 100%;
+      @include spacing-generator($share-items-flex, 'around', 'flex');
+      @include spacing-generator($share-items-max-widths, 'around', 'max-width');
+    }
+
+    .share-button {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      @include border-radius($share-item-border-radius);
+
+      text-decoration: none;
+      font-weight: $share-item-font-weight;
+      color: $share-item-color;
+      border-width: $share-item-border-width;
+      border-style: solid;
+      border-color: $share-item-border-color;
+      background-color: $share-item-bg;
+      transition: border-color .3s, color .3s, background-color .3s;
+
+      padding: $share-item-spacing-y $share-item-spacing-x;
+
+      @include spacing-generator($share-items-gaps, 'around', 'gap');
+      @include font-size-generator($share-item-font-sizes);
+
+      > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        @include border-radius($share-item-border-radius);
+
+        @include media-breakpoint-up(md) {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      &:hover, &:focus, &:active {
+        color: $share-item-hover-color;
+        border-color: $share-item-hover-border-color;
+        background-color: $share-item-hover-bg;
+
+        text-decoration: none;
+      }
+    }
+
+  }
+
   // -- fallback as modal
   .page-share-fallback {
     @extend %modal-wrapper;
