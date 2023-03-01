@@ -13083,7 +13083,7 @@ form.form-string-search.input-group {
     position: relative;
     flex: 0 0 20%;
     width: 100%;
-    max-width: 20%; }
+    max-width: 4rem; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a {
       border-radius: 0.25rem;
       overflow: hidden;
