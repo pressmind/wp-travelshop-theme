@@ -21,7 +21,7 @@
     }
 
     .detail-header-info-bottom {
-      @if ( $detail-header-info-bottom-divider-width == 0 or $detail-header-info-bg == $detail-header-info-bottom-bg ) {
+      @if ( $detail-header-info-bottom-divider-width == 0 and $detail-header-info-bg == $detail-header-info-bottom-bg ) {
         padding-top: 0 !important;
       }
 
