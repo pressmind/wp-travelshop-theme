@@ -18,6 +18,19 @@
 
     .detail-header-info-top {
 
+    }
+
+    .detail-header-info-bottom {
+      @if ( $detail-header-info-bottom-divider-width == 0 and $detail-header-info-bg == $detail-header-info-bottom-bg ) {
+        padding-top: 0 !important;
+      }
+
+      @if ( $detail-header-info-bottom-divider-width != 0 ) {
+        border-top: $detail-header-info-bottom-divider-width solid $detail-header-info-bottom-divider-color;
+      }
+
+      background-color: $detail-header-info-bottom-bg;
+
       // -- chosen date
       .detail-header-info-chosen-date {
         @include border-radius($detail-header-info-chosen-date-border-radius);
@@ -34,19 +47,6 @@
 
         transition: color .3s, border-color .3s, background-color .3s;
       }
-
-    }
-
-    .detail-header-info-bottom {
-      @if ( $detail-header-info-bottom-divider-width == 0 and $detail-header-info-bg == $detail-header-info-bottom-bg ) {
-        padding-top: 0 !important;
-      }
-
-      @if ( $detail-header-info-bottom-divider-width != 0 ) {
-        border-top: $detail-header-info-bottom-divider-width solid $detail-header-info-bottom-divider-color;
-      }
-
-      background-color: $detail-header-info-bottom-bg;
     }
   }
 }
