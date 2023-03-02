@@ -18,6 +18,23 @@
 @if ( $detail-page-use-default == true ) {
   .detail-section {
 
+    // -- breadcrumb
+    &.detail-section-topbar {
+
+      // -- small padding
+      padding: .5rem;
+
+      @include media-breakpoint-up(md) {
+        padding: 1rem 0;
+      }
+
+      .breadcrumb-wrapper .breadcrumb {
+        padding-top:0;
+        padding-bottom:0;
+        margin-bottom:0;
+      }
+    }
+
     // -- crosselling
     &.detail-section-crossselling {
       @include spacing-generator($detail-page-section-paddings, 'y');

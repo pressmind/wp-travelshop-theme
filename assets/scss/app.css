@@ -13752,6 +13752,15 @@ footer.footer-main {
 /**
  * General styles for Detail-Page
  */
+.detail-section.detail-section-topbar {
+  padding: .5rem; }
+  @media (min-width: 768px) {
+    .detail-section.detail-section-topbar {
+      padding: 1rem 0; } }
+  .detail-section.detail-section-topbar .breadcrumb-wrapper .breadcrumb {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0; }
 .detail-section.detail-section-crossselling {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
