@@ -14,6 +14,11 @@
 
       gap: $breadcrumb-item-padding;
 
+      // -- remove before element from default bootstrap breadcrumb
+      &:before {
+        display: none !important;
+      }
+
       // -- mobile variant
       // this is the "back"-link wich shows up in mobile views
       &.bc-separator {
