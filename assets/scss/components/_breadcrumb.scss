@@ -14,6 +14,10 @@
 
       gap: $breadcrumb-item-padding;
 
+      &.breadcrumb-item + .breadcrumb-item {
+        padding-left: 0;
+      }
+
       // -- remove before element from default bootstrap breadcrumb
       &:before {
         display: none !important;

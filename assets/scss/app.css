@@ -12398,6 +12398,8 @@ form.form-string-search.input-group {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0.25rem; }
+    .breadcrumb-wrapper .breadcrumb li.breadcrumb-item + .breadcrumb-item {
+      padding-left: 0; }
     .breadcrumb-wrapper .breadcrumb li:before {
       display: none !important; }
     .breadcrumb-wrapper .breadcrumb li.bc-separator {
