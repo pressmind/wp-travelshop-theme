@@ -13746,7 +13746,7 @@ footer.footer-main {
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
   .detail-header-info .detail-header-info-bottom {
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding-top: 0 !important;
     background-color: #fff; }
 
 /**
