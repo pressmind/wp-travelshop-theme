@@ -13761,12 +13761,15 @@ footer.footer-main {
       flex-direction: row;
       flex-wrap: nowrap;
       gap: 1rem; }
+      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-icon svg {
+        width: 1.125rem;
+        height: 1.125rem; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:hover {
-        border-color: #e9ecef;
+        border-color: #212529;
         background-color: #e9ecef;
         color: #212529; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:active, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:focus {
-        border-color: #e9ecef;
+        border-color: #212529;
         background-color: #e9ecef;
         color: #212529; }
 

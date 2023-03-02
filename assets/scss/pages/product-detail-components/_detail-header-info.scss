@@ -52,6 +52,13 @@
 
         gap: $detail-header-info-chosen-date-spacer-x;
 
+        .detail-header-info-chosen-date-icon {
+          svg {
+            width: $font-size-lg;
+            height: $font-size-lg;
+          }
+        }
+
         &:hover {
           border-color: $detail-header-info-chosen-date-hover-border-color;
           background-color: $detail-header-info-chosen-date-hover-bg;
