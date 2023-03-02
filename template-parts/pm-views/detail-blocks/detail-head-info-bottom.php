@@ -21,7 +21,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         <div class="detail-header-info-chosen-date-info">
             <div class="detail-header-info-chosen-date-data">
                 <div class="small-title">
-                    Datum wählen
+                    Gewähltes Angebot
                 </div>
                 <div>
                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
