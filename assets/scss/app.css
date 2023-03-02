@@ -13746,7 +13746,8 @@ footer.footer-main {
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
   .detail-header-info .detail-header-info-bottom {
-    background-color: #e9ecef; }
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #fff; }
 
 /**
  * General styles for Detail-Page
