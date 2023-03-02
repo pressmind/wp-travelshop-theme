@@ -38,7 +38,7 @@ if (empty($args['filter_data'][$args['filter_val']][array_key_first($args['filte
                                         <?php echo isset($_GET[$args['filter_param']]) && in_array(strtoupper($args['filter_data'][$args['filter_val2'] ?? $args['filter_val']][$key]), explode(',', strtoupper($_GET[$args['filter_param']]))) ? 'checked' : ''; ?>>
 
                                         <span>
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
                                         </span>
 
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">
