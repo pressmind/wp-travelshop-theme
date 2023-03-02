@@ -330,7 +330,7 @@ template {
   display: none !important; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .h5, .page-share .share-object .share-object-body strong, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2; }
@@ -347,7 +347,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.5rem; }
 
-h5, .h5 {
+h5, .h5, .page-share .share-object .share-object-body strong {
   font-size: 1.25rem; }
 
 h6, .h6 {
@@ -11052,7 +11052,7 @@ body {
     body {
       padding-top: 91px; } }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .page-share .share-object .share-object-body strong, h6, .h6 {
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.2; }
@@ -11106,10 +11106,10 @@ h4, .h4 {
     h4, .h4 {
       font-size: 1.5rem; } }
 
-h5, .h5 {
+h5, .h5, .page-share .share-object .share-object-body strong {
   font-size: 1rem; }
   @media (min-width: 992px) {
-    h5, .h5 {
+    h5, .h5, .page-share .share-object .share-object-body strong {
       font-size: 1.25rem; } }
 
 h6, .h6 {
@@ -11166,7 +11166,7 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
-.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img {
+.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img, .page-share .share-object .share-object-image > img {
   position: absolute;
   left: 0;
   right: 0;
@@ -13265,6 +13265,35 @@ form.form-string-search.input-group {
 .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer {
   margin-top: 0; }
 
+.page-share .share-object {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: .5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef; }
+  @media (min-width: 768px) {
+    .page-share .share-object {
+      gap: 1rem; } }
+  .page-share .share-object .share-object-image {
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 20%;
+    width: 100%;
+    max-width: 4rem; }
+    .page-share .share-object .share-object-image:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+  .page-share .share-object .share-object-body {
+    flex: 1; }
+    .page-share .share-object .share-object-body strong {
+      margin-bottom: 0; }
 .page-share .share-buttons {
   display: flex;
   flex-direction: row;
@@ -13567,11 +13596,11 @@ footer.footer-main {
       @media (min-width: 992px) {
         footer.footer-main .footer-main--boxes .col-footer-box {
           padding-bottom: 30px; } }
-    footer.footer-main .footer-main--boxes .h5 {
+    footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
       margin-bottom: 0;
       padding-bottom: 0.5rem; }
       @media (min-width: 992px) {
-        footer.footer-main .footer-main--boxes .h5 {
+        footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
           padding-bottom: 1rem; } }
     footer.footer-main .footer-main--boxes .nav.flex-column {
       gap: 0.25rem; }

@@ -1,5 +1,48 @@
 .page-share {
 
+  // -- share object
+  .share-object {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .5rem;
+    align-items: center;
+
+    margin-bottom: $modal-inner-padding;
+    padding-bottom: $modal-inner-padding;
+    border-bottom: $hr-border-width solid $hr-border-color;
+
+    @include media-breakpoint-up(md) {
+      gap: 1rem;
+    }
+
+    .share-object-image {
+      @include border-radius($card-border-radius);
+      @include aspect-ratio(1, 1);
+
+      overflow: hidden;
+
+      position: relative;
+      flex: 0 0 20%;
+      width: 100%;
+      max-width: 4rem;
+
+      > img {
+        @extend %media-cover-image;
+      }
+    }
+
+    .share-object-body {
+      flex: 1;
+
+      strong {
+        @extend .h5;
+
+        margin-bottom:0;
+      }
+    }
+  }
+
   // -- share items
   .share-buttons {
     display: flex;
