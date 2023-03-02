@@ -16,7 +16,7 @@ use Pressmind\Travelshop\IB3Tools;
 <a class="btn btn-primary btn-block booking-btn green" target="_blank"
    rel="nofollow"
     <?php
-    if (!empty($args['modal_id'])) {
+    if (!isset($args['modal_id']) && !empty($args['modal_id'])) {
         echo 'data-modal="true" data-modal-id="' . $args['modal_id'] . '"';
     }
     ?>
