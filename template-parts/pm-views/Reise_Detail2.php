@@ -443,16 +443,11 @@ $args['breadcrumb'][] = $tmp;
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="detail-header-info">
-                            <div class="detail-header-info-top">
-                                <?php
-                                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-top.php', $args);
-                                ?>
-                            </div>
-                            <div class="detail-header-info-bottom">
-                                <?php
-                                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-bottom.php', $args);
-                                ?>
-                            </div>
+                            <?php
+                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-top.php', $args);
+
+                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-bottom.php', $args);
+                            ?>
                         </div>
                     </div>
                 </div>
