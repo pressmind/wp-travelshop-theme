@@ -10970,6 +10970,9 @@ html.force--consent.show--consent body {
  * ----------------------------
  * set colors on image / default
  */
+/*
+ * Detail page
+ */
 /**
  * Get max breakpoint
  */
@@ -13729,6 +13732,14 @@ footer.footer-main {
 /**
  * General styles for Detail-Page
  */
+.detail-section.detail-section-crossselling {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+  @media (min-width: 768px) {
+    .detail-section.detail-section-crossselling {
+      padding-top: 30px;
+      padding-bottom: 30px; } }
+
 html #wpadminbar {
   top: auto !important;
   bottom: 0 !important;
