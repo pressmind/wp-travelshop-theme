@@ -48,11 +48,26 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
                 <div class="page-share-fallback-body">
 
                     <?php if ( isset($args['object']) && !empty($args['object']) ) { ?>
-                    <div class="share-object">
-                        <pre>
-                            <?php print_r($args['object']); ?>
-                        </pre>
-                    </div>
+                        <?php if ( (isset($args['object']['title']) && !empty($args['object']['title'])) && (isset($args['object']['image']) && !empty($args['object']['image'])) ) { ?>
+                        <div class="share-object">
+
+                            <div class="share-object-image">
+                                <?php if ( !empty($args['object']['image']['copyright']) ) { ?>
+                                <div class="share-object-image-copy">
+                                    <?php echo !empty($args['object']['image']['copyright']) ? $args['object']['image']['copyright'] : '&copy; asdasd asd'; ?>
+                                </div>
+                                <?php } ?>
+                                <img src="<?php echo $args['object']['image']['url_thumbnail']; ?>" alt="<?php echo $args['object']['image']['caption']; ?>" />
+                            </div>
+
+                            <div class="share-object-body">
+                                <strong><?php echo $args['object']['title']; ?></strong>
+                            </div>
+                            <pre>
+                                <?php print_r($args['object']); ?>
+                            </pre>
+                        </div>
+                        <?php } ?>
                     <?php } ?>
 
                     <div class="share-buttons">
