@@ -391,170 +391,183 @@ $args['breadcrumb'][] = $tmp;
 
 
 ?>
-<div class="content-main">
-    <article class="detail-page-v2-container">
-        <section class="container">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <?php
-                    // = = = > load the breadcrumb  < = = =
-                    the_breadcrumb(null, null, $args['breadcrumb']);
-                    ?>
-                </div>
-                <div class="d-none d-md-block col-md-auto">
-                    <?php
-                    // = = = > simple share button < = = =
-                    $share_args = [
-                        'title' => 'Reisetipp',
-                        'type' => 'Reise',
-                        'name' => '',
-                        'text' => 'Ich empfehle die Reise',
-                        'buttons' => [
-                            'facebook' => true,
-                            'facebook-messenger' => true,
-                            'twitter' => true,
-                            'whatsapp' => true,
-                            'telegram' => true,
-                            'mail' => true,
-                            'copy' => true,
-                        ]
-                    ];
-
-                    $share_object = [
-                        'title' => $args['headline'],
-                        'image' => $args['pictures'][0]
-                    ];
-                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $share_object]);
-                    ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <?php
-                    // = = = > detail header < = = =
-                    $args['galleryOverlayCount'] = 0;
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
-                    ?>
-                </div>
-                <div class="col-12 col-lg-4 detail-info">
-                    <div class="detail-info-head">
-                        <h2><?php echo $args['name']; ?></h2>
-                        <?php if (!empty($args['subline'])) { ?>
-                            <p><?php echo $args['subline']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($args['usps'])) { ?>
-                            <div class="detail-services-desktop">
-                                <?php echo $args['usps']; ?>
-                            </div>
-                        <?php } ?>
+<div class="content-main content-main--detail" id="content-main">
+    <article class="detail-article">
+        <div class="detail-section detail-section-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <?php
+                        // = = = > load the breadcrumb  < = = =
+                        the_breadcrumb(null, null, $args['breadcrumb']);
+                        ?>
                     </div>
-                    <?php
-                    // = = = > load the price box < = = =
-                    $id_price_box_modal = uniqid();
-                    $args['id_modal_price_box'] = $id_price_box_modal;
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+                    <div class="d-none d-md-block col-md-auto">
+                        <?php
+                        // = = = > simple share button < = = =
+                        $share_args = [
+                            'title' => 'Reisetipp',
+                            'type' => 'Reise',
+                            'name' => '',
+                            'text' => 'Ich empfehle die Reise',
+                            'buttons' => [
+                                'facebook' => true,
+                                'facebook-messenger' => true,
+                                'twitter' => true,
+                                'whatsapp' => true,
+                                'telegram' => true,
+                                'mail' => true,
+                                'copy' => true,
+                            ]
+                        ];
 
-                    // = = = > load the on request row (only shown if the full product is on request < = = =
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
-                    ?>
+                        $share_object = [
+                            'title' => $args['headline'],
+                            'image' => $args['pictures'][0]
+                        ];
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $share_object]);
+                        ?>
+                    </div>
                 </div>
             </div>
-            <?php
-            // = = = > load booking offers modal window < = = =
-            $args_modal = [];
-            $args_modal['title'] = 'Angebot wählen';
-            $args_modal['id_modal'] = $args['id_modal_price_box'];
-            $args['hide_options'] = false;
-            $args_modal['content'] = '<div id="booking-filter"></div><div id="booking-offers"></div>';
-            echo Template::render(APPLICATION_PATH . '/template-parts/layout-blocks/modalscreen.php', $args_modal);
-            ?>
-        </section>
-
-        <section class="container">
-            <div class="row">
-                <div class="col-12">
-                    <?php
-                    // = = = > load booking calendar < = = =
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
-                    ?>
-                </div>
-            </div>
-        </section>
-
-        <section class="container detail-content-wrapper">
-            <div class="row flex-column-reverse flex-lg-row">
-                <div class="col-12 col-lg-8">
-                    <h2><span><?php echo $args['headline']; ?></span></h2>
-                    <hr />
-                    <?php if (!empty($args['subline'])) { ?>
-                        <p class="mb-0"><strong><?php echo $args['subline']; ?></strong></p>
-                    <?php } ?>
-                    <?php if (!empty($args['usps'])) { ?>
-                        <div class="detail-usps">
-                            <?php echo $args['usps']; ?>
+        </div>
+        <section class="detail-section detail-section-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <?php
+                        // = = = > detail header < = = =
+                        $args['galleryOverlayCount'] = 0;
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
+                        ?>
+                    </div>
+                    <div class="col-12 col-lg-4 detail-info">
+                        <div class="detail-info-head">
+                            <h2><?php echo $args['name']; ?></h2>
+                            <?php if (!empty($args['subline'])) { ?>
+                                <p><?php echo $args['subline']; ?></p>
+                            <?php } ?>
+                            <?php if (!empty($args['usps'])) { ?>
+                                <div class="detail-services-desktop">
+                                    <?php echo $args['usps']; ?>
+                                </div>
+                            <?php } ?>
                         </div>
-                    <?php } ?>
-                    <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
-                        <p><?php echo $args['intro']; ?></p>
-                    <?php } ?>
-                    <?php
-                    // = = = > itinerary < = = =
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
+                        <?php
+                        // = = = > load the price box < = = =
+                        $id_price_box_modal = uniqid();
+                        $args['id_modal_price_box'] = $id_price_box_modal;
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
 
-                    // = = = > load common description blocks < = = =
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/description-block.php', $args);
-
-                    // = = = > File Downloads < = = =
-//                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/file-download.php', $args);
-
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/info-line.php', $args);
-
-                    ?>
+                        // = = = > load the on request row (only shown if the full product is on request < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
+                        ?>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="detail-sidebar">
-                        <?php
-                        // = = = > load google maps image < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gmaps-box.php', $args);
+                <?php
+                // = = = > load booking offers modal window < = = =
+                $args_modal = [];
+                $args_modal['title'] = 'Angebot wählen';
+                $args_modal['id_modal'] = $args['id_modal_price_box'];
+                $args['hide_options'] = false;
+                $args_modal['content'] = '<div id="booking-filter"></div><div id="booking-offers"></div>';
+                echo Template::render(APPLICATION_PATH . '/template-parts/layout-blocks/modalscreen.php', $args_modal);
+                ?>
+            </div>
+        </section>
 
-                        // = = = > load static map image (NOT GOOGLE, just an image) < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/map-box.php', $args);
-                        if(!empty($args['services_included'])) { ?>
-                            <div class="detail-services">
-                                <h2>Leistungen</h2>
-                                <?php echo $args['services_included']; ?>
-                            </div>
-                        <?php } ?>
+        <section class="detail-section detail-section-booking-calendar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
                         <?php
-                        // = = = > load contact box < = = =
-                        load_template(get_template_directory().'/template-parts/pm-views/detail-blocks/contact-box.php', false, $args);
-                        // = = = > load contact box < = = =
-                        $args_trust = ['name' => $args['headline']];
-                        load_template_transient(get_template_directory().'/template-parts/pm-views/detail-blocks/trust-box.php', false, $args_trust, 0);
+                        // = = = > load booking calendar < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
                         ?>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="detail-section detail-section-content">
+            <div class="container">
+                <div class="row flex-column-reverse flex-lg-row">
+                    <div class="col-12 col-lg-8">
+                        <h2><span><?php echo $args['headline']; ?></span></h2>
+                        <hr />
+                        <?php if (!empty($args['subline'])) { ?>
+                            <p class="mb-0"><strong><?php echo $args['subline']; ?></strong></p>
+                        <?php } ?>
+                        <?php if (!empty($args['usps'])) { ?>
+                            <div class="detail-usps">
+                                <?php echo $args['usps']; ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
+                            <p><?php echo $args['intro']; ?></p>
+                        <?php } ?>
+                        <?php
+                        // = = = > itinerary < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
+
+                        // = = = > load common description blocks < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/description-block.php', $args);
+
+                        // = = = > File Downloads < = = =
+                        //                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/file-download.php', $args);
+
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/info-line.php', $args);
+
+                        ?>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="detail-sidebar">
+                            <?php
+                            // = = = > load google maps image < = = =
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gmaps-box.php', $args);
+
+                            // = = = > load static map image (NOT GOOGLE, just an image) < = = =
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/map-box.php', $args);
+                            if(!empty($args['services_included'])) { ?>
+                                <div class="detail-services">
+                                    <h2>Leistungen</h2>
+                                    <?php echo $args['services_included']; ?>
+                                </div>
+                            <?php } ?>
+                            <?php
+                            // = = = > load contact box < = = =
+                            load_template(get_template_directory().'/template-parts/pm-views/detail-blocks/contact-box.php', false, $args);
+                            // = = = > load contact box < = = =
+                            $args_trust = ['name' => $args['headline']];
+                            load_template_transient(get_template_directory().'/template-parts/pm-views/detail-blocks/trust-box.php', false, $args_trust, 0);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <?php
         // = = = > load sticky footer bar < = = =
         echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/mobile-bar.php', $args);
         ?>
     </article>
     <hr>
-    <div class="container">
-        <?php
-        // = = = > load similiar products < = = =
-        $args_similiar = [
-            'headline' => 'Kunden buchten auch:',
-            'text' => 'Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.',
-            'search' => [
-                'pm-li' => '0,4',
-                'pm-o' => 'rand',
-                'pm-ot' => TS_TOUR_PRODUCTS
-            ]
-        ];
-        echo Template::render(APPLICATION_PATH.'/template-parts/layout-blocks/product-teaser.php', $args_similiar);
-        ?>
+    <div class="detail-section detail-section-crossselling">
+        <div class="container">
+            <?php
+            // = = = > load similiar products < = = =
+            $args_similiar = [
+                'headline' => 'Kunden buchten auch:',
+                'text' => 'Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.',
+                'search' => [
+                    'pm-li' => '0,4',
+                    'pm-o' => 'rand',
+                    'pm-ot' => TS_TOUR_PRODUCTS
+                ]
+            ];
+            echo Template::render(APPLICATION_PATH.'/template-parts/layout-blocks/product-teaser.php', $args_similiar);
+            ?>
+        </div>
     </div>
 </div>
