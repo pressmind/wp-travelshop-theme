@@ -12,16 +12,20 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 }
 ?>
 <div class="price-box">
+
     <?php
     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/checked-icon.php', []);
     ?>
-    <div class="col-12">
-        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration-icon.php', []);?>
-        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $args['cheapest_price']->duration]);?>
-    </div>
-    <div class="col-12">
-        <span class="date">
 
+    <div class="price-box-row">
+        <div class="price-box-icon-item">
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration-icon.php', []);?>
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $args['cheapest_price']->duration]);?>
+        </div>
+    </div>
+
+    <div class="price-box-row">
+        <div class="price-box-date">
             <a class="show-dates" data-modal="true" data-anchor="<?php echo $args['cheapest_price']->id; ?>" data-modal-id="<?php echo $args['id_modal_price_box']; ?>">
                 <p class="small">Angebot wählen:</p>
                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', ['transport_type' => $args['cheapest_price']->transport_type]);?>
@@ -32,33 +36,41 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     ]);?>
                 </span>
             </a>
-        </span>
+        </div>
     </div>
+
+
+
+
     <?php if($args['cheapest_price']->duration != 1){ ?>
-    <div class="col-12">
-        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-mix-icon.php', ['price_mix' => $args['cheapest_price']->price_mix]);?>
-        <div>
-            <?php
-            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/offer-description.php', [
+    <div class="price-box-row">
+        <div class="price-box-icon-item">
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-mix-icon.php', ['price_mix' => $args['cheapest_price']->price_mix]);?>
+            <div>
+                <?php
+                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/offer-description.php', [
                     'cheapest_price' => $args['cheapest_price']]);
-            ?>
+                ?>
+            </div>
         </div>
     </div>
     <?php } ?>
-    <div class="col-12">
-        <?php
-        if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
-            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
-                'cheapest_price' => $args['cheapest_price'],
-                'discount' => $discount,
-            ]);
-        } else {
-            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price.php', [
-                'cheapest_price' => $args['cheapest_price'],
-            ]);
-        } ?>
+    <div class="price-box-row">
+        <div class="price-box-discount">
+            <?php
+            if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
+                    'cheapest_price' => $args['cheapest_price'],
+                    'discount' => $discount,
+                ]);
+            } else {
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price.php', [
+                    'cheapest_price' => $args['cheapest_price'],
+                ]);
+            } ?>
+        </div>
     </div>
-    <div class="col-12">
+    <div class="price-box-row">
         <?php // Random Availability
             $randint = random_int(1, 9);
         ?>
