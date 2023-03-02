@@ -443,7 +443,7 @@ $args['breadcrumb'][] = $tmp;
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="detail-header-info">
-                            <div class="detail-info-head">
+                            <div class="detail-header-info-top">
                                 <h2><?php echo $args['name']; ?></h2>
                                 <?php if (!empty($args['subline'])) { ?>
                                     <p><?php echo $args['subline']; ?></p>
@@ -454,15 +454,9 @@ $args['breadcrumb'][] = $tmp;
                                     </div>
                                 <?php } ?>
                             </div>
-                            <?php
-                            // = = = > load the price box < = = =
-                            $id_price_box_modal = uniqid();
-                            $args['id_modal_price_box'] = $id_price_box_modal;
-                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
-
-                            // = = = > load the on request row (only shown if the full product is on request < = = =
-                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
-                            ?>
+                            <div class="detail-header-info-bottom">
+                                asd
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -523,6 +517,16 @@ $args['breadcrumb'][] = $tmp;
                         ?>
                     </div>
                     <div class="col-12 col-lg-4">
+                        <?php
+                        // = = = > load the price box < = = =
+                        $id_price_box_modal = uniqid();
+                        $args['id_modal_price_box'] = $id_price_box_modal;
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+
+                        // = = = > load the on request row (only shown if the full product is on request < = = =
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
+                        ?>
+
                         <div class="detail-sidebar">
                             <?php
                             // = = = > load google maps image < = = =
