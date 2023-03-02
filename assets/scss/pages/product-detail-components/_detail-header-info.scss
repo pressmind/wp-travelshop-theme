@@ -59,6 +59,13 @@
           }
         }
 
+        .detail-header-info-chosen-date-data {
+          .small-title {
+            color: rgba($detail-header-info-chosen-date-color, .5);
+            font-size: $font-size-sm;
+          }
+        }
+
         &:hover {
           border-color: $detail-header-info-chosen-date-hover-border-color;
           background-color: $detail-header-info-chosen-date-hover-bg;

@@ -13764,6 +13764,9 @@ footer.footer-main {
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-icon svg {
         width: 1.125rem;
         height: 1.125rem; }
+      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-data .small-title {
+        color: rgba(33, 37, 41, 0.5);
+        font-size: 0.875rem; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:hover {
         border-color: #212529;
         background-color: #e9ecef;
