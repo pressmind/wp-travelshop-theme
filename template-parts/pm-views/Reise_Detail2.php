@@ -473,6 +473,7 @@ $args['breadcrumb'][] = $tmp;
             </div>
         </section>
 
+        <!--
         <section class="detail-section detail-section-booking-calendar">
             <div class="container">
                 <div class="row">
@@ -485,6 +486,7 @@ $args['breadcrumb'][] = $tmp;
                 </div>
             </div>
         </section>
+        -->
 
         <section class="detail-section detail-section-content">
             <div class="container">
