@@ -13745,6 +13745,15 @@ footer.footer-main {
       .detail-header-info .detail-header-info-top,
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
+  .detail-header-info .detail-header-info-top .detail-header-info-chosen-date {
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #212529;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e9ecef;
+    padding: 0.5rem 1rem;
+    transition: color .3s, border-color .3s, background-color .3s; }
   .detail-header-info .detail-header-info-bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
     background-color: #fff; }

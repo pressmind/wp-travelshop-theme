@@ -20,7 +20,19 @@
 
       // -- chosen date
       .detail-header-info-chosen-date {
-        
+        @include border-radius($detail-header-info-chosen-date-border-radius);
+        background-color: $detail-header-info-chosen-date-bg;
+        color: $detail-header-info-chosen-date-color;
+
+        @if ( $detail-header-info-chosen-date-border-width != 0 ) {
+          border-width: $detail-header-info-chosen-date-border-width;
+          border-style: solid;
+          border-color: $detail-header-info-chosen-date-border-color;
+        }
+
+        padding: $detail-header-info-chosen-date-spacer-y $detail-header-info-chosen-date-spacer-x;
+
+        transition: color .3s, border-color .3s, background-color .3s;
       }
 
     }
