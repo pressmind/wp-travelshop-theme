@@ -2,6 +2,7 @@
 @if ( $detail-page-use-default == true ) {
   .detail-header-info {
     background-color: $detail-header-info-bg;
+    overflow: hidden;
 
     @if ( $detail-header-info-border-width != 0 ) {
       border: $detail-header-info-border-width solid $detail-header-info-border-color;
@@ -9,5 +10,26 @@
 
     @include border-radius($detail-header-info-border-radius);
     @include font-size-generator($detail-header-info-font-sizes);
+
+    .detail-header-info-top,
+    .detail-header-info-bottom {
+      @include spacing-generator($detail-header-info-spacers-x, 'around', 'padding');
+    }
+
+    .detail-header-info-top {
+
+    }
+
+    .detail-header-info-bottom {
+      @if ( $detail-header-info-bottom-divider-width == 0 or $detail-header-info-bg == $detail-header-info-bottom-bg ) {
+        padding-top: 0 !important;
+      }
+
+      @if ( $detail-header-info-bottom-divider-width != 0 ) {
+        border-top: $detail-header-info-bottom-divider-width solid $detail-header-info-bottom-divider-color;
+      }
+
+      background-color: $detail-header-info-bottom-bg;
+    }
   }
 }

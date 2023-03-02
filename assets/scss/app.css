@@ -13731,12 +13731,24 @@ footer.footer-main {
  */
 .detail-header-info {
   background-color: #fff;
+  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-size: 0.875rem; }
   @media (min-width: 992px) {
     .detail-header-info {
       font-size: 1rem; } }
+  .detail-header-info .detail-header-info-top,
+  .detail-header-info .detail-header-info-bottom {
+    padding: 1.25rem; }
+    @media (min-width: 992px) {
+      .detail-header-info .detail-header-info-top,
+      .detail-header-info .detail-header-info-bottom {
+        padding: 30px; } }
+  .detail-header-info .detail-header-info-bottom {
+    padding-top: 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #fff; }
 
 /**
  * General styles for Detail-Page

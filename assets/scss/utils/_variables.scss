@@ -637,13 +637,20 @@ $detail-header-info-border-width: $card-border-width !default;
 $detail-header-info-border-color: $card-border-color !default;
 $detail-header-info-bg: $card-bg !default;
 $detail-header-info-headline-sizes: $h2-font-sizes !default;
+
+$detail-header-info-bottom-bg: $card-bg !default;
+$detail-header-info-bottom-divider-width: $detail-header-info-border-width !default;
+$detail-header-info-bottom-divider-color: $detail-header-info-border-color !default;
+
 $detail-header-info-font-sizes: (
     null: $font-size-sm,
     lg: $font-size-base
 ) !default;
 $detail-header-info-spacers-x: (
-  null: $card-spacer-x
+  null: $card-spacer-x,
+  lg: $grid-gutter-width
 ) !default;
 $detail-header-info-spacers-y: (
-  null: $card-spacer-y
+  null: $card-spacer-y,
+  lg: $grid-gutter-width
 ) !default;
