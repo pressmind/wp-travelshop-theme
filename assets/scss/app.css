@@ -13764,9 +13764,33 @@ footer.footer-main {
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-icon svg {
         width: 1.25rem;
         height: 1.25rem; }
-      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-data .small-title {
-        color: rgba(33, 37, 41, 0.5);
-        font-size: 0.875rem; }
+      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info {
+        position: relative;
+        padding-right: 2rem; }
+        .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit {
+          border: 0;
+          outline: none;
+          box-shadow: none;
+          background: transparent;
+          padding: 0;
+          cursor: pointer;
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #434b53;
+          transition: color .3s;
+          top: -0.4375rem;
+          right: -0.4375rem; }
+          .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit > svg {
+            width: 1.125rem;
+            height: 1.125rem; }
+          .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit:hover, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit:focus, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit:active {
+            color: #007bff; }
+        .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info .detail-header-info-chosen-date-data .small-title {
+          color: rgba(33, 37, 41, 0.5);
+          font-size: 0.875rem; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:hover {
         border-color: #212529;
         background-color: #e9ecef;

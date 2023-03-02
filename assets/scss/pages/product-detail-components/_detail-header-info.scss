@@ -59,10 +59,45 @@
           }
         }
 
-        .detail-header-info-chosen-date-data {
-          .small-title {
-            color: rgba($detail-header-info-chosen-date-color, .5);
-            font-size: $font-size-sm;
+        .detail-header-info-chosen-date-info {
+          position: relative;
+          padding-right: 2rem;
+
+          // -- edit
+          button.detail-header-info-chosen-date-edit {
+            @include button-reset();
+
+            cursor: pointer;
+
+            width: 2rem; // 2 rem cuz touch actions need 32 px at least
+            height: 2rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: $body-color-light;
+            transition: color .3s;
+
+            top: -((2rem - $font-size-lg) / 2);
+            right: -((2rem - $font-size-lg) / 2);
+
+            > svg {
+              width: $font-size-lg;
+              height: $font-size-lg;
+            }
+
+            &:hover, &:focus, &:active {
+              color: $primary;
+            }
+          }
+
+          // -- data
+          .detail-header-info-chosen-date-data {
+            .small-title {
+              color: rgba($detail-header-info-chosen-date-color, .5);
+              font-size: $font-size-sm;
+            }
           }
         }
 
