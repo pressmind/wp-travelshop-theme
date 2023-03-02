@@ -444,19 +444,14 @@ $args['breadcrumb'][] = $tmp;
                     <div class="col-12 col-lg-4">
                         <div class="detail-header-info">
                             <div class="detail-header-info-top">
-
-                                <h2><?php echo $args['name']; ?></h2>
-                                <?php if (!empty($args['subline'])) { ?>
-                                    <p><?php echo $args['subline']; ?></p>
-                                <?php } ?>
-                                <?php if (!empty($args['usps'])) { ?>
-                                    <div class="detail-services-desktop">
-                                        <?php echo $args['usps']; ?>
-                                    </div>
-                                <?php } ?>
+                                <?php
+                                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-top.php', $args);
+                                ?>
                             </div>
                             <div class="detail-header-info-bottom">
-                                asd
+                                <?php
+                                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-bottom.php', $args);
+                                ?>
                             </div>
                         </div>
                     </div>
