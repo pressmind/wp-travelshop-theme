@@ -1,4 +1,13 @@
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
+  .detail-header-info {
+    background-color: $detail-header-info-bg;
 
+    @if ( $detail-header-info-border-width != 0 ) {
+      border: $detail-header-info-border-width solid $detail-header-info-border-color;
+    }
+
+    @include border-radius($detail-header-info-border-radius);
+    @include font-size-generator($detail-header-info-font-sizes);
+  }
 }

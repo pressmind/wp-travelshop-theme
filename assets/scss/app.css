@@ -13729,6 +13729,15 @@ footer.footer-main {
 /**
  * Import Detail "components"
  */
+.detail-header-info {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-size: 0.875rem; }
+  @media (min-width: 992px) {
+    .detail-header-info {
+      font-size: 1rem; } }
+
 /**
  * General styles for Detail-Page
  */

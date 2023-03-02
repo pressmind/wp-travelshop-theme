@@ -441,27 +441,29 @@ $args['breadcrumb'][] = $tmp;
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
                         ?>
                     </div>
-                    <div class="col-12 col-lg-4 detail-info">
-                        <div class="detail-info-head">
-                            <h2><?php echo $args['name']; ?></h2>
-                            <?php if (!empty($args['subline'])) { ?>
-                                <p><?php echo $args['subline']; ?></p>
-                            <?php } ?>
-                            <?php if (!empty($args['usps'])) { ?>
-                                <div class="detail-services-desktop">
-                                    <?php echo $args['usps']; ?>
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <?php
-                        // = = = > load the price box < = = =
-                        $id_price_box_modal = uniqid();
-                        $args['id_modal_price_box'] = $id_price_box_modal;
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+                    <div class="col-12 col-lg-4">
+                        <div class="detail-header-info">
+                            <div class="detail-info-head">
+                                <h2><?php echo $args['name']; ?></h2>
+                                <?php if (!empty($args['subline'])) { ?>
+                                    <p><?php echo $args['subline']; ?></p>
+                                <?php } ?>
+                                <?php if (!empty($args['usps'])) { ?>
+                                    <div class="detail-services-desktop">
+                                        <?php echo $args['usps']; ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <?php
+                            // = = = > load the price box < = = =
+                            $id_price_box_modal = uniqid();
+                            $args['id_modal_price_box'] = $id_price_box_modal;
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
 
-                        // = = = > load the on request row (only shown if the full product is on request < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
-                        ?>
+                            // = = = > load the on request row (only shown if the full product is on request < = = =
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
+                            ?>
+                        </div>
                     </div>
                 </div>
                 <?php
