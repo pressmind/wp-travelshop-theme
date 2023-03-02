@@ -13755,12 +13755,12 @@ footer.footer-main {
       border-width: 1px;
       border-style: solid;
       border-color: rgba(0, 0, 0, 0.125);
-      padding: 0.5rem 0.5rem;
+      padding: 1rem 1rem;
       transition: color .3s, border-color .3s, background-color .3s;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      gap: 0.5rem; }
+      gap: 1rem; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-icon svg {
         width: 1.25rem;
         height: 1.25rem; }
