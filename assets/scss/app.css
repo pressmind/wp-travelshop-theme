@@ -13754,7 +13754,7 @@ footer.footer-main {
       color: #212529;
       border-width: 1px;
       border-style: solid;
-      border-color: #e9ecef;
+      border-color: rgba(0, 0, 0, 0.125);
       padding: 0.5rem 1rem;
       transition: color .3s, border-color .3s, background-color .3s;
       display: flex;
@@ -13792,11 +13792,11 @@ footer.footer-main {
           color: rgba(33, 37, 41, 0.5);
           font-size: 0.875rem; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:hover {
-        border-color: #212529;
+        border-color: rgba(0, 0, 0, 0.125);
         background-color: #e9ecef;
         color: #212529; }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:active, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:focus {
-        border-color: #212529;
+        border-color: rgba(0, 0, 0, 0.125);
         background-color: #e9ecef;
         color: #212529; }
 
