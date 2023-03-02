@@ -63,9 +63,13 @@
           position: relative;
           padding-right: 2rem;
 
+          flex: 1;
+
           // -- edit
           button.detail-header-info-chosen-date-edit {
             @include button-reset();
+
+            position: absolute;
 
             cursor: pointer;
 
