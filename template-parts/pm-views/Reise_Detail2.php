@@ -438,12 +438,13 @@ $args['breadcrumb'][] = $tmp;
                         <?php
                         // = = = > detail header < = = =
                         $args['galleryOverlayCount'] = 0;
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
+//                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
                         ?>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="detail-header-info">
                             <div class="detail-header-info-top">
+
                                 <h2><?php echo $args['name']; ?></h2>
                                 <?php if (!empty($args['subline'])) { ?>
                                     <p><?php echo $args['subline']; ?></p>
