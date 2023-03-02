@@ -26,7 +26,7 @@ if (empty($_GET['pm-tr']) === false) {
                        data-id="<?php echo $item->name; ?>"
                     <?php echo in_array($item->name, $selected) ? 'checked' : ''; ?><?php echo !empty($is_open) ? 'disabled' : ''; ?>>
                 <span>
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
                 </span>
                 <label class="form-check-label" for="<?php echo $uuid; ?>">
                     <?php echo ucfirst(strtolower($item->name)); ?>
