@@ -52,11 +52,6 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
                         <div class="share-object">
 
                             <div class="share-object-image">
-<!--                                --><?php //if ( !empty($args['object']['image']['copyright']) ) { ?>
-                                <div class="share-object-image-copy">
-                                    <?php echo !empty($args['object']['image']['copyright']) ? $args['object']['image']['copyright'] : '&copy; asdasd asd'; ?>
-                                </div>
-<!--                                --><?php //} ?>
                                 <img src="<?php echo $args['object']['image']['url_thumbnail']; ?>" alt="<?php echo $args['object']['image']['caption']; ?>" />
                             </div>
 
