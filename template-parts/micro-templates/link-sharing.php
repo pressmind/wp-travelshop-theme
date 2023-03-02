@@ -43,6 +43,15 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
                     </button>
                 </div>
                 <div class="page-share-fallback-body">
+
+                    <?php if ( isset($args['object']) && !empty($args['object']) ) { ?>
+                    <div class="share-object">
+                        <pre>
+                            <?php print_r($args['object']); ?>
+                        </pre>
+                    </div>
+                    <?php } ?>
+
                     <div class="share-buttons">
                         <?php if ( isset($args['share_options']['buttons']['facebook']) && $args['share_options']['buttons']['facebook'] ) { ?>
                             <div class="share-buttons-col">

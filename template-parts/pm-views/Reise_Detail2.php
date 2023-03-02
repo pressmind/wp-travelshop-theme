@@ -419,7 +419,12 @@ $args['breadcrumb'][] = $tmp;
                             'copy' => true,
                         ]
                     ];
-                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $args]);
+
+                    $share_object = [
+                        'title' => $args['headline'],
+                        'image' => $args['pictures'][0]
+                    ];
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $share_object]);
                     ?>
                 </div>
             </div>
