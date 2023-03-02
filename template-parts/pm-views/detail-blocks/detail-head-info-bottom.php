@@ -17,7 +17,7 @@ use Pressmind\Travelshop\Template;
     ?>
 
     <?php
-    if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
+    if(!empty($args['cheapest_price']) || empty($args['booking_on_request'])){
     ?>
     <div class="detail-header-info-chosen-date">
         <div class="detail-header-info-chosen-date-icon">
