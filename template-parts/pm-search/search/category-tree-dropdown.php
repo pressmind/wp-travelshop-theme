@@ -62,7 +62,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                                                 <?php echo in_array($item->id_item, $selected) ? 'checked' : ''; ?>>
 
                                             <span>
-                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check"></use></svg>
+                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
                                     </span>
 
                                             <label class="form-check-label" for="<?php echo $uuid; ?>">
