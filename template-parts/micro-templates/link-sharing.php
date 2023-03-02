@@ -63,9 +63,6 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
                             <div class="share-object-body">
                                 <strong><?php echo $args['object']['title']; ?></strong>
                             </div>
-                            <pre>
-                                <?php print_r($args['object']); ?>
-                            </pre>
                         </div>
                         <?php } ?>
                     <?php } ?>
