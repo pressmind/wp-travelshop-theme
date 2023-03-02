@@ -6,6 +6,7 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 if ( !isset ( $args['share_options'] ) ) {
     $args['share_options'] = [
         'title' => 'Reisetipp',
+        'title_prefix' => 'Teile diese',
         'type' => 'Reise',
         'name' => '',
         'text' => 'Ich empfehle die Reise',
@@ -21,7 +22,9 @@ if ( !isset ( $args['share_options'] ) ) {
     ];
 }
 
-$share_title = !empty($args['share_options']['type']) ? $args['share_options']['type'] . ' teilen' : 'Seite teilen';
+$args['share_options']['title_prefix'] = ( !isset($args['share_options']['title_prefix']) && !empty($args['share_options']['title_prefix']) ) ? $arg['share_options']['title_prefix'] : 'Teile diese ';
+
+$share_title = !empty($args['share_options']['type']) ? $args['share_options']['title_prefix'] . $args['share_options']['type'] : 'Seite teilen';
 ?>
 
 <div class="page-share">
