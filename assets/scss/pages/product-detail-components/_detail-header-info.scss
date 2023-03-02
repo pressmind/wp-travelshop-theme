@@ -44,8 +44,25 @@
         }
 
         padding: $detail-header-info-chosen-date-spacer-y $detail-header-info-chosen-date-spacer-x;
-
         transition: color .3s, border-color .3s, background-color .3s;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: $detail-header-info-chosen-date-spacer-x;
+
+        &:hover {
+          border-color: $detail-header-info-chosen-date-hover-border-color;
+          background-color: $detail-header-info-chosen-date-hover-bg;
+          color: $detail-header-info-chosen-date-hover-color;
+        }
+
+        &:active, &:focus {
+          border-color: $detail-header-info-chosen-date-hover-border-color;
+          background-color: $detail-header-info-chosen-date-hover-bg;
+          color: $detail-header-info-chosen-date-hover-color;
+        }
       }
     }
   }

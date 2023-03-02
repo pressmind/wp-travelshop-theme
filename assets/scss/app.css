@@ -13756,7 +13756,19 @@ footer.footer-main {
       border-style: solid;
       border-color: #e9ecef;
       padding: 0.5rem 1rem;
-      transition: color .3s, border-color .3s, background-color .3s; }
+      transition: color .3s, border-color .3s, background-color .3s;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1rem; }
+      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:hover {
+        border-color: #e9ecef;
+        background-color: #e9ecef;
+        color: #212529; }
+      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:active, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:focus {
+        border-color: #e9ecef;
+        background-color: #e9ecef;
+        color: #212529; }
 
 /**
  * General styles for Detail-Page
