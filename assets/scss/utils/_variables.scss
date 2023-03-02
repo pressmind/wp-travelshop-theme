@@ -20,8 +20,13 @@ $placeholders: ();
  * not have different colors in various elements.
  */
 $booking-green: $success !default;
+$booking-green-color: $white !default;
 $booking-red: $danger !default;
+$booking-red-color: $white !default;
 $booking-orange: $warning !default;
+$booking-orange-color: $white !default;
+$booking-gray: $gray-900 !default;
+$booking-gray-color: $white !default;
 
 /**
  * Body

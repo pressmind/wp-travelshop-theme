@@ -11721,7 +11721,8 @@ form.form-string-search.input-group {
 .booking-btn.green {
   color: #fff;
   background-color: #28a745;
-  border-color: #28a745; }
+  border-color: #28a745;
+  color: #fff; }
   .btn.booking-btn.green:hover,
   .booking-btn.green:hover {
     color: #212529;
@@ -11749,11 +11750,17 @@ form.form-string-search.input-group {
     .booking-btn.green:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.green.dropdown-toggle:focus {
       box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5); }
+  .btn.booking-btn.green:hover, .btn.booking-btn.green:focus, .btn.booking-btn.green:active,
+  .booking-btn.green:hover,
+  .booking-btn.green:focus,
+  .booking-btn.green:active {
+    color: #fff; }
 .btn.booking-btn.red,
 .booking-btn.red {
   color: #fff;
   background-color: #dc3545;
-  border-color: #dc3545; }
+  border-color: #dc3545;
+  color: #fff; }
   .btn.booking-btn.red:hover,
   .booking-btn.red:hover {
     color: #212529;
@@ -11781,11 +11788,17 @@ form.form-string-search.input-group {
     .booking-btn.red:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.red.dropdown-toggle:focus {
       box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5); }
+  .btn.booking-btn.red:hover, .btn.booking-btn.red:focus, .btn.booking-btn.red:active,
+  .booking-btn.red:hover,
+  .booking-btn.red:focus,
+  .booking-btn.red:active {
+    color: #fff; }
 .btn.booking-btn.orange,
 .booking-btn.orange {
   color: #212529;
   background-color: #ffc107;
-  border-color: #ffc107; }
+  border-color: #ffc107;
+  color: #fff; }
   .btn.booking-btn.orange:hover,
   .booking-btn.orange:hover {
     color: #212529;
@@ -11813,11 +11826,17 @@ form.form-string-search.input-group {
     .booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.orange.dropdown-toggle:focus {
       box-shadow: 0 0 0 0 rgba(222, 170, 12, 0.5); }
+  .btn.booking-btn.orange:hover, .btn.booking-btn.orange:focus, .btn.booking-btn.orange:active,
+  .booking-btn.orange:hover,
+  .booking-btn.orange:focus,
+  .booking-btn.orange:active {
+    color: #fff; }
 .btn.booking-btn.gray,
 .booking-btn.gray {
   color: #fff;
   background-color: #212529;
-  border-color: #212529; }
+  border-color: #212529;
+  color: #fff; }
   .btn.booking-btn.gray:hover,
   .booking-btn.gray:hover {
     color: #fff;
@@ -11845,6 +11864,11 @@ form.form-string-search.input-group {
     .booking-btn.gray:not(:disabled):not(.disabled).active:focus, .show >
     .booking-btn.gray.dropdown-toggle:focus {
       box-shadow: 0 0 0 0 rgba(66, 70, 73, 0.5); }
+  .btn.booking-btn.gray:hover, .btn.booking-btn.gray:focus, .btn.booking-btn.gray:active,
+  .booking-btn.gray:hover,
+  .booking-btn.gray:focus,
+  .booking-btn.gray:active {
+    color: #fff; }
 
 .add-to-wishlist {
   color: #212529; }

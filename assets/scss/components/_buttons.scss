@@ -57,14 +57,42 @@
 .booking-btn {
   &.green {
     @include button-variant($booking-green, $booking-green, lighten($booking-green, 15%), lighten($booking-green, 15%), darken($booking-green, 10%), darken($booking-green, 10%));
+
+    // -- set color
+    color: $booking-green-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-green-color;
+    }
   }
   &.red {
     @include button-variant($booking-red, $booking-red, lighten($booking-red, 15%), lighten($booking-red, 15%), darken($booking-red, 10%), darken($booking-red, 10%));
+
+    // -- set color
+    color: $booking-red-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-red-color;
+    }
   }
   &.orange {
     @include button-variant($booking-orange, $booking-orange, lighten($booking-orange, 15%), lighten($booking-orange, 15%), darken($booking-orange, 10%), darken($booking-orange, 10%));
+
+    // -- set color
+    color: $booking-orange-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-orange-color;
+    }
   }
   &.gray {
     @include button-variant($gray-900, $gray-900, $gray-700, $gray-700, $gray-900, $gray-900);
+
+    // -- set color
+    color: $booking-gray-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-gray-color;
+    }
   }
 }
