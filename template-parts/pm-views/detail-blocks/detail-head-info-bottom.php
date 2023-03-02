@@ -6,14 +6,19 @@ use Pressmind\Travelshop\Template;
 /**
  * @var $args | mediaobject data
  */
-
-if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
-    return;
-}
 ?>
 
 <div class="detail-header-info-bottom">
 
+
+    <?php
+    // = = = > load the on request row (only shown if the full product is on request < = = =
+    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
+    ?>
+
+    <?php
+    if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
+    ?>
     <div class="detail-header-info-chosen-date">
         <div class="detail-header-info-chosen-date-icon">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', ['transport_type' => $args['cheapest_price']->transport_type]); ?>
@@ -53,4 +58,5 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
         <?php } ?>
     </div>
+    <?php } ?>
 </div>
