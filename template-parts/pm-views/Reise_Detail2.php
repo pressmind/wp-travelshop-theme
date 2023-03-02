@@ -462,12 +462,12 @@ $args['breadcrumb'][] = $tmp;
                 </div>
                 <?php
                 // = = = > load booking offers modal window < = = =
-                $args_modal = [];
-                $args_modal['title'] = 'Angebot wählen';
-                $args_modal['id_modal'] = $args['id_modal_price_box'];
-                $args['hide_options'] = false;
-                $args_modal['content'] = '<div id="booking-filter"></div><div id="booking-offers"></div>';
-                echo Template::render(APPLICATION_PATH . '/template-parts/layout-blocks/modalscreen.php', $args_modal);
+//                $args_modal = [];
+//                $args_modal['title'] = 'Angebot wählen';
+//                $args_modal['id_modal'] = $args['id_modal_price_box'];
+//                $args['hide_options'] = false;
+//                $args_modal['content'] = '<div id="booking-filter"></div><div id="booking-offers"></div>';
+//                echo Template::render(APPLICATION_PATH . '/template-parts/layout-blocks/modalscreen.php', $args_modal);
                 ?>
             </div>
         </section>
