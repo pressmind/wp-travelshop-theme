@@ -404,7 +404,22 @@ $args['breadcrumb'][] = $tmp;
                 <div class="d-none d-md-block col-md-auto">
                     <?php
                     // = = = > simple share button < = = =
-                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', $args);
+                    $share_args = [
+                        'title' => 'Reisetipp',
+                        'type' => 'Reise',
+                        'name' => '',
+                        'text' => 'Ich empfehle die Reise',
+                        'buttons' => [
+                            'facebook' => true,
+                            'facebook-messenger' => true,
+                            'twitter' => true,
+                            'whatsapp' => true,
+                            'telegram' => true,
+                            'mail' => true,
+                            'copy' => true,
+                        ]
+                    ];
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $args]);
                     ?>
                 </div>
             </div>
