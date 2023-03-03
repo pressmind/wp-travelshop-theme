@@ -13968,10 +13968,10 @@ footer.footer-main {
         .price-box .price-box-row .price-box-icon-item > svg {
           top: 0.75rem; } }
   .price-box .price-box-row + .price-box-row {
-    margin-top: 0.5rem; }
+    margin-top: 0.25rem; }
     @media (min-width: 992px) {
       .price-box .price-box-row + .price-box-row {
-        margin-top: 1rem; } }
+        margin-top: 0.5rem; } }
 
 /**
  * General styles for Detail-Page

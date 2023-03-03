@@ -75,7 +75,7 @@
     }
 
     + .price-box-row {
-      @include spacing-generator($detail-header-info-spacers-y, 'top', margin);
+      @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
     }
   }
 }
