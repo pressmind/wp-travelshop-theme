@@ -13,7 +13,7 @@ use Pressmind\Travelshop\IB3Tools;
 
 ?>
 
-<a class="btn btn-primary btn-block booking-btn green" target="_blank"
+<a class="btn <?php echo (isset($args['size']) && !empty($args['size'])) ? 'btn-' . $args['size'] : ''; ?> btn-primary btn-block booking-btn green" target="_blank"
    rel="nofollow"
     <?php
     if (!isset($args['modal_id']) && !empty($args['modal_id'])) {
