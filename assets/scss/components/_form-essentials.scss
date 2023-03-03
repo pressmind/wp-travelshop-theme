@@ -139,7 +139,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 
   // custom input
-  > span {
+  > span,
+  > div {
     display: block;
 
     width: 100%;
@@ -182,7 +183,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // hover
   &:hover {
-    > span {
+    > span,
+    > div  {
 
       background-color: $custom-checkbox-input-hover-bg;
 
@@ -198,7 +200,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 
   // active
-  input:checked + span {
+  input:checked + span,
+  input:checked + div {
     background-color: $custom-checkbox-input-active-bg;
 
     @if ( $custom-checkbox-input-border-width != 0 ) {
@@ -283,7 +286,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   line-height: $custom-checkbox-large-line-height;
 
   // custom input
-  > span {
+  > span,
+  > div {
     height: $custom-checkbox-large-input-size;
     max-width: $custom-checkbox-large-input-size;
     flex: 0 0 $custom-checkbox-large-input-size;
@@ -371,7 +375,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 
   // custom input
-  > span {
+  > span,
+  > div {
     display: block;
 
     width: 100%;
@@ -414,7 +419,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // hover
   &:hover {
-    > span {
+    > span,
+    > div {
 
       background-color: $custom-radio-input-hover-bg;
 
@@ -430,7 +436,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 
   // active
-  input:checked + span {
+  input:checked + span,
+  input:checked + div {
     background-color: $custom-radio-input-active-bg;
 
     @if ( $custom-radio-input-border-width != 0 ) {
@@ -450,7 +457,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   line-height: $custom-radio-large-line-height;
 
   // custom input
-  > span {
+  > span,
+  > div {
     height: $custom-radio-large-input-size;
     max-width: $custom-radio-large-input-size;
     flex: 0 0 $custom-radio-large-input-size;
