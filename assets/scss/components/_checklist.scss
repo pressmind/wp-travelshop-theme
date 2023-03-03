@@ -29,5 +29,20 @@
 }
 
 %checklist-responsive {
-  color: $body-color;
+  @include media-breakpoint-down(md) {
+    font-size: $checklist-font-size-small;
+
+    li {
+      padding-left: ( $checklist-icon-size-small + $checklist-icon-spacer);
+
+      svg {
+        top: (  ($checklist-font-size-small * $checklist-line-height) / 2 );
+
+        width: $checklist-icon-size-small;
+        height: $checklist-icon-size-small;
+
+
+      }
+    }
+  }
 }

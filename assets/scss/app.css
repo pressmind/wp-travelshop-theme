@@ -11591,21 +11591,28 @@ form.form-string-search.input-group {
   font-size: 1rem;
   line-height: 1.5; }
   .detail-header-info .detail-header-info-top ul.checklist li {
-    padding-left: 1.375rem;
+    padding-left: 1.5rem;
     position: relative; }
     .detail-header-info .detail-header-info-top ul.checklist li svg {
       position: absolute;
       left: 0;
       top: 0.75rem;
       transform: translateY(-50%);
-      width: 1.125rem;
-      height: 1.125rem;
+      width: 1.25rem;
+      height: 1.25rem;
       color: #28a745; }
     .detail-header-info .detail-header-info-top ul.checklist li + li {
       margin-top: 0.5rem; }
 
-.detail-header-info .detail-header-info-top ul.checklist {
-  color: #212529; }
+@media (max-width: 991.98px) {
+  .detail-header-info .detail-header-info-top ul.checklist {
+    font-size: 0.875rem; }
+    .detail-header-info .detail-header-info-top ul.checklist li {
+      padding-left: 1.375rem; }
+      .detail-header-info .detail-header-info-top ul.checklist li svg {
+        top: 0.65625rem;
+        width: 1.125rem;
+        height: 1.125rem; } }
 
 .spinner {
   margin: 20px auto 20px auto;
