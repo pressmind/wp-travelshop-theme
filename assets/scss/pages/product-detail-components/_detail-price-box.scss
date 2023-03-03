@@ -1,4 +1,54 @@
-// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
-@if ( $detail-page-use-default == true ) {
+.price-box {
+  // -- pricebox
+  .price-box {
+    position: relative;
 
+    @include font-size-generator($booking-entrypoint-font-sizes);
+
+    // state-checkmark
+    .state-check {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $booking-gray;
+      color: $booking-gray-color;
+
+      @include border-radius(50%);
+
+      position:absolute;
+      top:0;
+      right:0;
+
+      line-height: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-success {
+        background-color: $booking-green;
+        color: $booking-green-color;
+      }
+
+      > svg {
+        width: $font-size-base;
+        height: $font-size-base;
+      }
+    }
+
+    // -- info rows
+    .price-box-row {
+      .price-box-icon-item{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: .25rem;
+
+        > svg {
+          width: $font-size-base;
+          height: $font-size-base;
+        }
+      }
+    }
+  }
 }
