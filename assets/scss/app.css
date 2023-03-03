@@ -11672,15 +11672,15 @@ form.form-string-search.input-group {
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > div:not(.list-filter-second-level) svg {
-      width: 0.875rem;
-      height: 0.875rem;
+      width: 0.5rem;
+      height: 0.5rem;
       display: none;
       transition: color .3s;
       color: #fff;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-0.4375rem, -0.4375rem); }
+      transform: translate(-0.25rem, -0.25rem); }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio:hover > span, .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio:hover > span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > span,
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level),
@@ -11723,9 +11723,9 @@ form.form-string-search.input-group {
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio > span svg,
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
       .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg {
-        width: 1.25rem;
-        height: 1.25rem;
-        transform: translate(-0.625rem, -0.625rem); } }
+        width: 0.75rem;
+        height: 0.75rem;
+        transform: translate(-0.375rem, -0.375rem); } }
 @media (min-width: 768px) {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio, .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio {
     gap: 0.5rem;
@@ -11743,9 +11743,9 @@ form.form-string-search.input-group {
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio > span svg,
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
       .dropdown-menu.dropdown-menu-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg {
-        width: 1.25rem;
-        height: 1.25rem;
-        transform: translate(-0.625rem, -0.625rem); } }
+        width: 0.75rem;
+        height: 0.75rem;
+        transform: translate(-0.375rem, -0.375rem); } }
 .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio {
   display: flex;
   flex-direction: row;

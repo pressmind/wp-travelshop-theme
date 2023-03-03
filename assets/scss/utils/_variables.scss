@@ -327,7 +327,7 @@ $custom-radio-gutter: $custom-checkbox-gutter !default; // defines spacing betwe
 $custom-radio-spacer: $custom-checkbox-spacer !default; // Defines spacing between 2 elements
 $custom-radio-input-border-radius: 50% !default;
 $custom-radio-input-size: $custom-checkbox-input-size !default; // little calculation to make it fitting to font size
-$custom-radio-input-icon-size: $custom-checkbox-input-icon-size !default;
+$custom-radio-input-icon-size: $custom-radio-input-size / 2 !default;
 $custom-radio-input-bg: $custom-checkbox-input-bg !default;
 $custom-radio-input-border-width: $custom-checkbox-input-border-width !default;
 $custom-radio-input-border-color: $custom-checkbox-input-border-color !default;
@@ -340,7 +340,7 @@ $custom-radio-line-height: $custom-checkbox-line-height !default;
 $custom-radio-large-spacer: $custom-checkbox-large-spacer !default;
 $custom-radio-large-gutter: $custom-checkbox-large-gutter !default;
 $custom-radio-large-input-size: $custom-checkbox-large-input-size !default;
-$custom-radio-large-input-icon-size: $custom-checkbox-large-font-size !default;
+$custom-radio-large-input-icon-size: $custom-radio-large-input-size / 2 !default;
 $custom-radio-large-font-size: $custom-checkbox-large-font-size !default;
 $custom-radio-large-line-height: $custom-checkbox-large-line-height !default;
 
