@@ -667,8 +667,8 @@ $detail-header-info-spacers-x: (
   lg: $grid-gutter-width
 ) !default;
 $detail-header-info-spacers-y: (
-  null: $card-spacer-y,
-  lg: 1.25rem
+  null: .5rem,
+  lg: 1rem
 ) !default;
 
 // info header chosen date

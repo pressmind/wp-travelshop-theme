@@ -75,7 +75,7 @@
     }
 
     + .price-box-row {
-      @include spacing-generator($booking-entrypoint-spacers-x, 'top', margin);
+      @include spacing-generator($detail-header-info-spacers-y, 'top', margin);
     }
   }
 }
