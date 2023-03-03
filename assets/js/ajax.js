@@ -908,8 +908,7 @@ jQuery(function ($) {
                 });
 
                 $('.dropdown-menu-select .filter-prompt').on('click', function (e) {
-                    e.preventDefault();
-
+                    
                     $(e.target).parents('.dropdown').find('.dropdown-menu-select').removeClass('show');
 
                     e.stopPropagation();
