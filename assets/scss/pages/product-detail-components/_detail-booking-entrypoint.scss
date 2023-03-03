@@ -50,6 +50,21 @@
       .booking-filter-item + .booking-filter-item {
         border-top: $input-border-width solid $input-border-color;
       }
+
+      // -- little changes to make booking entrypoint "unique"
+      .booking-filter-item {
+        button.booking-filter-field--date-range,
+        button.select-form-control {
+          padding: .5rem 1rem;
+          border: 2px solid transparent;
+          background-color: transparent;
+
+          &:hover, &:focus, &:active {
+            background-color: transparent;
+            border: 2px solid $body-color;
+          }
+        }
+      }
     }
   }
 }
