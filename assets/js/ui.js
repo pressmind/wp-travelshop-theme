@@ -590,6 +590,7 @@ jQuery(function ($) {
 
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
+            console.log($target.css('container-name'));
 
             $target.parent().find('button[data-type="close-popup"]').trigger('click');
 
