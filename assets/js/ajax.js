@@ -897,6 +897,13 @@ jQuery(function ($) {
 
                 // -- prevent dropdown close when clicked inside
                 $('.dropdown-menu-select').on('click', function (e) {
+
+                    // -- little hook
+                    // -- backdrop checker
+                    if ( $(this).css('container-name') === 'backdrop' ) {
+                        $(this).parent().find('button[data-type="close-popup"]').trigger('click');
+                    }
+
                     e.stopPropagation();
                 });
 
