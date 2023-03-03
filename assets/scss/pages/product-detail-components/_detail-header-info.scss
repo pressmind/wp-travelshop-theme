@@ -17,7 +17,9 @@
     }
 
     .detail-header-info-top {
-
+      h2 {
+        @include font-size-generator($detail-header-info-headline-sizes);
+      }
     }
 
     .detail-header-info-bottom {

@@ -13745,6 +13745,17 @@ footer.footer-main {
       .detail-header-info .detail-header-info-top,
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
+  .detail-header-info .detail-header-info-top h2 {
+    font-size: 1.125rem; }
+    @media (min-width: 576px) {
+      .detail-header-info .detail-header-info-top h2 {
+        font-size: 1.25rem; } }
+    @media (min-width: 768px) {
+      .detail-header-info .detail-header-info-top h2 {
+        font-size: 1.5rem; } }
+    @media (min-width: 992px) {
+      .detail-header-info .detail-header-info-top h2 {
+        font-size: 2rem; } }
   .detail-header-info .detail-header-info-bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
     background-color: #fff; }
