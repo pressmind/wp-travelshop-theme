@@ -604,6 +604,7 @@ jQuery(function ($) {
         // -- make select happen on klick .form-radio or inner elements of .form-radio
         if ( $(e.target).hasClass('form-radio') || $(e.target).parents('.form-radio').length > 0 ) {
             var element = null;
+            var elementText = '';
 
             if ( $(e.target).hasClass('form-radio') ) {
                 element = $(e.target);
@@ -611,7 +612,9 @@ jQuery(function ($) {
                 element = $(e.target).parents('.form-radio');
             }
 
-            element.find('label').trigger('click');
+            elementText = element.find('label').text();
+
+            $(e.target).parents('.dropdown').find('.selected-options').text(elementText);
         }
 
         e.stopPropagation();
