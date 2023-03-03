@@ -21,15 +21,14 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         ?>
         <div class="booking-filter-radio booking-filter-radio--transport-type">
             <?php foreach( $transport_types as $type ) { ?>
-                <div class="form-radio-col">
-                    <label class="form-radio" for="transport-type-<?php echo $type; ?>">
-
+                <div class="form-radio">
                     <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked<?php } ?> />
 
                     <span>
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
                     </span>
 
+                    <label class="form-radio-label" for="transport-type-<?php echo $type; ?>">
                         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
                             'transport_type' => $type
                         ]);?>
