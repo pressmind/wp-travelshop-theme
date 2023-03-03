@@ -22,7 +22,7 @@ if($args['booking_on_request'] === false){
             </div>
             <p>Bitte senden Sie uns stattdessen eine <a href="#">Anfrage</a> oder nutzen Sie unseren telefonischen Kundenservice: <a href="tel://<?php echo do_shortcode('[ts-company-hotline]');?>"><?php echo do_shortcode('[ts-company-hotline]');?></a></p>
 
-    <button class="btn btn-primary btn-block btn-primary">
+    <button class="btn btn-lg btn-block btn-primary">
         zur Anfrage
 
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
