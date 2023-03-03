@@ -17,6 +17,13 @@
 }
 
 /**
+ * get unit
+ */
+@function getUnit($value) {
+  @return str-slice($value * 0 + "", 2, -1);
+}
+
+/**
  * Strip unit
  */
 @function strip-unit($number) {
@@ -38,7 +45,18 @@
  * Convert px to rem
  */
 @function pxToRem($pxValue) {
-  @return ( strip-unit($pxValue) / 16rem );
+
+  $checkUnit: getUnit($pxValue);
+
+  @if ( $checkUnit == 'px' ) {
+    // if px convert
+    @return $checkUnit;
+    @return ( strip-unit($pxValue) / 16rem );
+  } @else {
+    // if not return value before
+    @return $pxValue;
+  }
+
 }
 
 /**

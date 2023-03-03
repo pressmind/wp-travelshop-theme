@@ -23,6 +23,26 @@
       .add-to-wishlist {
         position: absolute;
 
+        @each $breakpoint, $value in $detail-header-info-spacers-x {
+          @if $breakpoint == null {
+            top: (pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+            right: (pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+          }
+          @else {
+            @if map-has-key($grid-breakpoints, $breakpoint) {
+              @media ( min-width: map-get($grid-breakpoints, $breakpoint) ) {
+                top: (pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+                right: (pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+              }
+            } @else {
+              @media ( min-width: $breakpoint ) {
+                top: (pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+                right: (pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+              }
+            }
+          }
+        }
+
         z-index: 2;
       }
 
