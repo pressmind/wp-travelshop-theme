@@ -14224,15 +14224,15 @@ footer.footer-main {
       .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
 
-.booking-action {
+.price-box {
   padding-top: 1.25rem;
   margin-top: 1.25rem;
   border-top: 1px solid rgba(0, 0, 0, 0.125); }
   @media (min-width: 992px) {
-    .booking-action {
+    .price-box {
       padding-top: 30px; } }
   @media (min-width: 992px) {
-    .booking-action {
+    .price-box {
       margin-top: 30px; } }
 
 /**

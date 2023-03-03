@@ -82,8 +82,8 @@
   }
 }
 
-// -- booking action box custom styles
-.booking-action {
+// -- price box custom styles
+.price-box {
   @include spacing-generator($booking-entrypoint-spacers-x, 'top', 'padding');
 
   @if ( $booking-entrypoint-border-width != 0 ) {
