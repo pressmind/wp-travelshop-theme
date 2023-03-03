@@ -29,17 +29,9 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     </span>
 
                     <label class="form-radio-label" for="transport-type-<?php echo $type; ?>">
-                        <span class="icon-label">
-                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', [
-                                'transport_type' => $type
-                            ]);?>
-                            <span>
-
-                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                                'transport_type' => $type
-                            ]);?>
-                            </span>
-                        </span>
+                        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
+                            'transport_type' => $type
+                        ]);?>
                     </label>
                 </div>
             <?php } ?>

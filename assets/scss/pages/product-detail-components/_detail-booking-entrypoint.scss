@@ -18,33 +18,9 @@
 
       &.booking-filter-item--transport-type {
         .booking-filter-radio {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-
-          margin: -.25rem;
 
           .form-radio {
             @extend %custom-radio;
-
-
-            .icon-label {
-              display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
-
-              gap: 0.25rem;
-              align-items: center;
-
-              > span {
-                white-space: nowrap;
-              }
-
-              svg {
-                width: $font-size-base;
-                height: $font-size-base;
-              }
-            }
           }
         }
       }
