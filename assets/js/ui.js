@@ -629,6 +629,7 @@ jQuery(function ($) {
         var pCounterMin = pCounterInput.data('min');
         var pCounterMax = pCounterInput.data('max');
         var pCounterTarget = pCounterInput.data('target-input');
+        var pCounterValueNew = 0;
 
         if ( pCounterMin === '' ) {
             pCounterMin = '1';
@@ -647,6 +648,51 @@ jQuery(function ($) {
                 pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', false);
             }
         }
+
+        pCounter.find(pCounterButton).on('click', function() {
+
+            var thisButtonType = $(this).data('type');
+            var setValue = true;
+            // refresh value
+            pCounterValue = pCounterInput.val();
+
+            if ( thisButtonType === '-' ) { // -
+                pCounterValueNew = parseInt(pCounterValue) - 1;
+            } else { // +
+                pCounterValueNew = parseInt(pCounterValue) + 1;
+            }
+
+            if ( parseInt(pCounterValueNew) >= parseInt(pCounterMin) ) {
+                pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', true);
+            } else {
+                pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', false);
+            }
+
+            if ( pCounterMax !== '' ) {
+                if ( parseInt(pCounterValueNew) === parseInt(pCounterMax) ) {
+                    pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', true);
+                } else {
+                    pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', false);
+                }
+            }
+
+            if ( parseInt(pCounterValueNew) >= 1 ) {
+                setValue = true;
+            }
+
+            if ( pCounterMax !== '' ) {
+                setValue = false;
+
+                if ( parseInt(pCounterValueNew) <= parseInt(pCounterMax) ) {
+                    setValue = true;
+                }
+            }
+
+            if ( setValue ) {
+                pCounterInput.val(pCounterValueNew);
+            }
+
+        });
     }
 
     if ( $('.personen-select-counter').length > 0 ) {
