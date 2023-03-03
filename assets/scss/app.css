@@ -12458,8 +12458,8 @@ form.form-string-search.input-group {
         line-height: 0;
         color: #6c757d; }
         .breadcrumb-wrapper .breadcrumb li a span.breadcrumb-sep > svg {
-          width: 0.875rem;
-          height: 0.875rem; }
+          width: .6125rem;
+          height: .6125rem; }
     .breadcrumb-wrapper .breadcrumb li:last-child {
       color: #212529; }
 
