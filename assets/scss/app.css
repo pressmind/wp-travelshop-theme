@@ -11382,7 +11382,7 @@ form.form-string-search.input-group {
       background: transparent;
       padding: 0;
       line-height: 0;
-      color: #434b53;
+      color: #5a6570;
       transition: color .3s;
       height: 2.25rem;
       width: 2.25rem; }
@@ -11716,7 +11716,7 @@ form.form-string-search.input-group {
     .btn.btn-link:active, .btn.btn-link:focus, .btn.btn-link-light:active, .btn.btn-link-light:focus {
       text-decoration: underline; }
   .btn.btn-link-light {
-    color: #434b53; }
+    color: #5a6570; }
     .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
       color: #007bff; }
 
@@ -12868,7 +12868,7 @@ form.form-string-search.input-group {
         width: 1.5rem;
         height: 1.5rem;
         opacity: .5;
-        color: #434b53;
+        color: #5a6570;
         transition: transform .3s; }
     .teaser.month-teaser > a:hover div.month-teaser-title {
       color: #007bff; }
@@ -13247,7 +13247,7 @@ form.form-string-search.input-group {
     flex: 1;
     position: relative; }
     .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist {
-      color: #434b53;
+      color: #5a6570;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -13456,7 +13456,7 @@ header.header-main {
       align-items: center;
       justify-content: center; }
       header.header-main .header-action .header-action--icon > svg {
-        color: #434b53;
+        color: #5a6570;
         transition: color .3s;
         width: 1.75rem;
         height: 1.75rem; }
@@ -13478,7 +13478,7 @@ header.header-main {
         color: #fff;
         border-radius: 50%; }
   header.header-main .hotline-link {
-    color: #434b53;
+    color: #5a6570;
     transition: color .3s;
     text-decoration: none;
     display: flex;
@@ -13519,7 +13519,7 @@ header.header-main {
         font-size: 0.875rem; }
     header.header-main .hotline-link:hover, header.header-main .hotline-link:focus, header.header-main .hotline-link:active {
       text-decoration: none;
-      color: #434b53; }
+      color: #5a6570; }
       header.header-main .hotline-link:hover .hotline-info .hotline-number, header.header-main .hotline-link:focus .hotline-info .hotline-number, header.header-main .hotline-link:active .hotline-info .hotline-number {
         color: #007bff; }
       header.header-main .hotline-link:hover .hotline-icon, header.header-main .hotline-link:focus .hotline-icon, header.header-main .hotline-link:active .hotline-icon {
@@ -13591,7 +13591,7 @@ footer.footer-main {
         border-radius: 50%;
         padding: 0.25rem;
         margin: 0 auto;
-        color: #434b53;
+        color: #5a6570;
         max-width: 2.5rem;
         background-color: #e9ecef; }
         @media (min-width: 992px) {
@@ -13657,7 +13657,7 @@ footer.footer-main {
       gap: 0.5rem;
       font-size: 0.875rem; }
       footer.footer-main .footer-main--meta .nav.flex-row a {
-        color: #434b53;
+        color: #5a6570;
         transition: color .3s;
         text-decoration: none; }
         footer.footer-main .footer-main--meta .nav.flex-row a:hover {
@@ -13731,6 +13731,7 @@ footer.footer-main {
  */
 .detail-header-info {
   background-color: #fff;
+  color: #212529;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -13752,7 +13753,7 @@ footer.footer-main {
       .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
         margin-bottom: .5rem; } }
     .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a {
-      color: #434b53;
+      color: rgba(33, 37, 41, 0.5);
       transition: color .3s;
       text-decoration: none; }
       .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:hover, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:focus, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:active {
@@ -13824,7 +13825,7 @@ footer.footer-main {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #434b53;
+          color: #5a6570;
           transition: color .3s;
           top: -0.4375rem;
           right: -0.4375rem; }

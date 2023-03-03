@@ -31,7 +31,7 @@ $booking-gray-color: $white !default;
 /**
  * Body
  */
-$body-color-light: lighten($body-color, 15%) !default;
+$body-color-light: lighten($body-color, 25%) !default;
 $body-bg-highlight: $gray-200 !default;
 
 /**
@@ -636,6 +636,7 @@ $detail-header-info-border-radius: $card-border-radius !default;
 $detail-header-info-border-width: $card-border-width !default;
 $detail-header-info-border-color: $card-border-color !default;
 $detail-header-info-bg: $card-bg !default;
+$detail-header-info-color: $body-color !default;
 $detail-header-info-headline-sizes: $h4-font-sizes !default;
 
 $detail-header-info-bottom-bg: $card-bg !default;

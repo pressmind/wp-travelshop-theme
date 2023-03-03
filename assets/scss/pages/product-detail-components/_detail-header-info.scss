@@ -2,6 +2,7 @@
 @if ( $detail-page-use-default == true ) {
   .detail-header-info {
     background-color: $detail-header-info-bg;
+    color: $detail-header-info-color;
     overflow: hidden;
 
     @if ( $detail-header-info-border-width != 0 ) {
@@ -27,12 +28,12 @@
         }
 
         > a {
-          color: $body-color-light;
+          color: rgba($detail-header-info-color, .5);
           transition: color .3s;
           text-decoration: none;
 
           &:hover, &:focus, &:active {
-            color: $body-color;
+            color: $detail-header-info-color;
           }
 
           &:hover {
