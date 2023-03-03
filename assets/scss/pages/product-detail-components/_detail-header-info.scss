@@ -20,6 +20,7 @@
 
       .detail-header-info-top-attributes{
         margin-bottom: .25rem;
+        font-size: $font-size-sm;
 
         @include media-breakpoint-up(lg) {
           margin-bottom: .5rem;

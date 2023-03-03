@@ -13746,7 +13746,8 @@ footer.footer-main {
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
   .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
-    margin-bottom: .25rem; }
+    margin-bottom: .25rem;
+    font-size: 0.875rem; }
     @media (min-width: 992px) {
       .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
         margin-bottom: .5rem; } }
