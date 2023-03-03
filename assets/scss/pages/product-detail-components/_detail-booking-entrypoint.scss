@@ -18,8 +18,15 @@
 
       &.booking-filter-item--transport-type {
         .booking-filter-radio {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          margin: -.25rem;
+
           .form-radio {
             @extend %custom-radio;
+            padding: .25rem;
 
             .icon-label {
               display: flex;
