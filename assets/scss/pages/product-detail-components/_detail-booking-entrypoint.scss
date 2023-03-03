@@ -70,6 +70,10 @@
             left: 1rem;
           }
 
+          .input-clear {
+            right: 1rem;
+          }
+
           &:hover, &:focus, &:active {
             background-color: transparent;
             border: 2px solid $body-color;
