@@ -85,8 +85,12 @@
 // -- booking action box custom styles
 .booking-action {
   .booking-status {
+    @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
+
     .status {
       @extend %offer-status;
+
+      @include border-radius($btn-border-radius);
     }
   }
 }

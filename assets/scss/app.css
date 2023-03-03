@@ -14219,6 +14219,14 @@ footer.footer-main {
       .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
 
+.booking-action .booking-status {
+  margin-top: 0.25rem; }
+  @media (min-width: 992px) {
+    .booking-action .booking-status {
+      margin-top: 0.5rem; } }
+  .booking-action .booking-status .status {
+    border-radius: 0.25rem; }
+
 /**
  * General styles for Detail-Page
  */
