@@ -146,7 +146,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                                 </button>
                             </div>
 
-                            <div class="dropdown-body">
+                            <div class="dropdown-menu-body">
                                 PERSONEN-SELECT
                             </div>
                         </div>
