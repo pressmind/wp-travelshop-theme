@@ -589,6 +589,8 @@ jQuery(function ($) {
 
     $(dropdownNotClose).on('click', function(e) {
 
+        console.log($(e.target));
+
         // -- little hook
         // -- backdrop checker
         if ( $(e.target).css('container-name') === 'backdrop' ) {
