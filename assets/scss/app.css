@@ -11686,11 +11686,12 @@ form.form-string-search.input-group {
 .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio {
   display: flex;
   flex-direction: row;
-  gap: .5rem;
+  gap: .75rem;
   flex-wrap: nowrap; }
   .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-check,
   .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-radio {
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    gap: .25rem; }
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-check > label,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-radio > label {
       white-space: nowrap; }
@@ -13933,6 +13934,11 @@ footer.footer-main {
   @media (min-width: 992px) {
     .detail-booking-entrypoint {
       padding: 30px; } }
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type {
+    padding-bottom: 0.5rem; }
+    @media (min-width: 992px) {
+      .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type {
+        padding-bottom: 1rem; } }
 
 .detail-header-info {
   background-color: #fff;

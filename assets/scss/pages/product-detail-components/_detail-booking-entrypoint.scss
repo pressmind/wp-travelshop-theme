@@ -8,8 +8,6 @@
 
   @include border-radius($booking-entrypoint-border-radius);
   @include font-size-generator($booking-entrypoint-font-sizes);
-
-
   @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
 
   // -- filters
@@ -17,6 +15,8 @@
     .booking-filter-item {
 
       &.booking-filter-item--transport-type {
+        @include spacing-generator($booking-entrypoint-spacers-y, 'bottom', 'padding');
+
         .booking-filter-radio {
           @extend %custom-radio-checkbox-inline;
 

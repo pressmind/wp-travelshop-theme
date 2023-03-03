@@ -482,12 +482,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 @include placeholder('custom-radio-checkbox-inline') {
   display: flex;
   flex-direction: row;
-  gap: .5rem;
+  gap: .75rem;
   flex-wrap: nowrap;
 
   > .form-check,
   > .form-radio {
     flex-wrap: nowrap;
+    gap: .25rem;
 
     > label {
       white-space: nowrap;
