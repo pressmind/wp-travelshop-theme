@@ -11462,18 +11462,18 @@ form.form-string-search.input-group {
       display: none;
       color: #fff; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span,
-  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check input:checked + div,
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + div,
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + div,
-  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + div {
-    background-color: #007bff;
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check input:checked + div:not(.list-filter-second-level),
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + div:not(.list-filter-second-level),
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + div:not(.list-filter-second-level),
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + div:not(.list-filter-second-level) {
+    background-color: #007bff !important;
     border: 1px solid #007bff; }
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span svg,
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check input:checked + div svg,
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + div svg,
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + div svg,
-    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + div svg {
-      display: block;
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check input:checked + div:not(.list-filter-second-level) svg,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + div:not(.list-filter-second-level) svg,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + div:not(.list-filter-second-level) svg,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + div:not(.list-filter-second-level) svg {
+      display: block !important;
       color: #fff; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level {
     border: 0;
@@ -11637,14 +11637,14 @@ form.form-string-search.input-group {
       display: none;
       color: #fff; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + span,
-  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + div,
-  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div {
-    background-color: #007bff;
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level),
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div:not(.list-filter-second-level) {
+    background-color: #007bff !important;
     border: 1px solid #007bff; }
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + span svg,
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + div svg,
-    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div svg {
-      display: block;
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level) svg,
+    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div:not(.list-filter-second-level) svg {
+      display: block !important;
       color: #fff; }
 
 @media (max-width: 767.98px) {

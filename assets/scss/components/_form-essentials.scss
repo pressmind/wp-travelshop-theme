@@ -201,15 +201,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // active
   input:checked + span,
-  input:checked + div {
-    background-color: $custom-checkbox-input-active-bg;
+  input:checked + div:not(.list-filter-second-level) {
+    background-color: $custom-checkbox-input-active-bg !important;
 
     @if ( $custom-checkbox-input-border-width != 0 ) {
       border: $custom-checkbox-input-border-width solid $custom-checkbox-input-active-border-color;
     }
 
     svg {
-      display: block;
+      display: block !important;
       color: $custom-checkbox-input-active-icon-color;
     }
   }
@@ -437,15 +437,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // active
   input:checked + span,
-  input:checked + div {
-    background-color: $custom-radio-input-active-bg;
+  input:checked + div:not(.list-filter-second-level) {
+    background-color: $custom-radio-input-active-bg !important;
 
     @if ( $custom-radio-input-border-width != 0 ) {
       border: $custom-radio-input-border-width solid $custom-radio-input-active-border-color;
     }
 
     svg {
-      display: block;
+      display: block !important;
       color: $custom-radio-input-active-icon-color;
     }
   }
