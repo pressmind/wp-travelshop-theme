@@ -67,7 +67,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 </span>
                 </button>
 
-                <div class="dropdown-menu dropdown-menu-select" aria-labelledby="dropdownAirport" x-placement="top-start">
+                <div class="dropdown-menu dropdown-menu-booking-select" aria-labelledby="dropdownAirport" x-placement="top-start">
                     <div class="dropdown-menu-inner">
                         <div class="dropdown-menu-content">
                             <div class="dropdown-menu-header d-none">
@@ -134,7 +134,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 </span>
                 </button>
 
-                <div class="dropdown-menu dropdown-menu-select" aria-labelledby="dropdownPersons" x-placement="top-start">
+                <div class="dropdown-menu dropdown-menu-booking-person-select" aria-labelledby="dropdownPersons" x-placement="top-start">
                     <div class="dropdown-menu-inner">
                         <div class="dropdown-menu-content">
                             <div class="dropdown-menu-header d-none">
