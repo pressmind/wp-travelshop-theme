@@ -14,7 +14,31 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
 <div class="booking-filter">
     <div class="booking-filter-item booking-filter-item--transport-type">
+        <?php
+        $transport_types = [
+                'FLUG', 'BUS', 'PKW'
+        ];
+        ?>
+        <div class="booking-filter-radio booking-filter-radio--transport-type">
+            <?php foreach( $transport_types as $type ) { ?>
+                <div class="radio-item">
+                    <input type="radio" id="transport-type-<?php echo $type; ?>" name="transport_type[<?php echo $type; ?>]" />
 
+                    <span></span>
+
+                    <label for="transport-type-<?php echo $type; ?>">
+                        <span class="icon-label">
+                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', [
+                                'transport_type' => $type
+                            ]);?>
+                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
+                                'transport_type' => $type
+                            ]);?>
+                        </span>
+                    </label>
+                </div>
+            <?php } ?>
+        </div>
     </div>
 
     <div class="booking-filter-item booking-filter-item--date-range">
