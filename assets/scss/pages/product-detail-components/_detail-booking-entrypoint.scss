@@ -26,12 +26,14 @@
 
           .form-radio {
             @extend %custom-radio;
+            flex-wrap: nowrap;
             padding: .25rem;
 
             .icon-label {
               display: flex;
               flex-direction: row;
               flex-wrap: nowrap;
+              white-space: nowrap;
 
               gap: 0.25rem;
               align-items: center;

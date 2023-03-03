@@ -13876,11 +13876,13 @@ footer.footer-main {
     flex-wrap: wrap;
     margin: -.25rem; }
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio {
+      flex-wrap: nowrap;
       padding: .25rem; }
       .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        white-space: nowrap;
         gap: 0.25rem;
         align-items: center; }
         .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label svg {
