@@ -140,7 +140,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // custom input
   > span,
-  > div {
+  > div:not(.list-filter-second-level) {
     display: block;
 
     max-width: 100%;
@@ -184,7 +184,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   // hover
   &:hover {
     > span,
-    > div  {
+    > div:not(.list-filter-second-level)  {
 
       background-color: $custom-checkbox-input-hover-bg;
 
@@ -287,7 +287,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // custom input
   > span,
-  > div {
+  > div:not(.list-filter-second-level) {
     height: $custom-checkbox-large-input-size;
     width: $custom-checkbox-large-input-size;
     flex: 0 0 $custom-checkbox-large-input-size;
@@ -376,7 +376,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // custom input
   > span,
-  > div {
+  > div:not(.list-filter-second-level) {
     display: block;
 
     height: $custom-radio-input-size;
@@ -420,7 +420,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   // hover
   &:hover {
     > span,
-    > div {
+    > div:not(.list-filter-second-level) {
 
       background-color: $custom-radio-input-hover-bg;
 
@@ -458,7 +458,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // custom input
   > span,
-  > div {
+  > div:not(.list-filter-second-level) {
     height: $custom-radio-large-input-size;
     max-width: 100%;
     width: $custom-radio-large-input-size;
