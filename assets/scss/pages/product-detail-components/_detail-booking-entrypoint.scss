@@ -13,5 +13,16 @@
   @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
 
   // -- filters
+  .booking-filter {
+    .booking-filter-item {
 
+      &.booking-filter-item--transport-type {
+        .booking-filter-radio {
+          .form-radio {
+            @extend %custom-radio;
+          }
+        }
+      }
+    }
+  }
 }
