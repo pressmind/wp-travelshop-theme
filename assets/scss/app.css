@@ -11424,7 +11424,7 @@ form.form-string-search.input-group {
     width: 100%;
     height: 1rem;
     max-width: 1rem;
-    flex: 0 0 1rem;
+    flex: 1 1 1rem;
     position: relative;
     line-height: 0;
     border-radius: 0.25rem;
@@ -11484,7 +11484,7 @@ form.form-string-search.input-group {
     width: 100%;
     height: 1rem;
     max-width: 1rem;
-    flex: 0 0 1rem;
+    flex: 1 1 1rem;
     position: relative;
     top: 0.75rem;
     transform: translateY(-0.5rem); }
@@ -11503,7 +11503,7 @@ form.form-string-search.input-group {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check .list-filter-second-level {
     display: block; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
-    flex: 0 0 100%;
+    flex: 1 1 100%;
     width: 100%;
     max-width: 100%;
     margin-top: -0.25rem;
@@ -11521,7 +11521,7 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > div {
       height: 1.5rem;
       max-width: 1.5rem;
-      flex: 0 0 1.5rem;
+      flex: 1 1 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span svg,
@@ -11536,7 +11536,7 @@ form.form-string-search.input-group {
       width: 100%;
       height: 1.5rem;
       max-width: 1.5rem;
-      flex: 0 0 1.5rem;
+      flex: 1 1 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
@@ -11557,7 +11557,7 @@ form.form-string-search.input-group {
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > div {
       height: 1.5rem;
       max-width: 1.5rem;
-      flex: 0 0 1.5rem;
+      flex: 1 1 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-check > span svg,
@@ -11569,7 +11569,7 @@ form.form-string-search.input-group {
       width: 100%;
       height: 1.5rem;
       max-width: 1.5rem;
-      flex: 0 0 1.5rem;
+      flex: 1 1 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg {
@@ -11605,7 +11605,7 @@ form.form-string-search.input-group {
     width: 100%;
     height: 1rem;
     max-width: 1rem;
-    flex: 0 0 1rem;
+    flex: 1 1 1rem;
     position: relative;
     line-height: 0;
     border-radius: 50%;
@@ -11656,7 +11656,7 @@ form.form-string-search.input-group {
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > div {
       height: 1.5rem;
       max-width: 1.5rem;
-      flex: 0 0 1.5rem;
+      flex: 1 1 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg,
@@ -11673,7 +11673,7 @@ form.form-string-search.input-group {
     .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > div {
       height: 1.5rem;
       max-width: 1.5rem;
-      flex: 0 0 1.5rem;
+      flex: 1 1 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
       .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg,
