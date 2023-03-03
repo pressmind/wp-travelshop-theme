@@ -18,6 +18,13 @@
     }
 
     .detail-header-info-top {
+      position: relative;
+
+      .add-to-wishlist {
+        position: absolute;
+
+        z-index: 2;
+      }
 
       .detail-header-info-top-attributes{
         margin-bottom: .25rem;
