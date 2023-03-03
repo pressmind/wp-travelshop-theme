@@ -147,7 +147,21 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                             </div>
 
                             <div class="dropdown-menu-body">
-                                PERSONEN-SELECT
+                                <div class="personen-select">
+                                    <div class="personen-select-title">
+                                        Personen
+                                    </div>
+
+                                    <div class="personen-select-counter">
+                                        <button class="personen-select-counter-btn" data-type="-" disabled>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
+                                        </button>
+                                        <input type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="5" />
+                                        <button class="personen-select-counter-btn" data-type="+">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
