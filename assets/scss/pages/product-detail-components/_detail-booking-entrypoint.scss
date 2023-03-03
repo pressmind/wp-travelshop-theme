@@ -18,8 +18,7 @@
 
       &.booking-filter-item--transport-type {
         .booking-filter-radio {
-
-
+          @extend %custom-radio-checkbox-inline;
 
           .form-radio {
             @extend %custom-radio;
