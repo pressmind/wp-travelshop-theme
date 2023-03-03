@@ -13804,8 +13804,8 @@ footer.footer-main {
       z-index: 2; }
       @media (min-width: 992px) {
         .detail-header-info .detail-header-info-top .add-to-wishlist {
-          top: 1.875rem-0.25rem;
-          right: 1.875rem-0.25rem; } }
+          top: 1.625rem;
+          right: 1.625rem; } }
     .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
       margin-bottom: .25rem;
       font-size: 0.875rem; }

@@ -42,7 +42,7 @@
 
   @if ( $checkUnit == 'rem' ) {
     // if rem convert
-    @return ( 16 * strip-unit($remValue))#{'px'};
+    @return ( (16 * strip-unit($remValue)) * 1px);
   } @else {
     // if not return value before
     @return $remValue;
@@ -59,7 +59,7 @@
 
   @if ( $checkUnit == 'px' ) {
     // if px convert
-    @return ( strip-unit($pxValue) / 16 )#{'rem'};
+    @return ( (strip-unit($pxValue) / 16) * 1rem );
   } @else {
     // if not return value before
     @return $pxValue;
