@@ -630,16 +630,22 @@ jQuery(function ($) {
         var pCounterMax = pCounterInput.data('max');
         var pCounterTarget = pCounterInput.data('target-input');
 
+        if ( pCounterMin === '' ) {
+            pCounterMin = '1';
+        }
+
         if ( parseInt(pCounterValue) >= parseInt(pCounterMin) ) {
             pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', true);
         } else {
             pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', false);
         }
 
-        if ( parseInt(pCounterValue) <= parseInt(pCounterMax) ) {
-            pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', true);
-        } else {
-            pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', false);
+        if ( pCounterMax !== '' ) {
+            if ( parseInt(pCounterValue) <= parseInt(pCounterMax) ) {
+                pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', true);
+            } else {
+                pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', false);
+            }
         }
     }
 
