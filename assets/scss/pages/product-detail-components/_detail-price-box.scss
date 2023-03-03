@@ -37,15 +37,35 @@
   // -- info rows
   .price-box-row {
     .price-box-icon-item{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      gap: .25rem;
+      position: relative;
+      padding-left: $font-size-lg + .5rem;
 
       > svg {
-        width: $font-size-base;
-        height: $font-size-base;
+        width: $font-size-lg;
+        height: $font-size-lg;
+
+        position: absolute;
+
+        transform: translateY(-50%);
+        left: 0;
+
+        // positioning right way by font sizes set in map
+        @each $breakpoint, $value in $booking-entrypoint-font-sizes {
+          @if $breakpoint == null {
+            top: ( (pxToRem($value) * $line-height-base) / 2);
+          }
+          @else {
+            @if map-has-key($grid-breakpoints, $breakpoint) {
+              @media ( min-width: map-get($grid-breakpoints, $breakpoint) ) {
+                top: ( (pxToRem($value) * $line-height-base) / 2);
+              }
+            } @else {
+              @media ( min-width: $breakpoint ) {
+                top: ( (pxToRem($value) * $line-height-base) / 2);
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -13950,14 +13950,18 @@ footer.footer-main {
       width: 1rem;
       height: 1rem; }
   .price-box .price-box-row .price-box-icon-item {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: .25rem; }
+    position: relative;
+    padding-left: 1.625rem; }
     .price-box .price-box-row .price-box-icon-item > svg {
-      width: 1rem;
-      height: 1rem; }
+      width: 1.125rem;
+      height: 1.125rem;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 0;
+      top: 0.65625rem; }
+      @media (min-width: 992px) {
+        .price-box .price-box-row .price-box-icon-item > svg {
+          top: 0.75rem; } }
 
 /**
  * General styles for Detail-Page
