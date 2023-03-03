@@ -11,8 +11,8 @@
         ?>
         <div class="detail-header-info-top-attributes">
             <?php foreach ( $args['zielgebiete'] as $item ) { ?>
-                <a href="<?php echo $item['url']; ?>" title="<?php echo $item['name']; ?>" target="_blank">
-                    <?php echo $item['name']; ?>
+                <a href="<?php echo $item->url; ?>" title="<?php echo $item->name; ?>" target="_blank">
+                    <?php echo $item->name; ?>
                 </a>
             <?php } ?>
         </div>
