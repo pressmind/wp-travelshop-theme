@@ -14,8 +14,10 @@
     @include border-radius(50%);
 
     position:absolute;
-    top:0;
     right:0;
+
+    @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'top');
+
 
     line-height: 0;
 
