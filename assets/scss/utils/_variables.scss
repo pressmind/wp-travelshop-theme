@@ -10,7 +10,7 @@ $enable-element-shadows: true !default;
 $global-element-shadow: $box-shadow-lg !default;
 
 $specific-element-shadows: (
-  'detail-info-box': 0 0 1rem red
+  //'detail-info-box': 0 0 1rem red
 ) !default;
 
 /**
