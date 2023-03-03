@@ -20,11 +20,11 @@
       }
 
       // -- behaviour to show big checkboxes, by view type
-      @if ( $category-dropdown-modal == true ) {
-        @if ( $category-dropdown-mobile-break != null ) {
-          @extend %custom-radio-large-up-#{getNextBreakpoint($category-dropdown-mobile-break)};
+      @if ( $category-dropdown-booking-modal == true ) {
+        @if ( $category-dropdown-booking-mobile-break != null ) {
+          @extend %custom-radio-large-up-#{getNextBreakpoint($category-dropdown-booking-mobile-break)};
 
-          @include media-breakpoint-up(getNextBreakpoint($category-dropdown-mobile-break)) {
+          @include media-breakpoint-up(getNextBreakpoint($category-dropdown-booking-mobile-break)) {
             + .form-radio {
               margin-top: $custom-radio-large-spacer;
             }
@@ -38,10 +38,10 @@
         }
       }
 
-      @if ( $category-dropdown-mobile-break != null ) {
-        @extend %custom-radio-large-down-#{$category-dropdown-mobile-break};
+      @if ( $category-dropdown-booking-mobile-break != null ) {
+        @extend %custom-radio-large-down-#{$category-dropdown-booking-mobile-break};
 
-        @include media-breakpoint-down($category-dropdown-mobile-break) {
+        @include media-breakpoint-down($category-dropdown-booking-mobile-break) {
           + .form-radio {
             margin-top: $custom-radio-large-spacer;
           }
@@ -58,11 +58,11 @@
       }
 
       // -- behaviour to show big checkboxes, by view type
-      @if ( $category-dropdown-modal == true ) {
-        @if ( $category-dropdown-mobile-break != null ) {
-          @extend %custom-checkbox-large-up-#{getNextBreakpoint($category-dropdown-mobile-break)};
+      @if ( $category-dropdown-booking-modal == true ) {
+        @if ( $category-dropdown-booking-mobile-break != null ) {
+          @extend %custom-checkbox-large-up-#{getNextBreakpoint($category-dropdown-booking-mobile-break)};
 
-          @include media-breakpoint-up(getNextBreakpoint($category-dropdown-mobile-break)) {
+          @include media-breakpoint-up(getNextBreakpoint($category-dropdown-booking-mobile-break)) {
             + .form-check {
               margin-top: $custom-checkbox-large-spacer;
             }
@@ -76,10 +76,10 @@
         }
       }
 
-      @if ( $category-dropdown-mobile-break != null ) {
-        @extend %custom-checkbox-large-down-#{$category-dropdown-mobile-break};
+      @if ( $category-dropdown-booking-mobile-break != null ) {
+        @extend %custom-checkbox-large-down-#{$category-dropdown-booking-mobile-break};
 
-        @include media-breakpoint-down($category-dropdown-mobile-break) {
+        @include media-breakpoint-down($category-dropdown-booking-mobile-break) {
           + .form-check {
             margin-top: $custom-checkbox-large-spacer;
           }
@@ -94,11 +94,11 @@
   }
 
   // -- desktop modal view
-  @if ( $category-dropdown-modal == true ) {
+  @if ( $category-dropdown-booking-modal == true ) {
     $temp-category-dropdown-modal-string: '';
 
-    @if ( $category-dropdown-mobile-break != null ) {
-      $temp-category-dropdown-modal-string: '-up-#{getNextBreakpoint($category-dropdown-mobile-break)}';
+    @if ( $category-dropdown-booking-mobile-break != null ) {
+      $temp-category-dropdown-modal-string: '-up-#{getNextBreakpoint($category-dropdown-booking-mobile-break)}';
     }
 
     @extend %modal-wrapper#{$temp-category-dropdown-modal-string};
@@ -106,12 +106,12 @@
     .dropdown-menu-inner {
       @extend %modal-inner#{$temp-category-dropdown-modal-string};
 
-      @if ( $category-dropdown-mobile-break != null ) {
-        @include media-breakpoint-up(getNextBreakpoint($category-dropdown-mobile-break)) {
-          max-width: #{getMediaBreakpointUp($category-dropdown-modal-max-width)};
+      @if ( $category-dropdown-booking-mobile-break != null ) {
+        @include media-breakpoint-up(getNextBreakpoint($category-dropdown-booking-mobile-break)) {
+          max-width: #{getMediaBreakpointUp($category-dropdown-booking-modal-max-width)};
         }
       } @else {
-        @extend %modal-inner-width-#{$category-dropdown-modal-max-width};
+        @extend %modal-inner-width-#{$category-dropdown-booking-modal-max-width};
       }
 
 
@@ -139,113 +139,113 @@
   }
 
   // -- mobile friendly views
-  @if ( $category-dropdown-mobile-break != null ) {
+  @if ( $category-dropdown-booking-mobile-break != null ) {
 
     // -- modal view
-    @if ( $category-dropdown-mobile-view-type == 'modal' or $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-      @extend %modal-wrapper-down-#{$category-dropdown-mobile-break};
+    @if ( $category-dropdown-booking-mobile-view-type == 'modal' or $category-dropdown-booking-mobile-view-type == 'modal-fullscreen' ) {
+      @extend %modal-wrapper-down-#{$category-dropdown-booking-mobile-break};
 
-      @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-        @extend %modal-wrapper-fullscreen-down-#{$category-dropdown-mobile-break};
+      @if ( $category-dropdown-booking-mobile-view-type == 'modal-fullscreen' ) {
+        @extend %modal-wrapper-fullscreen-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .dropdown-menu-inner {
-        @extend %modal-inner-down-#{$category-dropdown-mobile-break};
+        @extend %modal-inner-down-#{$category-dropdown-booking-mobile-break};
 
 
-        @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-          @extend %modal-inner-fullscreen-down-#{$category-dropdown-mobile-break};
+        @if ( $category-dropdown-booking-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-inner-fullscreen-down-#{$category-dropdown-booking-mobile-break};
         }
 
         .dropdown-menu-content {
-          @extend %modal-content-down-#{$category-dropdown-mobile-break};
+          @extend %modal-content-down-#{$category-dropdown-booking-mobile-break};
 
-          @if ( $category-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-            @extend %modal-content-fullscreen-down-#{$category-dropdown-mobile-break};
+          @if ( $category-dropdown-booking-mobile-view-type == 'modal-fullscreen' ) {
+            @extend %modal-content-fullscreen-down-#{$category-dropdown-booking-mobile-break};
           }
         }
       }
 
       .dropdown-menu-header {
-        @extend %modal-header-down-#{$category-dropdown-mobile-break};
+        @extend %modal-header-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .category-tree-field-items, .dropdown-menu-body {
-        @extend %modal-body-down-#{$category-dropdown-mobile-break};
+        @extend %modal-body-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .dropdown-menu-footer {
-        @extend %modal-footer-down-#{$category-dropdown-mobile-break};
+        @extend %modal-footer-down-#{$category-dropdown-booking-mobile-break};
       }
 
       // -- open state
       &.show {
-        @extend %modal-open-down-#{$category-dropdown-mobile-break};
+        @extend %modal-open-down-#{$category-dropdown-booking-mobile-break};
       }
     }
 
 
 
     // -- apple-like view
-    @if ( $category-dropdown-mobile-view-type == 'apple-like' ) {
-      @extend %apple-like-wrapper-down-#{$category-dropdown-mobile-break};
+    @if ( $category-dropdown-booking-mobile-view-type == 'apple-like' ) {
+      @extend %apple-like-wrapper-down-#{$category-dropdown-booking-mobile-break};
 
       .dropdown-menu-content {
-        @extend %apple-like-content-down-#{$category-dropdown-mobile-break};
+        @extend %apple-like-content-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .dropdown-menu-header {
-        @extend %apple-like-header-down-#{$category-dropdown-mobile-break};
+        @extend %apple-like-header-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .category-tree-field-items, .dropdown-menu-body {
-        @extend %apple-like-body-down-#{$category-dropdown-mobile-break};
+        @extend %apple-like-body-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .dropdown-menu-footer {
         margin-top: 0;
-        @extend %apple-like-footer-down-#{$category-dropdown-mobile-break};
+        @extend %apple-like-footer-down-#{$category-dropdown-booking-mobile-break};
       }
 
       // -- open state
       &.show {
-        @extend %apple-like-open-down-#{$category-dropdown-mobile-break};
+        @extend %apple-like-open-down-#{$category-dropdown-booking-mobile-break};
 
         .dropdown-menu-content {
-          @extend %apple-like-content-open-down-#{$category-dropdown-mobile-break};
+          @extend %apple-like-content-open-down-#{$category-dropdown-booking-mobile-break};
         }
       }
 
     }
 
     // -- offcanvas view
-    @if ( $category-dropdown-mobile-view-type == 'offcanvas' ) {
-      @extend %offcanvas-wrapper-down-#{$category-dropdown-mobile-break};
+    @if ( $category-dropdown-booking-mobile-view-type == 'offcanvas' ) {
+      @extend %offcanvas-wrapper-down-#{$category-dropdown-booking-mobile-break};
 
       .dropdown-menu-content {
-        @extend %offcanvas-content-down-#{$category-dropdown-mobile-break};
-        @extend %offcanvas-direction-#{$category-dropdown-offcanvas-direction}-down-#{$category-dropdown-mobile-break};
+        @extend %offcanvas-content-down-#{$category-dropdown-booking-mobile-break};
+        @extend %offcanvas-direction-#{$category-dropdown-booking-offcanvas-direction}-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .dropdown-menu-header {
-        @extend %offcanvas-header-down-#{$category-dropdown-mobile-break};
+        @extend %offcanvas-header-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .category-tree-field-items, .dropdown-menu-body {
-        @extend %offcanvas-body-down-#{$category-dropdown-mobile-break};
+        @extend %offcanvas-body-down-#{$category-dropdown-booking-mobile-break};
       }
 
       .dropdown-menu-footer {
         margin-top: 0;
-        @extend %offcanvas-footer-down-#{$category-dropdown-mobile-break};
+        @extend %offcanvas-footer-down-#{$category-dropdown-booking-mobile-break};
       }
 
       // -- open state
       &.show {
-        @extend %offcanvas-open-down-#{$category-dropdown-mobile-break};
+        @extend %offcanvas-open-down-#{$category-dropdown-booking-mobile-break};
 
         .dropdown-menu-content {
-          @extend %offcanvas-content-open-down-#{$category-dropdown-mobile-break};
+          @extend %offcanvas-content-open-down-#{$category-dropdown-booking-mobile-break};
         }
       }
 
