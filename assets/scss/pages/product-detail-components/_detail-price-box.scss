@@ -1,4 +1,4 @@
-// -- pricebox
+// -- pricebox + booking action box
 .price-box, .booking-action {
   position: relative;
 
@@ -78,6 +78,15 @@
     + .price-box-row,
     + .booking-action-row {
       @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
+    }
+  }
+}
+
+// -- booking action box custom styles
+.booking-action {
+  .booking-status {
+    .status {
+      @extend %offer-status;
     }
   }
 }

@@ -1,3 +1,20 @@
+%offer-status {
+  @include border-bottom-radius($detail-header-info-chosen-date-border-radius);
+
+  padding: .25rem $grid-gutter-width;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+
+  color: #fff;
+  background-color: $booking-orange;
+
+  text-align: center;
+
+  &.danger {
+    background-color: $booking-red;
+  }
+}
+
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
   .detail-header-info {
@@ -202,20 +219,7 @@
         @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
 
         .status {
-          @include border-bottom-radius($detail-header-info-chosen-date-border-radius);
-
-          padding: .25rem $grid-gutter-width;
-          font-size: $font-size-sm;
-          font-weight: $font-weight-bold;
-
-          color: #fff;
-          background-color: $booking-orange;
-
-          text-align: center;
-
-          &.danger {
-            background-color: $booking-red;
-          }
+          @extend %offer-status;
         }
       }
 

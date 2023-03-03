@@ -13999,6 +13999,18 @@ footer.footer-main {
           box-shadow: none;
           outline: none; }
 
+.detail-header-info .detail-header-info-bottom .detail-header-info-status .status, .booking-action .booking-status .status {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  padding: 0.25rem 30px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ffc107;
+  text-align: center; }
+  .detail-header-info .detail-header-info-bottom .detail-header-info-status .danger.status, .booking-action .booking-status .danger.status {
+    background-color: #dc3545; }
+
 .detail-header-info {
   background-color: #fff;
   color: #212529;
@@ -14135,17 +14147,6 @@ footer.footer-main {
       @media (min-width: 992px) {
         .detail-header-info .detail-header-info-bottom .detail-header-info-status {
           margin-bottom: 1rem; } }
-      .detail-header-info .detail-header-info-bottom .detail-header-info-status .status {
-        border-bottom-right-radius: 0.25rem;
-        border-bottom-left-radius: 0.25rem;
-        padding: 0.25rem 30px;
-        font-size: 0.875rem;
-        font-weight: 700;
-        color: #fff;
-        background-color: #ffc107;
-        text-align: center; }
-        .detail-header-info .detail-header-info-bottom .detail-header-info-status .status.danger {
-          background-color: #dc3545; }
 
 .price-box, .booking-action {
   position: relative;
