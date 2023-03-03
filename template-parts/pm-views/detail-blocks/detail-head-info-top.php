@@ -10,8 +10,6 @@
         <p><?php echo $args['subline']; ?></p>
     <?php } ?>
     <?php if (!empty($args['usps'])) { ?>
-        <div class="detail-services-desktop">
-            <?php echo $args['usps']; ?>
-        </div>
+        <?php echo $args['usps']; ?>
     <?php } ?>
 </div>
