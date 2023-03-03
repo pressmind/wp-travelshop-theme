@@ -585,9 +585,9 @@ jQuery(function ($) {
     // -----------------------
     // -- click handling various dropdowns
     // -----------------------
-    let dropdownNotClose = '.dropdown-menu-wishlist, .dropdown-menu-booking-select, .dropdown-menu-booking-person-select';
+    let dropdownNotClose = $('.dropdown-menu-wishlist','.dropdown-menu-booking-select','.dropdown-menu-booking-person-select');
 
-    $(dropdownNotClose).on('click', function(e) {
+    dropdownNotClose.on('click', function(e) {
 
         console.log($(e.target));
 
