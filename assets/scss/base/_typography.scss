@@ -49,14 +49,14 @@ h6, .h6 {
   gap: .5rem;
 
   color: $body-color-light;
-  font-size: $font-size-xxs;
+  font-size: $font-size-xs;
 
   line-height: $line-height-sm;
 
   svg {
-    flex: 1 1 $font-size-sm;
-    width: $font-size-sm;
-    height: $font-size-sm;
+    flex: 1 1 $font-size-base;
+    width: $font-size-base;
+    height: $font-size-base;
     color: $body-color;
   }
 }
