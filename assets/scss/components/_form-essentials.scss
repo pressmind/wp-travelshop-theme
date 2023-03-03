@@ -394,6 +394,20 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
 
     transition: background-color .3s, border-color .3s;
+
+    svg {
+      width: $custom-radio-input-icon-size;
+      height: $custom-radio-input-icon-size;
+      display: none;
+      transition: color .3s;
+      color: $custom-radio-input-icon-color;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-($custom-radio-input-icon-size/2), -($custom-radio-input-icon-size/2));
+    }
   }
 
   // hover
@@ -405,6 +419,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       @if ( $custom-radio-input-border-width != 0 ) {
         border: $custom-radio-input-border-width solid $custom-radio-input-hover-border-color;
       }
+
+      svg {
+        display: none;
+        color: $custom-radio-input-hover-icon-color;
+      }
     }
   }
 
@@ -414,6 +433,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     @if ( $custom-radio-input-border-width != 0 ) {
       border: $custom-radio-input-border-width solid $custom-radio-input-active-border-color;
+    }
+
+    svg {
+      display: block;
+      color: $custom-radio-input-active-icon-color;
     }
   }
 }
@@ -433,22 +457,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     // little calculation based on font size base and lineheight
     top: ( ($custom-radio-large-font-size * $custom-radio-large-line-height) / 2 );
     transform: translateY(-($custom-radio-large-input-size / 2));
-  }
 
-  // additional if second level exists. toggle button
-
-  &.has-second-level {
-    // uses definitions of input check. to make it even in styling / sizes
-    button.toggle-second-level {
-      width: 100%;
-      height: $custom-radio-large-input-size;
-      max-width: $custom-radio-large-input-size;
-      flex: 0 0 $custom-radio-large-input-size;
-
-      top: ( ($custom-radio-large-font-size * $custom-radio-large-line-height) / 2 );
-      transform: translateY(-($custom-radio-large-input-size / 2));
-
-
+    svg {
+      width: $custom-radio-large-input-icon-size;
+      height: $custom-radio-large-input-icon-size;
+      transform: translate(-($custom-radio-large-input-icon-size/2), -($custom-radio-large-input-icon-size/2));
     }
   }
+
 }

@@ -11576,12 +11576,28 @@ form.form-string-search.input-group {
     transform: translateY(-0.5rem);
     border: 1px solid #adb5bd;
     transition: background-color .3s, border-color .3s; }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg {
+      width: 0.875rem;
+      height: 0.875rem;
+      display: none;
+      transition: color .3s;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-0.4375rem, -0.4375rem); }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio:hover > span {
     background-color: #fff;
     border: 1px solid #007bff; }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio:hover > span svg {
+      display: none;
+      color: #fff; }
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + span {
     background-color: #007bff;
     border: 1px solid #007bff; }
+    .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio input:checked + span svg {
+      display: block;
+      color: #fff; }
 
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio {
@@ -11594,13 +11610,10 @@ form.form-string-search.input-group {
       flex: 0 0 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-radio button.toggle-second-level {
-      width: 100%;
-      height: 1.5rem;
-      max-width: 1.5rem;
-      flex: 0 0 1.5rem;
-      top: 0.9375rem;
-      transform: translateY(-0.75rem); } }
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        transform: translate(-0.625rem, -0.625rem); } }
 @media (min-width: 768px) {
   .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio {
     gap: 0.5rem;
@@ -11612,13 +11625,10 @@ form.form-string-search.input-group {
       flex: 0 0 1.5rem;
       top: 0.9375rem;
       transform: translateY(-0.75rem); }
-    .dropdown-menu.dropdown-menu-select .category-tree-field-items .has-second-level.form-radio button.toggle-second-level {
-      width: 100%;
-      height: 1.5rem;
-      max-width: 1.5rem;
-      flex: 0 0 1.5rem;
-      top: 0.9375rem;
-      transform: translateY(-0.75rem); } }
+      .dropdown-menu.dropdown-menu-select .category-tree-field-items .form-radio > span svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        transform: translate(-0.625rem, -0.625rem); } }
 .row.row-products:not(.is-slider) {
   margin-bottom: -1rem; }
   @media (min-width: 768px) {
