@@ -13972,22 +13972,29 @@ footer.footer-main {
     border: 1px solid #ced4da; }
     .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item + .booking-filter-item {
       border-top: 1px solid #ced4da; }
-    .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range,
-    .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control {
-      padding: .5rem 1rem;
-      border: 2px solid transparent;
-      background-color: transparent;
-      height: auto;
-      margin: -1px;
-      padding-left: 2.625rem; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:active,
-      .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:hover,
-      .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:focus,
-      .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:active {
+    .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item {
+      margin-top: -1px;
+      margin-left: -1px;
+      margin-right: -1px; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range,
+      .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control {
+        padding: 0.75rem 1rem 0.75rem 2.625rem;
+        border: 2px solid transparent;
         background-color: transparent;
-        border: 2px solid #212529;
-        box-shadow: none;
-        outline: none; }
+        height: auto; }
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range .dropdown-icon,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range .booking-filter-field--icon,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control .dropdown-icon,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control .booking-filter-field--icon {
+          left: 1rem; }
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:active,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:hover,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:focus,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:active {
+          background-color: transparent;
+          border: 2px solid #212529;
+          box-shadow: none;
+          outline: none; }
 
 .detail-header-info {
   background-color: #fff;
