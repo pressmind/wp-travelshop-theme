@@ -146,7 +146,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     max-width: 100%;
     height: $custom-checkbox-input-size;
     width: $custom-checkbox-input-size;
-    flex: 1 1 $custom-checkbox-input-size;
+    flex: 0 0 $custom-checkbox-input-size;
 
     position: relative;
 
@@ -224,7 +224,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       width: 100%;
       height: $custom-checkbox-input-size;
       max-width: $custom-checkbox-input-size;
-      flex: 1 1 $custom-checkbox-input-size;
+      flex: 0 0 $custom-checkbox-input-size;
 
       position: relative;
 
@@ -269,7 +269,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // second level definition
   .list-filter-second-level {
-    flex: 1 1 100%;
+    flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
 
@@ -290,7 +290,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   > div {
     height: $custom-checkbox-large-input-size;
     width: $custom-checkbox-large-input-size;
-    flex: 1 1 $custom-checkbox-large-input-size;
+    flex: 0 0 $custom-checkbox-large-input-size;
 
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
@@ -312,7 +312,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       max-width: 100%;
       height: $custom-checkbox-large-input-size;
       width: $custom-checkbox-large-input-size;
-      flex: 1 1 $custom-checkbox-large-input-size;
+      flex: 0 0 $custom-checkbox-large-input-size;
 
       top: ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) / 2 );
       transform: translateY(-($custom-checkbox-large-input-size / 2));
@@ -382,7 +382,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     height: $custom-radio-input-size;
     max-width: 100%;
     width: $custom-radio-input-size;
-    flex: 1 1 $custom-radio-input-size;
+    flex: 0 0 $custom-radio-input-size;
 
     position: relative;
 
@@ -462,7 +462,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     height: $custom-radio-large-input-size;
     max-width: 100%;
     width: $custom-radio-large-input-size;
-    flex: 1 1 $custom-radio-large-input-size;
+    flex: 0 0 $custom-radio-large-input-size;
 
     // offset top to make it center with first line
     // little calculation based on font size base and lineheight
