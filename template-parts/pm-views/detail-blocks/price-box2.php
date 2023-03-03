@@ -113,6 +113,12 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                                 <?php $i++; ?>
                             <?php } ?>
                         </div>
+
+                        <div class="dropdown-menu-footer">
+                            <button class="btn btn-primary btn-block mt-3 filter-prompt">
+                                Auswahl übernehmen
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
