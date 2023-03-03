@@ -162,6 +162,11 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                                         </button>
                                     </div>
                                 </div>
+
+                                <div class="dropdown-info">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#info"></use></svg>
+                                    Informationen bezüglich Reisen mit Kindern sowie Reisen mit Haustieren finden Sie in der Buchung.
+                                </div>
                             </div>
 
                             <div class="dropdown-menu-footer">
