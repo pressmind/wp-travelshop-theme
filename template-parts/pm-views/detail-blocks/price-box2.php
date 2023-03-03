@@ -31,7 +31,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     <div class="booking-filter-item booking-filter-item--airport">
         <button class="booking-filter-field booking-filter-field--airport">
             <span class="booking-filter-field--icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-lift"></use></svg>
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
             </span>
             <span class="booking-filter-field--text">
                 GEWÄHLTER AIRPORT
