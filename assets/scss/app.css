@@ -11333,7 +11333,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /**
  * Define input clear button, by default / globally
  */
-.list-filter-box.datepicker > div .input-clear, .select-from-control .input-clear {
+.list-filter-box.datepicker > div .input-clear, .select-form-control .input-clear {
   position: absolute;
   top: 50%;
   right: 0.375rem;
@@ -11346,13 +11346,13 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #212529;
   transition: color .3s;
   z-index: 5; }
-  .list-filter-box.datepicker > div .input-clear:hover, .select-from-control .input-clear:hover {
+  .list-filter-box.datepicker > div .input-clear:hover, .select-form-control .input-clear:hover {
     color: #007bff; }
 
 /**
  * Define fadeout right, to make text longer than input fadeout into form bg-color
  */
-.select-from-control .selected-options:after {
+.select-form-control .selected-options:after {
   content: "";
   display: block;
   position: absolute;
@@ -12663,7 +12663,7 @@ form.form-string-search.input-group {
   .list-filter-box.datepicker > div .input-clear {
     display: none; }
 
-.select-from-control {
+.select-form-control {
   border: 0;
   outline: none;
   box-shadow: none;
@@ -12687,21 +12687,21 @@ form.form-string-search.input-group {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
-    .select-from-control {
+    .select-form-control {
       transition: none; } }
-  .select-from-control:focus {
+  .select-form-control:focus {
     color: #495057;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .select-from-control::placeholder {
+  .select-form-control::placeholder {
     color: #6c757d;
     opacity: 1; }
-  .select-from-control:disabled, .select-from-control[readonly] {
+  .select-form-control:disabled, .select-form-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
-  .select-from-control .selected-options {
+  .select-form-control .selected-options {
     display: block;
     white-space: nowrap;
     overflow: hidden;

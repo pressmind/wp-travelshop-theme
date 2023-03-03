@@ -14,7 +14,7 @@ if (empty($args['filter_data'][$args['filter_val']][array_key_first($args['filte
             <div class="form-group mb-lg-0 category-tree">
                 <label for=""><?php echo $args['label']; ?></label>
                 <div class="dropdown">
-                    <button class="select-from-control dropdown-toggle" type="button"
+                    <button class="select-form-control dropdown-toggle" type="button"
                             data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <span class="selected-options" data-placeholder="bitte wählen">bitte wählen</span>

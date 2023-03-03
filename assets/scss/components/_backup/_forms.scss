@@ -102,7 +102,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 // -- select button
-button.select-from-control {
+button.select-form-control {
 	@extend .form-control;
 	text-align: left;
 	position: relative;
@@ -173,7 +173,7 @@ button.select-from-control {
 	}
 }
 
-.dropdown.show button.select-from-control {
+.dropdown.show button.select-form-control {
 	i.la {
 		transform: rotate(180deg);
 	}
