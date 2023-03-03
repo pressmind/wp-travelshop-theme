@@ -61,7 +61,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <span class="dropdown-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
                 </span>
-                <span class="selected-options">
+                <span class="selected-options" data-placeholder="bitte wählen">
                     Frankfurt Main
                 </span>
                 <span class="dropdown-chevron">
