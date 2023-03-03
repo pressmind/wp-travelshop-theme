@@ -12974,8 +12974,7 @@ form.form-string-search.input-group {
 .teaser.category-product-teaser {
   border-radius: 0.25rem;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); }
+  border: 1px solid rgba(0, 0, 0, 0.125); }
   .teaser.category-product-teaser .teaser-category-image > a {
     display: block;
     color: inherit;
@@ -13055,8 +13054,7 @@ form.form-string-search.input-group {
 .teaser.month-teaser {
   border-radius: 0.25rem;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); }
+  border: 1px solid rgba(0, 0, 0, 0.125); }
   .teaser.month-teaser > a {
     display: flex;
     flex-direction: row;
@@ -13280,8 +13278,7 @@ form.form-string-search.input-group {
   border-color: rgba(0, 0, 0, 0.125);
   border-style: solid;
   border-width: 1px;
-  background-color: #fff !important;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); }
+  background-color: #fff !important; }
   .teaser.wp-teaser .teaser-image {
     margin-top: -1px;
     margin-right: -1px;
@@ -13370,7 +13367,6 @@ form.form-string-search.input-group {
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.125);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
   display: flex; }
   .teaser.icon-teaser .teaser-icon {
@@ -13409,8 +13405,7 @@ form.form-string-search.input-group {
 .teaser.image-teaser {
   border-radius: 0.25rem;
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); }
+  position: relative; }
   .teaser.image-teaser .teaser-image {
     position: relative; }
     .teaser.image-teaser .teaser-image:before {
@@ -14030,7 +14025,6 @@ footer.footer-main {
   background-color: #fff;
   color: #212529;
   overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-size: 0.875rem; }
