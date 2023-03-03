@@ -33,7 +33,7 @@
             <p><?php echo $args['subline']; ?></p>
         <?php } ?>
         <?php if (!empty($args['usps'])) { ?>
-            <?php echo $args['usps']; ?>
+            <?php echo checklist_formatter($args['usps']); ?>
         <?php } ?>
     </div>
 </div>

@@ -114,6 +114,9 @@ require_once 'functions/sitemaps.php';
 // Images
 require_once 'functions/images.php';
 
+// Checklist
+require_once 'functions/checklist_formatter.php';
+
 // Admin Stuff
 require_once 'functions/after_wp_save.php';
 //require_once 'functions/save_queries.php';

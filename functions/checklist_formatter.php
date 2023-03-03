@@ -1,5 +1,5 @@
 <?php
-function checkmarkList($content) {
+function checklist_formatter($content) {
 
     $iconClass = '';
     $checkIcon = '<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#check-bold"></use></svg>';
