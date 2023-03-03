@@ -158,6 +158,49 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
 </div>
 
+<div class="booking-action">
+    <?php // Random Availability
+    $randint = random_int(1, 9);
+    ?>
+
+    <?php if($randint < 10) { ?>
+        <div class="price-box-row">
+            <div class="booking-status">
+                <!-- Toggle in badge the class "active" to toggle status with animation -->
+                <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
+            </div>
+        </div>
+    <?php } ?>
+
+    <div class="price-box-row">
+        <div class="price-box-discount">
+            <?php
+            if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
+                    'cheapest_price' => $args['cheapest_price'],
+                    'discount' => $discount,
+                ]);
+            } else {
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price.php', [
+                    'cheapest_price' => $args['cheapest_price'],
+                ]);
+            } ?>
+        </div>
+    </div>
+    <div class="price-box-row">
+
+        <div class="booking-button-wrap">
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
+                'cheapest_price' => $args['cheapest_price'],
+                'url' => $args['url'],
+                'size' => 'lg',
+                'modal_id' => $args['id_modal_price_box'],
+                'disable_id' => true
+            ]);?>
+        </div>
+    </div>
+</div>
+
 <div class="price-box">
     <?php
     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/checked-icon.php', []);
@@ -211,46 +254,4 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     </div>
     <?php } ?>
-
-    <?php // Random Availability
-    $randint = random_int(1, 9);
-    ?>
-
-    <?php if($randint < 10) { ?>
-    <div class="price-box-row">
-        <div class="booking-status">
-            <!-- Toggle in badge the class "active" to toggle status with animation -->
-            <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
-        </div>
-    </div>
-    <?php } ?>
-
-    <div class="price-box-row">
-        <div class="price-box-discount">
-            <?php
-            if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
-                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
-                    'cheapest_price' => $args['cheapest_price'],
-                    'discount' => $discount,
-                ]);
-            } else {
-                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price.php', [
-                    'cheapest_price' => $args['cheapest_price'],
-                ]);
-            } ?>
-        </div>
-    </div>
-    <div class="price-box-row">
-
-        <div class="booking-button-wrap">
-            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
-                'cheapest_price' => $args['cheapest_price'],
-                'url' => $args['url'],
-                'size' => 'lg',
-                'modal_id' => $args['id_modal_price_box'],
-                'disable_id' => true
-            ]);?>
-        </div>
-    </div>
-
 </div>
