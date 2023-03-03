@@ -156,7 +156,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                                     Merkliste
                                 </div>
 
-                                <button class="close-wishlist" data-type="close-popup">
+                                <button class="close-wishlist" data-type="close-popup" type="button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                                 </button>
                             </div>

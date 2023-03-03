@@ -32,7 +32,7 @@
 
                 <div class="h4">Suche verfeinern</div>
 
-                <button class="list-filter-close" data-type="close-popup">
+                <button class="list-filter-close" data-type="close-popup" type="button">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                 </button>
             </div>

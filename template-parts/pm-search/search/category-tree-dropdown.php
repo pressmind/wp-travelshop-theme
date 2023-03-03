@@ -36,7 +36,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                                     <div class="h4">
                                         <?php echo $args['name']; ?>
                                     </div>
-                                    <button class="filter-prompt" data-type="close-popup">
+                                    <button class="filter-prompt" data-type="close-popup" type="button">
                                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                                     </button>
 

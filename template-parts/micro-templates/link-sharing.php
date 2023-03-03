@@ -41,7 +41,7 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
                         <?php echo $share_title; ?>
                     </div>
 
-                    <button class="close-share" data-type="close-popup">
+                    <button class="close-share" data-type="close-popup" type="button">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                     </button>
                 </div>
