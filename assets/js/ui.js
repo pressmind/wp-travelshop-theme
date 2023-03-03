@@ -662,10 +662,10 @@ jQuery(function ($) {
                 pCounterValueNew = parseInt(pCounterValue) + 1;
             }
 
-            if ( parseInt(pCounterValueNew) >= parseInt(pCounterMin) ) {
-                pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', true);
-            } else {
+            if ( parseInt(pCounterValueNew) > parseInt(pCounterMin) ) {
                 pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', false);
+            } else {
+                pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', true);
             }
 
             if ( pCounterMax !== '' ) {
