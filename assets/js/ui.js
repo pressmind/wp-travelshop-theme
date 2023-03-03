@@ -689,6 +689,11 @@ jQuery(function ($) {
             }
 
             if ( setValue ) {
+                if ( pCounterValueNew > 1 ) {
+                    $(pCounterTarget).text(pCounterValueNew + ' ' + pCounterInput.data('plural'));
+                } else {
+                    $(pCounterTarget).text(pCounterValueNew + ' ' + pCounterInput.data('singular'));
+                }
                 pCounterInput.val(pCounterValueNew);
             }
 
