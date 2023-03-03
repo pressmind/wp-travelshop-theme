@@ -1587,6 +1587,10 @@
     <rect width="256" height="256" fill="none"></rect>
     <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
   </symbol>
+  <symbol fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="circle-filled">
+    <rect width="256" height="256" fill="none"></rect>
+    <circle cx="128" cy="128" r="96" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+  </symbol>
   <symbol fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="circle-dashed">
     <rect width="256" height="256" fill="none"></rect>
     <path d="M35.3,103.1a96.4,96.4,0,0,1,24.8-43" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
