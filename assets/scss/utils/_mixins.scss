@@ -223,6 +223,25 @@
 }
 
 /**
+ * Button input
+ */
+@mixin input-reset() {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+
+  &:hover, &:focus, &:active {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+/**
  * Placeholder generator
  * ------------------------------
  * generate placeholders dynaimically by breakpoints
