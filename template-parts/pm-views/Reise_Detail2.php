@@ -329,6 +329,7 @@ if(is_array($moc->upload_default)){
  * Breadcrumb
  */
 $args['breadcrumb'] = [];
+$args['zielgebiete'] = [];
 $tmp = new stdClass();
 $tmp->name = 'Startseite';
 $tmp->url = site_url();
@@ -350,6 +351,7 @@ if (is_array($moc->zielgebiet_default)) {
         $tmp->name = $zielgebiet->item->name;
         $tmp->url = $breadcrumb_search_url . '?pm-c[zielgebiet_default]=' . $zielgebiet->item->id;
         $args['breadcrumb'][] = $tmp;
+        $args['zielgebiete'][] = $tmp;
     }
 }
 $tmp = new stdClass();
