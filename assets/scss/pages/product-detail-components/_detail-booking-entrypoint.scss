@@ -13,5 +13,36 @@
   @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
 
   // -- pricebox
+  .price-box {
+    position: relative;
 
+    .state-check {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $booking-gray;
+      color: $booking-gray-color;
+
+      @include border-radius(50%);
+
+      position:absolute;
+      top:0;
+      right:0;
+
+      line-height: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &--success {
+        background-color: $booking-green;
+        color: $booking-green-color;
+      }
+
+      > svg {
+        width: $font-size-base;
+        height: $font-size-base;
+      }
+    }
+  }
 }
