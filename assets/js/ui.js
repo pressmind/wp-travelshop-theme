@@ -588,8 +588,6 @@ jQuery(function ($) {
     let dropdownNotClose = '.dropdown-menu-wishlist, .dropdown-menu-booking-select, .dropdown-menu-booking-person-select';
 
     $(dropdownNotClose).on('click', function(e) {
-        e.preventDefault();
-
         console.log($(e.target));
 
         // -- little hook
