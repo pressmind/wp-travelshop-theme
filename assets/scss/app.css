@@ -12785,7 +12785,6 @@ form.form-string-search.input-group {
     flex-direction: column;
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     padding-bottom: 0;
     margin-bottom: 0;
     border-radius: 0.25rem; }
