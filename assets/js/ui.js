@@ -630,7 +630,7 @@ jQuery(function ($) {
         var pCounterMax = pCounterInput.data('max');
         var pCounterTarget = pCounterInput.data('target-input');
 
-        if ( parseInt(pCounterValue) <= parseInt(pCounterMin) ) {
+        if ( parseInt(pCounterValue) >= parseInt(pCounterMin) ) {
             pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', true);
         } else {
             pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', false);
