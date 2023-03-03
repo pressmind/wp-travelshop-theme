@@ -641,7 +641,7 @@ jQuery(function ($) {
         }
 
         if ( pCounterMax !== '' ) {
-            if ( parseInt(pCounterValue) <= parseInt(pCounterMax) ) {
+            if ( parseInt(pCounterValue) === parseInt(pCounterMax) ) {
                 pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', true);
             } else {
                 pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', false);
