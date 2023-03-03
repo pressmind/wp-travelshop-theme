@@ -11361,6 +11361,7 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #007bff; }
 
 .select-form-control.input-has-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+  position: relative;
   padding-left: 1.875rem; }
 
 .select-form-control .dropdown-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
@@ -13964,6 +13965,13 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type {
         padding-bottom: 1rem; } }
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+    text-align: left; }
+  .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da; }
+    .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item + .booking-filter-item {
+      border-top: 1px solid #ced4da; }
 
 .detail-header-info {
   background-color: #fff;

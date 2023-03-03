@@ -33,10 +33,22 @@
           @extend .form-control;
           @extend %input-has-icon;
 
+          text-align: left;
+
           .booking-filter-field--icon {
             @extend %input-icon;
           }
         }
+      }
+    }
+
+    // -- boxed items
+    .booking-filter-items-boxed {
+      @include border-radius($input-border-radius);
+      border: $input-border-width solid $input-border-color;
+
+      .booking-filter-item + .booking-filter-item {
+        border-top: $input-border-width solid $input-border-color;
       }
     }
   }

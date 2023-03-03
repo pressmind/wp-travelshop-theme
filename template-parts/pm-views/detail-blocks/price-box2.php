@@ -38,121 +38,124 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     </div>
 
-    <div class="booking-filter-item booking-filter-item--date-range">
-        <button class="booking-filter-field booking-filter-field--date-range">
+    <div class="booking-filter-items-boxed">
+        <div class="booking-filter-item booking-filter-item--date-range">
+            <button class="booking-filter-field booking-filter-field--date-range">
             <span class="booking-filter-field--icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
             </span>
-            <span class="booking-filter-field--text">
+                <span class="booking-filter-field--text">
                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                     'date_departure' => $args['cheapest_price']->date_departure,
                     'date_arrival' => $args['cheapest_price']->date_arrival
                 ]);?>
             </span>
-        </button>
-    </div>
+            </button>
+        </div>
 
-    <div class="booking-filter-item booking-filter-item--airport">
-        <div class="dropdown">
-            <button class="dropdownAirport input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="booking-filter-item booking-filter-item--airport">
+            <div class="dropdown">
+                <button class="dropdownAirport input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="dropdown-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
                 </span>
-                <span class="selected-options" data-placeholder="bitte wählen">
+                    <span class="selected-options" data-placeholder="bitte wählen">
                     Berlin
                 </span>
-                <span class="dropdown-clear input-clear">
+                    <span class="dropdown-clear input-clear">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                 </span>
-            </button>
+                </button>
 
-            <div class="dropdown-menu dropdown-menu-select" aria-labelledby="dropdownAirport" x-placement="top-start">
-                <div class="dropdown-menu-inner">
-                    <div class="dropdown-menu-content">
-                        <div class="dropdown-menu-header d-none">
-                            <div class="h4">
-                                Airport
+                <div class="dropdown-menu dropdown-menu-select" aria-labelledby="dropdownAirport" x-placement="top-start">
+                    <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-content">
+                            <div class="dropdown-menu-header d-none">
+                                <div class="h4">
+                                    Airport
+                                </div>
+                                <button class="filter-prompt" data-type="close-popup">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                </button>
                             </div>
-                            <button class="filter-prompt" data-type="close-popup">
-                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                            </button>
-                        </div>
 
-                        <?php
-                        $airports = [
-                            'BER' => 'Berlin',
-                            'FRA' => 'Frankfurt Main',
-                            'MUC' => 'Flughafen München',
-                            'DUS' => 'Flughafen Düsselforf',
-                            'HAM' => 'Hamburg',
-                            'CGN' => 'Köln / Bonn',
-                            'HHN' => 'Frankfurt-Hahn'
-                        ]
-                        ?>
+                            <?php
+                            $airports = [
+                                'BER' => 'Berlin',
+                                'FRA' => 'Frankfurt Main',
+                                'MUC' => 'Flughafen München',
+                                'DUS' => 'Flughafen Düsselforf',
+                                'HAM' => 'Hamburg',
+                                'CGN' => 'Köln / Bonn',
+                                'HHN' => 'Frankfurt-Hahn'
+                            ]
+                            ?>
 
-                        <div class="category-tree-field-items multi-level-checkboxes">
-                            <?php $i = 0; ?>
-                            <?php foreach( $airports as $key => $value ) { ?>
-                                <div class="form-radio">
-                                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $key; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $i == 0 ) { ?>checked<?php } ?> />
+                            <div class="category-tree-field-items multi-level-checkboxes">
+                                <?php $i = 0; ?>
+                                <?php foreach( $airports as $key => $value ) { ?>
+                                    <div class="form-radio">
+                                        <input type="radio" class="form-radio-input" id="transport-type-<?php echo $key; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $i == 0 ) { ?>checked<?php } ?> />
 
-                                    <span>
+                                        <span>
                                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
                                     </span>
 
-                                    <label class="form-radio-label" for="transport-type-<?php echo $key; ?>">
-                                        <?php echo $value; ?>
-                                    </label>
-                                </div>
-                                <?php $i++; ?>
-                            <?php } ?>
-                        </div>
+                                        <label class="form-radio-label" for="transport-type-<?php echo $key; ?>">
+                                            <?php echo $value; ?>
+                                        </label>
+                                    </div>
+                                    <?php $i++; ?>
+                                <?php } ?>
+                            </div>
 
-                        <div class="dropdown-menu-footer">
-                            <button class="btn btn-primary btn-block mt-3 filter-prompt">
-                                Auswahl übernehmen
-                            </button>
+                            <div class="dropdown-menu-footer">
+                                <button class="btn btn-primary btn-block mt-3 filter-prompt">
+                                    Auswahl übernehmen
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="booking-filter-item booking-filter-item--persons">
-        <div class="dropdown">
-            <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="booking-filter-item booking-filter-item--persons">
+            <div class="dropdown">
+                <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="dropdown-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
                 </span>
-                <span class="selected-options">
+                    <span class="selected-options">
                     2 Personen
                 </span>
-                <span class="dropdown-clear input-clear">
+                    <span class="dropdown-clear input-clear">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                 </span>
-            </button>
+                </button>
 
-            <div class="dropdown-menu dropdown-menu-select" aria-labelledby="dropdownPersons" x-placement="top-start">
-                <div class="dropdown-menu-inner">
-                    <div class="dropdown-menu-content">
-                        <div class="dropdown-menu-header d-none">
-                            <div class="h4">
-                                Personen
+                <div class="dropdown-menu dropdown-menu-select" aria-labelledby="dropdownPersons" x-placement="top-start">
+                    <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-content">
+                            <div class="dropdown-menu-header d-none">
+                                <div class="h4">
+                                    Personen
+                                </div>
+                                <button class="filter-prompt" data-type="close-popup">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                </button>
                             </div>
-                            <button class="filter-prompt" data-type="close-popup">
-                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                            </button>
-                        </div>
 
-                        <div class="dropdown-body">
-                           PERSONEN-SELECT
+                            <div class="dropdown-body">
+                                PERSONEN-SELECT
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <div class="price-box">
