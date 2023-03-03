@@ -77,6 +77,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
                 'cheapest_price' => $args['cheapest_price'],
                 'url' => $args['url'],
+                'size' => 'lg',
                 'modal_id' => $args['id_modal_price_box'],
                 'disable_id' => true
             ]);?>
