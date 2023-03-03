@@ -11227,6 +11227,20 @@ body.fl-builder .content-block.content-page {
       .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price > strong {
         font-size: 1.125rem; } }
 
+.price-box .price-box-discount .price-total, .booking-action .price-box-discount .price-total {
+  color: #212529;
+  font-size: 1rem; }
+  .price-box .price-box-discount .price-total small, .booking-action .price-box-discount .price-total small {
+    color: #212529;
+    font-size: 1rem; }
+  .price-box .price-box-discount .price-total strong, .booking-action .price-box-discount .price-total strong {
+    font-weight: 700; }
+  .price-box .price-box-discount .price-total > strong, .booking-action .price-box-discount .price-total > strong {
+    font-size: 1.125rem; }
+    @media (min-width: 992px) {
+      .price-box .price-box-discount .price-total > strong, .booking-action .price-box-discount .price-total > strong {
+        font-size: 1.25rem; } }
+
 i.circle {
   width: .6125rem;
   height: .6125rem;

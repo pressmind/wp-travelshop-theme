@@ -82,6 +82,13 @@
       @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
     }
   }
+
+  // -- price-total
+  .price-box-discount {
+    .price-total {
+      @extend %price-default;
+    }
+  }
 }
 
 // -- price box custom styles
