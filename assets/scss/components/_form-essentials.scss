@@ -339,3 +339,116 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     padding-left: ( $custom-checkbox-large-input-size + $custom-checkbox-large-gutter );
   }
 }
+
+
+/**
+ * Custom radio , with second level
+ */
+%custom-radio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding-left: 0;
+
+  gap: $custom-radio-gutter;
+  font-size: $custom-radio-font-size;
+  line-height: $custom-radio-line-height;
+
+  // clickable element!
+  cursor: pointer;
+
+  // hide input by default
+  input[type='radio'] {
+    display: none;
+  }
+
+  // label
+  > label {
+    flex: 1;
+  }
+
+  // custom input
+  > span {
+    display: block;
+
+    width: 100%;
+    height: $custom-radio-input-size;
+    max-width: $custom-radio-input-size;
+    flex: 0 0 $custom-radio-input-size;
+
+    position: relative;
+
+    line-height: 0;
+
+    border-radius: $custom-radio-input-border-radius;
+    background-color: $custom-radio-input-bg;
+
+    // offset top to make it center with first line
+    // little calculation based on font size base and lineheight
+    top: ( ($custom-radio-font-size * $custom-radio-line-height) / 2 );
+    transform: translateY(-($custom-radio-input-size / 2));
+
+    @if ( $custom-radio-input-border-width != 0 ) {
+      border: $custom-radio-input-border-width solid $custom-radio-input-border-color;
+    }
+
+    transition: background-color .3s, border-color .3s;
+  }
+
+  // hover
+  &:hover {
+    > span {
+
+      background-color: $custom-radio-input-hover-bg;
+
+      @if ( $custom-radio-input-border-width != 0 ) {
+        border: $custom-radio-input-border-width solid $custom-radio-input-hover-border-color;
+      }
+    }
+  }
+
+  // active
+  input:checked + span {
+    background-color: $custom-radio-input-active-bg;
+
+    @if ( $custom-radio-input-border-width != 0 ) {
+      border: $custom-radio-input-border-width solid $custom-radio-input-active-border-color;
+    }
+  }
+}
+
+@include placeholder('custom-radio-large') {
+  gap: $custom-radio-large-gutter;
+  font-size: $custom-radio-large-font-size;
+  line-height: $custom-radio-large-line-height;
+
+  // custom input
+  > span {
+    height: $custom-radio-large-input-size;
+    max-width: $custom-radio-large-input-size;
+    flex: 0 0 $custom-radio-large-input-size;
+
+    // offset top to make it center with first line
+    // little calculation based on font size base and lineheight
+    top: ( ($custom-radio-large-font-size * $custom-radio-large-line-height) / 2 );
+    transform: translateY(-($custom-radio-large-input-size / 2));
+  }
+
+  // additional if second level exists. toggle button
+
+  &.has-second-level {
+    // uses definitions of input check. to make it even in styling / sizes
+    button.toggle-second-level {
+      width: 100%;
+      height: $custom-radio-large-input-size;
+      max-width: $custom-radio-large-input-size;
+      flex: 0 0 $custom-radio-large-input-size;
+
+      top: ( ($custom-radio-large-font-size * $custom-radio-large-line-height) / 2 );
+      transform: translateY(-($custom-radio-large-input-size / 2));
+
+
+    }
+  }
+}

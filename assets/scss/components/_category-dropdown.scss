@@ -11,6 +11,45 @@
     overflow-y: auto;
     max-height: 21rem;
 
+    // -- radio
+    .form-radio {
+      @extend %custom-radio;
+
+      + .form-radio {
+        margin-top: $custom-radio-spacer;
+      }
+
+      // -- behaviour to show big checkboxes, by view type
+      @if ( $category-dropdown-modal == true ) {
+        @if ( $category-dropdown-mobile-break != null ) {
+          @extend %custom-radio-large-up-#{getNextBreakpoint($category-dropdown-mobile-break)};
+
+          @include media-breakpoint-up(getNextBreakpoint($category-dropdown-mobile-break)) {
+            + .form-radio {
+              margin-top: $custom-radio-large-spacer;
+            }
+          }
+        } @else {
+          @extend %custom-radio-large;
+
+          + .form-radio {
+            margin-top: $custom-radio-large-spacer;
+          }
+        }
+      }
+
+      @if ( $category-dropdown-mobile-break != null ) {
+        @extend %custom-radio-large-down-#{$category-dropdown-mobile-break};
+
+        @include media-breakpoint-down($category-dropdown-mobile-break) {
+          + .form-radio {
+            margin-top: $custom-radio-large-spacer;
+          }
+        }
+      }
+    }
+
+    // -- check
     .form-check {
       @extend %custom-checkbox;
 
