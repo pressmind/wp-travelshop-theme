@@ -13,7 +13,42 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 ?>
 
 <div class="booking-filter">
-    #BOOKING-FIELDS#
+    <div class="booking-filter-item booking-filter-item--transport-type">
+
+    </div>
+
+    <div class="booking-filter-item booking-filter-item--date-range">
+        <button class="booking-filter-field booking-filter-field--date-range">
+            <span class="booking-filter-field--icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+            </span>
+            <span class="booking-filter-field--text">
+                DATUM
+            </span>
+        </button>
+    </div>
+
+    <div class="booking-filter-item booking-filter-item--airport">
+        <button class="booking-filter-field booking-filter-field--airport">
+            <span class="booking-filter-field--icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-lift"></use></svg>
+            </span>
+            <span class="booking-filter-field--text">
+                GEWÄHLTER AIRPORT
+            </span>
+        </button>
+    </div>
+
+    <div class="booking-filter-item booking-filter-item--persons">
+        <button class="booking-filter-field booking-filter-field--persons">
+            <span class="booking-filter-field--icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
+            </span>
+            <span class="booking-filter-field--text">
+                2 Personen
+            </span>
+        </button>
+    </div>
 </div>
 
 <div class="price-box">
