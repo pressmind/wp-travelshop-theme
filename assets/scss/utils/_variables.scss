@@ -389,7 +389,7 @@ $category-dropdown-booking-offcanvas-direction: 'left' !default;
  * defines UX for moible friendly views
  * and point to break
  */
-$category-dropdown-person-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$category-dropdown-person-modal: false !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
 $category-dropdown-person-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
 $category-dropdown-person-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
 $category-dropdown-person-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
