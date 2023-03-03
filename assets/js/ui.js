@@ -618,8 +618,34 @@ jQuery(function ($) {
         }
 
         e.stopPropagation();
-
     });
+
+    // -- personen select
+    function personenCounter() {
+        var pCounter = $('.personen-select-counter');
+        var pCounterButton = '.personen-select-counter-btn';
+        var pCounterInput = pCounter.find('.personen-select-counter-input');
+        var pCounterValue = pCounterInput.val();
+        var pCounterMin = pCounterInput.data('min');
+        var pCounterMax = pCounterInput.data('max');
+        var pCounterTarget = pCounterInput.data('target-input');
+
+        if ( parseInt(pCounterValue) <= parseInt(pCounterMin) ) {
+            pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', true);
+        } else {
+            pCounter.find(pCounterButton + '[data-type="-"]').prop('disabled', false);
+        }
+
+        if ( parseInt(pCounterValue) <= parseInt(pCounterMax) ) {
+            pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', true);
+        } else {
+            pCounter.find(pCounterButton + '[data-type="+"]').prop('disabled', false);
+        }
+    }
+
+    if ( $('.personen-select-counter').length > 0 ) {
+        personenCounter();
+    }
     
     // -----------------------
     // -- click handling document
