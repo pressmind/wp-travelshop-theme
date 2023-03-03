@@ -156,7 +156,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                                         <button type="button"  class="personen-select-counter-btn" data-type="-">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
                                         </button>
-                                        <input type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="" data-target-input=".dropdownPersons .selected-options"/>
+                                        <input readonly type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="" data-target-input=".dropdownPersons .selected-options"/>
                                         <button type="button" class="personen-select-counter-btn" data-type="+">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#plus-circle"></use></svg>
                                         </button>

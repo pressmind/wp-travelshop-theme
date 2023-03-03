@@ -649,6 +649,7 @@ jQuery(function ($) {
             }
         }
 
+        // -- +/- click
         pCounter.find(pCounterButton).on('click', function() {
 
             var thisButtonType = $(this).data('type');
