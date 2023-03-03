@@ -897,13 +897,20 @@ jQuery(function ($) {
 
                 // -- prevent dropdown close when clicked inside
                 $('.dropdown-menu-select').on('click', function (e) {
+
+                    // -- little hook
+                    // -- backdrop checker
+                    if ( $(e.target).css('container-name') === 'backdrop' ) {
+                        $(e.target).parent().find('button[data-type="close-popup"]').trigger('click');
+                    }
+
                     e.stopPropagation();
                 });
 
                 $('.dropdown-menu-select .filter-prompt').on('click', function (e) {
                     e.preventDefault();
 
-                    $(this).parents('.dropdown').find('.dropdown-toggle').trigger('click');
+                    $(e.target).parents('.dropdown').find('.dropdown-menu-select').removeClass('show');
 
                     e.stopPropagation();
                 })
