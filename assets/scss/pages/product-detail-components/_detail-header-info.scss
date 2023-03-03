@@ -17,6 +17,33 @@
     }
 
     .detail-header-info-top {
+
+      .detail-header-info-top-attributes{
+        margin-bottom: .25rem;
+
+        @include media-breakpoint-up(lg) {
+          margin-bottom: .5rem;
+        }
+
+        > a {
+          color: $body-color-light;
+          transition: color .3s;
+          text-decoration: none;
+
+          &:hover, &:focus, &:active {
+            color: $body-color;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          &:active, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+
       h2 {
         @include font-size-generator($detail-header-info-headline-sizes);
         margin-bottom: .5rem;

@@ -13745,6 +13745,21 @@ footer.footer-main {
       .detail-header-info .detail-header-info-top,
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
+  .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
+    margin-bottom: .25rem; }
+    @media (min-width: 992px) {
+      .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
+        margin-bottom: .5rem; } }
+    .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a {
+      color: #434b53;
+      transition: color .3s;
+      text-decoration: none; }
+      .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:hover, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:focus, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:active {
+        color: #212529; }
+      .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:hover {
+        text-decoration: none; }
+      .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:active, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:focus {
+        text-decoration: underline; }
   .detail-header-info .detail-header-info-top h2 {
     font-size: 1rem;
     margin-bottom: .5rem; }
