@@ -583,6 +583,28 @@ jQuery(function ($) {
     }
 
     // -----------------------
+    // -- click handling various dropdowns
+    // -----------------------
+    let dropdownNotClose = '.dropdown-menu-wishlist, .dropdown-menu-booking-select, .dropdown-menu-booking-person-select';
+
+    $(dropdownNotClose).on('click', function(e) {
+
+        // -- little hook
+        // -- backdrop checker
+        if ( $(e.target).css('container-name') === 'backdrop' ) {
+            $(e.target).parent().find('button[data-type="close-popup"]').trigger('click');
+        }
+
+        // -- hook for filter prompt
+        if ( $(e.target).hasClass('filter-prompt') ) {
+            $(e.target).parents('.dropdown').find('.dropdown-menu-select').removeClass('show');
+        }
+
+        e.stopPropagation();
+
+    });
+    
+    // -----------------------
     // -- click handling document
     // -----------------------
     $(document).click(function(event) {
