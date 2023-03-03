@@ -11,7 +11,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     return;
 }
 ?>
-
+<div class="price-box">
     <?php
     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/checked-icon.php', []);
     ?>
@@ -89,3 +89,5 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <?php } ?>
         </div>
     </div>
+
+</div>
