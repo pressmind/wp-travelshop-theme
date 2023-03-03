@@ -597,7 +597,7 @@ jQuery(function ($) {
 
         // -- hook for filter prompt
         if ( $(e.target).hasClass('filter-prompt') ) {
-            $(e.target).parents('.dropdown').find('.dropdown-menu-select').removeClass('show');
+            $(e.target).parents('.dropdown').find('.dropdown-menu').removeClass('show');
         }
 
         e.stopPropagation();
