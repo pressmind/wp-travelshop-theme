@@ -13831,10 +13831,14 @@ footer.footer-main {
     .detail-header-info .detail-header-info-bottom .detail-header-info-status {
       margin-right: -30px;
       margin-left: -30px;
-      margin-bottom: .5rem; }
+      margin-bottom: .5rem;
+      margin-top: -.75rem;
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem; }
       @media (min-width: 992px) {
         .detail-header-info .detail-header-info-bottom .detail-header-info-status {
-          margin-bottom: 1rem; } }
+          margin-bottom: 1rem;
+          margin-top: -1.25rem; } }
       .detail-header-info .detail-header-info-bottom .detail-header-info-status .status {
         padding: 0.25rem 30px;
         font-size: 0.875rem;
