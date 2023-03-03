@@ -599,7 +599,7 @@ jQuery(function ($) {
         }
 
         // -- hook for filter prompt
-        if ( $(e.target).hasClass('filter-prompt') ) {
+        if ( $(e.target).hasClass('filter-prompt') || $(e.target).parents('.filter-prompt').length > 0 ) {
             $(e.target).parents('.dropdown').find('.dropdown-menu').removeClass('show');
         }
 
