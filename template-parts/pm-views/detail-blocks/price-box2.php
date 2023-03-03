@@ -107,6 +107,20 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     </div>
     <?php } ?>
+
+    <?php // Random Availability
+    $randint = random_int(1, 9);
+    ?>
+
+    <?php if($randint < 10) { ?>
+    <div class="price-box-row">
+        <div class="booking-status">
+            <!-- Toggle in badge the class "active" to toggle status with animation -->
+            <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
+        </div>
+    </div>
+    <?php } ?>
+
     <div class="price-box-row">
         <div class="price-box-discount">
             <?php
@@ -123,9 +137,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     </div>
     <div class="price-box-row">
-        <?php // Random Availability
-            $randint = random_int(1, 9);
-        ?>
+
         <div class="booking-button-wrap">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
                 'cheapest_price' => $args['cheapest_price'],
@@ -134,12 +146,6 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 'modal_id' => $args['id_modal_price_box'],
                 'disable_id' => true
             ]);?>
-            <?php if($randint < 10) { ?>
-                <div class="booking-status">
-                    <!-- Toggle in badge the class "active" to toggle status with animation -->
-                    <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
-                </div>
-            <?php } ?>
         </div>
     </div>
 
