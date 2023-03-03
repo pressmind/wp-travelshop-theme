@@ -10,5 +10,5 @@
   @include font-size-generator($booking-entrypoint-font-sizes);
 
 
-  @include spacing-generator($booking-entrypoint-spacers-y, 'around', 'padding');
+  @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
 }
