@@ -82,8 +82,10 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 'disable_id' => true
             ]);?>
             <?php if($randint < 10) { ?>
-                <!-- Toggle in badge the class "active" to toggle status with animation -->
-                <div class="badge status active <?php echo $randint <= 3 ? 'alert' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
+                <div class="booking-info-status">
+                    <!-- Toggle in badge the class "active" to toggle status with animation -->
+                    <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
+                </div>
             <?php } ?>
         </div>
     </div>
