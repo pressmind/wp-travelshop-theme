@@ -102,7 +102,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                             <?php $i = 0; ?>
                             <?php foreach( $airports as $key => $value ) { ?>
                                 <div class="form-radio">
-                                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $key; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $i == 0 ) { ?>checked="checked"<?php } ?> />
+                                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $key; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $i == 0 ) { ?>checked<?php } ?> />
 
                                     <span>
                                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
