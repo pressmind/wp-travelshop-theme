@@ -329,7 +329,8 @@ if(is_array($moc->upload_default)){
  * Breadcrumb
  */
 $args['breadcrumb'] = [];
-$args['zielgebiete'] = [];
+$args['destination_attributes'] = [];
+$args['travel_type_attributes'] = [];
 $tmp = new stdClass();
 $tmp->name = 'Startseite';
 $tmp->url = site_url();
@@ -342,6 +343,7 @@ if (is_array($moc->reiseart_default)) {
         $tmp->name = $reiseart->item->name;
         $tmp->url = $breadcrumb_search_url . '?pm-c[reiseart_default]=' . $reiseart->item->id;
         $args['breadcrumb'][] = $tmp;
+        $args['travel_type_attributes'] = $tmp;
     }
 }
 if (is_array($moc->zielgebiet_default)) {
@@ -351,7 +353,7 @@ if (is_array($moc->zielgebiet_default)) {
         $tmp->name = $zielgebiet->item->name;
         $tmp->url = $breadcrumb_search_url . '?pm-c[zielgebiet_default]=' . $zielgebiet->item->id;
         $args['breadcrumb'][] = $tmp;
-        $args['zielgebiete'][] = $tmp;
+        $args['destination_attributes'] = $tmp;
     }
 }
 $tmp = new stdClass();

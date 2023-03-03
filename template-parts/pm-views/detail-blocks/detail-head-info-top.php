@@ -7,12 +7,17 @@
 <div class="detail-header-info-top">
 
     <?php
-    if ( !empty($args['zielgebiete']) ) {
+    if ( !empty($args['destination_attributes']) || !empty($args['travel_type_attributes']) ) {
         ?>
         <div class="detail-header-info-top-attributes">
-            <?php foreach ( $args['zielgebiete'] as $item ) { ?>
-                <a href="<?php echo $item->url; ?>" title="<?php echo $item->name; ?>" target="_blank">
-                    <?php echo $item->name; ?>
+            <?php if ( !empty($args['travel_type_attributes']) ) { ?>
+                <a href="<?php echo $args['travel_type_attributes']->url; ?>" title="<?php echo $args['travel_type_attributes']->name; ?>" target="_blank">
+                    <?php echo $args['travel_type_attributes']->name; ?>
+                </a>
+            <?php } ?>
+            <?php if ( !empty($args['destination_attributes']) ) { ?>
+                <a href="<?php echo $args['destination_attributes']->url; ?>" title="<?php echo $args['destination_attributes']->name; ?>" target="_blank">
+                    <?php echo $args['destination_attributes']->name; ?>
                 </a>
             <?php } ?>
         </div>
