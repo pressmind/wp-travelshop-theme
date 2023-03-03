@@ -13830,19 +13830,19 @@ footer.footer-main {
         color: #212529; }
     .detail-header-info .detail-header-info-bottom .detail-header-info-status {
       margin-bottom: .5rem;
-      margin-top: -.75rem;
-      border-bottom-right-radius: 0.25rem;
-      border-bottom-left-radius: 0.25rem; }
+      margin-top: -.75rem; }
       @media (min-width: 992px) {
         .detail-header-info .detail-header-info-bottom .detail-header-info-status {
           margin-bottom: 1rem;
           margin-top: -1.25rem; } }
       .detail-header-info .detail-header-info-bottom .detail-header-info-status .status {
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
         padding: 0.25rem 30px;
         font-size: 0.875rem;
+        font-weight: 700;
         color: #fff;
         background-color: #ffc107;
-        font-weight: 700;
         text-align: center; }
         .detail-header-info .detail-header-info-bottom .detail-header-info-status .status.danger {
           background-color: #dc3545; }

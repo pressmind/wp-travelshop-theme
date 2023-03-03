@@ -148,19 +148,21 @@
         margin-bottom: .5rem;
         margin-top: -.75rem;
 
-        @include border-bottom-radius($detail-header-info-chosen-date-border-radius);
-
         @include media-breakpoint-up(lg) {
           margin-bottom: 1rem;
           margin-top: -1.25rem;
         }
 
         .status {
+          @include border-bottom-radius($detail-header-info-chosen-date-border-radius);
+
           padding: .25rem $grid-gutter-width;
           font-size: $font-size-sm;
+          font-weight: $font-weight-bold;
+
           color: #fff;
           background-color: $booking-orange;
-          font-weight: $font-weight-bold;
+
           text-align: center;
 
           &.danger {
