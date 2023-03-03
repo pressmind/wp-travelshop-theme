@@ -13792,7 +13792,7 @@ footer.footer-main {
       display: flex;
       align-items: center;
       justify-content: center; }
-      .detail-booking-entrypoint .price-box .state-check--success {
+      .detail-booking-entrypoint .price-box .state-check-success {
         background-color: #28a745;
         color: #fff; }
       .detail-booking-entrypoint .price-box .state-check > svg {
