@@ -58,11 +58,17 @@
           padding: .5rem 1rem;
           border: 2px solid transparent;
           background-color: transparent;
+          height: auto;
+          margin: -$input-border-width;
 
           &:hover, &:focus, &:active {
             background-color: transparent;
             border: 2px solid $body-color;
+            box-shadow: none;
+            outline: none;
           }
+
+          padding-left: ( 1rem + .5rem + $custom-input-icon-size );
         }
       }
     }
