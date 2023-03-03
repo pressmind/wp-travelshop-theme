@@ -84,5 +84,10 @@
 
 // -- booking action box custom styles
 .booking-action {
+  @include spacing-generator($booking-entrypoint-spacers-x, 'top', 'padding');
 
+  @if ( $booking-entrypoint-border-width != 0 ) {
+    @include spacing-generator($booking-entrypoint-spacers-x, 'top', 'margin');
+    border-top: $booking-entrypoint-border-width solid $booking-entrypoint-border-color;
+  }
 }

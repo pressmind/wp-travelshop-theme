@@ -12,6 +12,10 @@
 
   // -- filters
   .booking-filter {
+
+
+    @include spacing-generator($booking-entrypoint-spacers-x, 'bottom', 'padding');
+
     .booking-filter-item {
 
       // -- transport type
