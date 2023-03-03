@@ -7,8 +7,10 @@
 
   .personen-select-counter-title {
     @extend %headings;
-
     @include font-size-generator($h5-font-sizes);
+
+    font-weight: $headings-font-weight;
+
     margin: 0;
   }
 

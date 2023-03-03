@@ -13819,6 +13819,7 @@ form.form-string-search.input-group {
   align-items: center; }
   .personen-select .personen-select-counter-title {
     font-size: 1rem;
+    font-weight: 500;
     margin: 0; }
     @media (min-width: 992px) {
       .personen-select .personen-select-counter-title {
