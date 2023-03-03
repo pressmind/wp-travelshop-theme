@@ -22,7 +22,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         <div class="booking-filter-radio booking-filter-radio--transport-type">
             <?php foreach( $transport_types as $type ) { ?>
                 <div class="radio-item">
-                    <input type="radio" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" />
+                    <input type="radio" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
 
                     <span></span>
 
