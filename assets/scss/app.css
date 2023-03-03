@@ -11570,7 +11570,7 @@ form.form-string-search.input-group {
     flex: 0 0 1rem;
     position: relative;
     line-height: 0;
-    border-radius: 0.25rem;
+    border-radius: 50%;
     background-color: #fff;
     top: 0.75rem;
     transform: translateY(-0.5rem);
