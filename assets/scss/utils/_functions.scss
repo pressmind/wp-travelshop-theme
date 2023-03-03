@@ -30,7 +30,6 @@
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
-
   @return $number;
 }
 
@@ -38,7 +37,17 @@
  * Convert rem to px
  */
 @function remToPx($remValue) {
-  @return ( 16px * strip-unit($remValue));
+
+  $checkUnit: getUnit($remValue);
+
+  @if ( $checkUnit == 'rem' ) {
+    // if rem convert
+    @return ( 16 * strip-unit($remValue))#{'px'};
+  } @else {
+    // if not return value before
+    @return $remValue;
+  }
+
 }
 
 /**
@@ -50,8 +59,7 @@
 
   @if ( $checkUnit == 'px' ) {
     // if px convert
-    @return $checkUnit;
-    @return ( strip-unit($pxValue) / 16rem );
+    @return ( strip-unit($pxValue) / 16 )#{'rem'};
   } @else {
     // if not return value before
     @return $pxValue;
