@@ -103,7 +103,8 @@ $args['url'] = $mo->getPrettyUrl(TS_LANGUAGE_CODE).(!empty($valid_params) ? '?'.
 $args['destination'] = !empty($moc->zielgebiet_default[0]->item->name) ? $moc->zielgebiet_default[0]->item->name : null;
 $args['travel_type'] = !empty($moc->reiseart_default[0]->item->name) ? $moc->reiseart_default[0]->item->name : null;
 
-echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gtm-detail-datalayer.php', $args);
+// @todo: wirft fehler, bricht javascript
+//echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gtm-detail-datalayer.php', $args);
 
 $args['map_markers'] = [];
 foreach ($args['media_object']->getItinerarySteps() as $step) {
