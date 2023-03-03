@@ -13821,9 +13821,6 @@ form.form-string-search.input-group {
     font-size: 1rem;
     font-weight: 500;
     margin: 0; }
-    @media (min-width: 992px) {
-      .personen-select .personen-select-title {
-        font-size: 1.25rem; } }
   .personen-select .personen-select-counter {
     display: flex;
     flex-direction: row;

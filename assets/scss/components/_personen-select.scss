@@ -7,7 +7,7 @@
 
   .personen-select-title {
     @extend %headings;
-    @include font-size-generator($h5-font-sizes);
+    @include font-size-generator($h6-font-sizes);
 
     font-weight: $headings-font-weight;
 
