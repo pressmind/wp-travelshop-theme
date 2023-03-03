@@ -13868,6 +13868,14 @@ footer.footer-main {
   @media (min-width: 992px) {
     .detail-booking-entrypoint {
       padding: 30px; } }
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .btn-label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .5rem; }
+    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .btn-label svg {
+      width: 1rem;
+      height: 1rem; }
 
 .detail-header-info {
   background-color: #fff;

@@ -20,6 +20,19 @@
         .booking-filter-radio {
           .form-radio {
             @extend %custom-radio;
+
+            .btn-label {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+
+              gap: .5rem;
+
+              svg {
+                width: $font-size-base;
+                height: $font-size-base;
+              }
+            }
           }
         }
       }
