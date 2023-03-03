@@ -46,17 +46,17 @@ h6, .h6 {
 .info-text {
   display: flex;
   flex-wrap: nowrap;
-  gap: .5rem;
+  gap: .25rem;
 
   color: $body-color-light;
   font-size: $font-size-xxs;
 
-  line-height: $line-height-sm;
+  line-height: 1.4;
 
   svg {
-    flex: 1 1 $font-size-lg;
-    width: $font-size-lg;
-    height: $font-size-lg;
+    flex: 1 1 $font-size-xl;
+    width: $font-size-xl;
+    height: $font-size-xl;
     color: $body-color;
   }
 }
