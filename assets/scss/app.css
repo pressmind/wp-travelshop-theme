@@ -12701,6 +12701,16 @@ form.form-string-search.input-group {
   .select-form-control:disabled, .select-form-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
+  .select-form-control .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.375rem;
+    color: #212529;
+    line-height: 0;
+    transform: translateY(-50%); }
+    .select-form-control .input-icon svg {
+      width: 1.125rem;
+      height: 1.125rem; }
   .select-form-control .selected-options {
     display: block;
     white-space: nowrap;

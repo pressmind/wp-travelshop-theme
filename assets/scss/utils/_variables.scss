@@ -269,6 +269,10 @@ $navbar-font-size: $font-size-lg !default;
  * it manually.
  */
 
+// -- some basics
+$custom-input-icon-color: $body-color !default;
+$custom-input-icon-size: $font-size-lg !default;
+
 // -- checkbox ( used for category tree checkboxes )
 
 $custom-checkbox-gutter: .5rem !default; // defines spacing between label and input

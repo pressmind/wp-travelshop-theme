@@ -49,6 +49,22 @@
     @extend %input-clear;
   }
 
+  // -- input icon
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: $input-padding-y;
+    color: $custom-input-icon-color;
+    line-height: 0;
+
+    transform: translateY(-50%);
+
+    svg {
+      width: $custom-input-icon-size;
+      height: $custom-input-icon-size;
+    }
+  }
+
   // -- selected options
   .selected-options {
     display: block;
