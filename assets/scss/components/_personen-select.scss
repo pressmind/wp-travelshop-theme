@@ -54,7 +54,7 @@
       height: 2rem;
       text-align: center;
       line-height: 2rem;
-      color: $body-color-light;
+      color: $body-color;
       font-weight: $headings-font-weight;
 
       @include font-size-generator($h5-font-sizes);
