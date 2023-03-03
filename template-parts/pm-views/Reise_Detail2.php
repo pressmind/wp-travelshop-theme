@@ -514,15 +514,17 @@ $args['breadcrumb'][] = $tmp;
                         ?>
                     </div>
                     <div class="col-12 col-lg-4">
-                        <?php
-                        // = = = > load the price box < = = =
-                        $id_price_box_modal = uniqid();
-                        $args['id_modal_price_box'] = $id_price_box_modal;
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+                        <div class="detail-booking-entrypoint">
+                            <?php
+                            // = = = > load the price box < = = =
+                            $id_price_box_modal = uniqid();
+                            $args['id_modal_price_box'] = $id_price_box_modal;
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
 
-                        // = = = > load the on request row (only shown if the full product is on request < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
-                        ?>
+                            // = = = > load the on request row (only shown if the full product is on request < = = =
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
+                            ?>
+                        </div>
 
                         <div class="detail-sidebar">
                             <?php

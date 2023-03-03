@@ -13761,6 +13761,20 @@ footer.footer-main {
 /**
  * Import Detail "components"
  */
+.detail-booking-entrypoint {
+  background-color: #fff;
+  color: #212529;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  padding: 1.25rem; }
+  @media (min-width: 992px) {
+    .detail-booking-entrypoint {
+      font-size: 1rem; } }
+  @media (min-width: 992px) {
+    .detail-booking-entrypoint {
+      padding: 30px; } }
+
 .detail-header-info {
   background-color: #fff;
   color: #212529;

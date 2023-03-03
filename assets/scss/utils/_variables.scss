@@ -668,7 +668,7 @@ $detail-header-info-spacers-x: (
 ) !default;
 $detail-header-info-spacers-y: (
   null: $card-spacer-y,
-  lg: $grid-gutter-width
+  lg: 1.25rem
 ) !default;
 
 // info header chosen date
@@ -689,3 +689,14 @@ $detail-header-info-chosen-date-active-color: $body-color !default;
 
 $detail-header-info-chosen-date-spacer-x: $btn-padding-x-lg !default;
 $detail-header-info-chosen-date-spacer-y: $btn-padding-x-lg !default;
+
+// detail booking entrypoint
+$booking-entrypoint-border-radius: $detail-header-info-border-radius !default;
+$booking-entrypoint-color: $detail-header-info-color !default;
+$booking-entrypoint-border-width: $detail-header-info-border-width !default;
+$booking-entrypoint-border-color: $detail-header-info-border-color !default;
+$booking-entrypoint-bg: $detail-header-info-bg !default;
+$booking-entrypoint-font-sizes: $detail-header-info-font-sizes !default;
+
+$booking-entrypoint-spacers-x: $detail-header-info-spacers-x !default;
+$booking-entrypoint-spacers-y: $detail-header-info-spacers-y !default;

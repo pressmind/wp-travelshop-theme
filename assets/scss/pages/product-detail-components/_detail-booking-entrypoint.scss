@@ -1,0 +1,14 @@
+.detail-booking-entrypoint{
+  background-color: $booking-entrypoint-bg;
+  color: $booking-entrypoint-color;
+
+  @if ( $booking-entrypoint-border-width != 0 ) {
+    border: $booking-entrypoint-border-width solid $booking-entrypoint-border-color;
+  }
+
+  @include border-radius($booking-entrypoint-border-radius);
+  @include font-size-generator($booking-entrypoint-font-sizes);
+
+
+  @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
+}
