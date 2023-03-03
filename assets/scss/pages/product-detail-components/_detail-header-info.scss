@@ -67,6 +67,11 @@
           }
         }
       }
+
+      ul.checklist {
+        @extend %checklist;
+        @extend %checklist-responsive;
+      }
     }
 
     .detail-header-info-bottom {

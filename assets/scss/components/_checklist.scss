@@ -1,0 +1,33 @@
+%checklist {
+  list-style-type: none;
+  padding:0;
+  font-size: $checklist-font-size;
+  line-height: $checklist-line-height;
+
+  li {
+    padding-left: ( $checklist-icon-size + $checklist-icon-spacer);
+    position: relative;
+
+    svg {
+      position: absolute;
+
+      left:0;
+      top: (  ($checklist-font-size * $checklist-line-height) / 2 );
+
+      transform: translateY(-50%);
+
+      width: $checklist-icon-size;
+      height: $checklist-icon-size;
+
+      color: $checklist-icon-color;
+    }
+
+    + li {
+      margin-top: $checklist-item-spacer;
+    }
+  }
+}
+
+%checklist-responsive {
+  color: $body-color;
+}

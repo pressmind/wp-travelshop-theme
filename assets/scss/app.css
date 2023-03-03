@@ -10971,6 +10971,9 @@ html.force--consent.show--consent body {
  * set colors on image / default
  */
 /*
+ * Checklists
+ */
+/*
  * Detail page
  */
 /**
@@ -11581,6 +11584,28 @@ form.form-string-search.input-group {
       margin-top: 1rem; }
   .row.row-introduction p + p {
     margin-top: 1rem; }
+
+.detail-header-info .detail-header-info-top ul.checklist {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5; }
+  .detail-header-info .detail-header-info-top ul.checklist li {
+    padding-left: 1.375rem;
+    position: relative; }
+    .detail-header-info .detail-header-info-top ul.checklist li svg {
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      transform: translateY(-50%);
+      width: 1.125rem;
+      height: 1.125rem;
+      color: #28a745; }
+    .detail-header-info .detail-header-info-top ul.checklist li + li {
+      margin-top: 0.5rem; }
+
+.detail-header-info .detail-header-info-top ul.checklist {
+  color: #212529; }
 
 .spinner {
   margin: 20px auto 20px auto;

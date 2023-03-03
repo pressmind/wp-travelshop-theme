@@ -623,6 +623,21 @@ $add-to-wishlist-on-image-hover-color: rgba(#fff, .75) !default;
 $add-to-wishlist-on-image-active-color: #fff !default;
 
 /*
+ * Checklists
+ */
+$checklist-font-size: $font-size-base !default;
+$checklist-font-size-small: $font-size-sm !default;
+$checklist-line-height: $line-height-base !default;
+
+$checklist-icon-color: $booking-green !default;
+$checklist-icon-spacer: .25rem !default;
+$checklist-icon-size: $font-size-lg !default;
+$checklist-icon-size-small: $font-size-base !default;
+
+$checklist-item-spacer: .5rem !default;
+$checklist-item-spacer-small: .25rem !default;
+
+/*
  * Detail page
  */
 $detail-page-use-default: true !default; // u can deactivate every scss part - except booking-entrypoint, because this is essential for booking
