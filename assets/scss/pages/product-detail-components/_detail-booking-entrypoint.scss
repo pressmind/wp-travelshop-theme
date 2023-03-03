@@ -16,7 +16,7 @@
   .booking-filter {
 
 
-    @include spacing-generator($booking-entrypoint-spacers-x, 'bottom', 'padding');
+    @include spacing-generator($booking-entrypoint-spacers-y, 'bottom', 'padding');
 
     .booking-filter-item {
 

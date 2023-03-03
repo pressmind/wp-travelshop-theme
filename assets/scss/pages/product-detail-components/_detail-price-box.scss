@@ -87,6 +87,12 @@
   .price-box-discount {
     .price-total {
       @extend %price-default;
+
+      margin-right: auto;
+    }
+
+    .discount-wrapper--inner {
+      align-items: baseline;
     }
   }
 }

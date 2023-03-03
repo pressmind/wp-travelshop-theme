@@ -11236,10 +11236,10 @@ body.fl-builder .content-block.content-page {
   .price-box .price-box-discount .price-total strong, .booking-action .price-box-discount .price-total strong {
     font-weight: 700; }
   .price-box .price-box-discount .price-total > strong, .booking-action .price-box-discount .price-total > strong {
-    font-size: 1.125rem; }
+    font-size: 1.25rem; }
     @media (min-width: 992px) {
       .price-box .price-box-discount .price-total > strong, .booking-action .price-box-discount .price-total > strong {
-        font-size: 1.25rem; } }
+        font-size: 1.5rem; } }
 
 i.circle {
   width: .6125rem;
@@ -14000,10 +14000,10 @@ footer.footer-main {
     .detail-booking-entrypoint {
       padding: 30px; } }
   .detail-booking-entrypoint .booking-filter {
-    padding-bottom: 1.25rem; }
+    padding-bottom: 0.5rem; }
     @media (min-width: 992px) {
       .detail-booking-entrypoint .booking-filter {
-        padding-bottom: 30px; } }
+        padding-bottom: 1rem; } }
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type {
       padding-bottom: 0.5rem; }
       @media (min-width: 992px) {
@@ -14265,6 +14265,10 @@ footer.footer-main {
       .booking-action .price-box-row + .booking-action-row, .booking-action .booking-action-row + .price-box-row,
       .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
+  .price-box .price-box-discount .price-total, .booking-action .price-box-discount .price-total {
+    margin-right: auto; }
+  .price-box .price-box-discount .discount-wrapper--inner, .booking-action .price-box-discount .discount-wrapper--inner {
+    align-items: baseline; }
 
 .price-box {
   padding-top: 1.25rem;

@@ -534,11 +534,11 @@ $price-default-color: $body-color !default;
 $price-default-price-color: $headings-color !default;
 $price-default-price-font-weight: $font-weight-bold !default;
 $price-default-font-sizes: (
-        null: $font-size-base
+        null: $font-size-base,
 ) !default;
 $price-default-price-font-sizes: (
-        null: $font-size-lg,
-        lg: $font-size-xl
+        null: $font-size-xl,
+        lg: 1.5rem
 ) !default;
 
 /**
