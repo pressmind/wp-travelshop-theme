@@ -11065,6 +11065,9 @@ html.force--consent.show--consent body {
  * up and down to make sure not use mixins and generate
  * same quellcode everytime
  */
+/**
+ * get element shadow
+ */
 body {
   font-display: swap !important;
   padding-top: 72px; }
@@ -14020,6 +14023,7 @@ footer.footer-main {
   background-color: #fff;
   color: #212529;
   overflow: hidden;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-size: 0.875rem; }

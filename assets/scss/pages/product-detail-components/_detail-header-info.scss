@@ -22,6 +22,8 @@
     color: $detail-header-info-color;
     overflow: hidden;
 
+    @include get-element-shadow('detail-info-box');
+
     @if ( $detail-header-info-border-width != 0 ) {
       border: $detail-header-info-border-width solid $detail-header-info-border-color;
     }

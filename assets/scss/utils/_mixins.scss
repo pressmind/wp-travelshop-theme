@@ -264,3 +264,16 @@
     @warn "Placeholder `#{$name}` already exists.";
   }
 }
+
+/**
+ * get element shadow
+ */
+@mixin get-element-shadow($key, $enabled: $enable-element-shadows, $specific-shadows: $specific-element-shadows ) {
+  @if ( $enabled == true ) {
+    @if ( map-has-key($specific-shadows, $key) ) {
+      box-shadow: map-get($specific-shadows, $key);
+    } @else {
+      box-shadow: $global-element-shadow;
+    }
+  }
+}

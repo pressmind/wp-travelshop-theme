@@ -6,6 +6,12 @@
  * to-do
  * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
  */
+$enable-element-shadows: true !default;
+$global-element-shadow: $box-shadow-lg !default;
+
+$specific-element-shadows: (
+  'detail-info-box': $global-element-shadow
+) !default;
 
 /**
  * Blank for placeholders
