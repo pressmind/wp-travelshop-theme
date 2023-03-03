@@ -23,7 +23,10 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
             </span>
             <span class="booking-filter-field--text">
-                DATUM
+                <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
+                    'date_departure' => $args['cheapest_price']->date_departure,
+                    'date_arrival' => $args['cheapest_price']->date_arrival
+                ]);?>
             </span>
         </button>
     </div>
@@ -34,7 +37,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
             </span>
             <span class="booking-filter-field--text">
-                GEWÄHLTER AIRPORT
+                Frankfurt Main
             </span>
         </button>
     </div>
