@@ -11159,12 +11159,15 @@ h6, .h6 {
 
 .info-text {
   display: flex;
+  flex-wrap: nowrap;
+  gap: .5rem;
   color: #5a6570;
-  font-size: 0.75rem;
+  font-size: 0.6125rem;
   line-height: 1.2; }
   .info-text svg {
-    width: 1rem;
-    height: 1rem;
+    flex: 1 1 0.875rem;
+    width: 0.875rem;
+    height: 0.875rem;
     color: #212529; }
 
 body.fl-builder .content-block.content-page > .container, body.fl-builder .fl-builder-content .content-block.content-page > .fl-row.fl-row-fixed-width, .fl-builder-content body.fl-builder .content-block.content-page > .fl-row.fl-row-fixed-width, body.fl-builder .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .content-block.content-page > .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap body.fl-builder .content-block.content-page > .fl-row-content.fl-row-fixed-width {

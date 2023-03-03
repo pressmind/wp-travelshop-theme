@@ -45,14 +45,18 @@ h6, .h6 {
 
 .info-text {
   display: flex;
+  flex-wrap: nowrap;
+  gap: .5rem;
+
   color: $body-color-light;
-  font-size: $font-size-xs;
+  font-size: $font-size-xxs;
 
   line-height: $line-height-sm;
 
   svg {
-    width: $font-size-base;
-    height: $font-size-base;
+    flex: 1 1 $font-size-sm;
+    width: $font-size-sm;
+    height: $font-size-sm;
     color: $body-color;
   }
 }
