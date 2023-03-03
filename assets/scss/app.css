@@ -13875,19 +13875,17 @@ footer.footer-main {
     flex-direction: row;
     flex-wrap: wrap;
     margin: -.25rem; }
-    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio {
+    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label {
+      display: flex;
+      flex-direction: row;
       flex-wrap: nowrap;
-      padding: .25rem; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        gap: 0.25rem;
-        align-items: center; }
-        .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label svg {
-          width: 1rem;
-          height: 1rem; }
+      gap: 0.25rem;
+      align-items: center; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label > span {
+        white-space: nowrap; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio .icon-label svg {
+        width: 1rem;
+        height: 1rem; }
 
 .detail-header-info {
   background-color: #fff;
