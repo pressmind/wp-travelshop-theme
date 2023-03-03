@@ -163,6 +163,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     $randint = random_int(1, 9);
     ?>
 
+    <?php /*
     <?php if($randint < 10) { ?>
         <div class="booking-action-row">
             <div class="booking-status">
@@ -171,6 +172,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             </div>
         </div>
     <?php } ?>
+ */ ?>
 
     <div class="booking-action-row">
         <div class="price-box-discount">

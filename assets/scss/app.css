@@ -13999,7 +13999,7 @@ footer.footer-main {
           box-shadow: none;
           outline: none; }
 
-.detail-header-info .detail-header-info-bottom .detail-header-info-status .status, .booking-action .booking-status .status {
+.detail-header-info .detail-header-info-bottom .detail-header-info-status .status {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
   padding: 0.25rem 30px;
@@ -14008,7 +14008,7 @@ footer.footer-main {
   color: #fff;
   background-color: #ffc107;
   text-align: center; }
-  .detail-header-info .detail-header-info-bottom .detail-header-info-status .danger.status, .booking-action .booking-status .danger.status {
+  .detail-header-info .detail-header-info-bottom .detail-header-info-status .danger.status {
     background-color: #dc3545; }
 
 .detail-header-info {
@@ -14218,14 +14218,6 @@ footer.footer-main {
       .booking-action .price-box-row + .booking-action-row, .booking-action .booking-action-row + .price-box-row,
       .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
-
-.booking-action .booking-status {
-  margin-top: 0.25rem; }
-  @media (min-width: 992px) {
-    .booking-action .booking-status {
-      margin-top: 0.5rem; } }
-  .booking-action .booking-status .status {
-    border-radius: 0.25rem; }
 
 /**
  * General styles for Detail-Page
