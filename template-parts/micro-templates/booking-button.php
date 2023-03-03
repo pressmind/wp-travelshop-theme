@@ -26,7 +26,7 @@ use Pressmind\Travelshop\IB3Tools;
 
     zur Buchung
 
-    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
 
 <!--    <img class="loader"-->
 <!--         src="--><?php //echo WEBSERVER_HTTP; ?><!--/wp-content/themes/travelshop/assets/img/loading-dots.svg">-->
