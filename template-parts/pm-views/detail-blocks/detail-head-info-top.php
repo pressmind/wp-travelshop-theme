@@ -14,6 +14,9 @@
                 <a href="<?php echo $args['travel_type_attributes']->url; ?>" title="<?php echo $args['travel_type_attributes']->name; ?>" target="_blank">
                     <?php echo $args['travel_type_attributes']->name; ?>
                 </a>
+                <?php if ( !empty($args['destination_attributes']) ) { ?>
+                    <span class="attribute-sep">&middot;</span>
+                <?php } ?>
             <?php } ?>
             <?php if ( !empty($args['destination_attributes']) ) { ?>
                 <a href="<?php echo $args['destination_attributes']->url; ?>" title="<?php echo $args['destination_attributes']->name; ?>" target="_blank">
