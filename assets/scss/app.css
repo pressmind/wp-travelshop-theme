@@ -13987,6 +13987,9 @@ footer.footer-main {
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control .dropdown-icon,
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control .booking-filter-field--icon {
           left: 1rem; }
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range .input-clear,
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control .input-clear {
+          right: 1rem; }
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range:active,
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:hover,
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:focus,
