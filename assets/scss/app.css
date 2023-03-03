@@ -11349,6 +11349,20 @@ input[type="search"]::-webkit-search-results-decoration {
   .list-filter-box.datepicker > div .input-clear:hover, .select-form-control .input-clear:hover {
     color: #007bff; }
 
+.select-form-control.input-has-icon {
+  padding-left: 1.875rem; }
+
+.select-form-control .dropdown-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.375rem;
+  color: #212529;
+  line-height: 0;
+  transform: translateY(-50%); }
+  .select-form-control .dropdown-icon svg {
+    width: 1.125rem;
+    height: 1.125rem; }
+
 /**
  * Define fadeout right, to make text longer than input fadeout into form bg-color
  */
@@ -12701,16 +12715,6 @@ form.form-string-search.input-group {
   .select-form-control:disabled, .select-form-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
-  .select-form-control .input-icon {
-    position: absolute;
-    top: 50%;
-    left: 0.375rem;
-    color: #212529;
-    line-height: 0;
-    transform: translateY(-50%); }
-    .select-form-control .input-icon svg {
-      width: 1.125rem;
-      height: 1.125rem; }
   .select-form-control .selected-options {
     display: block;
     white-space: nowrap;

@@ -54,7 +54,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
     <div class="booking-filter-item booking-filter-item--airport">
         <div class="dropdown">
-            <button class="dropdownAirport select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="dropdownAirport input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="dropdown-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
                 </span>
@@ -124,7 +124,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
     <div class="booking-filter-item booking-filter-item--persons">
         <div class="dropdown">
-            <button class="dropdownPersons select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="dropdown-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
                 </span>
