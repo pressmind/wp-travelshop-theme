@@ -13746,7 +13746,8 @@ footer.footer-main {
       .detail-header-info .detail-header-info-bottom {
         padding: 30px; } }
   .detail-header-info .detail-header-info-top h2 {
-    font-size: 1rem; }
+    font-size: 1rem;
+    margin-bottom: 1rem; }
     @media (min-width: 576px) {
       .detail-header-info .detail-header-info-top h2 {
         font-size: 1.25rem; } }
