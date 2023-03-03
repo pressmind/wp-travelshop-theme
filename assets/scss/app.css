@@ -11681,6 +11681,17 @@ form.form-string-search.input-group {
         width: 1.25rem;
         height: 1.25rem;
         transform: translate(-0.625rem, -0.625rem); } }
+.detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  flex-wrap: nowrap; }
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-check,
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-radio {
+    flex-wrap: nowrap; }
+    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-check > label,
+    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio > .form-radio > label {
+      white-space: nowrap; }
 .row.row-products:not(.is-slider) {
   margin-bottom: -1rem; }
   @media (min-width: 768px) {
