@@ -13952,6 +13952,9 @@ footer.footer-main {
   .price-box .price-box-row .price-box-icon-item {
     position: relative;
     padding-left: 1.625rem; }
+    .price-box .price-box-row .price-box-icon-item small {
+      display: block;
+      color: #5a6570; }
     .price-box .price-box-row .price-box-icon-item > svg {
       width: 1.125rem;
       height: 1.125rem;
@@ -13962,6 +13965,11 @@ footer.footer-main {
       @media (min-width: 992px) {
         .price-box .price-box-row .price-box-icon-item > svg {
           top: 0.75rem; } }
+  .price-box .price-box-row + .price-box-row {
+    margin-top: 1.25rem; }
+    @media (min-width: 992px) {
+      .price-box .price-box-row + .price-box-row {
+        margin-top: 30px; } }
 
 /**
  * General styles for Detail-Page

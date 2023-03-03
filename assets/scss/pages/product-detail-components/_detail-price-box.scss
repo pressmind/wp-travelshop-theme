@@ -40,6 +40,11 @@
       position: relative;
       padding-left: $font-size-lg + .5rem;
 
+      small {
+        display: block;
+        color: $body-color-light;
+      }
+
       > svg {
         width: $font-size-lg;
         height: $font-size-lg;
@@ -67,6 +72,10 @@
           }
         }
       }
+    }
+
+    + .price-box-row {
+      @include spacing-generator($booking-entrypoint-spacers-x, 'top', margin);
     }
   }
 }
