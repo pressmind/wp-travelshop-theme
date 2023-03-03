@@ -1,5 +1,5 @@
 // -- pricebox
-.price-box {
+.price-box, .booking-action {
   position: relative;
 
   @include font-size-generator($booking-entrypoint-font-sizes);
@@ -35,8 +35,9 @@
   }
 
   // -- info rows
-  .price-box-row {
-    .price-box-icon-item{
+  .price-box-row, .booking-action-row  {
+    .price-box-icon-item,
+    .booking-action-icon-item {
       position: relative;
       padding-left: $font-size-lg + .5rem;
 
@@ -74,7 +75,8 @@
       }
     }
 
-    + .price-box-row {
+    + .price-box-row,
+    + .booking-action-row {
       @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
     }
   }

@@ -164,7 +164,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     ?>
 
     <?php if($randint < 10) { ?>
-        <div class="price-box-row">
+        <div class="booking-action-row">
             <div class="booking-status">
                 <!-- Toggle in badge the class "active" to toggle status with animation -->
                 <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
@@ -172,7 +172,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     <?php } ?>
 
-    <div class="price-box-row">
+    <div class="booking-action-row">
         <div class="price-box-discount">
             <?php
             if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
@@ -187,7 +187,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             } ?>
         </div>
     </div>
-    <div class="price-box-row">
+    <div class="booking-action-row">
 
         <div class="booking-button-wrap">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [

@@ -14147,13 +14147,13 @@ footer.footer-main {
         .detail-header-info .detail-header-info-bottom .detail-header-info-status .status.danger {
           background-color: #dc3545; }
 
-.price-box {
+.price-box, .booking-action {
   position: relative;
   font-size: 0.875rem; }
   @media (min-width: 992px) {
-    .price-box {
+    .price-box, .booking-action {
       font-size: 1rem; } }
-  .price-box .state-check {
+  .price-box .state-check, .booking-action .state-check {
     width: 1.5rem;
     height: 1.5rem;
     background-color: #212529;
@@ -14166,19 +14166,31 @@ footer.footer-main {
     display: flex;
     align-items: center;
     justify-content: center; }
-    .price-box .state-check-success {
+    .price-box .state-check-success, .booking-action .state-check-success {
       background-color: #28a745;
       color: #fff; }
-    .price-box .state-check > svg {
+    .price-box .state-check > svg, .booking-action .state-check > svg {
       width: 1rem;
       height: 1rem; }
-  .price-box .price-box-row .price-box-icon-item {
+  .price-box .price-box-row .price-box-icon-item,
+  .price-box .price-box-row .booking-action-icon-item, .price-box .booking-action-row .price-box-icon-item,
+  .price-box .booking-action-row .booking-action-icon-item, .booking-action .price-box-row .price-box-icon-item,
+  .booking-action .price-box-row .booking-action-icon-item, .booking-action .booking-action-row .price-box-icon-item,
+  .booking-action .booking-action-row .booking-action-icon-item {
     position: relative;
     padding-left: 1.625rem; }
-    .price-box .price-box-row .price-box-icon-item small {
+    .price-box .price-box-row .price-box-icon-item small,
+    .price-box .price-box-row .booking-action-icon-item small, .price-box .booking-action-row .price-box-icon-item small,
+    .price-box .booking-action-row .booking-action-icon-item small, .booking-action .price-box-row .price-box-icon-item small,
+    .booking-action .price-box-row .booking-action-icon-item small, .booking-action .booking-action-row .price-box-icon-item small,
+    .booking-action .booking-action-row .booking-action-icon-item small {
       display: block;
       color: #5a6570; }
-    .price-box .price-box-row .price-box-icon-item > svg {
+    .price-box .price-box-row .price-box-icon-item > svg,
+    .price-box .price-box-row .booking-action-icon-item > svg, .price-box .booking-action-row .price-box-icon-item > svg,
+    .price-box .booking-action-row .booking-action-icon-item > svg, .booking-action .price-box-row .price-box-icon-item > svg,
+    .booking-action .price-box-row .booking-action-icon-item > svg, .booking-action .booking-action-row .price-box-icon-item > svg,
+    .booking-action .booking-action-row .booking-action-icon-item > svg {
       width: 1.125rem;
       height: 1.125rem;
       position: absolute;
@@ -14186,12 +14198,24 @@ footer.footer-main {
       left: 0;
       top: 0.65625rem; }
       @media (min-width: 992px) {
-        .price-box .price-box-row .price-box-icon-item > svg {
+        .price-box .price-box-row .price-box-icon-item > svg,
+        .price-box .price-box-row .booking-action-icon-item > svg, .price-box .booking-action-row .price-box-icon-item > svg,
+        .price-box .booking-action-row .booking-action-icon-item > svg, .booking-action .price-box-row .price-box-icon-item > svg,
+        .booking-action .price-box-row .booking-action-icon-item > svg, .booking-action .booking-action-row .price-box-icon-item > svg,
+        .booking-action .booking-action-row .booking-action-icon-item > svg {
           top: 0.75rem; } }
-  .price-box .price-box-row + .price-box-row {
+  .price-box .price-box-row + .price-box-row,
+  .price-box .price-box-row + .booking-action-row, .price-box .booking-action-row + .price-box-row,
+  .price-box .booking-action-row + .booking-action-row, .booking-action .price-box-row + .price-box-row,
+  .booking-action .price-box-row + .booking-action-row, .booking-action .booking-action-row + .price-box-row,
+  .booking-action .booking-action-row + .booking-action-row {
     margin-top: 0.25rem; }
     @media (min-width: 992px) {
-      .price-box .price-box-row + .price-box-row {
+      .price-box .price-box-row + .price-box-row,
+      .price-box .price-box-row + .booking-action-row, .price-box .booking-action-row + .price-box-row,
+      .price-box .booking-action-row + .booking-action-row, .booking-action .price-box-row + .price-box-row,
+      .booking-action .price-box-row + .booking-action-row, .booking-action .booking-action-row + .price-box-row,
+      .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
 
 /**
