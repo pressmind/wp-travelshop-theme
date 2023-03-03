@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
 
-  .personen-select-counter-title {
+  .personen-select-title {
     @extend %headings;
     @include font-size-generator($h5-font-sizes);
 

@@ -11094,7 +11094,7 @@ body {
     body {
       padding-top: 91px; } }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .page-share .share-object .share-object-body strong, h6, .h6, .personen-select .personen-select-counter-title {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .page-share .share-object .share-object-body strong, h6, .h6, .personen-select .personen-select-title {
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.2; }
@@ -13817,12 +13817,12 @@ form.form-string-search.input-group {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .personen-select .personen-select-counter-title {
+  .personen-select .personen-select-title {
     font-size: 1rem;
     font-weight: 500;
     margin: 0; }
     @media (min-width: 992px) {
-      .personen-select .personen-select-counter-title {
+      .personen-select .personen-select-title {
         font-size: 1.25rem; } }
   .personen-select .personen-select-counter {
     display: flex;
