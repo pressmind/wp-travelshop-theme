@@ -132,6 +132,8 @@
   border-style: solid;
   border-color: $icon-teaser-border-color;
 
+  @include get-element-shadow('icon-teaser');
+
   background-color: $icon-teaser-bg;
 
   display: flex;

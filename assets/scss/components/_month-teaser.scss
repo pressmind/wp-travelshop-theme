@@ -6,6 +6,8 @@
   background-color: $teaser-bg;
   border: $teaser-border-width solid $teaser-border-color;
 
+  @include get-element-shadow('month-teaser');
+
   // -- make it 2 column
   > a {
     display: flex;

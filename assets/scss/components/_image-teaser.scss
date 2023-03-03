@@ -9,6 +9,8 @@
   overflow: hidden;
   position: relative;
 
+  @include get-element-shadow('image-teaser');
+
   // -- image
   .teaser-image{
     @include aspect-ratio($image-teaser-image-aspect-ratio-width, $image-teaser-image-aspect-ratio-height);

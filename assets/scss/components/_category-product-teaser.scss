@@ -6,6 +6,8 @@
   background-color: $teaser-category-product-bg;
   border: $teaser-category-product-border-width solid $teaser-category-product-border-color;
 
+  @include get-element-shadow('category-product-teaser');
+
   // -- top element
   .teaser-category-image {
     > a {

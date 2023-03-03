@@ -271,7 +271,9 @@
 @mixin get-element-shadow($key, $enabled: $enable-element-shadows, $specific-shadows: $specific-element-shadows ) {
   @if ( $enabled == true ) {
     @if ( map-has-key($specific-shadows, $key) ) {
-      box-shadow: map-get($specific-shadows, $key);
+      @if ( map-get($specific-shadows, $key) != null and map-get($specific-shadows, $key) != unset and map-get($specific-shadows, $key) != none ) {
+        box-shadow: map-get($specific-shadows, $key);
+      }
     } @else {
       box-shadow: $global-element-shadow;
     }

@@ -12744,6 +12744,7 @@ form.form-string-search.input-group {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
+  box-shadow: none;
   border-radius: 0; }
   .card-travel:not(.card-travel--stripe) .card-image, .card-travel.card-travel--stripe .card-image {
     flex: 0 0 41.6666666667%;
@@ -12784,6 +12785,7 @@ form.form-string-search.input-group {
     flex-direction: column;
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.125);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     padding-bottom: 0;
     margin-bottom: 0;
     border-radius: 0.25rem; }
@@ -12973,7 +12975,8 @@ form.form-string-search.input-group {
 .teaser.category-product-teaser {
   border-radius: 0.25rem;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125); }
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); }
   .teaser.category-product-teaser .teaser-category-image > a {
     display: block;
     color: inherit;
@@ -13053,7 +13056,8 @@ form.form-string-search.input-group {
 .teaser.month-teaser {
   border-radius: 0.25rem;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125); }
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); }
   .teaser.month-teaser > a {
     display: flex;
     flex-direction: row;
@@ -13277,7 +13281,8 @@ form.form-string-search.input-group {
   border-color: rgba(0, 0, 0, 0.125);
   border-style: solid;
   border-width: 1px;
-  background-color: #fff !important; }
+  background-color: #fff !important;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); }
   .teaser.wp-teaser .teaser-image {
     margin-top: -1px;
     margin-right: -1px;
@@ -13366,6 +13371,7 @@ form.form-string-search.input-group {
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.125);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   background-color: #fff;
   display: flex; }
   .teaser.icon-teaser .teaser-icon {
@@ -13404,7 +13410,8 @@ form.form-string-search.input-group {
 .teaser.image-teaser {
   border-radius: 0.25rem;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); }
   .teaser.image-teaser .teaser-image {
     position: relative; }
     .teaser.image-teaser .teaser-image:before {
@@ -13956,7 +13963,8 @@ footer.footer-main {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-size: 0.875rem;
-  padding: 1.25rem; }
+  padding: 1.25rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); }
   @media (min-width: 992px) {
     .detail-booking-entrypoint {
       font-size: 1rem; } }

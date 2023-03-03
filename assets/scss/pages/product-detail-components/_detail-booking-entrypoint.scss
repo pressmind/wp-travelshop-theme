@@ -10,6 +10,8 @@
   @include font-size-generator($booking-entrypoint-font-sizes);
   @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
 
+  @include get-element-shadow('booking-entry-point');
+
   // -- filters
   .booking-filter {
 

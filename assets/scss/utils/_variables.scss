@@ -10,7 +10,14 @@ $enable-element-shadows: true !default;
 $global-element-shadow: $box-shadow-lg !default;
 
 $specific-element-shadows: (
-  //'detail-info-box': 0 0 1rem red
+  'detail-info-box': $global-element-shadow,
+  'booking-entry-point': $global-element-shadow,
+  'travel-teaser': $global-element-shadow,
+  'icon-teaser': $global-element-shadow,
+  'image-teaser': $global-element-shadow,
+  'wp-teaser': $global-element-shadow,
+  'category-product-teaser': $global-element-shadow,
+  'month-teaser': $global-element-shadow,
 ) !default;
 
 /**
