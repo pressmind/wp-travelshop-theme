@@ -601,6 +601,19 @@ jQuery(function ($) {
             $(e.target).parents('.dropdown').find('.dropdown-menu').removeClass('show');
         }
 
+        // -- make select happen on klick .form-radio or inner elements of .form-radio
+        if ( $(e.target).hasClass('form-radio') || $(e.target).parents('.form-radio').length > 0 ) {
+            var element = null;
+
+            if ( $(e.target).hasClass('form-radio') ) {
+                element = $(e.target);
+            } else {
+                element = $(e.target).parents('.form-radio');
+            }
+
+            element.find('label').trigger('click');
+        }
+
         e.stopPropagation();
 
     });
