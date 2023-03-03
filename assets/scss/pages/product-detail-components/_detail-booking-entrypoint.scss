@@ -14,6 +14,7 @@
   .booking-filter {
     .booking-filter-item {
 
+      // -- transport type
       &.booking-filter-item--transport-type {
         @include spacing-generator($booking-entrypoint-spacers-y, 'bottom', 'padding');
 
@@ -22,6 +23,18 @@
 
           .form-radio {
             @extend %custom-radio;
+          }
+        }
+      }
+
+      // -- daterange
+      &.booking-filter-item--date-range {
+        button.booking-filter-field--date-range {
+          @extend .form-control;
+          @extend %input-has-icon;
+
+          .booking-filter-field--icon {
+            @extend %input-icon;
           }
         }
       }
