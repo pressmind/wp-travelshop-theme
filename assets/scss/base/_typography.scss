@@ -42,3 +42,17 @@ h5, .h5 {
 h6, .h6 {
   @include font-size-generator($h6-font-sizes);
 }
+
+.info-text {
+  display: flex;
+  color: $body-color-light;
+  font-size: $font-size-xs;
+
+  line-height: $line-height-sm;
+
+  svg {
+    width: $font-size-base;
+    height: $font-size-base;
+    color: $body-color;
+  }
+}

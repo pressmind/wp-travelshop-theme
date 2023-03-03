@@ -11157,6 +11157,16 @@ h5, .h5, .page-share .share-object .share-object-body strong {
 h6, .h6 {
   font-size: 1rem; }
 
+.info-text {
+  display: flex;
+  color: #5a6570;
+  font-size: 0.75rem;
+  line-height: 1.2; }
+  .info-text svg {
+    width: 1rem;
+    height: 1rem;
+    color: #212529; }
+
 body.fl-builder .content-block.content-page > .container, body.fl-builder .fl-builder-content .content-block.content-page > .fl-row.fl-row-fixed-width, .fl-builder-content body.fl-builder .content-block.content-page > .fl-row.fl-row-fixed-width, body.fl-builder .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .content-block.content-page > .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap body.fl-builder .content-block.content-page > .fl-row-content.fl-row-fixed-width {
   width: 100% !important;
   max-width: 100% !important;
