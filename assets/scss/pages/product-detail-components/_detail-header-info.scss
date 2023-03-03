@@ -47,12 +47,9 @@
       }
 
       .detail-header-info-top-attributes{
-        margin-bottom: .25rem;
         font-size: $font-size-sm;
 
-        @include media-breakpoint-up(lg) {
-          margin-bottom: .5rem;
-        }
+        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
 
         > a {
           color: rgba($detail-header-info-color, .5);
@@ -75,11 +72,7 @@
 
       h2 {
         @include font-size-generator($detail-header-info-headline-sizes);
-        margin-bottom: .5rem;
-
-        @include media-breakpoint-up(lg) {
-          margin-bottom: 1rem;
-        }
+        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
       }
 
       ul, p {
@@ -87,11 +80,7 @@
 
         + ul,
         + p {
-          margin: .5rem 0 0 0;
-
-          @include media-breakpoint-up(lg) {
-            margin: 1rem 0 0 0;
-          }
+          @include spacing-generator($detail-header-info-spacers-y, 'top', margin);
         }
       }
 
@@ -132,11 +121,9 @@
         flex-wrap: nowrap;
 
         gap: $detail-header-info-chosen-date-spacer-x;
-        margin: 0 0 .5rem 0;
 
-        @include media-breakpoint-up(lg) {
-          margin: 0 0 1rem 0;
-        }
+
+        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
 
         .detail-header-info-chosen-date-icon {
           svg {
@@ -206,13 +193,13 @@
 
       // -- status
       .detail-header-info-status{
-        margin-bottom: .5rem;
         margin-top: -.75rem;
 
         @include media-breakpoint-up(lg) {
-          margin-bottom: 1rem;
           margin-top: -1.25rem;
         }
+
+        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
 
         .status {
           @include border-bottom-radius($detail-header-info-chosen-date-border-radius);
