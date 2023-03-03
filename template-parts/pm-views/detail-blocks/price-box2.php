@@ -84,24 +84,31 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                             </button>
                         </div>
 
+                        <?php
+                        $airports = [
+                            'BER' => 'Berlin',
+                            'FRA' => 'Frankfurt Main',
+                            'MUC' => 'Flughafen München',
+                            'DUS' => 'Flughafen Düsselforf',
+                            'HAM' => 'Hamburg',
+                            'CGN' => 'Köln / Bonn',
+                            'HHN' => 'Frankfurt-Hahn'
+                        ]
+                        ?>
+
                         <div class="category-tree-field-items multi-level-checkboxes">
-                            <?php foreach( $transport_types as $type ) { ?>
+                            <?php $i = 0; ?>
+                            <?php foreach( $airports as $key => $value ) { ?>
                                 <div class="form-radio">
-                                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
+                                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $key; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $i == 0 ) { ?>checked="checked"<?php } ?> />
 
                                     <span></span>
 
-                                    <label class="form-radio-label" for="transport-type-<?php echo $type; ?>">
-                                        <span class="icon-label">
-                                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', [
-                                                'transport_type' => $type
-                                            ]);?>
-                                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                                                'transport_type' => $type
-                                            ]);?>
-                                        </span>
+                                    <label class="form-radio-label" for="transport-type-<?php echo $key; ?>">
+                                        <?php echo $value; ?>
                                     </label>
                                 </div>
+                                <?php $i++; ?>
                             <?php } ?>
                         </div>
                     </div>
