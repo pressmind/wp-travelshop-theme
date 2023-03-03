@@ -13924,13 +13924,13 @@ footer.footer-main {
         .detail-header-info .detail-header-info-bottom .detail-header-info-status .status.danger {
           background-color: #dc3545; }
 
-.price-box .price-box {
+.price-box {
   position: relative;
   font-size: 0.875rem; }
   @media (min-width: 992px) {
-    .price-box .price-box {
+    .price-box {
       font-size: 1rem; } }
-  .price-box .price-box .state-check {
+  .price-box .state-check {
     width: 1.5rem;
     height: 1.5rem;
     background-color: #212529;
@@ -13943,19 +13943,19 @@ footer.footer-main {
     display: flex;
     align-items: center;
     justify-content: center; }
-    .price-box .price-box .state-check-success {
+    .price-box .state-check-success {
       background-color: #28a745;
       color: #fff; }
-    .price-box .price-box .state-check > svg {
+    .price-box .state-check > svg {
       width: 1rem;
       height: 1rem; }
-  .price-box .price-box .price-box-row .price-box-icon-item {
+  .price-box .price-box-row .price-box-icon-item {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     gap: .25rem; }
-    .price-box .price-box .price-box-row .price-box-icon-item > svg {
+    .price-box .price-box-row .price-box-icon-item > svg {
       width: 1rem;
       height: 1rem; }
 
