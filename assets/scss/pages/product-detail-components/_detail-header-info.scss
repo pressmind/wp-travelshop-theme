@@ -158,6 +158,8 @@
           font-size: $font-size-sm;
           color: #fff;
           background-color: $booking-orange;
+          font-weight: $font-weight-bold;
+          text-align: center;
 
           &.danger {
             background-color: $booking-red;

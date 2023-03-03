@@ -13839,7 +13839,9 @@ footer.footer-main {
         padding: 0.25rem 30px;
         font-size: 0.875rem;
         color: #fff;
-        background-color: #ffc107; }
+        background-color: #ffc107;
+        font-weight: 700;
+        text-align: center; }
         .detail-header-info .detail-header-info-bottom .detail-header-info-status .status.danger {
           background-color: #dc3545; }
 
