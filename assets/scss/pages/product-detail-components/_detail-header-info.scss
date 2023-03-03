@@ -19,8 +19,24 @@
     .detail-header-info-top {
       h2 {
         @include font-size-generator($detail-header-info-headline-sizes);
+        margin-bottom: .5rem;
 
-        margin-bottom: 1rem;
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      ul, p {
+        margin: 0;
+
+        + ul,
+        + p {
+          margin: .5rem 0 0 0;
+
+          @include media-breakpoint-up(lg) {
+            margin: 1rem 0 0 0;
+          }
+        }
       }
     }
 
@@ -55,6 +71,11 @@
         flex-wrap: nowrap;
 
         gap: $detail-header-info-chosen-date-spacer-x;
+        margin: 0 0 .5rem 0;
+
+        @include media-breakpoint-up(lg) {
+          margin: 0 0 1rem 0;
+        }
 
         .detail-header-info-chosen-date-icon {
           svg {
@@ -121,6 +142,29 @@
           color: $detail-header-info-chosen-date-hover-color;
         }
       }
+
+      // -- status
+      .detail-header-info-status{
+        margin-right: -$grid-gutter-width;
+        margin-left: -$grid-gutter-width;
+        margin-bottom: .5rem;
+
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 1rem;
+        }
+
+        .status {
+          padding: .25rem $grid-gutter-width;
+          font-size: $font-size-sm;
+          color: #fff;
+          background-color: $booking-orange;
+
+          &.danger {
+            background-color: $booking-red;
+          }
+        }
+      }
+
     }
   }
 }

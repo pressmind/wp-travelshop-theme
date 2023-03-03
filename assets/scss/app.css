@@ -13747,13 +13747,27 @@ footer.footer-main {
         padding: 30px; } }
   .detail-header-info .detail-header-info-top h2 {
     font-size: 1rem;
-    margin-bottom: 1rem; }
+    margin-bottom: .5rem; }
     @media (min-width: 576px) {
       .detail-header-info .detail-header-info-top h2 {
         font-size: 1.25rem; } }
     @media (min-width: 992px) {
       .detail-header-info .detail-header-info-top h2 {
         font-size: 1.5rem; } }
+    @media (min-width: 992px) {
+      .detail-header-info .detail-header-info-top h2 {
+        margin-bottom: 1rem; } }
+  .detail-header-info .detail-header-info-top ul, .detail-header-info .detail-header-info-top p {
+    margin: 0; }
+    .detail-header-info .detail-header-info-top ul + ul,
+    .detail-header-info .detail-header-info-top ul + p, .detail-header-info .detail-header-info-top p + ul,
+    .detail-header-info .detail-header-info-top p + p {
+      margin: .5rem 0 0 0; }
+      @media (min-width: 992px) {
+        .detail-header-info .detail-header-info-top ul + ul,
+        .detail-header-info .detail-header-info-top ul + p, .detail-header-info .detail-header-info-top p + ul,
+        .detail-header-info .detail-header-info-top p + p {
+          margin: 1rem 0 0 0; } }
   .detail-header-info .detail-header-info-bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
     background-color: #fff; }
@@ -13769,7 +13783,11 @@ footer.footer-main {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      gap: 1rem; }
+      gap: 1rem;
+      margin: 0 0 .5rem 0; }
+      @media (min-width: 992px) {
+        .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date {
+          margin: 0 0 1rem 0; } }
       .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-icon svg {
         width: 1.25rem;
         height: 1.25rem; }
@@ -13810,6 +13828,20 @@ footer.footer-main {
         border-color: rgba(0, 0, 0, 0.125);
         background-color: #e9ecef;
         color: #212529; }
+    .detail-header-info .detail-header-info-bottom .detail-header-info-status {
+      margin-right: -30px;
+      margin-left: -30px;
+      margin-bottom: .5rem; }
+      @media (min-width: 992px) {
+        .detail-header-info .detail-header-info-bottom .detail-header-info-status {
+          margin-bottom: 1rem; } }
+      .detail-header-info .detail-header-info-bottom .detail-header-info-status .status {
+        padding: 0.25rem 30px;
+        font-size: 0.875rem;
+        color: #fff;
+        background-color: #ffc107; }
+        .detail-header-info .detail-header-info-bottom .detail-header-info-status .status.danger {
+          background-color: #dc3545; }
 
 /**
  * General styles for Detail-Page
