@@ -39,9 +39,11 @@
     ?>
     <div class="detail-header-info-top-body">
         <h2><?php echo $args['name']; ?></h2>
+        <?php /*
         <?php if (!empty($args['subline'])) { ?>
             <p><?php echo $args['subline']; ?></p>
         <?php } ?>
+ */ ?>
         <?php if (!empty($args['usps'])) { ?>
             <?php echo checklist_formatter($args['usps']); ?>
         <?php } ?>
