@@ -44,6 +44,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <span class="booking-filter-field--icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
             </span>
+                <small class="d-block">Termin wählen</small>
                 <span class="booking-filter-field--text">
                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                     'date_departure' => $args['cheapest_price']->date_departure,
@@ -59,7 +60,8 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <span class="dropdown-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
                 </span>
-                    <span class="selected-options" data-placeholder="bitte wählen">
+                    <small class="d-block">Flughafen wählen</small>
+                <span class="selected-options" data-placeholder="bitte wählen">
                     Berlin
                 </span>
                     <span class="dropdown-clear input-clear">
@@ -126,6 +128,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <span class="dropdown-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
                 </span>
+                    <small class="d-block">Anzahl Personen</small>
                     <span class="selected-options">
                     2 Personen
                 </span>
