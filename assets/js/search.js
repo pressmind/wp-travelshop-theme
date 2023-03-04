@@ -111,11 +111,11 @@ jQuery(function ($) {
         });
     }
 
-// ------------------------------------------
-// --- rangeslider
-// ------------------------------------------
+    // ------------------------------------------
+    // --- rangeslider
+    // ------------------------------------------
 
-    if (false && $('.js-range-slider').length > 0) {
+    if ($('.js-range-slider').length > 0) {
         var rSliderElement = new rSlider({
             target: '#js-range-slider',
             values: { min: parseInt($(".js-range-slider").attr('data-min')), max: parseInt($(".js-range-slider").attr('data-max'))},
