@@ -451,7 +451,7 @@ $args['breadcrumb'][] = $tmp;
                             <?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-top.php', $args);
 
-                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-bottom.php', $args);
+//                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-bottom.php', $args);
                             ?>
                         </div>
                     </div>

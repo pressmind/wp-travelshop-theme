@@ -19,7 +19,7 @@ use Pressmind\Travelshop\Template;
     <?php
     if(!empty($args['cheapest_price']) && empty($args['booking_on_request'])){
     ?>
-            <?php /*
+
     <div class="detail-header-info-chosen-date">
         <div class="detail-header-info-chosen-date-icon">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', ['transport_type' => $args['cheapest_price']->transport_type]); ?>
@@ -52,7 +52,6 @@ use Pressmind\Travelshop\Template;
             <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
         </div>
     <?php } ?>
- */ ?>
     <div class="detail-header-info-cta">
         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
             'cheapest_price' => $args['cheapest_price'],

@@ -184,9 +184,6 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 </div>
 
 <div class="booking-action">
-    <?php // Random Availability
-    $randint = random_int(1, 9);
-    ?>
 
     <?php // Random Availability
     $randint = random_int(1, 9);
