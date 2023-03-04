@@ -11259,18 +11259,18 @@ body.fl-builder .content-block.content-page {
       .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price > strong {
         font-size: 1.125rem; } }
 
-.price-box .price-box-discount .price-total, .booking-action .price-box-discount .price-total {
+.booking-action .price-box-discount .price-total {
   color: #212529;
   font-size: 1rem; }
-  .price-box .price-box-discount .price-total small, .booking-action .price-box-discount .price-total small {
+  .booking-action .price-box-discount .price-total small {
     color: #212529;
     font-size: 1rem; }
-  .price-box .price-box-discount .price-total strong, .booking-action .price-box-discount .price-total strong {
+  .booking-action .price-box-discount .price-total strong {
     font-weight: 700; }
-  .price-box .price-box-discount .price-total > strong, .booking-action .price-box-discount .price-total > strong {
+  .booking-action .price-box-discount .price-total > strong {
     font-size: 1.25rem; }
     @media (min-width: 992px) {
-      .price-box .price-box-discount .price-total > strong, .booking-action .price-box-discount .price-total > strong {
+      .booking-action .price-box-discount .price-total > strong {
         font-size: 1.5rem; } }
 
 i.circle {
@@ -14262,18 +14262,6 @@ footer.footer-main {
             box-shadow: none;
             outline: none; }
 
-.detail-header-info .detail-header-info-bottom .detail-header-info-status .status {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-  padding: 0.25rem 30px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: #ffc107;
-  text-align: center; }
-  .detail-header-info .detail-header-info-bottom .detail-header-info-status .danger.status {
-    background-color: #dc3545; }
-
 .detail-header-info {
   background-color: #fff;
   color: #212529;
@@ -14284,12 +14272,10 @@ footer.footer-main {
   @media (min-width: 992px) {
     .detail-header-info {
       font-size: 1rem; } }
-  .detail-header-info .detail-header-info-top,
-  .detail-header-info .detail-header-info-bottom {
+  .detail-header-info .detail-header-info-top {
     padding: 1.25rem; }
     @media (min-width: 992px) {
-      .detail-header-info .detail-header-info-top,
-      .detail-header-info .detail-header-info-bottom {
+      .detail-header-info .detail-header-info-top {
         padding: 30px; } }
   .detail-header-info .detail-header-info-top {
     position: relative; }
@@ -14341,83 +14327,14 @@ footer.footer-main {
           .detail-header-info .detail-header-info-top ul + p, .detail-header-info .detail-header-info-top p + ul,
           .detail-header-info .detail-header-info-top p + p {
             margin-top: 1rem; } }
-  .detail-header-info .detail-header-info-bottom {
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-    background-color: #fff; }
-    .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date {
-      border-radius: 0.25rem;
-      background-color: #fff;
-      color: #212529;
-      border-width: 1px;
-      border-style: solid;
-      border-color: rgba(0, 0, 0, 0.125);
-      padding: 1rem 1rem;
-      transition: color .3s, border-color .3s, background-color .3s;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 1rem;
-      margin-bottom: 0.5rem; }
-      @media (min-width: 992px) {
-        .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date {
-          margin-bottom: 1rem; } }
-      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-icon svg {
-        width: 1.25rem;
-        height: 1.25rem; }
-      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info {
-        position: relative;
-        padding-right: 2rem;
-        flex: 1; }
-        .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit {
-          border: 0;
-          outline: none;
-          box-shadow: none;
-          background: transparent;
-          padding: 0;
-          position: absolute;
-          cursor: pointer;
-          width: 2rem;
-          height: 2rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #5a6570;
-          transition: color .3s;
-          top: -0.4375rem;
-          right: -0.4375rem; }
-          .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit > svg {
-            width: 1.125rem;
-            height: 1.125rem; }
-          .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit:hover, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit:focus, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info button.detail-header-info-chosen-date-edit:active {
-            color: #007bff; }
-        .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date .detail-header-info-chosen-date-info .detail-header-info-chosen-date-data .small-title {
-          color: rgba(33, 37, 41, 0.5);
-          font-size: 0.875rem; }
-      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:hover {
-        border-color: rgba(0, 0, 0, 0.125);
-        background-color: #e9ecef;
-        color: #212529; }
-      .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:active, .detail-header-info .detail-header-info-bottom .detail-header-info-chosen-date:focus {
-        border-color: rgba(0, 0, 0, 0.125);
-        background-color: #e9ecef;
-        color: #212529; }
-    .detail-header-info .detail-header-info-bottom .detail-header-info-status {
-      margin-top: -.75rem;
-      margin-bottom: 0.5rem; }
-      @media (min-width: 992px) {
-        .detail-header-info .detail-header-info-bottom .detail-header-info-status {
-          margin-top: -1.25rem; } }
-      @media (min-width: 992px) {
-        .detail-header-info .detail-header-info-bottom .detail-header-info-status {
-          margin-bottom: 1rem; } }
 
-.price-box, .booking-action {
+.booking-action {
   position: relative;
   font-size: 0.875rem; }
   @media (min-width: 992px) {
-    .price-box, .booking-action {
+    .booking-action {
       font-size: 1rem; } }
-  .price-box .state-check, .booking-action .state-check {
+  .booking-action .state-check {
     width: 1.5rem;
     height: 1.5rem;
     background-color: #212529;
@@ -14431,32 +14348,20 @@ footer.footer-main {
     align-items: center;
     justify-content: center; }
     @media (min-width: 992px) {
-      .price-box .state-check, .booking-action .state-check {
+      .booking-action .state-check {
         top: 30px; } }
-    .price-box .state-check-success, .booking-action .state-check-success {
+    .booking-action .state-check-success {
       background-color: #28a745;
       color: #fff; }
-    .price-box .state-check > svg, .booking-action .state-check > svg {
+    .booking-action .state-check > svg {
       width: 1rem;
       height: 1rem; }
-  .price-box .price-box-row .price-box-icon-item,
-  .price-box .price-box-row .booking-action-icon-item, .price-box .booking-action-row .price-box-icon-item,
-  .price-box .booking-action-row .booking-action-icon-item, .booking-action .price-box-row .price-box-icon-item,
-  .booking-action .price-box-row .booking-action-icon-item, .booking-action .booking-action-row .price-box-icon-item,
   .booking-action .booking-action-row .booking-action-icon-item {
     position: relative;
     padding-left: 1.625rem; }
-    .price-box .price-box-row .price-box-icon-item small,
-    .price-box .price-box-row .booking-action-icon-item small, .price-box .booking-action-row .price-box-icon-item small,
-    .price-box .booking-action-row .booking-action-icon-item small, .booking-action .price-box-row .price-box-icon-item small,
-    .booking-action .price-box-row .booking-action-icon-item small, .booking-action .booking-action-row .price-box-icon-item small,
     .booking-action .booking-action-row .booking-action-icon-item small {
       display: block;
       color: #5a6570; }
-    .price-box .price-box-row .price-box-icon-item > svg,
-    .price-box .price-box-row .booking-action-icon-item > svg, .price-box .booking-action-row .price-box-icon-item > svg,
-    .price-box .booking-action-row .booking-action-icon-item > svg, .booking-action .price-box-row .price-box-icon-item > svg,
-    .booking-action .price-box-row .booking-action-icon-item > svg, .booking-action .booking-action-row .price-box-icon-item > svg,
     .booking-action .booking-action-row .booking-action-icon-item > svg {
       width: 1.125rem;
       height: 1.125rem;
@@ -14465,40 +14370,17 @@ footer.footer-main {
       left: 0;
       top: 0.65625rem; }
       @media (min-width: 992px) {
-        .price-box .price-box-row .price-box-icon-item > svg,
-        .price-box .price-box-row .booking-action-icon-item > svg, .price-box .booking-action-row .price-box-icon-item > svg,
-        .price-box .booking-action-row .booking-action-icon-item > svg, .booking-action .price-box-row .price-box-icon-item > svg,
-        .booking-action .price-box-row .booking-action-icon-item > svg, .booking-action .booking-action-row .price-box-icon-item > svg,
         .booking-action .booking-action-row .booking-action-icon-item > svg {
           top: 0.75rem; } }
-  .price-box .price-box-row + .price-box-row,
-  .price-box .price-box-row + .booking-action-row, .price-box .booking-action-row + .price-box-row,
-  .price-box .booking-action-row + .booking-action-row, .booking-action .price-box-row + .price-box-row,
-  .booking-action .price-box-row + .booking-action-row, .booking-action .booking-action-row + .price-box-row,
   .booking-action .booking-action-row + .booking-action-row {
     margin-top: 0.25rem; }
     @media (min-width: 992px) {
-      .price-box .price-box-row + .price-box-row,
-      .price-box .price-box-row + .booking-action-row, .price-box .booking-action-row + .price-box-row,
-      .price-box .booking-action-row + .booking-action-row, .booking-action .price-box-row + .price-box-row,
-      .booking-action .price-box-row + .booking-action-row, .booking-action .booking-action-row + .price-box-row,
       .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
-  .price-box .price-box-discount .price-total, .booking-action .price-box-discount .price-total {
+  .booking-action .price-box-discount .price-total {
     margin-right: auto; }
-  .price-box .price-box-discount .discount-wrapper--inner, .booking-action .price-box-discount .discount-wrapper--inner {
+  .booking-action .price-box-discount .discount-wrapper--inner {
     align-items: baseline; }
-
-.price-box {
-  padding-top: 1.25rem;
-  margin-top: 1.25rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.125); }
-  @media (min-width: 992px) {
-    .price-box {
-      padding-top: 30px; } }
-  @media (min-width: 992px) {
-    .price-box {
-      margin-top: 30px; } }
 
 /**
  * General styles for Detail-Page

@@ -1,5 +1,5 @@
 // -- pricebox + booking action box
-.price-box, .booking-action {
+.booking-action {
   position: relative;
 
   @include font-size-generator($booking-entrypoint-font-sizes);
@@ -37,8 +37,7 @@
   }
 
   // -- info rows
-  .price-box-row, .booking-action-row  {
-    .price-box-icon-item,
+  .booking-action-row  {
     .booking-action-icon-item {
       position: relative;
       padding-left: $font-size-lg + .5rem;
@@ -77,7 +76,6 @@
       }
     }
 
-    + .price-box-row,
     + .booking-action-row {
       @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
     }
@@ -94,15 +92,5 @@
     .discount-wrapper--inner {
       align-items: baseline;
     }
-  }
-}
-
-// -- price box custom styles
-.price-box {
-  @include spacing-generator($booking-entrypoint-spacers-x, 'top', 'padding');
-
-  @if ( $booking-entrypoint-border-width != 0 ) {
-    @include spacing-generator($booking-entrypoint-spacers-x, 'top', 'margin');
-    border-top: $booking-entrypoint-border-width solid $booking-entrypoint-border-color;
   }
 }

@@ -31,8 +31,7 @@
     @include border-radius($detail-header-info-border-radius);
     @include font-size-generator($detail-header-info-font-sizes);
 
-    .detail-header-info-top,
-    .detail-header-info-bottom {
+    .detail-header-info-top {
       @include spacing-generator($detail-header-info-spacers-x, 'around', 'padding');
     }
 
@@ -109,122 +108,122 @@
       }
     }
 
-    .detail-header-info-bottom {
-      @if ( $detail-header-info-bottom-divider-width == 0 and $detail-header-info-bg == $detail-header-info-bottom-bg ) {
-        padding-top: 0 !important;
-      }
-
-      @if ( $detail-header-info-bottom-divider-width != 0 ) {
-        border-top: $detail-header-info-bottom-divider-width solid $detail-header-info-bottom-divider-color;
-      }
-
-      background-color: $detail-header-info-bottom-bg;
-
-      // -- chosen date
-      .detail-header-info-chosen-date {
-        @include border-radius($detail-header-info-chosen-date-border-radius);
-        background-color: $detail-header-info-chosen-date-bg;
-        color: $detail-header-info-chosen-date-color;
-
-        @if ( $detail-header-info-chosen-date-border-width != 0 ) {
-          border-width: $detail-header-info-chosen-date-border-width;
-          border-style: solid;
-          border-color: $detail-header-info-chosen-date-border-color;
-        }
-
-        padding: $detail-header-info-chosen-date-spacer-y $detail-header-info-chosen-date-spacer-x;
-        transition: color .3s, border-color .3s, background-color .3s;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-
-        gap: $detail-header-info-chosen-date-spacer-x;
-
-
-        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
-
-        .detail-header-info-chosen-date-icon {
-          svg {
-            width: $font-size-xl;
-            height: $font-size-xl;
-          }
-        }
-
-        .detail-header-info-chosen-date-info {
-          position: relative;
-          padding-right: 2rem;
-
-          flex: 1;
-
-          // -- edit
-          button.detail-header-info-chosen-date-edit {
-            @include button-reset();
-
-            position: absolute;
-
-            cursor: pointer;
-
-            width: 2rem; // 2 rem cuz touch actions need 32 px at least
-            height: 2rem;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: $body-color-light;
-            transition: color .3s;
-
-            top: -((2rem - $font-size-lg) / 2);
-            right: -((2rem - $font-size-lg) / 2);
-
-            > svg {
-              width: $font-size-lg;
-              height: $font-size-lg;
-            }
-
-            &:hover, &:focus, &:active {
-              color: $primary;
-            }
-          }
-
-          // -- data
-          .detail-header-info-chosen-date-data {
-            .small-title {
-              color: rgba($detail-header-info-chosen-date-color, .5);
-              font-size: $font-size-sm;
-            }
-          }
-        }
-
-        &:hover {
-          border-color: $detail-header-info-chosen-date-hover-border-color;
-          background-color: $detail-header-info-chosen-date-hover-bg;
-          color: $detail-header-info-chosen-date-hover-color;
-        }
-
-        &:active, &:focus {
-          border-color: $detail-header-info-chosen-date-hover-border-color;
-          background-color: $detail-header-info-chosen-date-hover-bg;
-          color: $detail-header-info-chosen-date-hover-color;
-        }
-      }
-
-      // -- status
-      .detail-header-info-status{
-        margin-top: -.75rem;
-
-        @include media-breakpoint-up(lg) {
-          margin-top: -1.25rem;
-        }
-
-        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
-
-        .status {
-          @extend %offer-status;
-        }
-      }
-
-    }
+    //.detail-header-info-bottom {
+    //  @if ( $detail-header-info-bottom-divider-width == 0 and $detail-header-info-bg == $detail-header-info-bottom-bg ) {
+    //    padding-top: 0 !important;
+    //  }
+    //
+    //  @if ( $detail-header-info-bottom-divider-width != 0 ) {
+    //    border-top: $detail-header-info-bottom-divider-width solid $detail-header-info-bottom-divider-color;
+    //  }
+    //
+    //  background-color: $detail-header-info-bottom-bg;
+    //
+    //  // -- chosen date
+    //  .detail-header-info-chosen-date {
+    //    @include border-radius($detail-header-info-chosen-date-border-radius);
+    //    background-color: $detail-header-info-chosen-date-bg;
+    //    color: $detail-header-info-chosen-date-color;
+    //
+    //    @if ( $detail-header-info-chosen-date-border-width != 0 ) {
+    //      border-width: $detail-header-info-chosen-date-border-width;
+    //      border-style: solid;
+    //      border-color: $detail-header-info-chosen-date-border-color;
+    //    }
+    //
+    //    padding: $detail-header-info-chosen-date-spacer-y $detail-header-info-chosen-date-spacer-x;
+    //    transition: color .3s, border-color .3s, background-color .3s;
+    //
+    //    display: flex;
+    //    flex-direction: row;
+    //    flex-wrap: nowrap;
+    //
+    //    gap: $detail-header-info-chosen-date-spacer-x;
+    //
+    //
+    //    @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
+    //
+    //    .detail-header-info-chosen-date-icon {
+    //      svg {
+    //        width: $font-size-xl;
+    //        height: $font-size-xl;
+    //      }
+    //    }
+    //
+    //    .detail-header-info-chosen-date-info {
+    //      position: relative;
+    //      padding-right: 2rem;
+    //
+    //      flex: 1;
+    //
+    //      // -- edit
+    //      button.detail-header-info-chosen-date-edit {
+    //        @include button-reset();
+    //
+    //        position: absolute;
+    //
+    //        cursor: pointer;
+    //
+    //        width: 2rem; // 2 rem cuz touch actions need 32 px at least
+    //        height: 2rem;
+    //
+    //        display: flex;
+    //        align-items: center;
+    //        justify-content: center;
+    //
+    //        color: $body-color-light;
+    //        transition: color .3s;
+    //
+    //        top: -((2rem - $font-size-lg) / 2);
+    //        right: -((2rem - $font-size-lg) / 2);
+    //
+    //        > svg {
+    //          width: $font-size-lg;
+    //          height: $font-size-lg;
+    //        }
+    //
+    //        &:hover, &:focus, &:active {
+    //          color: $primary;
+    //        }
+    //      }
+    //
+    //      // -- data
+    //      .detail-header-info-chosen-date-data {
+    //        .small-title {
+    //          color: rgba($detail-header-info-chosen-date-color, .5);
+    //          font-size: $font-size-sm;
+    //        }
+    //      }
+    //    }
+    //
+    //    &:hover {
+    //      border-color: $detail-header-info-chosen-date-hover-border-color;
+    //      background-color: $detail-header-info-chosen-date-hover-bg;
+    //      color: $detail-header-info-chosen-date-hover-color;
+    //    }
+    //
+    //    &:active, &:focus {
+    //      border-color: $detail-header-info-chosen-date-hover-border-color;
+    //      background-color: $detail-header-info-chosen-date-hover-bg;
+    //      color: $detail-header-info-chosen-date-hover-color;
+    //    }
+    //  }
+    //
+    //  // -- status
+    //  .detail-header-info-status{
+    //    margin-top: -.75rem;
+    //
+    //    @include media-breakpoint-up(lg) {
+    //      margin-top: -1.25rem;
+    //    }
+    //
+    //    @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
+    //
+    //    .status {
+    //      @extend %offer-status;
+    //    }
+    //  }
+    //
+    //}
   }
 }
