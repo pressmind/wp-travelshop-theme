@@ -42,7 +42,6 @@ use Pressmind\Travelshop\Template;
             </button>
         </div>
     </div>
- */ ?>
 
     <?php // Random Availability
     $randint = random_int(1, 9);
@@ -53,6 +52,7 @@ use Pressmind\Travelshop\Template;
             <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
         </div>
     <?php } ?>
+ */ ?>
     <div class="detail-header-info-cta">
         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
             'cheapest_price' => $args['cheapest_price'],
