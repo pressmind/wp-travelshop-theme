@@ -12982,7 +12982,6 @@ form.form-string-search.input-group {
     flex-direction: column;
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    box-shadow: 0 0 0.5rem blue;
     padding-bottom: 0;
     margin-bottom: 0;
     border-radius: 0.25rem; }
@@ -14212,7 +14211,7 @@ footer.footer-main {
   border-radius: 0.25rem;
   font-size: 0.875rem;
   padding: 1.25rem;
-  box-shadow: 0 0 1rem red; }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); }
   @media (min-width: 992px) {
     .detail-booking-entrypoint {
       font-size: 1rem; } }
