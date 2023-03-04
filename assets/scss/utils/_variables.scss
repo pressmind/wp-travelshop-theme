@@ -15,7 +15,7 @@ $global-element-shadow: 0 .5rem 1rem rgba(#000, .1) !default;
 $specific-element-shadows: (
   'detail-info-box': none,
   'booking-entry-point': 0 0 1rem red,
-  'travel-teaser': none,
+  'travel-teaser': 0 0 .5rem blue,
   'icon-teaser': none,
   'image-teaser': none,
   'wp-teaser': none,
