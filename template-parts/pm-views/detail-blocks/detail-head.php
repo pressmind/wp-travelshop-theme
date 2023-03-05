@@ -9,7 +9,7 @@ use Pressmind\Travelshop\Template;
     <div class="detail-header-badge">NEU</div>
     <div class="detail-header-gallery-slider">
         <div class="detail-header-gallery-slider--counter">
-            <span class="current-image">1</span> / <span class="total-images"><?php echo count($args['pictures']; ?></span>
+            <span class="current-image">1</span> / <span class="total-images"><?php echo count($args['pictures']); ?></span>
         </div>
         <div class="detail-header-gallery-slider--inner">
             <?php foreach ($args['pictures'] as $picture) { ?>
@@ -26,6 +26,10 @@ use Pressmind\Travelshop\Template;
         </div>
     </div>
     <div class="detail-header-grid">
+        <button class="detail-header-grid--modal btn btn-light">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#dots-nine"></use></svg>
+            Alle <?php echo count($args['pictures']); ?> Bilder
+        </button>
         <?php
         $i = 0;
         ?>
