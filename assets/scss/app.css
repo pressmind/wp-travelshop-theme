@@ -12941,9 +12941,6 @@ form.form-string-search.input-group {
     position: relative; }
 
 .card-travel .card-image .card-badge, .detail-header-gallery .detail-header-badge {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
   line-height: 1;
   padding: 0.375rem 0.375rem;
   border-radius: 0.25rem;
@@ -13073,6 +13070,10 @@ form.form-string-search.input-group {
    */ }
   .card-travel .card-image {
     position: relative; }
+    .card-travel .card-image .card-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem; }
     .card-travel .card-image .add-to-wishlist {
       position: absolute;
       top: 1rem;

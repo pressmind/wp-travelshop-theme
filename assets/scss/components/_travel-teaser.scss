@@ -1,8 +1,4 @@
 %product-badge {
-  position:absolute;
-  top: $travel-card-spacer-x;
-  left: $travel-card-spacer-x;
-
   line-height: 1;
   padding: $badge-padding-y $badge-padding-x;
 
@@ -204,6 +200,10 @@
 
     // -- set card badge settings
     .card-badge {
+      position:absolute;
+      top: $travel-card-spacer-x;
+      left: $travel-card-spacer-x;
+
       @extend %product-badge;
 
       // -- if show as pill
