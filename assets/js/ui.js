@@ -588,12 +588,11 @@ jQuery(function ($) {
     let dropdownNotClose = '.dropdown-menu-wishlist, .dropdown-menu-booking-select, .dropdown-menu-booking-person-select';
 
     $(dropdownNotClose).on('click', function(e) {
-        console.log($(e.target));
 
         // -- little hook
         // -- backdrop checker
         if ( $(e.target).css('container-name') === 'backdrop' ) {
-            console.log($(e.target).css('container-name'));
+            $(e.target).removeClass('show');
             $(e.target).parent().find('button[data-type="close-popup"]').trigger('click');
         }
 
