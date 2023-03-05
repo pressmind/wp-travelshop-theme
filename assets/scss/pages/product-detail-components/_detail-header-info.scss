@@ -5,6 +5,9 @@
     color: $detail-header-info-color;
     overflow: hidden;
 
+    // -- same height for image-gallery + info col
+    height: 100%;
+
     @include get-element-shadow('detail-info-box');
 
     @if ( $detail-header-info-border-width != 0 ) {
