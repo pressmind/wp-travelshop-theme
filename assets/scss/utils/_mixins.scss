@@ -52,7 +52,11 @@
  * you can use 'around' ( top, left, bottom, right ), 'y' ( top and bottom ), 'x' (left and right )
  * 'left', 'top', 'bottom' and 'right'
  */
-@mixin spacing-set($padding, $direction, $type) {
+@mixin spacing-set($padding, $direction, $type, $negative: false) {
+  @if ( $negative == true and $type == 'margin' ) {
+    $padding: ($padding * -1);
+  }
+
   @if ( $direction == 'around' ) {
     #{$type}: $padding;
   }
@@ -72,13 +76,13 @@
   }
 }
 
-@mixin spacing-generator($padding-map, $direction: 'around', $type: 'padding', $breakpoints: $grid-breakpoints) {
+@mixin spacing-generator($padding-map, $direction: 'around', $type: 'padding', $negative: false, $breakpoints: $grid-breakpoints) {
 
   // loop through set paddings
   @each $breakpoint, $padding in $padding-map {
     // check if breakpoint defined as zero to render "default" value ( mobile )
     @if $breakpoint == null {
-      @include spacing-set($padding, $direction, $type);
+      @include spacing-set($padding, $direction, $type, $negative);
     }
     @else {
       // if not null use $breakpoint as breakpoint to set font size
@@ -90,7 +94,7 @@
 
       // set media query + padding for view.
       @media ( min-width: $breakpoint ) {
-        @include spacing-set($padding, $direction, $type);
+        @include spacing-set($padding, $direction, $type, $negative);
       }
     }
   }

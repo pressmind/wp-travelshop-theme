@@ -77,11 +77,15 @@
     }
 
     + .booking-action-row {
-      @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
+      @include spacing-generator($booking-entrypoint-spacers-items, 'top', margin);
     }
 
     .status {
       @extend %offer-status;
+      // -- set padding
+      @include spacing-generator($booking-entrypoint-spacers-x, 'x', padding);
+      // -- set negative margin padding
+      @include spacing-generator($booking-entrypoint-spacers-x, 'x', margin, true);
     }
   }
 

@@ -14406,6 +14406,19 @@ footer.footer-main {
     @media (min-width: 992px) {
       .booking-action .booking-action-row + .booking-action-row {
         margin-top: 0.5rem; } }
+  .booking-action .booking-action-row .status {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem; }
+    @media (min-width: 992px) {
+      .booking-action .booking-action-row .status {
+        padding-left: 30px;
+        padding-right: 30px; } }
+    @media (min-width: 992px) {
+      .booking-action .booking-action-row .status {
+        margin-left: -30px;
+        margin-right: -30px; } }
   .booking-action .price-box-discount .price-total {
     margin-right: auto; }
   .booking-action .price-box-discount .discount-wrapper--inner {
