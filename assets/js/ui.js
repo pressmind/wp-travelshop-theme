@@ -587,6 +587,14 @@ jQuery(function ($) {
     // -----------------------
     let dropdownNotClose = '.dropdown-menu-wishlist, .dropdown-menu-booking-select, .dropdown-menu-booking-person-select';
 
+    $(dropdownNotClose).find('button[data-type="close-popup"]').on('click', function(e) {
+        e.preventDefault();
+
+        $(this).parents('.dropdown-menu.show').removeClass('show');
+
+        e.stopPropagation();
+    });
+
     $(dropdownNotClose).on('click', function(e) {
 
         // -- little hook
