@@ -12459,6 +12459,7 @@ form.form-string-search.input-group {
       color: #212529;
       transition: color .3s; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg {
+        pointer-events: none;
         width: 1.125rem;
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
@@ -12581,6 +12582,7 @@ form.form-string-search.input-group {
       color: #212529;
       transition: color .3s; }
       .content-block.content-block-list-filter .list-filter-header > button svg {
+        pointer-events: none;
         width: 1.125rem;
         height: 1.125rem; }
       .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
@@ -12609,6 +12611,7 @@ form.form-string-search.input-group {
       color: #212529;
       transition: color .3s; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg {
+        pointer-events: none;
         width: 1.125rem;
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
@@ -12636,6 +12639,7 @@ form.form-string-search.input-group {
     color: #212529;
     transition: color .3s; }
     .page-share .page-share-fallback .page-share-fallback-header > button svg {
+      pointer-events: none;
       width: 1.125rem;
       height: 1.125rem; }
     .page-share .page-share-fallback .page-share-fallback-header > button:hover, .page-share .page-share-fallback .page-share-fallback-header > button:focus, .page-share .page-share-fallback .page-share-fallback-header > button:active {

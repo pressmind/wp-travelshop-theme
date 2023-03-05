@@ -43,6 +43,7 @@
 
     // -- svg size
     svg {
+      pointer-events: none;
       width: $popup-close-icon-size;
       height: $popup-close-icon-size;
     }
