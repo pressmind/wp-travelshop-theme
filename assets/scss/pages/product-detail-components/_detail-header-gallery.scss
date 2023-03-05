@@ -1,4 +1,11 @@
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
+  .detail-header-gallery {
 
+    .detail-header-badge {
+      @extend %product-badge;
+      @extend %product-badge-danger;
+    }
+
+  }
 }

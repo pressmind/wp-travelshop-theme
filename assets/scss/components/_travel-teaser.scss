@@ -1,3 +1,26 @@
+%product-badge {
+  position:absolute;
+  top: $travel-card-spacer-x;
+  left: $travel-card-spacer-x;
+
+  line-height: 1;
+  padding: $badge-padding-y $badge-padding-x;
+
+  @include border-radius($badge-border-radius);
+
+  font: {
+    size: $badge-font-size;
+    weight: $badge-font-weight;
+  }
+
+  background-color: $gray-700;
+  color: #fff;
+}
+
+%product-badge-danger {
+  background-color: $danger; // @todo: maybe green better? Cuz read is danger, in every shop new == green
+}
+
 /**
  * small ( 2 column ) travel card
  */
@@ -181,14 +204,7 @@
 
     // -- set card badge settings
     .card-badge {
-      position:absolute;
-      top: $travel-card-spacer-x;
-      left: $travel-card-spacer-x;
-
-      line-height: 1;
-      padding: $badge-padding-y $badge-padding-x;
-
-      @include border-radius($badge-border-radius);
+      @extend %product-badge;
 
       // -- if show as pill
       @if $travel-card-badge-pill {
@@ -196,16 +212,8 @@
         @include border-radius($badge-pill-border-radius);
       }
 
-      font: {
-        size: $badge-font-size;
-        weight: $badge-font-weight;
-      }
-
-      background-color: $gray-700;
-      color: #fff;
-
       &--new {
-        background-color: $danger; // @todo: maybe green better? Cuz read is danger, in every shop new == green
+        @extend %product-badge-danger;
       }
     }
 
