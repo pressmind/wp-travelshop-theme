@@ -79,6 +79,10 @@
     + .booking-action-row {
       @include spacing-generator($detail-header-info-spacers-items, 'top', margin);
     }
+
+    .status {
+      @extend %offer-status;
+    }
   }
 
   // -- price-total

@@ -14281,6 +14281,16 @@ footer.footer-main {
             box-shadow: none;
             outline: none; }
 
+.booking-action .booking-action-row .status {
+  padding: .25rem .5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ffc107;
+  text-align: center; }
+  .booking-action .booking-action-row .danger.status {
+    background-color: #dc3545; }
+
 .detail-header-info {
   background-color: #fff;
   color: #212529;
