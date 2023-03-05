@@ -71,9 +71,16 @@
           background-color: transparent;
           height: auto;
 
+          small {
+            font-size: $font-size-sm;
+            color: rgba($input-color, .5);
+            line-height: 1;
+          }
+
           .dropdown-icon,
           .booking-filter-field--icon {
             left: 1rem;
+            @extend %input-icon-top;
           }
 
           .input-clear {

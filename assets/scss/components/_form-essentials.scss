@@ -64,6 +64,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 }
 
+%input-icon-top {
+  top: $input-padding-y;
+  transform: none;
+}
+
 /**
  * Define fadeout right, to make text longer than input fadeout into form bg-color
  */
