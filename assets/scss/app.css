@@ -14281,16 +14281,6 @@ footer.footer-main {
             box-shadow: none;
             outline: none; }
 
-.booking-action .booking-action-row .status {
-  padding: .25rem .5rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: #ffc107;
-  text-align: center; }
-  .booking-action .booking-action-row .danger.status {
-    background-color: #dc3545; }
-
 .detail-header-info {
   background-color: #fff;
   color: #212529;
@@ -14356,6 +14346,17 @@ footer.footer-main {
           .detail-header-info .detail-header-info-top ul + p, .detail-header-info .detail-header-info-top p + ul,
           .detail-header-info .detail-header-info-top p + p {
             margin-top: 1rem; } }
+
+.booking-action .booking-action-row .status {
+  padding: .25rem .5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.25);
+  text-align: center; }
+  .booking-action .booking-action-row .danger.status {
+    color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.25); }
 
 .booking-action {
   position: relative;

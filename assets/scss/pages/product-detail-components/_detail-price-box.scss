@@ -1,3 +1,19 @@
+%offer-status {
+  padding: .25rem .5rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+
+  color: $booking-orange;
+  background-color: rgba($booking-orange, .25);
+
+  text-align: center;
+
+  &.danger {
+    color: $booking-red;
+    background-color: rgba($booking-red, .25);
+  }
+}
+
 // -- pricebox + booking action box
 .booking-action {
   position: relative;
