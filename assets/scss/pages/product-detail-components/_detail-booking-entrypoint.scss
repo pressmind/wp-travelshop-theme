@@ -41,6 +41,15 @@
 
           text-align: left;
 
+          .booking-filter-field--counter {
+            position: absolute;
+            top: 50%;
+            right: .75rem;
+
+            transform: translateY(-50%);
+            color: rgba($input-color, .5);
+          }
+
           .booking-filter-field--icon {
             @extend %input-icon;
           }

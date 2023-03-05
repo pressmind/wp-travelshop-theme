@@ -50,6 +50,10 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     'date_departure' => $args['cheapest_price']->date_departure,
                     'date_arrival' => $args['cheapest_price']->date_arrival
                 ]);?>
+
+                <span class="booking-filter-field--counter">
+                    +8
+                </span>
             </span>
             </button>
         </div>
