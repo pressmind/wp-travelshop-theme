@@ -763,25 +763,6 @@ $detail-header-info-spacers-y: (
   lg: 1rem
 ) !default;
 
-// info header chosen date
-$detail-header-info-chosen-date-bg: $detail-header-info-bg !default;
-$detail-header-info-chosen-date-border-radius: $btn-border-radius !default;
-
-$detail-header-info-chosen-date-border-width: $btn-border-width !default;
-$detail-header-info-chosen-date-border-color: $card-border-color !default;
-$detail-header-info-chosen-date-color: $body-color !default;
-
-$detail-header-info-chosen-date-hover-bg: $body-bg-highlight !default;
-$detail-header-info-chosen-date-hover-border-color: $card-border-color !default;
-$detail-header-info-chosen-date-hover-color: $body-color !default;
-
-$detail-header-info-chosen-date-hover-bg: $detail-header-info-bg !default;
-$detail-header-info-chosen-date-active-border-color: $card-border-color !default;
-$detail-header-info-chosen-date-active-color: $body-color !default;
-
-$detail-header-info-chosen-date-spacer-x: $btn-padding-x-lg !default;
-$detail-header-info-chosen-date-spacer-y: $btn-padding-x-lg !default;
-
 // detail booking entrypoint
 $booking-entrypoint-border-radius: $detail-header-info-border-radius !default;
 $booking-entrypoint-color: $detail-header-info-color !default;
