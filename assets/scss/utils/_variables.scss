@@ -750,6 +750,11 @@ $detail-header-info-bottom-bg: $card-bg !default;
 $detail-header-info-bottom-divider-width: $detail-header-info-border-width !default;
 $detail-header-info-bottom-divider-color: $detail-header-info-border-color !default;
 
+
+$detail-header-info-spacers-items:(
+        null: .25rem,
+        lg: .5rem
+) !default;
 $detail-header-info-font-sizes: (
     null: $font-size-sm,
     lg: $font-size-base
@@ -773,6 +778,7 @@ $booking-entrypoint-font-sizes: $detail-header-info-font-sizes !default;
 
 $booking-entrypoint-spacers-x: $detail-header-info-spacers-x !default;
 $booking-entrypoint-spacers-y: $detail-header-info-spacers-y !default;
+
 $booking-entrypoint-spacers-items:(
         null: .25rem,
         lg: .5rem

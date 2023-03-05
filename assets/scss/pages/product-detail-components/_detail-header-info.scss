@@ -53,7 +53,7 @@
       .detail-header-info-top-attributes{
         font-size: $font-size-sm;
 
-        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
+        @include spacing-generator($detail-header-info-spacers-items, 'bottom', margin);
 
         > a {
           color: rgba($detail-header-info-color, .5);
