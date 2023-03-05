@@ -94,11 +94,16 @@
     .price-total {
       @extend %price-default;
 
-      margin-right: auto;
+      margin-left: auto;
     }
 
     .discount-wrapper--inner {
       align-items: baseline;
+      flex-direction: row-reverse;
+
+      .msg {
+        order: 1;
+      }
     }
   }
 }

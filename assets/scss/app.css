@@ -14420,9 +14420,12 @@ footer.footer-main {
         margin-left: -30px;
         margin-right: -30px; } }
   .booking-action .price-box-discount .price-total {
-    margin-right: auto; }
+    margin-left: auto; }
   .booking-action .price-box-discount .discount-wrapper--inner {
-    align-items: baseline; }
+    align-items: baseline;
+    flex-direction: row-reverse; }
+    .booking-action .price-box-discount .discount-wrapper--inner .msg {
+      order: 1; }
 
 /**
  * General styles for Detail-Page
