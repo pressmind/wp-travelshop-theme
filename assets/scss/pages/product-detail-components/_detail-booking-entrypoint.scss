@@ -81,6 +81,8 @@
           .booking-filter-field--icon {
             left: 1rem;
             @extend %input-icon-top;
+
+            top: 1rem;
           }
 
           .input-clear {
