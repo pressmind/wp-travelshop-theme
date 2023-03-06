@@ -32,6 +32,11 @@ use Pressmind\Travelshop\Template;
         </button>
         <?php
         $i = 0;
+        $show_images = 3;
+
+        if ( count($args['pictures']) < ( $show_images - 1 ) ) {
+            $show_images = 1;
+        }
         ?>
         <?php foreach ($args['pictures'] as $picture) { ?>
             <?php if ( $i < 3 ) { ?>

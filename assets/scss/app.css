@@ -14289,7 +14289,9 @@ footer.footer-main {
             outline: none; }
 
 .detail-header-gallery {
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25rem; }
   .detail-header-gallery .detail-header-badge {
     position: absolute;
     z-index: 2;
@@ -14300,6 +14302,17 @@ footer.footer-main {
         top: 30px; } }
     @media (min-width: 992px) {
       .detail-header-gallery .detail-header-badge {
+        left: 30px; } }
+  .detail-header-gallery .detail-header-gallery-grid--modal {
+    position: absolute;
+    z-index: 2;
+    bottom: 1.25rem;
+    left: 1.25rem; }
+    @media (min-width: 992px) {
+      .detail-header-gallery .detail-header-gallery-grid--modal {
+        bottom: 30px; } }
+    @media (min-width: 992px) {
+      .detail-header-gallery .detail-header-gallery-grid--modal {
         left: 30px; } }
   .detail-header-gallery .detail-header-gallery-slider {
     display: none; }

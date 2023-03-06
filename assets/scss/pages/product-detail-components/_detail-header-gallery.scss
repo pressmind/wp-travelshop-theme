@@ -2,6 +2,9 @@
 @if ( $detail-page-use-default == true ) {
   .detail-header-gallery {
     position: relative;
+    overflow: hidden;
+
+    @include border-radius($detail-header-gallery-border-radius);
 
     .detail-header-badge {
       @extend %product-badge;
@@ -11,6 +14,14 @@
       z-index: 2;
 
       @include spacing-generator($detail-header-gallery-spacer-x, 'around', top);
+      @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+    }
+
+    .detail-header-gallery-grid--modal {
+      position: absolute;
+      z-index: 2;
+
+      @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
       @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
     }
 
