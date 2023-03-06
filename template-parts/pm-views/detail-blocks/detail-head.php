@@ -33,7 +33,7 @@ use Pressmind\Travelshop\Template;
         $show_images = 1;
     }
     ?>
-    <div class="detail-header-gallery-grid" data-images="<?php echo $show_images; ?>">
+    <div class="detail-header-gallery-grid <?php echo ($show_images == 3) ? 'is-grid' : ''; ?>">
         <button class="detail-header-gallery-grid--modal btn btn-light">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#dots-nine"></use></svg>
             Alle <?php echo count($args['pictures']); ?> Bilder

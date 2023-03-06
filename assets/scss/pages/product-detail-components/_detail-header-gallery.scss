@@ -41,7 +41,7 @@
           min-height: 34rem;
           position: relative;
 
-          &[data-images="3"] {
+          &.is-grid {
             .detail-header-gallery-grid-item{
               &:first-child {
                 position: absolute;
