@@ -6,6 +6,10 @@
 
   @include font-size-generator($detail-box-font-sizes);
 
+  .detail-box-title{
+    @include spacing-generator($detail-box-spacers-y, 'bottom', 'margin');
+  }
+
   // -- if not transparent
   &:not(.detail-box-transparent) {
     @include border-radius($detail-box-border-radius);

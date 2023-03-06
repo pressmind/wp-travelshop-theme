@@ -14304,6 +14304,11 @@ footer.footer-main {
   @media (min-width: 992px) {
     .detail-box {
       font-size: 1rem; } }
+  .detail-box .detail-box-title {
+    margin-bottom: 0.5rem; }
+    @media (min-width: 992px) {
+      .detail-box .detail-box-title {
+        margin-bottom: 1rem; } }
   .detail-box:not(.detail-box-transparent) {
     border-radius: 0.25rem;
     padding: 1.25rem;
