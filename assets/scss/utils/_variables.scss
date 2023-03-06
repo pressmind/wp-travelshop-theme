@@ -776,6 +776,19 @@ $detail-header-gallery-spacer-x: (
         lg: $grid-gutter-width
 ) !default;
 
+
+// detail boxes
+// ---------------
+// found in detail sidebar
+$detail-box-spacers-x: $detail-header-info-spacers-x !default;
+$detail-box-spacers-y: $detail-header-info-spacers-y !default;
+$detail-box-bg: $detail-header-info-bg !default;
+$detail-box-border-radius: $detail-header-info-border-radius !default;
+$detail-box-color: $detail-header-info-color !default;
+$detail-box-border-width: $detail-header-info-border-width !default;
+$detail-box-border-color: $detail-header-info-border-color !default;
+$detail-box-font-sizes: $detail-header-info-font-sizes !default;
+
 // detail booking entrypoint
 $booking-entrypoint-border-radius: $detail-header-info-border-radius !default;
 $booking-entrypoint-color: $detail-header-info-color !default;

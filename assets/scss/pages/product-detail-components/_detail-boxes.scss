@@ -1,0 +1,19 @@
+.detail-box {
+  @include spacing-generator($detail-box-spacers-y, 'top', 'margin');
+  @include spacing-generator($detail-box-spacers-y, 'y', 'padding');
+
+  color: $detail-box-color;
+
+  @include font-size-generator($detail-box-font-sizes);
+
+  &:not(.detail-box-transparent) {
+    @include border-radius($detail-box-border-radius);
+    @include spacing-generator($detail-box-spacers-x, 'around', 'padding');
+
+    background-color: $detail-box-bg;
+
+    @if ( $detail-box-border-width > 0 ) {
+      border: $detail-box-border-width solid $detail-box-border-color;
+    }
+  }
+}

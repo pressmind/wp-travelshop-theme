@@ -14288,6 +14288,31 @@ footer.footer-main {
             box-shadow: none;
             outline: none; }
 
+.detail-box {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #212529;
+  font-size: 0.875rem; }
+  @media (min-width: 992px) {
+    .detail-box {
+      margin-top: 1rem; } }
+  @media (min-width: 992px) {
+    .detail-box {
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
+  @media (min-width: 992px) {
+    .detail-box {
+      font-size: 1rem; } }
+  .detail-box:not(.detail-box-transparent) {
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125); }
+    @media (min-width: 992px) {
+      .detail-box:not(.detail-box-transparent) {
+        padding: 30px; } }
+
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;
   transform: rotate(-90deg) translateY(100%);
