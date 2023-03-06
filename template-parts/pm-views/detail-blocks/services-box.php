@@ -3,7 +3,7 @@
  * @var $args mediaObject
  */
 ?>
-<div class="detail-box detail-box--services">
+<div class="detail-box detail-box-transparent detail-box-services">
     <div class="detail-box-title">
         <h2 class="h4 mb-0">Leistungen</h2>
     </div>

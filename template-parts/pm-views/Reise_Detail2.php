@@ -533,6 +533,10 @@ $args['breadcrumb'][] = $tmp;
 
                         // Load contact box
                         load_template(get_template_directory().'/template-parts/pm-views/detail-blocks/contact-box.php', false, $args);
+
+                        // Load trust box
+                        $args_trust = ['name' => $args['headline']];
+                        load_template_transient(get_template_directory().'/template-parts/pm-views/detail-blocks/trust-box.php', false, $args_trust, 0);
                         ?>
 
 

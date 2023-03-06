@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="detail-box detail-box--contact">
+<div class="detail-box detail-box-light detail-box-contact">
     <div class="detail-box-title">
         <div class="h4 mb-0">
             Persönliche Beratung
