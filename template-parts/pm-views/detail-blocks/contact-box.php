@@ -6,7 +6,7 @@
 
 <div class="detail-box detail-box--contact">
     <div class="detail-box-title">
-        <div class="h2">
+        <div class="h3">
             Persönliche Beratung
         </div>
     </div>
