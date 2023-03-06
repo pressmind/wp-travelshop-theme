@@ -78,7 +78,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                         <div class="dropdown-menu-content">
                             <div class="dropdown-menu-header d-none">
                                 <div class="h4">
-                                    Airport
+                                    Flughafen wählen
                                 </div>
                                 <button class="filter-prompt" data-type="close-popup" type="button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
@@ -146,7 +146,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                         <div class="dropdown-menu-content">
                             <div class="dropdown-menu-header d-none">
                                 <div class="h4">
-                                    Personen
+                                    Anzahl Personen
                                 </div>
                                 <button class="filter-prompt" data-type="close-popup" type="button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
