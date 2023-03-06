@@ -39,13 +39,13 @@
   }
 
   // -- theming
-  &-success {
+  &.detail-box-success:not(.detail-box-transparent) {
     background-color: $detail-box-success-bg;
     border-color: $detail-box-success-border-color;
     color: $detail-box-success-color;
   }
 
-  &-light {
+  &.detail-box-light:not(.detail-box-transparent) {
     background-color: $detail-box-light-bg;
     border-color: $detail-box-light-border-color;
     color: $detail-box-light-color;

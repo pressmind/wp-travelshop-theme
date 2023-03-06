@@ -14317,11 +14317,11 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-box:not(.detail-box-transparent) {
         padding: 30px; } }
-  .detail-box-success {
+  .detail-box.detail-box-success:not(.detail-box-transparent) {
     background-color: #28a745;
     border-color: #28a745;
     color: #fff; }
-  .detail-box-light {
+  .detail-box.detail-box-light:not(.detail-box-transparent) {
     background-color: #e9ecef;
     border-color: #e9ecef;
     color: #212529; }
