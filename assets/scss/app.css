@@ -14352,6 +14352,12 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
         left: 30px; } }
+  .detail-header-gallery-grid:not(.is-grid) .detail-header-gallery-grid-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; }
   .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item {
     position: absolute; }
     .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item--1 {
