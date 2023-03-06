@@ -18,7 +18,7 @@ if($user_count == 1){
 ?>
 <div class="detail-box detail-box-success detail-box-trust">
     <div class="detail-box-body">
-        <div class="trust-wrapper">
+        <div class="trust-wrapper text-center">
             <div class="trust-smiley">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#smiley"></use></svg>
             </div>
