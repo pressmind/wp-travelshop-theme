@@ -528,7 +528,11 @@ $args['breadcrumb'][] = $tmp;
                         </div>
 
                         <?php
+                        // Load services box
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/services-box.php', $args);
+
+                        // Load contact box
+                        load_template(get_template_directory().'/template-parts/pm-views/detail-blocks/contact-box.php', false, $args);
                         ?>
 
 
