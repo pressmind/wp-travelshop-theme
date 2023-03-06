@@ -750,7 +750,6 @@ $detail-header-info-bottom-bg: $card-bg !default;
 $detail-header-info-bottom-divider-width: $detail-header-info-border-width !default;
 $detail-header-info-bottom-divider-color: $detail-header-info-border-color !default;
 
-
 $detail-header-info-spacers-items:(
         null: .25rem,
         lg: .5rem
@@ -766,6 +765,12 @@ $detail-header-info-spacers-x: (
 $detail-header-info-spacers-y: (
   null: .5rem,
   lg: 1rem
+) !default;
+
+// detail header gallery
+$detail-header-gallery-spacer-x: (
+        null: $card-spacer-x,
+        lg: $grid-gutter-width
 ) !default;
 
 // detail booking entrypoint

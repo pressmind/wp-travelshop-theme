@@ -14288,6 +14288,20 @@ footer.footer-main {
             box-shadow: none;
             outline: none; }
 
+.detail-header-gallery {
+  position: relative; }
+  .detail-header-gallery .detail-header-badge {
+    position: absolute;
+    z-index: 2;
+    top: 1.25rem;
+    left: 1.25rem; }
+    @media (min-width: 992px) {
+      .detail-header-gallery .detail-header-badge {
+        top: 30px; } }
+    @media (min-width: 992px) {
+      .detail-header-gallery .detail-header-badge {
+        left: 30px; } }
+
 .detail-header-info {
   background-color: #fff;
   color: #212529;
