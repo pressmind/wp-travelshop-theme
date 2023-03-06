@@ -18,6 +18,20 @@
  */
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
+
+  // -- contianer-manipulation
+  .content-main.content-main--detail {
+    .container {
+      // -- manipulate container by varialbe
+      @if ( $detail-max-container != null ) {
+        @include media-breakpoint-up($detail-max-container) {
+          max-width: map-get($container-max-widths, $detail-max-container) !important;
+        }
+      }
+    }
+  }
+
+  // -- section handling
   .detail-section {
 
     // -- breadcrumb
