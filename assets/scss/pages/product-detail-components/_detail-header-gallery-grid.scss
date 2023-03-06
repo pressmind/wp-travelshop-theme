@@ -41,18 +41,26 @@
         right: 30%;
         bottom:0;
         top: 0;
+
+        border-right: .25rem solid $body-bg;
       }
       &--2 {
         right:0;
         top:0;
         bottom: 50%;
         left: 70%;
+
+        border-left: .25rem solid $body-bg;
+        border-top: .25rem solid $body-bg;
       }
       &--3 {
         right:0;
         top: 50%;
         left: 70%;
         bottom:0;
+
+        border-bottom: .25rem solid $body-bg;
+        border-left: .25rem solid $body-bg;
       }
     }
   }
