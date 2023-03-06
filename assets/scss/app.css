@@ -14538,6 +14538,11 @@ footer.footer-main {
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0; }
+.detail-section.detail-section-content {
+  padding-top: 1.5rem; }
+  @media (min-width: 768px) {
+    .detail-section.detail-section-content {
+      padding-top: 30px; } }
 .detail-section.detail-section-crossselling {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }

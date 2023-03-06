@@ -37,6 +37,11 @@
       }
     }
 
+    // -- content
+    &.detail-section-content {
+      @include spacing-generator($detail-page-section-paddings, 'top');
+    }
+
     // -- crosselling
     &.detail-section-crossselling {
       @include spacing-generator($detail-page-section-paddings, 'y');
