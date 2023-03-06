@@ -11,6 +11,20 @@
     @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
   }
 
+  .detail-header-gallery-grid-item {
+    .detail-header-gallery-slider-item--image {
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+
+      > img {
+        @extend %media-cover-image;
+      }
+    }
+  }
+
   &.is-grid {
     .detail-header-gallery-grid-item{
       position: absolute;

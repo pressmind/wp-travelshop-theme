@@ -11221,7 +11221,7 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
-.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img, .page-share .share-object .share-object-image > img {
+.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img, .page-share .share-object .share-object-image > img, .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--image > img {
   position: absolute;
   left: 0;
   right: 0;
@@ -14326,6 +14326,12 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-header-gallery-grid .detail-header-gallery-grid--modal {
         right: 30px; } }
+  .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
   .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item {
     position: absolute; }
     .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item:first-child {
