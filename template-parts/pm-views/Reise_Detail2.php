@@ -528,7 +528,7 @@ $args['breadcrumb'][] = $tmp;
                         </div>
 
                         <?php
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gmaps-box.php', $args);
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/services-box.php', $args);
                         ?>
 
 
