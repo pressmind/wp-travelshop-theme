@@ -732,7 +732,7 @@ $checklist-item-spacer-small: .25rem !default;
 /*
  * Detail page
  */
-$detail-max-container: xl !default;
+$detail-max-container: xxl !default;
 $detail-page-use-default: true !default; // u can deactivate every scss part - except booking-entrypoint, because this is essential for booking
 $detail-page-section-paddings: (
   null: 1.5rem,
