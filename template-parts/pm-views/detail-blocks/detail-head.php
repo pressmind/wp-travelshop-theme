@@ -25,8 +25,8 @@ use Pressmind\Travelshop\Template;
             <?php } ?>
         </div>
     </div>
-    <div class="detail-header-grid">
-        <button class="detail-header-grid--modal btn btn-light">
+    <div class="detail-header-gallery-grid">
+        <button class="detail-header-gallery-grid--modal btn btn-light">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#dots-nine"></use></svg>
             Alle <?php echo count($args['pictures']); ?> Bilder
         </button>
@@ -35,7 +35,7 @@ use Pressmind\Travelshop\Template;
         ?>
         <?php foreach ($args['pictures'] as $picture) { ?>
             <?php if ( $i < 3 ) { ?>
-                <div class="detail-header-grid-item">
+                <div class="detail-header-gallery-grid-item">
                     <div class="detail-header-gallery-slider-item--image">
                         <img src="<?php echo $picture['url_detail']; ?>" alt="<?php echo $picture['caption']; ?>"
                              loading="lazy"/>

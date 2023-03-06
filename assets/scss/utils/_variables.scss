@@ -768,6 +768,7 @@ $detail-header-info-spacers-y: (
 ) !default;
 
 // detail header gallery
+$detail-header-gallery-mobile-break: xs;
 $detail-header-gallery-spacer-x: (
         null: $card-spacer-x,
         lg: $grid-gutter-width

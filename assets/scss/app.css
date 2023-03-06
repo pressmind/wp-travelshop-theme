@@ -14301,6 +14301,13 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-header-gallery .detail-header-badge {
         left: 30px; } }
+  .detail-header-gallery .detail-header-gallery-slider {
+    display: none; }
+  @media (max-width: 575.98px) {
+    .detail-header-gallery .detail-header-gallery-slider {
+      display: block; }
+    .detail-header-gallery .detail-header-gallery-grid {
+      display: none; } }
 
 .detail-header-info {
   background-color: #fff;

@@ -14,5 +14,21 @@
       @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
     }
 
+    .detail-header-gallery-slider {
+      display: none;
+    }
+
+    @if ( $detail-header-gallery-mobile-break != null ) {
+      @include media-breakpoint-down($detail-header-gallery-mobile-break) {
+        .detail-header-gallery-slider {
+          display: block;
+        }
+
+        .detail-header-gallery-grid {
+          display: none;
+        }
+      }
+    }
+
   }
 }
