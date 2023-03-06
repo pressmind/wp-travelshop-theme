@@ -6,14 +6,44 @@
 
   @include font-size-generator($detail-box-font-sizes);
 
+  // -- if not transparent
   &:not(.detail-box-transparent) {
     @include border-radius($detail-box-border-radius);
     @include spacing-generator($detail-box-spacers-x, 'around', 'padding');
 
     background-color: $detail-box-bg;
 
+    // -- box shadows
+    &:not(.detail-box-trust):not(.detail-box-services):not(.detail-box-contact) {
+      @include get-element-shadow('detail-box');
+    }
+
+    // -- specific shadows for predefined types
+    &.detail-box-trust {
+      @include get-element-shadow('detail-box-trust');
+    }
+    &.detail-box-contact {
+      @include get-element-shadow('detail-box-contact');
+    }
+    &.detail-box-services {
+      @include get-element-shadow('detail-box-services');
+    }
+
     @if ( $detail-box-border-width > 0 ) {
       border: $detail-box-border-width solid $detail-box-border-color;
     }
+  }
+
+  // -- theming
+  &-success {
+    background-color: $detail-box-success-bg;
+    border-color: $detail-box-success-border-color;
+    color: $detail-box-success-color;
+  }
+
+  &-light {
+    background-color: $detail-box-light-bg;
+    border-color: $detail-box-light-border-color;
+    color: $detail-box-light-color;
   }
 }

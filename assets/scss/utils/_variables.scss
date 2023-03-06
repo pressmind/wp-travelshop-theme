@@ -21,6 +21,10 @@ $specific-element-shadows: (
   'wp-teaser': none,
   'category-product-teaser': none,
   'month-teaser': none,
+  'detail-box': none,
+  'detail-box-services': none,
+  'detail-box-trust': none,
+  'detail-box-contact': 0 0 1rem pink,
 ) !default;
 
 /**
@@ -788,6 +792,14 @@ $detail-box-color: $detail-header-info-color !default;
 $detail-box-border-width: $detail-header-info-border-width !default;
 $detail-box-border-color: $detail-header-info-border-color !default;
 $detail-box-font-sizes: $detail-header-info-font-sizes !default;
+
+$detail-box-light-bg: $body-bg-highlight !default;
+$detail-box-light-border-color: $body-bg-highlight !default;
+$detail-box-light-color: $body-color;
+
+$detail-box-success-bg: $success !default;
+$detail-box-success-border-color: $success !default;
+$detail-box-success-color: #fff !default;
 
 // detail booking entrypoint
 $booking-entrypoint-border-radius: $detail-header-info-border-radius !default;
