@@ -439,14 +439,14 @@ $args['breadcrumb'][] = $tmp;
         <section class="detail-section detail-section-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-8">
+                    <div class="col-12 col-xl-8">
                         <?php
                         // = = = > detail header < = = =
                         $args['galleryOverlayCount'] = 0;
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head.php', $args);
                         ?>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-xl-4">
                         <div class="detail-header-info">
                             <?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/detail-head-info-top.php', $args);
@@ -486,7 +486,7 @@ $args['breadcrumb'][] = $tmp;
         <section class="detail-section detail-section-content">
             <div class="container">
                 <div class="row flex-column-reverse flex-lg-row">
-                    <div class="col-12 col-lg-8">
+                    <div class="col-12 col-xl-8">
                         <h2><span><?php echo $args['headline']; ?></span></h2>
                         <hr />
                         <?php if (!empty($args['subline'])) { ?>
@@ -514,7 +514,7 @@ $args['breadcrumb'][] = $tmp;
 
                         ?>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-xl-4">
                         <div class="detail-booking-entrypoint">
                             <?php
                             // = = = > load the price box < = = =
