@@ -5,6 +5,11 @@
 ?>
 
 <div class="detail-box detail-box--contact">
+    <div class="detail-box-title">
+        <div class="h2">
+            Persönliche Beratung
+        </div>
+    </div>
     <div class="detail-box-body">
         <div class="detail-contact-wrapper">
             <a class="hotline-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
@@ -13,9 +18,6 @@
                 </span>
 
                 <div class="hotline-info">
-                    <div class="hotline-title">
-                        <?php echo do_shortcode('[ts-company-hotline-info]'); ?>
-                    </div>
                     <div class="hotline-number">
                         <?php echo do_shortcode('[ts-company-hotline]');?>
                     </div>
