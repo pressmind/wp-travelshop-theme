@@ -25,19 +25,19 @@ use Pressmind\Travelshop\Template;
             <?php } ?>
         </div>
     </div>
-    <div class="detail-header-gallery-grid">
+    <?php
+    $i = 0;
+    $show_images = 3;
+
+    if ( count($args['pictures']) < ( $show_images - 1 ) ) {
+        $show_images = 1;
+    }
+    ?>
+    <div class="detail-header-gallery-grid" data-images="<?php echo $show_images; ?>">
         <button class="detail-header-gallery-grid--modal btn btn-light">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#dots-nine"></use></svg>
             Alle <?php echo count($args['pictures']); ?> Bilder
         </button>
-        <?php
-        $i = 0;
-        $show_images = 3;
-
-        if ( count($args['pictures']) < ( $show_images - 1 ) ) {
-            $show_images = 1;
-        }
-        ?>
         <?php foreach ($args['pictures'] as $picture) { ?>
             <?php if ( $i < 3 ) { ?>
                 <div class="detail-header-gallery-grid-item">
