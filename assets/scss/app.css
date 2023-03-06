@@ -14288,6 +14288,17 @@ footer.footer-main {
             box-shadow: none;
             outline: none; }
 
+.detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
+  position: absolute;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+  left: 0;
+  bottom: 0;
+  font-size: 0.75rem;
+  color: #fff;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  line-height: 1; }
+
 .detail-header-gallery {
   position: relative;
   overflow: hidden;
@@ -14332,6 +14343,15 @@ footer.footer-main {
     left: 0;
     right: 0;
     bottom: 0; }
+  .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
+    bottom: 1.25rem;
+    left: 1.25rem; }
+    @media (min-width: 992px) {
+      .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
+        bottom: 30px; } }
+    @media (min-width: 992px) {
+      .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
+        left: 30px; } }
   .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item {
     position: absolute; }
     .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item--1 {

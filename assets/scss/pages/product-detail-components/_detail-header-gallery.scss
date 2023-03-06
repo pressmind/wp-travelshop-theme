@@ -1,3 +1,16 @@
+%copyright-on-image {
+  position: absolute;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+  left: 0;
+  bottom: 0;
+
+  font-size: $font-size-xs;
+  color: #fff;
+  text-shadow: 0 0 .5rem rgba(#000, .25);
+  line-height: 1;
+}
+
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
   .detail-header-gallery {

@@ -23,6 +23,13 @@
         @extend %media-cover-image;
       }
     }
+
+    .detail-header-gallery-slider-item--copyright {
+      @extend %copyright-on-image;
+
+      @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
+      @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+    }
   }
 
   &.is-grid {
