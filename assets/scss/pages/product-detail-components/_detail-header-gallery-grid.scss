@@ -8,7 +8,7 @@
     z-index: 2;
 
     @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
-    @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+    @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
   }
 
   &.is-grid {
