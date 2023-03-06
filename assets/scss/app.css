@@ -14312,8 +14312,6 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-box:not(.detail-box-transparent) {
         padding: 30px; } }
-    .detail-box:not(.detail-box-transparent).detail-box-contact {
-      box-shadow: 0 0 1rem pink; }
   .detail-box-success {
     background-color: #28a745;
     border-color: #28a745;
