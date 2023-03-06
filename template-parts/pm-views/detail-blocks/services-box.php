@@ -8,6 +8,6 @@
         <h2>Leistungen</h2>
     </div>
     <div class="detail-box-body">
-        <?php echo checklist_formatter($args['services_included']); ?>
+        <?php echo checklist_formatter($args['services_included'], true); ?>
     </div>
 </div>

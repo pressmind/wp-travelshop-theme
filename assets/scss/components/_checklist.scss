@@ -46,3 +46,11 @@
     }
   }
 }
+
+ul.checklist {
+  @extend %checklist;
+
+  &-responsive {
+    @extend %checklist-responsive;
+  }
+}

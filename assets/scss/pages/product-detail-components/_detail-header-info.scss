@@ -87,11 +87,6 @@
           @include spacing-generator($detail-header-info-spacers-y, 'top', margin);
         }
       }
-
-      ul.checklist {
-        @extend %checklist;
-        @extend %checklist-responsive;
-      }
     }
   }
 }

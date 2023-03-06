@@ -45,7 +45,7 @@
         <?php } ?>
  */ ?>
         <?php if (!empty($args['usps'])) { ?>
-            <?php echo checklist_formatter($args['usps']); ?>
+            <?php echo checklist_formatter($args['usps'], true); ?>
         <?php } ?>
     </div>
 </div>
