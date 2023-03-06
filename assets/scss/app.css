@@ -14366,14 +14366,17 @@ footer.footer-main {
       bottom: 50%;
       left: 70%;
       border-left: 0.25rem solid #fff;
-      border-top: 0.25rem solid #fff; }
+      border-bottom: 0.25rem solid #fff; }
     .detail-header-gallery-grid.is-grid .detail-header-gallery-grid-item--3 {
       right: 0;
       top: 50%;
       left: 70%;
       bottom: 0;
-      border-bottom: 0.25rem solid #fff;
+      border-top: 0.25rem solid #fff;
       border-left: 0.25rem solid #fff; }
+
+.detail-gallery-overlay {
+  display: none; }
 
 .detail-header-info {
   background-color: #fff;

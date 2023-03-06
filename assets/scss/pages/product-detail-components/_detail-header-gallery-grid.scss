@@ -51,7 +51,7 @@
         left: 70%;
 
         border-left: .25rem solid $body-bg;
-        border-top: .25rem solid $body-bg;
+        border-bottom: .25rem solid $body-bg;
       }
       &--3 {
         right:0;
@@ -59,7 +59,7 @@
         left: 70%;
         bottom:0;
 
-        border-bottom: .25rem solid $body-bg;
+        border-top: .25rem solid $body-bg;
         border-left: .25rem solid $body-bg;
       }
     }
