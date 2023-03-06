@@ -527,8 +527,14 @@ $args['breadcrumb'][] = $tmp;
                             ?>
                         </div>
 
+                        <?php
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gmaps-box.php', $args);
+                        ?>
+
+
                         <div class="detail-sidebar">
                             <?php
+                            /*
                             // = = = > load google maps image < = = =
                             echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/gmaps-box.php', $args);
 
@@ -546,6 +552,7 @@ $args['breadcrumb'][] = $tmp;
                             // = = = > load contact box < = = =
                             $args_trust = ['name' => $args['headline']];
                             load_template_transient(get_template_directory().'/template-parts/pm-views/detail-blocks/trust-box.php', false, $args_trust, 0);
+                            */
                             ?>
                         </div>
                     </div>
