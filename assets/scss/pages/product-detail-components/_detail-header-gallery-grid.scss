@@ -13,6 +13,8 @@
 
   &.is-grid {
     .detail-header-gallery-grid-item{
+      position: absolute;
+
       &:first-child {
         position: absolute;
         left:0;
