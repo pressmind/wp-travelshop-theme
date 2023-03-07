@@ -16,7 +16,7 @@ if($user_count == 1){
     $user_str = 'Ein weiterer Nutzer online.';
 }
 ?>
-<div class="detail-box detail-box-success detail-box-trust">
+<div class="detail-box detail-box-success detail-box-bordered detail-box-trust">
     <div class="detail-box-body">
         <div class="trust-wrapper text-center">
             <div class="trust-smiley">
