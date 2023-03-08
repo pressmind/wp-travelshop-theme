@@ -13,6 +13,11 @@ function remove_empty_paragraphs($string) {
         $thisPart = preg_replace( '#<p>\s*</p>#', '', $thisPart );
         $thisPart = preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)?(\s|&nbsp;)*</p>#i', '', $thisPart);
 
+        // check for empty paragraphs
+        $checkParagraphs = str_replace(['<p>', '</p>'], ['', ''], $thisPart);
+
+        print_r($checkParagraphs);
+
         if ( !empty($thisPart) ) {
             $output .= $thisPart;
         }
