@@ -1,6 +1,31 @@
 // accordion-group
 .accordion-group {
 
+  // -- accordion header
+  .accordion-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: .5rem;
+    align-items: baseline;
+    justify-content: space-between;
+
+    // -- toggle button
+    button.accordion-toggle {
+      &[data-toggle="open"] {
+        .txt-close {
+          display: none;
+        }
+      }
+      &[data-toggle="close"] {
+        .txt-open {
+          display: none;
+        }
+      }
+    }
+  }
+
 }
 
 // accordion-wrapper

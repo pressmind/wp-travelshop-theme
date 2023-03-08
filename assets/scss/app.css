@@ -13973,6 +13973,18 @@ ul.checklist {
         .personen-select .personen-select-counter input.personen-select-counter-input {
           font-size: 1.25rem; } }
 
+.accordion-group .accordion-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: baseline;
+  justify-content: space-between; }
+  .accordion-group .accordion-header button.accordion-toggle[data-toggle="open"] .txt-close {
+    display: none; }
+  .accordion-group .accordion-header button.accordion-toggle[data-toggle="close"] .txt-open {
+    display: none; }
+
 .accordion-wrapper .accordion-item .accordion-content {
   height: 0;
   overflow: hidden; }
