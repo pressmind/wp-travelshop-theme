@@ -140,13 +140,14 @@
         display: block;
         font-size: $font-size-xs;
         color: $body-color;
+        text-align: center;
 
         transition: color .3s;
         text-decoration: none;
 
         svg {
-          width: 2rem;
-          height: 2rem;
+          width: 3rem;
+          height: 3rem;
 
           transition: color .3s;
           color: $color--whatsapp;

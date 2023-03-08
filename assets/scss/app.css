@@ -14374,12 +14374,13 @@ footer.footer-main {
       display: block;
       font-size: 0.75rem;
       color: #212529;
+      text-align: center;
       transition: color .3s;
       text-decoration: none; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg,
       .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg {
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         transition: color .3s;
         color: #4aac20;
         margin: 0 auto .25rem auto; }
