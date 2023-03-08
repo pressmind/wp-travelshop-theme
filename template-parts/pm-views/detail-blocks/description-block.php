@@ -95,12 +95,6 @@
                                             </div>
 
                                             <div class="teaser-block-modal-body">
-                                                <?php if ( !empty($item['name']) ) { ?>
-                                                    <div class="teaser-block-title h5">
-                                                        <?php echo $item['name']; ?>
-                                                    </div>
-                                                <?php } ?>
-
                                                 <?php if (!empty($item['text'])) { ?>
                                                     <div class="teaser-block-text">
                                                         <?php echo remove_empty_paragraphs($item['text']); ?>
