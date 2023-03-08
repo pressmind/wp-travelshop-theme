@@ -446,11 +446,13 @@ jQuery(function ($) {
     if ( accToggle.length > 0 ) {
 
         accToggleAll.on('click', function(e) {
-            console.log('hi');
 
             var thisAccGroup = $(this).parents('.accordion-group');
+            var thisAction = $(this).data('toggle');
 
-            if ( $(this).data('toggle') == 'open' ) {
+            console.log( thisAction );
+
+            if ( $(this).data('toggle') === 'open' ) {
                 // open all
                 thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click');
                 $(this).attr('data-toggle', 'close');
