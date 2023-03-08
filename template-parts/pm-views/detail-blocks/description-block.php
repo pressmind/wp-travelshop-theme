@@ -14,6 +14,10 @@
                     <h2 class="h3"><?php echo $description['headline']; ?></h2>
                 </div>
 
+                <pre>
+                    <?php print_r($description); ?>
+                </pre>
+
                 <?php if ( $description['type'] === 'text' ) { ?>
                     <div class="text-blocks">
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
