@@ -190,7 +190,7 @@ if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsve
         $tmp['name'] = strip_tags((string)$linked_mo->name);
         // draw hotel stars if available
         if(!empty($linked_moc->sterne_default[0]->item->name) && intval($linked_moc->sterne_default[0]->item->name) > 0){
-            $tmp['icons'] = str_repeat('<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#star-filled"></use></svg>',
+            $tmp['icons'] = str_repeat('<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="'.get_stylesheet_directory_uri().'/assets/img/phosphor-sprite.svg#star-filled"></use></svg>',
                 intval($linked_moc->sterne_default[0]->item->name));
         }
         $tmp['text'] = $linked_moc->beschreibung_text_default;
