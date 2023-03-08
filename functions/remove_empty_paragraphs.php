@@ -1,7 +1,7 @@
 <?php
 function remove_empty_paragraphs($string) {
     // -- regex pattern to remove empty paragraphs
-    $pattern = "/<p[^>]*><\\/p[^>]*>/";
+    $pattern = '#<p>[0-9 /]+/[0-9 /]+</p>#';
 
     $return = trim($string);
 
