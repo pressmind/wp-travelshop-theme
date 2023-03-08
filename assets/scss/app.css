@@ -14682,6 +14682,12 @@ footer.footer-main {
   .detail-gallery-overlay.open {
     opacity: 1;
     pointer-events: auto; }
+  .detail-gallery-overlay button.detail-gallery-overlay-close {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0; }
 
 .detail-header-info {
   background-color: #fff;

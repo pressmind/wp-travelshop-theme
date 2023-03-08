@@ -128,6 +128,14 @@ $slider-controls-on-image-hover-color: $body-color !default;
 $slider-controls-on-image-hover-border-color: transparent !default;
 $slider-controls-on-image-hover-bg: #fff !default;
 
+$slider-controls-on-image-light-bg: rgba($body-color, .4) !default;
+$slider-controls-on-image-light-border-width: 0 !default;
+$slider-controls-on-image-light-border-color: transparent !default;
+$slider-controls-on-image-light-color: #fff !default;
+$slider-controls-on-image-light-hover-color: $body-color !default;
+$slider-controls-on-image-light-hover-border-color: transparent !default;
+$slider-controls-on-image-light-hover-bg: #fff !default;
+
 /**
  * Share page
  */

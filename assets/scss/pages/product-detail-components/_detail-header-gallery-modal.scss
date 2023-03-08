@@ -21,4 +21,9 @@
   }
 
   // -- gallery modal is a static component. just uses some bootstrap variables for backdrop
+
+  // close
+  button.detail-gallery-overlay-close {
+    @include button-reset();
+  }
 }

@@ -131,3 +131,29 @@
   }
 }
 
+// -- different theming
+@include placeholder('slider-controls-on-image-light') {
+  > button {
+    color: $slider-controls-on-image-light-color;
+    background-color: $slider-controls-on-image-light-bg;
+
+    border-width: $slider-controls-on-image-light-border-width;
+
+    @if ( $slider-controls-on-image-light-border-width != 0 ) {
+      border-style: solid;
+      border-color: $slider-controls-on-image-light-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-on-image-light-hover-color;
+        background-color: $slider-controls-on-image-light-hover-bg;
+
+        @if ( $slider-controls-on-image-light-border-width != 0 ) {
+          border-color: $slider-controls-on-image-light-hover-border-color;
+        }
+      }
+    }
+  }
+}
+
