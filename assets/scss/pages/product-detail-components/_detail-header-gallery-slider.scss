@@ -2,13 +2,7 @@
 @if ( $detail-page-use-default == true ) {
   .detail-header-gallery {
     .detail-header-gallery-slider {
-      @include border-radius($detail-header-gallery-border-radius);
       overflow: hidden;
-
-      // -- reset borrder radius to generate box-like header
-      @include media-breakpoint-down($detail-header-column-break) {
-        @include border-top-radius(0);
-      }
 
       .detail-header-gallery-slider--counter {
         position: absolute;

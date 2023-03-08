@@ -14480,12 +14480,7 @@ footer.footer-main {
       display: none; } }
 
 .detail-header-gallery .detail-header-gallery-slider {
-  border-radius: 0.25rem;
   overflow: hidden; }
-  @media (max-width: 1199.98px) {
-    .detail-header-gallery .detail-header-gallery-slider {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0; } }
   .detail-header-gallery .detail-header-gallery-slider .detail-header-gallery-slider--counter {
     position: absolute;
     z-index: 2;
