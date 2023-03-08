@@ -303,7 +303,7 @@ jQuery(function ($) {
 
                 if ( $(imageSliderCounter).length > 0 ) {
                     var imageSliderCounterFunction = function( info, eventName ) {
-                        imageSliderCounter.text(info.indexCached);
+                        imageSliderCounter.html(info.indexCached);
                     }
 
                     window[imageSliderId].events.on('indexChanged', imageSliderCounterFunction);
