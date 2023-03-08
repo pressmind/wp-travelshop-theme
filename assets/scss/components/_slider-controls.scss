@@ -9,6 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  pointer-events: none;
 
   > button {
     @include button-reset();
@@ -17,6 +18,7 @@
     align-items: center;
     line-height: 0;
     justify-content: center;
+    pointer-events: auto;
 
     transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
     background-color: $slider-controls-bg;
@@ -62,12 +64,30 @@
 
 // -- controls lg
 @include placeholder('slider-controls-large') {
+  > button {
+    width: $slider-controls-large-size;
+    height: $slider-controls-large-size;
+    flex: 0 0 $slider-controls-large-size;
 
+    > svg {
+      width: $slider-controls-large-icon-size;
+      height: $slider-controls-large-icon-size;
+    }
+  }
 }
 
 // -- positioning
 @include placeholder('slider-controls-inner') {
+  position: absolute;
+  top:50%;
 
+  transform: translateY(-50%);
+
+  // -- need to be overwritten in specific element
+  left:$grid-gutter-width;
+  right:$grid-gutter-width;
+
+  z-index: 2;
 }
 
 @include placeholder('slider-controls-outer') {
@@ -76,6 +96,26 @@
 
 // -- different theming
 @include placeholder('slider-controls-on-image') {
+  > button {
+    color: $slider-controls-on-image-color;
+    background-color: $slider-controls-on-image-bg;
 
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-width: $slider-controls-on-image-border-width;
+      border-style: solid;
+      border-color: $slider-controls-on-image-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover, &:focus, &:active {
+        color: $slider-controls-on-image-hover-color;
+        background-color: $slider-controls-on-image-hover-bg;
+
+        @if ( $slider-controls-on-image-border-width != 0 ) {
+          border-color: $slider-controls-on-image-hover-border-color;
+        }
+      }
+    }
+  }
 }
 

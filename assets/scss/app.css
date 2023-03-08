@@ -11349,7 +11349,8 @@ hr + .content-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  pointer-events: none; }
   .detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
     border: 0;
     outline: none;
@@ -11360,6 +11361,7 @@ hr + .content-block {
     align-items: center;
     line-height: 0;
     justify-content: center;
+    pointer-events: auto;
     transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
     background-color: transparent;
     color: #212529;
@@ -11383,6 +11385,27 @@ hr + .content-block {
       cursor: not-allowed;
       opacity: 0.25; }
 
+@media (min-width: 992px) {
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: 0 0 2.5rem; }
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg {
+      width: 1.25rem;
+      height: 1.25rem; } }
+.detail-header-gallery .detail-header-gallery-slider .slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  right: 30px;
+  z-index: 2; }
+.detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.25); }
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):focus, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):active {
+    color: #212529;
+    background-color: #fff; }
 .icon-link {
   display: flex;
   flex-direction: row;
@@ -14531,6 +14554,15 @@ footer.footer-main {
 
 .detail-header-gallery .detail-header-gallery-slider {
   overflow: hidden; }
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls {
+    left: 1.25rem;
+    right: 1.25rem; }
+    @media (min-width: 992px) {
+      .detail-header-gallery .detail-header-gallery-slider .slider-controls {
+        left: 30px; } }
+    @media (min-width: 992px) {
+      .detail-header-gallery .detail-header-gallery-slider .slider-controls {
+        right: 30px; } }
   .detail-header-gallery .detail-header-gallery-slider .detail-header-gallery-slider--counter {
     position: absolute;
     z-index: 2;

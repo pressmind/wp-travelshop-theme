@@ -7,6 +7,15 @@
       // - controls
       .slider-controls {
         @extend %slider-controls;
+        @extend %slider-controls-large-up-lg;
+        @extend %slider-controls-inner;
+
+        // theme
+        @extend %slider-controls-on-image;
+
+        // set element specific spacing left/right
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
       }
 
       .detail-header-gallery-slider--counter {
