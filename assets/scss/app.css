@@ -14007,7 +14007,7 @@ ul.checklist {
     gap: .5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; }
-    .accordion-wrapper .accordion-item .accordion-toggle svg {
+    .accordion-wrapper .accordion-item .accordion-toggle > svg {
       width: 1.125rem;
       height: 1.125rem;
       color: #5a6570;
@@ -14022,7 +14022,7 @@ ul.checklist {
         padding-bottom: 1rem; } }
     .accordion-wrapper .accordion-item .accordion-toggle:hover .accordion-toggle--title {
       color: rgba(33, 37, 41, 0.75); }
-    .accordion-wrapper .accordion-item .accordion-toggle:hover svg {
+    .accordion-wrapper .accordion-item .accordion-toggle:hover > svg {
       color: #212529; }
   .accordion-wrapper .accordion-item .accordion-content {
     height: 0;
