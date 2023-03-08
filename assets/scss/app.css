@@ -14321,6 +14321,10 @@ footer.footer-main {
     background-color: #28a745;
     border-color: #28a745;
     color: #fff; }
+    .detail-box.detail-box-success:not(.detail-box-transparent).detail-box-borderd {
+      background-color: #fff;
+      color: #212529;
+      border-color: #28a745; }
   .detail-box.detail-box-light:not(.detail-box-transparent) {
     background-color: #e9ecef;
     border-color: #e9ecef;

@@ -43,6 +43,12 @@
     background-color: $detail-box-success-bg;
     border-color: $detail-box-success-border-color;
     color: $detail-box-success-color;
+
+    &.detail-box-borderd {
+      background-color: $detail-box-bg;
+      color: $detail-box-color;
+      border-color: $detail-box-success-border-color;
+    }
   }
 
   &.detail-box-light:not(.detail-box-transparent) {
