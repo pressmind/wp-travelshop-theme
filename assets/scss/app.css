@@ -14032,7 +14032,7 @@ ul.checklist {
         .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
           padding-bottom: 1rem; } }
   .accordion-wrapper .accordion-item.is-open .accordion-toggle svg {
-    transform: translateX(-1); }
+    transform: scaleX(-1); }
   .accordion-wrapper .accordion-item.is-open .accordion-content {
     height: auto; }
 .accordion-wrapper.accordion-wrapper-boxed .accordion-item {
