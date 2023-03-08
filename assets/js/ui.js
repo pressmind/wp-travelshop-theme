@@ -455,11 +455,11 @@ jQuery(function ($) {
             if ( $(this).data('toggle') === 'open' ) {
                 // open all
                 thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click');
-                $(this).attr('data-toggle', 'close');
+                $(this).data('toggle', 'close');
             } else {
                 // close all
                 thisAccGroup.find('.accordion-item.is-open .accordion-toggle').trigger('click');
-                $(this).attr('data-toggle', 'open');
+                $(this).data('toggle', 'open');
             }
 
             e.stopPropagation();
