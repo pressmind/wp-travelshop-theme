@@ -435,6 +435,66 @@ jQuery(function ($) {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
+    // ------------------------------------------------
+    // -- Accordion
+    // ------------------------------------------------
+
+    let accToggle = $('.accordion-toggle');
+    let accOpenClass = 'is-open';
+    // let accToggleAll = $('.accordion-toggle-all button');
+
+    if ( accToggle.length > 0 ) {
+
+        // accToggleAll.on('click', function(e) {
+        //     e.preventDefault();
+        //
+        //     $(this).parents('.accordion-wrapper').find('.accordion-item .accordion-item--content').removeAttr('style');
+        //
+        //     if ( $(this).hasClass('all-hidden') ) {
+        //         $(this).removeClass('all-hidden');
+        //         $(this).parents('.accordion-wrapper').find('.accordion-item:not(.is--open)').addClass(accOpenClass);
+        //     } else {
+        //         $(this).addClass('all-hidden');
+        //         $(this).parents('.accordion-wrapper').find('.accordion-item.is--open').removeClass(accOpenClass);
+        //
+        //     }
+        //
+        //     e.stopPropagation();
+        // })
+
+        accToggle.on('click', function(e) {
+            e.preventDefault();
+
+            // -- get inner height
+            var accContentHeight = $(this).parent().find('.accordion-content--inner').outerHeight();
+            var accContent = $(this).parent().find('.accordion-content');
+            var accWrapper = $(this).parent();
+
+            if ( $(this).parent().hasClass(accOpenClass) ) {
+                accContent.removeAttr('style');
+                accContent.css({'height': accContentHeight + 'px'});
+
+                // animate
+                accContent.animate({
+                    'height': '0px',
+                }, 300, function(){
+                    accWrapper.removeClass(accOpenClass);
+                });
+            } else {
+                accContent.css({'height': '0px'});
+
+                // animate
+                accContent.animate({
+                    'height': accContentHeight + 'px',
+                }, 300, function(){
+                    accWrapper.addClass(accOpenClass);
+                });
+            }
+
+            e.stopPropagation();
+        });
+    }
+
 
     // --------------------------------
     // --- Gallery
