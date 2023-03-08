@@ -90,7 +90,7 @@
 
       .accordion-toggle {
         svg {
-          transform: translateX(-1);
+          transform: scaleX(-1);
         }
       }
       .accordion-content {
