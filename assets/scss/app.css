@@ -14349,10 +14349,19 @@ footer.footer-main {
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-size: 0.875rem; }
+      line-height: 1;
+      gap: 0.25rem;
+      font-size: 0.75rem; }
+      @media (min-width: 992px) {
+        .detail-box.detail-box-trust .trust-wrapper .trust-footer {
+          font-size: 0.875rem; } }
       .detail-box.detail-box-trust .trust-wrapper .trust-footer svg {
-        height: 1rem;
-        width: 1rem; }
+        height: 0.875rem;
+        width: 0.875rem; }
+        @media (min-width: 992px) {
+          .detail-box.detail-box-trust .trust-wrapper .trust-footer svg {
+            height: 1rem;
+            width: 1rem; } }
 
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;
