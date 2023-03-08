@@ -56,7 +56,7 @@ if(!$valid){
                 ?>
                 <div class="accordion-item">
                     <button class="accordion-toggle" type="button">
-                        <h3 class="accordion-toggle--title">
+                        <h3 class="accordion-toggle--title h5">
                             <?php echo $section->content->headline; ?>
                         </h3>
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
