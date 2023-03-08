@@ -11338,6 +11338,10 @@ hr + .content-block {
   padding: 0;
   margin: 0; }
 
+/**
+ * Placeholder for slider controls
+ * for usage on various elements
+ */
 .icon-link {
   display: flex;
   flex-direction: row;
