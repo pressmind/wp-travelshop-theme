@@ -157,8 +157,8 @@
         transform: translateX(-50%);
 
         z-index: 10;
-        color: #fff;
-        text-shadow: 0 10px 10px #000;
+        color: $text-on-image-color;
+        text-shadow: $text-on-image-shadow;
         text-align: center;
 
         small {

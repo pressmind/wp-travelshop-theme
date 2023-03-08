@@ -14769,7 +14769,7 @@ footer.footer-main {
         transform: translateX(-50%);
         z-index: 10;
         color: #fff;
-        text-shadow: 0 10px 10px #000;
+        text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
         text-align: center;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
