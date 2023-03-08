@@ -74,8 +74,12 @@
           flex-wrap: nowrap;
           color: $rating-color;
 
-          @include spacing-generator($h5-font-sizes, 'around', 'width');
-          @include spacing-generator($h5-font-sizes, 'around', 'height');
+          line-height: 1;
+
+          svg {
+            @include spacing-generator($h5-font-sizes, 'around', 'width');
+            @include spacing-generator($h5-font-sizes, 'around', 'height');
+          }
         }
       }
 

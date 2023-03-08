@@ -14026,14 +14026,16 @@ ul.checklist {
         display: flex;
         flex-wrap: nowrap;
         color: #ffc107;
-        width: 1rem;
-        height: 1rem; }
-        @media (min-width: 992px) {
-          .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title .accordion-toggle--rating {
-            width: 1.25rem; } }
-        @media (min-width: 992px) {
-          .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title .accordion-toggle--rating {
-            height: 1.25rem; } }
+        line-height: 1; }
+        .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title .accordion-toggle--rating svg {
+          width: 1rem;
+          height: 1rem; }
+          @media (min-width: 992px) {
+            .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title .accordion-toggle--rating svg {
+              width: 1.25rem; } }
+          @media (min-width: 992px) {
+            .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title .accordion-toggle--rating svg {
+              height: 1.25rem; } }
     @media (min-width: 992px) {
       .accordion-wrapper .accordion-item .accordion-toggle {
         padding-top: 1rem;
