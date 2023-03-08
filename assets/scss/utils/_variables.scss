@@ -102,6 +102,32 @@ $h6-font-sizes: (
 ) !default;
 
 /**
+ * Slider elements
+ */
+
+// -- slider controls
+$slider-controls-bg: transparent !default;
+$slider-controls-border-radius: 50% !default;
+$slider-controls-border-width: 1px !default;
+$slider-controls-border-color: $hr-border-color !default;
+$slider-controls-color: $body-color !default;
+$slider-controls-disabled-opacity: .25 !default;
+$slider-controls-size: 1.5rem !default;
+$slider-controls-icon-size: 1.25rem !default;
+$slider-controls-large-size: 2rem !default;
+$slider-controls-large-icon-size: 1.5rem !default;
+$slider-controls-hover-bg: $primary !default;
+$slider-controls-hover-border-color: $primary !default;
+$slider-controls-hover-color: #fff !default;
+
+$slider-controls-on-image-bg: rgba(#fff, .25) !default;
+$slider-controls-on-image-border-width: 0 !default;
+$slider-controls-on-image-border-color: transparent !default;
+$slider-controls-on-image-color: #fff !default;
+$slider-controls-on-image-hover-color: $body-color !default;
+$slider-controls-on-image-hover-border-color: transparent !default;  $slider-controls-on-image-hover-bg: #fff !default;
+
+/**
  * Share page
  */
 $share-items-gaps: (
