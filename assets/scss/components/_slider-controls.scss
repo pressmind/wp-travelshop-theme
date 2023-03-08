@@ -100,8 +100,9 @@
     color: $slider-controls-on-image-color;
     background-color: $slider-controls-on-image-bg;
 
+    border-width: $slider-controls-on-image-border-width;
+
     @if ( $slider-controls-on-image-border-width != 0 ) {
-      border-width: $slider-controls-on-image-border-width;
       border-style: solid;
       border-color: $slider-controls-on-image-border-color;
     }
