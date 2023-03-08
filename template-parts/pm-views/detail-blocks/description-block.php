@@ -14,7 +14,7 @@
                     <h2 class="h3"><?php echo $description['headline']; ?></h2>
                 </div>
 
-                <?php if ( $description['type'] == 'text' ) { ?>
+                <?php if ( $description['type'] === 'text' ) { ?>
                     <div class="text-blocks">
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="text-block text-block--<?php echo $i; ?>-<?php echo $k; ?>">
@@ -51,10 +51,7 @@
                     </div>
                 <?php } ?>
 
-                <?php if ( $description['type'] == 'teaser' ) { ?>
-                    <pre>
-    <?php print_r($description); ?>
-</pre>
+                <?php if ( $description['type'] === 'teaser' ) { ?>
                     <div class="teaser-blocks">
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="teaser-block teaser-block--<?php echo $i; ?>-<?php echo $k; ?>">
@@ -135,7 +132,7 @@
             <?php } ?>
 
             <?php // render accordion if type accordion ?>
-            <?php if ( $description['type'] == 'accordion' ) { ?>
+            <?php if ( $description['type'] === 'accordion' ) { ?>
                 <div class="accordion-group">
                     <?php if (!empty($description['headline'])) { ?>
                         <div class="accordion-header">
