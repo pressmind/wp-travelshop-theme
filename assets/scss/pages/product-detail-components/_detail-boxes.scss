@@ -133,6 +133,37 @@
     display: flex;
     flex-direction: row;
     gap: .5rem;
+
+    // -- whastapp
+    .detail-contact-whatsapp {
+      a.whatsapp-link {
+        display: block;
+        font-size: $font-size-xs;
+        color: $body-color;
+
+        transition: color .3s;
+        text-decoration: none;
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+
+          transition: color .3s;
+          color: $color--whatsapp;
+          margin: 0 auto .25rem auto;
+        }
+
+        &:hover, &:focus, &:active {
+          color: $body-color;
+          text-decoration: none;
+
+          svg {
+            color: darken($color--whatsapp, 10%);
+          }
+        }
+      }
+
+    }
   }
 
 }

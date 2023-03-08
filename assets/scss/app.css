@@ -14369,6 +14369,31 @@ footer.footer-main {
     display: flex;
     flex-direction: row;
     gap: .5rem; }
+    .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link,
+    .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link {
+      display: block;
+      font-size: 0.75rem;
+      color: #212529;
+      transition: color .3s;
+      text-decoration: none; }
+      .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg,
+      .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg {
+        width: 2rem;
+        height: 2rem;
+        transition: color .3s;
+        color: #4aac20;
+        margin: 0 auto .25rem auto; }
+      .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:hover, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:focus, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:active,
+      .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:hover,
+      .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:focus,
+      .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:active {
+        color: #212529;
+        text-decoration: none; }
+        .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:hover svg, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:focus svg, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:active svg,
+        .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:hover svg,
+        .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:focus svg,
+        .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:active svg {
+          color: #378118; }
 
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;
