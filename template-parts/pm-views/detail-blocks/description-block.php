@@ -3,6 +3,9 @@
  * @var array $args
  */
 ?>
+<pre>
+    <?php print_r($args['descriptions']); ?>
+</pre>
 <section class="description-block-wrapper">
     <?php
     foreach ($args['descriptions'] as $i => $description) {
