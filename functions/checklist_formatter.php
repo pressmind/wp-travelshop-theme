@@ -10,5 +10,5 @@ function checklist_formatter($content, $responsive = false) {
         $checkListClass = 'checklist checklist-responsive';
     }
 
-    return str_replace(['<ul>','<li>'], ['<ul class="checklist">','<li>'.$checkIcon], $content);
+    return str_replace(['<ul>','<li>'], ['<ul class="'.$checkListClass.'">','<li>'.$checkIcon], $content);
 }
