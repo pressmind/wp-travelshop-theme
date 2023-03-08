@@ -66,7 +66,7 @@
 
                                     <?php if (!empty($item['text'])) { ?>
                                         <div class="teaser-block-text">
-                                            <?php echo remove_empty_paragraphs($item['text']); ?>
+                                            <?php echo remove_empty_paragraphs(trim($item['text'])); ?>
                                         </div>
                                     <?php } ?>
 
