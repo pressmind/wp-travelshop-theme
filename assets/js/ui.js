@@ -283,7 +283,7 @@ jQuery(function ($) {
             // -- reset controls container by id
             imageSliderControlsContainer = '#' + imageSliderId + ' ' + imageSliderControlsContainer;
 
-            var imageSliders[imageSliderId] = tns({
+            imageSliders[imageSliderId] = tns({
                 container: imageSliderContainer,
                 nav: imageSliderNav,
                 navPosition: imageSliderNavPosition,
@@ -308,7 +308,7 @@ jQuery(function ($) {
                         console.log(info.event.type, info.container.id);
                     }
 
-                    window[imageSliderId].on('indexChanged', imageSliderCounterFunction);
+                    imageSliders[imageSliderId].on('indexChanged', imageSliderCounterFunction);
                 }
             }
         });
