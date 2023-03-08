@@ -14677,7 +14677,8 @@ footer.footer-main {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1050; }
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.5); }
   .detail-gallery-overlay.open {
     opacity: 1;
     pointer-events: auto; }

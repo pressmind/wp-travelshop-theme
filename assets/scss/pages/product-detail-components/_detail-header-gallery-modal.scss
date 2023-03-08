@@ -13,8 +13,12 @@
 
   z-index: $zindex-modal;
 
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
   &.open {
     opacity: 1;
     pointer-events: auto;
   }
+
+  // -- gallery modal is a static component. just uses some bootstrap variables for backdrop
 }
