@@ -14039,19 +14039,19 @@ ul.checklist {
   border-radius: 0.25rem;
   border: 1px solid #e9ecef; }
   .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
     @media (min-width: 992px) {
       .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
-        padding-left: 30px;
-        padding-right: 30px; } }
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; } }
   .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-content .accordion-content--inner {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
     @media (min-width: 992px) {
       .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-content .accordion-content--inner {
-        padding-left: 30px;
-        padding-right: 30px; } }
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; } }
 
 header.header-main {
   background-color: #fff;

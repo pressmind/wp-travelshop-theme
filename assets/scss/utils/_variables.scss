@@ -116,8 +116,8 @@ $accordion-toggle-icon-color: $body-color-light !default;
 $accordion-toggle-hover-icon-color: $body-color !default;
 
 $accordion-spacers-x: (
-        null: $card-spacer-x,
-        lg: $grid-gutter-width
+        null: 1rem,
+        lg: 1.5rem
 ) !default;
 
 $accordion-spacers-y: (
