@@ -11388,7 +11388,7 @@ hr + .content-block {
 .detail-header-gallery .detail-header-gallery-slider .slider-controls {
   transition: opacity .3s;
   opacity: 0; }
-.detail-header-gallery .detail-header-gallery-slider .tns-slider + .slider-controls {
+.detail-header-gallery .detail-header-gallery-slider .tns-outer + .slider-controls {
   opacity: 1; }
 
 @media (min-width: 992px) {
