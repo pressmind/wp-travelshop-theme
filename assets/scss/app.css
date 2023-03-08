@@ -13973,6 +13973,12 @@ ul.checklist {
         .personen-select .personen-select-counter input.personen-select-counter-input {
           font-size: 1.25rem; } }
 
+.accordion-wrapper .accordion-item .accordion-content {
+  height: 0;
+  overflow: hidden; }
+.accordion-wrapper .accordion-item.is-open .accordion-content {
+  height: auto; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;

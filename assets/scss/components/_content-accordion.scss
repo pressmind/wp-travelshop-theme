@@ -1,0 +1,24 @@
+// accordion-group
+.accordion-group {
+
+}
+
+// accordion-wrapper
+.accordion-wrapper {
+
+  .accordion-item {
+
+    .accordion-content {
+      height: 0;
+      overflow: hidden;
+    }
+
+    &.is-open {
+      .accordion-content {
+        height: auto;
+      }
+    }
+  }
+
+}
+
