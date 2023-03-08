@@ -1,7 +1,7 @@
 <?php
 function remove_empty_paragraphs($string) {
     // -- regex pattern to remove empty paragraphs
-    $output = $content = preg_replace( array(
+    $output = preg_replace( array(
         '#<p>\s*<(div|aside|section|article|header|footer)#',
         '#</(div|aside|section|article|header|footer)>\s*</p>#',
         '#</(div|aside|section|article|header|footer)>\s*<br ?/?>#',
