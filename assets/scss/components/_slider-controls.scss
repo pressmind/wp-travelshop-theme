@@ -13,6 +13,11 @@
   > button {
     @include button-reset();
 
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    justify-content: center;
+
     transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
     background-color: $slider-controls-bg;
     color: $slider-controls-color;
@@ -28,6 +33,11 @@
       border-width: $slider-controls-border-width;
       border-style: solid;
       border-color: $slider-controls-border-color;
+    }
+
+    > svg {
+      width: $slider-controls-icon-size;
+      height: $slider-controls-icon-size;
     }
 
     &:not([disabled]) {

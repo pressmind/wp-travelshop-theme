@@ -11356,17 +11356,24 @@ hr + .content-block {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    justify-content: center;
     transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
     background-color: transparent;
     color: #212529;
-    width: 1.5rem;
-    height: 1.5rem;
-    flex: 0 0 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 2rem;
     max-width: 100%;
     border-radius: 50%;
     border-width: 1px;
     border-style: solid;
     border-color: #e9ecef; }
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg {
+      width: 1.25rem;
+      height: 1.25rem; }
     .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):focus, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):active {
       color: #fff;
       background-color: #007bff;
