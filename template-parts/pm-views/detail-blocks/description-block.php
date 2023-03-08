@@ -13,6 +13,43 @@
                     <h2 class="h3"><?php echo $description['headline']; ?></h2>
                 </div>
 
+                <?php if ( $description['type'] == 'text' ) { ?>
+                    <div class="text-blocks">
+                        <?php foreach ( $description['items'] as $k => $item ) { ?>
+                            <div class="text-block text-block--<?php echo $i; ?>-<?php echo $k; ?>">
+                                <?php if ( !empty($item['name']) ) { ?>
+                                    <div class="text-block-title">
+                                        <strong><?php echo $item['name']; ?></strong>
+                                    </div>
+                                <?php } ?>
+
+                                <?php if (!empty($item['text'])) { ?>
+                                    <div class="text-block-text">
+                                        <?php echo $item['text']; ?>
+                                    </div>
+                                <?php } ?>
+
+                                <?php if (!empty($item['pictures'])) { ?>
+                                    <div class="text-block-gallery text-block-gallery--<?php echo $k; ?>">
+                                        <?php foreach ($item['pictures'] as $picture) { ?>
+                                            <a class="text-block-gallery-item" href="<?php echo $picture['url_detail']; ?>"
+                                               data-lightbox="text-block-gallery-<?php echo $k; ?>">
+                                                <div class="text-block-gallery-item--image">
+                                                    <img src="<?php echo $picture['url_teaser']; ?>"
+                                                         alt="<?php echo $picture['alt']; ?>"/>
+                                                </div>
+                                                <div class="text-block-gallery-item--copyright">
+                                                    <?php echo $picture['copyright']; ?>
+                                                </div>
+                                            </a>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+
                 <?php if ( $description['type'] == 'teaser' ) { ?>
                     <div class="teaser-blocks">
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
@@ -39,50 +76,50 @@
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
                                         </button>
                                     </div>
+                                </div>
 
-                                    <div class="teaser-block-modal">
-                                        <div class="teaser-block-modal-inner">
-                                            <div class="teaser-block-modal-content">
-                                                <div class="teaser-block-modal-header">
-                                                    <?php if ( !empty($item['name']) ) { ?>
+                                <div class="teaser-block-modal">
+                                    <div class="teaser-block-modal-inner">
+                                        <div class="teaser-block-modal-content">
+                                            <div class="teaser-block-modal-header">
+                                                <?php if ( !empty($item['name']) ) { ?>
                                                     <div class="h4"><?php echo $item['name']; ?></div>
-                                                    <?php } ?>
+                                                <?php } ?>
 
-                                                    <button class="teaser-block-modal-close" data-type="close-popup" type="button">
-                                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                                                    </button>
-                                                </div>
+                                                <button class="teaser-block-modal-close" data-type="close-popup" type="button">
+                                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                                </button>
+                                            </div>
 
-                                                <div class="teaser-block-modal-body">
-                                                    <?php if ( !empty($item['name']) ) { ?>
-                                                        <div class="teaser-block-title">
-                                                            <strong><?php echo $item['name']; ?></strong>
-                                                        </div>
-                                                    <?php } ?>
+                                            <div class="teaser-block-modal-body">
+                                                <?php if ( !empty($item['name']) ) { ?>
+                                                    <div class="teaser-block-title">
+                                                        <strong><?php echo $item['name']; ?></strong>
+                                                    </div>
+                                                <?php } ?>
 
-                                                    <?php if (!empty($item['text'])) { ?>
-                                                        <div class="teaser-block-text">
-                                                            <?php echo $item['text']; ?>
-                                                        </div>
-                                                    <?php } ?>
+                                                <?php if (!empty($item['text'])) { ?>
+                                                    <div class="teaser-block-text">
+                                                        <?php echo $item['text']; ?>
+                                                    </div>
+                                                <?php } ?>
 
-                                                    <?php if (!empty($item['pictures'])) { ?>
-                                                        <div class="teaser-block-gallery teaser-block-gallery--<?php echo $k; ?>">
-                                                            <?php foreach ($item['pictures'] as $picture) { ?>
-                                                                <a class="teaser-block-gallery-item" href="<?php echo $picture['url_detail']; ?>"
-                                                                   data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
-                                                                    <div class="teaser-block-gallery-item--image">
-                                                                        <img src="<?php echo $picture['url_teaser']; ?>"
-                                                                             alt="<?php echo $picture['alt']; ?>"/>
-                                                                    </div>
-                                                                    <div class="teaser-block-gallery-item--copyright">
-                                                                        <?php echo $picture['copyright']; ?>
-                                                                    </div>
-                                                                </a>
-                                                            <?php } ?>
-                                                        </div>
-                                                    <?php } ?>
-                                                </div>
+                                                <?php if (!empty($item['pictures'])) { ?>
+                                                    <div class="teaser-block-gallery teaser-block-gallery--<?php echo $k; ?>">
+                                                        <?php foreach ($item['pictures'] as $picture) { ?>
+                                                            <a class="teaser-block-gallery-item" href="<?php echo $picture['url_detail']; ?>"
+                                                               data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
+                                                                <div class="teaser-block-gallery-item--image">
+                                                                    <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                         alt="<?php echo $picture['alt']; ?>"/>
+                                                                </div>
+                                                                <div class="teaser-block-gallery-item--copyright">
+                                                                    <?php echo $picture['copyright']; ?>
+                                                                </div>
+                                                            </a>
+                                                        <?php } ?>
+                                                    </div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
