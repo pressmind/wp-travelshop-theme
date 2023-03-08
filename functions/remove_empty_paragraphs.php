@@ -3,6 +3,7 @@ function remove_empty_paragraphs($string) {
     $pattern = "/<p[^>]*><\\/p[^>]*>/";
 
     // -- easy replacement
+    $string = trim($string);
     $string = str_replace("<p></p>", "", $string);
 
     // -- return with used regular expression $pattern
