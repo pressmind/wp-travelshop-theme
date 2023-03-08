@@ -56,7 +56,7 @@
         height: $font-size-lg;
 
         color: $accordion-toggle-icon-color;
-        transition: color .3s;
+        transition: color .3s, translate .3s;
       }
 
       .accordion-toggle--title {
@@ -87,6 +87,12 @@
     }
 
     &.is-open {
+
+      .accordion-toggle {
+        svg {
+          transform: translateX(-1);
+        }
+      }
       .accordion-content {
         height: auto;
       }

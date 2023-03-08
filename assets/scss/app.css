@@ -14010,7 +14010,7 @@ ul.checklist {
       width: 1.125rem;
       height: 1.125rem;
       color: #5a6570;
-      transition: color .3s; }
+      transition: color .3s, translate .3s; }
     .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title {
       margin-bottom: 0 !important;
       color: #212529;
@@ -14031,6 +14031,8 @@ ul.checklist {
       @media (min-width: 992px) {
         .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
           padding-bottom: 1rem; } }
+  .accordion-wrapper .accordion-item.is-open .accordion-toggle svg {
+    transform: translateX(-1); }
   .accordion-wrapper .accordion-item.is-open .accordion-content {
     height: auto; }
 .accordion-wrapper.accordion-wrapper-boxed .accordion-item {
