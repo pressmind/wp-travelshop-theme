@@ -14734,7 +14734,7 @@ footer.footer-main {
     max-width: 1300px !important; } }
 
 .detail-section.detail-section-topbar {
-  padding: .5rem; }
+  padding: .5rem 0; }
   @media (min-width: 768px) {
     .detail-section.detail-section-topbar {
       padding: 1rem 0; } }
