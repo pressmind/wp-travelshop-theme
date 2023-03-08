@@ -4,6 +4,11 @@
     .detail-header-gallery-slider {
       overflow: hidden;
 
+      // - controls
+      .slider-controls {
+        @extend %slider-controls;
+      }
+
       .detail-header-gallery-slider--counter {
         position: absolute;
         z-index: 2;
