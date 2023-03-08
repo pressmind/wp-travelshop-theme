@@ -220,7 +220,6 @@ jQuery(function ($) {
     // -------------------------------------
 
     var imageSlider = $('.image-slider');
-    var imageSliders = [];
     var imageSliderContainer = '';
     var imageSliderId = '';
     var imageSliderLoop = false;
@@ -283,7 +282,7 @@ jQuery(function ($) {
             // -- reset controls container by id
             imageSliderControlsContainer = '#' + imageSliderId + ' ' + imageSliderControlsContainer;
 
-            imageSliders[imageSliderId] = tns({
+            window[imageSliderId] = tns({
                 container: imageSliderContainer,
                 nav: imageSliderNav,
                 navPosition: imageSliderNavPosition,
@@ -308,7 +307,7 @@ jQuery(function ($) {
                         console.log(info.event.type, info.container.id);
                     }
 
-                    imageSliders[imageSliderId].on('indexChanged', imageSliderCounterFunction);
+                    window[imageSliderId].events.on('indexChanged', imageSliderCounterFunction);
                 }
             }
         });
