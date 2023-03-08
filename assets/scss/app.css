@@ -14379,8 +14379,8 @@ footer.footer-main {
       text-decoration: none; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg,
       .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         transition: color .3s;
         color: #4aac20;
         margin: 0 auto .25rem auto; }
