@@ -14668,6 +14668,20 @@ footer.footer-main {
       border-top: 0.25rem solid #fff;
       border-left: 0.25rem solid #fff; }
 
+.detail-gallery-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050; }
+  .detail-gallery-overlay.show {
+    opacity: 1;
+    pointer-events: auto; }
+
 .detail-header-info {
   background-color: #fff;
   color: #212529;
