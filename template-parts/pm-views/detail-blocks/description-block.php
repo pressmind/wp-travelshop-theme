@@ -3,9 +3,7 @@
  * @var array $args
  */
 ?>
-<pre>
-    <?php print_r($args['descriptions']); ?>
-</pre>
+
 <section class="description-block-wrapper">
     <?php
     foreach ($args['descriptions'] as $i => $description) {
@@ -54,6 +52,9 @@
                 <?php } ?>
 
                 <?php if ( $description['type'] == 'teaser' ) { ?>
+                    <pre>
+    <?php print_r($description); ?>
+</pre>
                     <div class="teaser-blocks">
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="teaser-block teaser-block--<?php echo $i; ?>-<?php echo $k; ?>">
