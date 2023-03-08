@@ -1,8 +1,5 @@
 <?php
 function remove_empty_paragraphs($string) {
-    echo "<pre>",
-    var_dump(str_replace('<p></p>', '', $string));
-    echo "</pre>";
     // -- regex pattern to remove empty paragraphs
     $pattern = "/\s?<p>(\s|&nbsp;)*<\/p>/";
 
