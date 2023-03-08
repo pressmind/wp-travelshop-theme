@@ -14356,6 +14356,14 @@ footer.footer-main {
       .detail-box.detail-box-trust .trust-wrapper .trust-footer svg {
         height: 0.875rem;
         width: 0.875rem; }
+  .detail-box.detail-box-trust.detail-box-success.detail-box-bordered .trust-wrapper .trust-smiley {
+    width: 4rem;
+    height: 4rem;
+    padding: .5rem;
+    background-color: rgba(255, 193, 7, 0.25);
+    border-radius: 50%; }
+  .detail-box.detail-box-trust.detail-box-success:not(.detail-box-bordered) .trust-smiley {
+    color: #fff; }
 
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;

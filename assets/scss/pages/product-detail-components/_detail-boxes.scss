@@ -106,5 +106,23 @@
         }
       }
     }
+
+    &.detail-box-success.detail-box-bordered {
+      .trust-wrapper {
+        .trust-smiley {
+          width: 4rem;
+          height: 4rem;
+          padding: .5rem;
+          background-color: rgba($booking-orange, .25);
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &.detail-box-success:not(.detail-box-bordered) {
+      .trust-smiley {
+        color: #fff;
+      }
+    }
   }
 }
