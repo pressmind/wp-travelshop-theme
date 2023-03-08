@@ -17,6 +17,11 @@
     @include border-radius($detail-header-info-border-radius);
     @include font-size-generator($detail-header-info-font-sizes);
 
+    // -- reset borrder radius to generate box-like header
+    @include media-breakpoint-down($detail-header-column-break) {
+      @include border-top-radius(0);
+    }
+
     .detail-header-info-top {
       @include spacing-generator($detail-header-info-spacers-x, 'around', 'padding');
     }

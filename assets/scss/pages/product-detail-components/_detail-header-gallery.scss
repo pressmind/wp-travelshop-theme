@@ -22,6 +22,11 @@
 
     @include border-radius($detail-header-gallery-border-radius);
 
+    // -- reset borrder radius to generate box-like header
+    @include media-breakpoint-down($detail-header-column-break) {
+      @include border-bottom-radius(0);
+    }
+
     .detail-header-badge {
       @extend %product-badge;
       @extend %product-badge-danger;
@@ -37,8 +42,8 @@
       display: none;
     }
 
-    @if ( $detail-header-gallery-mobile-break != null ) {
-      @include media-breakpoint-down($detail-header-gallery-mobile-break) {
+    @if ( $detail-header-gallery-grid-break != null ) {
+      @include media-breakpoint-down($detail-header-gallery-grid-break) {
         .detail-header-gallery-slider {
           display: block;
         }

@@ -14456,6 +14456,10 @@ footer.footer-main {
   position: relative;
   overflow: hidden;
   border-radius: 0.25rem; }
+  @media (max-width: 1199.98px) {
+    .detail-header-gallery {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0; } }
   .detail-header-gallery .detail-header-badge {
     position: absolute;
     z-index: 2;
@@ -14478,6 +14482,10 @@ footer.footer-main {
 .detail-header-gallery .detail-header-gallery-slider {
   border-radius: 0.25rem;
   overflow: hidden; }
+  @media (max-width: 1199.98px) {
+    .detail-header-gallery .detail-header-gallery-slider {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; } }
   .detail-header-gallery .detail-header-gallery-slider .detail-header-gallery-slider--counter {
     position: absolute;
     z-index: 2;
@@ -14486,7 +14494,6 @@ footer.footer-main {
     line-height: 1;
     color: #fff;
     background-color: rgba(33, 37, 41, 0.75);
-    border-radius: 0.25rem;
     bottom: 1.25rem;
     right: 1.25rem; }
     @media (min-width: 992px) {
@@ -14589,6 +14596,10 @@ footer.footer-main {
   @media (min-width: 992px) {
     .detail-header-info {
       font-size: 1rem; } }
+  @media (max-width: 1199.98px) {
+    .detail-header-info {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; } }
   .detail-header-info .detail-header-info-top {
     padding: 1.25rem; }
     @media (min-width: 992px) {

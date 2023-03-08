@@ -5,6 +5,11 @@
       @include border-radius($detail-header-gallery-border-radius);
       overflow: hidden;
 
+      // -- reset borrder radius to generate box-like header
+      @include media-breakpoint-down($detail-header-column-break) {
+        @include border-top-radius(0);
+      }
+
       .detail-header-gallery-slider--counter {
         position: absolute;
         z-index: 2;
@@ -14,8 +19,6 @@
         line-height: 1;
         color: #fff;
         background-color: rgba($body-color, .75);
-
-        @include border-radius($badge-border-radius);
 
         @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
         @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
