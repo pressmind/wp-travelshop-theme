@@ -14605,6 +14605,13 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-header-info .detail-header-info-top {
         padding: 30px; } }
+  @media (max-width: 575.98px) {
+    .detail-header-info .detail-header-info-top {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      border-width: 0;
+      background-color: transparent; } }
   .detail-header-info .detail-header-info-top {
     position: relative; }
     .detail-header-info .detail-header-info-top .add-to-wishlist {

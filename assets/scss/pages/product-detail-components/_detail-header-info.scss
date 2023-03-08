@@ -26,6 +26,18 @@
       @include spacing-generator($detail-header-info-spacers-x, 'around', 'padding');
     }
 
+    // remove background, border, padding left and right and bottom for mobile view
+    @include media-breakpoint-down(xs) {
+      .detail-header-info-top {
+        padding-left:0;
+        padding-right:0;
+        padding-bottom:0;
+
+        border-width:0;
+        background-color: transparent;
+      }
+    }
+
     .detail-header-info-top {
       position: relative;
 
