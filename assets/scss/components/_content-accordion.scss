@@ -71,6 +71,10 @@
 
         gap: .25rem;
 
+        @include media-breakpoint-up(lg) {
+          gap: .5rem;
+        }
+
         .accordion-toggle--rating {
           display: flex;
           flex-wrap: nowrap;
