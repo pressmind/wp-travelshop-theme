@@ -14687,7 +14687,30 @@ footer.footer-main {
     outline: none;
     box-shadow: none;
     background: transparent;
-    padding: 0; }
+    padding: 0;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    justify-content: center;
+    pointer-events: auto;
+    transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
+    background-color: rgba(33, 37, 41, 0.4);
+    color: #fff;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 2rem;
+    max-width: 100%;
+    border-radius: 50%; }
+    .detail-gallery-overlay button.detail-gallery-overlay-close > svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+    .detail-gallery-overlay button.detail-gallery-overlay-close:not([disabled]):hover {
+      color: #212529;
+      background-color: #fff; }
+    .detail-gallery-overlay button.detail-gallery-overlay-close[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.25; }
 
 .detail-header-info {
   background-color: #fff;
