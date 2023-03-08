@@ -9,10 +9,12 @@
     foreach ($args['descriptions'] as $i => $description) {
         ?>
         <div class="description-block description-block--<?php echo $description['type']; ?>">
-            <?php if (!empty($description['headline']) && $description['type'] !== 'accordion') { ?>
-                <div class="description-block-header">
-                    <h2 class="h3"><?php echo $description['headline']; ?></h2>
-                </div>
+            <?php if ($description['type'] !== 'accordion') { ?>
+                <?php if ( !empty($description['headline']) ) { ?>
+                    <div class="description-block-header">
+                        <h2 class="h3"><?php echo $description['headline']; ?></h2>
+                    </div>
+                <?php } ?>
 
                 <pre>
                     <?php print_r($description); ?>
