@@ -133,6 +133,7 @@
     display: flex;
     flex-direction: row;
     gap: .5rem;
+    justify-content: space-between;
 
     // -- contact
     .detail-contact-hotline {
@@ -144,6 +145,8 @@
         transition: color .3s;
 
         text-decoration: none;
+
+        padding-left: 1.75rem;
 
         .hotline-info {
           line-height: 1.2;
@@ -160,8 +163,8 @@
         }
 
         .hotline-icon {
-          width: 2.5rem;
-          height: 2.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
           left:0;
           top:0;
           position: absolute;
@@ -169,8 +172,8 @@
           display: block;
 
           svg {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
           }
         }
 
@@ -184,7 +187,6 @@
     // -- whastapp
     .detail-contact-whatsapp {
       a.whatsapp-link {
-        display: block;
         font-size: $font-size-xs;
         color: $body-color;
         text-align: center;
@@ -192,6 +194,11 @@
         line-height: 1;
         transition: color .3s;
         text-decoration: none;
+
+        display: flex;
+        flex-direction: column;
+
+        flex: 0;
 
         svg {
           width: 2.5rem;

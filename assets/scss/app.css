@@ -14368,14 +14368,16 @@ footer.footer-main {
   .detail-box .detail-contact-wrapper {
     display: flex;
     flex-direction: row;
-    gap: .5rem; }
+    gap: .5rem;
+    justify-content: space-between; }
     .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link,
     .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link {
       display: block;
       position: relative;
       color: #007bff;
       transition: color .3s;
-      text-decoration: none; }
+      text-decoration: none;
+      padding-left: 1.75rem; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info,
       .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info {
         line-height: 1.2; }
@@ -14389,8 +14391,8 @@ footer.footer-main {
           font-size: 0.75rem; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon,
       .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
         left: 0;
         top: 0;
         position: absolute;
@@ -14398,8 +14400,8 @@ footer.footer-main {
         display: block; }
         .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon svg,
         .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon svg {
-          width: 2.5rem;
-          height: 2.5rem; }
+          width: 1.5rem;
+          height: 1.5rem; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link:hover, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link:focus, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link:active,
       .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link:hover,
       .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link:focus,
@@ -14408,13 +14410,15 @@ footer.footer-main {
         color: #0056b3; }
     .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link,
     .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link {
-      display: block;
       font-size: 0.75rem;
       color: #212529;
       text-align: center;
       line-height: 1;
       transition: color .3s;
-      text-decoration: none; }
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      flex: 0; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg,
       .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg {
         width: 2.5rem;
