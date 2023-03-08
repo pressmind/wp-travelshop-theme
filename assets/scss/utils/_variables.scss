@@ -109,6 +109,12 @@ $accordion-border-color: $hr-border-color !default;
 $accordion-bg: $body-color !default;
 $accordion-border-radius: $card-border-radius !default; // only used on boxed accordion.
 
+$accordion-toggle-color: $body-color !default;
+$accordion-toggle-hover-color: rgba($accordion-toggle-color, .75) !default;
+
+$accordion-toggle-icon-color: $body-color-light !default;
+$accordion-toggle-hover-icon-color: $body-color !default;
+
 $accordion-spacers-x: (
         null: $card-spacer-x,
         lg: $grid-gutter-width

@@ -46,11 +46,25 @@
         width: $font-size-lg;
         height: $font-size-lg;
 
-        color: $body-color-light;
+        color: $accordion-toggle-icon-color;
+        transition: color .3s;
+      }
+
+      .accordion-toggle--title {
+        margin-bottom: 0 !important;
+        color: $accordion-toggle-color;
+        transition: color .3s;
       }
 
       @include spacing-generator($accordion-spacers-y, 'y', 'padding');
-      @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+
+      &:hover {
+        color: $accordion-toggle-hover-color;
+
+        svg {
+          color: $accordion-toggle-hover-icon-color;
+        }
+      }
     }
 
     // -- content
@@ -58,15 +72,29 @@
       height: 0;
       overflow: hidden;
 
-      .accordion-inner {
+      .accordion-content--inner {
         @include spacing-generator($accordion-spacers-y, 'y', 'padding');
-        @include spacing-generator($accordion-spacers-x, 'x', 'padding');
       }
     }
 
     &.is-open {
       .accordion-content {
         height: auto;
+      }
+    }
+  }
+
+  &.accordion-wrapper-boxed {
+    .accordion-item {
+
+      .accordion-toggle {
+        @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+      }
+
+      .accordion-content {
+        .accordion-content--inner {
+          @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+        }
       }
     }
   }
