@@ -225,6 +225,7 @@ jQuery(function ($) {
     var imageSliderLoop = false;
     var imageSliderNav = false;
     var imageSliderNavPosition = "bottom";
+    var imageSliderCounter = null;
     var imageSliderSpeed = 300;
     var imageSliderAutoplay = false;
     var imageSliderAutoplayTimeout = 5000;
@@ -238,6 +239,10 @@ jQuery(function ($) {
             imageSliderContainer = $(this).data('slider-container');
             imageSliderContainer = '#' + imageSliderId + ' ' + imageSliderContainer;
 
+            // -- check if counter
+            if ( typeof $(this).data('counter') !== 'undefined' && $(this).data('counter') !== '' ) {
+                imageSliderCounter = $(this).data('counter');
+            }
 
             // -- check if speed is set
             if ( typeof $(this).data('speed') !== 'undefined' && $(this).data('speed') !== '' ) {
@@ -293,6 +298,15 @@ jQuery(function ($) {
                 controlsContainer: imageSliderControlsContainer,
 
             });
+
+            // -- setup counter
+            if ( imageSliderCounter !== null && imageSliderCounter !== '' ) {
+                imageSliderCounter = '#' + imageSliderId + ' ' + imageSliderCounter;
+
+                if ( $(imageSliderCounter).length > 0 ) {
+                    console.log(imageSliderCounter);
+                }
+            }
         });
     }
 
