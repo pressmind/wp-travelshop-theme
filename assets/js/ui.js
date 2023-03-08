@@ -248,17 +248,17 @@ jQuery(function ($) {
             }
 
             // -- check if speed is set
-            if ( typeof $(this).data('speed') !== 'undefined' && $(this).data('speed').trim() ) {
+            if ( typeof $(this).data('speed') !== 'undefined' && $(this).data('speed') !== '' ) {
                 imageSliderSpeed = parseInt($(this).data('speed'));
             }
 
             // -- check if nav-position is set
-            if ( typeof $(this).data('nav-position') !== 'undefined' && $(this).data('nav-position').trim() ) {
+            if ( typeof $(this).data('nav-position') !== 'undefined' && $(this).data('nav-position') !== '' ) {
                 imageSliderNavPosition = $(this).data('nav-position');
             }
 
             // -- check if loop is set
-            if ( typeof $(this).data('loop') !== 'undefined' && $(this).data('loop').trim() ) {
+            if ( typeof $(this).data('loop') !== 'undefined' && $(this).data('loop') !== '' ) {
                 if ( $(this).data('loop') === 'true' ) {
                     imageSliderLoop = true;
                 } else {
@@ -267,7 +267,7 @@ jQuery(function ($) {
             }
 
             // -- check if autoplay is set
-            if ( typeof $(this).data('autoplay') !== 'undefined' && $(this).data('autoplay').trim() ) {
+            if ( typeof $(this).data('autoplay') !== 'undefined' && $(this).data('autoplay') !== '' ) {
                 if ( $(this).data('autoplay') === 'true' ) {
                     imageSliderAutoplay = true;
                 } else {
@@ -276,12 +276,12 @@ jQuery(function ($) {
             }
 
             // -- check if autoplayTimeout is set
-            if ( typeof $(this).data('autoplay-timeout') !== 'undefined' && $(this).data('autoplay-timeout').trim() ) {
+            if ( typeof $(this).data('autoplay-timeout') !== 'undefined' && $(this).data('autoplay-timeout') !== '' ) {
                 imageSliderAutoplayTimeout = parseInt($(this).data('autoplay-timeout'));
             }
 
             // -- check if controls-container is set
-            if ( typeof $(this).data('controls-container') !== 'undefined' && $(this).data('controls-container').trim() ) {
+            if ( typeof $(this).data('controls-container') !== 'undefined' && $(this).data('controls-container') !== '' ) {
                 imageSliderControlsContainer = $(this).data('controls-container');
             }
 
