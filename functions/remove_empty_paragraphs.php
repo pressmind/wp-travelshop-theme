@@ -10,7 +10,7 @@ function remove_empty_paragraphs($string) {
 
     foreach ( $stringParts as $part ) {
         echo "<pre>";
-        print_R($part);
+        var_dump($part);
         echo "</pre>";
         if ( substr($part, 0, 1) === '<' ) {
             $output .= $part;
