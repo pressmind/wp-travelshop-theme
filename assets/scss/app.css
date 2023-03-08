@@ -14375,6 +14375,7 @@ footer.footer-main {
       font-size: 0.75rem;
       color: #212529;
       text-align: center;
+      line-height: 1;
       transition: color .3s;
       text-decoration: none; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg,
