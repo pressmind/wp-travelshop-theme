@@ -302,10 +302,12 @@ jQuery(function ($) {
                 imageSliderCounter = '#' + imageSliderId + ' ' + imageSliderCounter;
 
                 if ( $(imageSliderCounter).length > 0 ) {
-                    console.log(imageSliderCounter);
-                    window[imageSliderId].on('indexChanged', function(info, eventName) {
-                        console.log(info);
-                    });
+                    var imageSliderCounterFunction = function( info, eventName ) {
+                        // direct access to info object
+                        console.log(info.event.type, info.container.id);
+                    }
+
+                    window[imageSliderId].on('indexChanged', imageSliderCounterFunction);
                 }
             }
         });
