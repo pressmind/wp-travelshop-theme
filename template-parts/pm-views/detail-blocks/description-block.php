@@ -96,7 +96,7 @@
             <?php // render accordion if type accordion ?>
             <?php if ( $description['type'] == 'accordion' ) { ?>
                 <div class="accordion-group">
-                    <?php if (!empty($description['headline']) && $description['type'] !== 'accordion') { ?>
+                    <?php if (!empty($description['headline'])) { ?>
                         <div class="accordion-header">
                             <h2 class="h3"><?php echo $description['headline']; ?></h2>
                         </div>
