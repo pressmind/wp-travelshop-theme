@@ -46,7 +46,7 @@ if(!$valid){
             <span class="txt-open">Alle öffnen</span><span class="txt-close">Alle schließen</span>
         </button>
     </div>
-    <section class="accordion-wrapper">
+    <section class="accordion-wrapper accordion-wrapper-boxed">
         <?php
         foreach ($args['media_object']->getItinerarySteps() as $key => $step) {
             foreach ($step->sections as $section) {
