@@ -6,6 +6,7 @@ function remove_empty_paragraphs($string) {
     // every double space to single space
     $string = str_replace('  ', ' ', $string);
     $string = str_replace( '<p></p>', '', $string);
+    $string = str_replace( '<p> </p>', '', $string);
 
     echo "hi";
     // split into parts
