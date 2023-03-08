@@ -249,8 +249,6 @@ jQuery(function ($) {
                 imageSliderSpeed = parseInt($(this).data('speed'));
             }
 
-            console.log($(this).data('nav'));
-
             // -- check if nav is set
             if ( typeof $(this).data('nav') !== 'undefined' ) {
                 imageSliderNav = $(this).data('nav');
@@ -305,6 +303,9 @@ jQuery(function ($) {
 
                 if ( $(imageSliderCounter).length > 0 ) {
                     console.log(imageSliderCounter);
+                    window[imageSliderId].on('indexChanged', function(info, eventName) {
+                        console.log(info);
+                    });
                 }
             }
         });
