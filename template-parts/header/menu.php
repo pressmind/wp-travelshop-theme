@@ -25,7 +25,7 @@ if (has_nav_menu('primary') === true) {
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php echo $item->title; ?>
 
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#carent-down-bold"></use></svg>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <?php

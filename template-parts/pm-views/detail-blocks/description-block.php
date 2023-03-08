@@ -76,7 +76,7 @@
                                     <div class="teaser-block-toggle">
                                         <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
                                             Mehr anzeigen
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#carent-right-bold"></use></svg>
                                         </button>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                     }
                                     ?>
 
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#carent-down-bold"></use></svg>
                                 </button>
 
                                 <div class="accordion-content">
