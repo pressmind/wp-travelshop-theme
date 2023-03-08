@@ -102,6 +102,24 @@ $h6-font-sizes: (
 ) !default;
 
 /**
+ * Accordion
+ */
+$accordion-border-width: 1px !default;
+$accordion-border-color: $hr-border-color !default;
+$accordion-bg: $body-color !default;
+$accordion-border-radius: $card-border-radius !default; // only used on boxed accordion.
+
+$accordion-spacers-x: (
+        null: $card-spacer-x,
+        lg: $grid-gutter-width
+) !default;
+
+$accordion-spacers-y: (
+        null: .5rem,
+        lg: 1rem
+) !default;
+
+/**
  * Slider elements
  */
 

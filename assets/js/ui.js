@@ -465,23 +465,6 @@ jQuery(function ($) {
             e.stopPropagation();
         })
 
-        // accToggleAll.on('click', function(e) {
-        //     e.preventDefault();
-        //
-        //     $(this).parents('.accordion-wrapper').find('.accordion-item .accordion-item--content').removeAttr('style');
-        //
-        //     if ( $(this).hasClass('all-hidden') ) {
-        //         $(this).removeClass('all-hidden');
-        //         $(this).parents('.accordion-wrapper').find('.accordion-item:not(.is--open)').addClass(accOpenClass);
-        //     } else {
-        //         $(this).addClass('all-hidden');
-        //         $(this).parents('.accordion-wrapper').find('.accordion-item.is--open').removeClass(accOpenClass);
-        //
-        //     }
-        //
-        //     e.stopPropagation();
-        // })
-
         accToggle.on('click', function(e) {
             e.preventDefault();
 

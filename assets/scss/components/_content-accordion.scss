@@ -33,9 +33,35 @@
 
   .accordion-item {
 
+    .accordion-toggle {
+      @include button-reset();
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      gap: .5rem;
+
+      svg {
+        width: $font-size-lg;
+        height: $font-size-lg;
+
+        color: $body-color-light;
+      }
+
+      @include spacing-generator($accordion-spacers-y, 'y', 'padding');
+      @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+    }
+
+    // -- content
     .accordion-content {
       height: 0;
       overflow: hidden;
+
+      .accordion-inner {
+        @include spacing-generator($accordion-spacers-y, 'y', 'padding');
+        @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+      }
     }
 
     &.is-open {
