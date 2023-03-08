@@ -14019,10 +14019,10 @@ ul.checklist {
       .accordion-wrapper .accordion-item .accordion-toggle {
         padding-top: 1rem;
         padding-bottom: 1rem; } }
-    .accordion-wrapper .accordion-item .accordion-toggle:hover {
+    .accordion-wrapper .accordion-item .accordion-toggle:hover .accordion-toggle--title {
       color: rgba(33, 37, 41, 0.75); }
-      .accordion-wrapper .accordion-item .accordion-toggle:hover svg {
-        color: #212529; }
+    .accordion-wrapper .accordion-item .accordion-toggle:hover svg {
+      color: #212529; }
   .accordion-wrapper .accordion-item .accordion-content {
     height: 0;
     overflow: hidden; }

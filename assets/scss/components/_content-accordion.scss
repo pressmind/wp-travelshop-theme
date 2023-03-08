@@ -68,7 +68,9 @@
       @include spacing-generator($accordion-spacers-y, 'y', 'padding');
 
       &:hover {
-        color: $accordion-toggle-hover-color;
+        .accordion-toggle--title {
+          color: $accordion-toggle-hover-color;
+        }
 
         svg {
           color: $accordion-toggle-hover-icon-color;
