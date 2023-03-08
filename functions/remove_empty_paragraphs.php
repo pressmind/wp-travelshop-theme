@@ -1,5 +1,6 @@
 <?php
 function remove_empty_paragraphs($string) {
+    $string = "<h1>   </h1>" . $string;
     // -- regex pattern to remove empty paragraphs
     $pattern = "/<[^\/>]*>([\s]?)*<\/[^>]*>/";
 
