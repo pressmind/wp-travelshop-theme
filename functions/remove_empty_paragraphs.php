@@ -15,5 +15,5 @@ function remove_empty_paragraphs($string) {
         '</$1',
     ), $string );
 
-    return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $output);
+    return preg_replace('<p>(\s|&nbsp;)*+(<br\s*/*>)?(\s|&nbsp;)*</p>', '', $output);
 }
