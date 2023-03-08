@@ -14388,7 +14388,7 @@ footer.footer-main {
           margin: 0 0 0.25rem 0; }
         .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info .hotline-openings,
         .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info .hotline-openings {
-          color: rgba(33, 37, 41, 0.5);
+          color: #212529;
           font-size: 0.75rem; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon,
       .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon {
@@ -14422,8 +14422,8 @@ footer.footer-main {
       flex: 0; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg,
       .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2rem;
+        height: 2rem;
         transition: color .3s;
         color: #4aac20;
         margin: 0 auto .25rem auto; }

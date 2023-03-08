@@ -158,7 +158,7 @@
           }
 
           .hotline-openings {
-            color: rgba($detail-box-color, .5);
+            color: $detail-box-color;
             font-size: $font-size-xs;
           }
         }
@@ -202,8 +202,8 @@
         flex: 0;
 
         svg {
-          width: 2.5rem;
-          height: 2.5rem;
+          width: 2rem;
+          height: 2rem;
 
           transition: color .3s;
           color: $color--whatsapp;
