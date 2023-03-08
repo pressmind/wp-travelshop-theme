@@ -220,6 +220,7 @@ jQuery(function ($) {
     // -------------------------------------
 
     var imageSlider = $('.image-slider');
+    var imageSliders = [];
     var imageSliderContainer = '';
     var imageSliderId = '';
     var imageSliderLoop = false;
@@ -282,7 +283,7 @@ jQuery(function ($) {
             // -- reset controls container by id
             imageSliderControlsContainer = '#' + imageSliderId + ' ' + imageSliderControlsContainer;
 
-            window[imageSliderId] = tns({
+            var imageSliders[imageSliderId] = tns({
                 container: imageSliderContainer,
                 nav: imageSliderNav,
                 navPosition: imageSliderNavPosition,
