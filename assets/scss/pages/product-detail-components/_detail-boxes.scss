@@ -63,8 +63,9 @@
     .trust-wrapper {
       display: flex;
       flex-direction: column;
+      align-items: center;
 
-      @include spacing-generator($detail-box-spacers-x, 'around', 'gap');
+      @include spacing-generator($detail-box-spacers-y, 'around', 'gap');
 
       .trust-smiley {
         width: 3rem;
@@ -77,6 +78,19 @@
         svg {
           width: 3rem;
           height: 3rem;
+        }
+      }
+
+      .trust-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        font-size: $font-size-sm;
+
+        svg {
+          height: $font-size-base;
+          width: $font-size-base;
         }
       }
     }

@@ -14332,10 +14332,11 @@ footer.footer-main {
   .detail-box.detail-box-trust .trust-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem; }
+    align-items: center;
+    gap: 0.5rem; }
     @media (min-width: 992px) {
       .detail-box.detail-box-trust .trust-wrapper {
-        gap: 30px; } }
+        gap: 1rem; } }
     .detail-box.detail-box-trust .trust-wrapper .trust-smiley {
       width: 3rem;
       height: 3rem;
@@ -14344,6 +14345,14 @@ footer.footer-main {
       .detail-box.detail-box-trust .trust-wrapper .trust-smiley svg {
         width: 3rem;
         height: 3rem; }
+    .detail-box.detail-box-trust .trust-wrapper .trust-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 0.875rem; }
+      .detail-box.detail-box-trust .trust-wrapper .trust-footer svg {
+        height: 1rem;
+        width: 1rem; }
 
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;
