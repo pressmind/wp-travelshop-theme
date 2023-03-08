@@ -171,4 +171,43 @@
       }
     }
   }
+
+  // -- thumbnails
+  #detail-gallery-thumbnails {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+
+    @include media-breakpoint-up(lg) {
+      bottom: $grid-gutter-width;
+    }
+
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+    overflow-y: auto;
+    text-align: center;
+    white-space: nowrap;
+
+    .detail-gallery-thumbnail-item {
+      display: inline-block;
+
+      cursor: pointer;
+      opacity: .5;
+
+      transition: opacity .3s;
+
+      &:hover,
+      &.tns-nav-active {
+        opacity: 1;
+      }
+
+      img {
+        height: 3rem !important;
+        width: 3rem !important;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
 }
