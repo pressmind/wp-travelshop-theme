@@ -774,7 +774,7 @@ $detail-header-info-spacers-y: (
 
 // detail header gallery
 $detail-header-gallery-border-radius: $card-border-radius !default;
-$detail-header-gallery-mobile-break: xs !default;
+$detail-header-gallery-mobile-break: sm !default;
 $detail-header-gallery-spacer-x: (
         null: $card-spacer-x,
         lg: $grid-gutter-width
