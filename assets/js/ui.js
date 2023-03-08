@@ -457,7 +457,7 @@ jQuery(function ($) {
         })
     }
 
-    if ($('.detail-image-grid-holder').length > 0 || $('.detail-gallerythumb').length > 0) {
+    if ( $('.detail-header-gallery-grid--modal').length > 0) {
         function addGalleryClasses() {
             console.log('open');
             $('.detail-gallery-overlay').addClass('is--show');
@@ -469,13 +469,13 @@ jQuery(function ($) {
             $('.detail-gallery-overlay').removeClass('is--show');
             $('body').removeClass('modal-open');
         }
-        $('.detail-image-grid-holder img').on('click', function () {
+        $('.detail-header-gallery-grid--modal').on('click', function () {
             addGalleryClasses();
         })
         $('.detail-gallery-overlay-close').on('click', function () {
             removeGalleryClasses();
         })
-        $('.detail-gallerythumb').on('click', function () {
+        $('.detail-header-gallery-grid--modal').on('click', function () {
             addGalleryClasses();
         })
     }
