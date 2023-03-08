@@ -82,7 +82,7 @@
       overflow: hidden;
 
       .accordion-content--inner {
-        @include spacing-generator($accordion-spacers-y, 'y', 'padding');
+        @include spacing-generator($accordion-spacers-y, 'bottom', 'padding');
       }
     }
 
@@ -106,6 +106,7 @@
 
       .accordion-content {
         .accordion-content--inner {
+          @include spacing-generator($accordion-spacers-y, 'top', 'padding');
           @include spacing-generator($accordion-spacers-x, 'x', 'padding');
         }
       }
