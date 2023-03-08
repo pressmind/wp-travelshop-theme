@@ -115,6 +115,11 @@ $accordion-toggle-hover-color: rgba($accordion-toggle-color, .75) !default;
 $accordion-toggle-icon-color: $body-color-light !default;
 $accordion-toggle-hover-icon-color: $body-color !default;
 
+$accordion-boxed-gutters: (
+        null: .25rem,
+        lg: .5rem
+) !default;
+
 $accordion-spacers-x: (
         null: 1rem,
         lg: 1.5rem

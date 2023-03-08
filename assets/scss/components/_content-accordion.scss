@@ -106,8 +106,11 @@
     .accordion-item {
 
       @include border-radius($accordion-border-radius);
-
       border: $accordion-border-width solid $accordion-border-color;
+
+      + .accordion-item {
+        @include spacing-generator($accordion-boxed-gutters, 'top', 'margin');
+      }
 
       .accordion-toggle {
         @include spacing-generator($accordion-spacers-x, 'x', 'padding');

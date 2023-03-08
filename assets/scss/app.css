@@ -14038,6 +14038,11 @@ ul.checklist {
 .accordion-wrapper.accordion-wrapper-boxed .accordion-item {
   border-radius: 0.25rem;
   border: 1px solid #e9ecef; }
+  .accordion-wrapper.accordion-wrapper-boxed .accordion-item + .accordion-item {
+    margin-top: 0.25rem; }
+    @media (min-width: 992px) {
+      .accordion-wrapper.accordion-wrapper-boxed .accordion-item + .accordion-item {
+        margin-top: 0.5rem; } }
   .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
     padding-left: 1rem;
     padding-right: 1rem; }
