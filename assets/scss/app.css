@@ -14021,6 +14021,7 @@ ul.checklist {
       transition: color .3s;
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: .25rem; }
       .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title .accordion-toggle--rating {
         display: flex;
