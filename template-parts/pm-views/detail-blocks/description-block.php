@@ -143,17 +143,17 @@
                                 <button class="accordion-toggle">
                                     <h3 class="accordion-toggle--title h5">
                                         <?php echo $item['name']; ?>
-                                    </h3>
 
-                                    <?php
-                                    if (!empty($item['icons'])) {
-                                        ?>
-                                        <div class="accordion-toggle--rating">
-                                            <?php echo $item['icons']; // svg or img ?>
-                                        </div>
                                         <?php
-                                    }
-                                    ?>
+                                        if (!empty($item['icons'])) {
+                                            ?>
+                                            <div class="accordion-toggle--rating">
+                                                <?php echo $item['icons']; // svg or img ?>
+                                            </div>
+                                            <?php
+                                        }
+                                        ?>
+                                    </h3>
 
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
                                 </button>
