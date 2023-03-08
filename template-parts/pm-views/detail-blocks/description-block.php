@@ -60,7 +60,7 @@
                                 <div class="teaser-block-preview">
                                     <?php if ( !empty($item['name']) ) { ?>
                                         <h3 class="teaser-block-title h5">
-                                            <strong><?php echo $item['name']; ?></strong>
+                                            <?php echo $item['name']; ?>
                                         </h3>
                                     <?php } ?>
 
