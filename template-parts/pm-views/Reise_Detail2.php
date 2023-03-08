@@ -487,8 +487,7 @@ $args['breadcrumb'][] = $tmp;
             <div class="container">
                 <div class="row flex-column-reverse flex-lg-row">
                     <div class="col-12 col-xl-8">
-                        <h2><span><?php echo $args['headline']; ?></span></h2>
-                        <hr />
+                        <h2><?php echo $args['headline']; ?></h2>
                         <?php if (!empty($args['subline'])) { ?>
                             <p class="mb-0"><strong><?php echo $args['subline']; ?></strong></p>
                         <?php } ?>
