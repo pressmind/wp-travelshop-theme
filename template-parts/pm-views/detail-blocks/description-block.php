@@ -21,9 +21,9 @@
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="text-block text-block--<?php echo $i; ?>-<?php echo $k; ?>">
                                 <?php if ( !empty($item['name']) ) { ?>
-                                    <div class="text-block-title">
-                                        <strong><?php echo $item['name']; ?></strong>
-                                    </div>
+                                    <h3 class="text-block-title h5">
+                                        <?php echo $item['name']; ?>
+                                    </h3>
                                 <?php } ?>
 
                                 <?php if (!empty($item['text'])) { ?>
@@ -59,9 +59,9 @@
                             <div class="teaser-block teaser-block--<?php echo $i; ?>-<?php echo $k; ?>">
                                 <div class="teaser-block-preview">
                                     <?php if ( !empty($item['name']) ) { ?>
-                                        <div class="teaser-block-title">
+                                        <h3 class="teaser-block-title h5">
                                             <strong><?php echo $item['name']; ?></strong>
-                                        </div>
+                                        </h3>
                                     <?php } ?>
 
                                     <?php if (!empty($item['text'])) { ?>
@@ -96,8 +96,8 @@
 
                                             <div class="teaser-block-modal-body">
                                                 <?php if ( !empty($item['name']) ) { ?>
-                                                    <div class="teaser-block-title">
-                                                        <strong><?php echo $item['name']; ?></strong>
+                                                    <div class="teaser-block-title h5">
+                                                        <?php echo $item['name']; ?>
                                                     </div>
                                                 <?php } ?>
 
@@ -147,9 +147,9 @@
                             <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="accordion-item">
                                 <button class="accordion-toggle">
-                                    <div class="accordion-toggle--title">
+                                    <h3 class="accordion-toggle--title h5">
                                         <?php echo $item['name']; ?>
-                                    </div>
+                                    </h3>
 
                                     <?php
                                     if (!empty($item['icons'])) {
