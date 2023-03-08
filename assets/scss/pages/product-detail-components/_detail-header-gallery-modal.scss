@@ -20,6 +20,12 @@
     pointer-events: auto;
   }
 
+  &:not(.open) {
+    * {
+      pointer-events: none !important;
+    }
+  }
+
   // -- gallery modal is a static component. just uses some bootstrap variables for backdrop
 
   // close
@@ -119,6 +125,49 @@
       @include media-breakpoint-up(lg) {
         right: $grid-gutter-width;
         left: $grid-gutter-width;
+      }
+    }
+
+    .detail-gallery-overlay-item {
+      position: relative;
+
+      // -- image handling
+      .detail-gallery-overlay-item--image {
+        height: 70vh;
+        position: relative;
+        width: 100%;
+
+        >img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 50px;
+          top: 0;
+
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      // -- caption
+      .detail-gallery-overlay-item--caption {
+        position: absolute;
+        bottom: $grid-gutter-width;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 10;
+        color: #fff;
+        text-shadow: 0 10px 10px #000;
+        text-align: center;
+
+        small {
+          display: block;
+          clear: both;
+          margin-top: ($grid-gutter-width / 3);
+        }
+
+        @include no-select();
       }
     }
   }

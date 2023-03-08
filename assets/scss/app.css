@@ -11090,6 +11090,9 @@ html.force--consent.show--consent body {
 /**
  * get element shadow
  */
+/** no select
+ *
+ */
 body {
   font-display: swap !important;
   padding-top: 72px; }
@@ -14682,6 +14685,8 @@ footer.footer-main {
   .detail-gallery-overlay.open {
     opacity: 1;
     pointer-events: auto; }
+  .detail-gallery-overlay:not(.open) * {
+    pointer-events: none !important; }
   .detail-gallery-overlay button.detail-gallery-overlay-close {
     border: 0;
     outline: none;
@@ -14743,6 +14748,39 @@ footer.footer-main {
         .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
           right: 30px;
           left: 30px; } }
+    .detail-gallery-overlay .detail-gallery-overlay-slider .detail-gallery-overlay-item {
+      position: relative; }
+      .detail-gallery-overlay .detail-gallery-overlay-slider .detail-gallery-overlay-item .detail-gallery-overlay-item--image {
+        height: 70vh;
+        position: relative;
+        width: 100%; }
+        .detail-gallery-overlay .detail-gallery-overlay-slider .detail-gallery-overlay-item .detail-gallery-overlay-item--image > img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 50px;
+          top: 0;
+          object-fit: contain;
+          object-position: center; }
+      .detail-gallery-overlay .detail-gallery-overlay-slider .detail-gallery-overlay-item .detail-gallery-overlay-item--caption {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        color: #fff;
+        text-shadow: 0 10px 10px #000;
+        text-align: center;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; }
+        .detail-gallery-overlay .detail-gallery-overlay-slider .detail-gallery-overlay-item .detail-gallery-overlay-item--caption small {
+          display: block;
+          clear: both;
+          margin-top: 10px; }
 
 .detail-header-info {
   background-color: #fff;
