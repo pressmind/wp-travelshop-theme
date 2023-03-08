@@ -56,4 +56,29 @@
     border-color: $detail-box-light-border-color;
     color: $detail-box-light-color;
   }
+
+  // -- some predefined content variants
+
+  &.detail-box-trust {
+    .trust-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      @include spacing-generator($detail-box-spacers-x, 'around', 'gap');
+
+      .trust-smiley {
+        width: 3rem;
+        height: 3rem;
+
+        line-height: 0;
+
+        color: $success;
+
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
 }

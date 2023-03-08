@@ -14329,6 +14329,21 @@ footer.footer-main {
     background-color: #e9ecef;
     border-color: #e9ecef;
     color: #212529; }
+  .detail-box.detail-box-trust .trust-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; }
+    @media (min-width: 992px) {
+      .detail-box.detail-box-trust .trust-wrapper {
+        gap: 30px; } }
+    .detail-box.detail-box-trust .trust-wrapper .trust-smiley {
+      width: 3rem;
+      height: 3rem;
+      line-height: 0;
+      color: #28a745; }
+      .detail-box.detail-box-trust .trust-wrapper .trust-smiley svg {
+        width: 3rem;
+        height: 3rem; }
 
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;
