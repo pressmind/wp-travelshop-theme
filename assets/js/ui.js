@@ -290,7 +290,7 @@ jQuery(function ($) {
 
             window[imageSliderId] = tns({
                 container: imageSliderContainer,
-                nav: imageSlidernav,
+                nav: imageSliderNav,
                 navPosition: imageSliderNavPosition,
                 mouseDrag: true,
                 disable: false,
