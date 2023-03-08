@@ -14371,7 +14371,41 @@ footer.footer-main {
     gap: .5rem; }
     .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link,
     .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link {
-      display: block; }
+      display: block;
+      position: relative;
+      color: #007bff;
+      transition: color .3s;
+      text-decoration: none; }
+      .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info,
+      .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info {
+        line-height: 1.2; }
+        .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info .hotline-number,
+        .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info .hotline-number {
+          color: inherit;
+          margin: 0; }
+        .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info .hotline-openings,
+        .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info .hotline-openings {
+          color: rgba(33, 37, 41, 0.5);
+          font-size: 0.75rem; }
+      .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon,
+      .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        left: 0;
+        top: 0;
+        position: absolute;
+        line-height: 0;
+        display: block; }
+        .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon svg,
+        .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-icon svg {
+          width: 2.5rem;
+          height: 2.5rem; }
+      .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link:hover, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link:focus, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link:active,
+      .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link:hover,
+      .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link:focus,
+      .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link:active {
+        text-decoration: none;
+        color: #0056b3; }
     .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link,
     .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link {
       display: block;

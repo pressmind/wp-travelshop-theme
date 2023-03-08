@@ -138,6 +138,46 @@
     .detail-contact-hotline {
       a.hotline-link {
         display: block;
+        position:relative;
+
+        color: $primary;
+        transition: color .3s;
+
+        text-decoration: none;
+
+        .hotline-info {
+          line-height: 1.2;
+
+          .hotline-number {
+            color: inherit;
+            margin: 0;
+          }
+
+          .hotline-openings {
+            color: rgba($detail-box-color, .5);
+            font-size: $font-size-xs;
+          }
+        }
+
+        .hotline-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          left:0;
+          top:0;
+          position: absolute;
+          line-height: 0;
+          display: block;
+
+          svg {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+
+        &:hover, &:focus, &:active {
+          text-decoration: none;
+          color: $link-hover-color;
+        }
       }
     }
 
