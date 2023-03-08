@@ -17,9 +17,15 @@ function remove_empty_paragraphs($string) {
         $checkParagraphs = str_replace(['<p>', '</p>'], ['', ''], $thisPart);
 
         if ( !empty($checkParagraphs) ) {
-            if ( !empty($thisPart) ) {
-                $output .= $thisPart;
-            }
+            print_r('IS NOT EMPTY');
+        } else {
+            print_r('IS EMPTY');
+        }
+
+        print_r($thisPart);
+
+        if ( !empty($thisPart) ) {
+            $output .= $thisPart;
         }
     }
 
