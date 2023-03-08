@@ -120,12 +120,13 @@ $slider-controls-hover-bg: $primary !default;
 $slider-controls-hover-border-color: $primary !default;
 $slider-controls-hover-color: #fff !default;
 
-$slider-controls-on-image-bg: rgba(#fff, .1) !default;
+$slider-controls-on-image-bg: #fff !default;
 $slider-controls-on-image-border-width: 0 !default;
 $slider-controls-on-image-border-color: transparent !default;
-$slider-controls-on-image-color: #fff !default;
+$slider-controls-on-image-color: $body-color !default;
 $slider-controls-on-image-hover-color: $body-color !default;
-$slider-controls-on-image-hover-border-color: transparent !default;  $slider-controls-on-image-hover-bg: #fff !default;
+$slider-controls-on-image-hover-border-color: transparent !default;
+$slider-controls-on-image-hover-bg: rgba(#fff, .75) !default;
 
 /**
  * Share page
