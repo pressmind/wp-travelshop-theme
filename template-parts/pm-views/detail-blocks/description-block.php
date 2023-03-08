@@ -10,10 +10,13 @@
     <?php
     foreach ($args['descriptions'] as $i => $description) {
         ?>
-        <?php if (!empty($description['headline'])) { ?>
-        <h2><?php echo $description['headline']; ?></h2>
-        <?php } ?>
-        <hr/>
+        <div class="description-block description-block--<?php echo $description['type']; ?>">
+            <?php if (!empty($description['headline']) && $description['type'] !== 'accordion') { ?>
+                <div class="description-block-header">
+                    <h2 class="h3"><?php echo $description['headline']; ?></h2>
+                </div>
+            <?php } ?>
+        </div>
         <?php foreach ($description['items'] as $k => $item) { ?>
             <div class="description-block-element <?php echo $i == 0 ? 'description-block-open' : ''; ?>">
                 <h3>
