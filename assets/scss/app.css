@@ -14667,6 +14667,7 @@ footer.footer-main {
     line-height: 1;
     color: #fff;
     background-color: rgba(33, 37, 41, 0.75);
+    border-radius: 0.25rem;
     bottom: 1.25rem;
     right: 1.25rem; }
     @media (min-width: 992px) {

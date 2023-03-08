@@ -31,6 +31,8 @@
         color: #fff;
         background-color: rgba($body-color, .75);
 
+        @include border-radius($badge-border-radius);
+
         @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
         @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
       }
