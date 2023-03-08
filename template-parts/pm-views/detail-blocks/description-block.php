@@ -16,10 +16,6 @@
                     </div>
                 <?php } ?>
 
-                <pre>
-                    <?php print_r($description); ?>
-                </pre>
-
                 <?php if ( $description['type'] === 'text' ) { ?>
                     <div class="text-blocks">
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
