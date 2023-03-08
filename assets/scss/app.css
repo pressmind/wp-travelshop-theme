@@ -13988,61 +13988,70 @@ ul.checklist {
   .accordion-group .accordion-header button.accordion-toggle-all[data-toggle="close"] .txt-open {
     display: none; }
 
-.accordion-wrapper .accordion-item .accordion-toggle {
-  border: 0;
-  outline: none;
-  box-shadow: none;
-  background: transparent;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: .5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
-  .accordion-wrapper .accordion-item .accordion-toggle svg {
-    width: 1.125rem;
-    height: 1.125rem;
-    color: #5a6570;
-    transition: color .3s; }
-  .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title {
-    margin-bottom: 0 !important;
-    color: #212529;
-    transition: color .3s; }
-  @media (min-width: 992px) {
-    .accordion-wrapper .accordion-item .accordion-toggle {
-      padding-top: 1rem;
-      padding-bottom: 1rem; } }
-  .accordion-wrapper .accordion-item .accordion-toggle:hover {
-    color: rgba(33, 37, 41, 0.75); }
-    .accordion-wrapper .accordion-item .accordion-toggle:hover svg {
-      color: #212529; }
-.accordion-wrapper .accordion-item .accordion-content {
-  height: 0;
-  overflow: hidden; }
-  .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
+.accordion-wrapper .accordion-item {
+  border-bottom: 1px solid #e9ecef; }
+  .accordion-wrapper .accordion-item:first-child {
+    border-top: 1px solid #e9ecef; }
+  .accordion-wrapper .accordion-item .accordion-toggle {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: .5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; }
+    .accordion-wrapper .accordion-item .accordion-toggle svg {
+      width: 1.125rem;
+      height: 1.125rem;
+      color: #5a6570;
+      transition: color .3s; }
+    .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title {
+      margin-bottom: 0 !important;
+      color: #212529;
+      transition: color .3s; }
     @media (min-width: 992px) {
-      .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
+      .accordion-wrapper .accordion-item .accordion-toggle {
         padding-top: 1rem;
         padding-bottom: 1rem; } }
-.accordion-wrapper .accordion-item.is-open .accordion-content {
-  height: auto; }
-.accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem; }
-  @media (min-width: 992px) {
-    .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
-      padding-left: 30px;
-      padding-right: 30px; } }
-.accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-content .accordion-content--inner {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem; }
-  @media (min-width: 992px) {
-    .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-content .accordion-content--inner {
-      padding-left: 30px;
-      padding-right: 30px; } }
+    .accordion-wrapper .accordion-item .accordion-toggle:hover {
+      color: rgba(33, 37, 41, 0.75); }
+      .accordion-wrapper .accordion-item .accordion-toggle:hover svg {
+        color: #212529; }
+  .accordion-wrapper .accordion-item .accordion-content {
+    height: 0;
+    overflow: hidden; }
+    .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; }
+      @media (min-width: 992px) {
+        .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
+          padding-top: 1rem;
+          padding-bottom: 1rem; } }
+  .accordion-wrapper .accordion-item.is-open .accordion-content {
+    height: auto; }
+.accordion-wrapper.accordion-wrapper-boxed .accordion-item {
+  border-radius: 0.25rem;
+  border: 1px solid #e9ecef; }
+  .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
+    @media (min-width: 992px) {
+      .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-toggle {
+        padding-left: 30px;
+        padding-right: 30px; } }
+  .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-content .accordion-content--inner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
+    @media (min-width: 992px) {
+      .accordion-wrapper.accordion-wrapper-boxed .accordion-item .accordion-content .accordion-content--inner {
+        padding-left: 30px;
+        padding-right: 30px; } }
 
 header.header-main {
   background-color: #fff;

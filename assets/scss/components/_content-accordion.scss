@@ -33,12 +33,21 @@
 
   .accordion-item {
 
+    border-bottom: $accordion-border-width solid $accordion-border-color;
+
+    &:first-child {
+      border-top: $accordion-border-width solid $accordion-border-color;
+    }
+
     .accordion-toggle {
       @include button-reset();
 
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+      justify-content: space-between;
+
+      width: 100%;
 
       gap: .5rem;
 
@@ -86,6 +95,10 @@
 
   &.accordion-wrapper-boxed {
     .accordion-item {
+
+      @include border-radius($accordion-border-radius);
+
+      border: $accordion-border-width solid $accordion-border-color;
 
       .accordion-toggle {
         @include spacing-generator($accordion-spacers-x, 'x', 'padding');
