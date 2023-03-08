@@ -3,6 +3,10 @@ function remove_empty_paragraphs($string) {
 
     $output = '';
 
+    // every double space to single space
+    $string = str_replace('  ', ' ', $string);
+
+    // split into parts
     $flags = PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY;
     $regex = '/(<[a-z0-9=\-:." ^\/]+\/>)|(<[^\/]+>[^<\/]+<\/[a-z0-9]+>)|(<[a-z0-9=\-:." ^\/]+>)/';
     $parts = preg_split( $regex, $string, -1, $flags);
