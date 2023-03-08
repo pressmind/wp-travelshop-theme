@@ -70,9 +70,12 @@ if(!$valid){
 
                             <div class="accordion-block accordion-block--gallery accordion-block--gallery__<?php echo $key; ?>">
                                 <?php foreach($step->document_media_objects as $picture) { ?>
-                                    <a href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="itinerary-step-<?php echo $step->id; ?>">
+                                    <a class="accordion-gallery-item" href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="accordion-gallery-<?php echo $step->id; ?>">
+                                        <div class="accordion-gallery-item--image">
+
+                                        </div>
                                         <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
-                                        <div class="itinerary-step-gallery-image-copyright">
+                                        <div class="accordion-gallery-item--copyright">
                                             <?php echo $picture->copyright; ?>
                                         </div>
                                     </a>
