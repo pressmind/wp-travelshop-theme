@@ -41,7 +41,7 @@ use Pressmind\Travelshop\Template;
         <?php if ( count($args['pictures']) > 1 ) { ?>
         <button class="detail-header-gallery-grid--modal btn-sm btn btn-light">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#dots-nine"></use></svg>
-            Alle Bilder
+            Alle <?php echo count($args['pictures']); ?> Bilder
         </button>
         <?php } ?>
         <?php foreach ($args['pictures'] as $picture) { ?>
