@@ -56,7 +56,7 @@
         height: $font-size-lg;
 
         color: $accordion-toggle-icon-color;
-        transition: color .3s, translate .3s;
+        transition: color .3s, transform .3s;
       }
 
       .accordion-toggle--title {
@@ -92,7 +92,7 @@
 
       .accordion-toggle {
         svg {
-          transform: scaleX(-1);
+          transform: scaleY(-1);
         }
       }
       .accordion-content {
@@ -101,6 +101,7 @@
     }
   }
 
+  // -- boxed
   &.accordion-wrapper-boxed {
     .accordion-item {
 
@@ -114,7 +115,6 @@
 
       .accordion-content {
         .accordion-content--inner {
-          @include spacing-generator($accordion-spacers-y, 'top', 'padding');
           @include spacing-generator($accordion-spacers-x, 'x', 'padding');
         }
       }
