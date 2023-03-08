@@ -20,6 +20,8 @@
 
       // -- slider item
       .detail-header-gallery-slider-item {
+        position: relative;
+
         .detail-header-gallery-slider-item--image{
           @include aspect-ratio(16, 9);
           position: relative;
