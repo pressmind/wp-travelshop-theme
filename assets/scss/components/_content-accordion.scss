@@ -115,7 +115,7 @@
     &.is-open {
 
       .accordion-toggle {
-        svg {
+        > svg {
           transform: scaleY(-1);
         }
       }
