@@ -150,6 +150,7 @@ if(!empty($moc->karte_default[0]) && is_object($moc->karte_default[0])){
 $args['descriptions'] = [];
 $args['descriptions'][] = [
     'headline' => null,
+    'type' => 'accordion',
     'items' => [[
         'name' => !empty(strip_tags((string)$moc->beschreibung_headline_default)) ? strip_tags((string)$moc->beschreibung_headline_default) : 'Beschreibung',
         'text' => preg_replace(['/<span[^>]*?class="Head_1"[^>]*>(.*?)<\/span>/', '/\<ul\>/'], ['<h5>$1</h5>', '<ul class="checked-list">'], (string)$moc->beschreibung_text_default),
@@ -211,6 +212,7 @@ if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsve
     if(count($housings) > 0){
         $args['descriptions'][] = [
             'headline' => count($housings) == 1 ? 'Unterkunft' : 'Unterkünfte',
+            'type' => 'accordion',
             'items' => $housings
         ];
     }
@@ -241,6 +243,7 @@ if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsve
     if(count($textbricks) > 0){
         $args['descriptions'][] = [
             'headline' => count($textbricks) == 1 ? 'Textbaustein' : 'Textbausteine',
+            'type' => 'accordion',
             'items' => $textbricks
         ];
     }
@@ -259,6 +262,7 @@ if(is_array($tables) && count($tables) > 0){
     if(!empty($table_html)){
         $args['descriptions'][] = [
             'headline' => '',
+            'type' => 'accordion',
             'items' => [[
                 'name' => 'Route',
                 'text' => $table_html
@@ -303,6 +307,7 @@ if(is_array($key_value_tables) && count($key_value_tables) > 0){
     if(!empty($key_value_table_html)){
         $args['descriptions'][] = [
             'headline' => '',
+            'type' => 'accordion',
             'items' => [[
                 'name' => 'Key Value Table Beispiel',
                 'text' => $key_value_table_html

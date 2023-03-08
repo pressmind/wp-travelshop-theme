@@ -4,6 +4,9 @@
  */
 ?>
 <section class="description-block-wrapper">
+        <pre>
+            <?php print_r($args['descriptions']); ?>
+        </pre>
     <?php
     foreach ($args['descriptions'] as $i => $description) {
         ?>
