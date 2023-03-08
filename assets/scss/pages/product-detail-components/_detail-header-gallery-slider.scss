@@ -7,12 +7,13 @@
 
       .detail-header-gallery-slider--counter {
         position: absolute;
+        z-index: 2;
 
-        font-size: $font-size-sm;
+        font-size: $font-size-xs;
         padding: $badge-padding-y $badge-padding-x;
         line-height: 1;
         color: #fff;
-        background-color: rgba($body-color, .5);
+        background-color: rgba($body-color, .75);
 
         @include border-radius($badge-border-radius);
 
