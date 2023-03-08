@@ -43,7 +43,7 @@
     }
 
     &:not([disabled]) {
-      &:hover, &:focus, &:active {
+      &:hover {
         color: $slider-controls-hover-color;
         background-color: $slider-controls-hover-bg;
 
@@ -108,7 +108,7 @@
     }
 
     &:not([disabled]) {
-      &:hover, &:focus, &:active {
+      &:hover {
         color: $slider-controls-on-image-hover-color;
         background-color: $slider-controls-on-image-hover-bg;
 

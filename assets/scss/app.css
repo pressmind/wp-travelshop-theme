@@ -11376,7 +11376,7 @@ hr + .content-block {
     .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg {
       width: 1.125rem;
       height: 1.125rem; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):focus, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):active {
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover {
       color: #fff;
       background-color: #007bff;
       border-color: #007bff; }
@@ -11404,7 +11404,7 @@ hr + .content-block {
   color: #fff;
   background-color: rgba(33, 37, 41, 0.25);
   border-width: 0; }
-  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):focus, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):active {
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover {
     color: #212529;
     background-color: #fff; }
 .icon-link {
