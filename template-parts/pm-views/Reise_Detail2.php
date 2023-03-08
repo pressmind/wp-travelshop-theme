@@ -493,7 +493,7 @@ $args['breadcrumb'][] = $tmp;
                         <?php } ?>
                         <?php if (!empty($args['usps'])) { ?>
                             <div class="detail-usps">
-                                <?php echo $args['usps']; ?>
+                                <?php echo checklist_formatter($args['usps'], true); ?>
                             </div>
                         <?php } ?>
                         <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
