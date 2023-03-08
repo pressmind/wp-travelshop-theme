@@ -150,7 +150,7 @@ if(!empty($moc->karte_default[0]) && is_object($moc->karte_default[0])){
 $args['descriptions'] = [];
 $args['descriptions'][] = [
     'headline' => null,
-    'type' => 'accordion',
+    'type' => 'teaser',
     'items' => [[
         'name' => !empty(strip_tags((string)$moc->beschreibung_headline_default)) ? strip_tags((string)$moc->beschreibung_headline_default) : 'Beschreibung',
         'text' => preg_replace(['/<span[^>]*?class="Head_1"[^>]*>(.*?)<\/span>/', '/\<ul\>/'], ['<h5>$1</h5>', '<ul class="checked-list">'], (string)$moc->beschreibung_text_default),
