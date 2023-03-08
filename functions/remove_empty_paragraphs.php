@@ -7,6 +7,7 @@ function remove_empty_paragraphs($string) {
     $string = str_replace('  ', ' ', $string);
     $string = str_replace( '<p></p>', '', $string);
 
+    echo "hi";
     // split into parts
     $flags = PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY;
     $regex = '/(<[a-z0-9=\-:." ^\/]+\/>)|(<[^\/]+>[^<\/]+<\/[a-z0-9]+>)|(<[a-z0-9=\-:." ^\/]+>)/';
