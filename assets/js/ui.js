@@ -460,13 +460,13 @@ jQuery(function ($) {
     if ( $('.detail-header-gallery-grid--modal').length > 0) {
         function addGalleryClasses() {
             console.log('open');
-            $('.detail-gallery-overlay').addClass('is--show');
+            $('.detail-gallery-overlay').addClass('open');
             $('body').addClass('modal-open');
         }
 
         function removeGalleryClasses() {
             console.log('close');
-            $('.detail-gallery-overlay').removeClass('is--show');
+            $('.detail-gallery-overlay').removeClass('open');
             $('body').removeClass('modal-open');
         }
         $('.detail-header-gallery-grid--modal').on('click', function () {

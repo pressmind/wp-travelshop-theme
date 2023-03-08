@@ -13,7 +13,7 @@
 
   z-index: $zindex-modal;
 
-  &.show {
+  &.open {
     opacity: 1;
     pointer-events: auto;
   }
