@@ -26,6 +26,7 @@
 
     .detail-header-gallery-slider-item--copyright {
       @extend %copyright-on-image;
+      @extend %copyright-on-image-vertical;
 
       @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
       @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
