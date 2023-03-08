@@ -7,6 +7,8 @@ function remove_empty_paragraphs($string) {
     $regex = '/(<[a-z0-9=\-:." ^\/]+\/>)|(<[^\/]+>[^<\/]+<\/[a-z0-9]+>)|(<[a-z0-9=\-:." ^\/]+>)/';
     $parts = preg_split( $regex, $string, -1, $flags);
 
+    print_r($parts);
+
     // -- re arrange parts
     foreach ( $parts as $part ) {
         $thisPart = trim($part);
