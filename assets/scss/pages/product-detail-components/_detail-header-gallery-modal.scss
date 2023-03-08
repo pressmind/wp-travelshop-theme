@@ -26,6 +26,17 @@
   button.detail-gallery-overlay-close {
     @include button-reset();
 
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    z-index: 10;
+
+    @include media-breakpoint-up(lg) {
+      top: $grid-gutter-width;
+      right: $grid-gutter-width;
+    }
+
     // -- use variables of slider controls for this one
     display: flex;
     align-items: center;
@@ -71,6 +82,17 @@
       pointer-events: none;
       cursor: not-allowed;
       opacity: $slider-controls-disabled-opacity;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: $slider-controls-large-size;
+      height: $slider-controls-large-size;
+      flex: 0 0 $slider-controls-large-size;
+
+      > svg {
+        width: $slider-controls-large-icon-size;
+        height: $slider-controls-large-icon-size;
+      }
     }
   }
 }

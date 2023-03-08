@@ -14688,6 +14688,10 @@ footer.footer-main {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
     display: flex;
     align-items: center;
     line-height: 0;
@@ -14701,6 +14705,10 @@ footer.footer-main {
     flex: 0 0 2rem;
     max-width: 100%;
     border-radius: 50%; }
+    @media (min-width: 992px) {
+      .detail-gallery-overlay button.detail-gallery-overlay-close {
+        top: 30px;
+        right: 30px; } }
     .detail-gallery-overlay button.detail-gallery-overlay-close > svg {
       width: 1.125rem;
       height: 1.125rem; }
@@ -14711,6 +14719,14 @@ footer.footer-main {
       pointer-events: none;
       cursor: not-allowed;
       opacity: 0.25; }
+    @media (min-width: 992px) {
+      .detail-gallery-overlay button.detail-gallery-overlay-close {
+        width: 2.5rem;
+        height: 2.5rem;
+        flex: 0 0 2.5rem; }
+        .detail-gallery-overlay button.detail-gallery-overlay-close > svg {
+          width: 1.25rem;
+          height: 1.25rem; } }
 
 .detail-header-info {
   background-color: #fff;
