@@ -18,6 +18,9 @@
         @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
       }
 
+      // slider controls if initialized
+      @extend %slider-controls-if-initialized;
+
       .detail-header-gallery-slider--counter {
         position: absolute;
         z-index: 2;

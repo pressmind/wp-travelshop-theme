@@ -62,6 +62,17 @@
   }
 }
 
+%slider-controls-if-initialized {
+  .slider-controls {
+    transition: opacity .3s;
+    opacity: 0;
+  }
+
+  .tns-slider + .slider-controls {
+    opacity: 1;
+  }
+}
+
 // -- controls lg
 @include placeholder('slider-controls-large') {
   > button {

@@ -11385,6 +11385,12 @@ hr + .content-block {
       cursor: not-allowed;
       opacity: 0.25; }
 
+.detail-header-gallery .detail-header-gallery-slider .slider-controls {
+  transition: opacity .3s;
+  opacity: 0; }
+.detail-header-gallery .detail-header-gallery-slider .tns-slider + .slider-controls {
+  opacity: 1; }
+
 @media (min-width: 992px) {
   .detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
     width: 2.5rem;

@@ -11,9 +11,6 @@ use Pressmind\Travelshop\Template;
         <div class="detail-header-gallery-slider--counter">
             <span class="current-image">1</span> / <span class="total-images"><?php echo count($args['pictures']); ?></span>
         </div>
-        <?php
-        load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, $args);
-        ?>
         <div class="detail-header-gallery-slider--inner">
             <?php foreach ($args['pictures'] as $picture) { ?>
                 <div class="detail-header-gallery-slider-item">
@@ -27,6 +24,10 @@ use Pressmind\Travelshop\Template;
                 </div>
             <?php } ?>
         </div>
+
+        <?php
+        load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, $args);
+        ?>
     </div>
     <?php
     $i = 0;
