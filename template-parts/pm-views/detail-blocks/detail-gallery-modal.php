@@ -7,11 +7,11 @@
     <button class="detail-gallery-overlay-close">
         <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
     </button>
-
-    <?php
-    load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, $args);
-    ?>
     <div class="detail-gallery-overlay-slider">
+
+        <?php
+        load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, $args);
+        ?>
         <div class="detail-gallery-overlay-inner" id="detail-gallery-overlay-inner">
             <?php
             foreach ($args['pictures'] as $picture) {

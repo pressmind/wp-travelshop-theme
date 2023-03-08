@@ -45,8 +45,8 @@
     pointer-events: auto;
 
     transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
-    background-color: $slider-controls-on-image-light-bg;
-    color: $slider-controls-on-image-light-color;
+    background-color: $slider-controls-on-image-bg;
+    color: $slider-controls-on-image-color;
 
     width: $slider-controls-size;
     height: $slider-controls-size;
@@ -55,10 +55,10 @@
 
     @include border-radius($slider-controls-border-radius);
 
-    @if ( $slider-controls-on-image-light-border-width != 0 ) {
-      border-width: $slider-controls-on-image-light-border-width;
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-width: $slider-controls-on-image-border-width;
       border-style: solid;
-      border-color: $slider-controls-on-image-light-border-color;
+      border-color: $slider-controls-on-image-border-color;
     }
 
     > svg {
@@ -68,11 +68,11 @@
 
     &:not([disabled]) {
       &:hover {
-        color: $slider-controls-on-image-light-hover-color;
-        background-color: $slider-controls-on-image-light-hover-bg;
+        color: $slider-controls-on-image-hover-color;
+        background-color: $slider-controls-on-image-hover-bg;
 
-        @if ( $slider-controls-on-image-light-border-width != 0 ) {
-          border-color: $slider-controls-on-image-light-hover-border-color;
+        @if ( $slider-controls-on-image-border-width != 0 ) {
+          border-color: $slider-controls-on-image-hover-border-color;
         }
       }
     }
@@ -92,6 +92,33 @@
       > svg {
         width: $slider-controls-large-icon-size;
         height: $slider-controls-large-icon-size;
+      }
+    }
+  }
+
+  // -- slider
+  .detail-gallery-overlay-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -40px;
+    height: 70vh;
+    left: 0;
+    right: 0;
+    bottom: auto;
+
+    .slider-controls {
+      @extend %slider-controls;
+      @extend %slider-controls-on-image;
+      @extend %slider-controls-inner;
+      @extend %slider-controls-large-up-lg;
+
+      left: 1rem;
+      right: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        right: $grid-gutter-width;
+        left: $grid-gutter-width;
       }
     }
   }

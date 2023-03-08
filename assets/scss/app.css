@@ -11345,13 +11345,13 @@ hr + .content-block {
  * Placeholder for slider controls
  * for usage on various elements
  */
-.detail-header-gallery .detail-header-gallery-slider .slider-controls {
+.detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   pointer-events: none; }
-  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -11373,14 +11373,14 @@ hr + .content-block {
     border-width: 1px;
     border-style: solid;
     border-color: #e9ecef; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg {
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
       width: 1.125rem;
       height: 1.125rem; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover {
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
       color: #fff;
       background-color: #007bff;
       border-color: #007bff; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled] {
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
       pointer-events: none;
       cursor: not-allowed;
       opacity: 0.25; }
@@ -11392,25 +11392,25 @@ hr + .content-block {
   opacity: 1; }
 
 @media (min-width: 992px) {
-  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
     width: 2.5rem;
     height: 2.5rem;
     flex: 0 0 2.5rem; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg {
+    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
       width: 1.25rem;
       height: 1.25rem; } }
-.detail-header-gallery .detail-header-gallery-slider .slider-controls {
+.detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 30px;
   right: 30px;
   z-index: 2; }
-.detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
+.detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
   color: #fff;
   background-color: rgba(33, 37, 41, 0.4);
   border-width: 0; }
-  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover {
+  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
     color: #212529;
     background-color: #fff; }
 .icon-link {
@@ -14727,6 +14727,22 @@ footer.footer-main {
         .detail-gallery-overlay button.detail-gallery-overlay-close > svg {
           width: 1.25rem;
           height: 1.25rem; } }
+  .detail-gallery-overlay .detail-gallery-overlay-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -40px;
+    height: 70vh;
+    left: 0;
+    right: 0;
+    bottom: auto; }
+    .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
+      left: 1rem;
+      right: 1rem; }
+      @media (min-width: 992px) {
+        .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
+          right: 30px;
+          left: 30px; } }
 
 .detail-header-info {
   background-color: #fff;
