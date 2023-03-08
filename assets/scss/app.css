@@ -13980,9 +13980,9 @@ ul.checklist {
   gap: .5rem;
   align-items: baseline;
   justify-content: space-between; }
-  .accordion-group .accordion-header button.accordion-toggle[data-toggle="open"] .txt-close {
+  .accordion-group .accordion-header button.accordion-toggle-all[data-toggle="open"] .txt-close {
     display: none; }
-  .accordion-group .accordion-header button.accordion-toggle[data-toggle="close"] .txt-open {
+  .accordion-group .accordion-header button.accordion-toggle-all[data-toggle="close"] .txt-open {
     display: none; }
 
 .accordion-wrapper .accordion-item .accordion-content {

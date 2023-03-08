@@ -441,9 +441,27 @@ jQuery(function ($) {
 
     let accToggle = $('.accordion-toggle');
     let accOpenClass = 'is-open';
-    // let accToggleAll = $('.accordion-toggle-all button');
+    let accToggleAll = $('button.accordion-toggle-all');
 
     if ( accToggle.length > 0 ) {
+
+        accToggleAll.on('click', function(e) {
+            e.preventDefault();
+
+            var thisAccGroup = $(this).parents('.accordion-group');
+
+            if ( $(this).data('toggle') === 'open' ) {
+                // open all
+                thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click');
+                $(this).data('toggle', 'close');
+            } else {
+                // close all
+                thisAccGroup.find('.accordion-item.is-open .accordion-toggle').trigger('click');
+                $(this).data('toggle', 'open');
+            }
+
+            e.stopPropagation();
+        })
 
         // accToggleAll.on('click', function(e) {
         //     e.preventDefault();

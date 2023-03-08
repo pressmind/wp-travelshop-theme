@@ -12,7 +12,7 @@
     justify-content: space-between;
 
     // -- toggle button
-    button.accordion-toggle {
+    button.accordion-toggle-all {
       &[data-toggle="open"] {
         .txt-close {
           display: none;
