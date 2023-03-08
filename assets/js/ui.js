@@ -441,12 +441,12 @@ jQuery(function ($) {
 
     let accToggle = $('.accordion-toggle');
     let accOpenClass = 'is-open';
-    let accToggleAll = 'button.accordion-toggle-all';
+    let accToggleAll = $('button.accordion-toggle-all');
 
     if ( accToggle.length > 0 ) {
 
-        $('body').on('click', accToggleAll, function(e) {
-            e.preventDefault();
+        accToggleAll.on('click', function(e) {
+            console.log('hi');
 
             var thisAccGroup = $(this).parents('.accordion-group');
 
