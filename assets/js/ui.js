@@ -304,7 +304,7 @@ jQuery(function ($) {
                 if ( $(imageSliderCounter).length > 0 ) {
                     var imageSliderCounterFunction = function( info, eventName ) {
                         // direct access to info object
-                        console.log(info.event.type, info.container.id);
+                        console.log(info, info.container.id);
                     }
 
                     window[imageSliderId].events.on('indexChanged', imageSliderCounterFunction);
