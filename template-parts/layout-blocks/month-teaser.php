@@ -87,7 +87,7 @@ if (empty($travel_months)) {
                                 'date' => $item['from']
                             ]);
                             ?>
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#carent-right-bold"></use></svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
 
                         </div>
                     </a>
