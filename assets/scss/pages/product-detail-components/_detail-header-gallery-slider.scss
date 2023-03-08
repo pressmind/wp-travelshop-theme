@@ -5,6 +5,21 @@
       @include border-radius($detail-header-gallery-border-radius);
       overflow: hidden;
 
+      .detail-header-gallery-slider--counter {
+        position: absolute;
+
+        font-size: $font-size-sm;
+        padding: $badge-padding-y $badge-padding-x;
+        line-height: 1;
+        color: #fff;
+        background-color: rgba($body-color, .5);
+
+        @include border-radius($badge-border-radius);
+
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
+      }
+
       // -- slider item
       .detail-header-gallery-slider-item {
         .detail-header-gallery-slider-item--image{
@@ -18,6 +33,9 @@
 
         .detail-header-gallery-slider-item--copyright {
           @extend %copyright-on-image;
+
+          @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
+          @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
         }
       }
 
