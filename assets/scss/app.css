@@ -14481,6 +14481,12 @@ footer.footer-main {
 
 .detail-header-gallery .detail-header-gallery-slider {
   overflow: hidden; }
+  @media (max-width: 575.98px) {
+    .detail-header-gallery .detail-header-gallery-slider {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%); } }
   .detail-header-gallery .detail-header-gallery-slider .detail-header-gallery-slider--counter {
     position: absolute;
     z-index: 2;
@@ -14621,7 +14627,7 @@ footer.footer-main {
           right: 1.625rem; } }
       @media (max-width: 575.98px) {
         .detail-header-info .detail-header-info-top .add-to-wishlist {
-          right: 0.25rem; } }
+          right: -0.25rem; } }
     .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
       font-size: 0.875rem;
       margin-bottom: 0.25rem; }

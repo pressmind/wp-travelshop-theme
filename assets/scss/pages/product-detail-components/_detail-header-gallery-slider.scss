@@ -4,6 +4,14 @@
     .detail-header-gallery-slider {
       overflow: hidden;
 
+      // -- full width
+      @include media-breakpoint-down(xs) {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
       .detail-header-gallery-slider--counter {
         position: absolute;
         z-index: 2;

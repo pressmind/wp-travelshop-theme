@@ -64,9 +64,9 @@
           }
         }
 
-
+        // mobile positioning
         @include media-breakpoint-down(xs) {
-          right: (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2);
+          right: (($add-to-wishlist-icon-size - $add-to-wishlist-size) / 2);
         }
 
         z-index: 2;
