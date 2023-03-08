@@ -49,6 +49,11 @@ $booking-gray: $gray-900 !default;
 $booking-gray-color: $white !default;
 
 /**
+ * Rating color
+ */
+$rating-color: $warning !default;
+
+/**
  * Body
  */
 $body-color-light: lighten($body-color, 25%) !default;

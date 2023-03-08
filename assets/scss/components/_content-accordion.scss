@@ -63,6 +63,20 @@
         margin-bottom: 0 !important;
         color: $accordion-toggle-color;
         transition: color .3s;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: .25rem;
+
+        .accordion-toggle--rating {
+          display: flex;
+          flex-wrap: nowrap;
+          color: $rating-color;
+
+          @include spacing-generator($h5-font-sizes, 'around', 'width');
+          @include spacing-generator($h5-font-sizes, 'around', 'height');
+        }
       }
 
       @include spacing-generator($accordion-spacers-y, 'y', 'padding');
