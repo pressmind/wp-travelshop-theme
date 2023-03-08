@@ -1,8 +1,5 @@
 <?php
 function remove_empty_paragraphs($string) {
-    echo "<pre>";
-        print_r($string);
-    echo "</pre>";
 
     $output = '';
 
