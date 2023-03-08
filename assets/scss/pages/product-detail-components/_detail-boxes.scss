@@ -59,6 +59,7 @@
 
   // -- some predefined content variants
 
+  // trust box
   &.detail-box-trust {
     .trust-wrapper {
       display: flex;
@@ -125,4 +126,13 @@
       }
     }
   }
+
+  // contact box
+  .detail-box-contact .detail-contact-wrapper,
+  .detail-contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+  }
+
 }

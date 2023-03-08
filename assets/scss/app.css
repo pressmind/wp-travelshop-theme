@@ -14364,6 +14364,11 @@ footer.footer-main {
     border-radius: 50%; }
   .detail-box.detail-box-trust.detail-box-success:not(.detail-box-bordered) .trust-smiley {
     color: #fff; }
+  .detail-box .detail-box-contact .detail-contact-wrapper,
+  .detail-box .detail-contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem; }
 
 .detail-header-gallery-grid .detail-header-gallery-grid-item .detail-header-gallery-slider-item--copyright {
   position: absolute;
