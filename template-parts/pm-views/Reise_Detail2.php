@@ -489,12 +489,10 @@ $args['breadcrumb'][] = $tmp;
                     <div class="col-12 col-lg-7 col-xl-8">
                         <h2><?php echo $args['headline']; ?></h2>
                         <?php if (!empty($args['subline'])) { ?>
-                            <p class="mb-0"><strong><?php echo $args['subline']; ?></strong></p>
+                            <p><strong><?php echo $args['subline']; ?></strong></p>
                         <?php } ?>
                         <?php if (!empty($args['usps'])) { ?>
-                            <div class="detail-usps">
-                                <?php echo checklist_formatter($args['usps'], true); ?>
-                            </div>
+                            <?php echo checklist_formatter($args['usps'], true); ?>
                         <?php } ?>
                         <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
                             <p><?php echo $args['intro']; ?></p>
