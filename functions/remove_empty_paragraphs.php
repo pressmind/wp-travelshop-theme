@@ -7,6 +7,7 @@ function remove_empty_paragraphs($string) {
     $string = str_replace('  ', ' ', $string);
     $string = str_replace( '<p></p>', '', $string);
     $string = str_replace( '<p> </p>', '', $string);
+    $string = str_replace( '<p>&nbsp;</p>', '', $string);
 
     echo "hi";
     // split into parts
