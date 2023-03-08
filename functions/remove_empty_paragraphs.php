@@ -9,6 +9,9 @@ function remove_empty_paragraphs($string) {
     $stringParts = explode('<p>', str_replace('</p>', '', $string));
 
     foreach ( $stringParts as $part ) {
+        echo "<pre>";
+        print_R($part);
+        echo "</pre>";
         if ( substr($part, 0, 1) === '<' ) {
             $output .= $part;
         } else {
