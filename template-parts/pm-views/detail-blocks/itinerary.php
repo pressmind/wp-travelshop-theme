@@ -42,7 +42,7 @@ if(!$valid){
     <div class="accordion-header">
         <h2 class="h3">Reiseverlauf</h2>
 
-        <button class="accordion-toggle btn btn-link py-0 px-0" data-toggle="open">
+        <button class="accordion-toggle btn btn-sm btn-link btn-link-light py-0 px-0" data-toggle="open">
             Alle <span class="txt-open">öffnen</span><span class="txt-close">schließen</span>
         </button>
     </div>
