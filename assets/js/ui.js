@@ -304,8 +304,7 @@ jQuery(function ($) {
                 if ( $(imageSliderCounter).length > 0 ) {
 
                     window[imageSliderId].events.on('indexChanged', function( info, eventName ) {
-                        console.log(info);
-                        $(imageSliderCounter).text(info.indexCached);
+                        $(imageSliderCounter).text(info.displayIndex);
                     });
                 }
             }
