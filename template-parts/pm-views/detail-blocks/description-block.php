@@ -12,56 +12,152 @@
                 <div class="description-block-header">
                     <h2 class="h3"><?php echo $description['headline']; ?></h2>
                 </div>
-            <?php } ?>
-        </div>
-        <?php foreach ($description['items'] as $k => $item) { ?>
-            <div class="description-block-element <?php echo $i == 0 ? 'description-block-open' : ''; ?>">
-                <h3>
-                    <div class="description-block-element-title">
-                        <?php if (!empty($item['name'])) { ?>
-                        <span><?php echo $item['name']; ?></span>
-                        <?php } ?>
-                        <?php
-                        if (!empty($item['icons'])) {
-                            ?>
-                            <div class="description-block-star-rating">
-                                <?php echo $item['icons']; // svg or img ?>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="icon icon-tabler icon-tabler-plus travelshop-itinerary-step-open" width="30" height="30"
-                         viewBox="0 0 24 24" stroke-width="2.5" stroke="#06f" fill="none" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <line x1="12" y1="5" x2="12" y2="19"/>
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                    </svg>
-                </h3>
-                <div class="description-block-element-more">
-                    <?php if (!empty($item['text'])) { ?>
-                        <?php echo $item['text']; ?>
-                    <?php } ?>
-                    <?php if (!empty($item['pictures'])) { ?>
-                    <div class="description-block-element-gallery description-block-gallery-<?php echo $k; ?>">
-                        <?php foreach ($item['pictures'] as $picture) { ?>
-                            <a href="<?php echo $picture['url_detail']; ?>"
-                               data-lightbox="description-block-gallery-<?php echo $k; ?>">
-                                <img src="<?php echo $picture['url_teaser']; ?>"
-                                     alt="<?php echo $picture['alt']; ?>"/>
-                                <div class="description-block-element-gallery-copyright">
-                                    <?php echo $picture['copyright']; ?>
+
+                <?php if ( $description['type'] == 'teaser' ) { ?>
+                    <div class="teaser-blocks">
+                        <?php foreach ( $description['items'] as $k => $item ) { ?>
+                            <div class="teaser-block teaser-block--<?php echo $i; ?>-<?php echo $k; ?>">
+                                <div class="teaser-block-preview">
+                                    <?php if ( !empty($item['name']) ) { ?>
+                                        <div class="teaser-block-title">
+                                            <strong><?php echo $item['name']; ?></strong>
+                                        </div>
+                                    <?php } ?>
+
+                                    <?php if (!empty($item['text'])) { ?>
+                                        <div class="teaser-block-text">
+                                            <?php echo $item['text']; ?>
+                                        </div>
+                                    <?php } ?>
+
+                                    <?php
+                                    // render read-more link
+                                    ?>
+                                    <div class="teaser-block-toggle">
+                                        <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
+                                            Mehr anzeigen
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
+                                        </button>
+                                    </div>
+
+                                    <div class="teaser-block-modal">
+                                        <div class="teaser-block-modal-inner">
+                                            <div class="teaser-block-modal-content">
+                                                <div class="teaser-block-modal-header">
+                                                    <?php if ( !empty($item['name']) ) { ?>
+                                                    <div class="h4"><?php echo $item['name']; ?></div>
+                                                    <?php } ?>
+
+                                                    <button class="teaser-block-modal-close" data-type="close-popup" type="button">
+                                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                                    </button>
+                                                </div>
+
+                                                <div class="teaser-block-modal-body">
+                                                    <?php if ( !empty($item['name']) ) { ?>
+                                                        <div class="teaser-block-title">
+                                                            <strong><?php echo $item['name']; ?></strong>
+                                                        </div>
+                                                    <?php } ?>
+
+                                                    <?php if (!empty($item['text'])) { ?>
+                                                        <div class="teaser-block-text">
+                                                            <?php echo $item['text']; ?>
+                                                        </div>
+                                                    <?php } ?>
+
+                                                    <?php if (!empty($item['pictures'])) { ?>
+                                                        <div class="teaser-block-gallery teaser-block-gallery--<?php echo $k; ?>">
+                                                            <?php foreach ($item['pictures'] as $picture) { ?>
+                                                                <a class="teaser-block-gallery-item" href="<?php echo $picture['url_detail']; ?>"
+                                                                   data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
+                                                                    <div class="teaser-block-gallery-item--image">
+                                                                        <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                             alt="<?php echo $picture['alt']; ?>"/>
+                                                                    </div>
+                                                                    <div class="teaser-block-gallery-item--copyright">
+                                                                        <?php echo $picture['copyright']; ?>
+                                                                    </div>
+                                                                </a>
+                                                            <?php } ?>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
                         <?php } ?>
                     </div>
+                <?php } ?>
+            <?php } ?>
+
+            <?php // render accordion if type accordion ?>
+            <?php if ( $description['type'] == 'accordion' ) { ?>
+                <div class="accordion-group">
+                    <?php if (!empty($description['headline']) && $description['type'] !== 'accordion') { ?>
+                        <div class="accordion-header">
+                            <h2 class="h3"><?php echo $description['headline']; ?></h2>
+                        </div>
+                    <?php } ?>
+
+                    <?php if ( count($description['items']) > 0 ) { ?>
+                        <div class="accordion-wrapper">
+                            <?php foreach ( $description['items'] as $k => $item ) { ?>
+                            <div class="accordion-item">
+                                <button class="accordion-toggle">
+                                    <div class="accordion-toggle--title">
+                                        <?php echo $item['name']; ?>
+                                    </div>
+
+                                    <?php
+                                    if (!empty($item['icons'])) {
+                                        ?>
+                                        <div class="accordion-toggle--rating">
+                                            <?php echo $item['icons']; // svg or img ?>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+                                </button>
+
+                                <div class="accordion-content">
+                                    <div class="accordion-content--inner">
+                                        <?php if (!empty($item['text'])) { ?>
+                                            <div class="accordion-block accordion-block--text">
+                                                <?php echo $item['text']; ?>
+                                            </div>
+                                        <?php } ?>
+
+
+                                        <?php if (!empty($item['pictures'])) { ?>
+                                            <div class="accordion-block accordion-block--gallery accordion-block--gallery__<?php echo $k; ?>">
+                                                <?php foreach ($item['pictures'] as $picture) { ?>
+                                                    <a class="accordion-gallery-item" href="<?php echo $picture['url_detail']; ?>"
+                                                       data-lightbox="accordion-gallery-<?php echo $k; ?>">
+                                                        <div class="accordion-gallery-item--image">
+                                                            <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                 alt="<?php echo $picture['alt']; ?>"/>
+                                                        </div>
+                                                        <div class="accordion-gallery-item--copyright">
+                                                            <?php echo $picture['copyright']; ?>
+                                                        </div>
+                                                    </a>
+                                                <?php } ?>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
                     <?php } ?>
                 </div>
-            </div>
-            <hr/>
-        <?php } ?>
+            <?php } ?>
+        </div>
         <?php
     }
     ?>
