@@ -7,7 +7,7 @@ use Pressmind\Travelshop\Template;
 ?>
 <div class="detail-header-gallery">
     <div class="detail-header-badge">NEU</div>
-    <div class="detail-header-gallery-slider image-slider" id="detailHeaderGallerySlider" data-slider-container=".detail-header-gallery-slider--inner" data-nav="true" data-counter=".detail-header-gallery-slider--counter .current-image">
+    <div class="detail-header-gallery-slider image-slider" id="detailHeaderGallerySlider" data-slider-container=".detail-header-gallery-slider--inner" data-nav="true" data-nav-position="top" data-counter=".detail-header-gallery-slider--counter .current-image">
         <div class="detail-header-gallery-slider--counter">
             <span class="current-image">1</span> / <span class="total-images"><?php echo count($args['pictures']); ?></span>
         </div>
