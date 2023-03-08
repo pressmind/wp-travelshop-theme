@@ -215,32 +215,51 @@ jQuery(function ($) {
         }
     });
 
+    // -------------------------------------
+    // --- init for various image slider
+    // -------------------------------------
+
+    var imageSlider = $('.image-slider');
+    var imageSliderContainer = '';
+    var imageSliderId = '';
+    var imageSliderSpeed = 300;
+    var imageSliderAutoplay = false;
+    var imageSliderAutoplayTimeout = 5000;
+    var imageSliderControlsContainer = '.slider-controls';
+
+    if ( imageSlider.length > 0 ) {
+        imageSlider.forEach(function(element, index) {
+            imageSliderId = $(this).attr('id');
+            imageSliderContainer = '';
+        });
+    }
+
     // --------------------------------
     // --- Detail Image Slider
     // --------------------------------
-    if ($('.image-slider').length > 0) {
-        var slider = tns({
-            container: '.image-slider',
-            items: 1,
-            mouseDrag: true,
-            navContainer: '.image-slider',
-            navAsThumbnails: true,
-            edgePadding: 15,
-            responsive: {
-                992: {
-                    disable: true
-                }
-            },
-            controlsText: ['<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#06f" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
-                '  <path stroke="none" d="M0 0h24v24H0z"/>\n' +
-                '  <polyline points="15 6 9 12 15 18" />\n' +
-                '</svg>', '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#06f" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
-                '  <path stroke="none" d="M0 0h24v24H0z"/>\n' +
-                '  <polyline points="9 6 15 12 9 18" />\n' +
-                '</svg>'
-            ]
-        })
-    }
+    // if ($('.image-slider').length > 0) {
+    //     var slider = tns({
+    //         container: '.image-slider',
+    //         items: 1,
+    //         mouseDrag: true,
+    //         navContainer: '.image-slider',
+    //         navAsThumbnails: true,
+    //         edgePadding: 15,
+    //         responsive: {
+    //             992: {
+    //                 disable: true
+    //             }
+    //         },
+    //         controlsText: ['<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#06f" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
+    //             '  <path stroke="none" d="M0 0h24v24H0z"/>\n' +
+    //             '  <polyline points="15 6 9 12 15 18" />\n' +
+    //             '</svg>', '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#06f" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
+    //             '  <path stroke="none" d="M0 0h24v24H0z"/>\n' +
+    //             '  <polyline points="9 6 15 12 9 18" />\n' +
+    //             '</svg>'
+    //         ]
+    //     })
+    // }
 
     // -----------------------------------------------
     // -- Itinerary Steps Toggle
@@ -512,31 +531,6 @@ jQuery(function ($) {
             }
         }
     };
-
-
-
-
-    // -----------------------
-    // --- Content slider
-    // -----------------------
-
-    if ($('.content-block-content-slider .content-slider--inner').length > 0 && $('.content-block-content-slider .content-slider--inner .content-slider--item').length > 1) {
-
-        var contentSlider = tns({
-            container: '.content-slider--inner',
-            items: 1,
-            slideBy: 'page',
-            autoplay: true,
-            autoplayTimeout: 7500,
-            autoplayButton: false,
-            autoplayHoverPause: true,
-            prevButton: '.prev-button',
-            nextButton: '.next-button',
-            nav: false,
-            autoHeight: false, // if this is set to true, we have a white space on load effect... perhaps a bug in the tiny-slider
-        });
-
-    }
 
     // -----------------------
     // --- Booking Calendar Hover
