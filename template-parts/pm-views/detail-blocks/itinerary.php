@@ -65,16 +65,15 @@ if(!$valid){
                     <div class="accordion-content">
                         <div class="accordion-content--inner">
                             <div class="accordion-block accordion-block--text">
-                                <?php echo $section->content->description; ?>
+                                <?php echo remove_empty_paragraphs($section->content->description); ?>
                             </div>
 
                             <div class="accordion-block accordion-block--gallery accordion-block--gallery__<?php echo $key; ?>">
                                 <?php foreach($step->document_media_objects as $picture) { ?>
                                     <a class="accordion-gallery-item" href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="accordion-gallery-<?php echo $step->id; ?>">
                                         <div class="accordion-gallery-item--image">
-
+                                            <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
                                         </div>
-                                        <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
                                         <div class="accordion-gallery-item--copyright">
                                             <?php echo $picture->copyright; ?>
                                         </div>
