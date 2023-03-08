@@ -14369,6 +14369,9 @@ footer.footer-main {
     display: flex;
     flex-direction: row;
     gap: .5rem; }
+    .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link,
+    .detail-box .detail-contact-wrapper .detail-contact-hotline a.hotline-link {
+      display: block; }
     .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link,
     .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link {
       display: block;

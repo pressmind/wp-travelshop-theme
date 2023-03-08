@@ -134,6 +134,13 @@
     flex-direction: row;
     gap: .5rem;
 
+    // -- contact
+    .detail-contact-hotline {
+      a.hotline-link {
+        display: block;
+      }
+    }
+
     // -- whastapp
     .detail-contact-whatsapp {
       a.whatsapp-link {
