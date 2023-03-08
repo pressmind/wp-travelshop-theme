@@ -222,6 +222,9 @@ jQuery(function ($) {
     var imageSlider = $('.image-slider');
     var imageSliderContainer = '';
     var imageSliderId = '';
+    var imageSliderLoop = false;
+    var imageSliderNav = false;
+    var imageSliderNavPosition = "bottom";
     var imageSliderSpeed = 300;
     var imageSliderAutoplay = false;
     var imageSliderAutoplayTimeout = 5000;
@@ -230,7 +233,75 @@ jQuery(function ($) {
     if ( imageSlider.length > 0 ) {
         imageSlider.forEach(function(element, index) {
             imageSliderId = $(this).attr('id');
-            imageSliderContainer = '';
+
+            // -- slider container is REQUIRED
+            imageSliderContainer = $(this).data('slider-container');
+            imageSliderContainer = '#' + imageSliderId + ' ' + imageSliderContainer;
+
+            // -- check if nav is set
+            if ( typeof $(this).data('nav') !== 'undefined' ) {
+                if ( $(this).data('nav') === 'true' ) {
+                    imageSliderNav = true;
+                } else {
+                    imageSliderNav = false;
+                }
+            }
+
+            // -- check if speed is set
+            if ( typeof $(this).data('speed') !== 'undefined' && $(this).data('speed').trim() ) {
+                imageSliderSpeed = parseInt($(this).data('speed'));
+            }
+
+            // -- check if nav-position is set
+            if ( typeof $(this).data('nav-position') !== 'undefined' && $(this).data('nav-position').trim() ) {
+                imageSliderNavPosition = $(this).data('nav-position');
+            }
+
+            // -- check if loop is set
+            if ( typeof $(this).data('loop') !== 'undefined' && $(this).data('loop').trim() ) {
+                if ( $(this).data('loop') === 'true' ) {
+                    imageSliderLoop = true;
+                } else {
+                    imageSliderLoop = false;
+                }
+            }
+
+            // -- check if autoplay is set
+            if ( typeof $(this).data('autoplay') !== 'undefined' && $(this).data('autoplay').trim() ) {
+                if ( $(this).data('autoplay') === 'true' ) {
+                    imageSliderAutoplay = true;
+                } else {
+                    imageSliderAutoplay = false;
+                }
+            }
+
+            // -- check if autoplayTimeout is set
+            if ( typeof $(this).data('autoplay-timeout') !== 'undefined' && $(this).data('autoplay-timeout').trim() ) {
+                imageSliderAutoplayTimeout = parseInt($(this).data('autoplay-timeout'));
+            }
+
+            // -- check if controls-container is set
+            if ( typeof $(this).data('controls-container') !== 'undefined' && $(this).data('controls-container').trim() ) {
+                imageSliderControlsContainer = $(this).data('controls-container');
+            }
+
+            // -- reset controls container by id
+            imageSliderControlsContainer = '#' + imageSliderId + ' ' + imageSliderControlsContainer;
+
+            window[imageSliderId] = tns({
+                container: imageSliderContainer,
+                nav: imageSlidernav,
+                navPosition: imageSliderNavPosition,
+                mouseDrag: true,
+                disable: false,
+                gutter: 0,
+                items: 1,
+                loop: imageSliderLoop,
+                slideBy: 1,
+                controls: true,
+                controlsContainer: imageSliderControlsContainer,
+
+            });
         });
     }
 
