@@ -28,13 +28,13 @@
 
     // remove background, border, padding left and right and bottom for mobile view
     @include media-breakpoint-down(xs) {
+      border-width:0;
+      background-color: transparent;
+
       .detail-header-info-top {
         padding-left:0;
         padding-right:0;
         padding-bottom:0;
-
-        border-width:0;
-        background-color: transparent;
       }
     }
 
@@ -62,6 +62,11 @@
               }
             }
           }
+        }
+
+
+        @include media-breakpoint-down(xs) {
+          right: (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2);
         }
 
         z-index: 2;

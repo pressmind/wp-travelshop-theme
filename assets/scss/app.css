@@ -14601,12 +14601,13 @@ footer.footer-main {
       .detail-header-info .detail-header-info-top {
         padding: 30px; } }
   @media (max-width: 575.98px) {
-    .detail-header-info .detail-header-info-top {
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: 0;
+    .detail-header-info {
       border-width: 0;
-      background-color: transparent; } }
+      background-color: transparent; }
+      .detail-header-info .detail-header-info-top {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0; } }
   .detail-header-info .detail-header-info-top {
     position: relative; }
     .detail-header-info .detail-header-info-top .add-to-wishlist {
@@ -14618,6 +14619,9 @@ footer.footer-main {
         .detail-header-info .detail-header-info-top .add-to-wishlist {
           top: 1.625rem;
           right: 1.625rem; } }
+      @media (max-width: 575.98px) {
+        .detail-header-info .detail-header-info-top .add-to-wishlist {
+          right: 0.25rem; } }
     .detail-header-info .detail-header-info-top .detail-header-info-top-attributes {
       font-size: 0.875rem;
       margin-bottom: 0.25rem; }
