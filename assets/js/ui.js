@@ -248,11 +248,7 @@ jQuery(function ($) {
 
             // -- check if nav is set
             if ( typeof $(this).data('nav') !== 'undefined' ) {
-                if ( $(this).data('nav') === 'true' ) {
-                    imageSliderNav = true;
-                } else {
-                    imageSliderNav = false;
-                }
+                imageSliderNav = $(this).data('nav');
             }
 
             // -- check if nav-position is set
@@ -262,20 +258,12 @@ jQuery(function ($) {
 
             // -- check if loop is set
             if ( typeof $(this).data('loop') !== 'undefined' && $(this).data('loop') !== '' ) {
-                if ( $(this).data('loop') === 'true' ) {
-                    imageSliderLoop = true;
-                } else {
-                    imageSliderLoop = false;
-                }
+                imageSliderLoop = $(this).data('loop');
             }
 
             // -- check if autoplay is set
-            if ( typeof $(this).data('autoplay') !== 'undefined' && $(this).data('autoplay') !== '' ) {
-                if ( $(this).data('autoplay') === 'true' ) {
-                    imageSliderAutoplay = true;
-                } else {
-                    imageSliderAutoplay = false;
-                }
+            if ( typeof $(this).data('autoplay') !== 'undefined' ) {
+                imageSliderAutoplay = $(this).data('autoplay');
             }
 
             // -- check if autoplayTimeout is set
