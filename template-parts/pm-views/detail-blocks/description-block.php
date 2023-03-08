@@ -133,6 +133,70 @@
                 <?php } ?>
             <?php } ?>
 
+            <?php // render accordion if type accordion ?>
+            <?php if ( $description['type'] == 'accordion' ) { ?>
+                <div class="accordion-group">
+                    <?php if (!empty($description['headline'])) { ?>
+                        <div class="accordion-header">
+                            <h2 class="h3"><?php echo $description['headline']; ?></h2>
+                        </div>
+                    <?php } ?>
+
+                    <?php if ( count($description['items']) > 0 ) { ?>
+                        <div class="accordion-wrapper">
+                            <?php foreach ( $description['items'] as $k => $item ) { ?>
+                            <div class="accordion-item">
+                                <button class="accordion-toggle">
+                                    <div class="accordion-toggle--title">
+                                        <?php echo $item['name']; ?>
+                                    </div>
+
+                                    <?php
+                                    if (!empty($item['icons'])) {
+                                        ?>
+                                        <div class="accordion-toggle--rating">
+                                            <?php echo $item['icons']; // svg or img ?>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+                                </button>
+
+                                <div class="accordion-content">
+                                    <div class="accordion-content--inner">
+                                        <?php if (!empty($item['text'])) { ?>
+                                            <div class="accordion-block accordion-block--text">
+                                                <?php echo $item['text']; ?>
+                                            </div>
+                                        <?php } ?>
+
+
+                                        <?php if (!empty($item['pictures'])) { ?>
+                                            <div class="accordion-block accordion-block--gallery accordion-block--gallery__<?php echo $k; ?>">
+                                                <?php foreach ($item['pictures'] as $picture) { ?>
+                                                    <a class="accordion-gallery-item" href="<?php echo $picture['url_detail']; ?>"
+                                                       data-lightbox="accordion-gallery-<?php echo $k; ?>">
+                                                        <div class="accordion-gallery-item--image">
+                                                            <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                 alt="<?php echo $picture['alt']; ?>"/>
+                                                        </div>
+                                                        <div class="accordion-gallery-item--copyright">
+                                                            <?php echo $picture['copyright']; ?>
+                                                        </div>
+                                                    </a>
+                                                <?php } ?>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
         </div>
         <?php
     }
