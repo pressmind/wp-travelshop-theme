@@ -14005,8 +14005,8 @@ ul.checklist {
     align-items: center;
     width: 100%;
     gap: .5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem; }
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; }
     .accordion-wrapper .accordion-item .accordion-toggle > svg {
       width: 1.125rem;
       height: 1.125rem;
@@ -14028,7 +14028,7 @@ ul.checklist {
     height: 0;
     overflow: hidden; }
     .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
-      padding-bottom: 0.5rem; }
+      padding-bottom: 0.75rem; }
       @media (min-width: 992px) {
         .accordion-wrapper .accordion-item .accordion-content .accordion-content--inner {
           padding-bottom: 1rem; } }
