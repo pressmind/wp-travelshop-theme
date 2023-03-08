@@ -25,6 +25,7 @@ if ( !function_exists('get_stylesheet_directory_uri') ) {
 
 }
 require_once 'functions/checklist_formatter.php';
+require_once 'functions/remove_empty_paragraphs.php';
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->safeLoad();

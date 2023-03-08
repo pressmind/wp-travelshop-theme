@@ -117,6 +117,9 @@ require_once 'functions/images.php';
 // Checklist
 require_once 'functions/checklist_formatter.php';
 
+// Remove empty p tags
+require_once 'functions/remove_empty_paragraphs.php';
+
 // Admin Stuff
 require_once 'functions/after_wp_save.php';
 //require_once 'functions/save_queries.php';

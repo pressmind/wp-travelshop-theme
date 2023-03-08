@@ -28,7 +28,7 @@
 
                                 <?php if (!empty($item['text'])) { ?>
                                     <div class="text-block-text">
-                                        <?php echo $item['text']; ?>
+                                        <?php echo remove_empty_paragraphs($item['text']); ?>
                                     </div>
                                 <?php } ?>
 
@@ -66,7 +66,7 @@
 
                                     <?php if (!empty($item['text'])) { ?>
                                         <div class="teaser-block-text">
-                                            <?php echo $item['text']; ?>
+                                            <?php echo remove_empty_paragraphs($item['text']); ?>
                                         </div>
                                     <?php } ?>
 
@@ -103,7 +103,7 @@
 
                                                 <?php if (!empty($item['text'])) { ?>
                                                     <div class="teaser-block-text">
-                                                        <?php echo $item['text']; ?>
+                                                        <?php echo remove_empty_paragraphs($item['text']); ?>
                                                     </div>
                                                 <?php } ?>
 
@@ -168,7 +168,7 @@
                                     <div class="accordion-content--inner">
                                         <?php if (!empty($item['text'])) { ?>
                                             <div class="accordion-block accordion-block--text">
-                                                <?php echo $item['text']; ?>
+                                                <?php echo remove_empty_paragraphs($item['text']); ?>
                                             </div>
                                         <?php } ?>
 
