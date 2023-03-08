@@ -65,7 +65,7 @@
       flex-direction: column;
       align-items: center;
 
-      @include spacing-generator($detail-box-spacers-y, 'around', 'gap');
+      gap: .5rem;
 
       .trust-smiley {
         width: 3rem;
@@ -81,6 +81,16 @@
         }
       }
 
+      .trust-content{
+        p {
+          margin: 0;
+
+          + p {
+            margin: .5rem 0 0 0;
+          }
+        }
+      }
+
       .trust-footer {
         display: flex;
         flex-direction: row;
@@ -90,18 +100,9 @@
         gap: 0.25rem;
         font-size: $font-size-xs;
 
-        @include media-breakpoint-up(lg) {
-          font-size: $font-size-sm;
-        }
-
         svg {
           height: $font-size-sm;
           width: $font-size-sm;
-
-          @include media-breakpoint-up(lg) {
-            height: $font-size-base;
-            width: $font-size-base;
-          }
         }
       }
     }
