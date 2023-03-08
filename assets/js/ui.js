@@ -238,6 +238,14 @@ jQuery(function ($) {
             imageSliderContainer = $(this).data('slider-container');
             imageSliderContainer = '#' + imageSliderId + ' ' + imageSliderContainer;
 
+
+            // -- check if speed is set
+            if ( typeof $(this).data('speed') !== 'undefined' && $(this).data('speed') !== '' ) {
+                imageSliderSpeed = parseInt($(this).data('speed'));
+            }
+
+            console.log($(this).data('nav'));
+
             // -- check if nav is set
             if ( typeof $(this).data('nav') !== 'undefined' ) {
                 if ( $(this).data('nav') === 'true' ) {
@@ -245,11 +253,6 @@ jQuery(function ($) {
                 } else {
                     imageSliderNav = false;
                 }
-            }
-
-            // -- check if speed is set
-            if ( typeof $(this).data('speed') !== 'undefined' && $(this).data('speed') !== '' ) {
-                imageSliderSpeed = parseInt($(this).data('speed'));
             }
 
             // -- check if nav-position is set
