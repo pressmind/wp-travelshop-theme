@@ -11402,11 +11402,11 @@ hr + .content-block {
   z-index: 2; }
 .detail-header-gallery .detail-header-gallery-slider .slider-controls > button {
   color: #212529;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   border-width: 0; }
   .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):focus, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):active {
     color: #212529;
-    background-color: rgba(255, 255, 255, 0.75); }
+    background-color: #fff; }
 .icon-link {
   display: flex;
   flex-direction: row;
