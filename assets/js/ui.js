@@ -450,7 +450,7 @@ jQuery(function ($) {
 
             var thisAccGroup = $(this).parents('.accordion-group');
 
-            if ( $(this).data('toggle') === 'open' ) {
+            if ( $(this).data('toggle') == 'open' ) {
                 // open all
                 thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click');
                 $(this).attr('data-toggle', 'close');
