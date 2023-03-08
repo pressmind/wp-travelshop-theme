@@ -302,11 +302,10 @@ jQuery(function ($) {
                 imageSliderCounter = '#' + imageSliderId + ' ' + imageSliderCounter;
 
                 if ( $(imageSliderCounter).length > 0 ) {
-                    var imageSliderCounterFunction = function( info, eventName ) {
-                        imageSliderCounter.html(info.indexCached);
-                    }
 
-                    window[imageSliderId].events.on('indexChanged', imageSliderCounterFunction);
+                    window[imageSliderId].events.on('indexChanged', function( info, eventName ) {
+                        $(imageSliderCounter).text(info.indexCached);
+                    });
                 }
             }
         });
