@@ -231,7 +231,7 @@ jQuery(function ($) {
     var imageSliderControlsContainer = '.slider-controls';
 
     if ( imageSlider.length > 0 ) {
-        imageSlider.forEach(function(element, index) {
+        imageSlider.each(function(element, index) {
             imageSliderId = $(this).attr('id');
 
             // -- slider container is REQUIRED
