@@ -1,4 +1,26 @@
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
+  .detail-mobile-bar {
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
 
+    z-index: $zindex-sticky;
+
+    background-color: $body-bg;
+    border-top: $hr-border-width solid $hr-border-color;
+
+    padding: .5rem 0;
+
+    .detail-mobile-bar-row {
+      gap: .5rem;
+    }
+
+    .detail-mobile-bar-info {
+      .detail-mobile-bar-info--attributes {
+        @extend %detail-attributes-row;
+      }
+    }
+  }
 }

@@ -1,4 +1,29 @@
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+
+%detail-attributes-row {
+  font-size: $font-size-sm;
+
+  @include spacing-generator($detail-header-info-spacers-items, 'bottom', margin);
+
+  > a {
+    color: rgba($detail-header-info-color, .5);
+    transition: color .3s;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      color: $detail-header-info-color;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
 @if ( $detail-page-use-default == true ) {
   .detail-header-info {
     background-color: $detail-header-info-bg;
@@ -73,27 +98,7 @@
       }
 
       .detail-header-info-top-attributes{
-        font-size: $font-size-sm;
-
-        @include spacing-generator($detail-header-info-spacers-items, 'bottom', margin);
-
-        > a {
-          color: rgba($detail-header-info-color, .5);
-          transition: color .3s;
-          text-decoration: none;
-
-          &:hover, &:focus, &:active {
-            color: $detail-header-info-color;
-          }
-
-          &:hover {
-            text-decoration: none;
-          }
-
-          &:active, &:focus {
-            text-decoration: underline;
-          }
-        }
+        @extend %detail-attributes-row;
       }
 
       h1 {
