@@ -21,7 +21,7 @@
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="text-block text-block--<?php echo $i; ?>-<?php echo $k; ?>">
                                 <?php if ( !empty($item['name']) ) { ?>
-                                    <h3 class="text-block-title h3">
+                                    <h3 class="text-block-title h4">
                                         <?php echo $item['name']; ?>
                                     </h3>
                                 <?php } ?>
@@ -66,10 +66,15 @@
                                         <?php } ?>
 
                                         <?php if (!empty($item['text'])) { ?>
-                                            <?php echo remove_empty_paragraphs($item['text']); ?>
+                                            <div class="teaser-block-text">
+                                                <?php echo remove_empty_paragraphs($item['text']); ?>
+                                            </div>
                                         <?php } ?>
                                     </div>
 
+                                    <?php
+                                    // render read-more link
+                                    ?>
                                     <div class="teaser-block-toggle">
                                         <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
                                             Mehr anzeigen
