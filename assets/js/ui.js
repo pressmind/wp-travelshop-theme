@@ -442,6 +442,7 @@ jQuery(function ($) {
     let teaserBlockToggle = $('.teaser-block-toggle button');
     let teaserBlockNotToggleableClass = 'not-toggleable';
     let teaserBlockModalClose = $('.teaser-block-modal-close');
+    let teaserBlockModal = $('.teaser-block-modal');
 
     function teaserBlockHandler() {
         var storeInnerHeight, storeThisHeight = null;
@@ -485,6 +486,19 @@ jQuery(function ($) {
 
         e.stopPropagation();
     });
+
+    // -- close on click backdrop
+    teaserBlockModal.on('click', function(e){
+        e.preventDefault();
+
+        var target = $(e.target);
+
+        if ( target.css('container-name') === 'backdrop' ) {
+            $(this).removeClass('show');
+        }
+
+        e.stopPropagation();
+    })
 
     teaserBlockHandler();
 
