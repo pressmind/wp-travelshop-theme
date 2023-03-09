@@ -33,19 +33,23 @@
                                 <?php } ?>
 
                                 <?php if (!empty($item['pictures'])) { ?>
-                                    <div class="text-block-gallery text-block-gallery--<?php echo $k; ?>">
-                                        <?php foreach ($item['pictures'] as $picture) { ?>
-                                            <a class="text-block-gallery-item" href="<?php echo $picture['url_detail']; ?>"
-                                               data-lightbox="text-block-gallery-<?php echo $k; ?>">
-                                                <div class="text-block-gallery-item--image">
-                                                    <img src="<?php echo $picture['url_teaser']; ?>"
-                                                         alt="<?php echo $picture['alt']; ?>"/>
+                                    <div class="text-block-gallery" data-gallery="true" id="text-block-gallery--<?php echo $k; ?>">
+                                        <div class="text-block-gallery--inner">
+                                            <?php foreach ($item['pictures'] as $picture) { ?>
+                                                <div class="text-block-gallery-item">
+                                                    <a  href="<?php echo $picture['url_detail']; ?>"
+                                                        data-lightbox="text-block-gallery-<?php echo $k; ?>">
+                                                        <div class="text-block-gallery-item--image">
+                                                            <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                 alt="<?php echo $picture['alt']; ?>"/>
+                                                        </div>
+                                                        <div class="text-block-gallery-item--copyright">
+                                                            <?php echo $picture['copyright']; ?>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                                <div class="text-block-gallery-item--copyright">
-                                                    <?php echo $picture['copyright']; ?>
-                                                </div>
-                                            </a>
-                                        <?php } ?>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -104,19 +108,24 @@
                                                 <?php } ?>
 
                                                 <?php if (!empty($item['pictures'])) { ?>
-                                                    <div class="teaser-block-gallery teaser-block-gallery--<?php echo $k; ?>">
+                                                    <div class="teaser-block-gallery" data-gallery="true" id="teaser-block-gallery--<?php echo $k; ?>">
+                                                        <div class="teaser-block-gallery--inner">
                                                         <?php foreach ($item['pictures'] as $picture) { ?>
-                                                            <a class="teaser-block-gallery-item" href="<?php echo $picture['url_detail']; ?>"
-                                                               data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
-                                                                <div class="teaser-block-gallery-item--image">
-                                                                    <img src="<?php echo $picture['url_teaser']; ?>"
-                                                                         alt="<?php echo $picture['alt']; ?>"/>
+                                                                <div class="teaser-block-gallery-item">
+
+                                                                    <a href="<?php echo $picture['url_detail']; ?>"
+                                                                       data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
+                                                                        <div class="teaser-block-gallery-item--image">
+                                                                            <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                                 alt="<?php echo $picture['alt']; ?>"/>
+                                                                        </div>
+                                                                        <div class="teaser-block-gallery-item--copyright">
+                                                                            <?php echo $picture['copyright']; ?>
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
-                                                                <div class="teaser-block-gallery-item--copyright">
-                                                                    <?php echo $picture['copyright']; ?>
-                                                                </div>
-                                                            </a>
                                                         <?php } ?>
+                                                        </div>
                                                     </div>
                                                 <?php } ?>
                                             </div>
@@ -170,19 +179,24 @@
 
 
                                         <?php if (!empty($item['pictures'])) { ?>
-                                            <div class="accordion-block accordion-block--gallery accordion-block--gallery__<?php echo $k; ?>">
+                                            <div class="accordion-block accordion-block--gallery" data-gallery="true" id="accordion-block--gallery__<?php echo $k; ?>">
+
+                                                <div class="accordion-block-gallery--inner">
                                                 <?php foreach ($item['pictures'] as $picture) { ?>
-                                                    <a class="accordion-gallery-item" href="<?php echo $picture['url_detail']; ?>"
-                                                       data-lightbox="accordion-gallery-<?php echo $k; ?>">
-                                                        <div class="accordion-gallery-item--image">
-                                                            <img src="<?php echo $picture['url_teaser']; ?>"
-                                                                 alt="<?php echo $picture['alt']; ?>"/>
-                                                        </div>
-                                                        <div class="accordion-gallery-item--copyright">
-                                                            <?php echo $picture['copyright']; ?>
-                                                        </div>
-                                                    </a>
+                                                    <div class="accordion-gallery-item">
+                                                        <a  href="<?php echo $picture['url_detail']; ?>"
+                                                            data-lightbox="accordion-gallery-<?php echo $k; ?>">
+                                                            <div class="accordion-gallery-item--image">
+                                                                <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                     alt="<?php echo $picture['alt']; ?>"/>
+                                                            </div>
+                                                            <div class="accordion-gallery-item--copyright">
+                                                                <?php echo $picture['copyright']; ?>
+                                                            </div>
+                                                        </a>
+                                                    </div>
                                                 <?php } ?>
+                                                </div>
                                             </div>
                                         <?php } ?>
                                     </div>

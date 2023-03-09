@@ -68,18 +68,22 @@ if(!$valid){
                                 <?php echo remove_empty_paragraphs($section->content->description); ?>
                             </div>
 
-                            <div class="accordion-block accordion-block--gallery accordion-block--gallery__<?php echo $key; ?>">
+                            <div class="accordion-block accordion-block--gallery" data-gallery="true" id="accordion-block--gallery__<?php echo $key; ?>">
+                                <div class="accordion-block-gallery--inner">
                                 <?php foreach($step->document_media_objects as $picture) { ?>
-                                    <a class="accordion-gallery-item" href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="accordion-gallery-<?php echo $step->id; ?>">
-                                        <div class="accordion-gallery-item--image">
-                                            <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
-                                        </div>
-                                        <div class="accordion-gallery-item--copyright">
-                                            <?php echo $picture->copyright; ?>
-                                        </div>
-                                    </a>
+                                    <div class="accordion-gallery-item">
+                                        <a href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="accordion-gallery-<?php echo $step->id; ?>">
+                                            <div class="accordion-gallery-item--image">
+                                                <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />
+                                            </div>
+                                            <div class="accordion-gallery-item--copyright">
+                                                <?php echo $picture->copyright; ?>
+                                            </div>
+                                        </a>
+                                    </div>
                                 <?php }
                                 ?>
+                                </div>
                             </div>
                         </div>
                     </div>
