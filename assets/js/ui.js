@@ -490,67 +490,75 @@ jQuery(function ($) {
     let teaserBlockModalClose = $('.teaser-block-modal-close');
     let teaserBlockModal = $('.teaser-block-modal');
 
-    function teaserBlockHandler() {
-        var storeInnerHeight, storeThisHeight = null;
+    if ( teaserBlock.length > 0 ) {
+        function teaserBlockHandler() {
+            var storeInnerHeight, storeThisHeight = null;
 
-        teaserBlock.each(function(e) {
-            storeInnerHeight = $(this).find('.teaser-block-preview--inner').height();
-            storeThisHeight = $(this).height();
+            teaserBlock.each(function(e) {
+                storeInnerHeight = $(this).find('.teaser-block-preview--inner').height();
+                storeThisHeight = $(this).height();
 
-            // -- set initiator class
-            if ( storeInnerHeight > storeThisHeight ) {
-                if ( $(this).hasClass(teaserBlockNotToggleableClass) ) {
-                    $(this).removeClass(teaserBlockNotToggleableClass);
+                // -- set initiator class
+                if ( storeInnerHeight > storeThisHeight ) {
+                    if ( $(this).hasClass(teaserBlockNotToggleableClass) ) {
+                        $(this).removeClass(teaserBlockNotToggleableClass);
+                    }
+                } else {
+                    if ( !$(this).hasClass(teaserBlockNotToggleableClass) ) {
+                        $(this).addClass(teaserBlockNotToggleableClass);
+                    }
                 }
-            } else {
-                if ( !$(this).hasClass(teaserBlockNotToggleableClass) ) {
-                    $(this).addClass(teaserBlockNotToggleableClass);
-                }
-            }
-        })
-    }
-
-    // -- close modal
-    teaserBlockModalClose.on('click', function(e) {
-        e.preventDefault();
-
-        $(this).parents('.show').removeClass('show');
-        
-        e.stopPropagation();
-    });
-
-    // -- open modal
-    teaserBlockToggle.on('click', function(e) {
-        e.preventDefault();
-
-        var thisID = $(this).data('modal-id');
-
-        $('#teaser-modal--' + thisID ).addClass('show');
-
-        e.stopPropagation();
-    });
-
-    // -- close on click backdrop
-    teaserBlockModal.on('click', function(e){
-        e.preventDefault();
-
-        var target = $(e.target);
-
-        if ( target.css('container-name') === 'backdrop' ) {
-            $(this).removeClass('show');
+            })
         }
 
-        e.stopPropagation();
-    })
+        // -- close modal
+        teaserBlockModalClose.on('click', function(e) {
+            e.preventDefault();
 
-    teaserBlockHandler();
+            $(this).parents('.show').removeClass('show');
 
-    var resizeInitiator;
+            e.stopPropagation();
+        });
 
-    window.onresize = function() {
-        clearTimeout(resizeInitiator);
-        resizeInitiator = setTimeout(teaserBlockHandler, 100);
+        // -- open modal
+        teaserBlockToggle.on('click', function(e) {
+            e.preventDefault();
+
+            var thisID = $(this).data('modal-id');
+            var thisContent = $(this).parents('.teaser-block-preview').find('.teaser-block-content').html();
+
+            // -- set content
+            $('#teaser-modal--' + thisID ).find('.teaser-block-modal-body').html(thisContent);
+
+            // -- open modal
+            $('#teaser-modal--' + thisID ).addClass('show');
+
+            e.stopPropagation();
+        });
+
+        // -- close on click backdrop
+        teaserBlockModal.on('click', function(e){
+            e.preventDefault();
+
+            var target = $(e.target);
+
+            if ( target.css('container-name') === 'backdrop' ) {
+                $(this).removeClass('show');
+            }
+
+            e.stopPropagation();
+        })
+
+        teaserBlockHandler();
+
+        var resizeInitiator;
+
+        window.onresize = function() {
+            clearTimeout(resizeInitiator);
+            resizeInitiator = setTimeout(teaserBlockHandler, 100);
+        }
     }
+
 
 
     // ------------------------------------------------
