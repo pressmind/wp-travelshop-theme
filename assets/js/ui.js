@@ -436,6 +436,70 @@ jQuery(function ($) {
     });
 
     // ------------------------------------------------
+    // -- Teaser block modal
+    // ------------------------------------------------
+    let teaserBlock = $('.teaser-block-preview');
+    let teaserBlockToggle = $('.teaser-block-toggle');
+    let teaserBlockToggleableClass = 'is-toggleable';
+    let teaserBlockModalClose = $('.teaser-block-modal-close');
+
+    function teaserBlockHandler() {
+        var storeInnerHeight, storeThisHeight = null;
+
+        teaserBlock.each(function(e) {
+            e.preventDefault();
+
+            storeInnerHeight = $(this).find('.teaser-block-preview--inner').height();
+            storeThisHeight = $(this).height();
+
+            // -- set initiator class
+            if ( storeInnerHeight > storeThisHeight ) {
+                if ( !$(this).hasClass(teaserBlockToggleableClass) ) {
+                    $(this).addClass(teaserBlockToggleableClass);
+                }
+            } else {
+                if ( $(this).hasClass(teaserBlockToggleableClass) ) {
+                    $(this).removeClass(teaserBlockToggleableClass);
+                }
+            }
+
+            e.stopPropagation();
+        })
+    }
+
+    // -- close modal
+    teaserBlockModalClose.on('click', function(e) {
+        e.preventDefault();
+
+        $(this).parents('.show').removeClass('show');
+        
+        e.stopPropagation();
+    });
+
+    // -- open modal
+    teaserBlockToggle.on('click', function(e) {
+        e.preventDefault();
+
+        var thisButton = $(this);
+        var thisID = thisButton.data('id');
+        var thisModal = $(this).parents('.teaser-block').find('#' + thisID );
+
+        thisModal.addClass('show');
+
+        e.stopPropagation();
+    });
+
+    teaserBlockHandler();
+
+    var resizeInitiator;
+
+    window.onresize = function() {
+        clearTimeout(resizeInitiator);
+        resizeInitiator = setTimeout(teaserBlockHandler, 100);
+    }
+
+
+    // ------------------------------------------------
     // -- Accordion
     // ------------------------------------------------
 

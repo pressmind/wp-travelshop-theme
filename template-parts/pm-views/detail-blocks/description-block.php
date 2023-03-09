@@ -76,14 +76,14 @@
                                     // render read-more link
                                     ?>
                                     <div class="teaser-block-toggle">
-                                        <button class="btn btn-link btn-bold" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
+                                        <button class="btn btn-link btn-bold" type="button" data-id="teaser-modal--<?php echo $i; ?>-<?php echo $k; ?>">
                                             Mehr anzeigen
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
                                         </button>
                                     </div>
                                 </div>
 
-                                <div class="teaser-block-modal">
+                                <div class="teaser-block-modal" id="teaser-modal--<?php echo $i; ?>-<?php echo $k; ?>">
                                     <div class="teaser-block-modal-inner">
                                         <div class="teaser-block-modal-content">
                                             <div class="teaser-block-modal-header">
