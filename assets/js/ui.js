@@ -439,7 +439,7 @@ jQuery(function ($) {
     // -- Teaser block modal
     // ------------------------------------------------
     let teaserBlock = $('.teaser-block-preview');
-    let teaserBlockToggle = $('.teaser-block-toggle');
+    let teaserBlockToggle = $('.teaser-block-toggle button');
     let teaserBlockNotToggleableClass = 'not-toggleable';
     let teaserBlockModalClose = $('.teaser-block-modal-close');
 
