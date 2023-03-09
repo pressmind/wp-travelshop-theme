@@ -31,7 +31,11 @@
     transition: color .3s;
     text-decoration: none;
 
-    font-weight: $btn-font-weight;
+    border: 0; // reset border, not needed, prevent shifts
+
+    &.btn-bold {
+      font-weight: $btn-font-weight;
+    }
 
     &:hover, &:focus, &:active {
       color: $primary;
