@@ -21,7 +21,7 @@
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="text-block text-block--<?php echo $i; ?>-<?php echo $k; ?>">
                                 <?php if ( !empty($item['name']) ) { ?>
-                                    <h3 class="text-block-title h4">
+                                    <h3 class="text-block-title">
                                         <?php echo $item['name']; ?>
                                     </h3>
                                 <?php } ?>
@@ -60,7 +60,7 @@
                                 <div class="teaser-block-preview">
                                     <div class="teaser-block-preview--inner">
                                         <?php if ( !empty($item['name']) ) { ?>
-                                            <h3 class="teaser-block-title h4">
+                                            <h3 class="teaser-block-title">
                                                 <?php echo $item['name']; ?>
                                             </h3>
                                         <?php } ?>
