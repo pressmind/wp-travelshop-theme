@@ -14227,8 +14227,10 @@ ul.checklist {
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow: hidden;
+  margin-top: -.5rem;
+  margin-bottom: -.5rem;
   margin-left: -.5rem;
   margin-right: -.5rem; }
 
@@ -14290,6 +14292,8 @@ ul.checklist {
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .accordion-gallery-item {
   padding-left: .5rem;
   padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   flex: 0 0 50%;
   width: 100%;
   max-width: 50%; }

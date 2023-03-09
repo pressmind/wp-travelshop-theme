@@ -6,9 +6,11 @@
   &:not(.tns-slider) {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
     overflow: hidden;
+    margin-top: -.5rem;
+    margin-bottom: -.5rem;
     margin-left: -.5rem;
     margin-right: -.5rem;
   }
@@ -21,6 +23,8 @@
 %image-gallery-item-not-initialized {
   padding-left: .5rem;
   padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 
   flex: 0 0 (100% / 2);
   width: 100%;
