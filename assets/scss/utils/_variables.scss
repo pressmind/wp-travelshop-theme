@@ -813,6 +813,7 @@ $detail-page-section-paddings: (
 ) !default;
 
 $detail-header-column-break: lg !default; // breakpoint down when cols in detail header break
+$detail-content-column-break: md !default; // breakpoint down when cols in detail content break
 
 // detail header info
 $detail-header-info-border-radius: $card-border-radius !default;

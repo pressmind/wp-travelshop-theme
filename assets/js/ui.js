@@ -436,6 +436,43 @@ jQuery(function ($) {
     });
 
     // ------------------------------------------------
+    // -- mobile bar show/hide
+    // ------------------------------------------------
+    let detailMobileBar = $('.detail-mobile-bar');
+    var detailBookingPos = $('.detail-booking-entrypoint').position().top;
+    var detailBookingHeight = $('.detail-booking-entrypoint').height();
+    var detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
+    var resizeInitiatorMobileBar;
+    var curScrollPosition = $(window).scrollTop();
+
+    function toggleMobileBar(curScrollPosition, detailMobileBarThreshold ) {
+        if ( curScrollPosition > detailMobileBarThreshold ) {
+            detailMobileBar.addClass('show');
+        } else {
+            detailMobileBar.removeClass('show');
+        }
+    }
+
+    toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
+
+    window.onresize = function() {
+        clearTimeout(resizeInitiatorMobileBar);
+
+        curScrollPosition = $(window).scrollTop();
+        detailBookingPos = $('.detail-booking-entrypoint').position().top;
+        detailBookingHeight = $('.detail-booking-entrypoint').height();
+        detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
+
+        resizeInitiatorMobileBar = setTimeout(toggleMobileBar(curScrollPosition, detailMobileBarThreshold), 100);
+    }
+
+    $(document).on('scroll', function() {
+        curScrollPosition = $(window).scrollTop();
+
+        toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
+    });
+
+    // ------------------------------------------------
     // -- Teaser block modal
     // ------------------------------------------------
     let teaserBlock = $('.teaser-block-preview');
@@ -478,9 +515,6 @@ jQuery(function ($) {
         e.preventDefault();
 
         var thisID = $(this).data('modal-id');
-
-        console.log(thisID);
-        console.log($('#teaser-modal--' + thisID ));
 
         $('#teaser-modal--' + thisID ).addClass('show');
 

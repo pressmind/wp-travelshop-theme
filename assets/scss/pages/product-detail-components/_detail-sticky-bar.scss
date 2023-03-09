@@ -42,5 +42,22 @@
         white-space: nowrap;
       }
     }
+
+    // -- visibility
+    display: none;
+
+    @include media-breakpoint-down( $detail-content-column-break ) {
+      display: block;
+    }
+
+    // -- show hide mechanism
+    transition: transform .25s, opacity .25s;
+    transform: translateY(100%);
+    opacity: 0;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
