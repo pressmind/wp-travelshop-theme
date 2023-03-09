@@ -15133,6 +15133,16 @@ footer.footer-main {
     .detail-section.detail-section-crossselling {
       padding-top: 30px;
       padding-bottom: 30px; } }
+.detail-section .detail-info-section + .detail-info-section {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e9ecef; }
+  @media (min-width: 768px) {
+    .detail-section .detail-info-section + .detail-info-section {
+      padding-top: 30px; } }
+  @media (min-width: 768px) {
+    .detail-section .detail-info-section + .detail-info-section {
+      margin-top: 30px; } }
 
 html #wpadminbar {
   top: auto !important;
