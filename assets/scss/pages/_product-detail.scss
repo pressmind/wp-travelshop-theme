@@ -58,6 +58,13 @@
 
     // -- crosselling
     &.detail-section-crossselling {
+      background-color: $detail-crossselling-bg;
+
+      @if ( $detail-crossselling-divider-width != 0 ) {
+        border: $detail-crossselling-divider-width solid $detail-crossselling-divider-color;
+      }
+
+      @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
       @include spacing-generator($detail-page-section-paddings, 'y');
     }
 

@@ -815,6 +815,11 @@ $detail-page-section-paddings: (
 $detail-header-column-break: lg !default; // breakpoint down when cols in detail header break
 $detail-content-column-break: md !default; // breakpoint down when cols in detail content break
 
+// detail crosselling
+$detail-crossselling-bg: $body-bg !default;
+$detail-crossselling-divider-width: 1px !default;
+$detail-crossselling-divider-color: $hr-border-color !default;
+
 // detail header info
 $detail-header-info-border-radius: $card-border-radius !default;
 $detail-header-info-border-width: $card-border-width !default;

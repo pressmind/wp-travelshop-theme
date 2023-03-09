@@ -15927,8 +15927,14 @@ footer.footer-main {
     .detail-section.detail-section-content {
       padding-top: 30px; } }
 .detail-section.detail-section-crossselling {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  margin-top: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
+  @media (min-width: 768px) {
+    .detail-section.detail-section-crossselling {
+      margin-top: 30px; } }
   @media (min-width: 768px) {
     .detail-section.detail-section-crossselling {
       padding-top: 30px;

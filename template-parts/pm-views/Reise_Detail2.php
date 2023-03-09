@@ -587,7 +587,6 @@ $args['breadcrumb'][] = $tmp;
         echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/mobile-bar.php', $args);
         ?>
     </article>
-    <hr>
     <div class="detail-section detail-section-crossselling">
         <div class="container">
             <?php
