@@ -10,53 +10,54 @@ if(empty($args['cheapest_price'])){
     return;
 }
 ?>
-<div class="mobile-bar">
+<div class="detail-mobile-bar">
 
     <div class="container">
-        <span class="mobile-bar-title"><?php echo $args['headline'] ?></span>
-        <p>
-            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
-                    'duration' => $args['cheapest_price']->duration]);
-            ?>
-            -
-            <?php
-            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price.php',  [
-                'cheapest_price' => $args['cheapest_price'],
-            ]);
-            ?>
-            <?php if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
-                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
-                    'cheapest_price' => $args['cheapest_price'],
-                    'discount' => $discount,
-                ]);
-                ?>
-            <?php } ?>
-        </p>
-        <div class="mobile-bar-cta">
-            <div class="mobile-bar-date">
-                        <span class="date">
-                            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport-icon.php', ['transport_type' => $args['cheapest_price']->transport_type]);?>
-                            <a class="show-dates" data-modal="true" data-anchor="<?php echo $args['cheapest_price']->id; ?>" data-modal-id="<?php echo $args['id_modal_price_box']; ?>">
-                                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
-                                     'date_departure' => $args['cheapest_price']->date_departure,
-                                     'date_arrival' => $args['cheapest_price']->date_arrival
-                                 ]);?>
+        <div class="detail-mobile-bar-row d-flex  flex-row justify-content-between align-items-center flex-nowrap">
+            <div class="detail-mobile-bar-info">
+                <div class="detail-mobile-bar-info--title h3">
+                    <?php echo $args['headline'] ?>
+                </div>
+
+                <?php
+                if ( !empty($args['destination_attributes']) || !empty($args['travel_type_attributes']) ) {
+                    ?>
+                    <div class="detail-mobile-bar-info--attributes">
+                        <?php if ( !empty($args['travel_type_attributes']) ) { ?>
+                            <a href="<?php echo $args['travel_type_attributes']->url; ?>" title="<?php echo $args['travel_type_attributes']->name; ?>" target="_blank">
+                                <?php echo $args['travel_type_attributes']->name; ?>
                             </a>
-                        </span>
+                            <?php if ( !empty($args['destination_attributes']) ) { ?>
+                                <span class="attribute-sep">&middot;</span>
+                            <?php } ?>
+                        <?php } ?>
+                        <?php if ( !empty($args['destination_attributes']) ) { ?>
+                            <a href="<?php echo $args['destination_attributes']->url; ?>" title="<?php echo $args['destination_attributes']->name; ?>" target="_blank">
+                                <?php echo $args['destination_attributes']->name; ?>
+                            </a>
+                        <?php } ?>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
-            <?php // Random Availability
-                $randint = random_int(1, 10);
-            ?>
-            <div class="booking-button-wrap">
-                <?php   echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [
-                        'cheapest_price' => $args['cheapest_price'],
-                        'url' => $args['url']
-                ]);?>
-                <?php if($randint <= 10) { ?>
-                    <!-- Toggle in badge the class "active" to toggle status with animation -->
-                    <div class="badge status active <?php echo $randint <= 3 ? 'alert' : ''; ?>">Nur noch <?php echo $randint <= 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
+
+            <div class="detail-mobile-bar-booking">
+                <?php if(empty($args['cheapest_price']) || !empty($args['booking_on_request']) ) { ?>
+                <button class="btn btn-primary" type="button">
+                    zur Anfrage
+
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+
+                </button>
+                <?php } else { ?>
+                <button class="btn booking-btn green" type="button">
+                    zur Buchung
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+                </button>
                 <?php } ?>
             </div>
         </div>
+
     </div>
 </div>
