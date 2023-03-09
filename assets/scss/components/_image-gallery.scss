@@ -24,19 +24,31 @@
   > .zoom-indicator {
     transition: transform .15s, opacity .15s;
 
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
 
     background-color: rgba($body-color , .75);
+
+    display: flex;
+    line-height: 1;
+
+    justify-content: center;
+    align-items: center;
 
     position: absolute;
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%), scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
 
     opacity:0;
     pointer-events: none;
+
+    > svg {
+      color: #fff;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
 
     @if ( $border-radius != 0 ) {
       @include border-radius(50%);
@@ -45,7 +57,7 @@
 
   &:hover {
     .zoom-indicator {
-      transform: translate(-50%, -50%), scale(1);
+      transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
   }
