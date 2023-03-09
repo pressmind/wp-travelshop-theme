@@ -14185,6 +14185,73 @@ ul.checklist {
 .text-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a {
   display: block;
   clear: both; }
+  .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .text-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .text-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .accordion-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .accordion-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .accordion-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .teaser-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .accordion-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .text-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .text-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .accordion-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .accordion-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .accordion-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .teaser-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .teaser-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .text-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .text-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .accordion-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .accordion-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .accordion-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .teaser-block-gallery--inner .teaser-block-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
+  .text-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator {
+    transition: transform .15s, opacity .15s;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(33, 37, 41, 0.75);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%), scale(1.1);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50%; }
+  .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .text-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .text-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .accordion-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .accordion-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .accordion-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .teaser-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .accordion-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .text-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .text-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .accordion-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .accordion-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .accordion-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .teaser-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .teaser-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .text-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .text-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .accordion-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .accordion-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .accordion-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .teaser-block-gallery--inner .teaser-block-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a:hover .zoom-indicator,
+  .text-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a:hover .zoom-indicator {
+    transform: translate(-50%, -50%), scale(1);
+    opacity: 1; }
 
 .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item .accordion-gallery-item--copyright,
 .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item .text-block-gallery-item--copyright,
