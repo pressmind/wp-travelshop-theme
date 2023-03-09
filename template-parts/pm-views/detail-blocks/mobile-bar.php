@@ -15,7 +15,7 @@ if(empty($args['cheapest_price'])){
     <div class="container">
         <div class="detail-mobile-bar-row d-flex  flex-row justify-content-between align-items-center flex-nowrap">
             <div class="detail-mobile-bar-info">
-                <div class="detail-mobile-bar-info--title h3">
+                <div class="detail-mobile-bar-info--title mx-0 my-0 h4">
                     <?php echo $args['headline'] ?>
                 </div>
 
