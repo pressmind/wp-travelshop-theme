@@ -13,6 +13,9 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 ?>
 
 <div class="booking-filter">
+    <div class="booking-filter-title">
+        <?php echo $args['headline']; ?> buchen
+    </div>
     <div class="booking-filter-item booking-filter-item--transport-type">
         <?php
         $transport_types = [
