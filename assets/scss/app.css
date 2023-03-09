@@ -14086,7 +14086,18 @@ ul.checklist {
 
 .teaser-block .teaser-block-preview {
   max-height: 20rem;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+  .teaser-block .teaser-block-preview .teaser-block-toggle {
+    padding: .2rem 0 0 0;
+    background-image: linear-gradient(to right, red 0%, green 100%);
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .teaser-block .teaser-block-preview .teaser-block-toggle > button.btn {
+      padding: 0; }
 
 header.header-main {
   background-color: #fff;

@@ -2,5 +2,23 @@
   .teaser-block-preview {
     max-height: 20rem;
     overflow: hidden;
+
+    position: relative;
+
+    // -- toggle
+    .teaser-block-toggle{
+      padding: .2rem 0 0 0;
+
+      @include gradient-x(red, green);
+
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+
+      > button.btn {
+        padding: 0;
+      }
+    }
   }
 }
