@@ -25,19 +25,20 @@
 %image-gallery-item-copyright {
   @extend %copyright-on-image;
 
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
+  bottom: 1rem !important;
+  left: 1rem !important;
 }
 
 %image-gallery-item-image {
-  width: 100%;
-  height: auto;
+  > img {
+    width: 100%;
+    height: auto;
 
-  apsect-ratio: 16/10;
-  object-fit: cover;
+    apsect-ratio: 16/10;
+    object-fit: cover;
 
-  @include border-radius($border-radius);
+    @include border-radius($border-radius);
+  }
 }
 
 .accordion-block-gallery,
