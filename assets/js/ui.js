@@ -454,7 +454,6 @@ jQuery(function ($) {
             var detailContentHeight = $('.detail-section-content').height();
             var detailContentThreshold = detailContentPosition + detailContentHeight - $(window).height();
 
-            console.log(curScrollPosition + ' < ' + detailContentThreshold );
             if ( curScrollPosition > detailMobileBarThreshold && curScrollPosition < detailContentThreshold ) {
                 detailMobileBar.addClass('show');
             } else {
