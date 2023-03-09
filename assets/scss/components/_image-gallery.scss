@@ -1,25 +1,80 @@
-%image-gallery-wrapper {
+%image-gallery-outer {
+  padding-top: 1rem;
+}
 
+%image-gallery-wrapper {
+  &:not(.tns-slider) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+    gap: 1rem;
+  }
 }
 
 %image-gallery-item {
+  position: relative;
+}
 
+%image-gallery-item-link {
+  display: block;
+  clear: both;
 }
 
 %image-gallery-item-copyright {
+  @extend %copyright-on-image;
 
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 
 %image-gallery-item-image {
+  width: 100%;
+  height: auto;
 
+  apsect-ratio: 16/10;
+  object-fit: cover;
+
+  @include border-radius($border-radius);
 }
 
 .accordion-block-gallery,
 .teaser-block-gallery,
 .text-block-gallery {
+  @extend %image-gallery-outer;
+
+  // -- wrapper
   .text-block-gallery--inner,
   .accordion-block-gallery--inner,
   .teaser-block-gallery--inner {
+    @extend %image-gallery-wrapper;
 
+    // -- item
+    .teaser-block-gallery-item,
+    .text-block-gallery-item,
+    .accordion-gallery-item {
+      @extend %image-gallery-item;
+
+      // -- link behaviour
+      > a {
+        @extend %image-gallery-item-link;
+      }
+
+      // -- image
+      .accordion-gallery-item--image,
+      .text-block-gallery-item--image,
+      .teaser-block-gallery-item--image {
+        @extend %image-gallery-item-image;
+      }
+
+      // -- copyright
+      .accordion-gallery-item--copyright,
+      .text-block-gallery-item--copyright,
+      .teaser-block-gallery-item--copyright {
+        @extend %image-gallery-item-copyright;
+      }
+    }
   }
 }
