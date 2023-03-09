@@ -14229,10 +14229,7 @@ ul.checklist {
   flex-direction: row;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-top: -.5rem;
-  margin-bottom: -.5rem;
-  margin-left: -.5rem;
-  margin-right: -.5rem; }
+  margin: -.5rem; }
 
 .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item,
 .accordion-block-gallery .text-block-gallery--inner .text-block-gallery-item,
@@ -14290,10 +14287,7 @@ ul.checklist {
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .accordion-gallery-item {
-  padding-left: .5rem;
-  padding-right: .5rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding: .5rem;
   flex: 0 0 50%;
   width: 100%;
   max-width: 50%; }
