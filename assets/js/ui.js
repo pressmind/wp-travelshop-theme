@@ -439,38 +439,47 @@ jQuery(function ($) {
     // -- mobile bar show/hide
     // ------------------------------------------------
     let detailMobileBar = $('.detail-mobile-bar');
-    var detailBookingPos = $('.detail-booking-entrypoint').offset().top;
-    var detailBookingHeight = $('.detail-booking-entrypoint').height();
-    var detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
-    var resizeInitiatorMobileBar;
-    var curScrollPosition = $(window).scrollTop();
 
-    function toggleMobileBar(curScrollPosition, detailMobileBarThreshold ) {
-        if ( curScrollPosition > detailMobileBarThreshold ) {
-            detailMobileBar.addClass('show');
-        } else {
-            detailMobileBar.removeClass('show');
+    if ( detailMobileBar.length > 0 ) {
+        var detailBookingPos = $('.detail-booking-entrypoint').offset().top;
+        var detailBookingHeight = $('.detail-booking-entrypoint').height();
+        var detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
+        var resizeInitiatorMobileBar;
+        var curScrollPosition = $(window).scrollTop();
+
+        function toggleMobileBar(curScrollPosition, detailMobileBarThreshold ) {
+
+            // fix to not show mobile bar if content is scroll through
+            var detailContentPosition = $('.detail-section-content').offset().top;
+            var detailContentHeight = $('.detail-section-content').height();
+            var detailContentThreshold = detailContentPosition + detailContentHeight - $(window).height();
+
+            if ( curScrollPosition > detailMobileBarThreshold && curScrollPosition < detailContentThreshold ) {
+                detailMobileBar.addClass('show');
+            } else {
+                detailMobileBar.removeClass('show');
+            }
         }
-    }
-
-    toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
-
-    window.onresize = function() {
-        clearTimeout(resizeInitiatorMobileBar);
-
-        curScrollPosition = $(window).scrollTop();
-        detailBookingPos = $('.detail-booking-entrypoint').offset().top;
-        detailBookingHeight = $('.detail-booking-entrypoint').height();
-        detailMobileBarThreshold = detailBookingPos + detailBookingHeight  + 30;
-
-        resizeInitiatorMobileBar = setTimeout(toggleMobileBar(curScrollPosition, detailMobileBarThreshold), 100);
-    }
-
-    $(document).on('scroll', function() {
-        curScrollPosition = $(window).scrollTop();
 
         toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
-    });
+
+        window.onresize = function() {
+            clearTimeout(resizeInitiatorMobileBar);
+
+            curScrollPosition = $(window).scrollTop();
+            detailBookingPos = $('.detail-booking-entrypoint').offset().top;
+            detailBookingHeight = $('.detail-booking-entrypoint').height();
+            detailMobileBarThreshold = detailBookingPos + detailBookingHeight  + 30;
+
+            resizeInitiatorMobileBar = setTimeout(toggleMobileBar(curScrollPosition, detailMobileBarThreshold), 100);
+        }
+
+        $(document).on('scroll', function() {
+            curScrollPosition = $(window).scrollTop();
+
+            toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
+        });
+    }
 
     // ------------------------------------------------
     // -- Teaser block modal
