@@ -452,13 +452,13 @@ jQuery(function ($) {
             storeThisHeight = $(this).height();
 
             // -- set initiator class
-            if ( storeInnerHeight >= storeThisHeight ) {
-                if ( !$(this).hasClass(teaserBlockNotToggleableClass) ) {
-                    $(this).addClass(teaserBlockNotToggleableClass);
-                }
-            } else {
+            if ( storeInnerHeight > storeThisHeight ) {
                 if ( $(this).hasClass(teaserBlockNotToggleableClass) ) {
                     $(this).removeClass(teaserBlockNotToggleableClass);
+                }
+            } else {
+                if ( !$(this).hasClass(teaserBlockNotToggleableClass) ) {
+                    $(this).addClass(teaserBlockNotToggleableClass);
                 }
             }
         })
