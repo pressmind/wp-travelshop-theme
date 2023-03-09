@@ -7,9 +7,9 @@
 
     // -- toggle
     .teaser-block-toggle{
-      padding: .2rem 0 0 0;
+      padding: 2rem 0 0 0;
 
-      @include gradient-x(red, green);
+      @include gradient-y(red, green);
 
       position:absolute;
       bottom:0;

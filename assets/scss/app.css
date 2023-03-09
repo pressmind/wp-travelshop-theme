@@ -14089,8 +14089,8 @@ ul.checklist {
   overflow: hidden;
   position: relative; }
   .teaser-block .teaser-block-preview .teaser-block-toggle {
-    padding: .2rem 0 0 0;
-    background-image: linear-gradient(to right, red 0%, green 100%);
+    padding: 2rem 0 0 0;
+    background-image: linear-gradient(to bottom, red 0%, green 100%);
     background-repeat: repeat-x;
     position: absolute;
     bottom: 0;
