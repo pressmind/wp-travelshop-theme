@@ -440,7 +440,7 @@ jQuery(function ($) {
     // ------------------------------------------------
     let teaserBlock = $('.teaser-block-preview');
     let teaserBlockToggle = $('.teaser-block-toggle');
-    let teaserBlockToggleableClass = 'is-toggleable';
+    let teaserBlockNotToggleableClass = 'not-toggleable';
     let teaserBlockModalClose = $('.teaser-block-modal-close');
 
     function teaserBlockHandler() {
@@ -452,12 +452,12 @@ jQuery(function ($) {
 
             // -- set initiator class
             if ( storeInnerHeight > storeThisHeight ) {
-                if ( !$(this).hasClass(teaserBlockToggleableClass) ) {
-                    $(this).addClass(teaserBlockToggleableClass);
+                if ( !$(this).hasClass(teaserBlockNotToggleableClass) ) {
+                    $(this).removeClass(teaserBlockNotToggleableClass);
                 }
             } else {
-                if ( $(this).hasClass(teaserBlockToggleableClass) ) {
-                    $(this).removeClass(teaserBlockToggleableClass);
+                if ( $(this).hasClass(teaserBlockNotToggleableClass) ) {
+                    $(this).addClass(teaserBlockNotToggleableClass);
                 }
             }
         })
