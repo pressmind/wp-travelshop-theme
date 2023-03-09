@@ -21,6 +21,16 @@
 %image-gallery-item-not-initialized {
   padding-left: .5rem;
   padding-right: .5rem;
+
+  flex: 0 0 (100% / 2);
+  width: 100%;
+  max-width: (100% / 2);
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 (100% / 3);
+    width: 100%;
+    max-width: (100% / 3);
+  }
 }
 
 %image-gallery-item-link {

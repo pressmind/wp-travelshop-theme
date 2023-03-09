@@ -14265,7 +14265,41 @@ ul.checklist {
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
 .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .accordion-gallery-item {
   padding-left: .5rem;
-  padding-right: .5rem; }
+  padding-right: .5rem;
+  flex: 0 0 50%;
+  width: 100%;
+  max-width: 50%; }
+  @media (min-width: 768px) {
+    .accordion-block-gallery .text-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .accordion-block-gallery .text-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .accordion-block-gallery .text-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .accordion-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .accordion-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .accordion-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .accordion-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .accordion-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .accordion-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .teaser-block-gallery .text-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .teaser-block-gallery .text-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .teaser-block-gallery .text-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .teaser-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .teaser-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .teaser-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .teaser-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .teaser-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .teaser-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .text-block-gallery .text-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .text-block-gallery .text-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .text-block-gallery .text-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .text-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .text-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .text-block-gallery .accordion-block-gallery--inner:not(.tns-slider) .accordion-gallery-item,
+    .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .teaser-block-gallery-item,
+    .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .text-block-gallery-item,
+    .text-block-gallery .teaser-block-gallery--inner:not(.tns-slider) .accordion-gallery-item {
+      flex: 0 0 33.3333333333%;
+      width: 100%;
+      max-width: 33.3333333333%; } }
 
 .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item > a,
 .accordion-block-gallery .text-block-gallery--inner .text-block-gallery-item > a,
