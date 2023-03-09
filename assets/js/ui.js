@@ -480,6 +480,8 @@ jQuery(function ($) {
         var thisID = thisButton.data('id');
         var thisModal = $(this).parents('.teaser-block').find('#' + thisID );
 
+        console.log(thisModal);
+
         thisModal.addClass('show');
 
         e.stopPropagation();
