@@ -9,7 +9,7 @@
     .teaser-block-toggle{
       padding: 2rem 0 0 0;
 
-      @include gradient-y(red, green);
+      @include gradient-y(rgba($body-bg, 0), $body-bg);
 
       position:absolute;
       bottom:0;

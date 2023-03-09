@@ -12150,7 +12150,8 @@ ul.checklist {
   .btn.btn-link, .btn.btn-link-light {
     color: #212529;
     transition: color .3s;
-    text-decoration: none; }
+    text-decoration: none;
+    font-weight: 700; }
     .btn.btn-link:hover, .btn.btn-link:focus, .btn.btn-link:active, .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
       color: #007bff; }
     .btn.btn-link:hover, .btn.btn-link-light:hover {
@@ -14090,7 +14091,7 @@ ul.checklist {
   position: relative; }
   .teaser-block .teaser-block-preview .teaser-block-toggle {
     padding: 2rem 0 0 0;
-    background-image: linear-gradient(to bottom, red 0%, green 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
     background-repeat: repeat-x;
     position: absolute;
     bottom: 0;
