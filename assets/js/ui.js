@@ -441,7 +441,7 @@ jQuery(function ($) {
     let detailMobileBar = $('.detail-mobile-bar');
     var detailBookingPos = $('.detail-booking-entrypoint').position().top;
     var detailBookingHeight = $('.detail-booking-entrypoint').height();
-    var detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
+    var detailMobileBarThreshold = detailBookingPos + detailBookingHeight + $(window).height() + 30;
     var resizeInitiatorMobileBar;
     var curScrollPosition = $(window).scrollTop();
 
@@ -461,7 +461,7 @@ jQuery(function ($) {
         curScrollPosition = $(window).scrollTop();
         detailBookingPos = $('.detail-booking-entrypoint').position().top;
         detailBookingHeight = $('.detail-booking-entrypoint').height();
-        detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
+        detailMobileBarThreshold = detailBookingPos + detailBookingHeight + $(window).height()  + 30;
 
         resizeInitiatorMobileBar = setTimeout(toggleMobileBar(curScrollPosition, detailMobileBarThreshold), 100);
     }
