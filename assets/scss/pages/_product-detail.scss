@@ -61,6 +61,17 @@
       @include spacing-generator($detail-page-section-paddings, 'y');
     }
 
+    // -- description blocks
+    .description-block-wrapper{
+      .description-block + .description-block {
+        @include spacing-generator($detail-page-section-paddings, 'top');
+        @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+
+        border-top: $hr-border-width solid $hr-border-color;
+      }
+    }
+
+    // -- info sections
     .detail-info-section {
       + .detail-info-section {
         @include spacing-generator($detail-page-section-paddings, 'top');
