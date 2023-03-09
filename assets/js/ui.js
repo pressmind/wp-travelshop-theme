@@ -476,8 +476,7 @@ jQuery(function ($) {
     teaserBlockToggle.on('click', function(e) {
         e.preventDefault();
 
-        var thisButton = $(this);
-        var thisID = thisButton.data('modal-id');
+        var thisID = $(this).data('modal-id');
 
         console.log(thisID);
         console.log($('#teaser-modal--' + thisID ));
