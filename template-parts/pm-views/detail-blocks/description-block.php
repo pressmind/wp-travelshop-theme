@@ -72,11 +72,40 @@
                                             </h3>
                                         <?php } ?>
 
-                                        <?php if (!empty($item['text'])) { ?>
-                                            <div class="teaser-block-text">
-                                                <?php echo remove_empty_paragraphs($item['text']); ?>
-                                            </div>
-                                        <?php } ?>
+                                        <div class="teaser-block-content">
+                                            <?php if (!empty($item['text'])) { ?>
+                                                <div class="teaser-block-text">
+                                                    <?php echo remove_empty_paragraphs($item['text']); ?>
+                                                </div>
+                                            <?php } ?>
+
+                                            <?php if (!empty($item['pictures'])) { ?>
+                                                <div class="teaser-block-gallery" data-gallery="true" id="teaser-block-gallery--<?php echo $k; ?>">
+                                                    <div class="teaser-block-gallery--inner">
+                                                        <?php foreach ($item['pictures'] as $picture) { ?>
+                                                            <div class="teaser-block-gallery-item">
+
+                                                                <a href="<?php echo $picture['url_detail']; ?>"
+                                                                   data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
+                                                                    <div class="zoom-indicator">
+                                                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass-plus"></use></svg>
+                                                                    </div>
+
+                                                                    <div class="teaser-block-gallery-item--image">
+                                                                        <img src="<?php echo $picture['url_teaser']; ?>"
+                                                                             alt="<?php echo $picture['alt']; ?>"/>
+                                                                    </div>
+                                                                    <div class="teaser-block-gallery-item--copyright">
+                                                                        <?php echo $picture['copyright']; ?>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+
                                     </div>
 
                                     <?php
@@ -104,37 +133,8 @@
                                             </div>
 
                                             <div class="teaser-block-modal-body">
-                                                <?php if (!empty($item['text'])) { ?>
-                                                    <div class="teaser-block-text">
-                                                        <?php echo remove_empty_paragraphs($item['text']); ?>
-                                                    </div>
-                                                <?php } ?>
 
-                                                <?php if (!empty($item['pictures'])) { ?>
-                                                    <div class="teaser-block-gallery" data-gallery="true" id="teaser-block-gallery--<?php echo $k; ?>">
-                                                        <div class="teaser-block-gallery--inner">
-                                                        <?php foreach ($item['pictures'] as $picture) { ?>
-                                                                <div class="teaser-block-gallery-item">
 
-                                                                    <a href="<?php echo $picture['url_detail']; ?>"
-                                                                       data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
-                                                                        <div class="zoom-indicator">
-                                                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass-plus"></use></svg>
-                                                                        </div>
-
-                                                                        <div class="teaser-block-gallery-item--image">
-                                                                            <img src="<?php echo $picture['url_teaser']; ?>"
-                                                                                 alt="<?php echo $picture['alt']; ?>"/>
-                                                                        </div>
-                                                                        <div class="teaser-block-gallery-item--copyright">
-                                                                            <?php echo $picture['copyright']; ?>
-                                                                        </div>
-                                                                    </a>
-                                                                </div>
-                                                        <?php } ?>
-                                                        </div>
-                                                    </div>
-                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
