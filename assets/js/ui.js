@@ -478,9 +478,7 @@ jQuery(function ($) {
 
         var thisButton = $(this);
         var thisID = thisButton.data('id');
-        var thisModal = $(this).parents('.teaser-block').find('#' + thisID );
-
-        console.log(thisModal);
+        var thisModal = $('.teaser-block--' + thisID).find('#teaser-modal--' + thisID );
 
         thisModal.addClass('show');
 
