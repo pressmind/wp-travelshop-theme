@@ -58,26 +58,28 @@
                         <?php foreach ( $description['items'] as $k => $item ) { ?>
                             <div class="teaser-block teaser-block--<?php echo $i; ?>-<?php echo $k; ?>">
                                 <div class="teaser-block-preview">
-                                    <?php if ( !empty($item['name']) ) { ?>
-                                        <h3 class="teaser-block-title h5">
-                                            <?php echo $item['name']; ?>
-                                        </h3>
-                                    <?php } ?>
+                                    <div class="teaser-block-preview--inner">
+                                        <?php if ( !empty($item['name']) ) { ?>
+                                            <h3 class="teaser-block-title h5">
+                                                <?php echo $item['name']; ?>
+                                            </h3>
+                                        <?php } ?>
 
-                                    <?php if (!empty($item['text'])) { ?>
-                                        <div class="teaser-block-text">
-                                            <?php echo remove_empty_paragraphs($item['text']); ?>
+                                        <?php if (!empty($item['text'])) { ?>
+                                            <div class="teaser-block-text">
+                                                <?php echo remove_empty_paragraphs($item['text']); ?>
+                                            </div>
+                                        <?php } ?>
+
+                                        <?php
+                                        // render read-more link
+                                        ?>
+                                        <div class="teaser-block-toggle">
+                                            <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
+                                                Mehr anzeigen
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+                                            </button>
                                         </div>
-                                    <?php } ?>
-
-                                    <?php
-                                    // render read-more link
-                                    ?>
-                                    <div class="teaser-block-toggle">
-                                        <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
-                                            Mehr anzeigen
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
-                                        </button>
                                     </div>
                                 </div>
 

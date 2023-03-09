@@ -14006,6 +14006,7 @@ ul.checklist {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
     width: 100%;
     gap: .5rem;
     padding-top: 0.75rem;
