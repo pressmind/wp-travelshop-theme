@@ -64,11 +64,11 @@ if(!$valid){
 
                     <div class="accordion-content">
                         <div class="accordion-content--inner">
-                            <div class="accordion-block accordion-block--text">
+                            <div class="accordion-block accordion-block-text">
                                 <?php echo remove_empty_paragraphs($section->content->description); ?>
                             </div>
 
-                            <div class="accordion-block accordion-block--gallery" data-gallery="true" id="accordion-block--gallery__<?php echo $key; ?>">
+                            <div class="accordion-block accordion-block-gallery" data-gallery="true" id="accordion-block-gallery__<?php echo $key; ?>">
                                 <div class="accordion-block-gallery--inner">
                                 <?php foreach($step->document_media_objects as $picture) { ?>
                                     <div class="accordion-gallery-item">

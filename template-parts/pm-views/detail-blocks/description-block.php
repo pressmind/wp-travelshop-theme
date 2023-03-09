@@ -172,14 +172,14 @@
                                 <div class="accordion-content">
                                     <div class="accordion-content--inner">
                                         <?php if (!empty($item['text'])) { ?>
-                                            <div class="accordion-block accordion-block--text">
+                                            <div class="accordion-block accordion-block-text">
                                                 <?php echo remove_empty_paragraphs($item['text']); ?>
                                             </div>
                                         <?php } ?>
 
 
                                         <?php if (!empty($item['pictures'])) { ?>
-                                            <div class="accordion-block accordion-block--gallery" data-gallery="true" id="accordion-block--gallery__<?php echo $k; ?>">
+                                            <div class="accordion-block accordion-block-gallery" data-gallery="true" id="accordion-block-gallery__<?php echo $k; ?>">
 
                                                 <div class="accordion-block-gallery--inner">
                                                 <?php foreach ($item['pictures'] as $picture) { ?>
