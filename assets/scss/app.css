@@ -12639,11 +12639,11 @@ ul.checklist {
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-select.show *, .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-wishlist.show * {
       pointer-events: auto; } }
-.page-share.is-open .page-share-fallback {
+.page-share.is-open .page-share-fallback, .teaser-block .teaser-block-modal.show {
   opacity: 1;
   display: flex;
   pointer-events: auto; }
-  .page-share.is-open .page-share-fallback * {
+  .page-share.is-open .page-share-fallback *, .teaser-block .teaser-block-modal.show * {
     pointer-events: auto; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-header {
@@ -12703,7 +12703,7 @@ ul.checklist {
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
         color: #007bff; } }
-.page-share .page-share-fallback .page-share-fallback-header {
+.page-share .page-share-fallback .page-share-fallback-header, .teaser-block .teaser-block-modal .teaser-block-modal-header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1rem;
@@ -12711,9 +12711,9 @@ ul.checklist {
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
   display: flex !important; }
-  .page-share .page-share-fallback .page-share-fallback-header > *:not(button) {
+  .page-share .page-share-fallback .page-share-fallback-header > *:not(button), .teaser-block .teaser-block-modal .teaser-block-modal-header > *:not(button) {
     margin-bottom: 0; }
-  .page-share .page-share-fallback .page-share-fallback-header > button {
+  .page-share .page-share-fallback .page-share-fallback-header > button, .teaser-block .teaser-block-modal .teaser-block-modal-header > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -12725,11 +12725,11 @@ ul.checklist {
     margin: -1rem -1rem -1rem auto;
     color: #212529;
     transition: color .3s; }
-    .page-share .page-share-fallback .page-share-fallback-header > button svg {
+    .page-share .page-share-fallback .page-share-fallback-header > button svg, .teaser-block .teaser-block-modal .teaser-block-modal-header > button svg {
       pointer-events: none;
       width: 1.125rem;
       height: 1.125rem; }
-    .page-share .page-share-fallback .page-share-fallback-header > button:hover, .page-share .page-share-fallback .page-share-fallback-header > button:focus, .page-share .page-share-fallback .page-share-fallback-header > button:active {
+    .page-share .page-share-fallback .page-share-fallback-header > button:hover, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:hover, .page-share .page-share-fallback .page-share-fallback-header > button:focus, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:focus, .page-share .page-share-fallback .page-share-fallback-header > button:active, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:active {
       color: #007bff; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-boxes {
@@ -12749,7 +12749,7 @@ ul.checklist {
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden; } }
-.page-share .page-share-fallback .page-share-fallback-body {
+.page-share .page-share-fallback .page-share-fallback-body, .teaser-block .teaser-block-modal .teaser-block-modal-body {
   position: relative;
   padding: 1rem;
   margin: 0 !important;
@@ -12781,7 +12781,7 @@ ul.checklist {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     outline: 0; } }
-.page-share .page-share-fallback .page-share-fallback-inner .page-share-fallback-content {
+.page-share .page-share-fallback .page-share-fallback-inner .page-share-fallback-content, .teaser-block .teaser-block-modal .teaser-block-modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -12851,7 +12851,7 @@ ul.checklist {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-select *, .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-wishlist * {
       pointer-events: none; } }
-.page-share .page-share-fallback {
+.page-share .page-share-fallback, .teaser-block .teaser-block-modal {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -12875,7 +12875,7 @@ ul.checklist {
   border: 0;
   margin: 0;
   border-radius: 0; }
-  .page-share .page-share-fallback * {
+  .page-share .page-share-fallback *, .teaser-block .teaser-block-modal * {
     pointer-events: none; }
 @media (min-width: 768px) {
   .page-share .page-share-fallback .page-share-fallback-inner {
@@ -12903,7 +12903,7 @@ ul.checklist {
     height: auto;
     max-height: 100%;
     width: 100%; } }
-.page-share .page-share-fallback .page-share-fallback-inner {
+.page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner {
   position: relative;
   margin: 0;
   pointer-events: none;

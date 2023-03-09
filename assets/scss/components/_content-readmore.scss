@@ -28,4 +28,30 @@
       }
     }
   }
+
+  // -- modal
+  .teaser-block-modal {
+    @extend %modal-wrapper;
+
+
+    .teaser-block-modal-inner {
+      @extend %modal-inner;
+    }
+
+    .teaser-block-modal-content {
+      @extend %modal-content;
+    }
+
+    &.show {
+      @extend %modal-open;
+    }
+
+    .teaser-block-modal-header {
+      @extend %modal-header;
+    }
+
+    .teaser-block-modal-body {
+      @extend %modal-body;
+    }
+  }
 }
