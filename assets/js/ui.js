@@ -478,9 +478,8 @@ jQuery(function ($) {
 
         var thisButton = $(this);
         var thisID = thisButton.data('id');
-        var thisModal = $('.teaser-block--' + thisID).find('#teaser-modal--' + thisID );
 
-        thisModal.addClass('show');
+        $('#teaser-modal--' + thisID ).addClass('show');
 
         e.stopPropagation();
     });
