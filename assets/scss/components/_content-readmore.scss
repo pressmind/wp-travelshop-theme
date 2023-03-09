@@ -1,0 +1,10 @@
+.teaser-block{
+  .teaser-block-preview {
+    text-overflow: ellipsis;
+    text-overflow-ellipsis: '...';
+
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+}
