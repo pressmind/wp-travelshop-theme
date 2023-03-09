@@ -12878,7 +12878,7 @@ ul.checklist {
   .page-share .page-share-fallback *, .teaser-block .teaser-block-modal * {
     pointer-events: none; }
 @media (min-width: 768px) {
-  .page-share .page-share-fallback .page-share-fallback-inner {
+  .page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner {
     max-width: 768px; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter {

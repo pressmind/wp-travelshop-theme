@@ -39,6 +39,7 @@
 
     .teaser-block-modal-inner {
       @extend %modal-inner;
+      @extend %modal-inner-width-md;
     }
 
     .teaser-block-modal-content {
