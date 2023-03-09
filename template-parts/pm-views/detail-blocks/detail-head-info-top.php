@@ -38,7 +38,7 @@
     }
     ?>
     <div class="detail-header-info-top-body">
-        <h2><?php echo $args['name']; ?></h2>
+        <h1><?php echo $args['name']; ?></h1>
         <?php /*
         <?php if (!empty($args['subline'])) { ?>
             <p><?php echo $args['subline']; ?></p>

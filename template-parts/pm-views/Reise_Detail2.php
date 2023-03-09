@@ -492,22 +492,32 @@ $args['breadcrumb'][] = $tmp;
             <div class="container">
                 <div class="row flex-column-reverse flex-lg-row">
                     <div class="col-12 col-lg-7 col-xl-8">
-                        <h2><?php echo $args['headline']; ?></h2>
-                        <?php if (!empty($args['subline'])) { ?>
-                            <p><strong><?php echo $args['subline']; ?></strong></p>
-                        <?php } ?>
-                        <?php if (!empty($args['usps'])) { ?>
-                            <?php echo checklist_formatter($args['usps'], true); ?>
-                        <?php } ?>
-                        <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
-                            <p><?php echo $args['intro']; ?></p>
-                        <?php } ?>
+                        <div class="detail-info-section detail-info-section--intro">
+                            <h2><?php echo $args['headline']; ?></h2>
+                            <?php if (!empty($args['subline'])) { ?>
+                                <p><strong><?php echo $args['subline']; ?></strong></p>
+                            <?php } ?>
+                            <?php if (!empty($args['usps'])) { ?>
+                                <?php echo checklist_formatter($args['usps'], true); ?>
+                            <?php } ?>
+                            <?php if (!empty($args['intro']) && $args['cheapest_price']->duration > 1) { ?>
+                                <p><?php echo $args['intro']; ?></p>
+                            <?php } ?>
+                        </div>
                         <?php
                         // = = = > itinerary < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
+                        if (!empty($args['media_object']->getItinerarySteps())) {
+                            echo "<div class='detail-info-section detail-info-section--itinerary'>";
+                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
+                            echo "</div>";
+                        }
 
                         // = = = > load common description blocks < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/description-block.php', $args);
+                        if ( !empty($args['descriptions']) ) {
+                            echo "<div class='detail-info-section detail-info-section--descriptions'>";
+                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/description-block.php', $args);
+                            echo "</div>";
+                        }
 
                         // = = = > File Downloads < = = =
                         //                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/file-download.php', $args);
