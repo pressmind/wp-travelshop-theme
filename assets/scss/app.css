@@ -12244,6 +12244,9 @@ ul.checklist {
     color: #5a6570; }
     .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
       color: #007bff; }
+  @media (max-width: 767.98px) {
+    .btn.btn-lg, .btn-group-lg > .btn {
+      font-size: 1.125rem !important; } }
 
 .btn.booking-btn.green,
 .booking-btn.green {
@@ -15880,8 +15883,19 @@ footer.footer-main {
   padding: .75rem 0; }
   .detail-mobile-bar .detail-mobile-bar-row {
     gap: .5rem; }
-  .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--attributes {
-    margin: 0; }
+  .detail-mobile-bar .detail-mobile-bar-info {
+    flex: 1 1 auto;
+    overflow: hidden; }
+    .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--attributes {
+      margin: 0; }
+    .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  .detail-mobile-bar .detail-mobile-bar-booking {
+    flex: 1; }
+    .detail-mobile-bar .detail-mobile-bar-booking .btn {
+      white-space: nowrap; }
 
 /**
  * General styles for Detail-Page

@@ -18,10 +18,28 @@
     }
 
     .detail-mobile-bar-info {
+
+      flex: 1 1 auto;
+      overflow: hidden;
+
       .detail-mobile-bar-info--attributes {
         @extend %detail-attributes-row;
 
         margin: 0;
+      }
+
+      .detail-mobile-bar-info--title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .detail-mobile-bar-booking {
+      flex: 1;
+
+      .btn {
+        white-space: nowrap;
       }
     }
   }

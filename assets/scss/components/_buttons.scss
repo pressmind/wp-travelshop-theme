@@ -57,6 +57,12 @@
       color: $primary;
     }
   }
+
+  &.btn-lg {
+    @include media-breakpoint-down(sm) {
+      font-size: 1.125rem !important;
+    }
+  }
 }
 
 .btn.booking-btn,
