@@ -66,20 +66,15 @@
                                         <?php } ?>
 
                                         <?php if (!empty($item['text'])) { ?>
-                                            <div class="teaser-block-text">
-                                                <?php echo remove_empty_paragraphs($item['text']); ?>
-                                            </div>
+                                            <?php echo remove_empty_paragraphs($item['text']); ?>
                                         <?php } ?>
+                                    </div>
 
-                                        <?php
-                                        // render read-more link
-                                        ?>
-                                        <div class="teaser-block-toggle">
-                                            <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
-                                                Mehr anzeigen
-                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
-                                            </button>
-                                        </div>
+                                    <div class="teaser-block-toggle">
+                                        <button class="btn btn-link" type="button" data-id="<?php echo $i; ?>-<?php echo $k; ?>">
+                                            Mehr anzeigen
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+                                        </button>
                                     </div>
                                 </div>
 

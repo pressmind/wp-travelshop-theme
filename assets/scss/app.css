@@ -14084,11 +14084,6 @@ ul.checklist {
         padding-left: 1.5rem;
         padding-right: 1.5rem; } }
 
-.teaser-block .teaser-block-preview {
-  max-height: 8rem;
-  overflow: hidden;
-  text-overflow-ellipsis: ellipsis; }
-
 header.header-main {
   background-color: #fff;
   color: #212529;
