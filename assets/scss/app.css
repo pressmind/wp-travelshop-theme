@@ -15000,17 +15000,17 @@ footer.footer-main {
           text-decoration: none; }
         .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:active, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:focus {
           text-decoration: underline; }
-    .detail-header-info .detail-header-info-top h2 {
+    .detail-header-info .detail-header-info-top h1 {
       font-size: 1rem;
       margin-bottom: 0.5rem; }
       @media (min-width: 576px) {
-        .detail-header-info .detail-header-info-top h2 {
+        .detail-header-info .detail-header-info-top h1 {
           font-size: 1.25rem; } }
       @media (min-width: 992px) {
-        .detail-header-info .detail-header-info-top h2 {
+        .detail-header-info .detail-header-info-top h1 {
           font-size: 1.5rem; } }
       @media (min-width: 992px) {
-        .detail-header-info .detail-header-info-top h2 {
+        .detail-header-info .detail-header-info-top h1 {
           margin-bottom: 1rem; } }
     .detail-header-info .detail-header-info-top ul, .detail-header-info .detail-header-info-top p {
       margin: 0; }

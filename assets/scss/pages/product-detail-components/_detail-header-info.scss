@@ -96,7 +96,7 @@
         }
       }
 
-      h2 {
+      h1 {
         @include font-size-generator($detail-header-info-headline-sizes);
         @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
       }
