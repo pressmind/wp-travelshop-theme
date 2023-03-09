@@ -477,7 +477,7 @@ jQuery(function ($) {
         e.preventDefault();
 
         var thisButton = $(this);
-        var thisID = thisButton.data('id');
+        var thisID = thisButton.data('modal-id');
 
         console.log(thisID);
         console.log($('#teaser-modal--' + thisID ));
