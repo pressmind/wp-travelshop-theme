@@ -479,6 +479,9 @@ jQuery(function ($) {
         var thisButton = $(this);
         var thisID = thisButton.data('id');
 
+        console.log(thisID);
+        console.log($('#teaser-modal--' + thisID ));
+
         $('#teaser-modal--' + thisID ).addClass('show');
 
         e.stopPropagation();
