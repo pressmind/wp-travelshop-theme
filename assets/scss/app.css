@@ -14110,7 +14110,7 @@ ul.checklist {
 .accordion-block-gallery,
 .teaser-block-gallery,
 .text-block-gallery {
-  padding-top: 1rem; }
+  padding: 0; }
 
 .accordion-block-gallery .text-block-gallery--inner:not(.tns-slider),
 .accordion-block-gallery .accordion-block-gallery--inner:not(.tns-slider),
