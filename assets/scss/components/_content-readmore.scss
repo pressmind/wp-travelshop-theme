@@ -1,10 +1,8 @@
 .teaser-block{
   .teaser-block-preview {
-    text-overflow: ellipsis;
-    text-overflow-ellipsis: '...';
+    max-height: 8rem;
+    overflow: hidden;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
+    text-overflow-ellipsis: ellipsis;
   }
 }
