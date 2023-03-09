@@ -71,13 +71,12 @@
 }
 
 %image-gallery-item-image {
+
+  @include aspect-ratio(16, 10);
+  position: relative;
+
   > img {
-    width: 100%;
-    height: auto;
-
-    apsect-ratio: 16/10;
-    object-fit: cover;
-
+    @extend %media-cover-image;
     @include border-radius($border-radius);
   }
 }
