@@ -68,6 +68,17 @@
 
         border-top: $hr-border-width solid $hr-border-color;
       }
+
+      // -- little fix for detail-info-section--intro
+      &.detail-info-section--intro {
+        p, ul, ol, h1, h2, h3, h4 {
+          margin-bottom:0;
+
+          + p, + ul, + ol, + h1, + h2, + h3, + h4 {
+            margin-top: 1rem;
+          }
+        }
+      }
     }
   }
 }
