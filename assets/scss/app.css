@@ -14359,6 +14359,7 @@ ul.checklist {
   .text-block-gallery .teaser-block-gallery--inner .text-block-gallery-item > a > .zoom-indicator,
   .text-block-gallery .teaser-block-gallery--inner .accordion-gallery-item > a > .zoom-indicator {
     transition: transform .15s, opacity .15s;
+    z-index: 3;
     width: 2.5rem;
     height: 2.5rem;
     background-color: rgba(33, 37, 41, 0.75);

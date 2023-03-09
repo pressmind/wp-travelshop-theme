@@ -74,7 +74,7 @@ if(!$valid){
                                     <div class="accordion-gallery-item">
                                         <a href="<?php echo $picture->getUri('detail_gallery'); ?>" data-lightbox="accordion-gallery-<?php echo $step->id; ?>">
                                             <div class="zoom-indicator">
-                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#maginifying-glass-plus"></use></svg>
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass-plus"></use></svg>
                                             </div>
                                             <div class="accordion-gallery-item--image">
                                                 <img src="<?php echo $picture->getUri('teaser'); ?>" alt="<?php echo $picture->alt; ?>" loading="lazy" />

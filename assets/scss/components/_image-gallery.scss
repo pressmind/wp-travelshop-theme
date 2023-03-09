@@ -41,6 +41,7 @@
   > .zoom-indicator {
     transition: transform .15s, opacity .15s;
 
+    z-index: 3;
     width: 2.5rem;
     height: 2.5rem;
 
