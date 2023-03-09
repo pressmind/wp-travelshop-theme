@@ -39,6 +39,9 @@
                                                 <div class="text-block-gallery-item">
                                                     <a  href="<?php echo $picture['url_detail']; ?>"
                                                         data-lightbox="text-block-gallery-<?php echo $k; ?>">
+                                                        <div class="zoom-indicator">
+                                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#maginifying-glass-plus"></use></svg>
+                                                        </div>
                                                         <div class="text-block-gallery-item--image">
                                                             <img src="<?php echo $picture['url_teaser']; ?>"
                                                                  alt="<?php echo $picture['alt']; ?>"/>
@@ -115,6 +118,10 @@
 
                                                                     <a href="<?php echo $picture['url_detail']; ?>"
                                                                        data-lightbox="teaser-block-gallery-<?php echo $k; ?>">
+                                                                        <div class="zoom-indicator">
+                                                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#maginifying-glass-plus"></use></svg>
+                                                                        </div>
+
                                                                         <div class="teaser-block-gallery-item--image">
                                                                             <img src="<?php echo $picture['url_teaser']; ?>"
                                                                                  alt="<?php echo $picture['alt']; ?>"/>
@@ -186,6 +193,9 @@
                                                     <div class="accordion-gallery-item">
                                                         <a  href="<?php echo $picture['url_detail']; ?>"
                                                             data-lightbox="accordion-gallery-<?php echo $k; ?>">
+                                                            <div class="zoom-indicator">
+                                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#maginifying-glass-plus"></use></svg>
+                                                            </div>
                                                             <div class="accordion-gallery-item--image">
                                                                 <img src="<?php echo $picture['url_teaser']; ?>"
                                                                      alt="<?php echo $picture['alt']; ?>"/>
