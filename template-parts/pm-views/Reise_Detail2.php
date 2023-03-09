@@ -522,7 +522,9 @@ $args['breadcrumb'][] = $tmp;
                         // = = = > File Downloads < = = =
                         //                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/file-download.php', $args);
 
+                        echo "<div class='detail-info-line'>";
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/info-line.php', $args);
+                        echo "</div>";
 
                         ?>
                     </div>

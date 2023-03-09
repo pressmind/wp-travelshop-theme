@@ -15143,6 +15143,12 @@ footer.footer-main {
   @media (min-width: 768px) {
     .detail-section .description-block-wrapper .description-block + .description-block {
       margin-top: 30px; } }
+.detail-section .detail-info-line {
+  margin-top: 1.5rem;
+  color: #5a6570; }
+  @media (min-width: 768px) {
+    .detail-section .detail-info-line {
+      margin-top: 30px; } }
 .detail-section .detail-info-section + .detail-info-section {
   padding-top: 1.5rem;
   margin-top: 1.5rem;

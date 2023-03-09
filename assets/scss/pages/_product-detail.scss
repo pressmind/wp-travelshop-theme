@@ -71,6 +71,12 @@
       }
     }
 
+    // -- info line
+    .detail-info-line {
+      @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+      color: $body-color-light;
+    }
+
     // -- info sections
     .detail-info-section {
       + .detail-info-section {
