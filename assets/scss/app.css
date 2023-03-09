@@ -14167,6 +14167,16 @@ ul.checklist {
         padding-left: 1.5rem;
         padding-right: 1.5rem; } }
 
+.teaser-block + .teaser-block {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e9ecef; }
+  @media (min-width: 768px) {
+    .teaser-block + .teaser-block {
+      padding-top: 30px; } }
+  @media (min-width: 768px) {
+    .teaser-block + .teaser-block {
+      margin-top: 30px; } }
 .teaser-block .teaser-block-preview {
   max-height: 20rem;
   overflow: hidden;
@@ -14186,6 +14196,17 @@ ul.checklist {
   .teaser-block .teaser-block-preview.not-toggleable .teaser-block-toggle {
     opacity: 0;
     pointer-events: none; }
+
+.text-block + .text-block {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e9ecef; }
+  @media (min-width: 768px) {
+    .text-block + .text-block {
+      padding-top: 30px; } }
+  @media (min-width: 768px) {
+    .text-block + .text-block {
+      margin-top: 30px; } }
 
 .accordion-block-gallery,
 .teaser-block-gallery,
