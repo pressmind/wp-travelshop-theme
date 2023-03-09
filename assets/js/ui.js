@@ -447,8 +447,6 @@ jQuery(function ($) {
         var storeInnerHeight, storeThisHeight = null;
 
         teaserBlock.each(function(e) {
-            e.preventDefault();
-
             storeInnerHeight = $(this).find('.teaser-block-preview--inner').height();
             storeThisHeight = $(this).height();
 
@@ -462,8 +460,6 @@ jQuery(function ($) {
                     $(this).removeClass(teaserBlockToggleableClass);
                 }
             }
-
-            e.stopPropagation();
         })
     }
 
