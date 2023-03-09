@@ -9,7 +9,8 @@
     flex-wrap: nowrap;
 
     overflow: hidden;
-    gap: 1rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
   }
 }
 
@@ -17,9 +18,15 @@
   position: relative;
 }
 
+%image-gallery-item-not-initialized {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
 %image-gallery-item-link {
   display: block;
   clear: both;
+  position: relative;
 
   > .zoom-indicator {
     transition: transform .15s, opacity .15s;
@@ -115,6 +122,15 @@
       .text-block-gallery-item--copyright,
       .teaser-block-gallery-item--copyright {
         @extend %image-gallery-item-copyright;
+      }
+    }
+
+    &:not(.tns-slider) {
+      // -- item not initialized
+      .teaser-block-gallery-item,
+      .text-block-gallery-item,
+      .accordion-gallery-item {
+        @extend %image-gallery-item-not-initialized;
       }
     }
   }
