@@ -53,10 +53,9 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
-    echo "<pre>";
-    print_r($_GET);
-    print_r($_POST);
-    echo "</pre>";
+    $args = [];
+    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
+    exit;
 } else if ($_GET['action'] == 'search') {
     $output = null;
     $view = 'Teaser1';
