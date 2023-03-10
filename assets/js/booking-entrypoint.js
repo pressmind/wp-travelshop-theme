@@ -55,6 +55,7 @@ jQuery(function ($) {
             $.ajax({
                 url: bookingEntryCalendarServiceUrl,
                 data: request,
+                contentType: "application/x-www-form-urlencoded",
                 type: 'POST',
                 beforeSend: function(xhr) {
                     console.log('before send');
