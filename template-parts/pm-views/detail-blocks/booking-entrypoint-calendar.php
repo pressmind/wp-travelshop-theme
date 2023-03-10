@@ -66,14 +66,7 @@ if ($interval->format('%m') < 3) {
 <div class="row content-block-detail-booking-calendar">
     <div class="col-12">
         <div class="booking-calendar-title">
-            <h2>Buchungskalender
-               <?php echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $args['cheapest_price']->duration]); ?>
-                <?php
-                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                    'transport_type' => $args['cheapest_price']->transport_type,
-                ]);
-                ?>
-            </h2>
+            <h2>Termin wählen</h2>
             <?php if(count($durations) > 0 && count($transport_types) > 0){ ?>
             <div>
                 <div class="btn-group" role="group" aria-label="Durations">
@@ -85,18 +78,6 @@ if ($interval->format('%m') < 3) {
                                 ]);
                                 ?></a>
                     <?php } ?>
-                </div>
-                <div class="btn-group" role="group" aria-label="Durations">
-                <?php
-                foreach($transport_types as $transport_type) { ?>
-                    <a href="<?php echo Template::modifyUrl($args['url'], ['pm-tr' => $transport_type, 'pm-dr' =>'']); ?>" class="btn btn<?php echo ($transport_type == $args['cheapest_price']->transport_type) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
-
-                        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                            'transport_type' => $transport_type,
-                        ]);
-
-                    ?></a>
-                <?php } ?>
                 </div>
             </div>
             <?php } ?>
