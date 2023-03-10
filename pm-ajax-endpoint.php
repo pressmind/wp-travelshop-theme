@@ -64,12 +64,23 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $CheapestPriceFilter = new CheapestPrice();
 
     $valid_params = [];
+
+    // duration
     if (empty($_POST['pm-du']) === false) {
         $durationRange = BuildSearch::extractDurationRange($_POST['pm-du']);
         if ($durationRange !== false) {
             $valid_params['pm-du'] = $_POST['pm-du'];
             $CheapestPriceFilter->duration_from = $durationRange[0];
             $CheapestPriceFilter->duration_to = $durationRange[1];
+        }
+    }
+
+    // transport_type
+    if (empty($_POST['pm-tr']) === false) {
+        $transport_types = BuildSearch::extractTransportTypes($_POST['pm-tr']);
+        if(!empty($transport_types)){
+            $valid_params['pm-tr'] = $_POST['pm-tr'];
+            $CheapestPriceFilter->transport_types = $transport_types;
         }
     }
 

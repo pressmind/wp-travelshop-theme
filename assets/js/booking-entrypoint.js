@@ -83,7 +83,7 @@ jQuery(function ($) {
 
             // -- request array
             var calendarRequest = {
-                'transport_type': transportType,
+                'pm-tr': transportType,
                 'airport': airport,
                 'pm-du': duration,
                 'offer': offer,
