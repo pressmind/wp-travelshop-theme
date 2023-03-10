@@ -225,7 +225,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 
   // active
+  input[checked] + span,
   input:checked + span,
+  input[checked] + div:not(.list-filter-second-level),
   input:checked + div:not(.list-filter-second-level) {
     background-color: $custom-checkbox-input-active-bg !important;
 
@@ -462,7 +464,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   // active
   input:checked + span,
-  input:checked + div:not(.list-filter-second-level) {
+  input[checked] + span,
+  input:checked + div:not(.list-filter-second-level),
+  input[checked] + div:not(.list-filter-second-level) {
     background-color: $custom-radio-input-active-bg !important;
 
     @if ( $custom-radio-input-border-width != 0 ) {
