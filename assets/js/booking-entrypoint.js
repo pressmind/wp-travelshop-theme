@@ -6,26 +6,32 @@ jQuery(function ($) {
     if ( bookingEntry.length > 0 ) {
         // -- transport type / airport behaviour
         let bookingEntryTransportType = $('.booking-filter-radio--transport-type input[type="radio"]');
-        let bookingEntryAirport = $('.booking-filter-item--airport');
+        let bookingEntryAirportField = $('.booking-filter-item--airport');
 
         // -- switch travel-type
         bookingEntryTransportType.on('change', function(e) {
             var thisType = $(this).val();
 
             if ( thisType == 'FLUG' ) {
-                bookingEntryAirport.removeClass('d-none');
+                bookingEntryAirportField.removeClass('d-none');
             } else {
-                bookingEntryAirport.addClass('d-none');
+                bookingEntryAirportField.addClass('d-none');
             }
         });
 
         // -- on click calendar
         let bookingEntryCalendar = $('.booking-filter-field--date-range');
 
+        // -- define some variables needed later
+        var getTransportType, getAirport = null;
+
         bookingEntryCalendar.on('click touch', function(e) {
             e.preventDefault();
 
-            console.log('clicked booking-calendar');
+            // -- collect data
+            getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
+
+            console.log(getTransportType);
 
             e.stopPropagation();
         })
