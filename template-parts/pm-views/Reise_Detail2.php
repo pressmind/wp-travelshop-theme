@@ -506,11 +506,7 @@ $args['breadcrumb'][] = $tmp;
                         </div>
                         <?php
                         // = = = > itinerary < = = =
-                        if (!empty($args['media_object']->getItinerarySteps())) {
-                            echo "<div class='detail-info-section detail-info-section--itinerary'>";
-                                echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
-                            echo "</div>";
-                        }
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/itinerary.php', $args);
 
                         // = = = > load common description blocks < = = =
                         if ( !empty($args['descriptions']) ) {

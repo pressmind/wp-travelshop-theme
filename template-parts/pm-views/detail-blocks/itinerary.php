@@ -38,6 +38,7 @@ if(!$valid){
 
 
 ?>
+<div class='detail-info-section detail-info-section--itinerary'>
 <div class="accordion-group">
     <div class="accordion-header">
         <h2 class="h3">Reiseverlauf</h2>
@@ -95,4 +96,5 @@ if(!$valid){
         }?>
 
     </section>
+</div>
 </div>
