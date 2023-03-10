@@ -71,14 +71,35 @@ jQuery(function ($) {
         }
 
         /**
+         * Refresh booking calendar
+         * @param transportType
+         * @param airport
+         * @param duration
+         * @param offer
+         * @param mediaObject
+         */
+        function refreshBookingCalendar(transportType, airport, duration, offer, mediaObject) {
+
+        }
+
+        /**
+         * Defines every interaction you can do in calendar
+         * + connects calendar to booking entrypoint!
+         */
+        function bookingCalendarInteraction() {
+            var travelDate = bookingEntryCalendarRenderTarget.find('.travel-date');
+            var durationSwitch = bookingEntryCalendarRenderTarget.find('')
+        }
+
+        /**
          * Render booking calendar
          * @param transportType
          * @param airport
          * @param duration
          * @param offer
-         * @param mediaobject
+         * @param mediaObject
          */
-        function renderBookingCalendar(transportType, airport, duration, offer, mediaobject) {
+        function renderBookingCalendar(transportType, airport, duration, offer, mediaObject) {
 
             // -- request array
             var calendarRequest = {
@@ -86,7 +107,7 @@ jQuery(function ($) {
                 'airport': airport,
                 'pm-du': duration,
                 'offer': offer,
-                'media_object_id': mediaobject
+                'media_object_id': mediaObject
             };
 
             console.log(calendarRequest);

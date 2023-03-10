@@ -69,11 +69,11 @@ if ($interval->format('%m') < 3) {
             <div class="btn-group">
             <?php
             foreach($durations as $duration) { ?>
-                <a href="<?php echo Template::modifyUrl($args['url'], ['pm-du' => $duration, 'pm-dr' => '']); ?>" class="btn <?php echo ($duration == $args['cheapest_price']->duration) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
+                <button data-duration="<?php echo $duration; ?>" class="btn <?php echo ($duration == $args['cheapest_price']->duration) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
                         'duration' => $duration,
                     ]);
-                    ?></a>
+                    ?></button>
             <?php } ?>
             </div>
         </div>
