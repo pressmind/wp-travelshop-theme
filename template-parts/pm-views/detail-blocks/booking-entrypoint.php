@@ -52,7 +52,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     </div>
 
     <input class="booking-filter-field--duration" type="hidden" name="dur" value="<?php echo $args['cheapest_price']->duration; ?>" />
-    <input class="booking-filter-field--mediaobject" type="hidden" name="mediaobject" value="<?php echo $args['cheapest_price']->id_media_object; ?>" />
+    <input class="booking-filter-field--mediaobject" type="hidden" name="mediaobject" value="<?php echo $args['id_media_object']; ?>" />
     <input class="booking-filter-field--offer" type="hidden" name="offer" value="<?php echo $args['cheapest_price']->id; ?>" />
 
     <div class="booking-filter-items-boxed">
