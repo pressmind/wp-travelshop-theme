@@ -6,7 +6,7 @@ jQuery(function ($) {
 
     // -- remove attribute checked by click airport
     bookingEntryAirportInput.on('click touch', function(e) {
-        bookingEntryAirportInput.removeAttribute('checked');
+        bookingEntryAirportInput.removeAttr('checked');
     });
 
     // -- switch travel-type
@@ -14,7 +14,7 @@ jQuery(function ($) {
 
         var thisType = $(this).val();
 
-        bookingEntryTransportType.removeAttribute('checked');
+        bookingEntryTransportType.removeAttr('checked');
 
         if ( thisType == 'FLUG' ) {
             bookingEntryAirport.removeClass('d-none');
