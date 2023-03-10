@@ -31,7 +31,12 @@ jQuery(function ($) {
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
 
+            // -- check transporttype for flight, if yes set airport
+            if ( getTransportType === 'FLUG' ) {
+                getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
+            }
             console.log(getTransportType);
+            console.log(getAirport);
 
             e.stopPropagation();
         })
