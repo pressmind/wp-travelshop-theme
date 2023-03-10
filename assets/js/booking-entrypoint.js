@@ -90,6 +90,8 @@ jQuery(function ($) {
                 'media_object_id': mediaobject
             };
 
+            console.log(calendarRequest);
+
 
             // -- handle ajax request
             requestHandlerBookingCalendar(calendarRequest);
