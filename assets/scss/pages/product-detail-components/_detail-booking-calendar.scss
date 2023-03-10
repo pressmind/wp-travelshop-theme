@@ -10,6 +10,7 @@
       // - duration switch
       display: flex;
       justify-content: space-between;
+      justify-content: center;
 
       .duration-switch {
         background-color: $body-bg-highlight;
@@ -28,7 +29,8 @@
 
           color: $body-color-light;
           font-size: $font-size-base;
-          padding: .5rem .75rem;
+          padding: 0.6125rem 1.125rem;
+          line-height: 1;
 
           @include border-radius(($border-radius - .25rem));
 
@@ -57,6 +59,9 @@
 
     // -- calendar itself
     .booking-entrypoint-calendar-outer {
+      display: flex;
+      justify-content: center;
+
       .booking-entrypoint-calendar-inner {
 
         // -- calendar item
@@ -188,6 +193,8 @@
 
           margin: 0 ( -$grid-gutter-width / 4 );
           overflow: hidden;
+
+          max-width: ( ( ($grid-gutter-width / 2) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
 
           > .calendar-item {
             padding: 0 ( $grid-gutter-width / 4 );
