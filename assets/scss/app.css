@@ -15122,20 +15122,20 @@ footer.footer-main {
     margin: 0;
     text-align: center;
     padding: 1rem 0; }
-  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calender-item-wrapper {
+  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     max-width: 17.5rem; }
-    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calender-item-wrapper > div.calender-item-day {
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calender-item-day {
       flex: 0 0 2.5rem;
       width: 100%;
       max-width: 2.5rem;
       height: 2.5rem;
       align-items: center;
       justify-content: center; }
-    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calender-item-wrapper > div.calendar-item-weekday {
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
       color: #5a6570;
       font-weight: 700;
       font-size: 0.875rem; }
