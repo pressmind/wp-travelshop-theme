@@ -15118,8 +15118,16 @@ footer.footer-main {
   opacity: 1;
   transition: opacity .3s;
   pointer-events: auto; }
+  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 -7.5px;
+    overflow: hidden; }
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) > .calender-item {
+      padding: 0 7.5px; }
 
-.is--loading > .booking-entrypoint-calendar {
+.is-loading > .booking-entrypoint-calendar {
   opacity: 0;
   pointer-events: none; }
 

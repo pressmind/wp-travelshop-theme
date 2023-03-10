@@ -65,7 +65,7 @@ if ($interval->format('%m') < 3) {
 ?>
 <div class="booking-entrypoint-calendar">
     <?php if(count($durations) > 1){ ?>
-        <div class="booking-entrypoint-calender--duration-switch">
+        <div class="booking-entrypoint-calender-duration">
             <div class="btn-group">
             <?php
             foreach($durations as $duration) { ?>
@@ -79,83 +79,85 @@ if ($interval->format('%m') < 3) {
         </div>
     <?php } ?>
 
-    <div class="booking-entrypoint-calendar--wrapper">
-        <?php
-        $today = new DateTime();
-        // loop trough all months
-        foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
-            // fill the calendar grid
-            $days = array_merge(
-                array_fill(1, $dt->format('N') - 1, ' '),
-                range(1, $dt->format('t'))
-            );
-            if (count($days) < 35) {
-                $delta = 35 - count($days);
-                $days = array_merge($days, array_fill(1, $delta, ' '));
-            }
-            ?>
-            <div class="booking-entrypoint-calendar--item calendar-item">
-                <div class="calendar-item--month">
-                    <?php
-                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
-                        'date' => $dt]);
-                    ?>
-                </div>
-                <ul class="calender-item--wrapper">
-                    <?php
-                    foreach (range(1, 7) as $day_of_week) {
-                        ?>
-                        <li class="weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></li>
+    <div class="booking-entrypoint-calendar-outer">
+        <div class="booking-entrypoint-calendar-inner">
+            <?php
+            $today = new DateTime();
+            // loop trough all months
+            foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
+                // fill the calendar grid
+                $days = array_merge(
+                    array_fill(1, $dt->format('N') - 1, ' '),
+                    range(1, $dt->format('t'))
+                );
+                if (count($days) < 35) {
+                    $delta = 35 - count($days);
+                    $days = array_merge($days, array_fill(1, $delta, ' '));
+                }
+                ?>
+                <div class="booking-entrypoint-calendar-item calendar-item">
+                    <div class="calendar-item-month">
                         <?php
-                    }
-
-                    $class_map = [];
-                    $class_map['3'] = 'bookable';
-                    $class_map['1'] = 'request';
-                    $class_map['5'] = 'stopp';
-
-                    foreach ($days as $day) {
-                        $current_date = $dt->format('Y-m-') . $day;
-                        if (!empty($date_to_cheapest_price[$current_date])) {
-
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
+                            'date' => $dt]);
+                        ?>
+                    </div>
+                    <ul class="calender-item-wrapper">
+                        <?php
+                        foreach (range(1, 7) as $day_of_week) {
                             ?>
-                            <li class="travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
-                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
-                                <?php
-                            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                                'transport_type' => $date_to_cheapest_price[$current_date]->transport_type,
-                            ]);
-                            ?> <br>  <?php
-
-                            if(!empty($date_to_cheapest_price[$current_date]->price_regular_before_discount)){
-                                echo ' Frühbucherpreis: <br> statt '.PriceHandler::format($date_to_cheapest_price[$current_date]->price_regular_before_discount). ' nur '.PriceHandler::format($date_to_cheapest_price[$current_date]->price_total). ' <br>';
-                            }
-
-                            if($date_to_cheapest_price[$current_date]->state === 3){
-                                echo 'zur Buchung';
-                            } else if($date_to_cheapest_price[$current_date]->state === 1){
-                                echo 'zur Anfrage';
-                            }else{
-                                echo 'leider ausgebucht';
-                            }
-
-
-
-                            ?>" data-html="true" data-toggle="tooltip"><a data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
-                                    <div data-offer-id="<?php echo $date_to_cheapest_price[$current_date]->id;?>" >ab&nbsp;<?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
-                                    </div>
-                                </a></li>
-                            <?php
-                        } else {
-                            ?>
-                            <li><?php echo $day; ?></li>
+                            <li class="weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></li>
                             <?php
                         }
-                    } ?>
-                </ul>
-            </div>
-            <?php
-        }
-        ?>
+
+                        $class_map = [];
+                        $class_map['3'] = 'bookable';
+                        $class_map['1'] = 'request';
+                        $class_map['5'] = 'stopp';
+
+                        foreach ($days as $day) {
+                            $current_date = $dt->format('Y-m-') . $day;
+                            if (!empty($date_to_cheapest_price[$current_date])) {
+
+                                ?>
+                                <li class="travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
+                                <?php
+                                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
+                                    'transport_type' => $date_to_cheapest_price[$current_date]->transport_type,
+                                ]);
+                                ?> <br>  <?php
+
+                                if(!empty($date_to_cheapest_price[$current_date]->price_regular_before_discount)){
+                                    echo ' Frühbucherpreis: <br> statt '.PriceHandler::format($date_to_cheapest_price[$current_date]->price_regular_before_discount). ' nur '.PriceHandler::format($date_to_cheapest_price[$current_date]->price_total). ' <br>';
+                                }
+
+                                if($date_to_cheapest_price[$current_date]->state === 3){
+                                    echo 'zur Buchung';
+                                } else if($date_to_cheapest_price[$current_date]->state === 1){
+                                    echo 'zur Anfrage';
+                                }else{
+                                    echo 'leider ausgebucht';
+                                }
+
+
+
+                                ?>" data-html="true" data-toggle="tooltip"><a data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
+                                        <div data-offer-id="<?php echo $date_to_cheapest_price[$current_date]->id;?>" >ab&nbsp;<?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
+                                        </div>
+                                    </a></li>
+                                <?php
+                            } else {
+                                ?>
+                                <li><?php echo $day; ?></li>
+                                <?php
+                            }
+                        } ?>
+                    </ul>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
     </div>
 </div>

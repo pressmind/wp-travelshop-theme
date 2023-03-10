@@ -4,9 +4,35 @@
     opacity: 1;
     transition: opacity .3s;
     pointer-events: auto;
+
+    // -- duration switch
+    .booking-entrypoint-calender-duration {
+
+    }
+
+    // -- calendar itself
+    .booking-entrypoint-calendar-outer {
+      .booking-entrypoint-calendar-inner {
+
+
+        // -- if not slider
+        &:not(.tns-slider) {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          margin: 0 ( -$grid-gutter-width / 4 );
+          overflow: hidden;
+
+          > .calender-item {
+            padding: 0 ( $grid-gutter-width / 4 );
+          }
+        }
+      }
+    }
   }
 
-  .is--loading {
+  .is-loading {
     > .booking-entrypoint-calendar {
       opacity: 0;
       pointer-events: none;
