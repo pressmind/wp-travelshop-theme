@@ -15120,8 +15120,8 @@ footer.footer-main {
   pointer-events: auto; }
   .booking-entrypoint-calendar .booking-entrypoint-calender-duration {
     display: flex;
-    justify-content: space-between;
-    justify-content: center; }
+    justify-content: center;
+    margin-bottom: 1rem; }
     .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch {
       background-color: #e9ecef;
       padding: .25rem;
@@ -15223,14 +15223,14 @@ footer.footer-main {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      margin: 0 -7.5px;
+      margin: 0 -15px;
       overflow: hidden;
-      max-width: 590px; }
+      max-width: 620px; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) > .calendar-item {
-        padding: 0 7.5px;
+        padding: 0 15px;
         width: 100%;
-        flex: 0 0 295px;
-        max-width: 295px; }
+        flex: 0 0 310px;
+        max-width: 310px; }
 
 .is-loading > .booking-entrypoint-calendar {
   opacity: 0;

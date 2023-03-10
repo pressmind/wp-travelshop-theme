@@ -9,8 +9,9 @@
     .booking-entrypoint-calender-duration {
       // - duration switch
       display: flex;
-      justify-content: space-between;
       justify-content: center;
+
+      margin-bottom: 1rem;
 
       .duration-switch {
         background-color: $body-bg-highlight;
@@ -191,20 +192,20 @@
           flex-direction: row;
           flex-wrap: nowrap;
 
-          margin: 0 ( -$grid-gutter-width / 4 );
+          margin: 0 ( -$grid-gutter-width / 2 );
           overflow: hidden;
 
-          max-width: ( ( ($grid-gutter-width / 2) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
+          max-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
 
           > .calendar-item {
-            padding: 0 ( $grid-gutter-width / 4 );
+            padding: 0 ( $grid-gutter-width / 2 );
 
             // @todo: add colum sizes later? bzw. add mobile break
             width: 100%;
 
             // do something to prevent to wide calendar
-            flex: 0 0 ( ($grid-gutter-width / 2) + (remToPx(2.5rem) * 7) );
-            max-width: ( ($grid-gutter-width / 2) + (remToPx(2.5rem) * 7) );
+            flex: 0 0 ( ($grid-gutter-width) + (remToPx(2.5rem) * 7) );
+            max-width: ( ($grid-gutter-width) + (remToPx(2.5rem) * 7) );
           }
         }
       }
