@@ -55,16 +55,12 @@ jQuery(function ($) {
             $.ajax({
                 url: bookingEntryCalendarServiceUrl,
                 data: request,
-                contentType: "application/x-www-form-urlencoded",
                 type: 'POST',
                 beforeSend: function(xhr) {
                     console.log('before send');
                     // set loading class to calendar + clear html
                     bookingEntryCalendarRenderTarget.html('');
                     bookingEntryCalendarRenderTarget.addClass('is-loading');
-                },
-                error: function() {
-                    console.error('Something went wrong while rendering calendar.');
                 },
                 complete: function(data) {
                     console.log('success');
