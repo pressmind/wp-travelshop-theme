@@ -401,6 +401,9 @@ $args['breadcrumb'][] = $tmp;
 
 
 ?>
+<div id="booking-entry-calendar">
+    CALENDAR HERE
+</div>
 <div class="content-main content-main--detail" id="content-main">
     <article class="detail-article">
         <div class="detail-section detail-section-topbar">
