@@ -57,6 +57,7 @@ jQuery(function ($) {
                 data: request,
                 type: 'POST',
                 beforeSend: function(xhr) {
+                    console.log('before send');
                     // set loading class to calendar + clear html
                     bookingEntryCalendarRenderTarget.html('');
                     bookingEntryCalendarRenderTarget.addClass('is-loading');
