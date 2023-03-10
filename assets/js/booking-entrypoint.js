@@ -1,8 +1,7 @@
 jQuery(function ($) {
 
-    let bookingEntryTransportType = $('.booking-filter-radio--transport-type input[radio]');
+    let bookingEntryTransportType = $('.booking-filter-radio--transport-type input[type="radio"]');
     let bookingEntryAirport = $('.booking-filter-item--airport');
-    let bookingEntryAirportInput = bookingEntryAirport.find('input');
 
     // -- switch travel-type
     bookingEntryTransportType.on('change', function(e) {
