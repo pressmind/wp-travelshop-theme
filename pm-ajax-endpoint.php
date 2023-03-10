@@ -87,7 +87,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $args['media_object'] = $mo;
     $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
 
-    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
+    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint-calendar.php', $args);
     exit;
 } else if ($_GET['action'] == 'search') {
     $output = null;
