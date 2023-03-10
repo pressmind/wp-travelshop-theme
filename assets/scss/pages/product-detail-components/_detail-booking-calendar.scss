@@ -7,7 +7,52 @@
 
     // -- duration switch
     .booking-entrypoint-calender-duration {
+      // - duration switch
+      display: flex;
+      justify-content: space-between;
 
+      .duration-switch {
+        background-color: $body-bg-highlight;
+        padding: .25rem;
+
+        @include border-radius($border-radius);
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: .25rem;
+
+        > button {
+          @include button-reset();
+
+          color: $body-color-light;
+          font-size: $font-size-base;
+          padding: .5rem .75rem;
+
+          @include border-radius(($border-radius - .25rem));
+
+          transition: background-color .3s, color .3s, transform .3s;
+
+          &.active, &:hover, &:focus, &:active {
+            color: $body-color;
+          }
+
+          &:hover, &:active, &:focus {
+            background-color: rgba(#fff, .5);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+
+          &.active {
+            background-color: #fff;
+            color: $body-color;
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
     }
 
     // -- calendar itself
