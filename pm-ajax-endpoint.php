@@ -54,6 +54,10 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
     $args = [];
+    echo "<pre>";
+    print_r($_POST);
+
+    echo "</pre>";
     $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_POST['media_object_id']);
 
 // build a date to best price map
