@@ -62,6 +62,7 @@ jQuery(function ($) {
                     bookingEntryCalendarRenderTarget.addClass('is-loading');
                 },
                 success: function(data) {
+                    console.log('success');
                     // remove loading state + render html into target
                     bookingEntryCalendarRenderTarget.html(data);
                     console.log(data);
