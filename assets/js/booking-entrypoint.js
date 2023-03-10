@@ -88,7 +88,27 @@ jQuery(function ($) {
          */
         function bookingCalendarInteraction() {
             var travelDate = bookingEntryCalendarRenderTarget.find('.travel-date');
-            var durationSwitch = bookingEntryCalendarRenderTarget.find('')
+            var durationSwitch = bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calender-duration button');
+
+            // handling duration switch
+            durationSwitch.on('click touch', function(e) {
+                e.preventDefault();
+
+                // -- only if not active one clicked
+                if ( !$(this).hasClass('btn-primary') ) {
+                    var thisDuration = $(this).data('duration');
+
+                    // -- reset classes
+                    durationSwitch.removeClass('btn-primary');
+                    durationSwitch.removeClass('btn-outline-primary');
+
+                    // -- set classes
+                    $(this).addClass('btn-primary');
+                    durationSwitch.not('.btn-primary').addClass('btn-outline-primary');
+                }
+
+                e.stopPropagation();
+            })
         }
 
         /**
