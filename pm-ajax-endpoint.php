@@ -55,8 +55,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
     echo "<pre>";
     print_r($_GET);
+    print_r($_POST);
     echo "</pre>";
-    return 'hi';
 } else if ($_GET['action'] == 'search') {
     $output = null;
     $view = 'Teaser1';
