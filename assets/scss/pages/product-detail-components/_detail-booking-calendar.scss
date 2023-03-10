@@ -14,6 +14,28 @@
     .booking-entrypoint-calendar-outer {
       .booking-entrypoint-calendar-inner {
 
+        // -- calendar item
+        .calendar-item {
+          width: 100%;
+          max-width: ( 2.5rem * 7 ); // 40px * 7 days
+
+          // -- month name
+          .calandar-item-month {
+          }
+
+          // -- calendar days
+          .calender-item-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            > div.calender-item-day {
+              flex: 0 0 2.5rem;
+              width: 100%;
+              max-width: 2.5rem;
+            }
+          }
+        }
 
         // -- if not slider
         &:not(.tns-slider) {
