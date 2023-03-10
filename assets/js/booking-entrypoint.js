@@ -38,6 +38,8 @@ jQuery(function ($) {
             if ( getTransportType === 'FLUG' ) {
                 getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
             }
+
+
             console.log(getTransportType);
             console.log(getAirport);
 

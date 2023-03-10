@@ -41,6 +41,8 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     </div>
 
+    <input type="hidden" name="dur" value="<?php echo $args['cheapest_price']->duration; ?>" />
+
     <div class="booking-filter-items-boxed">
         <div class="booking-filter-item booking-filter-item--date-range">
             <button class="booking-filter-field booking-filter-field--date-range">
@@ -107,8 +109,8 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                                         <input type="radio" class="form-radio-input" id="airport-<?php echo $key; ?>" name="airport" value="<?php echo $key; ?>" <?php if ( $i == 0 ) { ?>checked<?php } ?> />
 
                                         <span>
-                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
-                                    </span>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
+                                        </span>
 
                                         <label class="form-radio-label" for="airport-<?php echo $key; ?>">
                                             <?php echo $value; ?>
