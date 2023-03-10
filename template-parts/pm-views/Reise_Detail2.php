@@ -530,7 +530,7 @@ $args['breadcrumb'][] = $tmp;
                             // = = = > load the price box < = = =
                             $id_price_box_modal = uniqid();
                             $args['id_modal_price_box'] = $id_price_box_modal;
-                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/price-box2.php', $args);
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint.php', $args);
 
                             // = = = > load the on request row (only shown if the full product is on request < = = =
                             echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-on-request-box.php', $args);
