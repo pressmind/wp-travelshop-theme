@@ -42,7 +42,7 @@
               // center inner
               display: flex;
               justify-content: center;
-              padding-top: .25rem;
+              padding-top: .325rem;
               padding-bottom: .25rem;
 
               &:not(.calendar-item-weekday) {
@@ -73,17 +73,22 @@
                 left:0;
                 right:0;
 
-                padding-top: .25rem;
+                padding-top: .325rem;
                 padding-bottom: .25rem;
 
                 text-align: center;
                 font-weight: $font-weight-bold;
 
                 text-decoration: none;
-                transition: background-color;
+                transition: background-color .3s;
 
                 &:hover, &:focus, &:active {
                   text-decoration: none;
+                }
+
+                > div {
+                  font-weight: 400;
+                  font-size: .6125rem;
                 }
 
                 @include border-radius(50%);
