@@ -54,6 +54,13 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
     $args = [];
+    $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_POST['media_object_id']);
+
+// build a date to best price map
+    $filter = new CheapestPrice();
+    $filter->occupancies_disable_fallback = false;
+
+    $args['cheapest_price'] = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
     echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
     exit;
 } else if ($_GET['action'] == 'search') {
