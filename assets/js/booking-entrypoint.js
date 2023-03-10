@@ -47,12 +47,17 @@ jQuery(function ($) {
 
         function renderBookingCalendar(transportType, airport, duration, offer, mediaobject) {
 
+            // -- request array
+            var calendarRequest = {
+                'action': 'detail-booking-calendar',
+                'transport_type': transportType,
+                'airport': airport,
+                'duration': duration,
+                'offer': offer,
+                'media_object_id': mediaobject
+            };
             console.log('Render calendar with values:');
-            console.log(transportType);
-            console.log(airport);
-            console.log(duration);
-            console.log(offer);
-            console.log(mediaobject);
+            console.log(calendarRequest);
         }
     }
 });
