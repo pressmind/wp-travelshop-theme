@@ -15148,6 +15148,7 @@ footer.footer-main {
       width: 2.5rem;
       height: 2.5rem;
       display: block;
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
@@ -15158,7 +15159,7 @@ footer.footer-main {
       background-color: #28a745;
       color: #fff; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.request > a {
-      background-color: rgba(255, 193, 7, 0.5);
+      background-color: #ffc107;
       color: #fff; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.stop > a {
       background-color: rgba(33, 37, 41, 0.5);

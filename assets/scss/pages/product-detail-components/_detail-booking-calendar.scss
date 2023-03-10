@@ -63,6 +63,8 @@
                 height: 2.5rem;
 
                 display: block;
+
+                position: absolute;
                 top:0;
                 left:0;
                 right:0;
@@ -83,7 +85,7 @@
 
               &.request {
                 > a {
-                  background-color: rgba($booking-orange, .5);
+                  background-color: $booking-orange;
                   color: $booking-orange-color;
                 }
               }
