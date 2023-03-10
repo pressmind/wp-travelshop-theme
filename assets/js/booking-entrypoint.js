@@ -40,12 +40,17 @@ jQuery(function ($) {
                 getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
             }
 
-
-            console.log(getTransportType);
-            console.log(getAirport);
-            console.log(getDur);
+            renderBookingCalendar(getTransportType, getAirport, getDur);
 
             e.stopPropagation();
-        })
+        });
+
+        function renderBookingCalendar(transportType, airport, duration) {
+
+            console.log('Render calendar with values:');
+            console.log(transportType);
+            console.log(airport);
+            console.log(duration);
+        }
     }
 });
