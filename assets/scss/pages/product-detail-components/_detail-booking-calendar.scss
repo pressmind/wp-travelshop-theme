@@ -16,8 +16,6 @@
 
         // -- calendar item
         .calendar-item {
-          width: 100%;
-          max-width: ( 2.5rem * 7 ); // 40px * 7 days
 
           // -- month name
           .calandar-item-month {
@@ -28,6 +26,9 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+
+            width: 100%;
+            max-width: ( 2.5rem * 7 ); // 40px * 7 days
 
             > div.calender-item-day {
               flex: 0 0 2.5rem;
