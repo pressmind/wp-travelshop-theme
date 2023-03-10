@@ -26,6 +26,11 @@
 
           > .calender-item {
             padding: 0 ( $grid-gutter-width / 4 );
+
+            // @todo: add colum sizes later? bzw. add mobile break
+            flex: 0 0 ( 100% / 2 );
+            width: 100%;
+            max-width: ( 100% / 2 );
           }
         }
       }
