@@ -1,4 +1,15 @@
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
+  .booking-entrypoint-calendar {
+    opacity: 1;
+    transition: opacity .3s;
+    pointer-events: auto;
+  }
 
+  .is--loading {
+    > .booking-entrypoint-calendar {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 }

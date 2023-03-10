@@ -15114,6 +15114,15 @@ footer.footer-main {
 /**
  * Import Detail "components"
  */
+.booking-entrypoint-calendar {
+  opacity: 1;
+  transition: opacity .3s;
+  pointer-events: auto; }
+
+.is--loading > .booking-entrypoint-calendar {
+  opacity: 0;
+  pointer-events: none; }
+
 .detail-booking-entrypoint {
   background-color: #fff;
   color: #212529;
