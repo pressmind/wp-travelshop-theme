@@ -102,11 +102,11 @@ if ($interval->format('%m') < 3) {
                             'date' => $dt]);
                         ?>
                     </div>
-                    <div class="calender-item-wrapper">
+                    <div class="calendar-item-wrapper">
                         <?php
                         foreach (range(1, 7) as $day_of_week) {
                             ?>
-                            <div class="calender-item-day calender-item-weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></div>
+                            <div class="calendar-item-day calendar-item-weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></div>
                             <?php
                         }
 
@@ -120,7 +120,7 @@ if ($interval->format('%m') < 3) {
                             if (!empty($date_to_cheapest_price[$current_date])) {
 
                                 ?>
-                                <div class="calender-item-day travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
+                                <div class="calendar-item-day travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
                                 <?php
                                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
@@ -149,7 +149,7 @@ if ($interval->format('%m') < 3) {
                                 <?php
                             } else {
                                 ?>
-                                <div class="calender-item-day"><?php echo $day; ?></div>
+                                <div class="calendar-item-day"><?php echo $day; ?></div>
                                 <?php
                             }
                         } ?>
