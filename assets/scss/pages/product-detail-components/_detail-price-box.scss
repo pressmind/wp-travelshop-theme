@@ -107,6 +107,9 @@
 
   // -- price-total
   .price-box-discount {
+    display: flex;
+    width: 100%;
+
     .price-total {
       @extend %price-default;
 
@@ -116,6 +119,7 @@
     .discount-wrapper--inner {
       align-items: baseline;
       flex-direction: row-reverse;
+      width: 100%;
 
       .msg {
         order: 1;
