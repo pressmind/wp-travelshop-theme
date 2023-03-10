@@ -47,6 +47,8 @@
 
               &:not(.calendar-item-weekday) {
                 line-height: 1;
+
+                margin-top: .125rem; // spacer 2 px
               }
             }
 
