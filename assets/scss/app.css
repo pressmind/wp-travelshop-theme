@@ -15205,6 +15205,10 @@ footer.footer-main {
     @media (min-width: 992px) {
       .detail-box .detail-box-title {
         margin-bottom: 1rem; } }
+  .detail-box .detail-box-body p, .detail-box .detail-box-body ul, .detail-box .detail-box-body ol {
+    margin-bottom: 0; }
+    .detail-box .detail-box-body p + p, .detail-box .detail-box-body p + ul, .detail-box .detail-box-body p + ol, .detail-box .detail-box-body ul + p, .detail-box .detail-box-body ul + ul, .detail-box .detail-box-body ul + ol, .detail-box .detail-box-body ol + p, .detail-box .detail-box-body ol + ul, .detail-box .detail-box-body ol + ol {
+      margin-top: 1rem; }
   .detail-box:not(.detail-box-transparent) {
     border-radius: 0.25rem;
     padding: 1.25rem;

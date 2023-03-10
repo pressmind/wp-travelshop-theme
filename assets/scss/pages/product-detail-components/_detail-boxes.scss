@@ -10,6 +10,16 @@
     @include spacing-generator($detail-box-spacers-y, 'bottom', 'margin');
   }
 
+  .detail-box-body {
+    p, ul, ol {
+      margin-bottom: 0;
+
+      + p, + ul, + ol {
+        margin-top: 1rem;
+      }
+    }
+  }
+
   // -- if not transparent
   &:not(.detail-box-transparent) {
     @include border-radius($detail-box-border-radius);
