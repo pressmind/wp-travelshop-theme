@@ -20,7 +20,7 @@ jQuery(function ($) {
         });
 
         // -- on click calendar
-        let bookingEntryClendar = $('.booking-filter-field--date-range');
+        let bookingEntryCalendar = $('.booking-filter-field--date-range');
 
         bookingEntryCalendar.on('click touch', function(e) {
             e.preventDefault();
