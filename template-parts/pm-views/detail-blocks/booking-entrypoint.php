@@ -1,6 +1,7 @@
 <?php
 use Pressmind\HelperFunctions;
 use Pressmind\Travelshop\PriceHandler;
+use Pressmind\Search\CheapestPrice;
 use Pressmind\Travelshop\Template;
 
 /**
