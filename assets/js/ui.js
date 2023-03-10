@@ -35,7 +35,7 @@ jQuery(function ($) {
 
         var sharePageLink = sharePage.find('.page-share-toggler');
 
-        sharePageLink.on('click', function(e) {
+        sharePageLink.on('click touch', function(e) {
             e.preventDefault();
 
             // -- check if functionality "navigator.share" is given and is moble
@@ -55,7 +55,7 @@ jQuery(function ($) {
         });
 
         // -- close mechanism for share modal
-        sharePage.find('.close-share').on('click', function(e){
+        sharePage.find('.close-share').on('click touch', function(e){
             e.preventDefault();
 
             sharePage.removeClass('is-open');
@@ -65,14 +65,14 @@ jQuery(function ($) {
 
         // -- share options
         // -- close modal after timeout when button clicked
-        sharePage.find('.share-button:not(.share-button--copy)').on('click', function(e) {
+        sharePage.find('.share-button:not(.share-button--copy)').on('click touch', function(e) {
             setTimeout(function() {
                 sharePage.removeClass('is-open');
             }, 2500);
         });
 
         // -- copy functionality
-        sharePage.find('.share-button--copy').on('click', function(e) {
+        sharePage.find('.share-button--copy').on('click touch', function(e) {
             e.preventDefault();
 
             var linkToCopy = sharePage.find('.page-share-toggler').data('share-link');
@@ -142,7 +142,7 @@ jQuery(function ($) {
     // -- smooth scroll
     // ------------------------------------------------
 
-    $('.smoothscroll').on('click', function (e) {
+    $('.smoothscroll').on('click touch', function (e) {
         e.preventDefault();
         var target = this.hash;
         var $target = $(target);
@@ -342,15 +342,15 @@ jQuery(function ($) {
     // -- Itinerary Steps Toggle
     // -----------------------------------------------
     if ($('.itinerary').length > 0) {
-        $('.itinerary-step').find('h3').on('click', function (e) {
+        $('.itinerary-step').find('h3').on('click touch', function (e) {
             $(e.target).parent().toggleClass('step-open');
         });
-        $('.itinerary-toggleall .it-open').on('click', function () {
+        $('.itinerary-toggleall .it-open').on('click touch', function () {
             $('.itinerary-step').addClass('step-open');
             $('.it-close').css('display', 'inline-block');
             $('.it-open').css('display', 'none');
         });
-        $('.itinerary-toggleall .it-close').on('click', function () {
+        $('.itinerary-toggleall .it-close').on('click touch', function () {
             $('.itinerary-step').removeClass('step-open');
             $('.it-open').css('display', 'inline-block');
             $('.it-close').css('display', 'none');
@@ -361,7 +361,7 @@ jQuery(function ($) {
     // -- Description Block Toggle
     // -----------------------------------------------
     if ($('.description-block-wrapper').length > 0) {
-        $('.description-block-element').find('h3').on('click', function (e) {
+        $('.description-block-element').find('h3').on('click touch', function (e) {
             $(e.target).parent().toggleClass('description-block-open');
         });
     }
@@ -512,7 +512,7 @@ jQuery(function ($) {
         }
 
         // -- close modal
-        teaserBlockModalClose.on('click', function(e) {
+        teaserBlockModalClose.on('click touch', function(e) {
             e.preventDefault();
 
             $(this).parents('.show').removeClass('show');
@@ -521,7 +521,7 @@ jQuery(function ($) {
         });
 
         // -- open modal
-        teaserBlockToggle.on('click', function(e) {
+        teaserBlockToggle.on('click touch', function(e) {
             e.preventDefault();
 
             var thisID = $(this).data('modal-id');
@@ -537,7 +537,7 @@ jQuery(function ($) {
         });
 
         // -- close on click backdrop
-        teaserBlockModal.on('click', function(e){
+        teaserBlockModal.on('click touch', function(e){
             e.preventDefault();
 
             var target = $(e.target);
@@ -571,19 +571,19 @@ jQuery(function ($) {
 
     if ( accToggle.length > 0 ) {
 
-        accToggleAll.on('click', function(e) {
+        accToggleAll.on('click touch', function(e) {
 
             var thisAccGroup = $(this).parents('.accordion-group');
             var thisAction = $(this).data('toggle');
 
             if ( thisAction === 'open' ) {
                 // open all
-                thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click');
+                thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click touch');
                 $(this).data('toggle', 'close');
                 $(this).attr('data-toggle', 'close');
             } else {
                 // close all
-                thisAccGroup.find('.accordion-item.is-open .accordion-toggle').trigger('click');
+                thisAccGroup.find('.accordion-item.is-open .accordion-toggle').trigger('click touch');
                 $(this).data('toggle', 'open');
                 $(this).attr('data-toggle', 'open');
             }
@@ -591,7 +591,7 @@ jQuery(function ($) {
             e.stopPropagation();
         })
 
-        accToggle.on('click', function(e) {
+        accToggle.on('click touch', function(e) {
             e.preventDefault();
 
             // -- get inner height
@@ -651,13 +651,13 @@ jQuery(function ($) {
             $('.detail-gallery-overlay').removeClass('open');
             $('body').removeClass('modal-open');
         }
-        $('.detail-header-gallery-grid--modal').on('click', function () {
+        $('.detail-header-gallery-grid--modal').on('click touch', function () {
             addGalleryClasses();
         })
-        $('.detail-gallery-overlay-close').on('click', function () {
+        $('.detail-gallery-overlay-close').on('click touch', function () {
             removeGalleryClasses();
         })
-        $('.detail-header-gallery-grid--modal').on('click', function () {
+        $('.detail-header-gallery-grid--modal').on('click touch', function () {
             addGalleryClasses();
         })
     }
@@ -748,7 +748,7 @@ jQuery(function ($) {
             $('.pm-switch-result-view .pm-switch-checkbox').prop('checked', true);
         }
 
-        $('#search-result').on('click', '.pm-switch-result-view .pm-switch-checkbox', function (e) {
+        $('#search-result').on('click touch', '.pm-switch-result-view .pm-switch-checkbox', function (e) {
 
             let query_string = window.location.search.replace(/(\?|&)(view=).*?(&|$)/, '');
 
@@ -828,7 +828,7 @@ jQuery(function ($) {
     // -----------------------
     if($('.content-block-schema-accordion').length) {
         $('.accordion-item').each((ind, item) => {
-            $(item).on('click', '.accordion-question', (e) => {
+            $(item).on('click touch', '.accordion-question', (e) => {
                 $(item).hasClass('active') ? '' : $('.accordion-item').removeClass('active');
                 $(item).toggleClass('active');
             });
@@ -840,7 +840,7 @@ jQuery(function ($) {
     // -----------------------
     let dropdownNotClose = '.dropdown-menu-wishlist, .dropdown-menu-booking-select, .dropdown-menu-booking-person-select';
 
-    $(dropdownNotClose).find('button[data-type="close-popup"]').on('click', function(e) {
+    $(dropdownNotClose).find('button[data-type="close-popup"]').on('click touch', function(e) {
         e.preventDefault();
 
         $(this).parents('.dropdown-menu.show').removeClass('show');
@@ -848,13 +848,13 @@ jQuery(function ($) {
         e.stopPropagation();
     });
 
-    $(dropdownNotClose).on('click', function(e) {
+    $(dropdownNotClose).on('click touch', function(e) {
 
         // -- little hook
         // -- backdrop checker
         if ( $(e.target).css('container-name') === 'backdrop' ) {
             $(e.target).removeClass('show');
-            $(e.target).parent().find('button[data-type="close-popup"]').trigger('click');
+            $(e.target).parent().find('button[data-type="close-popup"]').trigger('click touch');
         }
 
         // -- hook for filter prompt
@@ -911,7 +911,7 @@ jQuery(function ($) {
         }
 
         // -- +/- click
-        pCounter.find(pCounterButton).on('click', function() {
+        pCounter.find(pCounterButton).on('click touch', function() {
 
             var thisButtonType = $(this).data('type');
             var setValue = true;
@@ -975,7 +975,7 @@ jQuery(function ($) {
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
 
-            $target.parent().find('button[data-type="close-popup"]').trigger('click');
+            $target.parent().find('button[data-type="close-popup"]').trigger('click touch');
 
             // -- trigger click on data-type="popup-close", to hide item by klick on close button..
             // -- @todo: best way?
