@@ -28,6 +28,9 @@ jQuery(function ($) {
         bookingEntryCalendar.on('click touch', function(e) {
             e.preventDefault();
 
+            // -- reset data variables
+            getTransportType, getAirport = null;
+
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
 
