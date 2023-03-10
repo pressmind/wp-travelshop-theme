@@ -63,9 +63,6 @@ if ($interval->format('%m') < 3) {
 }
 
 ?>
-<pre>
-    <?php print_r($args['cheapest_price']); ?>
-</pre>
 <div class="row content-block-detail-booking-calendar">
     <div class="col-12">
         <div class="booking-calendar-title">
