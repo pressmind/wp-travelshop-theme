@@ -64,6 +64,7 @@ jQuery(function ($) {
                 success: function(data) {
                     // remove loading state + render html into target
                     bookingEntryCalendarRenderTarget.html(data);
+                    print_r(data);
                     bookingEntryCalendarRenderTarget.removeClass('is-loading');
                 }
             })
