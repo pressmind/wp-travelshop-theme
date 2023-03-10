@@ -17,27 +17,22 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     <div class="booking-filter-title h5">
         "<?php echo $args['headline']; ?>" buchen
     </div>
-    <div class="booking-filter-item booking-filter-item--transport-type">
-        <?php
-//        $transport_types = [
-//                'FLUG', 'BUS', 'PKW'
-//        ];
+    <?php
+    // build a date to best price map
+    $filter = new CheapestPrice();
+    $filter->occupancies_disable_fallback = false;
+    $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 
-        // replace with real data
-        // build a date to best price map
-        $filter = new CheapestPrice();
-        $filter->occupancies_disable_fallback = false;
-        $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
+    $transport_types = [];
 
-        $transport_types = [];
-
-        foreach ($offers as $offer ) {
-            if ( !in_array($offer->transport_type, $transport_types) ) {
-                $transport_types[] = $offer->transport_type;
-            }
+    foreach ($offers as $offer ) {
+        if ( !in_array($offer->transport_type, $transport_types) ) {
+            $transport_types[] = $offer->transport_type;
         }
-        ?>
-        <div class="booking-filter-radio booking-filter-radio--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?> ">
+    }
+    ?>
+    <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?>">
+        <div class="booking-filter-radio booking-filter-radio--transport-type ">
             <?php foreach( $transport_types as $type ) { ?>
                 <div class="form-radio">
                     <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
@@ -80,6 +75,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             </button>
         </div>
 
+        <?php if ( in_array('FLUG', $transport_types) ) { ?>
         <div class="booking-filter-item booking-filter-item--airport <?php echo ( $args['cheapest_price']->transport_type !== 'FLUG' ) ? 'd-none' : ''; ?>">
             <div class="dropdown">
                 <button class="dropdownAirport input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -147,6 +143,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 </div>
             </div>
         </div>
+        <?php } ?>
 
         <div class="booking-filter-item booking-filter-item--persons">
             <div class="dropdown">
