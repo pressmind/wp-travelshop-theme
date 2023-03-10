@@ -62,7 +62,10 @@ jQuery(function ($) {
                     bookingEntryCalendarRenderTarget.html('');
                     bookingEntryCalendarRenderTarget.addClass('is-loading');
                 },
-                success: function(data) {
+                error: function() {
+                    console.error('Something went wrong while rendering calendar.');
+                },
+                complete: function(data) {
                     console.log('success');
                     // remove loading state + render html into target
                     bookingEntryCalendarRenderTarget.html(data);
