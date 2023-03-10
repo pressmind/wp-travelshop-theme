@@ -15141,7 +15141,9 @@ footer.footer-main {
       color: rgba(33, 37, 41, 0.5);
       font-weight: 700;
       font-size: 0.875rem;
-      height: 1rem; }
+      height: 1rem;
+      padding: 0;
+      margin: 0 0 .5rem 0; }
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
     display: flex;
     flex-direction: row;
