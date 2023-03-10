@@ -21,7 +21,8 @@ jQuery(function ($) {
 
         // -- on click calendar
         let bookingEntryCalendar = $('.booking-filter-field--date-range');
-
+        let bookingEntryCalendarRenderTarget = $('#booking-entry-calendar');
+        let bookingEntryCalendarServiceUrl = '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=detail-booking-calendar';
 
         bookingEntryCalendar.on('click touch', function(e) {
             e.preventDefault();
@@ -45,19 +46,51 @@ jQuery(function ($) {
             e.stopPropagation();
         });
 
+        /**
+         * handling ajax request of calnedar
+         * @param request
+         */
+        function requestHandlerBookingCalendar(request) {
+
+            $.ajax({
+                url: bookingEntryCalendarServiceUrl,
+                data: request,
+                type: 'POST',
+                beforeSend: function(xhr) {
+                    // set loading class to calendar + clear html
+                    bookingEntryCalendarRenderTarget.html('');
+                    bookingEntryCalendarRenderTarget.addClass('is-loading');
+                },
+                success: function(data) {
+                    // remove loading state + render html into target
+                    bookingEntryCalendarRenderTarget.html(data);
+                    bookingEntryCalendarRenderTarget.removeClass('is-loading');
+                }
+            })
+        }
+
+        /**
+         * Render booking calendar
+         * @param transportType
+         * @param airport
+         * @param duration
+         * @param offer
+         * @param mediaobject
+         */
         function renderBookingCalendar(transportType, airport, duration, offer, mediaobject) {
 
             // -- request array
             var calendarRequest = {
-                'action': 'detail-booking-calendar',
                 'transport_type': transportType,
                 'airport': airport,
                 'duration': duration,
                 'offer': offer,
                 'media_object_id': mediaobject
             };
-            console.log('Render calendar with values:');
-            console.log(calendarRequest);
+
+
+            // -- handle ajax request
+            requestHandlerBookingCalendar(calendarRequest);
         }
     }
 });
