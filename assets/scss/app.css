@@ -15133,6 +15133,7 @@ footer.footer-main {
       width: 100%;
       max-width: 2.5rem;
       height: 2.5rem;
+      display: flex;
       align-items: center;
       justify-content: center; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
