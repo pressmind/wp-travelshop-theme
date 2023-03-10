@@ -61,7 +61,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             </button>
         </div>
 
-        <div class="booking-filter-item booking-filter-item--airport <?php echo ( $args['cheapest_price']->transport_type !== 'FLUG' ) ?: 'd-none'; ?>">
+        <div class="booking-filter-item booking-filter-item--airport <?php echo ( $args['cheapest_price']->transport_type !== 'FLUG' ) ? 'd-none' : ''; ?>">
             <div class="dropdown">
                 <button class="dropdownAirport input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="dropdown-icon">
