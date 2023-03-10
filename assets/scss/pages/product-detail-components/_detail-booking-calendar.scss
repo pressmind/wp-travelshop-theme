@@ -18,7 +18,7 @@
         .calendar-item {
 
           // -- month name
-          .calandar-item-month {
+          .calendar-item-month {
             margin: 0;
             text-align: center;
             padding: 1rem 0;
@@ -48,6 +48,7 @@
               color: rgba($body-color, .5);
               font-weight: $font-weight-bold;
               font-size: $font-size-sm;
+              height: 1rem;
             }
           }
         }

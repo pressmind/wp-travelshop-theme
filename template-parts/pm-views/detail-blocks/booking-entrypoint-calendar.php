@@ -96,7 +96,7 @@ if ($interval->format('%m') < 3) {
                 }
                 ?>
                 <div class="booking-entrypoint-calendar-item calendar-item">
-                    <div class="calendar-item-month h6">
+                    <div class="calendar-item-month h5">
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
                             'date' => $dt]);
