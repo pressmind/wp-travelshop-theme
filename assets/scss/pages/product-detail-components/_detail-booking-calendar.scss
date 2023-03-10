@@ -33,7 +33,7 @@
             width: 100%;
             max-width: ( 2.5rem * 7 ); // 40px * 7 days
 
-            > div.calender-item-day {
+            > div.calendar-item-day {
               flex: 0 0 2.5rem;
               width: 100%;
               max-width: 2.5rem;
@@ -45,7 +45,7 @@
             }
 
             > div.calendar-item-weekday {
-              color: $body-color-light;
+              color: rgba($body-color, .5);
               font-weight: $font-weight-bold;
               font-size: $font-size-sm;
             }
