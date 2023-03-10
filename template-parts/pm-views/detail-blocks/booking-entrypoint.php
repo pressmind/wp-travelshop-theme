@@ -18,9 +18,21 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     </div>
     <div class="booking-filter-item booking-filter-item--transport-type">
         <?php
-        $transport_types = [
-                'FLUG', 'BUS', 'PKW'
-        ];
+//        $transport_types = [
+//                'FLUG', 'BUS', 'PKW'
+//        ];
+
+        // replace with real data
+        // build a date to best price map
+        $filter = new CheapestPrice();
+        $filter->occupancies_disable_fallback = false;
+        $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
+
+        $transport_types = [];
+
+        foreach ($offers as $offer ) {
+            $transport_types[] = $offer->transport_type;
+        }
         ?>
         <div class="booking-filter-radio booking-filter-radio--transport-type">
             <?php foreach( $transport_types as $type ) { ?>
