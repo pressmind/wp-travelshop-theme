@@ -26,7 +26,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <?php foreach( $transport_types as $type ) { ?>
                 <div class="form-radio">
                     <?php echo $args['cheapest_price']->transport_type . '==' . $type; ?>
-                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked<?php } ?> />
+                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
 
                     <div>
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
