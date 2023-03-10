@@ -55,6 +55,48 @@
               padding: 0;
               margin: 0 0 .5rem 0;
             }
+
+            // -- travel date
+            > div.calendar-item-day.travel-date {
+              > a {
+                width: 2.5rem;
+                height: 2.5rem;
+
+                display: block;
+                top:0;
+                left:0;
+                right:0;
+
+                padding-top: .25rem;
+                padding-bottom: .25rem;
+
+                @include border-radius(50%);
+              }
+
+              // -- states
+              &.bookable {
+                > a {
+                  background-color: $booking-green;
+                  color: $booking-green-color;
+                }
+              }
+
+              &.request {
+                > a {
+                  background-color: rgba($booking-orange, .5);
+                  color: $booking-orange-color;
+                }
+              }
+
+              &.stop {
+                > a {
+                  background-color: rgba($booking-gray, .5);
+                  color: $booking-gray-color;
+                }
+              }
+
+
+            }
           }
         }
 
