@@ -113,12 +113,10 @@ jQuery(function ($) {
                     }
 
                     // -- reset classes
-                    durationSwitch.removeClass('btn-primary');
-                    durationSwitch.removeClass('btn-outline-primary');
+                    durationSwitch.removeClass('active');
 
                     // -- set classes
-                    $(this).addClass('btn-primary');
-                    durationSwitch.not('.btn-primary').addClass('btn-outline-primary');
+                    $(this).addClass('active');
 
                     // -- refresh calendar
                     refreshBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);

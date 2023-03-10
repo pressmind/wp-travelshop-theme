@@ -66,10 +66,10 @@ if ($interval->format('%m') < 3) {
 <div class="booking-entrypoint-calendar">
     <?php if(count($durations) > 1){ ?>
         <div class="booking-entrypoint-calender-duration">
-            <div class="btn-group">
+            <div class="duration-switch">
             <?php
             foreach($durations as $duration) { ?>
-                <button type="button" data-duration="<?php echo $duration; ?>" class="btn <?php echo ($duration == $args['cheapest_price']->duration) ? ' btn-primary' : ' btn-outline-primary';?>"><?php
+                <button type="button" data-duration="<?php echo $duration; ?>" class="<?php echo ($duration == $args['cheapest_price']->duration) ? 'active' : '';?>"><?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
                         'duration' => $duration,
                     ]);
