@@ -56,13 +56,14 @@ jQuery(function ($) {
                 url: bookingEntryCalendarServiceUrl,
                 data: request,
                 type: 'POST',
+                dataType: "html",
                 beforeSend: function(xhr) {
                     console.log('before send');
                     // set loading class to calendar + clear html
                     bookingEntryCalendarRenderTarget.html('');
                     bookingEntryCalendarRenderTarget.addClass('is-loading');
                 },
-                complete: function(data) {
+                success: function(data) {
                     console.log('success');
                     // remove loading state + render html into target
                     bookingEntryCalendarRenderTarget.html(data);
