@@ -27,28 +27,32 @@ jQuery(function ($) {
             e.preventDefault();
 
             // -- define some variables needed later
-            var getTransportType, getAirport, getDur = null;
+            var getTransportType, getAirport, getDur, getOffer, getMediaObject = null;
 
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
             getDur = $('.booking-filter-field--duration').val();
+            getOffer = $('.booking-filter-field--offer').val();
+            getMediaObject = $('.booking-filter-field--mediaobject').val();
 
             // -- check transporttype for flight, if yes set airport
             if ( getTransportType === 'FLUG' ) {
                 getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
             }
 
-            renderBookingCalendar(getTransportType, getAirport, getDur);
+            renderBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
 
             e.stopPropagation();
         });
 
-        function renderBookingCalendar(transportType, airport, duration) {
+        function renderBookingCalendar(transportType, airport, duration, offer, mediaobject) {
 
             console.log('Render calendar with values:');
             console.log(transportType);
             console.log(airport);
             console.log(duration);
+            console.log(offer);
+            console.log(mediaobject);
         }
     }
 });
