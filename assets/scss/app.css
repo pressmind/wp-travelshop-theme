@@ -15137,6 +15137,8 @@ footer.footer-main {
       justify-content: center;
       padding-top: .25rem;
       padding-bottom: .25rem; }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day:not(.calendar-item-weekday) {
+        line-height: 1; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
       color: rgba(33, 37, 41, 0.5);
       font-weight: 700;
@@ -15154,16 +15156,28 @@ footer.footer-main {
       right: 0;
       padding-top: .25rem;
       padding-bottom: .25rem;
+      text-align: center;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color;
       border-radius: 50%; }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a:hover, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a:focus, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a:active {
+        text-decoration: none; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.bookable > a {
       background-color: #28a745;
       color: #fff; }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.bookable > a:hover {
+        background-color: #48d368; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.request > a {
       background-color: #ffc107;
       color: #fff; }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.request > a:hover {
+        background-color: #ffd454; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.stop > a {
       background-color: rgba(33, 37, 41, 0.5);
       color: #fff; }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.stop > a:hover {
+        background-color: rgba(33, 37, 41, 0.75); }
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
     display: flex;
     flex-direction: row;
