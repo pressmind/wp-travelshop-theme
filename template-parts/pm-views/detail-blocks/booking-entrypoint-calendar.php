@@ -64,7 +64,7 @@ if ($interval->format('%m') < 3) {
 
 ?>
 <div class="booking-entrypoint-calendar">
-    <?php if(count($durations) > 0){ ?>
+    <?php if(count($durations) > 1){ ?>
         <div class="booking-entrypoint-calender--duration-switch">
             <div class="btn-group">
             <?php
