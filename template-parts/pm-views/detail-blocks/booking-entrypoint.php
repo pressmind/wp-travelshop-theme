@@ -32,7 +32,9 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         $transport_types = [];
 
         foreach ($offers as $offer ) {
-            $transport_types[] = $offer->transport_type;
+            if ( !in_array($offer->transport_type, $transport_types) ) {
+                $transport_types[] = $offer->transport_type;
+            }
         }
         ?>
         <div class="booking-filter-radio booking-filter-radio--transport-type">
