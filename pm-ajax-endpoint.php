@@ -52,6 +52,11 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->result = $request;
     echo json_encode($Output);
     exit;
+} else if ($_GET['action'] == 'detail-booking-calendar' ) {
+    echo "<pre>";
+    print_r($_GET);
+    echo "</pre>";
+    return 'hi';
 } else if ($_GET['action'] == 'search') {
     $output = null;
     $view = 'Teaser1';
