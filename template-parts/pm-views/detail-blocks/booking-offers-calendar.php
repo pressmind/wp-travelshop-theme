@@ -68,11 +68,6 @@ if ($interval->format('%m') < 3) {
         <div class="booking-calendar-title">
             <h2>Buchungskalender
                <?php echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $args['cheapest_price']->duration]); ?>
-                <?php
-                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                    'transport_type' => $args['cheapest_price']->transport_type,
-                ]);
-                ?>
             </h2>
             <?php if(count($durations) > 0 && count($transport_types) > 0){ ?>
             <div>
