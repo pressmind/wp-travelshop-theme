@@ -107,6 +107,8 @@
 
   // -- price-total
   .price-box-discount {
+    display: flex;
+    width: 100%;
 
     .discount-wrapper {
       display: flex;
