@@ -15148,9 +15148,9 @@ footer.footer-main {
     overflow: hidden; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) > .calendar-item {
       padding: 0 7.5px;
-      flex: 0 0 50%;
       width: 100%;
-      max-width: 50%; }
+      flex: 0 0 295px;
+      max-width: 295px; }
 
 .is-loading > .booking-entrypoint-calendar {
   opacity: 0;
