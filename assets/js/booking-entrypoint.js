@@ -23,16 +23,17 @@ jQuery(function ($) {
         let bookingEntryCalendar = $('.booking-filter-field--date-range');
 
         // -- define some variables needed later
-        var getTransportType, getAirport = null;
+        var getTransportType, getAirport, getDur = null;
 
         bookingEntryCalendar.on('click touch', function(e) {
             e.preventDefault();
 
             // -- reset data variables
-            getTransportType, getAirport = null;
+            getTransportType, getAirport, getDur = null;
 
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
+            getDur = $('.booking-filter-field--duration').val();
 
             // -- check transporttype for flight, if yes set airport
             if ( getTransportType === 'FLUG' ) {
@@ -42,6 +43,7 @@ jQuery(function ($) {
 
             console.log(getTransportType);
             console.log(getAirport);
+            console.log(getDur);
 
             e.stopPropagation();
         })
