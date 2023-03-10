@@ -102,11 +102,11 @@ if ($interval->format('%m') < 3) {
                             'date' => $dt]);
                         ?>
                     </div>
-                    <ul class="calender-item-wrapper">
+                    <div class="calender-item-wrapper">
                         <?php
                         foreach (range(1, 7) as $day_of_week) {
                             ?>
-                            <li class="weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></li>
+                            <div class="weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></div>
                             <?php
                         }
 
@@ -120,7 +120,7 @@ if ($interval->format('%m') < 3) {
                             if (!empty($date_to_cheapest_price[$current_date])) {
 
                                 ?>
-                                <li class="travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
+                                <div class="travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
                                 <?php
                                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
@@ -145,15 +145,15 @@ if ($interval->format('%m') < 3) {
                                 ?>" data-html="true" data-toggle="tooltip"><a data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
                                         <div data-offer-id="<?php echo $date_to_cheapest_price[$current_date]->id;?>" >ab&nbsp;<?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
                                         </div>
-                                    </a></li>
+                                    </a></div>
                                 <?php
                             } else {
                                 ?>
-                                <li><?php echo $day; ?></li>
+                                <div><?php echo $day; ?></div>
                                 <?php
                             }
                         } ?>
-                    </ul>
+                    </div>
                 </div>
                 <?php
             }
