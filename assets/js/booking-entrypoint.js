@@ -85,7 +85,7 @@ jQuery(function ($) {
             var calendarRequest = {
                 'transport_type': transportType,
                 'airport': airport,
-                'duration': duration,
+                'pm-du': duration,
                 'offer': offer,
                 'media_object_id': mediaobject
             };
