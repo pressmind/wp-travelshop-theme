@@ -41,8 +41,9 @@
 
               // center inner
               display: flex;
-              align-items: center;
               justify-content: center;
+              padding-top: .25rem;
+              padding-bottom: .25rem;
             }
 
             > div.calendar-item-weekday {
