@@ -5,7 +5,7 @@ jQuery(function ($) {
     let bookingEntryAirportInput = bookingEntryAirport.find('input');
 
     // -- switch travel-type
-    bookingEntryTransportType.on('click touch', function(e) {
+    bookingEntryTransportType.on('change', function(e) {
 
         var thisType = $(this).val();
 
