@@ -19,6 +19,9 @@
 
           // -- month name
           .calandar-item-month {
+            margin: 0;
+            text-align: center;
+            padding: 1rem 0;
           }
 
           // -- calendar days
@@ -34,6 +37,9 @@
               flex: 0 0 2.5rem;
               width: 100%;
               max-width: 2.5rem;
+              height: 2.5rem;
+
+              text-align: center;
             }
           }
         }
