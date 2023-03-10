@@ -7,6 +7,7 @@
 <section class="description-block-wrapper">
     <?php
     foreach ($args['descriptions'] as $i => $description) {
+        if ( !empty($description['items']) ) {
         ?>
         <div class="description-block description-block--<?php echo $description['type']; ?>">
             <?php if ($description['type'] !== 'accordion') { ?>
@@ -219,6 +220,7 @@
             <?php } ?>
         </div>
         <?php
+        }
     }
     ?>
 </section>
