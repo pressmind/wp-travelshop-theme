@@ -82,7 +82,8 @@ jQuery(function ($) {
          * @param mediaObject
          */
         function refreshBookingCalendar(transportType, airport, duration, offer, mediaObject) {
-
+            // trigger render option
+            renderBookingCalendar(transportType, airport, duration, offer, mediaObject);
         }
 
         /**
@@ -99,7 +100,17 @@ jQuery(function ($) {
 
                 // -- only if not active one clicked
                 if ( !$(this).hasClass('btn-primary') ) {
-                    var thisDuration = $(this).data('duration');
+                    // collect data
+                    var getAirport = null;
+                    var getDur = $(this).data('duration');
+                    var getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
+                    var getOffer = $('.booking-filter-field--offer').val();
+                    var getMediaObject = $('.booking-filter-field--mediaobject').val();
+
+                    // -- check transporttype for flight, if yes set airport
+                    if ( getTransportType === 'FLUG' ) {
+                        getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
+                    }
 
                     // -- reset classes
                     durationSwitch.removeClass('btn-primary');
@@ -108,6 +119,10 @@ jQuery(function ($) {
                     // -- set classes
                     $(this).addClass('btn-primary');
                     durationSwitch.not('.btn-primary').addClass('btn-outline-primary');
+
+                    // -- refresh calendar
+                    refreshBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
+
                 }
 
                 e.stopPropagation();
