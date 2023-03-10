@@ -53,12 +53,13 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
-    $args = [];
-    echo "<pre>";
-    print_r($_POST);
+    $id_media_object = (int)$_POST['media_object_id'];
+    if ( empty($id_media_object) ) {
+        exit;
+    }
 
-    echo "</pre>";
-    $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_POST['media_object_id']);
+    $args = [];
+    $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($id_media_object);
 
 // build a date to best price map
     $filter = new CheapestPrice();
