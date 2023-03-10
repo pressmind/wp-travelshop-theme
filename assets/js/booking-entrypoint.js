@@ -59,8 +59,7 @@ jQuery(function ($) {
                 dataType: "html",
                 beforeSend: function(xhr) {
                     console.log('before send');
-                    // set loading class to calendar + clear html
-                    bookingEntryCalendarRenderTarget.html('');
+                    // set loading class to calendar
                     bookingEntryCalendarRenderTarget.addClass('is-loading');
                 },
                 success: function(data) {
