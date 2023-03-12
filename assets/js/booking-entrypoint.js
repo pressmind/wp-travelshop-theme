@@ -170,22 +170,24 @@ jQuery(function ($) {
                 }
 
                 // check if rest is > 0, if yes, hop to next month
-                var nextMonth = thisTravelDateNext.parents('.calendar-item').next();
-                var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank)');
-                var nextMonthDay = nextMonthFirstDay;
+                if ( thisTravelDateNextRest > 0 ) {
+                    var nextMonth = thisTravelDateNext.parents('.calendar-item').next();
+                    var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank)');
+                    var nextMonthDay = nextMonthFirstDay;
 
-                for ( var i = 1; i < thisTravelDateNextRest; i++ ) {
-                    nextMonthDay.addClass('active-duration');
-                    console.log('rest');
+                    for ( var i = 1; i < thisTravelDateNextRest; i++ ) {
+                        nextMonthDay.addClass('active-duration');
+                        console.log('rest');
 
-                    if ( i === ( thisTravelDateNextRest - 1 ) ) {
-                        nextMonthDay.addClass('active-duration-last');
+                        if ( i === ( thisTravelDateNextRest - 1 ) ) {
+                            nextMonthDay.addClass('active-duration-last');
+                        }
+
+                        nextMonthDay = nextMonthDay.next();
                     }
 
-                    nextMonthDay = nextMonthDay.next();
+                    console.log('rest ' + thisTravelDateNextRest);
                 }
-
-                console.log('rest ' + thisTravelDateNextRest);
 
                 // set dateID to booking entrypoint form
                 // set daterange to booking entrypoint form
