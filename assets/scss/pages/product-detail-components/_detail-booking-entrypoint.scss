@@ -107,6 +107,13 @@
             outline: none;
           }
         }
+
+        &.open > button.booking-filter-field--date-range {
+          background-color: transparent;
+          border: 2px solid $body-color;
+          box-shadow: none;
+          outline: none;
+        }
       }
     }
   }
