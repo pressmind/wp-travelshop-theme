@@ -114,20 +114,38 @@ if ($interval->format('%m') < 3) {
                         $class_map['3'] = 'bookable';
                         $class_map['1'] = 'request';
                         $class_map['5'] = 'stopp';
+                        $active = false;
+                        $activeDuration = false;
+                        $iterateDuration = false;
+                        $iterateDurationDays = 0;
+                        $setDuration = 0;
 
                         foreach ($days as $day) {
                             $current_date = $dt->format('Y-m-') . $day;
 
-                            $active = false;
-
-                            if ( isset($_POST['offer']) && ( intval($_POST['offer']) === $date_to_cheapest_price[$current_date]->id ) ) {
-                                $active = true;
+                            if ( $iterateDuration = true ) {
+                                if ( $iterateDuration < $setDuration ) {
+                                    $iterateDurationDays++;
+                                } else {
+                                    $iterateDurationDays = 0;
+                                    $activeDuration = false;
+                                }
                             }
 
                             if (!empty($date_to_cheapest_price[$current_date])) {
 
+                                // -- hook for current date
+                                if ( isset($_POST['offer']) && ( intval($_POST['offer']) === $date_to_cheapest_price[$current_date]->id ) ) {
+                                    $active = true;
+                                    $iterateDuration = true;
+                                    $activeDuration = true;
+                                    $setDuration = $date_to_cheapest_price[$current_date]->duration;
+                                } else {
+                                    $active = false;
+                                }
+
                                 ?>
-                                <div class="calendar-item-day <?php echo !$active ?: 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
+                                <div class="calendar-item-day <?php echo !$activeDuration ?= 'active-duration'; ?> <?php echo !$active ?: 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
                                 <?php
                                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
@@ -156,7 +174,7 @@ if ($interval->format('%m') < 3) {
                                 <?php
                             } else {
                                 ?>
-                                <div class="calendar-item-day"><?php echo $day; ?></div>
+                                <div class="calendar-item-day <?php echo !$activeDuration ?= 'active-duration'; ?>"><?php echo $day; ?></div>
                                 <?php
                             }
                         } ?>
