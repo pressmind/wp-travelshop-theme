@@ -43,6 +43,9 @@ jQuery(function ($) {
 
             renderBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
 
+            // -- show calendar
+            $(this).parent().addClass('open');
+
             e.stopPropagation();
         });
 

@@ -271,4 +271,10 @@
   min-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) + ( remToPx(1rem) * 2 );
 
   @include border-radius($dropdown-border-radius);
+
+  display: none;
+}
+
+.open > .booking-filter-calendar-overlay {
+  display: block;
 }

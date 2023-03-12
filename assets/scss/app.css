@@ -15269,10 +15269,14 @@ footer.footer-main {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
-  padding: 0.5rem;
+  padding: 1rem;
   z-index: 1000;
-  min-width: 636px;
-  border-radius: 0.25rem; }
+  min-width: 652px;
+  border-radius: 0.25rem;
+  display: none; }
+
+.open > .booking-filter-calendar-overlay {
+  display: block; }
 
 .detail-booking-entrypoint {
   background-color: #fff;
