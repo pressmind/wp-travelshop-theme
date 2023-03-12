@@ -154,6 +154,7 @@ jQuery(function ($) {
 
                 // set next dates classes
                 var thisTravelDateNext = thisTravelDate.parent();
+                var thisTravelDateNextRest = 0;
 
                 for ( var i = 1; i < thisTravelDateDur; i++ ) {
                     thisTravelDateNext = thisTravelDateNext.next();
@@ -163,8 +164,12 @@ jQuery(function ($) {
                         if ( i === ( thisTravelDateDur - 1 ) ) {
                             thisTravelDateNext.addClass('active-duration-last');
                         }
+                    } else {
+                        thisTravelDateNextRest = i - thisTravelDateDur;
                     }
                 }
+
+                console.log('rest ' + thisTravelDateNextRest);
 
                 // set dateID to booking entrypoint form
                 // set daterange to booking entrypoint form
