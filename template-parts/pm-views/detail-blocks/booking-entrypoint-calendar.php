@@ -150,29 +150,7 @@ if ($interval->format('%m') < 3) {
                                 }
 
                                 ?>
-                                <div class="calendar-item-day <?php echo !$activeDuration ? '' : 'active-duration'; ?> <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$active ? '' : 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
-                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
-                                <?php
-                                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                                    'transport_type' => $date_to_cheapest_price[$current_date]->transport_type,
-                                ]);
-                                ?> <br>  <?php
-
-                                if(!empty($date_to_cheapest_price[$current_date]->price_regular_before_discount)){
-                                    echo ' Frühbucherpreis: <br> statt '.PriceHandler::format($date_to_cheapest_price[$current_date]->price_regular_before_discount). ' nur '.PriceHandler::format($date_to_cheapest_price[$current_date]->price_total). ' <br>';
-                                }
-
-                                if($date_to_cheapest_price[$current_date]->state === 3){
-                                    echo 'zur Buchung';
-                                } else if($date_to_cheapest_price[$current_date]->state === 1){
-                                    echo 'zur Anfrage';
-                                }else{
-                                    echo 'leider ausgebucht';
-                                }
-
-
-
-                                ?>" data-html="true" data-toggle="tooltip"><a data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
+                                <div class="calendar-item-day <?php echo !$activeDuration ? '' : 'active-duration'; ?> <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$active ? '' : 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" data-html="true" data-toggle="tooltip"><a data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
                                         <div data-offer-id="<?php echo $date_to_cheapest_price[$current_date]->id;?>" ><?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
                                         </div>
                                     </a></div>
