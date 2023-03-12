@@ -862,7 +862,7 @@ jQuery(function ($) {
             $(e.target).parents('.dropdown').find('.dropdown-menu').removeClass('show');
         }
 
-        // -- make select happen on klick .form-radio or inner elements of .form-radio
+        // -- make select happen on click .form-radio or inner elements of .form-radio
         if ( $(e.target).hasClass('form-radio') || $(e.target).parents('.form-radio').length > 0 ) {
             var element = null;
             var elementText = '';
