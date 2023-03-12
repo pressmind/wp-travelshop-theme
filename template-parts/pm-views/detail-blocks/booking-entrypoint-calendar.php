@@ -150,8 +150,8 @@ if ($interval->format('%m') < 3) {
                                 }
 
                                 $dateDateRange = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
-                                    'date_departure' => $args['cheapest_price']->date_departure,
-                                    'date_arrival' => $args['cheapest_price']->date_arrival
+                                    'date_departure' => $date_to_cheapest_price[$current_date]->date_departure,
+                                    'date_arrival' => $date_to_cheapest_price[$current_date]->date_arrival
                                 ]);?>
 
                                 <div class="calendar-item-day <?php echo !$activeDuration ? '' : 'active-duration'; ?> <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$active ? '' : 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" data-html="true" data-toggle="tooltip">
