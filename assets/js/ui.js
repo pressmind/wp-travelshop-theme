@@ -911,7 +911,9 @@ jQuery(function ($) {
         }
 
         // -- +/- click
-        pCounter.find(pCounterButton).on('click touch', function() {
+        pCounter.find(pCounterButton).on('click touch', function(e) {
+
+            e.preventDefault();
 
             var thisButtonType = $(this).data('type');
             var setValue = true;
@@ -958,6 +960,8 @@ jQuery(function ($) {
                 }
                 pCounterInput.val(pCounterValueNew);
             }
+
+            e.stopPropagation();
 
         });
     }

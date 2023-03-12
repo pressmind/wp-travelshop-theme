@@ -14035,7 +14035,8 @@ ul.checklist {
       color: #5a6570; }
       .personen-select .personen-select-counter button.personen-select-counter-btn > svg {
         width: 2rem;
-        height: 2rem; }
+        height: 2rem;
+        pointer-events: none; }
       .personen-select .personen-select-counter button.personen-select-counter-btn:hover {
         color: #212529; }
       .personen-select .personen-select-counter button.personen-select-counter-btn[disabled], .personen-select .personen-select-counter button.personen-select-counter-btn[disabled]:hover, .personen-select .personen-select-counter button.personen-select-counter-btn[disabled]:active, .personen-select .personen-select-counter button.personen-select-counter-btn[disabled]:focus {
