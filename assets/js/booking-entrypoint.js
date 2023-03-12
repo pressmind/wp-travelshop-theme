@@ -150,7 +150,14 @@ jQuery(function ($) {
 
                 // set active date
                 thisTravelDate.parent().addClass('active-duration');
-                thisTravelDate.parent().next().addClass('active-duration');
+
+                // set next dates classes
+                var thisTravelDateNext = thisTravelDate;
+
+                for ( var i = 0; i < thisTravelDateDur; i++ ) {
+                    thisTravelDateNext = thisTravelDateNext.parent().next();
+                    thisTravelDateNext.addClass('active-duration');
+                }
 
 
                 e.stopPropagation();
