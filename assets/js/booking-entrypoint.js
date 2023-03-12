@@ -163,6 +163,9 @@ jQuery(function ($) {
                     }
                 }
 
+                // set dateID to booking entrypoint form
+                $('.booking-filter-field--offer').val(thisTravelDateID);
+
 
                 e.stopPropagation();
             })
