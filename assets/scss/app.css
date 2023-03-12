@@ -15185,6 +15185,9 @@ footer.footer-main {
           .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration + .active-duration {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0; }
+          .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-first {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0; }
           .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last {
             border-top-right-radius: 10rem;
             border-bottom-right-radius: 10rem;

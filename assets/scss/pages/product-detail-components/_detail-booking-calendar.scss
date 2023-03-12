@@ -110,6 +110,11 @@
                   @include border-left-radius(0);
                 }
 
+
+                &.active-duration-first {
+                  @include border-left-radius(0);
+                }
+
                 &.active-duration-last {
                   @include border-right-radius(10rem);
                   position: relative;
