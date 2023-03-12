@@ -272,6 +272,10 @@
 
   @include border-radius($dropdown-border-radius);
 
+  .booking-filter-calendar-overlay-footer {
+    margin-top: 1rem;
+  }
+
   display: none;
 }
 

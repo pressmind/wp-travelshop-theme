@@ -15274,6 +15274,8 @@ footer.footer-main {
   min-width: 652px;
   border-radius: 0.25rem;
   display: none; }
+  .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
+    margin-top: 1rem; }
 
 .open > .booking-filter-calendar-overlay {
   display: block; }
