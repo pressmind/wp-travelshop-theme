@@ -165,8 +165,23 @@ jQuery(function ($) {
                             thisTravelDateNext.addClass('active-duration-last');
                         }
                     } else {
-                        thisTravelDateNextRest = i - thisTravelDateDur;
+                        thisTravelDateNextRest = thisTravelDateDur - i;
                     }
+                }
+
+                // check if rest is > 0, if yes, hop to next month
+                var nextMonth = thisTravelDateNext.parents('.calendar-item').next();
+                var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank)');
+                var nextMonthDay = nextMonthFirstDay;
+
+                for ( var i = 1; i < thisTravelDateNextRest; i++ ) {
+                    nextMonthDay.addClass('active-duration');
+
+                    if ( i === ( thisTravelDateNextRest - 1 ) ) {
+                        nextMonthDay.addClass('active-duration-last');
+                    }
+
+                    nextMonthDay = nextMonthDay.next();
                 }
 
                 console.log('rest ' + thisTravelDateNextRest);
