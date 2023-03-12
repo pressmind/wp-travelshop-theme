@@ -103,7 +103,16 @@
               }
 
               &.active-duration {
+                @include border-left-radius(10rem);
+                background-color: $body-bg-highlight;
 
+                + .active-duration {
+                  @include border-left-radius(0);
+                }
+
+                &:last-child {
+                  @include border-right-radius(10rem);
+                }
               }
             }
 

@@ -15177,6 +15177,16 @@ footer.footer-main {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day:not(.calendar-item-weekday) {
           line-height: 1;
           margin-top: .125rem; }
+        .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration {
+          border-top-left-radius: 10rem;
+          border-bottom-left-radius: 10rem;
+          background-color: #e9ecef; }
+          .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration + .active-duration {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0; }
+          .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration:last-child {
+            border-top-right-radius: 10rem;
+            border-bottom-right-radius: 10rem; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
         color: rgba(33, 37, 41, 0.5);
         font-weight: 700;
