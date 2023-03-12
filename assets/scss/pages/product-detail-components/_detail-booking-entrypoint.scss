@@ -108,7 +108,8 @@
           }
         }
 
-        &.open > button.booking-filter-field--date-range {
+        &.open > button.booking-filter-field--date-range,
+        &.open > button.select-form-control {
           background-color: transparent;
           border: 2px solid $body-color;
           box-shadow: none;

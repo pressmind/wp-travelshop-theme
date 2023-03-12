@@ -15352,7 +15352,7 @@ footer.footer-main {
             border: 2px solid #212529;
             box-shadow: none;
             outline: none; }
-        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.open > button.booking-filter-field--date-range {
+        .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.open > button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.open > button.select-form-control {
           background-color: transparent;
           border: 2px solid #212529;
           box-shadow: none;
