@@ -185,7 +185,7 @@ jQuery(function ($) {
                             nextMonthDay.addClass('active-duration-first');
                         }
 
-                        if ( i === ( thisTravelDateNextRest - 1 ) ) {
+                        if ( i === ( thisTravelDateNextRest ) ) {
                             nextMonthDay.addClass('active-duration-last');
                         }
 
