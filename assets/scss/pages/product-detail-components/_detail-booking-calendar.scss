@@ -261,5 +261,7 @@
 
   z-index: $zindex-dropdown;
 
+  min-width: ($grid-gutter-width) + (remToPx(2.5rem) * 7) + ( $dropdown-padding-y * 2 );
+
   @include border-radius($dropdown-border-radius);
 }
