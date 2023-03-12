@@ -78,7 +78,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <div class="booking-filter-calendar-overlay-inner">
                     <div class="booking-filter-calendar-overlay-content">
 
-                        <div class="booking-filter-calendar-overlay-header">
+                        <div class="booking-filter-calendar-overlay-header d-none">
                             <div class="h4">
                                 Termin wählen
                             </div>
@@ -88,7 +88,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                         </div>
                         <div class="booking-filter-calendar-overlay-body">
                             <div id="booking-entry-calendar">
-                                CALENDAR HERE
+
                             </div>
                         </div>
                         <div class="booking-filter-calendar-overlay-footer">
