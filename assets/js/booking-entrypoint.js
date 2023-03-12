@@ -142,6 +142,7 @@ jQuery(function ($) {
                 // collect data
                 var thisTravelDate = $(this);
                 var thisTravelDateID = thisTravelDate.data('anchor');
+                var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
 
                 // reset active date
@@ -164,8 +165,9 @@ jQuery(function ($) {
                 }
 
                 // set dateID to booking entrypoint form
+                // set daterange to booking entrypoint form
                 $('.booking-filter-field--offer').val(thisTravelDateID);
-
+                $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
 
                 e.stopPropagation();
             })
