@@ -853,7 +853,6 @@ jQuery(function ($) {
 
         // -- little hook
         // -- backdrop checker
-        console.log($(e.target).css('container-name'));
         if ( $(e.target).css('container-name') === 'backdrop' ) {
             $(e.target).removeClass('show');
             $(e.target).parent().find('button[data-type="close-popup"]').trigger('click touch');
