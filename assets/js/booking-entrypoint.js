@@ -201,6 +201,15 @@ jQuery(function ($) {
 
                 e.stopPropagation();
             })
+
+            // -- close daterange
+            $('.booking-calendar-close').on('click touch', function(e) {
+                e.preventDefault();
+
+                $(this).parents('.booking-filter-item--date-range').removeClass('open');
+
+                e.stopPropagation();
+            })
         }
 
         /**
