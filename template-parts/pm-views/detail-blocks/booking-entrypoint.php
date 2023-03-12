@@ -73,6 +73,32 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 </span>
             </span>
             </button>
+
+            <div class="booking-filter-calendar-overlay">
+                <div class="booking-filter-calendar-overlay-inner">
+                    <div class="booking-filter-calendar-overlay-content">
+
+                        <div class="booking-filter-calendar-overlay-header">
+                            <div class="h4">
+                                Termin wählen
+                            </div>
+                            <button class="booking-calendar-close" data-type="close-popup" type="button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                            </button>
+                        </div>
+                        <div class="booking-filter-calendar-overlay-body">
+                            <div id="booking-entry-calendar">
+                                CALENDAR HERE
+                            </div>
+                        </div>
+                        <div class="booking-filter-calendar-overlay-footer">
+                            <button class="btn btn-primary btn-block booking-calendar-close">
+                                Auswahl übernehmen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <?php if ( in_array('FLUG', $transport_types) ) { ?>
