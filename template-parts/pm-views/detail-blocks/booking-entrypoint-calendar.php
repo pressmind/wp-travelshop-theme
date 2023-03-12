@@ -150,7 +150,7 @@ if ($interval->format('%m') < 3) {
                                 }
 
                                 ?>
-                                <div class="calendar-item-day <?php echo !$activeDuration ? '' : 'active-duration'; ?> <?php echo !$active ? '' : 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
+                                <div class="calendar-item-day <?php echo !$activeDuration ? '' : 'active-duration'; ?> <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$active ? '' : 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" title="<?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $date_to_cheapest_price[$current_date]->duration]); ?>
                                 <?php
                                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
@@ -179,7 +179,7 @@ if ($interval->format('%m') < 3) {
                                 <?php
                             } else {
                                 ?>
-                                <div class="calendar-item-day <?php echo !$activeDuration ? '' : 'active-duration'; ?>"><?php echo $day; ?></div>
+                                <div class="calendar-item-day <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$activeDuration ? '' : 'active-duration'; ?>"><?php echo $day; ?></div>
                                 <?php
                             }
                         } ?>
