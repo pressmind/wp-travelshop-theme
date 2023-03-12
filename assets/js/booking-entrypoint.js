@@ -172,7 +172,7 @@ jQuery(function ($) {
                 // check if rest is > 0, if yes, hop to next month
                 if ( thisTravelDateNextRest > 0 ) {
                     var nextMonth = thisTravelDate.parents('.calendar-item').next();
-                    var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank):not(.calendar-item-weekday)');
+                    var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank):not(.calendar-item-weekday)').first();
                     var nextMonthDay = nextMonthFirstDay;
 
                     console.log(nextMonthFirstDay);
