@@ -175,6 +175,8 @@ jQuery(function ($) {
                     var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank)');
                     var nextMonthDay = nextMonthFirstDay;
 
+                    console.log(nextMonth);
+
                     for ( var i = 1; i < thisTravelDateNextRest; i++ ) {
                         nextMonthDay.addClass('active-duration');
                         console.log('rest');
