@@ -979,7 +979,7 @@ jQuery(function ($) {
 
         // -- daterange
         if ( $('.booking-filter-item--date-range').length > 0 && $('.booking-filter-item--date-range').hasClass('open') ) {
-            if ( !$target.hasClass('booking-filter-item--date-range') && !$target.parents('.booking-filter-item--date-range').length < 1 ) {
+            if ( !$target.hasClass('booking-filter-item--date-range') && $target.parents('.booking-filter-item--date-range').length < 1 ) {
                 $('.booking-filter-item--date-range').removeClass('open');
             }
         }
