@@ -152,7 +152,7 @@ jQuery(function ($) {
                 thisTravelDate.parent().addClass('active-duration');
 
                 // set next dates classes
-                var thisTravelDateNext = thisTravelDate;
+                var thisTravelDateNext = thisTravelDate.parent();
 
                 for ( var i = 0; i < thisTravelDateDur; i++ ) {
                     thisTravelDateNext = thisTravelDateNext.next();
