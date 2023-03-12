@@ -125,7 +125,7 @@ if ($interval->format('%m') < 3) {
                             $current_date = $dt->format('Y-m-') . $day;
 
                             if ( $iterateDuration = true ) {
-                                if ( $iterateDurationDays === $setDuration ) {
+                                if ( $iterateDurationDays === ($setDuration - 1) ) {
                                     $activeDurationLast = true;
                                 }
                                 if ( $iterateDurationDays < $setDuration ) {
