@@ -172,10 +172,10 @@ jQuery(function ($) {
                 // check if rest is > 0, if yes, hop to next month
                 if ( thisTravelDateNextRest > 0 ) {
                     var nextMonth = thisTravelDate.parents('.calendar-item').next();
-                    var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank):not(.calendar-item-weekday)')[0];
+                    var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank):not(.calendar-item-weekday)');
                     var nextMonthDay = nextMonthFirstDay;
 
-                    console.log(nextMonth);
+                    console.log(nextMonthFirstDay);
 
                     for ( var i = 1; i < thisTravelDateNextRest; i++ ) {
                         nextMonthDay.addClass('active-duration');
