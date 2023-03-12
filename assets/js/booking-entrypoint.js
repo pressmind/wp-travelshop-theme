@@ -99,7 +99,7 @@ jQuery(function ($) {
                 e.preventDefault();
 
                 // -- only if not active one clicked
-                if ( !$(this).hasClass('btn-primary') ) {
+                if ( !$(this).hasClass('active') ) {
                     // collect data
                     var getAirport = null;
                     var getDur = $(this).data('duration');
