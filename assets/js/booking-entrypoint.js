@@ -157,10 +157,12 @@ jQuery(function ($) {
 
                 for ( var i = 1; i < thisTravelDateDur; i++ ) {
                     thisTravelDateNext = thisTravelDateNext.next();
-                    thisTravelDateNext.addClass('active-duration');
+                    if ( !thisTravelDateNext.hasClass('is-blank') ) {
+                        thisTravelDateNext.addClass('active-duration');
 
-                    if ( i === ( thisTravelDateDur - 1 ) ) {
-                        thisTravelDateNext.addClass('active-duration-last');
+                        if ( i === ( thisTravelDateDur - 1 ) ) {
+                            thisTravelDateNext.addClass('active-duration-last');
+                        }
                     }
                 }
 
