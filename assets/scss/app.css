@@ -15180,11 +15180,11 @@ footer.footer-main {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration {
           border-top-left-radius: 10rem;
           border-bottom-left-radius: 10rem;
-          background-color: #e9ecef; }
+          background-color: rgba(0, 0, 0, 0.05); }
           .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration + .active-duration {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0; }
-          .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration:last-child {
+          .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last {
             border-top-right-radius: 10rem;
             border-bottom-right-radius: 10rem; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {

@@ -104,13 +104,13 @@
 
               &.active-duration {
                 @include border-left-radius(10rem);
-                background-color: $body-bg-highlight;
+                background-color: rgba(#000, .05);
 
                 + .active-duration {
                   @include border-left-radius(0);
                 }
 
-                &:last-child {
+                &.active-duration-last {
                   @include border-right-radius(10rem);
                 }
               }

@@ -116,6 +116,7 @@ if ($interval->format('%m') < 3) {
                         $class_map['5'] = 'stopp';
                         $active = false;
                         $activeDuration = false;
+                        $activeDurationLast = false;
                         $iterateDuration = false;
                         $iterateDurationDays = 1;
                         $setDuration = 0;
@@ -124,11 +125,15 @@ if ($interval->format('%m') < 3) {
                             $current_date = $dt->format('Y-m-') . $day;
 
                             if ( $iterateDuration = true ) {
+                                if ( $iterateDurationDays === $setDuration ) {
+                                    $activeDurationLast = true;
+                                }
                                 if ( $iterateDurationDays < $setDuration ) {
                                     $iterateDurationDays++;
                                 } else {
                                     $iterateDurationDays = 1;
                                     $activeDuration = false;
+                                    $activeDurationLast = false;
                                 }
                             }
 
