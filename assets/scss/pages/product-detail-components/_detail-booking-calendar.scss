@@ -259,6 +259,8 @@
   border: $dropdown-border-width solid $dropdown-border-color;
   box-shadow: $dropdown-box-shadow;
 
+  padding: $dropdown-padding-y;
+
   z-index: $zindex-dropdown;
 
   min-width: ($grid-gutter-width) + (remToPx(2.5rem) * 7) + ( $dropdown-padding-y * 2 );

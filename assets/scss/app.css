@@ -1,11 +1,11 @@
 /*
 Error: Incompatible units: 'rem' and 'px'.
-        on line 264 of pages/product-detail-components/_detail-booking-calendar.scss
+        on line 266 of pages/product-detail-components/_detail-booking-calendar.scss
         from line 4 of pages/_product-detail.scss
         from line 94 of app.scss
 
 Backtrace:
-pages/product-detail-components/_detail-booking-calendar.scss:264
+pages/product-detail-components/_detail-booking-calendar.scss:266
 pages/_product-detail.scss:4
 app.scss:94
 C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/script/value/number.rb:450:in `coercion_factor'
@@ -84,4 +84,4 @@ C:/Ruby26-x64/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Incompatible units: 'rem' and 'px'.\A         on line 264 of pages/product-detail-components/_detail-booking-calendar.scss\A         from line 4 of pages/_product-detail.scss\A         from line 94 of app.scss"; }
+  content: "Error: Incompatible units: 'rem' and 'px'.\A         on line 266 of pages/product-detail-components/_detail-booking-calendar.scss\A         from line 4 of pages/_product-detail.scss\A         from line 94 of app.scss"; }
