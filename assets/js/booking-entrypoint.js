@@ -175,24 +175,19 @@ jQuery(function ($) {
                     var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank):not(.calendar-item-weekday)').first();
                     var nextMonthDay = nextMonthFirstDay;
 
-                    console.log(nextMonthFirstDay);
-
-                    for ( var i = 1; i < thisTravelDateNextRest; i++ ) {
+                    for ( var i = 0; i < thisTravelDateNextRest; i++ ) {
                         nextMonthDay.addClass('active-duration');
-                        console.log('rest');
 
                         if ( i === 1 ) {
                             nextMonthDay.addClass('active-duration-first');
                         }
 
-                        if ( i === ( thisTravelDateNextRest ) ) {
+                        if ( i === ( thisTravelDateNextRest - 1 ) ) {
                             nextMonthDay.addClass('active-duration-last');
                         }
 
                         nextMonthDay = nextMonthDay.next();
                     }
-
-                    console.log('rest ' + thisTravelDateNextRest);
                 }
 
                 // set dateID to booking entrypoint form
