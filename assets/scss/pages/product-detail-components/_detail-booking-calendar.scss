@@ -266,6 +266,8 @@
 
   padding: 1rem;
 
+  margin: $dropdown-spacer 0 0;
+
   z-index: $zindex-dropdown;
 
   min-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) + ( remToPx(1rem) * 2 );

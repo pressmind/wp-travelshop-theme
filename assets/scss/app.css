@@ -15270,6 +15270,7 @@ footer.footer-main {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
   padding: 1rem;
+  margin: 0.125rem 0 0;
   z-index: 1000;
   min-width: 652px;
   border-radius: 0.25rem;
