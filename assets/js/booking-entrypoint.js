@@ -167,6 +167,7 @@ jQuery(function ($) {
                 // set dateID to booking entrypoint form
                 // set daterange to booking entrypoint form
                 $('.booking-filter-field--offer').val(thisTravelDateID);
+                $('.booking-filter-field--duration').val(thisTravelDateDur);
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
 
                 e.stopPropagation();
