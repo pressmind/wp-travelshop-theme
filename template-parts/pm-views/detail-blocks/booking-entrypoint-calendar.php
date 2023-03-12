@@ -163,7 +163,8 @@ if ($interval->format('%m') < 3) {
                                 <?php
                             } else {
                                 ?>
-                                <div class="calendar-item-day <?php if ( empty($day) ) { ?> is-blank <?php } ?> <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$activeDuration ? '' : 'active-duration'; ?>"><?php echo $day; ?></div>
+
+                                <div class="calendar-item-day <?php if ( empty($day) ) { ?> is-blank <?php } ?> <?php echo !$activeDurationLast ? '' : 'active-duration-last'; ?> <?php echo !$activeDuration ? '' : 'active-duration'; ?>"><?php print_r($day); ?></div>
                                 <?php
                             }
                         } ?>
