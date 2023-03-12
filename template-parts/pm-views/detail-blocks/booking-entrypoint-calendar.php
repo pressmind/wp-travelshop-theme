@@ -117,7 +117,7 @@ if ($interval->format('%m') < 3) {
                         $active = false;
                         $activeDuration = false;
                         $iterateDuration = false;
-                        $iterateDurationDays = 0;
+                        $iterateDurationDays = 1;
                         $setDuration = 0;
 
                         foreach ($days as $day) {
@@ -127,7 +127,7 @@ if ($interval->format('%m') < 3) {
                                 if ( $iterateDurationDays < $setDuration ) {
                                     $iterateDurationDays++;
                                 } else {
-                                    $iterateDurationDays = 0;
+                                    $iterateDurationDays = 1;
                                     $activeDuration = false;
                                 }
                             }
