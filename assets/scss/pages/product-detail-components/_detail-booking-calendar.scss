@@ -249,3 +249,17 @@
     }
   }
 }
+
+.booking-filter-calendar-overlay {
+  position: absolute;
+  top: 100%;
+  right:0;
+
+  background-color: $dropdown-bg;
+  border: $dropdown-border-width solid $dropdown-border-color;
+  box-shadow: $dropdown-box-shadow;
+
+  z-index: $zindex-dropdown;
+
+  @include border-radius($dropdown-border-radius);
+}
