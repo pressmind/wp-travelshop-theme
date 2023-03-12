@@ -47,6 +47,15 @@ jQuery(function ($) {
         });
 
         /**
+         * set active date
+         * @param dateID
+         * @param duration
+         */
+        function setDateActive(dateID, duration) {
+
+        }
+
+        /**
          * handling ajax request of calnedar
          * @param request
          */
@@ -91,7 +100,7 @@ jQuery(function ($) {
          * + connects calendar to booking entrypoint!
          */
         function bookingCalendarInteraction() {
-            var travelDate = bookingEntryCalendarRenderTarget.find('.travel-date');
+            var travelDate = bookingEntryCalendarRenderTarget.find('.travel-date a');
             var durationSwitch = bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calender-duration button');
 
             // handling duration switch
@@ -122,6 +131,27 @@ jQuery(function ($) {
                     refreshBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
 
                 }
+
+                e.stopPropagation();
+            })
+
+            // handling active set on traveldatge
+            travelDate.on('click touch', function(e) {
+                e.preventDefault();
+
+                // collect data
+                var thisTravelDate = $(this);
+                var thisTravelDateID = thisTravelDate.data('anchor');
+                var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
+
+                // reset active date
+                bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
+                bookingEntryCalendarRenderTarget.find('.active-duration-last').removeClass('active-duration-last');
+
+                // set active date
+                thisTravelDate.parent().addClass('active-duration');
+                thisTravelDate.parent().next().addClass('active-duration');
+
 
                 e.stopPropagation();
             })
