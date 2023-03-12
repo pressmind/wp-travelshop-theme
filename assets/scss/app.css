@@ -15186,7 +15186,19 @@ footer.footer-main {
             border-bottom-left-radius: 0; }
           .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last {
             border-top-right-radius: 10rem;
-            border-bottom-right-radius: 10rem; }
+            border-bottom-right-radius: 10rem;
+            position: relative; }
+            .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last:after {
+              border-radius: 50%;
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              pointer-events: none;
+              display: block;
+              border: 1px solid #212529; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
         color: rgba(33, 37, 41, 0.5);
         font-weight: 700;

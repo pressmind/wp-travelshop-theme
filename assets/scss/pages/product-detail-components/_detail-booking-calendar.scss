@@ -112,6 +112,23 @@
 
                 &.active-duration-last {
                   @include border-right-radius(10rem);
+                  position: relative;
+
+                  &:after {
+                    @include border-radius(50%);
+
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+
+                    pointer-events:none;
+
+                    display: block;
+                    border: 1px solid $body-color;
+                  }
                 }
               }
             }
