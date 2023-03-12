@@ -35,6 +35,8 @@
 
       // -- daterange
       &.booking-filter-item--date-range {
+        position: relative;
+
         button.booking-filter-field--date-range {
           @extend .form-control;
           @extend %input-has-icon;

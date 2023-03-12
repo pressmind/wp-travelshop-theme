@@ -15293,14 +15293,16 @@ footer.footer-main {
       @media (min-width: 992px) {
         .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type {
           padding-bottom: 1rem; } }
-    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
-      text-align: left; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--counter {
-        position: absolute;
-        top: 50%;
-        right: .75rem;
-        transform: translateY(-50%);
-        color: rgba(73, 80, 87, 0.5); }
+    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range {
+      position: relative; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+        text-align: left; }
+        .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--counter {
+          position: absolute;
+          top: 50%;
+          right: .75rem;
+          transform: translateY(-50%);
+          color: rgba(73, 80, 87, 0.5); }
     .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed {
       border-radius: 0.25rem;
       border: 1px solid #ced4da; }
