@@ -123,6 +123,7 @@ if ($interval->format('%m') < 3) {
                             $current_date = $dt->format('Y-m-') . $day;
 
                             if (!empty($date_to_cheapest_price[$current_date])) {
+
                                 // -- hook for current date
                                 if ( isset($_POST['offer']) && ( intval($_POST['offer']) === $date_to_cheapest_price[$current_date]->id ) ) {
                                     $active = true;
@@ -133,6 +134,7 @@ if ($interval->format('%m') < 3) {
 
                                 $dateRangeMap[$date_to_cheapest_price[$current_date]->id]['departure'] = $date_to_cheapest_price[$current_date]->date_departure;
                                 $dateRangeMap[$date_to_cheapest_price[$current_date]->id]['arrival'] = $date_to_cheapest_price[$current_date]->date_arrival;
+                                $dateRangeMap[$date_to_cheapest_price[$current_date]->id]['active'] = $active;
 
                                 $dateDateRange = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
                                     'date_departure' => $date_to_cheapest_price[$current_date]->date_departure,
