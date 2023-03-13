@@ -243,7 +243,10 @@ jQuery(function ($) {
                 // check if slider is initialized, if yes, get slide index store in variable.
                 if ( bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner').hasClass('tns-slider') ) {
                     // get slide index of item
-                    console.log(calendarSlider.getInfo());
+                    var calendarSliderInfo = calendarSlider.getInfo();
+                    var calendarSliderCurrentIndex = calendarSliderInfo.index;
+
+                    $('.booking-filter-field--sliderindex').val(calendarSliderCurrentIndex);
                 }
 
                 // refresh price
