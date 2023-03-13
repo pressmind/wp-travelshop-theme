@@ -14,7 +14,7 @@
     pointer-events:none;
 
     display: block;
-    border: 2px solid $body-color;
+    border: 1px solid $body-color;
   }
 
   .booking-entrypoint-calendar {
@@ -211,10 +211,6 @@
 
                   &:after {
                     @extend %active-day-item;
-                  }
-
-                  &.daterange-preview:after {
-                    border-width: 1px !important;
                   }
                 }
               }
