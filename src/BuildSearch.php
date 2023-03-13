@@ -291,7 +291,7 @@ class BuildSearch
     public static function fromRequestMongoDB($request, $prefix = 'pm', $paginator = true, $page_size = 10, $custom_conditions = [])
     {
 
-        array_walk_recursive($request, function($key, &$item){
+        array_walk_recursive($request, function(&$item){
             $item = urldecode($item);
         });
 
@@ -420,7 +420,7 @@ class BuildSearch
 
         $allowed_orders = array(
             'rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc',
-            'score-asc', 'score-desc', 'recommendation_rate-asc', 'recommendation_rate-desc', 'priority'
+            'score-asc', 'score-desc', 'recommendation_rate-asc', 'recommendation_rate-desc', 'priority', 'list'
         );
         if (empty($request[$prefix.'-o']) === false && in_array($request[$prefix.'-o'], $allowed_orders) === true) {
 
@@ -428,6 +428,8 @@ class BuildSearch
                 $order = array('rand' => '');
             }elseif($request[$prefix.'-o'] == 'priority'){
                 $order = array('priority' => '');
+            }elseif($request[$prefix.'-o'] == 'list'){
+                $order = array('list' => '');
             }else{
                 list($property, $direction) =  explode('-', $request[$prefix.'-o']);
                 $property = $property == 'price' ? 'price_total' : $property;

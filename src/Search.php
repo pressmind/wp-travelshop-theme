@@ -100,7 +100,7 @@ class Search
                 $item['fst_date_departure'] = !empty($document['fst_date_departure']) ? new \DateTime($document['fst_date_departure']) : null;
                 $item['possible_durations'] = !empty($document['possible_durations']) ? $document['possible_durations'] : [];
                 $item['last_modified_date'] = $document['last_modified_date'];
-                $item['sales_priority'] = $document['sales_priority'];
+                $item['sales_priority'] = !empty($document['sales_priority']) ? $document['sales_priority'] : null;
                 if (!empty($document['prices'])) {
                     if(!is_array($document['prices']['date_departures'])){
                         $document['prices']['date_departures'] = [$document['prices']['date_departures']];
@@ -117,7 +117,7 @@ class Search
                             $item['cheapest_price']->date_departures[] = new \DateTime($date_departure);
                         }
                     }
-                    $item['cheapest_price']->earlybird_discount_date_to = new \DateTime($document['prices']['earlybird_discount_date_to']);
+                    $item['cheapest_price']->earlybird_discount_date_to = $document['prices']['earlybird_discount_date_to'] != null ? new \DateTime($document['prices']['earlybird_discount_date_to']) : null;
                     $item['cheapest_price']->option_board_type = $document['prices']['option_board_type'];
                     $item['cheapest_price']->transport_type = $document['prices']['transport_type'];
                 } else {
@@ -220,6 +220,9 @@ class Search
                 }
             }
             foreach(json_decode(json_encode($result_filter->transportTypesGrouped)) as $item){
+                if(empty($item->_id)){
+                    continue;
+                }
                 $item->count_in_system = $item->count;
                 $item->count_in_search = 0;
                 $item->name = $item->_id;
