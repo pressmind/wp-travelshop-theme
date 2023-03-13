@@ -15150,8 +15150,7 @@ footer.footer-main {
           transform: scale(0.95); }
         .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button.active {
           background-color: #fff;
-          color: #212529;
-          font-weight: 700; }
+          color: #212529; }
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer {
     display: flex;
     justify-content: center; }
