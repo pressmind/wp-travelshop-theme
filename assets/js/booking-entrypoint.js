@@ -172,7 +172,7 @@ jQuery(function ($) {
             var storeCurrentEnteredTravelDate = null;
 
             travelDate.on('mouseenter', function(e) {
-                if ( !$(this).hasClass('active') ) {
+                if ( !$(this).parent().hasClass('active') ) {
                     var thisTravelDate = $(this);
                     var thisTravelDateID = thisTravelDate.data('anchor');
 
