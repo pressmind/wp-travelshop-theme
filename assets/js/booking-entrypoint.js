@@ -172,26 +172,28 @@ jQuery(function ($) {
             var storeCurrentEnteredTravelDate = null;
 
             travelDate.on('mouseenter', function(e) {
-                var thisTravelDate = $(this);
-                var thisTravelDateID = $(this).thisTravelDate.data('anchor');
+                if ( !$(this).hasClass('active') ) {
+                    var thisTravelDate = $(this);
+                    var thisTravelDateID = thisTravelDate.data('anchor');
 
-                // store travelDate
-                storeCurrentEnteredTravelDate = $(this);
+                    // store travelDate
+                    storeCurrentEnteredTravelDate = $(this);
 
-                // set active daterange as classes in calendar to preview
-                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);
+                    // set active daterange as classes in calendar to preview
+                    var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);
 
-                thisDaterangeItems.addClass('daterange-preview active-duration');
-                thisDaterangeItems.last().addClass('active-duration-last');
-            
-                // bind mouseleave to storedCurrentTraveldate
-                storeCurrentEnteredTravelDate.bind('mouseout', function(e) {
-                    var thisDaterangePreviewItems = bookingEntryCalendarRenderTarget.find('.daterange-preview');
+                    thisDaterangeItems.addClass('daterange-preview active-duration');
+                    thisDaterangeItems.last().addClass('active-duration-last');
 
-                    thisDaterangePreviewItems.removeClass('active-duration');
-                    thisDaterangePreviewItems.removeClass('active-duration-last');
-                    thisDaterangePreviewItems.removeClass('daterange-preview');
-                })
+                    // bind mouseleave to storedCurrentTraveldate
+                    storeCurrentEnteredTravelDate.bind('mouseout', function(e) {
+                        var thisDaterangePreviewItems = bookingEntryCalendarRenderTarget.find('.daterange-preview');
+
+                        thisDaterangePreviewItems.removeClass('active-duration');
+                        thisDaterangePreviewItems.removeClass('active-duration-last');
+                        thisDaterangePreviewItems.removeClass('daterange-preview');
+                    })
+                }
             });
 
             travelDate.on('mouseout', function(e) {
