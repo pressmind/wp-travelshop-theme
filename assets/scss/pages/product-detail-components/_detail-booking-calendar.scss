@@ -303,7 +303,7 @@
       }
 
 
-      .dropdown-menu-content {
+      .booking-filter-calendar-overlay-content {
         @extend %modal-content#{$temp-calendar-dropdown-modal-string};
       }
     }
@@ -349,7 +349,7 @@
           @extend %modal-inner-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
         }
 
-        .dropdown-menu-content {
+        .booking-filter-calendar-overlay-content {
           @extend %modal-content-down-#{$booking-calendar-dropdown-mobile-break};
 
           @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
@@ -384,7 +384,7 @@
     .booking-filter-calendar-overlay {
       @extend %apple-like-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
 
-      .dropdown-menu-content {
+      .booking-filter-calendar-overlay-content {
         @extend %apple-like-content-down-#{$booking-calendar-dropdown-mobile-break};
       }
 
@@ -406,7 +406,7 @@
     .open > .booking-filter-calendar-overlay {
       @extend %apple-like-open-down-#{$booking-calendar-dropdown-mobile-break};
 
-      .dropdown-menu-content {
+      .booking-filter-calendar-overlay-content {
         @extend %apple-like-content-open-down-#{$booking-calendar-dropdown-mobile-break};
       }
     }
@@ -418,7 +418,7 @@
     .booking-filter-calendar-overlay {
       @extend %offcanvas-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
 
-      .dropdown-menu-content {
+      .booking-filter-calendar-overlay-content {
         @extend %offcanvas-content-down-#{$booking-calendar-dropdown-mobile-break};
         @extend %offcanvas-direction-#{$booking-calendar-dropdown-offcanvas-direction}-down-#{$booking-calendar-dropdown-mobile-break};
       }
@@ -442,7 +442,7 @@
     .open > .booking-filter-calendar-overlay{
       @extend %offcanvas-open-down-#{$booking-calendar-dropdown-mobile-break};
 
-      .dropdown-menu-content {
+      .booking-filter-calendar-overlay-content {
         @extend %offcanvas-content-open-down-#{$booking-calendar-dropdown-mobile-break};
       }
     }
