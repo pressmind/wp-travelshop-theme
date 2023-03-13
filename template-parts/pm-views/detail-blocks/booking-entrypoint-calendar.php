@@ -62,6 +62,20 @@ if ($interval->format('%m') < 3) {
     $to->modify('+' . $add_months . ' month');
 }
 
+// build daterange map
+$dateRangeMap = [];
+
+foreach ( $date_to_cheapest_price as $date ) {
+    $dateRangeMap[$date->id]['departure'] = intval($date->date_departure->format('Ymd'));
+    $dateRangeMap[$date->id]['arrival'] = intval($date->date_arrival->format('Ymd'));
+
+    if ( isset($_POST['offer']) && ( intval($_POST['offer']) === $date->id ) ) {
+        $dateRangeMap[$date->id]['active'] = true;
+    } else {
+        $dateRangeMap[$date->id]['active'] = false;
+    }
+}
+
 ?>
 <div class="booking-entrypoint-calendar">
     <?php if(count($durations) > 1){ ?>
@@ -83,7 +97,6 @@ if ($interval->format('%m') < 3) {
         <div class="booking-entrypoint-calendar-inner">
             <?php
             $today = new DateTime();
-            $dateRangeMap = [];
             // loop trough all months
             foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
                 // fill the calendar grid
@@ -132,10 +145,6 @@ if ($interval->format('%m') < 3) {
                                 } else {
                                     $active = false;
                                 }
-
-                                $dateRangeMap[$date_to_cheapest_price[$current_date]->id]['departure'] = intval($date_to_cheapest_price[$current_date]->date_departure->format('Ymd'));
-                                $dateRangeMap[$date_to_cheapest_price[$current_date]->id]['arrival'] = intval($date_to_cheapest_price[$current_date]->date_arrival->format('Ymd'));
-                                $dateRangeMap[$date_to_cheapest_price[$current_date]->id]['active'] = $active;
 
                                 $dateDateRange = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
                                     'date_departure' => $date_to_cheapest_price[$current_date]->date_departure,
