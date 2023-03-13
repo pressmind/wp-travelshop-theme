@@ -167,7 +167,37 @@ jQuery(function ($) {
                 e.stopPropagation();
             })
 
-            // handling active set on traveldatge
+            // handling traveldate preview
+            var storeCurrentEnteredTravelDate = null;
+
+            travelDate.on('mouseenter', function(e) {
+                var thisTravelDate = $(this);
+                var thisTravelDateID = $(this).thisTravelDate.data('anchor');
+
+                // store travelDate
+                storeCurrentEnteredTravelDate = $(this);
+
+                // set active daterange as classes in calendar to preview
+                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);
+
+                thisDaterangeItems.addClass('daterange-preview active-duration');
+                thisDaterangeItems.last().addClass('active-duration-last');
+            
+                // bind mouseleave to storedCurrentTraveldate
+                storeCurrentEnteredTravelDate.bind('mouseout', function(e) {
+                    var thisDaterangePreviewItems = bookingEntryCalendarRenderTarget.find('.daterange-preview');
+
+                    thisDaterangePreviewItems.removeClass('active-duration');
+                    thisDaterangePreviewItems.removeClass('active-duration-last');
+                    thisDaterangePreviewItems.removeClass('daterange-preview');
+                })
+            });
+
+            travelDate.on('mouseout', function(e) {
+                $(this).unbind('mouseout');
+            });
+
+            // handling active set on traveldate
             travelDate.on('click touch', function(e) {
                 e.preventDefault();
 
