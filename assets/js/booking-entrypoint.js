@@ -1,5 +1,6 @@
 jQuery(function ($) {
     let bookingEntry = $('.detail-booking-entrypoint');
+    let calendarSlider;
 
     // -- check if booking entry is loaded, otherwise script not needed
 
@@ -60,7 +61,7 @@ jQuery(function ($) {
             var sliderItems = '.calendar-item';
 
             if ( $('body').find(sliderWrapper + ' ' + sliderItems).length > 2 ) {
-                var calenderSlider = tns({
+                calendarSlider = tns({
                     container: sliderContainer,
                     items: 2,
                     slideBy: 1,
@@ -242,8 +243,6 @@ jQuery(function ($) {
                 // check if slider is initialized, if yes, get slide index store in variable.
                 if ( bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner').hasClass('tns-slider') ) {
                     // get slide index of item
-                    var calendarSlider = bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner');
-
                     console.log(calendarSlider.getInfo());
                 }
 
