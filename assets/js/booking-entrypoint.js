@@ -4,6 +4,9 @@ jQuery(function ($) {
     let calendarSliderIndex = 0;
     let calendarSliderIndexTemp = null;
 
+    // -- todo
+    // @todo: rename anchor to offer / in file dateID to offerID
+
     // -- check if booking entry is loaded, otherwise script not needed
 
     if ( bookingEntry.length > 0 ) {
@@ -270,6 +273,9 @@ jQuery(function ($) {
                 $('.booking-filter-field--duration').val(thisTravelDateDur);
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
                 $('.booking-filter-field--bookingurl').val(thisTravelBookingUrl);
+
+                // -- set offer id to booking button
+                $('.booking-btn').data('anchor', thisTravelDateID);
 
                 // check if slider is initialized, if yes, get slide index store in variable.
                 if ( bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner').hasClass('tns-slider') ) {
