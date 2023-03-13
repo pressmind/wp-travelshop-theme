@@ -115,35 +115,15 @@ if ($interval->format('%m') < 3) {
                         $class_map['1'] = 'request';
                         $class_map['5'] = 'stopp';
                         $active = false;
-                        $activeDuration = false;
-                        $activeDurationLast = false;
-                        $iterateDuration = false;
-                        $iterateDurationDays = 1;
                         $setDuration = 0;
 
                         foreach ($days as $day) {
                             $current_date = $dt->format('Y-m-') . $day;
 
-                            if ( $iterateDuration = true ) {
-                                if ( $iterateDurationDays == ($setDuration - 1) ) {
-                                    $activeDurationLast = true;
-                                }
-                                if ( $iterateDurationDays < $setDuration ) {
-                                    $iterateDurationDays++;
-                                } else {
-                                    $iterateDurationDays = 1;
-                                    $activeDuration = false;
-                                    $activeDurationLast = false;
-                                }
-                            }
-
                             if (!empty($date_to_cheapest_price[$current_date])) {
-
                                 // -- hook for current date
                                 if ( isset($_POST['offer']) && ( intval($_POST['offer']) === $date_to_cheapest_price[$current_date]->id ) ) {
                                     $active = true;
-                                    $iterateDuration = true;
-                                    $activeDuration = true;
                                     $setDuration = $date_to_cheapest_price[$current_date]->duration;
                                 } else {
                                     $active = false;
