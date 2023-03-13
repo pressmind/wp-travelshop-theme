@@ -119,7 +119,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
 
 
         <?php
-        var $datePeriod = new DatePeriod($from, new DateInterval('P1M'), $to);
+        $datePeriod = new DatePeriod($from, new DateInterval('P1M'), $to);
 
         echo count($datePeriod);
 
