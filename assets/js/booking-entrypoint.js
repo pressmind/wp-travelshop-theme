@@ -1,6 +1,7 @@
 jQuery(function ($) {
     let bookingEntry = $('.detail-booking-entrypoint');
     let calendarSlider;
+    let calendarSliderIndex = 0;
 
     // -- check if booking entry is loaded, otherwise script not needed
 
@@ -61,7 +62,11 @@ jQuery(function ($) {
             var sliderItems = '.calendar-item';
 
             if ( $('body').find(sliderWrapper + ' ' + sliderItems).length > 2 ) {
-                var getSliderIndex = parseInt($('.booking-filter-field--slider-index').val());
+                var calendarSliderIndexTemp = parseInt($('.booking-filter-field--slider-index').val())
+
+                if ( calendarSliderIndexTemp !== calendarSliderIndex ) {
+                    calendarSliderIndex = calendarSliderIndex);
+                }
 
                 calendarSlider = tns({
                     container: sliderContainer,
@@ -72,7 +77,7 @@ jQuery(function ($) {
                     loop: false,
                     gutter: 30,
                     disable: true,
-                    startIndex: getSliderIndex,
+                    startIndex: calendarSliderIndex,
                     responsive: {
                         768: {
                            disable: false
