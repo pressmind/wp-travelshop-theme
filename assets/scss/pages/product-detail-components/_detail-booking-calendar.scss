@@ -2,7 +2,7 @@
 @if ( $detail-page-use-default == true ) {
 
   %active-day-item {
-    @include border-radius(50%);
+    @include border-radius($booking-calendar-border-radius);
 
     content: '';
     position: absolute;
