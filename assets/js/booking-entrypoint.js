@@ -152,6 +152,8 @@ jQuery(function ($) {
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
 
+                console.log(thisTravelDatePrice);
+
                 // reset active date
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
                 bookingEntryCalendarRenderTarget.find('.active-duration-last').removeClass('active-duration-last');
