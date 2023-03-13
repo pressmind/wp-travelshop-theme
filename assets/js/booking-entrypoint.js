@@ -46,11 +46,6 @@ jQuery(function ($) {
             // -- close every dropdown
             $('.dropdown, .dropdown-menu').removeClass('show');
 
-            // -- show calendar - on 250ms delay..
-            $.setTimeout(function() {
-                $(this).parent().toggleClass('open');
-            }, 250);
-
             e.stopPropagation();
         });
 
@@ -83,6 +78,11 @@ jQuery(function ($) {
                     // remove loading state + render html into target
                     bookingEntryCalendarRenderTarget.html(data);
                     bookingEntryCalendarRenderTarget.removeClass('is-loading');
+
+                    // show calendar
+                    if ( !$('.booking-filter-item--date-range').hasClass('open') ) {
+                        $('.booking-filter-item--date-range').addClass('open');
+                    }
 
                     // init interactive calender things
                     bookingCalendarInteraction();
@@ -210,9 +210,6 @@ jQuery(function ($) {
                 'offer': offer,
                 'media_object_id': mediaObject
             };
-
-            console.log(calendarRequest);
-
 
             // -- handle ajax request
             requestHandlerBookingCalendar(calendarRequest);
