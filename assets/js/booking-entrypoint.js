@@ -92,7 +92,7 @@ jQuery(function ($) {
                     controlsContainer: sliderWrapper + ' .slider-controls'
                 });
 
-                calendarSlider.on('indexChanged', function(){
+                calendarSlider.events.on('indexChanged', function(){
                     calendarSliderIndexTemp = calendarSlider.getInfo().index;
                 })
             }
