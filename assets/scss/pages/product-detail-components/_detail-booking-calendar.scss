@@ -92,7 +92,7 @@
 
       .tns-ovh {
 
-        max-width: ( ( ($grid-gutter-width / 2) + ( remToPx(2.5rem) * 7 ) ) * 2 ) + 1px ;
+        max-width: ( ( ($grid-gutter-width / 2) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) + 1px ;
 
         margin-left: auto;
         margin-right: auto;
@@ -111,7 +111,7 @@
 
         // add max-width
         width: 100%;
-        max-width: ( ( ($grid-gutter-width / 2) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
+        max-width: ( ( ($grid-gutter-width / 2) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) ;
 
         // -- generate top position, to make it center with month name, everytime
         @each $breakpoint, $size in $h5-font-sizes {
@@ -170,13 +170,13 @@
             flex-wrap: wrap;
 
             width: 100%;
-            max-width: ( 2.5rem * 7 ); // 40px * 7 days
+            max-width: ( $booking-calendar-item-size * 7 ); // 40px * 7 days
 
             > div.calendar-item-day {
-              flex: 0 0 2.5rem;
+              flex: 0 0 $booking-calendar-item-size;
               width: 100%;
-              max-width: 2.5rem;
-              height: 2.5rem;
+              max-width: $booking-calendar-item-size;
+              height: $booking-calendar-item-size;
 
               // center inner
               display: flex;
@@ -229,8 +229,8 @@
             // -- travel date
             > div.calendar-item-day.travel-date {
               > a {
-                width: 2.5rem;
-                height: 2.5rem;
+                width: $booking-calendar-item-size;
+                height: $booking-calendar-item-size;
 
                 display: block;
 
@@ -315,7 +315,7 @@
           margin: 0 ( -$grid-gutter-width / 2 );
           overflow: hidden;
 
-          max-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
+          max-width: ( ( ($grid-gutter-width) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) ;
 
           @include media-breakpoint-down($booking-calendar-mobile-break) {
             flex-wrap: wrap;
@@ -330,8 +330,8 @@
             width: 100%;
 
             // do something to prevent to wide calendar
-            flex: 0 0 ( ($grid-gutter-width) + (remToPx(2.5rem) * 7) );
-            max-width: ( ($grid-gutter-width) + (remToPx(2.5rem) * 7) );
+            flex: 0 0 ( ($grid-gutter-width) + (remToPx($booking-calendar-item-size) * 7) );
+            max-width: ( ($grid-gutter-width) + (remToPx($booking-calendar-item-size) * 7) );
           }
         }
       }
@@ -361,7 +361,7 @@
 
   z-index: $zindex-dropdown;
 
-  min-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) + ( remToPx(1rem) * 2 );
+  min-width: ( ( ($grid-gutter-width) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) + ( remToPx(1rem) * 2 );
 
   @include border-radius($dropdown-border-radius);
 
