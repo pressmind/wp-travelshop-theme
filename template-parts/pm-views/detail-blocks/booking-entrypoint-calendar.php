@@ -166,7 +166,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                             $date_classes = '';
 
                             if ( !is_string($day) ) {
-                                $cur_id = isset($_POST['offer']) ? inval($_POST['offer']) : null;
+                                $cur_id = isset($_POST['offer']) ? intval($_POST['offer']) : null;
                                 $get_active_date_ranges = getCurrentDateRanges($dateRangeMap, $current_date_int, $cur_id);
                                 $date_classes = implode(' ', $get_active_date_ranges);
                             }
