@@ -12665,7 +12665,7 @@ ul.checklist {
     .dropdown-menu.dropdown-menu-select *, .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-booking-person-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-calendar-overlay * {
       pointer-events: none; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-content, .booking-filter-calendar-overlay .dropdown-menu-content {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-content, .booking-filter-calendar-overlay .booking-filter-calendar-overlay-content {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -12686,7 +12686,7 @@ ul.checklist {
     right: 0;
     top: auto; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist.show .dropdown-menu-content, .open > .booking-filter-calendar-overlay .dropdown-menu-content {
+  .dropdown-menu.dropdown-menu-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist.show .dropdown-menu-content, .open > .booking-filter-calendar-overlay .booking-filter-calendar-overlay-content {
     transform: translateY(0);
     opacity: 1; } }
 @media (max-width: 767.98px) {
