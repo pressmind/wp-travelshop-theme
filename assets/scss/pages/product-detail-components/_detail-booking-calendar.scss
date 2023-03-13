@@ -59,6 +59,15 @@
     .booking-entrypoint-calendar-outer {
       display: flex;
       justify-content: center;
+      position: relative;
+
+      .slider-controls {
+        @extend %slider-controls;
+        @extend %slider-controls-inner;
+        @extend %slider-controls-on-image-light;
+      }
+
+      @extend %slider-controls-if-initialized;
 
       .booking-entrypoint-calendar-inner {
 

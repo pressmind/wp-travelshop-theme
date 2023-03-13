@@ -11437,13 +11437,13 @@ hr + .content-block {
  * Placeholder for slider controls
  * for usage on various elements
  */
-.detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   pointer-events: none; }
-  .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
+  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -11465,22 +11465,22 @@ hr + .content-block {
     border-width: 1px;
     border-style: solid;
     border-color: #e9ecef; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
       width: 1.125rem;
       height: 1.125rem; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
       color: #fff;
       background-color: #007bff;
       border-color: #007bff; }
-    .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button[disabled], .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
       pointer-events: none;
       cursor: not-allowed;
       opacity: 0.25; }
 
-.detail-header-gallery .detail-header-gallery-slider .slider-controls {
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls {
   transition: opacity .3s;
   opacity: 0; }
-.detail-header-gallery .detail-header-gallery-slider .tns-outer + .slider-controls {
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-outer + .slider-controls, .detail-header-gallery .detail-header-gallery-slider .tns-outer + .slider-controls {
   opacity: 1; }
 
 @media (min-width: 992px) {
@@ -11491,7 +11491,7 @@ hr + .content-block {
     .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
       width: 1.25rem;
       height: 1.25rem; } }
-.detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -11503,6 +11503,13 @@ hr + .content-block {
   background-color: rgba(33, 37, 41, 0.4);
   border-width: 0; }
   .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
+    color: #212529;
+    background-color: #fff; }
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button {
+  color: #fff;
+  background-color: rgba(33, 37, 41, 0.4);
+  border-width: 0; }
+  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover {
     color: #212529;
     background-color: #fff; }
 .icon-link {
@@ -15156,7 +15163,8 @@ footer.footer-main {
           color: #212529; }
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    position: relative; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-month {
       margin: 0;
       text-align: center;
