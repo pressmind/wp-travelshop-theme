@@ -15165,6 +15165,24 @@ footer.footer-main {
     display: flex;
     justify-content: center;
     position: relative; }
+    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      transform: translatey(-50%);
+      pointer-events: none;
+      top: 0.6rem; }
+      @media (min-width: 992px) {
+        .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
+          top: 0.75rem; } }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button {
+        border-width: 1px;
+        border-color: #5a6570;
+        border-style: solid;
+        pointer-events: auto;
+        transition: background-color .3s, opacity .3s, color .3s, border-color .3s; }
+        .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:hover {
+          border-color: #007bff; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-month {
       margin: 0;
       text-align: center;

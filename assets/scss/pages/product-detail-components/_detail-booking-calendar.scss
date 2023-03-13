@@ -65,6 +65,43 @@
         @extend %slider-controls;
         @extend %slider-controls-inner;
         @extend %slider-controls-on-image-light;
+
+        // positioning
+        position: absolute;
+        left:0;
+        right:0;
+
+        transform: translatey(-50%);
+        pointer-events: none;
+
+        // -- generate top position, to make it center with month name, everytime
+        @each $breakpoint, $size in $h5-font-sizes {
+          @if $breakpoint == null {
+            top: ( ($size * $headings-line-height) / 2 );
+          } @else {
+            @if map-has-key($grid-breakpoints, $breakpoint) {
+              $breakpoint: map-get($grid-breakpoints, $breakpoint);
+            }
+
+            @media ( min-width: $breakpoint ) {
+              top: ( ($size * $headings-line-height) / 2 );
+            }
+          }
+        }
+
+        > button {
+          border-width: 1px;
+          border-color: $body-color-light;
+          border-style: solid;
+
+          pointer-events: auto;
+
+          transition: background-color .3s, opacity .3s, color .3s, border-color .3s;
+
+          &:hover {
+            border-color: $primary;
+          }
+        }
       }
 
       @extend %slider-controls-if-initialized;
