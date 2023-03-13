@@ -212,6 +212,10 @@
                   &:after {
                     @extend %active-day-item;
                   }
+
+                  &.daterange-preview:after {
+                    border-width: 1px !important;
+                  }
                 }
               }
             }
