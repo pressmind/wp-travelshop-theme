@@ -149,9 +149,9 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                         }
 
                         $class_map = [];
-//                        $class_map['3'] = 'bookable';
-//                        $class_map['1'] = 'request';
-//                        $class_map['5'] = 'stopp';
+                        $class_map['3'] = 'bookable';
+                        $class_map['1'] = 'request';
+                        $class_map['5'] = 'stopp';
 
                         $active = false;
                         $setDuration = 0;
