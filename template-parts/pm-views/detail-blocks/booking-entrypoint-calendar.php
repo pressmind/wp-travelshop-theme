@@ -205,7 +205,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
 
                                 ?>
                                 <div class="calendar-item-day <?php echo $date_classes; ?> <?php echo !$active ? '' : 'active'; ?> travel-date position-relative <?php echo isset($class_map[$date_to_cheapest_price[$current_date]->state]) ? $class_map[$date_to_cheapest_price[$current_date]->state] : 'bookable';?>" data-html="true" data-toggle="tooltip">
-                                    <a data-price-html='<?php echo $priceHTML; ?>' data-daterange="<?php echo $dateDateRange; ?>" data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class=""><?php echo $day; ?>
+                                    <a data-price-html='<?php echo $priceHTML; ?>' data-daterange="<?php echo $dateDateRange; ?>" data-duration="<?php echo $date_to_cheapest_price[$current_date]->duration; ?>" data-anchor="<?php echo $date_to_cheapest_price[$current_date]->id; ?>" data-modal="false" data-modal-id="<?php echo $args['id_modal_price_box']; ?>" href="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>" class="stretched-link"><?php echo $day; ?>
                                         <div  data-offer-id="<?php echo $date_to_cheapest_price[$current_date]->id;?>" ><?php echo PriceHandler::format($date_to_cheapest_price[$current_date]->price_total); ?>
                                         </div>
                                     </a>
