@@ -148,16 +148,15 @@ function getCurrentDateRanges($map, $cur) {
 
                         foreach ($days as $day) {
 
+                            $current_date = $dt->format('Y-m-') . $day;
+
                             if ( intval($day) < 10 ) {
                                 $tmpDay = '0' . $day;
-                                $current_date = $dt->format('Y-m-') . $tmpDay;
+                                $current_date_int = intval($dt->format('Ym') . $tmpDay);
                             } else {
-                                $current_date = $dt->format('Y-m-') . $day;
+                                $current_date_int = intval($dt->format('Ym') . $day);
                             }
 
-                            echo $current_date;
-
-                            $current_date_int = intval($dt->format('Ym') . $day);
                             $date_classes = '';
 
                             if ( !is_string($day) ) {
