@@ -223,9 +223,8 @@ function getCurrentDateRanges($map, $cur, $activeid) {
             }
             ?>
         </div>
-
         <?php
-        load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, array());
+        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/slider-controls.php', []);
         ?>
     </div>
 </div>
