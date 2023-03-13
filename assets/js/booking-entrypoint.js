@@ -154,6 +154,10 @@ jQuery(function ($) {
                 // reset active date
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
                 bookingEntryCalendarRenderTarget.find('.active-duration-last').removeClass('active-duration-last');
+                bookingEntryCalendarRenderTarget.find('.travel-date.active').removeClass('active');
+
+                // set this active
+                thisTravelDate.parent().addClass('active');
 
                 // set active daterange as classes in calendar
                 var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);

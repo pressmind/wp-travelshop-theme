@@ -100,13 +100,11 @@
               }
 
               &.active-duration {
-                @include border-left-radius(10rem);
                 background-color: rgba(#000, .05);
 
-                + .active-duration {
-                  @include border-left-radius(0);
+                &.active {
+                  @include border-left-radius(10rem);
                 }
-
 
                 &.active-duration-first {
                   @include border-left-radius(0);
