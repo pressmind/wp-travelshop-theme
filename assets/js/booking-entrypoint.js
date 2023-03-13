@@ -79,7 +79,7 @@ jQuery(function ($) {
                     bookingEntryCalendarRenderTarget.html(data);
                     bookingEntryCalendarRenderTarget.removeClass('is-loading');
 
-                    // show calendar
+                    // show calendar, if not shown already.
                     if ( !$('.booking-filter-item--date-range').hasClass('open') ) {
                         $('.booking-filter-item--date-range').addClass('open');
                     }
