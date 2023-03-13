@@ -119,13 +119,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
 
 
         <?php
-        $datePeriod = new DatePeriod($from, new DateInterval('P1M'), $to);
-
-        echo count($datePeriod);
-
-        if ( count($datePeriod) > 2 ) {
-            load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, []);
-        }
+        load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, []);
         ?>
 
         <div class="booking-entrypoint-calendar-inner">
@@ -146,7 +140,6 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                 ?>
                 <div class="booking-entrypoint-calendar-item calendar-item">
                     <div class="calendar-item-month h5">
-                        <?php print_r( $dt ); ?>
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
                             'date' => $dt]);
