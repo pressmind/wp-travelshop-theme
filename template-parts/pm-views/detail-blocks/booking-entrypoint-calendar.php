@@ -17,6 +17,9 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 // build a date to best price map
 $filter = new CheapestPrice();
 $filter->occupancies_disable_fallback = false;
+if ( !empty($args['filter']['pm-tr']) ) {
+    $filter->transport_type = $args['filter']['pm-tr'];
+}
 
 /**
  * @var \Pressmind\ORM\Object\CheapestPriceSpeed[] $offers
