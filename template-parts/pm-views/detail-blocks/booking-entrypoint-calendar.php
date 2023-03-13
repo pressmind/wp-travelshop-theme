@@ -78,6 +78,7 @@ foreach ( $date_to_cheapest_price as $date ) {
 
 function getCurrentDateRanges($map, $cur) {
     $cur_ids = array();
+    echo $cur;
 
     // loop through map and check if cur is between arrival/departure
     foreach ( $map as $key => $value ) {
