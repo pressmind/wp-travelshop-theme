@@ -91,8 +91,8 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
                             </div>
                         </div>
-                        <div class="booking-filter-calendar-overlay-footer">
-                            <button class="btn btn-primary btn-block booking-calendar-close">
+                        <div class="booking-filter-calendar-overlay-footer text-center">
+                            <button class="btn btn-primary booking-calendar-close">
                                 Auswahl übernehmen
                             </button>
                         </div>
