@@ -473,20 +473,6 @@ $args['breadcrumb'][] = $tmp;
             </div>
         </section>
 
-        <!--
-        <section class="detail-section detail-section-booking-calendar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <?php
-                        // = = = > load booking calendar < = = =
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-offers-calendar.php', $args);
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        -->
 
         <section class="detail-section detail-section-content">
             <div class="container">

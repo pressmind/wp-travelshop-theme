@@ -116,6 +116,14 @@ function getCurrentDateRanges($map, $cur, $activeid) {
     <?php } ?>
 
     <div class="booking-entrypoint-calendar-outer">
+
+
+        <?php
+        if ( count(new DatePeriod($from, new DateInterval('P1M'), $to)) > 2 ) {
+            load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, []);
+        }
+        ?>
+
         <div class="booking-entrypoint-calendar-inner">
             <?php
             $today = new DateTime();

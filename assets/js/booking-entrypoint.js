@@ -50,12 +50,25 @@ jQuery(function ($) {
         });
 
         /**
-         * set active date
+         * initiate calendar slider
          * @param dateID
          * @param duration
          */
-        function setDateActive(dateID, duration) {
+        function initCalendarSlider() {
+            var sliderWrapper = '.booking-entrypoint-calendar-outer';
+            var sliderContainer = sliderWrapper + ' .booking-entrypoint-calendar-inner';
+            var sliderItems = '.calendar-item';
 
+            if ( $('body').find(sliderWrapper + ' ' + sliderItems).length > 2 ) {
+                var calenderSlider = tns({
+                    container: sliderContainer,
+                    items: 2,
+                    slideBy: 1,
+                    nav: false,
+                    controls: true,
+                    controlsContainer: sliderWrapper + ' .slider-controls'
+                });
+            }
         }
 
         /**
