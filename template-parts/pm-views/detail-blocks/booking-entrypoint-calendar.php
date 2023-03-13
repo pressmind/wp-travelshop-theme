@@ -160,4 +160,8 @@ if ($interval->format('%m') < 3) {
             ?>
         </div>
     </div>
+
+    <pre>
+        <?php print_r($dateRangeMap); ?>
+    </pre>
 </div>
