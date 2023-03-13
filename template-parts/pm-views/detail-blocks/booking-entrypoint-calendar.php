@@ -114,8 +114,12 @@ if ($interval->format('%m') < 3) {
                         $class_map['3'] = 'bookable';
                         $class_map['1'] = 'request';
                         $class_map['5'] = 'stopp';
+
                         $active = false;
                         $setDuration = 0;
+
+                        $dateRangeIds = [];
+                        $dateRangeClassMap = [];
 
                         foreach ($days as $day) {
                             $current_date = $dt->format('Y-m-') . $day;
@@ -128,6 +132,9 @@ if ($interval->format('%m') < 3) {
                                 } else {
                                     $active = false;
                                 }
+
+                                echo $date_to_cheapest_price[$current_date]->date_departure;
+                                echo $date_to_cheapest_price[$current_date]->date_arrival;
 
                                 $dateDateRange = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
                                     'date_departure' => $date_to_cheapest_price[$current_date]->date_departure,
