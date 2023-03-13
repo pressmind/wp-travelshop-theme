@@ -156,7 +156,7 @@ jQuery(function ($) {
                 bookingEntryCalendarRenderTarget.find('.active-duration-last').removeClass('active-duration-last');
 
                 // set active daterange as classes in calendar
-                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-datel-' + thisTravelDateID);
+                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);
 
                 thisDaterangeItems.addClass('active-duration');
                 thisDaterangeItems.last().addClass('active-duration-last');
