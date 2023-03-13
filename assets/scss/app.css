@@ -15157,9 +15157,9 @@ footer.footer-main {
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer {
     display: flex;
     justify-content: center;
-    position: relative;
-    max-width: 590px; }
+    position: relative; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-ovh {
+      max-width: 591px;
       margin-left: auto;
       margin-right: auto; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
