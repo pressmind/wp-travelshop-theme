@@ -44,7 +44,7 @@ jQuery(function ($) {
             renderBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
 
             // -- close every dropdown
-            $('.dropdown').removeClass('show');
+            $('.dropdown, .dropdown-menu').removeClass('show');
 
             // -- show calendar
             $(this).parent().toggleClass('open');
