@@ -146,7 +146,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                 ?>
                 <div class="booking-entrypoint-calendar-item calendar-item">
                     <div class="calendar-item-month h5">
-                        <?php echo $dt; ?>
+                        <?php print_r( $dt ); ?>
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
                             'date' => $dt]);
