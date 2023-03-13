@@ -88,7 +88,9 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                 array_push($cur_ids, 'active-duration travel-date-' . $key);
             }
         } else {
-            array_push($cur_ids, 'travel-date-' . $key);
+            if ( $cur >= $value['departure'] && $cur <= $value['arrival'] ) {
+                array_push($cur_ids, 'travel-date-' . $key);
+            }
         }
     }
 
