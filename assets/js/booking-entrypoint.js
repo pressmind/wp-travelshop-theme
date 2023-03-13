@@ -72,6 +72,7 @@ jQuery(function ($) {
                     loop: false,
                     gutter: 30,
                     disable: true,
+                    startIndex: getSliderIndex,
                     responsive: {
                         768: {
                            disable: false
@@ -80,10 +81,6 @@ jQuery(function ($) {
                     controls: true,
                     controlsContainer: sliderWrapper + ' .slider-controls'
                 });
-
-                if ( getSliderIndex > 0 ) {
-                    calendarSlider.goTo(getSliderIndex);
-                }
             }
         }
 
