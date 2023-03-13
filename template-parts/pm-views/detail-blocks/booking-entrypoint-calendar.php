@@ -133,6 +133,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
             $today = new DateTime();
             // loop trough all months
             foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
+
                 // fill the calendar grid
                 $days = array_merge(
                     array_fill(1, $dt->format('N') - 1, ' '),
@@ -145,6 +146,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                 ?>
                 <div class="booking-entrypoint-calendar-item calendar-item">
                     <div class="calendar-item-month h5">
+                        <?php echo $dt; ?>
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
                             'date' => $dt]);
