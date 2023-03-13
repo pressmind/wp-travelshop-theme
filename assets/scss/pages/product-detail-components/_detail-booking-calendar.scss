@@ -194,11 +194,11 @@
                 background-color: rgba(#000, .05);
 
                 &.active {
-                  @include border-left-radius(10rem);
+                  @include border-left-radius($booking-calendar-border-radius);
                 }
 
                 &.travel-date:not(.active) {
-                  @include border-left-radius(10rem);
+                  @include border-left-radius($booking-calendar-border-radius);
                 }
 
                 &.active-duration-first {
@@ -206,7 +206,7 @@
                 }
 
                 &.active-duration-last {
-                  @include border-right-radius(10rem);
+                  @include border-right-radius($booking-calendar-border-radius);
                   position: relative;
 
                   &:after {
