@@ -76,6 +76,13 @@ foreach ( $date_to_cheapest_price as $date ) {
     }
 }
 
+function getCurrentDateRanges($map, $cur) {
+    // loop through map and check if cur is between arrival/departure
+    foreach ( $map as $key => $value ) {
+        echo $key;
+    }
+}
+
 ?>
 <div class="booking-entrypoint-calendar">
     <?php if(count($durations) > 1){ ?>
@@ -135,6 +142,11 @@ foreach ( $date_to_cheapest_price as $date ) {
                         foreach ($days as $day) {
                             $current_date = $dt->format('Y-m-') . $day;
                             $current_date_int = intval($dt->format('Ym') . $day);
+                            $date_class_map = [];
+
+                            if ( !is_string($day) ) {
+                                $get_active_date_ranges = getCurrentDateRanges($dateRangeMap, $current_date_int);
+                            }
 
                             if (!empty($date_to_cheapest_price[$current_date])) {
 
