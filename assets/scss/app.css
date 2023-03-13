@@ -15157,14 +15157,14 @@ footer.footer-main {
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer {
     display: flex;
     justify-content: center;
-    position: relative;
-    max-width: 620px; }
+    position: relative; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
       position: absolute;
       left: 50%;
-      right: 0;
       transform: translate(-50%, -50%);
       pointer-events: none;
+      width: 100%;
+      max-width: 620px;
       top: 1.6rem; }
       @media (min-width: 992px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {

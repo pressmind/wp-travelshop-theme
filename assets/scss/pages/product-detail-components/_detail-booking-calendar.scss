@@ -61,9 +61,6 @@
       justify-content: center;
       position: relative;
 
-      // add max-width
-      max-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
-
       .slider-controls {
         @extend %slider-controls;
         @extend %slider-controls-inner;
@@ -71,10 +68,13 @@
         // positioning
         position: absolute;
         left:50%;
-        right:0;
 
         transform: translate(-50%, -50%);
         pointer-events: none;
+
+        // add max-width
+        width: 100%;
+        max-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
 
         // -- generate top position, to make it center with month name, everytime
         @each $breakpoint, $size in $h5-font-sizes {
