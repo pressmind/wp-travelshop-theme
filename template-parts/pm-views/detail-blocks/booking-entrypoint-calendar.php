@@ -133,8 +133,6 @@ if ($interval->format('%m') < 3) {
                                     $active = false;
                                 }
 
-                                echo $date_to_cheapest_price[$current_date]->date_departure;
-                                echo $date_to_cheapest_price[$current_date]->date_arrival;
 
                                 $dateDateRange = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
                                     'date_departure' => $date_to_cheapest_price[$current_date]->date_departure,
