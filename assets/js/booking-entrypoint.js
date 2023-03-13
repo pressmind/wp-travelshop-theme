@@ -278,6 +278,7 @@ jQuery(function ($) {
             $('.booking-calendar-close').on('click touch', function(e) {
                 e.preventDefault();
 
+                calendarSliderIndexTemp = null;
                 $(this).parents('.booking-filter-item--date-range').removeClass('open');
 
                 e.stopPropagation();
