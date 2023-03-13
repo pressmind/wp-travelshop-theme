@@ -83,6 +83,7 @@ if ($interval->format('%m') < 3) {
         <div class="booking-entrypoint-calendar-inner">
             <?php
             $today = new DateTime();
+            $dateRangeMap = [];
             // loop trough all months
             foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
                 // fill the calendar grid
@@ -117,8 +118,6 @@ if ($interval->format('%m') < 3) {
 
                         $active = false;
                         $setDuration = 0;
-
-                        $dateRangeMap = [];
 
                         foreach ($days as $day) {
                             $current_date = $dt->format('Y-m-') . $day;
