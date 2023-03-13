@@ -15182,7 +15182,7 @@ footer.footer-main {
     justify-content: center;
     position: relative; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-ovh {
-      max-width: 815px;
+      max-width: 703px;
       margin-left: auto;
       margin-right: auto; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15191,7 +15191,7 @@ footer.footer-main {
       transform: translate(-50%, -50%);
       pointer-events: none;
       width: 100%;
-      max-width: 814px;
+      max-width: 702px;
       top: 1.6rem; }
       @media (min-width: 992px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15217,12 +15217,12 @@ footer.footer-main {
       flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
-      max-width: 24.5rem; }
+      max-width: 21rem; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day {
-        flex: 0 0 3.5rem;
+        flex: 0 0 3rem;
         width: 100%;
-        max-width: 3.5rem;
-        height: 3.5rem;
+        max-width: 3rem;
+        height: 3rem;
         display: flex;
         justify-content: center;
         padding-top: .375rem;
@@ -15253,8 +15253,8 @@ footer.footer-main {
         padding: 0;
         margin: 0 0 .5rem 0; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 3rem;
+        height: 3rem;
         display: block;
         position: absolute;
         top: 0;
@@ -15293,7 +15293,7 @@ footer.footer-main {
       flex-wrap: nowrap;
       margin: 0 -15px;
       overflow: hidden;
-      max-width: 844px; }
+      max-width: 732px; }
       @media (max-width: 767.98px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
           flex-wrap: wrap;
@@ -15302,8 +15302,8 @@ footer.footer-main {
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) > .calendar-item {
         padding: 0 15px;
         width: 100%;
-        flex: 0 0 422px;
-        max-width: 422px; }
+        flex: 0 0 366px;
+        max-width: 366px; }
 
 .is-loading > .booking-entrypoint-calendar {
   opacity: 0;
@@ -15319,7 +15319,7 @@ footer.footer-main {
   padding: 1rem;
   margin: 0.125rem 0 0;
   z-index: 1000;
-  min-width: 876px;
+  min-width: 764px;
   border-radius: 0.25rem;
   display: none; }
   .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
