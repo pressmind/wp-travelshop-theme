@@ -163,7 +163,7 @@ if ($interval->format('%m') < 3) {
                                 <?php
                             } else {
                                 ?>
-                                <div class="calendar-item-day <?php echo is_string($day) ? 'is-blank' : ''; ?> <?php echo (!$activeDurationLast && !is_string($day)) ? '' : 'active-duration-last'; ?> <?php echo (!$activeDuration && !is_string($day)) ? '' : 'active-duration'; ?>"><?php echo $day; ?></div>
+                                <div class="calendar-item-day <?php echo is_string($day) ? 'is-blank' : ''; ?> <?php echo (!$activeDurationLast && is_string($day)) ? '' : 'active-duration-last'; ?> <?php echo (!$activeDuration && is_string($day)) ? '' : 'active-duration'; ?>"><?php echo $day; ?></div>
                                 <?php
                             }
                         } ?>
