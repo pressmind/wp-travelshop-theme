@@ -239,6 +239,14 @@ jQuery(function ($) {
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
                 $('.booking-filter-field--bookingurl').val(thisTravelBookingUrl);
 
+                // check if slider is initialized, if yes, get slide index store in variable.
+                if ( bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner').hasClass('tns-slider') ) {
+                    // get slide index of item
+                    var calendarSlider = bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner');
+
+                    console.log(calendarSlider.getInfo());
+                }
+
                 // refresh price
                 if ( thisTravelDatePrice !== '' ) {
                     $('.booking-action-row .price-box-discount').html(thisTravelDatePrice);

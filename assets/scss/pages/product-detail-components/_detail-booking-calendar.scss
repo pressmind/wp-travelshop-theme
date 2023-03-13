@@ -546,7 +546,6 @@
         }
       }
 
-
       // -- open state
       &.open > .booking-filter-calendar-overlay{
         @extend %offcanvas-open-down-#{$booking-calendar-dropdown-mobile-break};
