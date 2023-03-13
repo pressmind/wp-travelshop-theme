@@ -147,12 +147,10 @@ jQuery(function ($) {
 
                 // collect data
                 var thisTravelDate = $(this);
-                var thisTravelDatePrice = travelDate.data('price-html');
+                var thisTravelDatePrice = thisTravelDate.data('price-html');
                 var thisTravelDateID = thisTravelDate.data('anchor');
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
-
-                console.log(thisTravelDatePrice);
 
                 // reset active date
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
