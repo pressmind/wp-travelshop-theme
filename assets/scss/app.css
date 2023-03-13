@@ -12403,6 +12403,9 @@ ul.checklist {
   .booking-btn.gray:focus,
   .booking-btn.gray:active {
     color: #fff; }
+.btn.booking-btn *,
+.booking-btn * {
+  pointer-events: none; }
 
 .add-to-wishlist {
   color: #212529; }
