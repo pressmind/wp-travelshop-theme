@@ -155,6 +155,8 @@ function getCurrentDateRanges($map, $cur) {
                                 $current_date = $dt->format('Y-m-') . $day;
                             }
 
+                            echo $current_date;
+
                             $current_date_int = intval($dt->format('Ym') . $day);
                             $date_classes = '';
 
