@@ -197,6 +197,10 @@
                   @include border-left-radius(10rem);
                 }
 
+                &.travel-date:not(.active) {
+                  @include border-left-radius(10rem);
+                }
+
                 &.active-duration-first {
                   @include border-left-radius(0);
                 }

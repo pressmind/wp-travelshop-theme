@@ -15232,6 +15232,9 @@ footer.footer-main {
           .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active {
             border-top-left-radius: 10rem;
             border-bottom-left-radius: 10rem; }
+          .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.travel-date:not(.active) {
+            border-top-left-radius: 10rem;
+            border-bottom-left-radius: 10rem; }
           .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-first {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0; }
