@@ -2,6 +2,7 @@ jQuery(function ($) {
     let bookingEntry = $('.detail-booking-entrypoint');
     let calendarSlider;
     let calendarSliderIndex = 0;
+    let calendarSliderIndexTemp = null;
 
     // -- check if booking entry is loaded, otherwise script not needed
 
@@ -62,10 +63,14 @@ jQuery(function ($) {
             var sliderItems = '.calendar-item';
 
             if ( $('body').find(sliderWrapper + ' ' + sliderItems).length > 2 ) {
-                var calendarSliderIndexTemp = parseInt($('.booking-filter-field--slider-index').val())
+                var storeIndex = parseInt($('.booking-filter-field--slider-index').val())
 
-                if ( calendarSliderIndexTemp !== calendarSliderIndex ) {
-                    calendarSliderIndex = calendarSliderIndex);
+                if ( storeIndex !== calendarSliderIndex ) {
+                    calendarSliderIndex = storeIndex;
+                }
+
+                if ( calendarSliderIndex !== calendarSliderIndexTemp ) {
+                    calendarSliderIndex = calendarSliderIndexTemp;
                 }
 
                 calendarSlider = tns({
@@ -86,6 +91,10 @@ jQuery(function ($) {
                     controls: true,
                     controlsContainer: sliderWrapper + ' .slider-controls'
                 });
+
+                calendarSlider.on('indexChanged', function(){
+                    calendarSliderIndexTemp = calendarSlider.getInfo().index;
+                })
             }
         }
 
