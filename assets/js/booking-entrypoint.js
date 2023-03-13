@@ -216,6 +216,7 @@ jQuery(function ($) {
                 var thisTravelDateID = thisTravelDate.data('anchor');
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
+                var thisTravelBookingUrl = thisDate.attr('href');
 
                 // reset active date
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
@@ -236,6 +237,7 @@ jQuery(function ($) {
                 $('.booking-filter-field--offer').val(thisTravelDateID);
                 $('.booking-filter-field--duration').val(thisTravelDateDur);
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
+                $('.booking-filter-field--bookingurl').val(thisTravelBookingUrl);
 
                 // refresh price
                 if ( thisTravelDatePrice !== '' ) {

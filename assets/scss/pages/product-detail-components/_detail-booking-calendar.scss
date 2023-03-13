@@ -11,6 +11,18 @@
       display: flex;
       justify-content: center;
 
+
+      @include media-breakpoint-down($booking-calendar-mobile-break) {
+        padding: 1rem;
+        margin: -1rem;
+
+        position: sticky;
+        top:0;
+        background-color: #fff;
+
+        z-index: 5;
+      }
+
       .duration-switch {
         background-color: $body-bg-highlight;
         padding: .25rem;
@@ -288,6 +300,12 @@
           overflow: hidden;
 
           max-width: ( ( ($grid-gutter-width) + ( remToPx(2.5rem) * 7 ) ) * 2 ) ;
+
+          @include media-breakpoint-down($booking-calendar-mobile-break) {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+          }
 
           > .calendar-item {
             padding: 0 ( $grid-gutter-width / 2 );
