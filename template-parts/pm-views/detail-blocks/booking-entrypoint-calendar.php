@@ -119,7 +119,11 @@ function getCurrentDateRanges($map, $cur, $activeid) {
 
 
         <?php
-        if ( count(new DatePeriod($from, new DateInterval('P1M'), $to)) > 2 ) {
+        var $datePeriod = new DatePeriod($from, new DateInterval('P1M'), $to);
+
+        echo count($datePeriod);
+
+        if ( count($datePeriod) > 2 ) {
             load_template(get_template_directory() . '/template-parts/micro-templates/slider-controls.php', false, []);
         }
         ?>
