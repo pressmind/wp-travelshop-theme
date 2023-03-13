@@ -246,7 +246,7 @@ jQuery(function ($) {
                     var calendarSliderInfo = calendarSlider.getInfo();
                     var calendarSliderCurrentIndex = calendarSliderInfo.index;
 
-                    $('.booking-filter-field--sliderindex').val(calendarSliderCurrentIndex);
+                    $('.booking-filter-field--slider-index').val(calendarSliderCurrentIndex);
                 }
 
                 // refresh price
