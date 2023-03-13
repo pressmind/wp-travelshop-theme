@@ -65,6 +65,7 @@ jQuery(function ($) {
                     items: 2,
                     slideBy: 1,
                     nav: false,
+                    mouseDrag: true,
                     loop: false,
                     gutter: 30,
                     disable: true,
