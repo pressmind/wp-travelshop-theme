@@ -65,6 +65,12 @@ jQuery(function ($) {
                     items: 2,
                     slideBy: 1,
                     nav: false,
+                    disable: true,
+                    responsive: {
+                        768: {
+                           disable: false
+                        }
+                    },
                     controls: true,
                     controlsContainer: sliderWrapper + ' .slider-controls'
                 });
@@ -91,6 +97,9 @@ jQuery(function ($) {
                     // remove loading state + render html into target
                     bookingEntryCalendarRenderTarget.html(data);
                     bookingEntryCalendarRenderTarget.removeClass('is-loading');
+
+                    // init calendar slider
+                    initCalendarSlider();
 
                     // show calendar, if not shown already.
                     if ( !$('.booking-filter-item--date-range').hasClass('open') ) {
