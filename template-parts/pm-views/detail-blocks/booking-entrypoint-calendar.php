@@ -190,7 +190,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
 
                                 $priceHTML = '';
 
-                                if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
+                                if (($discount = PriceHandler::getDiscount($date_to_cheapest_price[$current_date])) !== false) {
                                     $priceHTML = Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
                                         'cheapest_price' => $date_to_cheapest_price[$current_date],
                                         'discount' => $discount,
