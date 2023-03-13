@@ -257,7 +257,7 @@
                   font-size: .6125rem;
                 }
 
-                @include border-radius(50%);
+                @include border-radius($booking-calendar-border-radius);
               }
 
               // -- active
