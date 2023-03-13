@@ -107,4 +107,8 @@
       color: $booking-gray-color;
     }
   }
+
+  * {
+    pointer-events: none;
+  }
 }
