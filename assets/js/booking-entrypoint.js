@@ -46,8 +46,10 @@ jQuery(function ($) {
             // -- close every dropdown
             $('.dropdown, .dropdown-menu').removeClass('show');
 
-            // -- show calendar
-            $(this).parent().toggleClass('open');
+            // -- show calendar - on 250ms delay..
+            $.setTimeout(function() {
+                $(this).parent().toggleClass('open');
+            }, 250);
 
             e.stopPropagation();
         });
