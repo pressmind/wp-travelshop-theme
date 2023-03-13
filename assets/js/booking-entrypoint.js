@@ -152,47 +152,6 @@ jQuery(function ($) {
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
                 bookingEntryCalendarRenderTarget.find('.active-duration-last').removeClass('active-duration-last');
 
-                // set active date
-                thisTravelDate.parent().addClass('active-duration');
-
-                // set next dates classes
-                var thisTravelDateNext = thisTravelDate.parent();
-                var thisTravelDateNextRest = 0;
-
-                for ( var i = 1; i < thisTravelDateDur; i++ ) {
-                    thisTravelDateNext = thisTravelDateNext.next();
-                    if ( !thisTravelDateNext.hasClass('is-blank') ) {
-                        thisTravelDateNext.addClass('active-duration');
-
-                        if ( i === ( thisTravelDateDur - 1 ) ) {
-                            thisTravelDateNext.addClass('active-duration-last');
-                        }
-                    } else {
-                        thisTravelDateNextRest = thisTravelDateDur - i;
-                    }
-                }
-
-                // check if rest is > 0, if yes, hop to next month
-                if ( thisTravelDateNextRest > 0 ) {
-                    var nextMonth = thisTravelDate.parents('.calendar-item').next();
-                    var nextMonthFirstDay = nextMonth.find('.calendar-item-day:not(.is-blank):not(.calendar-item-weekday)').first();
-                    var nextMonthDay = nextMonthFirstDay;
-
-                    for ( var i = 0; i < thisTravelDateNextRest; i++ ) {
-                        nextMonthDay.addClass('active-duration');
-
-                        if ( i === 0 ) {
-                            nextMonthDay.addClass('active-duration-first');
-                        }
-
-                        if ( i === ( thisTravelDateNextRest - 1 ) ) {
-                            nextMonthDay.addClass('active-duration-last');
-                        }
-
-                        nextMonthDay = nextMonthDay.next();
-                    }
-                }
-
                 // set dateID to booking entrypoint form
                 // set daterange to booking entrypoint form
                 $('.booking-filter-field--offer').val(thisTravelDateID);
