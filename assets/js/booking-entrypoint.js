@@ -66,6 +66,7 @@ jQuery(function ($) {
                     slideBy: 1,
                     nav: false,
                     loop: false,
+                    gutter: 30,
                     disable: true,
                     responsive: {
                         768: {

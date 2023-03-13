@@ -15157,14 +15157,16 @@ footer.footer-main {
   .booking-entrypoint-calendar .booking-entrypoint-calendar-outer {
     display: flex;
     justify-content: center;
-    position: relative; }
+    position: relative;
+    max-width: 590px;
+    margin: 0 auto; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
       position: absolute;
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
       width: 100%;
-      max-width: 620px;
+      max-width: 590px;
       top: 1.6rem; }
       @media (min-width: 992px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15173,9 +15175,13 @@ footer.footer-main {
         border-width: 1px;
         border-color: #e9ecef;
         border-style: solid;
+        color: #5a6570;
         pointer-events: auto;
         transition: background-color .3s, opacity .3s, color .3s, border-color .3s; }
-        .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:hover {
+        .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg {
+          width: 0.75rem;
+          height: 0.75rem; }
+        .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover {
           border-color: #007bff; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-month {
       margin: 0;
