@@ -2510,17 +2510,15 @@ fieldset:disabled a.btn {
   line-height: 1.5;
   border-radius: 0.2rem; }
 
-.btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary {
+.btn-block {
   display: block;
   width: 100%; }
-  .btn-block + .btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary + .btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn-block + .btn.btn-primary, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary + .btn.btn-primary {
+  .btn-block + .btn-block {
     margin-top: 0.5rem; }
 
-input[type="submit"].btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer input[type="submit"].btn.btn-primary,
+input[type="submit"].btn-block,
 input[type="reset"].btn-block,
-.booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer input[type="reset"].btn.btn-primary,
-input[type="button"].btn-block,
-.booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer input[type="button"].btn.btn-primary {
+input[type="button"].btn-block {
   width: 100%; }
 
 .fade {
@@ -12229,7 +12227,7 @@ ul.checklist {
   .btn > svg {
     width: 1rem;
     height: 1rem; }
-  .btn.btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary {
+  .btn.btn-block {
     display: flex;
     justify-content: center; }
   .btn.btn-link, .btn.btn-link-light {
@@ -15323,8 +15321,11 @@ footer.footer-main {
 .open > .booking-filter-calendar-overlay {
   display: block; }
 
-.booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
-  margin-top: 0; }
+@media (max-width: 767.98px) {
+  .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
+    margin-top: 0; }
+    .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary {
+      width: 100%; } }
 
 .detail-booking-entrypoint {
   background-color: #fff;
