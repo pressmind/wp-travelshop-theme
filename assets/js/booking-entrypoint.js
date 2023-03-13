@@ -216,7 +216,7 @@ jQuery(function ($) {
                 var thisTravelDateID = thisTravelDate.data('anchor');
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
-                var thisTravelBookingUrl = thisDate.attr('href');
+                var thisTravelBookingUrl = thisTravelDate.attr('href');
 
                 // reset active date
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
