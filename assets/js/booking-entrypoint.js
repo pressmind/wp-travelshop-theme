@@ -187,15 +187,18 @@ jQuery(function ($) {
 
                     // bind mouseleave to storedCurrentTraveldate
                     storeCurrentEnteredTravelDate.bind('mouseout', function(e) {
-                        var thisDaterangePreviewItems = bookingEntryCalendarRenderTarget.find('.daterange-preview');
+                        if ( !$(this).parent().hasClass('active') ) {
+                            var thisDaterangePreviewItems = bookingEntryCalendarRenderTarget.find('.daterange-preview');
 
-                        thisDaterangePreviewItems.removeClass('active-duration');
-                        thisDaterangePreviewItems.removeClass('active-duration-last');
-                        thisDaterangePreviewItems.removeClass('daterange-preview');
+                            thisDaterangePreviewItems.removeClass('active-duration');
+                            thisDaterangePreviewItems.removeClass('active-duration-last');
+                            thisDaterangePreviewItems.removeClass('daterange-preview');
+                        }
                     })
                 }
             });
 
+            // unbind mouseout event, not needed anymore
             travelDate.on('mouseout', function(e) {
                 $(this).unbind('mouseout');
             });
