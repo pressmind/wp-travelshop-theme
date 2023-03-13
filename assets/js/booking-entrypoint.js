@@ -276,7 +276,7 @@ jQuery(function ($) {
 
                 // -- set offer id to booking button
                 $('.detail-booking-entrypoint .booking-btn').attr('data-anchor', thisTravelDateID);
-                $('.detail-booking-entrypoint .booking-btn').attr('href', thisTravelBookingUrl);
+                // $('.detail-booking-entrypoint .booking-btn').attr('href', thisTravelBookingUrl);
 
                 // check if slider is initialized, if yes, get slide index store in variable.
                 if ( bookingEntryCalendarRenderTarget.find('.booking-entrypoint-calendar-inner').hasClass('tns-slider') ) {
