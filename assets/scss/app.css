@@ -15121,8 +15121,7 @@ footer.footer-main {
   pointer-events: auto; }
   .booking-entrypoint-calendar .booking-entrypoint-calender-duration {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem; }
+    justify-content: center; }
     .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch {
       background-color: #e9ecef;
       padding: .25rem;
