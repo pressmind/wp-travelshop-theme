@@ -27,6 +27,20 @@ jQuery(function ($) {
         let bookingEntryCalendarRenderTarget = $('#booking-entry-calendar');
         let bookingEntryCalendarServiceUrl = '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=detail-booking-calendar';
 
+        // -- if click outside calendar
+        $(document).click(function(event) {
+            var $target = $(event.target);
+
+            // -- daterange
+            if ($('.booking-filter-item--date-range').length > 0 && $('.booking-filter-item--date-range').hasClass('open')) {
+                if (!$target.hasClass('booking-filter-item--date-range') && $target.parents('.booking-filter-item--date-range').length < 1) {
+                    $('.booking-filter-item--date-range').removeClass('open');
+                    calendarSliderIndexTemp = null;
+                }
+            }
+        });
+
+        // - click event booking calendar button
         bookingEntryCalendar.on('click touch', function(e) {
             e.preventDefault();
 
@@ -69,7 +83,7 @@ jQuery(function ($) {
                     calendarSliderIndex = storeIndex;
                 }
 
-                if ( calendarSliderIndex !== calendarSliderIndexTemp ) {
+                if ( calendarSliderIndex !== calendarSliderIndexTemp && calendarSliderIndexTemp !== null ) {
                     calendarSliderIndex = calendarSliderIndexTemp;
                 }
 

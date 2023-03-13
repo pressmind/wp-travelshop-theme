@@ -977,13 +977,6 @@ jQuery(function ($) {
     $(document).click(function(event) {
         var $target = $(event.target);
 
-        // -- daterange
-        if ( $('.booking-filter-item--date-range').length > 0 && $('.booking-filter-item--date-range').hasClass('open') ) {
-            if ( !$target.hasClass('booking-filter-item--date-range') && $target.parents('.booking-filter-item--date-range').length < 1 ) {
-                $('.booking-filter-item--date-range').removeClass('open');
-            }
-        }
-
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
 
