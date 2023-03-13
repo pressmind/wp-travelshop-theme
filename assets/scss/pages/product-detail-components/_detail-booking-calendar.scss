@@ -1,5 +1,22 @@
 // -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
 @if ( $detail-page-use-default == true ) {
+
+  %active-day-item {
+    @include border-radius(50%);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    pointer-events:none;
+
+    display: block;
+    border: 2px solid $body-color;
+  }
+
   .booking-entrypoint-calendar {
     opacity: 1;
     transition: opacity .3s;
@@ -189,19 +206,7 @@
                   position: relative;
 
                   &:after {
-                    @include border-radius(50%);
-
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left:0;
-                    right:0;
-                    bottom:0;
-
-                    pointer-events:none;
-
-                    display: block;
-                    border: 1px solid $body-color;
+                    @extend %active-day-item;
                   }
                 }
               }
@@ -249,6 +254,12 @@
                 }
 
                 @include border-radius(50%);
+
+                &.active {
+                  &:after {
+                    @extend %active-day-item;
+                  }
+                }
               }
 
               // -- states
