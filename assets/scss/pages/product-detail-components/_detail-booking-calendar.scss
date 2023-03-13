@@ -280,172 +280,175 @@
   display: block;
 }
 
-// -- desktop modal view
-@if ( $booking-calendar-dropdown-modal == true ) {
-  $temp-calendar-dropdown-modal-string: '';
+.booking-filter-item.booking-filter-item--date-range {
 
-  @if ( $booking-calendar-dropdown-mobile-break != null ) {
-    $temp-calendar-dropdown-modal-string: '-up-#{getNextBreakpoint($booking-calendar-dropdown-mobile-break)}';
-  }
+  // -- desktop modal view
+  @if ( $booking-calendar-dropdown-modal == true ) {
+    $temp-calendar-dropdown-modal-string: '';
 
-  .booking-filter-calendar-overlay {
-    @extend %modal-wrapper#{$temp-calendar-dropdown-modal-string};
-
-    .booking-filter-calendar-overlay-inner {
-      @extend %modal-inner#{$temp-calendar-dropdown-modal-string};
-
-      @if ( $booking-calendar-dropdown-mobile-break != null ) {
-        @include media-breakpoint-up(getNextBreakpoint($booking-calendar-dropdown-mobile-break)) {
-          max-width: #{getMediaBreakpointUp($booking-calendar-dropdown-modal-max-width)};
-        }
-      } @else {
-        @extend %modal-inner-width-#{$booking-calendar-dropdown-modal-max-width};
-      }
-
-
-      .booking-filter-calendar-overlay-content {
-        @extend %modal-content#{$temp-calendar-dropdown-modal-string};
-      }
+    @if ( $booking-calendar-dropdown-mobile-break != null ) {
+      $temp-calendar-dropdown-modal-string: '-up-#{getNextBreakpoint($booking-calendar-dropdown-mobile-break)}';
     }
-
-    .booking-filter-calendar-overlay-header {
-      @extend %modal-header#{$temp-calendar-dropdown-modal-string};
-    }
-
-    .booking-filter-calendar-overlay-body {
-      @extend %modal-body#{$temp-calendar-dropdown-modal-string};
-    }
-
-    .booking-filter-calendar-overlay-footer {
-      @extend %modal-footer#{$temp-calendar-dropdown-modal-string};
-    }
-  }
-
-  // -- open state
-  .open > .booking-filter-calendar-overlay {
-    @extend %modal-open#{$temp-calendar-dropdown-modal-string};
-  }
-}
-
-// -- mobile friendly views
-@if ( $booking-calendar-dropdown-mobile-break != null ) {
-
-  // -- modal view
-  @if ( $booking-calendar-dropdown-mobile-view-type == 'modal' or $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
 
     .booking-filter-calendar-overlay {
-
-      @extend %modal-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
-
-      @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-        @extend %modal-wrapper-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
-      }
+      @extend %modal-wrapper#{$temp-calendar-dropdown-modal-string};
 
       .booking-filter-calendar-overlay-inner {
-        @extend %modal-inner-down-#{$booking-calendar-dropdown-mobile-break};
+        @extend %modal-inner#{$temp-calendar-dropdown-modal-string};
 
-
-        @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-          @extend %modal-inner-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+        @if ( $booking-calendar-dropdown-mobile-break != null ) {
+          @include media-breakpoint-up(getNextBreakpoint($booking-calendar-dropdown-mobile-break)) {
+            max-width: #{getMediaBreakpointUp($booking-calendar-dropdown-modal-max-width)};
+          }
+        } @else {
+          @extend %modal-inner-width-#{$booking-calendar-dropdown-modal-max-width};
         }
+
 
         .booking-filter-calendar-overlay-content {
-          @extend %modal-content-down-#{$booking-calendar-dropdown-mobile-break};
-
-          @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
-            @extend %modal-content-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
-          }
+          @extend %modal-content#{$temp-calendar-dropdown-modal-string};
         }
       }
 
       .booking-filter-calendar-overlay-header {
-        @extend %modal-header-down-#{$booking-calendar-dropdown-mobile-break};
+        @extend %modal-header#{$temp-calendar-dropdown-modal-string};
       }
 
       .booking-filter-calendar-overlay-body {
-        @extend %modal-body-down-#{$booking-calendar-dropdown-mobile-break};
+        @extend %modal-body#{$temp-calendar-dropdown-modal-string};
       }
 
       .booking-filter-calendar-overlay-footer {
-        @extend %modal-footer-down-#{$booking-calendar-dropdown-mobile-break};
+        @extend %modal-footer#{$temp-calendar-dropdown-modal-string};
       }
     }
 
     // -- open state
-    .open > .booking-filter-calendar-overlay {
-      @extend %modal-open-down-#{$booking-calendar-dropdown-mobile-break};
+    &.open > .booking-filter-calendar-overlay {
+      @extend %modal-open#{$temp-calendar-dropdown-modal-string};
     }
   }
 
+  // -- mobile friendly views
+  @if ( $booking-calendar-dropdown-mobile-break != null ) {
+
+    // -- modal view
+    @if ( $booking-calendar-dropdown-mobile-view-type == 'modal' or $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+
+      .booking-filter-calendar-overlay {
+
+        @extend %modal-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+
+        @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-wrapper-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-inner {
+          @extend %modal-inner-down-#{$booking-calendar-dropdown-mobile-break};
 
 
-  // -- apple-like view
-  @if ( $booking-calendar-dropdown-mobile-view-type == 'apple-like' ) {
-    .booking-filter-calendar-overlay {
-      @extend %apple-like-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+          @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+            @extend %modal-inner-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+          }
 
-      .booking-filter-calendar-overlay-content {
-        @extend %apple-like-content-down-#{$booking-calendar-dropdown-mobile-break};
+          .booking-filter-calendar-overlay-content {
+            @extend %modal-content-down-#{$booking-calendar-dropdown-mobile-break};
+
+            @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+              @extend %modal-content-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+            }
+          }
+        }
+
+        .booking-filter-calendar-overlay-header {
+          @extend %modal-header-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-body {
+          @extend %modal-body-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-footer {
+          @extend %modal-footer-down-#{$booking-calendar-dropdown-mobile-break};
+        }
       }
 
-      .booking-filter-calendar-overlay-header {
-        @extend %apple-like-header-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-
-      .booking-filter-calendar-overlay-body {
-        @extend %apple-like-body-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-
-      .booking-filter-calendar-overlay-footer {
-        margin-top: 0;
-        @extend %apple-like-footer-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-    }
-
-    // -- open state
-    .open > .booking-filter-calendar-overlay {
-      @extend %apple-like-open-down-#{$booking-calendar-dropdown-mobile-break};
-
-      .booking-filter-calendar-overlay-content {
-        @extend %apple-like-content-open-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-    }
-
-  }
-
-  // -- offcanvas view
-  @if ( $booking-calendar-dropdown-mobile-view-type == 'offcanvas' ) {
-    .booking-filter-calendar-overlay {
-      @extend %offcanvas-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
-
-      .booking-filter-calendar-overlay-content {
-        @extend %offcanvas-content-down-#{$booking-calendar-dropdown-mobile-break};
-        @extend %offcanvas-direction-#{$booking-calendar-dropdown-offcanvas-direction}-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-
-      .booking-filter-calendar-overlay-header {
-        @extend %offcanvas-header-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-
-      .booking-filter-calendar-overlay-body {
-        @extend %offcanvas-body-down-#{$booking-calendar-dropdown-mobile-break};
-      }
-
-      .booking-filter-calendar-overlay-footer {
-        margin-top: 0;
-        @extend %offcanvas-footer-down-#{$booking-calendar-dropdown-mobile-break};
+      // -- open state
+      &.open > .booking-filter-calendar-overlay {
+        @extend %modal-open-down-#{$booking-calendar-dropdown-mobile-break};
       }
     }
 
 
-    // -- open state
-    .open > .booking-filter-calendar-overlay{
-      @extend %offcanvas-open-down-#{$booking-calendar-dropdown-mobile-break};
 
-      .booking-filter-calendar-overlay-content {
-        @extend %offcanvas-content-open-down-#{$booking-calendar-dropdown-mobile-break};
+    // -- apple-like view
+    @if ( $booking-calendar-dropdown-mobile-view-type == 'apple-like' ) {
+      .booking-filter-calendar-overlay {
+        @extend %apple-like-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %apple-like-content-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-header {
+          @extend %apple-like-header-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-body {
+          @extend %apple-like-body-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-footer {
+          margin-top: 0;
+          @extend %apple-like-footer-down-#{$booking-calendar-dropdown-mobile-break};
+        }
       }
+
+      // -- open state
+      &.open > .booking-filter-calendar-overlay {
+        @extend %apple-like-open-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %apple-like-content-open-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+      }
+
     }
 
+    // -- offcanvas view
+    @if ( $booking-calendar-dropdown-mobile-view-type == 'offcanvas' ) {
+      .booking-filter-calendar-overlay {
+        @extend %offcanvas-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %offcanvas-content-down-#{$booking-calendar-dropdown-mobile-break};
+          @extend %offcanvas-direction-#{$booking-calendar-dropdown-offcanvas-direction}-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-header {
+          @extend %offcanvas-header-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-body {
+          @extend %offcanvas-body-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-footer {
+          margin-top: 0;
+          @extend %offcanvas-footer-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+      }
+
+
+      // -- open state
+      &.open > .booking-filter-calendar-overlay{
+        @extend %offcanvas-open-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %offcanvas-content-open-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+      }
+
+    }
   }
 }
