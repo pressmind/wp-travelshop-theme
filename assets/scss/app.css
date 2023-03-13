@@ -15118,7 +15118,7 @@ footer.footer-main {
 /**
  * Import Detail "components"
  */
-.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last:after, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a.active:after {
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last:after, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.active > a:after {
   border-radius: 50%;
   content: '';
   position: absolute;

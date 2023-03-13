@@ -254,11 +254,12 @@
                 }
 
                 @include border-radius(50%);
+              }
 
-                &.active {
-                  &:after {
-                    @extend %active-day-item;
-                  }
+              // -- active
+              &.active > a {
+                &:after {
+                  @extend %active-day-item;
                 }
               }
 
