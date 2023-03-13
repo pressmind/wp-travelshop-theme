@@ -314,7 +314,6 @@ jQuery(function ($) {
          * @param mediaObject
          */
         function renderBookingCalendar(transportType, airport, duration, offer, mediaObject) {
-
             // -- request array
             var calendarRequest = {
                 'pm-tr': transportType,
@@ -323,6 +322,8 @@ jQuery(function ($) {
                 'offer': offer,
                 'media_object_id': mediaObject
             };
+
+            console.log(calendarRequest);
 
             // -- handle ajax request
             requestHandlerBookingCalendar(calendarRequest);
