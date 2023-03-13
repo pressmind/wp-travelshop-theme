@@ -64,7 +64,6 @@
       .slider-controls {
         @extend %slider-controls;
         @extend %slider-controls-inner;
-        @extend %slider-controls-on-image-light;
 
         // positioning
         position: absolute;

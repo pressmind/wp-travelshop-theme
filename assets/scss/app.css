@@ -11505,13 +11505,6 @@ hr + .content-block {
   .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
     color: #212529;
     background-color: #fff; }
-.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button {
-  color: #fff;
-  background-color: rgba(33, 37, 41, 0.4);
-  border-width: 0; }
-  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover {
-    color: #212529;
-    background-color: #fff; }
 .icon-link {
   display: flex;
   flex-direction: row;
