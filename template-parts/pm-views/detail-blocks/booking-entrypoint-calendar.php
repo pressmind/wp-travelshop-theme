@@ -81,7 +81,7 @@ function getCurrentDateRanges($map, $cur) {
 
     // loop through map and check if cur is between arrival/departure
     foreach ( $map as $key => $value ) {
-        if ( intval($cur) >= inval($value['arrival']) && $cur <= intval($value['departure']) ) {
+        if ( intval($cur) >= intval($value['arrival']) && $cur <= intval($value['departure']) ) {
             array_push($cur_ids, $key);
         }
     }
