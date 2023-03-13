@@ -12722,11 +12722,11 @@ ul.checklist {
     .content-block.content-block-list-filter.is--open * {
       pointer-events: auto; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select.show, .dropdown-menu.dropdown-menu-booking-select.show, .dropdown-menu.dropdown-menu-wishlist.show {
+  .dropdown-menu.dropdown-menu-select.show, .dropdown-menu.dropdown-menu-booking-select.show, .dropdown-menu.dropdown-menu-wishlist.show, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay {
     opacity: 1;
     display: flex;
     pointer-events: auto; }
-    .dropdown-menu.dropdown-menu-select.show *, .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-wishlist.show * {
+    .dropdown-menu.dropdown-menu-select.show *, .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-wishlist.show *, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay * {
       pointer-events: auto; } }
 .page-share.is-open .page-share-fallback, .teaser-block .teaser-block-modal.show {
   opacity: 1;
@@ -12764,7 +12764,7 @@ ul.checklist {
       .content-block.content-block-list-filter .list-filter-header > button:hover, .content-block.content-block-list-filter .list-filter-header > button:focus, .content-block.content-block-list-filter .list-filter-header > button:active {
         color: #007bff; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1rem;
@@ -12772,9 +12772,9 @@ ul.checklist {
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
     display: flex !important; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button), .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > *:not(button), .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > *:not(button) {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > *:not(button), .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > *:not(button), .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > *:not(button), .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > *:not(button) {
       margin-bottom: 0; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button {
       border: 0;
       outline: none;
       box-shadow: none;
@@ -12786,11 +12786,11 @@ ul.checklist {
       margin: -1rem -1rem -1rem auto;
       color: #212529;
       transition: color .3s; }
-      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button svg {
         pointer-events: none;
         width: 1.125rem;
         height: 1.125rem; }
-      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active {
+      .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:hover, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:focus, .dropdown-menu.dropdown-menu-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:active {
         color: #007bff; } }
 .page-share .page-share-fallback .page-share-fallback-header, .teaser-block .teaser-block-modal .teaser-block-modal-header {
   align-items: center;
@@ -12830,7 +12830,7 @@ ul.checklist {
     overflow-y: auto;
     overflow-x: hidden; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select .category-tree-field-items, .dropdown-menu.dropdown-menu-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body {
+  .dropdown-menu.dropdown-menu-select .category-tree-field-items, .dropdown-menu.dropdown-menu-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-body {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
@@ -12859,7 +12859,7 @@ ul.checklist {
     border-radius: 0.3rem;
     outline: 0; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-inner .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-inner .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner .dropdown-menu-content {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-inner .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-inner .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner .dropdown-menu-content, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-inner .booking-filter-calendar-overlay-content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12914,7 +12914,7 @@ ul.checklist {
     .content-block.content-block-list-filter * {
       pointer-events: none; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select, .dropdown-menu.dropdown-menu-booking-select, .dropdown-menu.dropdown-menu-wishlist {
+  .dropdown-menu.dropdown-menu-select, .dropdown-menu.dropdown-menu-booking-select, .dropdown-menu.dropdown-menu-wishlist, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -12938,7 +12938,7 @@ ul.checklist {
     border: 0;
     margin: 0;
     border-radius: 0; }
-    .dropdown-menu.dropdown-menu-select *, .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-wishlist * {
+    .dropdown-menu.dropdown-menu-select *, .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay * {
       pointer-events: none; } }
 .page-share .page-share-fallback, .teaser-block .teaser-block-modal {
   position: fixed !important;
@@ -12984,7 +12984,7 @@ ul.checklist {
     max-height: 100%;
     width: 100%; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-inner, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-inner, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-inner, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-inner, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-inner, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-inner {
     position: relative;
     margin: 0;
     pointer-events: none;
@@ -13012,12 +13012,12 @@ ul.checklist {
     .content-block.content-block-list-filter .list-filter-footer * {
       margin-top: 0 !important; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-select .dropdown-menu-footer, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-footer, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer {
+  .dropdown-menu.dropdown-menu-select .dropdown-menu-footer, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-footer, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
     padding: 1rem;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: 0.3rem;
     border-bottom-left-radius: 0.3rem; }
-    .dropdown-menu.dropdown-menu-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer * {
+    .dropdown-menu.dropdown-menu-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer * {
       margin-top: 0 !important; } }
 /**
  * change breadcrumb in some aspects
@@ -15182,7 +15182,7 @@ footer.footer-main {
     justify-content: center;
     position: relative; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-ovh {
-      max-width: 703px;
+      max-width: 759px;
       margin-left: auto;
       margin-right: auto; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15191,7 +15191,7 @@ footer.footer-main {
       transform: translate(-50%, -50%);
       pointer-events: none;
       width: 100%;
-      max-width: 702px;
+      max-width: 758px;
       top: 1.6rem; }
       @media (min-width: 992px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15217,12 +15217,12 @@ footer.footer-main {
       flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
-      max-width: 21rem; }
+      max-width: 22.75rem; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day {
-        flex: 0 0 3rem;
+        flex: 0 0 3.25rem;
         width: 100%;
-        max-width: 3rem;
-        height: 3rem;
+        max-width: 3.25rem;
+        height: 3.25rem;
         display: flex;
         justify-content: center;
         padding-top: .375rem;
@@ -15253,8 +15253,8 @@ footer.footer-main {
         padding: 0;
         margin: 0 0 .5rem 0; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a {
-        width: 3rem;
-        height: 3rem;
+        width: 3.25rem;
+        height: 3.25rem;
         display: block;
         position: absolute;
         top: 0;
@@ -15293,7 +15293,7 @@ footer.footer-main {
       flex-wrap: nowrap;
       margin: 0 -15px;
       overflow: hidden;
-      max-width: 732px; }
+      max-width: 788px; }
       @media (max-width: 767.98px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
           flex-wrap: wrap;
@@ -15302,8 +15302,8 @@ footer.footer-main {
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) > .calendar-item {
         padding: 0 15px;
         width: 100%;
-        flex: 0 0 366px;
-        max-width: 366px; }
+        flex: 0 0 394px;
+        max-width: 394px; }
 
 .is-loading > .booking-entrypoint-calendar {
   opacity: 0;
@@ -15319,7 +15319,7 @@ footer.footer-main {
   padding: 1rem;
   margin: 0.125rem 0 0;
   z-index: 1000;
-  min-width: 764px;
+  min-width: 820px;
   border-radius: 0.25rem;
   display: none; }
   .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
@@ -15328,6 +15328,9 @@ footer.footer-main {
 .open > .booking-filter-calendar-overlay {
   display: block; }
 
+@media (min-width: 768px) {
+  .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-inner {
+    max-width: 992px; } }
 @media (max-width: 767.98px) {
   .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
     margin-top: 0; }
