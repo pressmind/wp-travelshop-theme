@@ -14,10 +14,10 @@
 
       @include media-breakpoint-down($booking-calendar-mobile-break) {
         padding: 1rem;
-        margin: -1rem;
-
+        margin: -1rem -1rem 0 -1rem;
         position: sticky;
-        top:0;
+        top: -1rem;
+
         background-color: #fff;
 
         z-index: 5;
@@ -450,6 +450,10 @@
 
         .booking-filter-calendar-overlay-footer {
           @extend %modal-footer-down-#{$booking-calendar-dropdown-mobile-break};
+
+          .btn.btn-primary {
+            @extend .btn-block;
+          }
         }
       }
 
@@ -481,6 +485,10 @@
         .booking-filter-calendar-overlay-footer {
           margin-top: 0;
           @extend %apple-like-footer-down-#{$booking-calendar-dropdown-mobile-break};
+
+          .btn.btn-primary {
+            @extend .btn-block;
+          }
         }
       }
 
@@ -516,6 +524,10 @@
         .booking-filter-calendar-overlay-footer {
           margin-top: 0;
           @extend %offcanvas-footer-down-#{$booking-calendar-dropdown-mobile-break};
+
+          .btn.btn-primary {
+            @extend .btn-block;
+          }
         }
       }
 

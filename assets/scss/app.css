@@ -2510,15 +2510,17 @@ fieldset:disabled a.btn {
   line-height: 1.5;
   border-radius: 0.2rem; }
 
-.btn-block {
+.btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary {
   display: block;
   width: 100%; }
-  .btn-block + .btn-block {
+  .btn-block + .btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary + .btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn-block + .btn.btn-primary, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary + .btn.btn-primary {
     margin-top: 0.5rem; }
 
-input[type="submit"].btn-block,
+input[type="submit"].btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer input[type="submit"].btn.btn-primary,
 input[type="reset"].btn-block,
-input[type="button"].btn-block {
+.booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer input[type="reset"].btn.btn-primary,
+input[type="button"].btn-block,
+.booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer input[type="button"].btn.btn-primary {
   width: 100%; }
 
 .fade {
@@ -12227,7 +12229,7 @@ ul.checklist {
   .btn > svg {
     width: 1rem;
     height: 1rem; }
-  .btn.btn-block {
+  .btn.btn-block, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary {
     display: flex;
     justify-content: center; }
   .btn.btn-link, .btn.btn-link-light {
@@ -15128,9 +15130,9 @@ footer.footer-main {
     @media (max-width: 767.98px) {
       .booking-entrypoint-calendar .booking-entrypoint-calender-duration {
         padding: 1rem;
-        margin: -1rem;
+        margin: -1rem -1rem 0 -1rem;
         position: sticky;
-        top: 0;
+        top: -1rem;
         background-color: #fff;
         z-index: 5; } }
     .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch {
