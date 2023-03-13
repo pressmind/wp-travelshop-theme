@@ -147,6 +147,7 @@ jQuery(function ($) {
 
                 // collect data
                 var thisTravelDate = $(this);
+                var thisTravelDatePrice = travelDate.data('price-html');
                 var thisTravelDateID = thisTravelDate.data('anchor');
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
@@ -170,6 +171,11 @@ jQuery(function ($) {
                 $('.booking-filter-field--offer').val(thisTravelDateID);
                 $('.booking-filter-field--duration').val(thisTravelDateDur);
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
+
+                // refresh price
+                if ( thisTravelDatePrice !== '' ) {
+                    $('.booking-action-row .price-box-discount').html(thisTravelDatePrice);
+                }
 
                 e.stopPropagation();
             })
