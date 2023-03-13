@@ -61,6 +61,8 @@ jQuery(function ($) {
             var sliderItems = '.calendar-item';
 
             if ( $('body').find(sliderWrapper + ' ' + sliderItems).length > 2 ) {
+                var getSliderIndex = parseInt($('.booking-filter-field--slider-index').val());
+
                 calendarSlider = tns({
                     container: sliderContainer,
                     items: 2,
@@ -78,6 +80,10 @@ jQuery(function ($) {
                     controls: true,
                     controlsContainer: sliderWrapper + ' .slider-controls'
                 });
+
+                if ( getSliderIndex > 0 ) {
+                    calendarSlider.goTo(getSliderIndex);
+                }
             }
         }
 
