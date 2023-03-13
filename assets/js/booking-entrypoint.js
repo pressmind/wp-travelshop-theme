@@ -155,6 +155,12 @@ jQuery(function ($) {
                 bookingEntryCalendarRenderTarget.find('.active-duration').removeClass('active-duration');
                 bookingEntryCalendarRenderTarget.find('.active-duration-last').removeClass('active-duration-last');
 
+                // set active daterange as classes in calendar
+                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-datel-' + thisTravelDateID);
+
+                thisDaterangeItems.addClass('active-duration');
+                thisDaterangeItems.last().addClass('active-duration-last');
+
                 // set dateID to booking entrypoint form
                 // set daterange to booking entrypoint form
                 $('.booking-filter-field--offer').val(thisTravelDateID);
