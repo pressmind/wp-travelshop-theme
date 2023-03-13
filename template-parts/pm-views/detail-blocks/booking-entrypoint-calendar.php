@@ -82,7 +82,7 @@ function getCurrentDateRanges($map, $cur) {
     // loop through map and check if cur is between arrival/departure
     foreach ( $map as $key => $value ) {
         if ( intval($cur) >= intval($value['departure']) && $cur <= intval($value['arrival']) ) {
-            array_push($cur_ids, $key);
+            array_push($cur_ids, 'date-' . $key);
         }
     }
 
@@ -161,7 +161,7 @@ function getCurrentDateRanges($map, $cur) {
 
                             if ( !is_string($day) ) {
                                 $get_active_date_ranges = getCurrentDateRanges($dateRangeMap, $current_date_int);
-                                $date_classes = implode(' date-', $get_active_date_ranges);
+                                $date_classes = implode(' ', $get_active_date_ranges);
                             }
 
                             if (!empty($date_to_cheapest_price[$current_date])) {
