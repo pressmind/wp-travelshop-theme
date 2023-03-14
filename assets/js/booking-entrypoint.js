@@ -23,12 +23,16 @@ jQuery(function ($) {
             } else {
                 bookingEntryAirportField.addClass('d-none');
             }
+
+            // check if offerID is valid to transport type
+            checkOfferIsValid(thisType);
         });
 
         // -- on click calendar
         let bookingEntryCalendar = $('.booking-filter-field--date-range');
         let bookingEntryCalendarRenderTarget = $('#booking-entry-calendar');
         let bookingEntryCalendarServiceUrl = '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=detail-booking-calendar';
+        let bookingOfferValidationServiceUrl = '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=offer-validation';
 
         // -- if click outside calendar
         $(document).click(function(event) {
@@ -70,10 +74,39 @@ jQuery(function ($) {
         });
 
         /**
-         *
-         * @param offerID
+         * Checking if current offer id is valid?
+         * @param transportType
+         * @param airport
+         * @param duration
+         * @param offerID | current offer id
+         * @param mediaObjectID
          */
-        function checkOfferIsValid(offerID) {
+        function checkOfferIsValid(transportType) {
+
+            // -- collect data
+            var getAirport = null;
+            var getTransportType = transportType;
+            var getDur = $('.booking-filter-field--duration').val();
+            var getOfferID = $('.booking-filter-field--offer-id').val();
+            var getMediaObjectID = $('.booking-filter-field--mediaobject-id').val();
+
+            // -- check transporttype for flight, if yes set airport
+            if ( getTransportType === 'FLUG' ) {
+                getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
+            }
+
+            var currentOfferID = offerID;
+
+            // -- ajax request to get data if date is valid or not
+            var validateOfferRequest = {
+                'pm-tr': getTransportType,
+                'airport': getAirport,
+                'pm-du': getDur,
+                'offer_id': getOfferID,
+                'media_object_id': getMediaObjectID
+            };
+
+            var validateOfferReturn = requestHandlerOfferValidation(validateOfferRequest);
 
         }
 
@@ -121,6 +154,19 @@ jQuery(function ($) {
                     calendarSliderIndexTemp = calendarSlider.getInfo().index;
                 })
             }
+        }
+
+        function requestHandlerOfferValidation(request) {
+            $.ajax({
+                url: bookingOfferValidationServiceUrl,
+                data: request,
+                type: 'POST',
+                beforeSend: function(xhr) {
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            })
         }
 
         /**
