@@ -175,9 +175,12 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
         }
     }
 
+    if ( in_array($currentOffer, $validOffers ) ) {
+        return true;
+        exit;
+    }
 
-    print_r($validOffers);
-
+    return false;
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
     /**
