@@ -53,7 +53,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'offer-validation') {
-    return 'hi';
+    echo 'hi';
+    exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
     $id_media_object = (int)$_POST['media_object_id'];
     if ( empty($id_media_object) ) {
