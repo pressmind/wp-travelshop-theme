@@ -53,7 +53,7 @@ jQuery(function ($) {
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
             getDur = $('.booking-filter-field--duration').val();
-            getOfferID = $('.booking-filter-field--offer').val();
+            getOfferID = $('.booking-filter-field--offer-id').val();
             getMediaObject = $('.booking-filter-field--mediaobject').val();
 
             // -- check transporttype for flight, if yes set airport
@@ -181,7 +181,7 @@ jQuery(function ($) {
                     var getAirport = null;
                     var getDur = $(this).data('duration');
                     var getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
-                    var getOfferID = $('.booking-filter-field--offer').val();
+                    var getOfferID = $('.booking-filter-field--offer-id').val();
                     var getMediaObject = $('.booking-filter-field--mediaobject').val();
 
                     // -- check transporttype for flight, if yes set airport
