@@ -182,7 +182,6 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
 
     if ( in_array($currentOffer, $validOffers ) ) {
-        echo 'is-valid';
         $Output = array('state' => 'valid');
         echo json_encode($Output);
         exit;
