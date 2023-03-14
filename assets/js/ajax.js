@@ -1062,9 +1062,9 @@ jQuery(function ($) {
                 $(booking_btn).attr('title', data.msg);
                 $(booking_btn).find('.loader').hide();
                 $(booking_btn).removeClass('green');
+                $(booking_btn).find('svg').show();
                 $(booking_btn).addClass(data.class);
                 if(data.bookable === true && data.booking_type != 'request'){
-                    $(booking_btn).find('svg').show();
                     let href = new URL($(booking_btn).attr('href'));
                     if(href.searchParams.get('t') != 'request'){
                         href.searchParams.set('t', data.booking_type);

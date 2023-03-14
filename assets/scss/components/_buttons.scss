@@ -111,4 +111,22 @@
   * {
     pointer-events: none;
   }
+
+  // -- loader height
+  .loader {
+    height: $booking-btn-loader-height;
+    width: auto;
+
+    margin: ( (($btn-font-size * $btn-line-height) - $booking-btn-loader-height) / 2 ) auto;
+  }
+
+  &.btn-lg {
+    .loader {
+      margin: ( (($btn-font-size-lg * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+
+      @include media-breakpoint-down(sm) {
+        margin: ( ((1.125rem * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+      }
+    }
+  }
 }

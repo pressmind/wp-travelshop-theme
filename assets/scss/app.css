@@ -12406,6 +12406,20 @@ ul.checklist {
 .btn.booking-btn *,
 .booking-btn * {
   pointer-events: none; }
+.btn.booking-btn .loader,
+.booking-btn .loader {
+  height: 0.75rem;
+  width: auto;
+  margin: 0.375rem auto; }
+.btn.booking-btn.btn-lg .loader, .btn-group-lg > .btn.booking-btn .loader,
+.booking-btn.btn-lg .loader,
+.btn-group-lg > .booking-btn.btn .loader {
+  margin: 0.5625rem auto; }
+  @media (max-width: 767.98px) {
+    .btn.booking-btn.btn-lg .loader, .btn-group-lg > .btn.booking-btn .loader,
+    .booking-btn.btn-lg .loader,
+    .btn-group-lg > .booking-btn.btn .loader {
+      margin: 0.46875rem auto; } }
 
 .add-to-wishlist {
   color: #212529; }
@@ -15346,7 +15360,8 @@ footer.footer-main {
   .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {
     margin-top: 0; }
     .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer .btn.btn-primary {
-      width: 100%; } }
+      width: 100%;
+      justify-content: space-around; } }
 
 .detail-booking-entrypoint {
   background-color: #fff;
