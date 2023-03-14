@@ -101,6 +101,12 @@ function getCurrentDateRanges($map, $cur, $activeid) {
     return $cur_ids;
 }
 
+if ( isset($_POST)) {
+    echo "<pre>";
+        print_r($_POST);
+    echo "</pre>";
+}
+
 ?>
 <div class="booking-entrypoint-calendar">
     <?php if(count($durations) > 1){ ?>
