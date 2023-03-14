@@ -320,7 +320,7 @@ jQuery(function ($) {
                 'pm-tr': transportType,
                 'airport': airport,
                 'pm-du': duration,
-                'offer-id': offerID,
+                'offer_id': offerID,
                 'media_object_id': mediaObject
             };
 

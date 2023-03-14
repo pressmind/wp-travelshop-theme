@@ -72,7 +72,7 @@ foreach ( $date_to_cheapest_price as $date ) {
     $dateRangeMap[$date->id]['departure'] = intval($date->date_departure->format('Ymd'));
     $dateRangeMap[$date->id]['arrival'] = intval($date->date_arrival->format('Ymd'));
 
-    if ( isset($_POST['offerID']) && ( intval($_POST['offerID']) === $date->id ) ) {
+    if ( isset($_POST['offer_id']) && ( intval($_POST['offer_id']) === $date->id ) ) {
         $dateRangeMap[$date->id]['active'] = true;
     } else {
         $dateRangeMap[$date->id]['active'] = false;
@@ -173,7 +173,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                             $date_classes = '';
 
                             if ( !is_string($day) ) {
-                                $cur_id = isset($_POST['offerID']) ? intval($_POST['offerID']) : null;
+                                $cur_id = isset($_POST['offer_id']) ? intval($_POST['offer_id']) : null;
                                 $get_active_date_ranges = getCurrentDateRanges($dateRangeMap, $current_date_int, $cur_id);
                                 $date_classes = implode(' ', $get_active_date_ranges);
                             }
@@ -181,7 +181,7 @@ function getCurrentDateRanges($map, $cur, $activeid) {
                             if (!empty($date_to_cheapest_price[$current_date])) {
 
                                 // -- hook for current date
-                                if ( isset($_POST['offerID']) && ( intval($_POST['offerID']) === $date_to_cheapest_price[$current_date]->id ) ) {
+                                if ( isset($_POST['offer_id']) && ( intval($_POST['offer_id']) === $date_to_cheapest_price[$current_date]->id ) ) {
                                     $active = true;
                                     $setDuration = $date_to_cheapest_price[$current_date]->duration;
                                 } else {
