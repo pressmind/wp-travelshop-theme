@@ -209,7 +209,7 @@ jQuery(function ($) {
             travelDate.on('mouseenter', function(e) {
                 if ( !$(this).parent().hasClass('active') ) {
                     var thisTravelDate = $(this);
-                    var thisOfferID = thisTravelDate.data('anchor');
+                    var thisOfferID = thisTravelDate.data('offer-id');
 
                     // store travelDate
                     storeCurrentEnteredTravelDate = $(this);
@@ -248,7 +248,7 @@ jQuery(function ($) {
                 // collect data
                 var thisTravelDate = $(this);
                 var thisTravelDatePrice = thisTravelDate.data('price-html');
-                var thisOfferID = thisTravelDate.data('anchor');
+                var thisOfferID = thisTravelDate.data('offer-id');
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
                 var thisTravelBookingUrl = thisTravelDate.attr('href');
