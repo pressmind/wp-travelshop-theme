@@ -118,7 +118,9 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 
     foreach ( $offers as $offer ) {
-        array_push($validOffers, $offer->id_option);
+        if ( !in_array($offer->id, $validOffers) ) {
+            array_push($validOffers, $offer->id);
+        }
     }
 
     echo "<pre>";
