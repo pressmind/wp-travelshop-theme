@@ -163,10 +163,8 @@ jQuery(function ($) {
                 // add error class
                 $('.booking-filter-field--date-range').addClass('has-error');
 
-                // add error message
-                if ( $('.booking-filter-field--date-range').find('.booking-filter-field--error').length < 1 ) {
-                    $('.booking-filter-field--date-range').append('<div class="booking-filter-field--error">' + $('.booking-filter-field--date-range').data('error-msg') + '</div>');
-                }
+                // change placeholder
+                $('.booking-filter-field--date-range .booking-filter-field--text').text($('.booking-filter-field--date-range').data('placeholder'));
 
                 // disable button
                 $('.detail-booking-entrypoint .booking-btn').addClass('btn-disabled');
@@ -174,8 +172,8 @@ jQuery(function ($) {
                 // remove error class
                 $('.booking-filter-field--date-range').removeClass('has-error');
 
-                // remove error msg
-                $('.booking-filter-field--date-range').find('.booking-filter-field--error').remove();
+                // change back to valid date
+
 
                 // disable button
                 $('.detail-booking-entrypoint .booking-btn').removeClass('btn-disabled');
@@ -355,6 +353,7 @@ jQuery(function ($) {
                 // set daterange to booking entrypoint form
                 $('.booking-filter-field--offer-id').val(thisOfferID);
                 $('.booking-filter-field--duration').val(thisTravelDateDur);
+                $('.booking-filter-field--date-range').val(thisTravelDateRange);
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
                 $('.booking-filter-field--bookingurl').val(thisTravelBookingUrl);
 

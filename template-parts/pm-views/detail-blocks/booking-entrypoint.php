@@ -55,11 +55,15 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     <input class="booking-filter-field--mediaobject-id" type="hidden" name="mediaobject" value="<?php echo $args['id_media_object']; ?>" />
     <input class="booking-filter-field--offer-id" type="hidden" name="offer" value="<?php echo $args['cheapest_price']->id; ?>" />
     <input class="booking-filter-field--bookingurl" type="hidden" name="offer" value="" />
+    <input class="booking-filter-field--date-range"  type="hidden" name="offer" value="<?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
+        'date_departure' => $args['cheapest_price']->date_departure,
+        'date_arrival' => $args['cheapest_price']->date_arrival
+    ]);?>" />
     <input class="booking-filter-field--slider-index" type="hidden" name="offer" value="0" />
 
     <div class="booking-filter-items-boxed">
         <div class="booking-filter-item booking-filter-item--date-range">
-            <button class="booking-filter-field booking-filter-field--date-range" data-error-msg="Gewähltes Angebot nicht verfügbar.">
+            <button class="booking-filter-field booking-filter-field--date-range" data-placeholder="Bitte wählen">
             <span class="booking-filter-field--icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
             </span>

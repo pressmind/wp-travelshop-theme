@@ -15460,17 +15460,6 @@ footer.footer-main {
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:active {
             border: 2px solid #dc3545;
             padding-bottom: 2rem; }
-          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range .booking-filter-field--error,
-          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control .booking-filter-field--error {
-            font-size: .6125rem;
-            color: #fff;
-            background: #dc3545;
-            padding: 0.25rem 1rem;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0; }
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.open > button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.show > button.select-form-control {
           background-color: transparent;
           border: 2px solid #212529;
