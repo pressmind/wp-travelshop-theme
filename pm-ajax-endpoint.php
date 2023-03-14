@@ -122,7 +122,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
             echo $offer->id . ' is-transport-type<br>';
         }
         if ( $offer->duration == $_POST['pm-du'] ) {
-            echo $offer->id . ' is-transport-type<br>';
+            echo $offer->id . ' is-duration<br>';
         }
         if ( !in_array($offer->id, $validOffers) ) {
             array_push($validOffers, $offer->id);
