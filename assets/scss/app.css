@@ -16208,8 +16208,7 @@ footer.footer-main {
       padding-bottom: 30px; } }
 .detail-section .description-block-wrapper .description-block + .description-block {
   padding-top: 1.5rem;
-  margin-top: 1.5rem;
-  border-top: 1px solid #e9ecef; }
+  margin-top: 1.5rem; }
   @media (min-width: 768px) {
     .detail-section .description-block-wrapper .description-block + .description-block {
       padding-top: 30px; } }
