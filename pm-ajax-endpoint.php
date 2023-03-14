@@ -118,8 +118,13 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 
     foreach ( $offers as $offer ) {
-        if ( !in_array($offer->id, $validOffers) ) {
-            array_push($validOffers, $offer->id);
+        if (
+            $offer->duration === $_POST['pm-du'] &&
+            $offer->transport_type === $_POST['pm-tr']
+        ) {
+            if ( !in_array($offer->id, $validOffers) ) {
+                array_push($validOffers, $offer->id);
+            }
         }
     }
 
