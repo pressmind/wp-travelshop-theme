@@ -169,7 +169,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 
             if (!empty($date_to_cheapest_price[$current_date])) {
                 if ( !in_array($date_to_cheapest_price[$current_date]->id, $validOffers) ) {
-                    array_push($validOffers, $date_to_cheapest_price[$current_date]);
+                    array_push($validOffers, $date_to_cheapest_price[$current_date]->id);
                 }
             }
         }
