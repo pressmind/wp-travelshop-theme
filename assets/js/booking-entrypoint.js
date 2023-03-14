@@ -173,7 +173,7 @@ jQuery(function ($) {
                 $('.booking-filter-field--date-range').removeClass('has-error');
 
                 // change back to valid date
-
+                $('.booking-filter-field--date-range .booking-filter-field--text').text($('.booking-filter-field--date-range').val());
 
                 // disable button
                 $('.detail-booking-entrypoint .booking-btn').removeClass('btn-disabled');
