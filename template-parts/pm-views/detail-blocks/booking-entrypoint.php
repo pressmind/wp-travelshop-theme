@@ -55,7 +55,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     <input class="booking-filter-field--mediaobject-id" type="hidden" name="mediaobject" value="<?php echo $args['id_media_object']; ?>" />
     <input class="booking-filter-field--offer-id" type="hidden" name="offer" value="<?php echo $args['cheapest_price']->id; ?>" />
     <input class="booking-filter-field--bookingurl" type="hidden" name="offer" value="" />
-    <input class="booking-filter-field--date-range"  type="hidden" name="offer" value="<?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
+    <input class="booking-filter-field--daterange"  type="hidden" name="offer" value="<?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
         'date_departure' => $args['cheapest_price']->date_departure,
         'date_arrival' => $args['cheapest_price']->date_arrival
     ]);?>" />
