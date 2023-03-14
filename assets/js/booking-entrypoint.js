@@ -160,13 +160,21 @@ jQuery(function ($) {
          */
         function offerErrorHandling(state) {
             if (state === 'invalid') {
+                // add error class
                 $('.booking-filter-field--date-range').addClass('has-error');
-                $('.booking-filter-field--date-range').append('<div class="booking-filter-field--error">' + $('.booking-filter-field--date-range').data('error-msg') + '</div>');
+
+                // add error message
+                if ( $('.booking-filter-field--date-range').find('.booking-filter-field--error').length < 1 ) {
+                    $('.booking-filter-field--date-range').append('<div class="booking-filter-field--error">' + $('.booking-filter-field--date-range').data('error-msg') + '</div>');
+                }
 
                 // disable button
                 $('.detail-booking-entrypoint .booking-btn').addClass('btn-disabled');
             } else {
+                // remove error class
                 $('.booking-filter-field--date-range').removeClass('has-error');
+
+                // remove error msg
                 $('.booking-filter-field--date-range').find('.booking-filter-field--error').remove();
 
                 // disable button
