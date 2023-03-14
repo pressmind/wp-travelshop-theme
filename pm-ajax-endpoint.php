@@ -54,16 +54,19 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     exit;
 } else if ($_GET['action'] == 'offer-validation') {
     $currentOffer = isset($_POST['offer_id']) ?: null;
+    $Output = array('state' => 'invalid');
 
     if ( $currentOffer === null ) {
-        echo false;
+        $Output = array('state' => 'invalid');
+        echo json_encode($Output);
         exit;
     }
 
     $id_media_object = (int)$_POST['media_object_id'];
 
     if ( empty($id_media_object) ) {
-        echo false;
+        $Output = array('state' => 'invalid');
+        echo json_encode($Output);
         exit;
     }
 
@@ -178,11 +181,13 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
 
     if ( in_array($currentOffer, $validOffers ) ) {
-        echo true;
+        $Output = array('state' => 'valid');
+        echo json_encode($Output);
         exit;
     }
 
-    return false;
+    $Output = array('state' => 'invalid');
+    echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
     /**
