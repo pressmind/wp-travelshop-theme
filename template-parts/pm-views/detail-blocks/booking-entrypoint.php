@@ -59,7 +59,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
     <div class="booking-filter-items-boxed">
         <div class="booking-filter-item booking-filter-item--date-range">
-            <button class="booking-filter-field booking-filter-field--date-range">
+            <button class="booking-filter-field booking-filter-field--date-range" data-error-msg="Gewähltes Angebot nicht verfügbar.">
             <span class="booking-filter-field--icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
             </span>
