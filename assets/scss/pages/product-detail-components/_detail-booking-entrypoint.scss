@@ -45,7 +45,8 @@
 
           .booking-filter-field--counter {
             position: absolute;
-            top: $input-btn-padding-y;
+            top: 50%;
+            transform: translateY(-50%);
             right: .75rem;
 
             color: rgba($input-color, .5);
