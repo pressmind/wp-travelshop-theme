@@ -119,7 +119,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 
     foreach ( $offers as $offer ) {
         if (
-            $offer->duration === $_POST['pm-du'] &&
+            $offer->duration === intval($_POST['pm-du']) &&
             $offer->transport_type === $_POST['pm-tr']
         ) {
             if ( !in_array($offer->id, $validOffers) ) {
