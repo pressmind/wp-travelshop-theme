@@ -16224,8 +16224,7 @@ footer.footer-main {
       margin-top: 30px; } }
 .detail-section .detail-info-section + .detail-info-section {
   padding-top: 1.5rem;
-  margin-top: 1.5rem;
-  border-top: 1px solid #e9ecef; }
+  margin-top: 1.5rem; }
   @media (min-width: 768px) {
     .detail-section .detail-info-section + .detail-info-section {
       padding-top: 30px; } }
