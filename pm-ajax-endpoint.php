@@ -92,7 +92,6 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
 
     $args['media_object'] = $mo;
-    $args['filter'] = isset($_POST) ? $_POST : null;
     $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
 
     // -- collecting offers based on data set
@@ -108,8 +107,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 
     $filter = new CheapestPrice();
     $filter->occupancies_disable_fallback = false;
-    if ( !empty($args['filter']['pm-tr']) ) {
-        $filter->transport_types = [$args['filter']['pm-tr']];
+    if ( !empty($_POST['pm-tr']) ) {
+        $filter->transport_types = [$_POST['pm-tr']];
     }
 
     /**
@@ -117,9 +116,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
      */
     $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 
-    echo "<pre>";
-        print_r($_POST['pm-du']);
-    echo "</pre>";
+
     foreach ( $offers as $offer ) {
         if ( $offer->duration === intval($_POST['pm-du']) && $offer->transport_type === $_POST['pm-tr'] ) {
             if ( !in_array($offer->id, $validOffers) ) {
@@ -128,9 +125,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
         }
     }
 
-    echo "<pre>";
-        print_r($validOffers);
-    echo "</pre>";
+
+    print_r($validOffers);
 
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
