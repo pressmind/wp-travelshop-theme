@@ -12372,29 +12372,29 @@ ul.checklist {
   .booking-btn.gray,
   .booking-btn.btn-disabled {
     color: #fff;
-    background-color: #495057;
-    border-color: #495057;
+    background-color: #6c757d;
+    border-color: #6c757d;
     color: #fff; }
     .btn.booking-btn.gray:hover, .btn.booking-btn.btn-disabled:hover,
     .booking-btn.gray:hover,
     .booking-btn.btn-disabled:hover {
       color: #fff;
-      background-color: #6c7681;
-      border-color: #6c7681; }
+      background-color: #868e96;
+      border-color: #868e96; }
     .btn.booking-btn.gray:focus, .btn.booking-btn.gray.focus, .btn.booking-btn.btn-disabled:focus, .btn.booking-btn.btn-disabled.focus,
     .booking-btn.gray:focus,
     .booking-btn.gray.focus,
     .booking-btn.btn-disabled:focus,
     .booking-btn.btn-disabled.focus {
-      box-shadow: 0 0 0 0 rgba(100, 106, 112, 0.5); }
+      box-shadow: 0 0 0 0 rgba(130, 138, 145, 0.5); }
     .btn.booking-btn.gray.disabled, .btn.booking-btn.gray:disabled, .btn.booking-btn.btn-disabled.disabled, .btn.booking-btn.btn-disabled:disabled,
     .booking-btn.gray.disabled,
     .booking-btn.gray:disabled,
     .booking-btn.btn-disabled.disabled,
     .booking-btn.btn-disabled:disabled {
       color: #fff;
-      background-color: #495057;
-      border-color: #495057; }
+      background-color: #6c757d;
+      border-color: #6c757d; }
     .btn.booking-btn.gray:not(:disabled):not(.disabled):active, .btn.booking-btn.gray:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.gray.dropdown-toggle, .btn.booking-btn.btn-disabled:not(:disabled):not(.disabled):active, .btn.booking-btn.btn-disabled:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.btn-disabled.dropdown-toggle,
     .booking-btn.gray:not(:disabled):not(.disabled):active,
     .booking-btn.gray:not(:disabled):not(.disabled).active, .show >
@@ -12403,8 +12403,8 @@ ul.checklist {
     .booking-btn.btn-disabled:not(:disabled):not(.disabled).active, .show >
     .booking-btn.btn-disabled.dropdown-toggle {
       color: #fff;
-      background-color: #32373b;
-      border-color: #32373b; }
+      background-color: #545b62;
+      border-color: #545b62; }
       .btn.booking-btn.gray:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.gray:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.gray.dropdown-toggle:focus, .btn.booking-btn.btn-disabled:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.btn-disabled:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.btn-disabled.dropdown-toggle:focus,
       .booking-btn.gray:not(:disabled):not(.disabled):active:focus,
       .booking-btn.gray:not(:disabled):not(.disabled).active:focus, .show >
@@ -12412,7 +12412,7 @@ ul.checklist {
       .booking-btn.btn-disabled:not(:disabled):not(.disabled):active:focus,
       .booking-btn.btn-disabled:not(:disabled):not(.disabled).active:focus, .show >
       .booking-btn.btn-disabled.dropdown-toggle:focus {
-        box-shadow: 0 0 0 0 rgba(100, 106, 112, 0.5); }
+        box-shadow: 0 0 0 0 rgba(130, 138, 145, 0.5); }
     .btn.booking-btn.gray:hover, .btn.booking-btn.gray:focus, .btn.booking-btn.gray:active, .btn.booking-btn.btn-disabled:hover, .btn.booking-btn.btn-disabled:focus, .btn.booking-btn.btn-disabled:active,
     .booking-btn.gray:hover,
     .booking-btn.gray:focus,
@@ -15331,10 +15331,10 @@ footer.footer-main {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.request > a:hover {
           background-color: #ffd454; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.stop > a {
-        background-color: rgba(73, 80, 87, 0.5);
+        background-color: rgba(108, 117, 125, 0.5);
         color: #fff; }
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.stop > a:hover {
-          background-color: rgba(73, 80, 87, 0.75); }
+          background-color: rgba(108, 117, 125, 0.75); }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
       display: flex;
       flex-direction: row;
@@ -16098,7 +16098,7 @@ footer.footer-main {
   .booking-action .state-check {
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #495057;
+    background-color: #6c757d;
     color: #fff;
     border-radius: 50%;
     position: absolute;
