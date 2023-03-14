@@ -106,6 +106,13 @@
             box-shadow: none;
             outline: none;
           }
+
+          &.has-error,
+          &.has-error:hover,
+          &.has-error:focus,
+          &.has-error:active {
+            border: 2px solid $danger;
+          }
         }
 
         &.open > button.booking-filter-field--date-range,

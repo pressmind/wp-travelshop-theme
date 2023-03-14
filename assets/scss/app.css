@@ -15434,6 +15434,12 @@ footer.footer-main {
             border: 2px solid #212529;
             box-shadow: none;
             outline: none; }
+          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error:active,
+          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error,
+          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:hover,
+          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:focus,
+          .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:active {
+            border: 2px solid #dc3545; }
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.open > button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.show > button.select-form-control {
           background-color: transparent;
           border: 2px solid #212529;
