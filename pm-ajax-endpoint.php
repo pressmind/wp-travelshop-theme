@@ -56,12 +56,14 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $currentOffer = isset($_POST['offer_id']) ?: null;
 
     if ( $currentOffer === null ) {
-        return false;
+        echo false;
         exit;
     }
 
     $id_media_object = (int)$_POST['media_object_id'];
+
     if ( empty($id_media_object) ) {
+        echo false;
         exit;
     }
 
@@ -101,7 +103,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $validOffers = [];
 
     if ( empty($args['cheapest_price']) || !empty($args['booking_on_request']) ) {
-        return false;
+        echo false;
         exit;
     }
 
@@ -176,7 +178,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
 
     if ( in_array($currentOffer, $validOffers ) ) {
-        return true;
+        echo true;
         exit;
     }
 
