@@ -53,9 +53,80 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'offer-validation') {
-    echo 'hi';
+    $currentOffer = isset($_POST['offer_id']) ?: null;
+
+    if ( $currentOffer === null ) {
+        return false;
+        exit;
+    }
+
+    $id_media_object = (int)$_POST['media_object_id'];
+    if ( empty($id_media_object) ) {
+        exit;
+    }
+
+    $args = [];
+    $mo = new \Pressmind\ORM\Object\MediaObject($id_media_object);
+
+    $CheapestPriceFilter = new CheapestPrice();
+
+    $valid_params = [];
+
+    // duration
+    if (empty($_POST['pm-du']) === false) {
+        $durationRange = BuildSearch::extractDurationRange($_POST['pm-du']);
+        if ($durationRange !== false) {
+            $valid_params['pm-du'] = $_POST['pm-du'];
+            $CheapestPriceFilter->duration_from = $durationRange[0];
+            $CheapestPriceFilter->duration_to = $durationRange[1];
+        }
+    }
+
+    // transport_type
+    if (empty($_POST['pm-tr']) === false) {
+        $transport_types = BuildSearch::extractTransportTypes($_POST['pm-tr']);
+        if(!empty($transport_types)){
+            $valid_params['pm-tr'] = $_POST['pm-tr'];
+            $CheapestPriceFilter->transport_types = $transport_types;
+        }
+    }
+
+    $args['media_object'] = $mo;
+    $args['filter'] = isset($_POST) ? $_POST : null;
+    $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
+
+    // -- collecting offers based on data set
+    // -- @todo: airport have to be added heare, if pm-tr === 'FLUG' for validation.
+
+    // valid offers array
+    $validOffers = [];
+
+    if ( empty($args['cheapest_price']) || !empty($args['booking_on_request']) ) {
+        return false;
+        exit;
+    }
+
+    $filter = new CheapestPrice();
+    $filter->occupancies_disable_fallback = false;
+    if ( !empty($args['filter']['pm-tr']) ) {
+        $filter->transport_types = [$args['filter']['pm-tr']];
+    }
+
+    /**
+     * @var \Pressmind\ORM\Object\CheapestPriceSpeed[] $offers
+     */
+    $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
+
+    echo "<pre>";
+        print_r($offers);
+    echo "</pre>";
+
     exit;
 } else if ($_GET['action'] == 'detail-booking-calendar' ) {
+    /**
+     *  Action is rendering booking calendar via ajax - to prevent sourcecode in HTML not needed
+     *  + re-rendering calendar on various actions by values
+     */
     $id_media_object = (int)$_POST['media_object_id'];
     if ( empty($id_media_object) ) {
         exit;
