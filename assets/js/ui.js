@@ -578,12 +578,12 @@ jQuery(function ($) {
 
             if ( thisAction === 'open' ) {
                 // open all
-                thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click touch');
+                thisAccGroup.find('.accordion-item:not(.is-open) .accordion-toggle').trigger('click');
                 $(this).data('toggle', 'close');
                 $(this).attr('data-toggle', 'close');
             } else {
                 // close all
-                thisAccGroup.find('.accordion-item.is-open .accordion-toggle').trigger('click touch');
+                thisAccGroup.find('.accordion-item.is-open .accordion-toggle').trigger('click');
                 $(this).data('toggle', 'open');
                 $(this).attr('data-toggle', 'open');
             }
@@ -855,7 +855,7 @@ jQuery(function ($) {
         // -- backdrop checker
         if ( $(e.target).css('container-name') === 'backdrop' ) {
             $(e.target).removeClass('show');
-            $(e.target).parent().find('button[data-type="close-popup"]').trigger('click touch');
+            $(e.target).parent().find('button[data-type="close-popup"]').trigger('click');
         }
 
         // -- hook for filter prompt
@@ -980,7 +980,7 @@ jQuery(function ($) {
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
 
-            $target.parent().find('button[data-type="close-popup"]').trigger('click touch');
+            $target.parent().find('button[data-type="close-popup"]').trigger('click');
 
             // -- trigger click on data-type="popup-close", to hide item by klick on close button..
             // -- @todo: best way?
