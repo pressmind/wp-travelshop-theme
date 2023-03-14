@@ -154,6 +154,30 @@ jQuery(function ($) {
             }
         }
 
+        /**
+         * handle error if date is invalid
+         * @param $state
+         */
+        function offerErrorHandling(state) {
+            if (state === 'invalid') {
+                $('.booking-filter-field--date-range').addClass('has-error');
+                $('.booking-filter-field--date-range').append('<div class="field-error">' + $('.booking-filter-field--date-range').data('error') + '</div>');
+
+                // disable button
+                $('.detail-booking-entrypoint .booking-btn').addClass('btn-disabled');
+            } else {
+                $('.booking-filter-field--date-range').removeClass('has-error');
+                $('.booking-filter-field--date-range').find('.field-error').remove();
+
+                // disable button
+                $('.detail-booking-entrypoint .booking-btn').removeClass('btn-disabled');
+            }
+        }
+
+        /**
+         * Request handler for offer validation
+         * @param request
+         */
         function requestHandlerOfferValidation(request) {
             $.ajax({
                 url: bookingOfferValidationServiceUrl,
@@ -162,8 +186,7 @@ jQuery(function ($) {
                 beforeSend: function(xhr) {
                 },
                 success: function(data) {
-                    console.log(data['state']);
-                    return data;
+                    offerErrorHandling(data['state']);
                 }
             })
         }
