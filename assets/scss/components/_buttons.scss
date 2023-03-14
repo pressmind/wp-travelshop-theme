@@ -97,7 +97,8 @@
       color: $booking-orange-color;
     }
   }
-  &.gray {
+  &.gray,
+  &.btn-disabled {
     @include button-variant($gray-900, $gray-900, $gray-700, $gray-700, $gray-900, $gray-900);
 
     // -- set color
@@ -110,6 +111,12 @@
 
   * {
     pointer-events: none;
+  }
+
+  &.btn-disabled {
+    pointer-events: none;
+    opacity: .25;
+    cursor: not-allowed;
   }
 
   // -- loader height

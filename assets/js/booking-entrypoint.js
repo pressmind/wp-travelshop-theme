@@ -25,7 +25,7 @@ jQuery(function ($) {
             }
 
             // check if offerID is valid to transport type
-            checkOfferIsValid(thisType);
+            checkOfferIsValid();
         });
 
         // -- on click calendar
@@ -81,11 +81,11 @@ jQuery(function ($) {
          * @param offerID | current offer id
          * @param mediaObjectID
          */
-        function checkOfferIsValid(transportType) {
+        function checkOfferIsValid() {
 
             // -- collect data
             var getAirport = null;
-            var getTransportType = transportType;
+            var getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
             var getDur = $('.booking-filter-field--duration').val();
             var getOfferID = $('.booking-filter-field--offer-id').val();
             var getMediaObjectID = $('.booking-filter-field--mediaobject-id').val();
@@ -375,6 +375,9 @@ jQuery(function ($) {
                 if ( thisTravelDatePrice !== '' ) {
                     $('.booking-action-row .price-box-discount').html(thisTravelDatePrice);
                 }
+
+                // validate offer
+                checkOfferIsValid();
 
                 e.stopPropagation();
             })
