@@ -203,18 +203,6 @@ jQuery(function ($) {
         }
     });
 
-    // --------------------------------
-    // --- Detail Bottom Bar
-    // --------------------------------
-    $(window).scroll(function () {
-        var currentScrollPosition = $(window).scrollTop();
-        if (currentScrollPosition >= 400 && currentScrollPosition <= ($('.footer-main').offset().top - (Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 250))) {
-            $('.mobile-bar').addClass('show');
-        } else {
-            $('.mobile-bar').removeClass('show');
-        }
-    });
-
     // -------------------------------------
     // --- init for various image slider
     // -------------------------------------
