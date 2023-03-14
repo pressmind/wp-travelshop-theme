@@ -377,7 +377,7 @@ jQuery(function ($) {
                 }
 
                 // validate offer
-                checkOfferIsValid();
+                offerErrorHandling('valid');
 
                 e.stopPropagation();
             })
