@@ -103,7 +103,7 @@
   }
   &.gray,
   &.btn-disabled {
-    @include button-variant($gray-900, $gray-900, $gray-700, $gray-700, $gray-900, $gray-900);
+    @include button-variant($booking-gray, $booking-gray, lighten($booking-gray, 15%), lighten($booking-gray, 15%), darken($booking-gray, 10%), darken($booking-gray, 10%));
 
     // -- set color
     color: $booking-gray-color;
