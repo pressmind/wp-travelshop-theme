@@ -48,12 +48,12 @@ jQuery(function ($) {
             e.preventDefault();
 
             // -- define some variables needed later
-            var getTransportType, getAirport, getDur, getOffer, getMediaObject = null;
+            var getTransportType, getAirport, getDur, getOfferID, getMediaObject = null;
 
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
             getDur = $('.booking-filter-field--duration').val();
-            getOffer = $('.booking-filter-field--offer').val();
+            getOfferID = $('.booking-filter-field--offer').val();
             getMediaObject = $('.booking-filter-field--mediaobject').val();
 
             // -- check transporttype for flight, if yes set airport
@@ -61,7 +61,7 @@ jQuery(function ($) {
                 getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
             }
 
-            renderBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
+            renderBookingCalendar(getTransportType, getAirport, getDur, getOfferID, getMediaObject);
 
             // -- close every dropdown
             $('.dropdown, .dropdown-menu').removeClass('show');
@@ -155,12 +155,12 @@ jQuery(function ($) {
          * @param transportType
          * @param airport
          * @param duration
-         * @param offer
+         * @param offerID
          * @param mediaObject
          */
-        function refreshBookingCalendar(transportType, airport, duration, offer, mediaObject) {
+        function refreshBookingCalendar(transportType, airport, duration, offerID, mediaObject) {
             // trigger render option
-            renderBookingCalendar(transportType, airport, duration, offer, mediaObject);
+            renderBookingCalendar(transportType, airport, duration, offerID, mediaObject);
         }
 
         /**
@@ -181,7 +181,7 @@ jQuery(function ($) {
                     var getAirport = null;
                     var getDur = $(this).data('duration');
                     var getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
-                    var getOffer = $('.booking-filter-field--offer').val();
+                    var getOfferID = $('.booking-filter-field--offer').val();
                     var getMediaObject = $('.booking-filter-field--mediaobject').val();
 
                     // -- check transporttype for flight, if yes set airport
@@ -196,7 +196,7 @@ jQuery(function ($) {
                     $(this).addClass('active');
 
                     // -- refresh calendar
-                    refreshBookingCalendar(getTransportType, getAirport, getDur, getOffer, getMediaObject);
+                    refreshBookingCalendar(getTransportType, getAirport, getDur, getOfferID, getMediaObject);
 
                 }
 
@@ -209,13 +209,13 @@ jQuery(function ($) {
             travelDate.on('mouseenter', function(e) {
                 if ( !$(this).parent().hasClass('active') ) {
                     var thisTravelDate = $(this);
-                    var thisTravelDateID = thisTravelDate.data('anchor');
+                    var thisOfferID = thisTravelDate.data('anchor');
 
                     // store travelDate
                     storeCurrentEnteredTravelDate = $(this);
 
                     // set active daterange as classes in calendar to preview
-                    var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);
+                    var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisOfferID);
 
                     thisDaterangeItems.addClass('daterange-preview active-duration');
                     thisDaterangeItems.last().addClass('active-duration-last');
@@ -248,7 +248,7 @@ jQuery(function ($) {
                 // collect data
                 var thisTravelDate = $(this);
                 var thisTravelDatePrice = thisTravelDate.data('price-html');
-                var thisTravelDateID = thisTravelDate.data('anchor');
+                var thisOfferID = thisTravelDate.data('anchor');
                 var thisTravelDateRange = thisTravelDate.data('daterange');
                 var thisTravelDateDur = parseInt(thisTravelDate.data('duration'));
                 var thisTravelBookingUrl = thisTravelDate.attr('href');
@@ -262,20 +262,20 @@ jQuery(function ($) {
                 thisTravelDate.parent().addClass('active');
 
                 // set active daterange as classes in calendar
-                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisTravelDateID);
+                var thisDaterangeItems = bookingEntryCalendarRenderTarget.find('.travel-date-' + thisOfferID);
 
                 thisDaterangeItems.addClass('active-duration');
                 thisDaterangeItems.last().addClass('active-duration-last');
 
                 // set dateID to booking entrypoint form
                 // set daterange to booking entrypoint form
-                $('.booking-filter-field--offer').val(thisTravelDateID);
+                $('.booking-filter-field--offer-id').val(thisOfferID);
                 $('.booking-filter-field--duration').val(thisTravelDateDur);
                 $('.booking-filter-item--date-range .booking-filter-field--text').text(thisTravelDateRange);
                 $('.booking-filter-field--bookingurl').val(thisTravelBookingUrl);
 
                 // -- set offer id to booking button
-                $('.detail-booking-entrypoint .booking-btn').attr('data-anchor', thisTravelDateID);
+                $('.detail-booking-entrypoint .booking-btn').attr('data-offer-id', thisOfferID);
                 $('.detail-booking-entrypoint .booking-btn').attr('href', thisTravelBookingUrl);
 
                 // check if slider is initialized, if yes, get slide index store in variable.
@@ -311,20 +311,18 @@ jQuery(function ($) {
          * @param transportType
          * @param airport
          * @param duration
-         * @param offer
+         * @param offerID
          * @param mediaObject
          */
-        function renderBookingCalendar(transportType, airport, duration, offer, mediaObject) {
+        function renderBookingCalendar(transportType, airport, duration, offerID, mediaObject) {
             // -- request array
             var calendarRequest = {
                 'pm-tr': transportType,
                 'airport': airport,
                 'pm-du': duration,
-                'offer': offer,
+                'offer-id': offerID,
                 'media_object_id': mediaObject
             };
-
-            console.log(calendarRequest);
 
             // -- handle ajax request
             requestHandlerBookingCalendar(calendarRequest);
