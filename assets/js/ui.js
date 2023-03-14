@@ -979,11 +979,7 @@ jQuery(function ($) {
 
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
-
             $target.parent().find('button[data-type="close-popup"]').trigger('click');
-
-            // -- trigger click on data-type="popup-close", to hide item by klick on close button..
-            // -- @todo: best way?
         }
     });
 });
