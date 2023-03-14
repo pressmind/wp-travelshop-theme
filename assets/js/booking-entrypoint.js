@@ -162,7 +162,7 @@ jQuery(function ($) {
                 beforeSend: function(xhr) {
                 },
                 success: function(data) {
-                    console.log(data);
+                    return data;
                 }
             })
         }
