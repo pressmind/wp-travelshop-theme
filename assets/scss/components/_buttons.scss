@@ -67,6 +67,10 @@
 
 .btn.booking-btn,
 .booking-btn {
+
+  // add opacity to transitions
+  transition: color .3s, border-color .3s, background-color .3s, opacity .3s;
+
   &.green {
     @include button-variant($booking-green, $booking-green, lighten($booking-green, 15%), lighten($booking-green, 15%), darken($booking-green, 10%), darken($booking-green, 10%));
 
