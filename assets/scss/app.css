@@ -15121,7 +15121,7 @@ footer.footer-main {
 /**
  * Import Detail "components"
  */
-.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last:after, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.active > a:after {
+.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.active-duration.active-duration-last:after {
   border-radius: 20rem;
   content: '';
   position: absolute;
@@ -15131,7 +15131,7 @@ footer.footer-main {
   bottom: 0;
   pointer-events: none;
   display: block;
-  border: 1px solid #212529; }
+  border: 2px solid #007bff; }
 
 .booking-entrypoint-calendar {
   opacity: 1;
@@ -15182,7 +15182,7 @@ footer.footer-main {
     justify-content: center;
     position: relative; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-ovh {
-      max-width: 759px;
+      max-width: 703px;
       margin-left: auto;
       margin-right: auto; }
     .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15191,7 +15191,7 @@ footer.footer-main {
       transform: translate(-50%, -50%);
       pointer-events: none;
       width: 100%;
-      max-width: 758px;
+      max-width: 702px;
       top: 1.6rem; }
       @media (min-width: 992px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls {
@@ -15217,16 +15217,18 @@ footer.footer-main {
       flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
-      max-width: 22.75rem; }
+      max-width: 21rem; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day {
-        flex: 0 0 3.25rem;
+        flex: 0 0 3rem;
         width: 100%;
-        max-width: 3.25rem;
-        height: 3.25rem;
+        max-width: 3rem;
+        height: 3rem;
         display: flex;
         justify-content: center;
-        padding-top: .375rem;
-        padding-bottom: .25rem; }
+        -webkit-box-direction: normal !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-box-pack: center !important;
+        -webkit-box-align: center !important; }
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day:not(.calendar-item-weekday) {
           line-height: 1;
           margin-top: .125rem; }
@@ -15247,14 +15249,14 @@ footer.footer-main {
             position: relative; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
         color: rgba(33, 37, 41, 0.5);
-        font-weight: 700;
-        font-size: 0.875rem;
+        text-transform: uppercase;
+        font-size: 0.75rem;
         height: 1rem;
         padding: 0;
-        margin: 0 0 .5rem 0; }
+        margin: 0 0 .75rem 0; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a {
-        width: 3.25rem;
-        height: 3.25rem;
+        width: 3rem;
+        height: 3rem;
         display: block;
         position: absolute;
         top: 0;
@@ -15272,6 +15274,8 @@ footer.footer-main {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a > div {
           font-weight: 400;
           font-size: .6125rem; }
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.active > a:after {
+        background-color: #007bff !important; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.bookable > a {
         background-color: #28a745;
         color: #fff; }
@@ -15293,7 +15297,7 @@ footer.footer-main {
       flex-wrap: nowrap;
       margin: 0 -15px;
       overflow: hidden;
-      max-width: 788px; }
+      max-width: 732px; }
       @media (max-width: 767.98px) {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) {
           flex-wrap: wrap;
@@ -15302,8 +15306,8 @@ footer.footer-main {
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner:not(.tns-slider) > .calendar-item {
         padding: 0 15px;
         width: 100%;
-        flex: 0 0 394px;
-        max-width: 394px; }
+        flex: 0 0 366px;
+        max-width: 366px; }
 
 .is-loading > .booking-entrypoint-calendar {
   opacity: 0;
@@ -15319,7 +15323,7 @@ footer.footer-main {
   padding: 1rem;
   margin: 0.125rem 0 0;
   z-index: 1000;
-  min-width: 820px;
+  min-width: 764px;
   border-radius: 0.25rem;
   display: none; }
   .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer {

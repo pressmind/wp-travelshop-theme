@@ -14,7 +14,7 @@
     pointer-events:none;
 
     display: block;
-    border: 1px solid $body-color;
+    border: $booking-calendar-active-day-border-width solid $booking-calendar-active-day-border-color;
   }
 
   .booking-entrypoint-calendar {
@@ -181,8 +181,12 @@
               // center inner
               display: flex;
               justify-content: center;
-              padding-top: .375rem;
-              padding-bottom: .25rem;
+
+              // make text center in circle
+              -webkit-box-direction: normal !important;
+              -webkit-box-orient: vertical !important;
+              -webkit-box-pack: center !important;
+              -webkit-box-align: center !important;
 
               &:not(.calendar-item-weekday) {
                 line-height: 1;
@@ -218,12 +222,12 @@
 
             > div.calendar-item-weekday {
               color: rgba($body-color, .5);
-              font-weight: $font-weight-bold;
-              font-size: $font-size-sm;
+              text-transform: uppercase;
+              font-size: $font-size-xs;
               height: 1rem;
 
               padding: 0;
-              margin: 0 0 .5rem 0;
+              margin: 0 0 .75rem 0;
             }
 
             // -- travel date
@@ -263,7 +267,7 @@
               // -- active
               &.active > a {
                 &:after {
-                  @extend %active-day-item;
+                  background-color: $booking-calendar-active-offer-bg !important;
                 }
               }
 
