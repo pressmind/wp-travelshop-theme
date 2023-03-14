@@ -104,7 +104,7 @@ jQuery(function ($) {
                 'media_object_id': getMediaObjectID
             };
 
-            var validateOfferReturn = requestHandlerOfferValidation(validateOfferRequest);
+            requestHandlerOfferValidation(validateOfferRequest);
 
         }
 
@@ -162,7 +162,7 @@ jQuery(function ($) {
                 beforeSend: function(xhr) {
                 },
                 success: function(data) {
-                    console.log(data);
+                    console.log(data['state']);
                     return data;
                 }
             })
