@@ -107,6 +107,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 
     $filter = new CheapestPrice();
     $filter->occupancies_disable_fallback = false;
+    echo $_POST['pm-tr'];
     if ( !empty($_POST['pm-tr']) ) {
         $filter->transport_types = [$_POST['pm-tr']];
     }
