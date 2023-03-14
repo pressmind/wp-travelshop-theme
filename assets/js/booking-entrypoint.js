@@ -95,8 +95,6 @@ jQuery(function ($) {
                 getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
             }
 
-            var currentOfferID = offerID;
-
             // -- ajax request to get data if date is valid or not
             var validateOfferRequest = {
                 'pm-tr': getTransportType,
