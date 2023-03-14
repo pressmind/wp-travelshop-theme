@@ -53,7 +53,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     echo json_encode($Output);
     exit;
 } else if ($_GET['action'] == 'offer-validation') {
-    $currentOffer = isset($_POST['offer_id']) ?: null;
+    $currentOffer = isset($_POST['offer_id']) ? $_POST['offer_id'] : null;
     $Output = array('state' => 'invalid');
 
     if ( $currentOffer === null ) {
