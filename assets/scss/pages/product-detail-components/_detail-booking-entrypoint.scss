@@ -45,10 +45,9 @@
 
           .booking-filter-field--counter {
             position: absolute;
-            top: 50%;
+            top: $input-btn-padding-y;
             right: .75rem;
 
-            transform: translateY(-50%);
             color: rgba($input-color, .5);
           }
 
@@ -112,6 +111,19 @@
           &.has-error:focus,
           &.has-error:active {
             border: 2px solid $danger;
+            padding-bottom: 2rem;
+          }
+
+          .booking-filter-field--error {
+            font-size: .6125rem;
+            color: #fff;
+            background: $danger;
+            padding: 0.25rem 1rem;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
           }
         }
 
