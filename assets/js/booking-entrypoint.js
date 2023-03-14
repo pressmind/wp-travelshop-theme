@@ -5,7 +5,7 @@ jQuery(function ($) {
     let calendarSliderIndexTemp = null;
 
     // -- todo
-    // @todo: rename anchor to offer / in file dateID to offerID
+    // @todo: check if chosen date id is there, by change traveltype
 
     // -- check if booking entry is loaded, otherwise script not needed
 
@@ -48,26 +48,34 @@ jQuery(function ($) {
             e.preventDefault();
 
             // -- define some variables needed later
-            var getTransportType, getAirport, getDur, getOfferID, getMediaObject = null;
+            var getTransportType, getAirport, getDur, getOfferID, getMediaObjectID = null;
 
             // -- collect data
             getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
             getDur = $('.booking-filter-field--duration').val();
             getOfferID = $('.booking-filter-field--offer-id').val();
-            getMediaObject = $('.booking-filter-field--mediaobject').val();
+            getMediaObjectID = $('.booking-filter-field--mediaobject-id').val();
 
             // -- check transporttype for flight, if yes set airport
             if ( getTransportType === 'FLUG' ) {
                 getAirport = bookingEntryAirportField.find('input[type="radio"]:checked').val();
             }
 
-            renderBookingCalendar(getTransportType, getAirport, getDur, getOfferID, getMediaObject);
+            renderBookingCalendar(getTransportType, getAirport, getDur, getOfferID, getMediaObjectID);
 
             // -- close every dropdown
             $('.dropdown, .dropdown-menu').removeClass('show');
 
             e.stopPropagation();
         });
+
+        /**
+         *
+         * @param offerID
+         */
+        function checkOfferIsValid(offerID) {
+
+        }
 
         /**
          * initiate calendar slider
@@ -156,11 +164,11 @@ jQuery(function ($) {
          * @param airport
          * @param duration
          * @param offerID
-         * @param mediaObject
+         * @param mediaObjectID
          */
-        function refreshBookingCalendar(transportType, airport, duration, offerID, mediaObject) {
+        function refreshBookingCalendar(transportType, airport, duration, offerID, mediaObjectID) {
             // trigger render option
-            renderBookingCalendar(transportType, airport, duration, offerID, mediaObject);
+            renderBookingCalendar(transportType, airport, duration, offerID, mediaObjectID);
         }
 
         /**
@@ -182,7 +190,7 @@ jQuery(function ($) {
                     var getDur = $(this).data('duration');
                     var getTransportType = $('.booking-filter-radio--transport-type input[type="radio"]:checked').val();
                     var getOfferID = $('.booking-filter-field--offer-id').val();
-                    var getMediaObject = $('.booking-filter-field--mediaobject').val();
+                    var getMediaObjectID = $('.booking-filter-field--mediaobject-id').val();
 
                     // -- check transporttype for flight, if yes set airport
                     if ( getTransportType === 'FLUG' ) {
@@ -196,7 +204,7 @@ jQuery(function ($) {
                     $(this).addClass('active');
 
                     // -- refresh calendar
-                    refreshBookingCalendar(getTransportType, getAirport, getDur, getOfferID, getMediaObject);
+                    refreshBookingCalendar(getTransportType, getAirport, getDur, getOfferID, getMediaObjectID);
 
                 }
 
@@ -312,16 +320,16 @@ jQuery(function ($) {
          * @param airport
          * @param duration
          * @param offerID
-         * @param mediaObject
+         * @param mediaObjectID
          */
-        function renderBookingCalendar(transportType, airport, duration, offerID, mediaObject) {
+        function renderBookingCalendar(transportType, airport, duration, offerID, mediaObjectID) {
             // -- request array
             var calendarRequest = {
                 'pm-tr': transportType,
                 'airport': airport,
                 'pm-du': duration,
                 'offer_id': offerID,
-                'media_object_id': mediaObject
+                'media_object_id': mediaObjectID
             };
 
             // -- handle ajax request
