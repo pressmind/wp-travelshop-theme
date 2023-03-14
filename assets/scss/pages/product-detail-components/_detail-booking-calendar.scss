@@ -180,7 +180,9 @@
 
               // center inner
               display: flex;
+              flex-direction: column;
               justify-content: center;
+              align-items: center;
 
               // make text center in circle
               -webkit-box-direction: normal !important;
@@ -236,15 +238,22 @@
                 width: $booking-calendar-item-size;
                 height: $booking-calendar-item-size;
 
-                display: block;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                // make text center in circle
+                -webkit-box-direction: normal !important;
+                -webkit-box-orient: vertical !important;
+                -webkit-box-pack: center !important;
+                -webkit-box-align: center !important;
 
                 position: absolute;
                 top:0;
                 left:0;
                 right:0;
-
-                padding-top: .375rem;
-                padding-bottom: .25rem;
 
                 text-align: center;
                 font-weight: $font-weight-bold;
@@ -266,9 +275,7 @@
 
               // -- active
               &.active > a {
-                &:after {
-                  background-color: $booking-calendar-active-offer-bg !important;
-                }
+                background-color: $booking-calendar-active-offer-bg !important;
               }
 
               // -- states

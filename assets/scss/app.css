@@ -15224,7 +15224,9 @@ footer.footer-main {
         max-width: 3rem;
         height: 3rem;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         -webkit-box-direction: normal !important;
         -webkit-box-orient: vertical !important;
         -webkit-box-pack: center !important;
@@ -15257,13 +15259,18 @@ footer.footer-main {
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a {
         width: 3rem;
         height: 3rem;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-direction: normal !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-box-pack: center !important;
+        -webkit-box-align: center !important;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        padding-top: .375rem;
-        padding-bottom: .25rem;
         text-align: center;
         font-weight: 700;
         text-decoration: none;
@@ -15274,7 +15281,7 @@ footer.footer-main {
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a > div {
           font-weight: 400;
           font-size: .6125rem; }
-      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.active > a:after {
+      .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.active > a {
         background-color: #007bff !important; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date.bookable > a {
         background-color: #28a745;
