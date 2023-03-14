@@ -107,7 +107,6 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 
     $filter = new CheapestPrice();
     $filter->occupancies_disable_fallback = false;
-    echo $_POST['pm-tr'];
     if ( !empty($_POST['pm-tr']) ) {
         $filter->transport_types = [$_POST['pm-tr']];
     }
@@ -117,16 +116,62 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
      */
     $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 
+    /**
+     * @var \Pressmind\ORM\Object\CheapestPriceSpeed[] $date_to_cheapest_price
+     */
+    $date_to_cheapest_price = [];
+    $durations = [];
+    $transport_types = [];
+    foreach($offers as $offer){
+        if($offer->duration != $args['cheapest_price']->duration) {
+            continue;
+        }
+        // if the date has multiple prices, display only the cheapest
+        if (!empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]) &&
+            $offer->price_total < $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]->price_total
+        ) {
+            // set the cheapier price
+            $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')] = $offer;
+        } elseif (empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')])
+        ){
+            $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')] = $offer;
+        }
+    }
 
-    foreach ( $offers as $offer ) {
-        if ( $offer->transport_type == $_POST['pm-tr'] ) {
-            echo $offer->id . ' is-transport-type<br>';
+    // find the min and max date range
+    $from = new DateTime(array_key_first($date_to_cheapest_price));
+    $from->modify('first day of this month');
+    $to = new DateTime(array_key_last($date_to_cheapest_price));
+    $to->modify('first day of next month');
+
+    // display always three month, even if only one or two months have a valid travel date
+    $interval = $to->diff($from);
+    if ($interval->format('%m') < 3) {
+        $add_months = 3 - $interval->format('%m');
+        $to->modify('+' . $add_months . ' month');
+    }
+
+    $today = new DateTime();
+    // loop trough all months
+    foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
+        // fill the calendar grid
+        $days = array_merge(
+            array_fill(1, $dt->format('N') - 1, ' '),
+            range(1, $dt->format('t'))
+        );
+        if (count($days) < 35) {
+            $delta = 35 - count($days);
+            $days = array_merge($days, array_fill(1, $delta, ' '));
         }
-        if ( $offer->duration == $_POST['pm-du'] ) {
-            echo $offer->id . ' is-duration<br>';
-        }
-        if ( !in_array($offer->id, $validOffers) ) {
-            array_push($validOffers, $offer->id);
+
+        foreach ($days as $day) {
+            $current_date = $dt->format('Y-m-') . $day;
+
+            if (!empty($date_to_cheapest_price[$current_date])) {
+                if ( !in_array($date_to_cheapest_price[$current_date]->id, $validOffers) ) {
+                    array_push($validOffers, $date_to_cheapest_price[$current_date]);
+                }
+            }
         }
     }
 
