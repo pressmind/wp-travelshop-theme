@@ -106,7 +106,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $validOffers = [];
 
     if ( empty($args['cheapest_price']) || !empty($args['booking_on_request']) ) {
-        echo false;
+        $Output = array('state' => 'valid');
+        echo json_encode($Output);
         exit;
     }
 
