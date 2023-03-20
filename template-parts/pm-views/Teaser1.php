@@ -65,7 +65,7 @@ if(!empty($args['cheapest_price'])){
                     'id_object_type' => $args['id_object_type'],
                 ]);
                 ?>
-                <a href="<?php echo $args['cheapest_price']->url; ?>">
+                <a href="<?php echo $args['url']; ?>">
                     <?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/image.php', [
                         'image' => $args['image'],
@@ -82,7 +82,7 @@ if(!empty($args['cheapest_price'])){
                 }
             ?>
             <h1 class="card-title">
-                <a href="<?php echo $args['cheapest_price']->url; ?>"><?php echo $args['headline']; ?></a>
+                <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
             </h1>
             <?php
             echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
