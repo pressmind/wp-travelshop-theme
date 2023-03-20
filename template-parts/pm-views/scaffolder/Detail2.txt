@@ -47,8 +47,8 @@ $args['booking_on_request'] = $mo->touristic_base->booking_on_request; // deprec
 $args['booking_type'] = $mo->booking_type;
 $args['code'] = $mo->code;
 $args['name'] = $mo->name;
-$args['headline'] = strip_tags($moc->headline_default);
-$args['subline'] = strip_tags($moc->subline_default);
+$args['headline'] = strip_tags((string)$moc->headline_default);
+$args['subline'] = strip_tags((string)$moc->subline_default);
 $args['usps'] = $moc->usp_default;
 $args['services_included'] = $moc->leistungen_default;
 $args['intro'] = $moc->einleitung_default;
@@ -93,6 +93,23 @@ if (empty($_GET['pm-tr']) === false) {
     }
 }
 
+if (empty($_GET['pm-hpid']) === false) {
+    $id_housing_package = BuildSearch::extractHousingPackageId($_GET['pm-hpid']);
+    if(!empty($id_housing_package)){
+        $valid_params['pm-hpid'] = $id_housing_package;
+        $CheapestPriceFilter->id_housing_package = $id_housing_package;
+    }
+}
+
+if (empty($_GET['pm-da']) === false) {
+    $departure_airport = BuildSearch::extractAirport3L($_GET['pm-da']);
+    echo $departure_airport;
+    if(!empty($departure_airport)){
+        $valid_params['pm-da'] = $departure_airport;
+        $CheapestPriceFilter->transport_1_airport = [$departure_airport];
+    }
+}
+
 if($mo->id_object_type != TS_DAYTRIPS_PRODUCTS){
     //$CheapestPriceFilter->occupancies = [2];
 }
@@ -110,7 +127,7 @@ foreach ($args['media_object']->getItinerarySteps() as $step) {
     foreach ($step->geopoints as $geopoint) {
         if (!empty($geopoint->lat) && !empty($geopoint->lng)) {
             $args['map_markers'][] = [
-                'title' => strip_tags($geopoint->title),
+                'title' => strip_tags((string)$geopoint->title),
                 'lat' => $geopoint->lat,
                 'lng' => $geopoint->lng
             ];
@@ -150,8 +167,8 @@ $args['descriptions'] = [];
 $args['descriptions'][] = [
     'headline' => null,
     'items' => [[
-        'name' => !empty(strip_tags($moc->beschreibung_headline_default)) ? strip_tags($moc->beschreibung_headline_default) : 'Beschreibung',
-        'text' => preg_replace(['/<span[^>]*?class="Head_1"[^>]*>(.*?)<\/span>/', '/\<ul\>/'], ['<h5>$1</h5>', '<ul class="checked-list">'], $moc->beschreibung_text_default),
+        'name' => !empty(strip_tags((string)$moc->beschreibung_headline_default)) ? strip_tags((string)$moc->beschreibung_headline_default) : 'Beschreibung',
+        'text' => preg_replace(['/<span[^>]*?class="Head_1"[^>]*>(.*?)<\/span>/', '/\<ul\>/'], ['<h5>$1</h5>', '<ul class="checked-list">'], (string)$moc->beschreibung_text_default),
         'icons' => null,
     ]
 
@@ -185,7 +202,7 @@ if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsve
          */
         $linked_moc = $linked_mo->getDataForLanguage(TS_LANGUAGE_CODE);
         $tmp = [];
-        $tmp['name'] = strip_tags($linked_mo->name);
+        $tmp['name'] = strip_tags((string)$linked_mo->name);
         // draw hotel stars if available
         if(!empty($linked_moc->sterne_default[0]->item->name) && intval($linked_moc->sterne_default[0]->item->name) > 0){
             $tmp['icons'] = str_repeat('<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="#ffbf00" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg>',
@@ -232,7 +249,7 @@ if(!empty($moc->unterkunftsverknuepfung_default) && is_array($moc->unterkunftsve
          */
         $linked_moc = $linked_mo->getDataForLanguage(TS_LANGUAGE_CODE);
         $tmp = [];
-        $tmp['name'] = strip_tags($linked_mo->name);
+        $tmp['name'] = strip_tags((string)$linked_mo->name);
         $tmp['text'] = $linked_moc->text_default;
         $textbricks[] = $tmp;
     }
@@ -353,7 +370,7 @@ if (is_array($moc->zielgebiet_default)) {
     }
 }
 $tmp = new stdClass();
-$tmp->name = strip_tags($moc->headline_default);
+$tmp->name = strip_tags((string)$moc->headline_default);
 $tmp->url = null;
 $args['breadcrumb'][] = $tmp;
 

@@ -524,28 +524,31 @@ class BuildSearch
 
     /**
      * @param $str
+     * @param $default
      * @return int[]|bool
      */
-    public static function extractDurationRange($str){
+    public static function extractDurationRange($str, $default = false, $first_key_as_int = false){
         if(preg_match('/^([0-9]+)\-([0-9]+)$/', $str, $m) > 0){
-            return array($m[1], $m[2]);
+            $v = array($m[1], $m[2]);
+            return $first_key_as_int ? (int)$v[0] : $v;
+        }else if(preg_match('/^([0-9]+)$/', $str, $m) > 0){
+            $v = array($m[1], $m[1]);
+            return $first_key_as_int ? (int)$v[0] : $v;
         }
-        if(preg_match('/^([0-9]+)$/', $str, $m) > 0){
-            return array($m[1], $m[1]);
-        }
-        return false;
+        return $default;
     }
 
 
     /**
      * @param $str
+     * @param $default
      * @return int[]|bool
      */
-    public static function extractPriceRange($str){
+    public static function extractPriceRange($str, $default = false){
         if(preg_match('/^([0-9]+)\-([0-9]+)$/', $str, $m) > 0){
             return array($m[1], $m[2]);
         }
-        return false;
+        return $default;
     }
 
     /**
@@ -562,13 +565,38 @@ class BuildSearch
 
     /**
      * @param $str
+     * @param $default
      * @return []
      */
-    public static function extractTransportTypes($str){
+    public static function extractTransportTypes($str, $default = [], $first_key_as_string = false){
         if(preg_match('/^[a-z,A-Z\,]+$/', $str) > 0){
-            return explode(',', $str);
+            $v = explode(',', $str);
+            return $first_key_as_string ? $v[0] : $v;
         }
-        return [];
+        return $default;
+    }
+
+    /**
+     * @param $str
+     * @param $default
+     * @return mixed|void
+     */
+    public static function extractAirport3L($str, $default = null){
+        if(preg_match('/^[a-z,A-Z]{3}$/', $str) > 0){
+          return strtoupper($str);
+        }
+    }
+
+
+        /**
+     * @param $str
+     * @return null
+     */
+    public static function extractHousingPackageId($str){
+        if(preg_match('/^[0-9a-zA-Z\-\+]+$/', $str) > 0){
+            return $str;
+        }
+        return null;
     }
 
     /**

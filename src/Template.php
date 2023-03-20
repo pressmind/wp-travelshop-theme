@@ -24,7 +24,7 @@ class Template
      * @return string
      */
     public static function cutTextAfter($str, $length, $suffix = '...'){
-        $str = trim(strip_tags($str));
+        $str = trim(strip_tags((string)$str));
         if(strlen($str) > $length){
             $suffix = '...';
         }
@@ -37,10 +37,10 @@ class Template
      * @param array $modified_parameters e.g. ['c' => 7]
      * @return string
      */
-    public static function modifyUrl($url, $modified_parameters = []){
+    public static function modifyUrl($url, $modified_parameters = [], $reset_parameters = false){
         $queryParams = [];
         $r = parse_url($url);
-        if(!empty($r['query'])){
+        if(!empty($r['query']) && !$reset_parameters){
             parse_str($r['query'], $queryParams);
         }
         $r['query'] = http_build_query(array_filter(array_merge($queryParams, $modified_parameters)));
