@@ -3,9 +3,12 @@ namespace Pressmind\Travelshop;
 
 class WPFunctions{
 
-    public static function throw404($code = 404){
+    public static function throw404($code = 404, $description = ''){
         global $wp_query;
         status_header( $code );
+        if(!empty($description)){
+            header('X-TS-info: '.$description);
+        }
         $wp_query->set_404();
         nocache_headers();
         include( get_query_template( '404' ) );

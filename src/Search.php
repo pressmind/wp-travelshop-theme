@@ -47,7 +47,7 @@ class Search
         }
         $duration_filter_ms = null;
         $duration_search_ms = null;
-        if (empty($request['pm-ho']) === true) {
+        if (empty($request['pm-ho']) === true && !empty($occupancy)) {
             // if the price duration slider is active, we have to set the housing occupancy search
             // (to display the correct search result with the correct cheapest price inside)
             $request['pm-ho'] = $occupancy;
@@ -64,7 +64,9 @@ class Search
             if(defined('TS_SEARCH_GROUP_KEYS') && !empty(TS_SEARCH_GROUP_KEYS)){
                 $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Group(TS_SEARCH_GROUP_KEYS);
             }
-            $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
+            if(!empty($occupancy)){
+                $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
+            }
             $FilterCondition = array_merge($FilterCondition, $custom_conditions);
             $filter = new \Pressmind\Search\MongoDB($FilterCondition, ['price_total' => 'asc'], TS_LANGUAGE_CODE);
             $start_time = microtime(true);

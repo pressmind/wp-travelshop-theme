@@ -155,9 +155,9 @@ function ts_detail_hook($data)
         if(!empty($_GET['preview'])){
             $preview_date = new DateTime();
         }
-        $r = Search::getResult($q,2,10,false,false, null, null, null, $preview_date, [], [30,60]);
+        $r = Search::getResult($q, null, 10, false, false, null, null, null, $preview_date, [], [30,60]);
         if (empty($r['total_result'])) {
-            WPFunctions::throw404(410); // 410 = page/product has gone
+            WPFunctions::throw404(410, 'object not found, check visibility'); // 410 = page/product has gone
         }
         // Preload mediaobjects
         $id_media_objects = [];
@@ -182,7 +182,7 @@ function ts_detail_hook($data)
             $mediaObjects[] = $mediaObject;
         }
         if (empty($id_media_objects) === true) {
-            WPFunctions::throw404(410);
+            WPFunctions::throw404(410, 'requested objects ('.implode(',', $id_media_objects).') are not valid, visibility must be 30 or 60');
         }
         // Add custom headers, for better debugging
         header('X-TS-id-pressmind: ' . implode(',', $id_media_objects));
@@ -223,6 +223,7 @@ function ts_detail_hook($data)
         }
         // index or not?
         if($is_hidden){
+            header('X-TS-hidden: true');
             add_action('wp_head', function () use ($canonical) {
                 echo '<meta name="robots" content="noindex, nofollow">';
             });
@@ -322,8 +323,8 @@ function ts_calendar_hook($data)
          * if you have multiple media object types, you have to switch this for each object type if the properties have not the same names
          */
         //$moc = $mediaObjects[0]->getDataForLanguage(TS_LANGUAGE_CODE);
-        //$the_title = strip_tags($moc->title_default);
-        //$meta_description = strip_tags($moc->meta_description_default);
+        //$the_title = strip_tags((string)$moc->title_default);
+        //$meta_description = strip_tags((string)$moc->meta_description_default);
 
 
         add_filter('pre_get_document_title', function ($title_parts) use ($the_title) {
