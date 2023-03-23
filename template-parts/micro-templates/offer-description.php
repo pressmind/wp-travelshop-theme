@@ -34,7 +34,7 @@ echo implode(', ', array_filter($offer_description));
         'transport_type' => $args['cheapest_price']->transport_type,
     ]);
     //if($args['cheapest_price']->transport_type == 'FLUG'){
-    if(strpos($args['cheapest_price']->transport_type, 'FLU') === 0){
+    if(!empty($args['cheapest_price']->transport_type) && strpos($args['cheapest_price']->transport_type, 'FLU') === 0){
         if(trim($args['cheapest_price']->transport_1_description) == ($args['cheapest_price']->transport_2_description)){
             echo '<br>Flug ab '.$args['cheapest_price']->transport_1_description;
         }else{
