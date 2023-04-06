@@ -78,7 +78,8 @@ class RedisPageCache
         'hsa_kw',
         'hsa_tgt',
         'hsa_ver',
-        '_branch_match_id'
+        '_branch_match_id',
+        'awc'
     ];
 
     private static $clean_get = [];
