@@ -202,6 +202,7 @@ if(empty($result->calendar)){
                             <li class="weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></li>
                             <?php
                         }
+                        for ($d = 2 ; $d < $month->days[0]->date->format('w') + 1; $d++){ echo '<li></li>'; }
                         foreach ($month->days as $day) {
                             if (!empty($day->cheapest_price)) {
                                 ?>
