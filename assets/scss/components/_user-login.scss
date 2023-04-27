@@ -1,0 +1,134 @@
+.user-login {
+  position: relative;
+  small {
+    font-size: 14px;
+  }
+  .login-link {
+    color: #607d8b;
+    display: flex;
+    align-items: center;
+    .label {
+      color: #2c3e50;
+      display: none;
+      margin-left: 0 !important;
+      font-size: .8rem;
+    }
+  }
+  .loginstatus {
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    outline: 1px solid blue;
+    background: blue;
+    position: absolute;
+    left: .75rem;
+    bottom: 0rem;
+    border-radius: 50%;
+    @include media-breakpoint-up(lg) {
+      left: 1rem;
+    }
+  }
+  .header-login {
+    color: rgb(51,51,51);
+    margin-right: -.25rem;
+    display: block;
+  }
+  .userdata {
+    display: none;
+    flex-direction: column;
+    line-height: 1.2;
+    margin-left: 0;
+    position: absolute;
+    top: 140%;
+    right: 0;
+    padding: .4rem .75rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,.1), 0 0 0.5rem rgba(0,0,0,.05);
+    border-radius: 5px;
+    z-index: 500;
+    background: #fff;
+    &.active {
+      display: flex;
+      border-top: 3px solid #84cc16;
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        z-index: 1;
+        border-style: solid;
+        border-width: 15px 0 0 12px;
+        border-color: transparent transparent transparent #84cc16;
+        top: -15px;
+        right: 3px;
+        margin-left: -10px;
+      }
+    }
+    .userdata-label {
+      font-size: 16px;
+      margin-bottom: 1px;
+    }
+    .login-menu {
+      position: relative;
+      overflow: hidden;
+      bottom: 0;
+      flex-direction: column;
+      line-height: 1.5;
+      display: flex;
+      .userdata-email {
+        white-space: nowrap;
+      }
+    }
+  }
+  .lds-dual-ring {
+    position: relative;
+    pointer-events: none;
+    display: none;
+    width: 26px;
+    height: 26px;
+    transform: translateY(.1rem);
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-color: #06f transparent #06f transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  &.logged-out {
+    .login-link {
+      .label {
+        display: block;
+      }
+    }
+    .loginstatus {
+      background-color: #ef4444;
+      outline-color: transparent;
+    }
+  }
+  &.logged-in {
+    .login-link {
+      color: #06f;
+      .label {
+        display: none;
+      }
+    }
+    .loginstatus {
+      background-color: #84cc16;
+      outline-color: #84cc16;
+    }
+  }
+}

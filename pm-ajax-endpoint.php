@@ -10,9 +10,9 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(0);
+ini_set('display_errors', -1);
+ini_set('display_startup_errors', -1);
+error_reporting(-1);
 
 define('DOING_AJAX', true);
 require_once 'vendor/autoload.php';
@@ -111,6 +111,22 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->mongo = $result['mongodb'];
     $Output->ids = $ids;
     $Output->html['wishlist-result'] = ob_get_contents();
+    ob_end_clean();
+    $Output->error = false;
+    $result = json_encode($Output);
+    echo $result;
+    exit;
+} else if ($_GET['action'] == 'visitedList'){
+    /**
+     * @var array $result
+     * @var array $ids
+     */
+    ob_start();
+    require 'template-parts/pm-search/wishlist-result.php';
+    $Output->count = $result['total_result'];
+    $Output->mongo = $result['mongodb'];
+    $Output->ids = $ids;
+    $Output->html['visited-result'] = ob_get_contents();
     ob_end_clean();
     $Output->error = false;
     $result = json_encode($Output);

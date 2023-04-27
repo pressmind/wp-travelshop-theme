@@ -20,7 +20,9 @@ jQuery(function ($) {
 
         this.oneByOneRequest = function (){
             for (let i = 0; i < this.requests.length; i++) {
-                this.requests[i].abort();
+                if(i > 1) {
+                    this.requests[i].abort();
+                }
             }
         }
 
@@ -132,6 +134,19 @@ jQuery(function ($) {
             }
 
             return obj;
+        }
+
+        this.replaceUrlParam = function(url, paramName, paramValue)
+        {
+            if (paramValue == null) {
+                paramValue = '';
+            }
+            var pattern = new RegExp('\\b('+paramName+'=).*?(&|#|$)');
+            if (url.search(pattern)>=0) {
+                return url.replace(pattern,'$1' + paramValue + '$2');
+            }
+            url = url.replace(/[?#]$/,'');
+            return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue;
         }
 
         this.resultHandlerWishlist = function (data) {
@@ -260,23 +275,6 @@ jQuery(function ($) {
 
                 observer.observe(document.getElementById('search-result'), {attributes: true, childList: true});
             }
-
-            $('body').on('click', '.remove-from-wishlist', function(e) {
-                let wishlist = JSON.parse(window.localStorage.getItem('wishlist'));
-                if (!jQuery.isEmptyObject(wishlist)) {
-                    if (wishlist.some(wi => wi['pm-id'] == $(e.target).data('pm-id'))) {
-                        _this.wishlistRemoveElement(wishlist, $(e.target).data('pm-id'));
-                        // $('.wishlist-heart').removeClass('active');
-                        $('.add-to-wishlist').each(function (key, item) {
-                            if ($(item).data('pm-id') == $(e.target).data('pm-id')) {
-                                $(item).removeClass('active');
-                            }
-                        });
-                    }
-                }
-                window.localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                _this.renderWishlist();
-            });
             if ($('.add-to-wishlist').length > 0) {
                 let wishlist = JSON.parse(window.localStorage.getItem('wishlist'));
                 $('body').on('click', '.add-to-wishlist', function (e) {
@@ -302,6 +300,28 @@ jQuery(function ($) {
         }
 
         this.wishListInit = function () {
+            $('.dropdown-menu-wishlist').click((e) => {
+                if(!$(e.target).is('a')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                if($(e.target).hasClass('remove-from-wishlist')) {
+                    let wishlist = JSON.parse(window.localStorage.getItem('wishlist'));
+                    if (!jQuery.isEmptyObject(wishlist)) {
+                        if (wishlist.some(wi => wi['pm-id'] == $(e.target).data('pm-id'))) {
+                            _this.wishlistRemoveElement(wishlist, $(e.target).data('pm-id'));
+                            // $('.wishlist-heart').removeClass('active');
+                            $('.add-to-wishlist').each(function (key, item) {
+                                if ($(item).data('pm-id') == $(e.target).data('pm-id')) {
+                                    $(item).removeClass('active');
+                                }
+                            });
+                        }
+                    }
+                    window.localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    _this.renderWishlist();
+                }
+            });
             let wishlist = JSON.parse(window.localStorage.getItem('wishlist'));
             if (!jQuery.isEmptyObject(wishlist)) {
                 $('.add-to-wishlist').each(function (key, item) {
@@ -310,6 +330,27 @@ jQuery(function ($) {
                     }
                 });
             }
+            function setTabVisited() {
+                $('.dropdown-menu-visited-toggle').addClass('active');
+                $('.dropdown-menu-wishlist-toggle').removeClass('active');
+                $('.wishlist-items').removeClass('active');
+                $('.visited-items').addClass('active');
+                window.localStorage.setItem('currentFavTab', JSON.stringify('visited'));
+            }
+            function setTabWishlist() {
+                $('.dropdown-menu-wishlist-toggle').addClass('active');
+                $('.dropdown-menu-visited-toggle').removeClass('active');
+                $('.wishlist-items').addClass('active');
+                $('.visited-items').removeClass('active');
+                window.localStorage.setItem('currentFavTab', JSON.stringify('wishlist'));
+            }
+            let currentFavTab = JSON.parse(window.localStorage.getItem('currentFavTab'));
+            if (!jQuery.isEmptyObject(currentFavTab)) {
+                if(currentFavTab == 'wishlist') { setTabWishlist(); }
+                if(currentFavTab == 'visited') { setTabVisited(); }
+            }
+            $('.dropdown-menu-wishlist-toggle').click(() => setTabWishlist());
+            $('.dropdown-menu-visited-toggle').click(() => setTabVisited());
         }
 
         this.wishlistRemoveElement = function (array, elem) {
@@ -319,6 +360,58 @@ jQuery(function ($) {
                     array.splice(index, 1);
                 }
             });
+        }
+
+        this.resultHandlerVisitedList = function (data) {
+
+            // set the visitedList
+            for (var key in data.html) {
+                $('#' + key).html(data.html[key]);
+            }
+
+            // sync results to localstorage (if object are deleted from server)
+            let visitedList = JSON.parse(window.localStorage.getItem('visitedList'));
+            if (!jQuery.isEmptyObject(visitedList)) {
+                $(visitedList).each(function (key, item) {
+                    var is_valid = false;
+                    $(data.ids).each(function (key, id) {
+                        if (item.id == id) {
+                            is_valid = true;
+                        }
+                    });
+                    if (!is_valid) {
+                        console.log('not valid remove' + item.id);
+                        visitedList.some(function (it) {
+                            if (it.id == item.id) {
+                                var index = visitedList.indexOf(it);
+                                visitedList.splice(index, 1);
+                            }
+                        });
+                    }
+                });
+                window.localStorage.setItem('visitedList', JSON.stringify(visitedList));
+            }
+        }
+
+        this.renderVisitedList = function() {
+
+            let visitedList = JSON.parse(window.localStorage.getItem('visitedList'));
+            if (visitedList !== null && visitedList.length !== 0) {
+                let query_string = 'action=visitedList&pm-o=list&view=Teaser7';
+                let idString = '&pm-id=';
+                let timeString = '&pm-time=';
+                visitedList.forEach(function (item, key) {
+                    if (key !== visitedList.length - 1) {
+                        idString += item.id + ',';
+                        timeString += item.timestamp + ',';
+                    } else {
+                        idString += item.id;
+                        timeString += item.timestamp;
+                    }
+                });
+                query_string = query_string + idString + timeString;
+                _this.call(query_string, null, null, _this.resultHandlerVisitedList);
+            }
         }
 
         this.pagination = function () {
@@ -1272,7 +1365,87 @@ jQuery(function ($) {
             }
         }
 
+        // ====================================
+        // USER/AGENCY LOGIN FUNCTIONALITY START
+        // ====================================
+        this.initLoginFunctionality = function() {
+            if($('.user-login').length) {
+                const params = _this.getAllUrlParams();
+                const redirectURL = _this.replaceUrlParam($('.login-link').attr('href'), 'redirect', btoa(location.protocol + '//' + location.host + location.pathname));
+                $('.login-link').attr('href', redirectURL);
+
+                $('.user-login .lds-dual-ring').show();
+                $('.user-login .icon').hide();
+                $('.loginstatus').hide();
+
+                function renderUserData(user) {
+                    if (user != null) {
+                        $('.login-link').attr('href', '#profil');
+                        $('.user-login .userdata .userdata-email').text(user.email_address);
+                        $('.user-login .label').hide();
+                        $('.login-link').unbind().click((e) => {
+                            e.preventDefault();
+                            $('.userdata').toggleClass('active')
+                        });
+                        $('.user-login').addClass('logged-in');
+                        $('body').addClass('logged-in');
+                        $('.user-login').removeClass('logged-out');
+                        $('body').removeClass('logged-out');
+                        $('.loginstatus').show();
+                        $('.user-login .lds-dual-ring').hide();
+                        $('.user-login .icon').show();
+                    }
+                }
+
+                $.ajax({
+                    url: IBEURL + '/api/external/getUserData',
+                    method: 'GET',
+                    xhrFields: {withCredentials: true},
+                    crossDomain: true
+                }).done(function (data) {
+                    if (data.success) {
+                        renderUserData(data.data.user);
+                    } else {
+                        $('.loginstatus').show();
+                        $('.user-login .lds-dual-ring').hide();
+                        $('.user-login .icon').show();
+                    }
+                });
+
+                $('.logout-link').unbind().click((e) => {
+                    $.ajax({
+                        url: IBEURL + '/api/external/logout',
+                        method: 'GET',
+                        xhrFields: {withCredentials: true},
+                        crossDomain: true
+                    }).done(function (data) {
+                        if (data.success) {
+                            $('.login-link').unbind().attr('href', redirectURL);
+                            if (window.innerWidth >= 1200) {
+                                $('.user-login .label').show();
+                            }
+                            $('.user-login .userdata').removeClass('active');
+                            $('.user-login').removeClass('logged-in');
+                            $('body').removeClass('logged-in');
+                            $('.user-login').addClass('logged-out');
+                            $('body').addClass('logged-out');
+                            $('.user-login').removeClass('pushTopXL');
+                            $('.wishlist').removeClass('pushTopXL');
+                            $('.user-login .lds-dual-ring').hide();
+                            $('.user-login .icon').show();
+                            $('.loginstatus').show();
+                        }
+                    });
+                });
+            }
+        }
+        // ====================================
+        // USER/AGENCY LOGIN FUNCTIONALITY END
+        // ====================================
+
         this.init = function(){
+            _this.initLoginFunctionality();
+            _this.renderVisitedList();
             _this.renderWishlist();
             _this.wishlistEventListeners();
             _this.wishListInit();
