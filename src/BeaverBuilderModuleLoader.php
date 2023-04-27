@@ -58,6 +58,7 @@ class BeaverBuilderModuleLoader{
         require_once BB_MODULE_TS_DIR . 'modules/team/team.php';
         require_once BB_MODULE_TS_DIR . 'modules/category-header-jumbotron/category-header-jumbotron.php';
         require_once BB_MODULE_TS_DIR . 'modules/faq-schema-accordion/faq-schema-accordion.php';
+        require_once BB_MODULE_TS_DIR . 'modules/transportation-request/transportation-request.php';
     }
 
     /**
