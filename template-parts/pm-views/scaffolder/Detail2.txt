@@ -404,17 +404,7 @@ $args['breadcrumb'][] = $tmp;
 // }
 ?>
 <script>
-    let visitedList = JSON.parse(window.localStorage.getItem('visitedList'));
-    if (jQuery.isEmptyObject(visitedList)) {
-        visitedList = [];
-    }
-    visitedList = visitedList.filter((a) => a.id != <?php echo $args['id_media_object']; ?>);
-    visitedList.unshift({
-        id: <?php echo $args['id_media_object']; ?>,
-        timestamp: + new Date()
-    });
-    visitedList = visitedList.slice(0, 10);
-    window.localStorage.setItem('visitedList', JSON.stringify(visitedList));
+    let currentMOID = <?php echo $args['id_media_object']; ?>;
 </script>
 <div class="content-main">
     <article class="detail-page-v2-container">
