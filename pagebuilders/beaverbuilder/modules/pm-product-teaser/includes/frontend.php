@@ -5,6 +5,7 @@
  */
 
 $args = [];
+$args['showVisited'] = $settings->show_visited;
 $args['headline'] = $settings->headline;
 $args['text'] = $settings->text;
 $args['link_top'] = filter_var($settings->link_top , FILTER_VALIDATE_BOOLEAN);

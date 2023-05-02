@@ -32,6 +32,20 @@ FLBuilder::register_module('TSPMProductTeaser', array(
             'common'    => array(
                 'title'  => __( 'Common', 'fl-builder' ),
                 'fields' => array(
+                    'show_visited'  => array(
+                        'type' => 'select',
+                        'label' => __('Show Visited Pages', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __( 'Yes', 'fl-builder' ),
+                            'false'      => __( 'No', 'fl-builder' )
+                        ),
+                        'toggle'        => array(
+                            'false'      => array(
+                                'tabs'        => array( 'content2'),
+                            ),
+                        ),
+                    ),
                     'headline'     => array(
                         'type'    => 'text',
                         'label'   => __( 'Headline', 'fl-builder' ),
@@ -39,7 +53,6 @@ FLBuilder::register_module('TSPMProductTeaser', array(
                         'help' => 'Tip: use the shortcode [TOTAL_RESULT] in this field to display the amount of found products'
 
                     ),
-
                     'text' => array(
                         'type'    => 'editor',
                         'media_buttons' => false,
