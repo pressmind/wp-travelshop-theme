@@ -171,7 +171,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     !empty($_GET['pm-ho']) ? $filters->occupancies = [$_GET['pm-ho']] : '';
     $args['booking_offers'] = $args['media_object']->getCheapestPrices(!empty($filters) ? $filters : null, ['date_departure' => 'ASC', 'price_total' => 'ASC'], $limit);
     $args['hide_month'] = false;
-
+    $args['available_options'] = $args['media_object']->getAllAvailableOptions();
     if(isset($_GET['pm-oid']) && $_GET['pm-oid'] != 'undefined') {
         $filterNew = new stdClass();
         $filterNew->id_option = null;
