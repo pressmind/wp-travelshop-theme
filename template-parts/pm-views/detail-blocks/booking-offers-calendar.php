@@ -205,12 +205,20 @@ if(empty($result->calendar)){
                         for ($d = 2 ; $d < $month->days[0]->date->format('w') + 1; $d++){ echo '<li></li>'; }
                         foreach ($month->days as $day) {
                             if (!empty($day->cheapest_price)) {
+                                $info = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $duration]);
+                                $info .= ' / ';
+                                $info .= Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', ['transport_type' => $transport_type]);
+                                $class = '';
+                                if($day->cheapest_price->guaranteed){
+                                    $class = ' date-is-guaranteed';
+                                    $info .= "\ngarantierte Durchführung";
+                                }
+                                if($day->cheapest_price->saved){
+                                    $class = ' date-is-saved';
+                                    $info .= "\ngesicherte Durchführung";
+                                }
                                 ?>
-                                <li class="travel-date position-relative" title="<?php
-                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/duration.php', ['duration' => $duration]);
-                                echo ' / ';
-                                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', ['transport_type' => $transport_type]);
-                                ?> <br> zur Buchung" data-html="true" data-toggle="tooltip">
+                                <li class="travel-date position-relative<?php echo $class;?>" title="<?php echo $info; ?> <br> zur Buchung" data-html="true" data-toggle="tooltip">
                                     <a data-duration="<?php echo $duration; ?>"
                                        data-anchor="<?php echo $day->cheapest_price->id; ?>"
                                        data-modal="true" data-modal-id="<?php echo $args['id_modal_price_box']; ?>"

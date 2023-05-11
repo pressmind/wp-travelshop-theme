@@ -24,6 +24,9 @@ use Pressmind\Travelshop\Template;
                         <?php
                         $current_month = null;
                         foreach ($args['booking_offers'] as $key => $offer) {
+                            /**
+                             * @var \Pressmind\ORM\Object\CheapestPriceSpeed $offer
+                             */
                             if($current_month != $offer->date_departure->format('Y-m')){
                                 $current_month = $offer->date_departure->format('Y-m');
                                 $checked = $args['cheapest_price_id'] == $offer->getId(); ?>
@@ -72,7 +75,9 @@ use Pressmind\Travelshop\Template;
                                     <span class="date">
                                         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                                             'date_departure' => $offer->date_departure,
-                                            'date_arrival' => $offer->date_arrival
+                                            'date_arrival' => $offer->date_arrival,
+                                            'saved' => $offer->saved,
+                                            'guaranteed' => $offer->guaranteed,
                                         ]);?>
                                     </span>
                                 </div>

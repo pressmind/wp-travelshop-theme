@@ -12,6 +12,8 @@ use Pressmind\Travelshop\Template;
  * $args['duration']
  * $args['price_total']
  * $args['price_regular_before_discount']
+ * $args['guaranteed']
+ * $args['saved']
  * </code>
  * @var array $args
  */
@@ -50,4 +52,12 @@ if(!empty($args['duration'])){
 
 if(!empty($args['price_total'])){
     echo ' ab '.PriceHandler::format($args['price_total']);
+}
+
+if(isset($args['guaranteed']) && $args['guaranteed'] === true){
+    echo '<span class="badge badge-primary" title="garantierte Durchführung. Der Veranstalter garantiert die Durchführung dieser Reise.">garantierte Durchführung</span>';
+}
+
+if(isset($args['saved']) && $args['saved'] === true) {
+    echo '<span class="badge badge-primary" title="gesicherte Durchführung, die Mindestteilnehmerzahl ist bei dieser Reise bereits erreicht.">gesicherte Durchführung</span>';
 }

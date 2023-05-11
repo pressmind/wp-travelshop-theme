@@ -28,7 +28,10 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <span>
                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                         'date_departure' => $args['cheapest_price']->date_departure,
-                        'date_arrival' => $args['cheapest_price']->date_arrival
+                        'date_arrival' => $args['cheapest_price']->date_arrival,
+                        'saved' => $args['cheapest_price']->saved,
+                        'guaranteed' => $args['cheapest_price']->guaranteed,
+
                     ]);?>
                 </span>
             </a>

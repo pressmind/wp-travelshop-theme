@@ -112,7 +112,9 @@ if (!empty($offers)) { ?>
                                     <span class="date">
                                         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                                                 'date_departure' => $offer->date_departure,
-                                                'date_arrival' => $offer->date_arrival
+                                                'date_arrival' => $offer->date_arrival,
+                                                'saved' => $offer->saved,
+                                                'guaranteed' => $offer->guaranteed,
                                         ]);?>
                                     </span>
                                 </div>
