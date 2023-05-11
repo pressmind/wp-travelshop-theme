@@ -9,6 +9,7 @@ use Pressmind\Travelshop\Template;
  * $args['media_object']
  * $args['url']
  * $args['booking_offers']
+ * $args['available_options']
  * </code>
  * @var array $args
  */
@@ -81,6 +82,9 @@ use Pressmind\Travelshop\Template;
                                     </div>
                                     <div>
                                         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/offer-description.php', ['cheapest_price' => $offer]);?>
+                                    </div>
+                                    <div>
+                                        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/offer-extras.php', ['cheapest_price' => $offer, 'available_options' => $args['available_options']]);?>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-2 price-container">
