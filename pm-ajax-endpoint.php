@@ -10,8 +10,7 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
-ini_set('display_errors', -1);
-ini_set('display_startup_errors', -1);
+ini_set('display_errors', 'On');
 error_reporting(-1);
 
 define('DOING_AJAX', true);
@@ -26,6 +25,7 @@ require_once 'src/RouteHelper.php';
 require_once 'src/PriceHandler.php';
 require_once 'src/Template.php';
 require_once 'src/IB3Tools.php';
+require_once 'src/GeoIP.php';
 header('Content-type: application/json');
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
@@ -180,19 +180,12 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 } else if($_GET['action'] == 'bookingoffers') {
     $args['media_object'] = new \Pressmind\ORM\Object\MediaObject($_GET['pm-id']);
     $args['url'] = SITE_URL.$args['media_object']->getPrettyUrl();
-    $filters = new stdClass();
-    $filters->id_option = null;
-    $filters->id_date = null;
-    $filters->id_booking_package = null;
-    $filters->id_housing_package = null;
+    $filters = new CheapestPrice();
     if(!empty($_GET['pm-dr'])) {
         $dateRange = BuildSearch::extractDaterange($_GET['pm-dr']);
         list($from, $to) = $dateRange;
         $filters->date_from = $from;
         $filters->date_to = $to;
-    } else {
-        $filters->date_from = null;
-        $filters->date_to = null;
     }
 
     !empty($_GET['pm-tt']) && $_GET['pm-tt'] != 'false' ? $filters->transport_types = explode(',', strtoupper($_GET['pm-tt'])) : $filters->transport_types = null;
@@ -212,14 +205,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $args['hide_month'] = false;
     $args['available_options'] = $args['media_object']->getAllAvailableOptions();
     if(isset($_GET['pm-oid']) && $_GET['pm-oid'] != 'undefined') {
-        $filterNew = new stdClass();
-        $filterNew->id_option = null;
-        $filterNew->id_date = null;
-        $filterNew->id_booking_package = null;
-        $filterNew->id_housing_package = null;
-        $filterNew->date_from = null;
-        $filterNew->date_to = null;
-        $filterNew->transport_types = null;
+        $filterNew = new CheapestPrice();
         $filterNew->id = $_GET['pm-oid'];
         $selectedDate = $args['media_object']->getCheapestPrices(!empty($filterNew) ? $filterNew : null, null, [0,1]);
         if(!empty($selectedDate)) {
@@ -237,7 +223,6 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
 
     $Output->total = count($args['booking_offers']);
-
     if(!empty($_GET['type']) && $_GET['type'] == 'infinity') {
         ob_start();
         require 'template-parts/pm-views/detail-blocks/booking-offers-ajax-infinityload.php';
@@ -354,6 +339,10 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $result = json_encode($r);
     echo $result;
     exit;
+}else if ($_GET['action'] == 'getClientLocation') {
+    $location = \Pressmind\Travelshop\GeoIP::getLocation();
+    $result = json_encode($location);
+    echo $result;
     exit;
 }else{
     header("HTTP/1.0 400 Bad Request");
