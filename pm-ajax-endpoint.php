@@ -10,9 +10,9 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(0);
+ini_set('display_errors', -1);
+ini_set('display_startup_errors', -1);
+error_reporting(-1);
 
 define('DOING_AJAX', true);
 require_once 'vendor/autoload.php';
@@ -111,6 +111,45 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->mongo = $result['mongodb'];
     $Output->ids = $ids;
     $Output->html['wishlist-result'] = ob_get_contents();
+    ob_end_clean();
+    $Output->error = false;
+    $result = json_encode($Output);
+    echo $result;
+    exit;
+} else if ($_GET['action'] == 'visitedList'){
+    /**
+     * @var array $result
+     * @var array $ids
+     */
+    ob_start();
+    require 'template-parts/pm-search/wishlist-result.php';
+    $Output->count = $result['total_result'];
+    $Output->mongo = $result['mongodb'];
+    $Output->ids = $ids;
+    $Output->html['visited-result'] = ob_get_contents();
+    ob_end_clean();
+    $Output->error = false;
+    $result = json_encode($Output);
+    echo $result;
+    exit;
+} else if($_GET['action'] == 'visitedItems') {
+    $result = Search::getResult($_GET,2, 10, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
+    $view = 'Teaser1';
+    if (!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false) {
+        $view = $_GET['view'];
+    }
+    $ids = [];
+    if(isset($_GET['pm-time'])) {
+        $timestamps = explode(',', $_GET['pm-time']);
+    }
+    ob_start();
+    foreach ($result['items'] as $key => $item) {
+        $ids[] = $item['id_media_object'];
+        $item['class'] = 'col-12 col-md-6 col-lg-4';
+        $item['timestamp'] = $timestamps[$key] ?? null;
+        echo Template::render(__DIR__.'/template-parts/pm-views/'.$view.'.php', $item);
+    }
+    $Output->html = ob_get_contents();
     ob_end_clean();
     $Output->error = false;
     $result = json_encode($Output);

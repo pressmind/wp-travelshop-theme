@@ -334,10 +334,10 @@ $args['downloads'] = [];
 if(is_array($moc->upload_default)){
     foreach($moc->upload_default as $file){
         $args['downloads'][] = [
-                'description' => $file->description,
-                'url' => $file->getUri(),
-                'file_name' => $file->file_name,
-                'size' => $file->file_size,
+            'description' => $file->description,
+            'url' => $file->getUri(),
+            'file_name' => $file->file_name,
+            'size' => $file->file_size,
         ];
     }
 }
@@ -402,12 +402,10 @@ $args['breadcrumb'][] = $tmp;
 //     }
 //
 // }
-
-
-
-
-
 ?>
+<script>
+    let currentMOID = <?php echo $args['id_media_object']; ?>;
+</script>
 <div class="content-main">
     <article class="detail-page-v2-container">
         <section class="container">

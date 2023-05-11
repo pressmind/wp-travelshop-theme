@@ -121,6 +121,19 @@ require_once 'functions/after_wp_save.php';
 // Cache
 require_once 'src/RedisPageCache.php';
 
+// Sendmail
+add_action('wp_ajax_nopriv_sendrequest', 'sendrequest');
+add_action('wp_ajax_sendrequest', 'sendrequest');
+function sendrequest() {
+    $to     = $_POST['to'];
+    $title = $_POST['title'];
+    $text = $_POST['text'];
+
+    wp_mail($to, $title, $text);
+    return 'email sent';
+    die();
+}
+
 class PMTravelShop{
 
     public $Shortcodes;

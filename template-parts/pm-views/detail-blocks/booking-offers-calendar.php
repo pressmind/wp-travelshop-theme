@@ -214,7 +214,7 @@ if(empty($result->calendar)){
                                     <a data-duration="<?php echo $duration; ?>"
                                        data-anchor="<?php echo $day->cheapest_price->id; ?>"
                                        data-modal="true" data-modal-id="<?php echo $args['id_modal_price_box']; ?>"
-                                       href="<?php echo IB3Tools::get_bookinglink($day->cheapest_price, $args['url'], null, $args['booking_type'], true);?>"
+                                       href="<?php echo IB3Tools::get_bookinglink($day->cheapest_price, $args['url'], null, $args['booking_type'] ?? null, true);?>"
                                        class="stretched-link"><?php echo $day->date->format('d'); ?>
                                         <div>ab&nbsp;<?php echo PriceHandler::format($day->cheapest_price->price_total); ?></div>
                                     </a>

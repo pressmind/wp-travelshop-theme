@@ -35,6 +35,10 @@ global $PMTravelShop;
     wp_head();
     ?>
     <script>
+        var IBEURL = '<?php echo TS_IBE3_BASE_URL; ?>';
+        var SITEURL = '<?php echo SITE_URL; ?>';
+    </script>
+    <script>
         var ts_ajax_check_availibility_endpoint = '<?php echo defined('TS_IBE3_CHECK_AVAILABILITY_URL') && !empty(TS_IBE3_CHECK_AVAILABILITY_URL) ? TS_IBE3_CHECK_AVAILABILITY_URL : '/wp-content/themes/travelshop/pm-ajax-endpoint.php'; ?>';
         var ts_pwa = <?php echo defined('TS_PWA') && TS_PWA === true ? 'true' : 'false'; ?>;
         <?php if(defined('TS_PARTNERLINK_PARAMETER_NAME')) {
@@ -58,7 +62,7 @@ global $PMTravelShop;
         <!-- End Google Tag Manager -->
     <?php } ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('logged-out'); ?>>
 <?php if(defined('TS_GTM_CODE')) { ?>
     <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo TS_GTM_CODE; ?>"
@@ -137,6 +141,29 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </svg>
                 </a>
             </div>
+            <div class="col-auto align-self-center header-action-col user-login logged-out p-r-0" style="margin-bottom: 1px;">
+                <div class="header-login align-items-center">
+                    <a class="login-link" href="<?php echo TS_IBE3_BASE_URL; ?>/login?redirect=<?php echo base64_encode(SITE_URL . '/'); ?>">
+                        <div class="icon icon-xxl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                            </svg>
+                        </div>
+                        <div class="lds-dual-ring"></div>
+                        <div class="loginstatus"></div>
+                        <span class="label ml-2">Login</span>
+                    </a>
+                    <span class="userdata">
+                            <span class="userdata-label">Eingeloggt</span>
+                            <div class="login-menu">
+                                <small class="userdata-email"></small>
+                                <small><a href="#profil">Profil</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="logout-link" href="#logout">Logout</a></small>
+                            </div>
+                        </span>
+                </div>
+            </div>
             <div class="col-auto align-self-center dropdown">
                 <button class="toggler wishlist-toggler" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" data-offset="40,20">
@@ -148,15 +175,36 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 </button>
 
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-wishlist">
-                    <div id="wishlist-result" class="wishlist-items">
+                    <div class="wishlist-user-infobox">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                            <path d="M12 9h.01"></path>
+                            <path d="M11 12h1v4h1"></path>
+                        </svg>
+                        <div>
+                            Sie sind nicht eingeloggt. Um Ihre Merkliste dauerhaft zu speichern
+                            <a href="<?php echo TS_IBE3_BASE_URL; ?>/login?redirect=<?php echo base64_encode(SITE_URL . '/'); ?>">
+                                hier anmelden.
+                            </a>
+                            Noch keinen Account?
+                            <a href="<?php echo TS_IBE3_BASE_URL; ?>/login?redirect=<?php echo base64_encode(SITE_URL . '/'); ?>">
+                                Hier registrieren.
+                            </a>
+                        </div>
+                    </div>
+                    <div class="wishlist-visited-toggle">
+                        <div class="dropdown-menu-wishlist-toggle active"><span>Merkliste (<span class="wishlist-count">0</span> Einträge)</span></div>
+                        <div class="dropdown-menu-visited-toggle">Zuletzt angesehen</div>
+                    </div>
+                    <hr />
+                    <div id="wishlist-result" class="wishlist-items active">
                         <p>Keine Reisen auf der Merkliste</p>
                     </div>
-
-                    <div style="display: none;" class="wishlist-actions">
-                        <a href='#' class="btn btn-outline-primary btn-block">
-                            Zur Merkliste
-                        </a>
+                    <div id="visited-result" class="visited-items">
+                        <p>Keine Reisen bislang angesehen</p>
                     </div>
+                    <hr />
                 </div>
             </div>
             <div class="col-auto align-self-center d-none">
