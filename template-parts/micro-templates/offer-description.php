@@ -24,7 +24,7 @@ if (!empty($offer_description)) {
 }
 $lines = [];
 if (!empty($args['cheapest_price']->option_occupancy)) {
-    $lines[] = 'Belegung: ' . $args['cheapest_price']->option_occupancy . ' Person'.($args['cheapest_price']->option_occupancy > 1) ? 'en' : '';
+    $lines[] = 'Belegung: ' . $args['cheapest_price']->option_occupancy . ' Person'. (($args['cheapest_price']->option_occupancy > 1) ? 'en' : '');
 }
 if(!empty($args['cheapest_price']->option_board_type)){
     $lines[] = 'inkl. ' . $args['cheapest_price']->option_board_type;
