@@ -375,32 +375,16 @@ $tmp->url = null;
 $args['breadcrumb'][] = $tmp;
 
 // This is an example to join mediaobject by a tree item
-// if (!empty($moc->zielgebiet_default[0]->item->id)) {
-//     $search = new Pressmind\Search(
-//         [
-//             \Pressmind\Search\Condition\Visibility::create([30]),
-//             \Pressmind\Search\Condition\Category::create('zielgebiet_default', [$moc->zielgebiet_default[0]->item->id]),
-//             \Pressmind\Search\Condition\ObjectType::create(1199)
-//         ],
-//         [
-//              'start' => 0,
-//              'length' => 1
-//         ],
-//     );
-//
-//     $search->setPaginator(Pressmind\Search\Paginator::create(12, 0));
-//     $results = $search->getResults(true);
-//     foreach ($results as $linkedObject) {
-//         /**
-//          * @var \Custom\MediaType\Zielgebiete $linkedObjectContent
-//          */
-//         $linkedObjectContent = $linkedObject->getDataForLanguage();
-//         echo "<br>";
-//         echo $linkedObjectContent->beschreibung_default."<br>";
-//         echo $linkedObject->getId()."<br>";
-//         echo $linkedObject->name."<br>";
-//     }
-//
+// $results = \Pressmind\ORM\Object\MediaObject::getJoinedMediaObjectsByCategory($moc->zielgebiet_default[0]->item->id, 1199, 'zielgebiet_default');
+// foreach ($results as $linkedObject) {
+//     /**
+//      * @var \Custom\MediaType\Zielgebiete $linkedObjectContent
+//      */
+//     $linkedObjectContent = $linkedObject->getDataForLanguage();
+//     echo "<br>";
+//     echo $linkedObjectContent->beschreibung_default."<br>";
+//     echo $linkedObject->getId()."<br>";
+//     echo $linkedObject->name."<br>";
 // }
 ?>
 <script>
