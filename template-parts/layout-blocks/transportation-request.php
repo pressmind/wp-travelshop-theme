@@ -37,10 +37,11 @@
             <hr />
             <div class="ts-trr-route-options">
                 <div class="ts-trr-input flex1">
-                    <label><span>Startpunkt</span>
-                    <input v-model="this.inputFrom" @keydown="startedPlaceTyping('inputFromLoading', 'inputFromObj')" @keyup="endedPlaceTyping('inputFrom')" type="text" placeholder="Ort / PLZ / Straße" />
-                    <svg v-if="this.inputFromObj" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
-                    <img v-if="inputFromLoading" class="loader" src="/wp-content/themes/travelshop/assets/img/loading-dots-gray.svg" alt="loading" />
+                    <label><span>Startpunkt*</span>
+                        <input v-model="this.inputFrom" @keydown="startedPlaceTyping('inputFromLoading', 'inputFromObj')" @keyup="endedPlaceTyping('inputFrom')" type="text" placeholder="Ort / PLZ / Straße" />
+                        <svg v-if="this.inputFromObj" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
+                        <svg v-if="!this.inputFromObj && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
+                        <img v-if="inputFromLoading" class="loader" src="/wp-content/themes/travelshop/assets/img/loading-dots-gray.svg" alt="loading" />
                     </label>
                     <div class="ts-trr-predictions">
                         <div v-if="predirectionsStatus == 'ZERO_RESULTS'">
@@ -53,9 +54,10 @@
                     </div>
                 </div>
                 <div class="ts-trr-input flex1">
-                    <label><span>Zielpunkt</span>
+                    <label><span>Zielpunkt*</span>
                         <input v-model="this.inputTo" @keydown="startedPlaceTyping('inputToLoading', 'inputToObj')" @keyup="endedPlaceTyping('inputTo')" type="text" placeholder="Ort / PLZ / Straße" />
                         <svg v-if="this.inputToObj" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
+                        <svg v-if="!this.inputToObj && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
                         <img v-if="inputToLoading" class="loader" src="/wp-content/themes/travelshop/assets/img/loading-dots-gray.svg" alt="loading" />
                     </label>
                     <div class="ts-trr-predictions">
@@ -69,20 +71,27 @@
                     </div>
                 </div>
                 <div class="ts-trr-input">
-                    <label><span>Personen</span>
-                        <input v-model="this.countPersons" type="number" placeholder="5" />
+                    <label><span>Personen*</span>
+                        <input v-model="this.countPersons" type="number" placeholder="z.B. 30" />
+                        <svg v-if="this.countPersons == '' && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
+                        <svg v-if="this.countPersons != ''" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
+
                     </label>
                 </div>
             </div>
             <div class="ts-trr-time-options">
                 <div class="ts-trr-input">
-                    <label><span>Hinfahrt Datum</span>
-                        <input v-model="startDate" data-var="startDate" type="text" class="dateinput" />
+                    <label><span>Hinfahrt Datum*</span>
+                        <input v-model="startDate" data-var="startDate" placeholder="Klicken zur Auswahl" type="text" class="dateinput dinphin" />
+                        <svg v-if="this.startDate == '' && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
+                        <svg v-if="this.startDate != ''" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
                     </label>
                 </div>
                 <div class="ts-trr-input">
-                    <label><span>Hinfahrt Uhrzeit</span>
-                        <input v-model="startTime" data-var="startTime" type="text" class="timepicker" />
+                    <label><span>Hinfahrt Uhrzeit*</span>
+                        <input v-model="startTime" data-var="startTime" placeholder="Klicken zur Auswahl" type="text" class="timepicker" />
+                        <svg v-if="this.startTime == '' && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
+                        <svg v-if="this.startTime != ''" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
                     </label>
                 </div>
             </div>
@@ -92,13 +101,17 @@
             </div>
             <div v-if="transportBack" style="margin-top: 0;" class="ts-trr-time-options">
                 <div class="ts-trr-input">
-                    <label><span>Rükfahrt Datum</span>
-                        <input v-model="endDate" data-var="endDate" type="text" class="dateinput" />
+                    <label><span>Rükfahrt Datum*</span>
+                        <input v-model="endDate" data-var="endDate" placeholder="Klicken zur Auswahl" type="text" class="dateinput dinpzur" />
+                        <svg v-if="this.endDate == '' && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
+                        <svg v-if="this.endDate != ''" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
                     </label>
                 </div>
                 <div class="ts-trr-input">
-                    <label><span>Rückfahrt Uhrzeit</span>
-                        <input v-model="endTime" data-var="endTime" type="text" class="timepicker" />
+                    <label><span>Rückfahrt Uhrzeit*</span>
+                        <input v-model="endTime" data-var="endTime" placeholder="Klicken zur Auswahl" type="text" class="timepicker" />
+                        <svg v-if="this.endTime == '' && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
+                        <svg v-if="this.endTime != ''" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
                     </label>
                 </div>
             </div>
@@ -107,9 +120,9 @@
                 <div class="ts-trr-data">
                     <div class="data-stack">
                         <div><strong>Entfernung:</strong> <span>{{ this.routeData?.distance?.text }}</span></div>
-                        <div><strong>Reisedauer:</strong> <span>mind. {{ this.routeData?.duration?.text }}</span></div>
-                        <div><strong>Ankunft:</strong> <span>{{ this.formatDate(getEstimatedArrivalDate(getDateObject(startDate, startTime), this.routeData?.duration?.value)) }} ca. {{ this.formatTime(getEstimatedArrivalDate(getDateObject(startDate, startTime), this.routeData?.duration?.value)) }} Uhr</span></div>
-                        <div v-if="transportBack"><strong>Rückkunft:</strong> <span>{{ this.formatDate(getEstimatedArrivalDate(getDateObject(endDate, endTime), this.routeData?.duration?.value)) }} ca. {{ this.formatTime(getEstimatedArrivalDate(getDateObject(endDate, endTime), this.routeData?.duration?.value)) }} Uhr</span></div>
+                        <div class="d-none"><strong>Reisedauer:</strong> <span>mind. {{ this.routeData?.duration?.text }}</span></div>
+                        <div class="d-none"><strong>Ankunft:</strong> <span>{{ this.formatDate(getEstimatedArrivalDate(getDateObject(startDate, startTime), this.routeData?.duration?.value)) }} ca. {{ this.formatTime(getEstimatedArrivalDate(getDateObject(startDate, startTime), this.routeData?.duration?.value)) }} Uhr</span></div>
+                        <div class="d-none" v-if="transportBack"><strong>Rückkunft:</strong> <span>{{ this.formatDate(getEstimatedArrivalDate(getDateObject(endDate, endTime), this.routeData?.duration?.value)) }} ca. {{ this.formatTime(getEstimatedArrivalDate(getDateObject(endDate, endTime), this.routeData?.duration?.value)) }} Uhr</span></div>
                         <div style="display: inline-flex; gap: 0 .5rem; align-items: center;">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -147,16 +160,17 @@
                             <div style="font-size: 1.2rem; font-weight: 300; margin-bottom: .25rem;">Zwischenstop {{ index + 1 }}:</div>
                             <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 1rem;">
                                 <div class="ts-trr-input" style="flex: 1;">
-                                    <label><span>Ort / Adresse</span>
+                                    <label><span>Ort / Adresse *</span>
                                         <input v-model="stop.location" @keydown="startedPlaceTyping('stopOvers[' + index + '].inputLoading', 'stopOvers[' + index + '].locationObj')" @keyup="endedPlaceTyping('stopOvers[' + index + '].location')" type="text" placeholder="Ort / PLZ / Straße" />
                                         <svg v-if="stop.locationObj" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
+                                        <svg v-if="!stop.locationObj && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
                                         <img v-if="stop.inputLoading" class="loader" src="/wp-content/themes/travelshop/assets/img/loading-dots-gray.svg" alt="loading" />
                                     </label>
                                     <div class="ts-trr-predictions">
                                         <div v-if="predirectionsStatus == 'ZERO_RESULTS'">
                                             <strong>Keine Ergebnisse</strong>
                                         </div>
-                                        <div v-for="pred in predictions" @mouseDown="stop.location = pred.structured_formatting.main_text + ', ' + pred.structured_formatting.secondary_text; stop.locationObj = pred;">
+                                        <div v-for="pred in predictions" @mouseDown="this.processAddress(stop, pred)">
                                             <strong>{{ pred.structured_formatting.main_text }}</strong><br />
                                             <small>{{ pred.structured_formatting.secondary_text }}</small>
                                         </div>
@@ -167,7 +181,7 @@
                                         <input :id="'wayforth' + index" type="checkbox" v-model="stop.wayForth">
                                         <label :for="'wayforth' + index">auf Hinfahrt</label>
                                     </div><br />
-                                    <div style="margin: .25rem 0; display: inline-block;">
+                                    <div v-if="this.transportBack" style="margin: .25rem 0; display: inline-block;">
                                         <input :id="'wayback' + index" type="checkbox" v-model="stop.wayBack">
                                         <label :for="'wayback' + index">auf Rückfahrt</label>
                                     </div>
@@ -192,11 +206,24 @@
                         <textarea placeholder="Hier ist Platz für Ihre Anmerkungen" v-model="notes"></textarea>
                     </label>
                 </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center;">
                 <hr />
-                <div style="display: flex; justify-content: flex-end;">
-                    <div @click="validData ? this.steps[this.currentStep].ready = true && this.currentStep++ : null" class="button-large">
-                        Zum nächsten Schritt
-                    </div>
+                <span v-if="this.validationError" style="font-size: 13px; margin-bottom: 1rem;">
+                    <span v-if="!validData">* Bitte Start-/Endpunkt eingeben und aus Liste wählen.<br /></span>
+                    <span v-if="this.countPersons == ''">* Bitte Anzahl der zu befördernden Personen wählen.<br /></span>
+                    <span v-if="this.startDate == ''">* Bitte Start-Datum auswählen<br /></span>
+                    <span v-if="this.startTime == ''">* Bitte Start-Uhrzeit auswählen<br /></span>
+                    <span v-if="this.transportBack && this.endDate == ''">* Bitte End-Datum auswählen<br /></span>
+                    <span v-if="this.transportBack && this.endTime == ''">* Bitte End-Uhrzeit auswählen<br /></span>
+                    <span v-if="this.stopOverActive">
+                        <span v-for="(stop,index) in this.stopOvers">
+                            <span v-if="!stop.locationObj">* Bitte für Zwischenstop {{ index + 1 }} einen gültigen Ort wählen.<br /></span>
+                        </span>
+                    </span>
+                </span>
+                <div @click="this.loadNextStep" :class="{ disabled: !(validData && this.countPersons != '' && this.startDate != '' && this.startTime != '' && (this.transportBack ? (this.endDate != '' && this.endTime != '') : true) && ( this.stopOverActive ? this.stopOvers.reduce((accumulator, curr) => { return !curr.locationObj ? false : ( curr.locationObj && accumulator == true ? true : false) }, true) : true)) }" class="button-large">
+                    Zum nächsten Schritt
                 </div>
             </div>
         </div>
@@ -321,7 +348,10 @@
                 </div>
             </div>
             <hr />
-            <div v-if="!this.submitStatus.sent" style="display: flex; justify-content: flex-end;">
+            <div v-if="!this.submitStatus.sent" style="display: flex; justify-content: space-between;">
+                <div @click="this.currentStep = 1;" class="button-large">
+                    Zurück zur Routenplanung
+                </div>
                 <div @click="Object.values(contactData).filter(a => a.length > 0).length == 11 ? this.sendEmail() : null" :class="{ disabled: Object.values(contactData).filter(a => a.length > 0).length < 11 }" class="button-large">
                     {{ Object.values(contactData).filter(a => a.length > 0).length == 11 ? 'Anfrage versenden' : 'Bitte alle Felder ausfüllen' }}
                     <img v-if="submitLoading" style="width: 30px; margin-left: .5rem;" class="loader" src="/wp-content/themes/travelshop/assets/img/loading-dots.svg" alt="loading" />
@@ -370,6 +400,7 @@ Vue.createApp({
                 message: ''
             },
             submitLoading: false,
+            validationError: null,
             validCountries: 'de,ch',
             typingTimer: null,
             doneTypingInterval: 650,
@@ -388,12 +419,12 @@ Vue.createApp({
             validData: false,
             showMap: true,
             currentStep: 0,
-            countPersons: 25,
+            countPersons: '',
             routeData: {},
             transportBack: false,
-            startTime: '11:00',
+            startTime: '',
             startDate: '',
-            endTime: '11:00',
+            endTime: '',
             endDate: '',
             inputFrom: '',
             inputFromLoading: false,
@@ -402,6 +433,7 @@ Vue.createApp({
             inputToLoading: false,
             inputToObj: false,
             predirectionsStatus: '',
+            datePickerBack: null,
             notes: '',
             predictions: [
 
@@ -477,6 +509,21 @@ Vue.createApp({
             string += this.notes.length ? this.notes : 'Keine Anmerkungen';
             return string;
         },
+        processAddress(stop, pred) {
+            stop.location = pred.structured_formatting.main_text + ', ' + pred.structured_formatting.secondary_text; stop.locationObj = pred;
+            setTimeout(() => {
+                this.initGoogleMap();
+            }, 750);
+        },
+        loadNextStep() {
+          if((this.validData && this.countPersons != '' && this.startDate != '' && this.startTime != '' && (this.transportBack ? (this.endDate != '' && this.endTime != '') : true) && (this.stopOverActive ? this.stopOvers.reduce((accumulator, curr) => { return !curr.locationObj ? false : ( curr.locationObj && accumulator == true ? true : false) }, true) : true))) {
+              this.steps[this.currentStep].ready = true;
+              this.validationError = false;
+              this.currentStep++;
+          } else {
+              this.validationError = true;
+          }
+        },
         addStopOver() {
             this.stopOvers.push({
                 location: '',
@@ -488,6 +535,9 @@ Vue.createApp({
         },
         deleteStopOver(index) {
             this.stopOvers.splice(index,1);
+            setTimeout(() => {
+                this.initGoogleMap();
+            }, 750);
         },
         ObjectByString(s) {
             s = s.replace(/\[(\w+)\]/, ".$1");
@@ -579,10 +629,23 @@ Vue.createApp({
             var directionsRenderer = new google.maps.DirectionsRenderer();
             var chicago = new google.maps.LatLng(41.850033, -87.6500523);
             var map = new google.maps.Map(document.getElementById('routemap'));
+            console.log(this.stopOvers);
             directionsRenderer.setMap(map);
             directionsService.route({
                 origin: { placeId: this.inputFromObj.place_id },
                 destination: { placeId: this.inputToObj.place_id },
+                waypoints: this.stopOvers.filter((x) => {
+                    if(typeof x.locationObj.place_id != 'undefined') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }).map((x) => {
+                    return {
+                        location: { placeId: x.locationObj.place_id },
+                        stopover: true
+                    }
+                }),
                 travelMode: 'DRIVING'
             }, function(result, status) {
                 if (status == 'OK') {
@@ -592,13 +655,37 @@ Vue.createApp({
         },
         initPickers() {
             const dateinputs = document.querySelectorAll('.dateinput');
+            let $ = jQuery;
+            let startDate = this.startDate == '' ? this.formatDate(new Date()) : this.startDate;
+            let parts = startDate.match(/(\d+)/g);
             dateinputs.forEach((inp) => {
-                new Datepicker(inp, {
-                    format: 'dd.mm.yyyy',
-                    autohide: true
-                });
+                if($(inp).hasClass('dinpzur')) {
+                    this.datePickerBack = new Datepicker(inp, {
+                        format: 'dd.mm.yyyy',
+                        autohide: true,
+                        minDate: $(inp).hasClass('dinpzur') ? new Date(parts[2], parts[1]-1, parts[0]) : new Date()
+                    });
+                } else {
+                    new Datepicker(inp, {
+                        format: 'dd.mm.yyyy',
+                        autohide: true,
+                        minDate: $(inp).hasClass('dinpzur') ? new Date(parts[2], parts[1]-1, parts[0]) : new Date()
+                    });
+                }
                 inp.addEventListener('changeDate', (date) => {
                     this[date.target.getAttribute('data-var')] = this.formatDate(date.detail.date);
+                    if($(inp).hasClass('dinphin')) {
+                        if(this.startDate && document.querySelector('.dinpzur')) {
+                            this.datePickerBack?.destroy();
+                            let startDate = this.startDate;
+                            let parts = startDate.match(/(\d+)/g);
+                            this.datePickerBack = new Datepicker(document.querySelector('.dinpzur'), {
+                                format: 'dd.mm.yyyy',
+                                autohide: true,
+                                minDate: new Date(parts[2], parts[1]-1, parts[0])
+                            });
+                        }
+                    }
                 });
             });
             let formatTime = this.formatTime;
@@ -667,8 +754,6 @@ Vue.createApp({
         }
     },
     mounted() {
-        this.startDate = this.formatDate(new Date(Date.now() + 12096e5));
-        this.endDate = this.formatDate(new Date(Date.now() + 12096e5 * 2));
         this.initPickers();
     }
 }).mount('#ts-transportation-request-<?php echo $randomHash; ?>')
@@ -771,12 +856,12 @@ Vue.createApp({
         transform: translateY(-50%);
     }
     .ts-trr-input label {
-        border: 1px solid #cbd5e1;
+        border: 2px solid #ddd;
         background: #fff;
         width: 100%;
-        border-radius: 5px;
+        border-radius: 0;
         padding: 1.25rem .5rem 0 .5rem;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
         position: relative;
         transition: 300ms ease-in-out all;
         margin: 0;
@@ -806,10 +891,11 @@ Vue.createApp({
     .ts-trr-input label textarea {
         margin: 0 -.5rem;
         padding: .2rem .5rem;
-        border-radius: 5px;
+        border-radius: 0;
         width: 100%;
         min-width: 220px;
         flex: 1;
+        font-size: 1rem;
     }
     .ts-trr-input label:focus,
     .ts-trr-input label:focus-within {
