@@ -16,7 +16,7 @@ class Filter
      */
     public static function strip($str)
     {
-        return trim(strip_tags($str));
+        return trim(strip_tags((string)$str));
     }
 
     /**
