@@ -14,7 +14,7 @@ $config = \Pressmind\Registry::getInstance()->get('config');
  */
 
 // get all categories group by id objec type for later purposes
-$r = $db->fetchAll('select distinct var_name, ti.id_tree as id, ct.name, id_object_type from pmt2core_media_object_tree_items ti
+$r = $db->fetchAll('select distinct var_name, ti.id_tree as id, ct.name, ti.id_object_type from pmt2core_media_object_tree_items ti
                             left join pmt2core_media_objects mo on(mo.id = ti.id_media_object)
                             left join pmt2core_category_trees ct on (ct.id = ti.id_tree)
                             order by ct.name asc');
