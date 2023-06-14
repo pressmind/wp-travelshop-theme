@@ -800,14 +800,14 @@ jQuery(function ($) {
                         "opens": $('#booking-filter').length ? 'left' : 'right',
                         "ranges": {
                             'Heute': [dayjs(), dayjs()],
-                            'Abreise in 30 Tagen': [dayjs().add(30, 'days'), dayjs().add(1, 'month')],
-                            'Abreise in 60 Tagen': [dayjs().add(60, 'days'), dayjs().add(1, 'month')],
+                            'Abreise in 30 Tagen': [dayjs().add(30, 'days'), dayjs().add(30, 'days').add(1, 'month')],
+                            'Abreise in 60 Tagen': [dayjs().add(60, 'days'), dayjs().add(60, 'days').add(1, 'month')],
                             'in diesem Monat': [dayjs().startOf('month'), dayjs().endOf('month')],
                             'über Rosenmontag': [rosenmontagDate.subtract(7, 'days'), rosenmontagDate],
                             'über Ostern': [easterDate.subtract(7, 'days'), easterDate],
                             'über Pfingsten': [pfingstenDate.subtract(7, 'days'), pfingstenDate],
-                            'über Weihnachten': [dayjs().date(15).month(11), dayjs().date(24).month(11)],
-                            'über Silvester': [dayjs().date(25).month(11), dayjs().date(31).month(11)],
+                            'über Weihnachten': [dayjs().month(11).date(15), dayjs().month(11).date(24)],
+                            'über Silvester': [dayjs().month(11).date(25), dayjs().month(11).date(31)],
                             'im nächsten Monat': [dayjs().add(1, 'month').startOf('month'), dayjs().add(1, 'month').endOf('month')],
                         },
                         "changeMonth": false,
@@ -970,7 +970,7 @@ jQuery(function ($) {
             var M = 3 + Math.floor((L + 40)/44);
             var D = L + 28 - 31*Math.floor(M/4);
 
-            return dayjs().date(D).month(M - 1).year(Y);
+            return dayjs().month(M - 1).date(D).year(Y);
         }
 
 

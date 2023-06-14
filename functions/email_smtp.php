@@ -5,6 +5,9 @@
  */
 if (TS_SMTP_ACTIVE === true) {
     add_action('phpmailer_init', function ($phpmailer) {
+        /**
+         * @var PHPMailer $phpmailer
+         */
         $phpmailer->isSMTP();
         $phpmailer->Host = TS_SMTP_HOST;
         $phpmailer->SMTPAuth = TS_SMTP_AUTH;
