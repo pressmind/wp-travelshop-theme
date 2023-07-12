@@ -31,7 +31,7 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
 ?>
 <div class="search-field-input search-field-input--datepicker">
     <input type="text"
-        class="form-control travelshop-datepicker-input"
+        class="search-field-input-field travelshop-datepicker-input"
         data-type="daterange"
         name="pm-dr"
         autocomplete="off"
