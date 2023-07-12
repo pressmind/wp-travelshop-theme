@@ -55,6 +55,7 @@ $args = array_merge($args, $result);
                     <?php
                 }else{
                     // draw category tree based search fields
+                    print_r($field);
                     echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/category-tree-dropdown.php', array_merge($args, ['name' => $field['name'], 'fieldname' => $field['fieldname'], 'behavior' => $field['behavior']]));
                 }
             }
