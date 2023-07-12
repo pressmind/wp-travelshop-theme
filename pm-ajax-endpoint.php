@@ -10,6 +10,7 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 use \Pressmind\Travelshop\CalendarGenerator;
+use \DateTime;
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
