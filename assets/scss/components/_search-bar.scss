@@ -3,6 +3,13 @@
   // -- search box field
   .search-box-field {
     position: relative;
+
+    .search-field-input-field {
+      @include button-reset();
+      
+      border: .125rem solid transparent;
+      @include border-radius($input-border-radius);
+    }
   }
 
   // -- search inner

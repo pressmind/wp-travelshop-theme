@@ -13520,6 +13520,14 @@ ul.checklist {
 
 .search-wrapper .search-box-field {
   position: relative; }
+  .search-wrapper .search-box-field .search-field-input-field {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    border: .125rem solid transparent;
+    border-radius: 0.25rem; }
 .search-wrapper .search-wrapper--inner {
   display: flex;
   flex-wrap: wrap;
