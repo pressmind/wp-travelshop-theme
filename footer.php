@@ -146,6 +146,8 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
         </div>
     </div>
 </footer>
+
+<?php require 'template-parts/pm-search/search/string-search-placeholder.php'; ?>
 <?php //load_template(get_template_directory() . '/template-parts/layout-blocks/auto-modal.php'); ?>
 <?php
 wp_footer();
