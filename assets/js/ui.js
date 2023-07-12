@@ -985,7 +985,7 @@ jQuery(function ($) {
         var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
         var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .form-control');
 
-        console.log(thisOverlay);
+        console.log(thisWrapper);
         // get "trigger" position, for fixed overlay attrubutes
         var thisPosition = _this.offset();
         var thisWidth = _this.outerWidth();
