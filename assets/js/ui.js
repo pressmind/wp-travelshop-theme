@@ -958,7 +958,120 @@ jQuery(function ($) {
     if ( $('.personen-select-counter').length > 0 ) {
         personenCounter();
     }
-    
+
+    /**
+     * List filter category dropdowns
+     */
+    let filterCategoryDropdownToggle = '.category-tree-field-items-toggle';
+    let filterCategoryDropdown = '.category-tree-field-items-dropdown';
+    let filterCategoryBackdrop = '.category-tree-field-items-backdrop';
+    let filterCategoryDropdownClose = '.close-category-dropdown';
+    let filterCategoryDropdownPrompt = '.category-tree-field-items-dropdown-prompt';
+
+    function initFilterCategoryDropdown() {
+        var categoryDropdownToggle = $('body').find(filterCategoryDropdownToggle);
+        var categoryDropdownInput = $('body').find(filterCategoryDropdown + ' input.form-check-input');
+        var categoryDropdownClose = $('body').find(filterCategoryDropdownClose);
+        var categoryDropdownPrompt = $('body').find(filterCategoryDropdownPrompt);
+        var categoryDropdownBackdrop = $('body').find(filterCategoryBackdrop);
+
+        // -- close dropdown
+        categoryDropdownClose.unbind('click touch');
+
+        categoryDropdownBackdrop.on('click touch', function(e) {
+            $(this).parent().find('.' + openClass).removeClass(openClass);
+        });
+
+        categoryDropdownClose.on('click touch', function(e) {
+            e.preventDefault();
+
+            $(this).closest('.' + openClass).parent().find(filterCategoryBackdrop).removeClass(openClass);
+            $(this).closest('.' + openClass).removeClass(openClass);
+
+            e.stopPropagation();
+        });
+
+        categoryDropdownPrompt.on('click touch', function(e) {
+            e.preventDefault();
+
+            $(this).closest('.' + openClass).parent().find(filterCategoryBackdrop).removeClass(openClass);
+            $(this).closest('.' + openClass).removeClass(openClass);
+            submitFilter();
+
+            e.stopPropagation();
+        });
+
+        // -- opdate options
+        categoryDropdownInput.unbind('change');
+
+        categoryDropdownInput.on('change', function() {
+            var thisDropdownWrapper = $(this).parents('.category-tree-field-items');
+            var thisDropdownCheckedInputs = thisDropdownWrapper.find('input[type="checkbox"]:checked');
+            var thisPlaceholder = thisDropdownWrapper.find(filterCategoryDropdownToggle + ' .placeholder');
+            var thisPlaceholderDefault = thisDropdownWrapper.find(filterCategoryDropdownToggle).data('placeholder');
+
+            if ( thisDropdownCheckedInputs.length < 1 ) {
+                // set placeholder to placeholder
+                thisPlaceholder.text(thisPlaceholderDefault);
+            } else {
+                var newPlaceholderString = '';
+                var newPlaceholderSeperator = '';
+                var iterateCheckedItems = 0;
+
+                thisDropdownCheckedInputs.each(function() {
+                    var thisItemLabel = $(this).parent().find('.form-check-label').data('label-name');
+
+                    if ( iterateCheckedItems > 0 ) {
+                        newPlaceholderSeperator = ', ';
+                    }
+
+                    iterateCheckedItems++;
+
+                    newPlaceholderString += newPlaceholderSeperator + thisItemLabel;
+                });
+
+                thisPlaceholder.text(newPlaceholderString);
+            }
+        });
+
+        // -- open/close dropdown
+        categoryDropdownToggle.unbind('click touch');
+
+        categoryDropdownToggle.on('click touch', function(e) {
+            e.preventDefault();
+
+            var thisDropdown = $(this);
+            var thisDropdownWrapper = thisDropdown.parent();
+
+            if ( thisDropdownWrapper.hasClass(openClass) ) {
+                // -- add Class to this item
+                thisDropdownWrapper.removeClass(openClass);
+                thisDropdownWrapper.parent().find(filterCategoryBackdrop).removeClass(openClass);
+
+            } else {
+                // remove all opens
+                $('body').find(filterCategoryDropdownToggle).parent().removeClass(openClass);
+                thisDropdownWrapper.addClass(openClass);
+                thisDropdownWrapper.parent().find(filterCategoryBackdrop).addClass(openClass);
+            }
+
+
+            e.stopPropagation();
+        });
+    }
+
+    if ( $(filterCategoryDropdownToggle).length > 0 ) {
+        initFilterCategoryDropdown();
+    }
+
+    // -- reinitialize
+    $( document ).ajaxComplete(function( event, xhr, settings ) {
+        if ( $('body').find(filterCategoryDropdownToggle).length > 0 ) {
+            initFilterCategoryDropdown();
+        }
+    });
+
+
     // -----------------------
     // -- click handling document
     // -----------------------

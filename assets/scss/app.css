@@ -11665,7 +11665,7 @@ form.form-string-search.input-group {
 /**
  * Custom checkbox , with second level
  */
-.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check {
+.category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11674,12 +11674,13 @@ form.form-string-search.input-group {
   font-size: 1rem;
   line-height: 1.5;
   cursor: pointer; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input[type='checkbox'] {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input[type='checkbox'], .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input[type='checkbox'], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input[type='checkbox'] {
     display: none; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > label, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > label, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > label, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > label, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > label, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > label, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > label {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check > label, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > label, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > label, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > label, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > label, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > label, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > label, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > label {
     flex: 1;
     margin-bottom: 0; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span,
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check > span, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span,
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > div:not(.list-filter-second-level),
@@ -11700,7 +11701,8 @@ form.form-string-search.input-group {
     transform: translateY(-0.5rem);
     border: 1px solid #adb5bd;
     transition: background-color .3s, border-color .3s; }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span svg,
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span svg,
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > div:not(.list-filter-second-level) svg,
@@ -11717,7 +11719,8 @@ form.form-string-search.input-group {
       top: 50%;
       left: 50%;
       transform: translate(-0.4375rem, -0.4375rem); }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check:hover > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check:hover > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check:hover > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check:hover > span,
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check:hover > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check:hover > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check:hover > span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check:hover > span,
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check:hover > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check:hover > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check:hover > div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check:hover > div:not(.list-filter-second-level),
@@ -11727,7 +11730,8 @@ form.form-string-search.input-group {
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check:hover > div:not(.list-filter-second-level) {
     background-color: #fff;
     border: 1px solid #007bff; }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check:hover > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check:hover > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check:hover > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check:hover > span svg,
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check:hover > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check:hover > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check:hover > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check:hover > span svg,
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check:hover > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check:hover > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check:hover > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check:hover > div:not(.list-filter-second-level) svg,
@@ -11737,7 +11741,8 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check:hover > div:not(.list-filter-second-level) svg {
       display: none;
       color: #fff; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span,
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span,
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check input:checked + div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input:checked + div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input:checked + div:not(.list-filter-second-level),
   .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input:checked + div:not(.list-filter-second-level),
@@ -11747,7 +11752,8 @@ form.form-string-search.input-group {
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + div:not(.list-filter-second-level) {
     background-color: #007bff !important;
     border: 1px solid #007bff; }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span svg,
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check input:checked + span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + span svg,
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check input:checked + div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check input:checked + div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check input:checked + div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check input:checked + div:not(.list-filter-second-level) svg,
@@ -11757,7 +11763,7 @@ form.form-string-search.input-group {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check input:checked + div:not(.list-filter-second-level) svg {
       display: block !important;
       color: #fff; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -11770,7 +11776,7 @@ form.form-string-search.input-group {
     position: relative;
     top: 0.75rem;
     transform: translateY(-0.5rem); }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check button.toggle-second-level svg {
       width: 0.875rem;
       height: 0.875rem;
       position: absolute;
@@ -11778,13 +11784,13 @@ form.form-string-search.input-group {
       left: 50%;
       transition: transform .3s;
       transform: translate(-0.4375rem, -0.4375rem); }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check .list-filter-second-level {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check .list-filter-second-level {
     display: none; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check button.toggle-second-level svg {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.is--open.form-check button.toggle-second-level svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check button.toggle-second-level svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check button.toggle-second-level svg {
     transform: translate(-0.4375rem, -0.4375rem) scaleY(-1); }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check .list-filter-second-level {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.is--open.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.is--open.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.is--open.form-check .list-filter-second-level {
     display: block; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
+  .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check .list-filter-second-level {
     flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
@@ -12538,6 +12544,102 @@ ul.checklist {
 /**
  * Categry dropdown
  */
+.category-tree-field-items {
+  position: relative; }
+  .category-tree-field-items .category-tree-field-items-dropdown {
+    position: absolute;
+    right: auto;
+    top: -.5rem;
+    left: -.5rem;
+    z-index: 1041;
+    padding: .5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+    width: 26rem;
+    display: flex;
+    flex-direction: column; }
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header {
+      align-items: center;
+      padding: 0 1.5rem .5rem 1.5rem;
+      margin-left: -.5rem;
+      margin-right: -.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e9ecef; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header .h5, .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header strong {
+        margin-bottom: 0;
+        height: 3rem;
+        line-height: 3rem; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header button.close-category-dropdown {
+        border: 0;
+        outline: none;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        align-items: center;
+        justify-content: center;
+        color: #5a6570;
+        transition: color 0.3s;
+        margin-right: -1rem; }
+        .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header button.close-category-dropdown > svg {
+          width: 1.25rem;
+          height: 1.25rem; }
+        .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header button.close-category-dropdown:hover, .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header button.close-category-dropdown:focus, .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header button.close-category-dropdown:active {
+          color: #007bff; }
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items {
+      padding: 1.5rem 1.5rem .5rem 1.5rem;
+      max-height: 30rem;
+      overflow-y: auto;
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+      margin-top: -1.5rem; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check .list-filter-second-level {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        margin-top: .5rem;
+        margin-bottom: .25rem;
+        padding-left: 1.75rem;
+        display: none; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check + .form-check {
+        margin-top: .75rem; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items .form-check.is--open .list-filter-second-level {
+        display: block; }
+    .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-footer {
+      padding: 1rem 1rem 1rem 1rem;
+      text-align: center; }
+  .category-tree-field-items.is-open .input-icon-chevron {
+    transform: translateY(-50%) scaleY(-1); }
+  .category-tree-field-items.is-open .category-tree-field-items-dropdown {
+    opacity: 1;
+    pointer-events: auto; }
+  @media (max-width: 991.98px) {
+    .category-tree-field-items .category-tree-field-items-dropdown {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0; }
+      .category-tree-field-items .category-tree-field-items-dropdown.is-open {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-header,
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-footer {
+        flex: 0; }
+      .category-tree-field-items .category-tree-field-items-dropdown .category-tree-field-items-dropdown-items {
+        flex: 1;
+        max-height: none;
+        overflow-y: auto; } }
+
 .dropdown-menu.dropdown-menu-booking-select {
   padding: 1rem;
   width: 100%;

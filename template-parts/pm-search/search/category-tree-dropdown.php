@@ -74,5 +74,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                 </div>
             </div>
         </div>
+
+        <div class="category-tree-field-items-backdrop"></div>
     </div>
 <?php } ?>
