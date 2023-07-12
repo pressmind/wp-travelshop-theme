@@ -969,7 +969,7 @@ jQuery(function ($) {
     let filterCategoryDropdown = '.search-field-input--category';
     let filterCategoryBackdrop = '.category-tree-field-backdrop';
     let filterCategoryDropdownClose = '.close-category-dropdown';
-    let filterCategoryDropdownPrompt = '.search-field-input--category-prompt';
+    let filterCategoryDropdownPrompt = '.filter-prompt';
 
     function initFilterCategoryDropdown() {
         var categoryDropdownToggle = $('body').find(filterCategoryDropdownToggle);
