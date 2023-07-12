@@ -17,18 +17,15 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
     <div class="search-box-field search-box-field--category">
 
         <div class="search-field-input search-field-input--category">
-            <div class="dropdown">
-                <button class="dropdownReiseziel select-form-control dropdown-toggle" type="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+            <div class="category-tree-field-dropdown">
+                <button class="category-tree-field-dropdown-toggle" type="button">
                     <span class="selected-options" data-placeholder="<?php echo $args['name']; ?>"><?php echo $args['name']; ?></span>
 
                     <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
 
                 </button>
                 <?php // @todo: did some changes to quellcode to use different view types for dropdowns ?>
-                <div class="dropdown-menu dropdown-menu-select"
-                     aria-labelledby="dropdownReiseziel">
+                <div class="category-tree-field-dropdown">
                     <div class="dropdown-menu-inner">
                         <div class="dropdown-menu-content">
                             <div class="dropdown-menu-header d-none">
