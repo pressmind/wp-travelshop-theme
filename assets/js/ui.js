@@ -962,7 +962,7 @@ jQuery(function ($) {
     /**
      * List filter category dropdowns
      */
-    let filterCategoryDropdownToggle = '.search-field-input--category-toggle';
+    let filterCategoryDropdownToggle = '.category-tree-field-dropdown-toggle';
     let filterCategoryDropdown = '.search-field-input--category';
     let filterCategoryBackdrop = '.category-tree-field-backdrop';
     let filterCategoryDropdownClose = '.close-category-dropdown';
