@@ -1,5 +1,16 @@
 .search-wrapper {
 
+  // -- search fields
+  .search-box-fields {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &.search-box-fields--gap {
+      gap: ($grid-gutter-width / 2);
+    }
+  }
+
   // -- search-box
   .search-box {
     padding: $search-bar-padding-y;
