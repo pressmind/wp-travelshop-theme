@@ -13,8 +13,8 @@ $hr-border-color: $gray-200;
  * Font sizes
  */
 $font-size-base: 1rem;
-$font-size-xl: $font-size-base * 1.25; // 20px - added cuz we need more font sizes
 $font-size-lg: $font-size-base * 1.125; // 18px
+$font-size-xl: $font-size-base * 1.25; // 20px - added cuz we need more font sizes
 $font-size-sm: $font-size-base * 0.875; // 14px
 $font-size-xs: $font-size-base * 0.75; // 12px - added cuz we need more font sizes
 $font-size-xxs: $font-size-base * 0.6125; // 10px
@@ -94,3 +94,10 @@ $breadcrumb-active-color: $body-color;
 $breadcrumb-item-padding: .25rem;
 
 $breadcrumb-font-size: $font-size-sm !default;
+
+/**
+ * Animations
+ */
+$animation-speed-default: .3s !default;
+$animation-speed-fast: .15s !default;
+$animation-speed-slow: .6s !default;

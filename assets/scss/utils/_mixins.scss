@@ -216,6 +216,17 @@
 }
 
 /**
+ * Disable browser select
+ */
+
+@mixin disable-browser-select() {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+
+/**
  * Button reset
  */
 @mixin button-reset() {

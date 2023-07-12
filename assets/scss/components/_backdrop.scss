@@ -13,7 +13,7 @@
   pointer-events: none;
   opacity:0;
 
-  &.open {
+  &.open, &.is-open {
     pointer-events: auto;
     opacity: 1;
   }

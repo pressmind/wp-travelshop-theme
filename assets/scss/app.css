@@ -34,6 +34,9 @@
 /**
  * Breadcrumb
  */
+/**
+ * Animations
+ */
 @import url(vendors/pretty-dropdowns/prettydropdowns.css);
 @import url(vendors/lightbox2/lightbox.min.css);
 :root {
@@ -10846,6 +10849,9 @@ html.force--consent.show--consent body {
 /**
  * Breadcrumb
  */
+/**
+ * Animations
+ */
 /***
  ** Define own variables in this file
  ***/
@@ -11082,6 +11088,9 @@ html.force--consent.show--consent body {
  */
 /**
  * Aspect ratio
+ */
+/**
+ * Disable browser select
  */
 /**
  * Button reset
@@ -11437,13 +11446,13 @@ hr + .content-block {
  * Placeholder for slider controls
  * for usage on various elements
  */
-.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
+.daterange-calendar-items .slider-controls, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   pointer-events: none; }
-  .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
+  .daterange-calendar-items .slider-controls > button, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -11465,14 +11474,14 @@ hr + .content-block {
     border-width: 1px;
     border-style: solid;
     border-color: #e9ecef; }
-    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
+    .daterange-calendar-items .slider-controls > button > svg, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
       width: 1.125rem;
       height: 1.125rem; }
-    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
+    .daterange-calendar-items .slider-controls > button:not([disabled]):hover, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
       color: #fff;
       background-color: #007bff;
       border-color: #007bff; }
-    .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button[disabled], .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
+    .daterange-calendar-items .slider-controls > button[disabled], .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button[disabled], .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
       pointer-events: none;
       cursor: not-allowed;
       opacity: 0.25; }
@@ -12169,6 +12178,21 @@ ul.checklist {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
+.daterange-overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity .3s;
+  pointer-events: none;
+  opacity: 0; }
+  .open.daterange-overlay-backdrop, .is-open.daterange-overlay-backdrop {
+    pointer-events: auto;
+    opacity: 1; }
+
 .dropdown .dropdown-toggle:after {
   display: none; }
 
@@ -14786,6 +14810,301 @@ ul.checklist {
   .text-block-gallery .teaser-block-gallery--inner .accordion-gallery-item .text-block-gallery-item--image > img,
   .text-block-gallery .teaser-block-gallery--inner .accordion-gallery-item .teaser-block-gallery-item--image > img {
     border-radius: 0.25rem; }
+
+.daterange-overlay {
+  position: absolute !important;
+  z-index: 1041;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+  width: calc((17.5rem *2) + 1.5rem + 3rem);
+  padding: .5rem;
+  top: -.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.25rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175); }
+  .daterange-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto; }
+  .daterange-overlay .daterange-overlay-header {
+    align-items: center;
+    padding: 0 1.5rem .5rem 1.5rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef; }
+    .daterange-overlay .daterange-overlay-header .h5, .daterange-overlay .daterange-overlay-header .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body .daterange-overlay .daterange-overlay-header strong {
+      margin-bottom: 0;
+      height: 3rem;
+      line-height: 3rem; }
+    .daterange-overlay .daterange-overlay-header button.daterange-overlay-close {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      width: 3rem;
+      height: 3rem;
+      align-items: center;
+      justify-content: center;
+      color: #5a6570;
+      transition: color 0.3s;
+      margin-right: -1rem; }
+      .daterange-overlay .daterange-overlay-header button.daterange-overlay-close > svg {
+        width: 1.25rem;
+        height: 1.25rem; }
+      .daterange-overlay .daterange-overlay-header button.daterange-overlay-close:hover, .daterange-overlay .daterange-overlay-header button.daterange-overlay-close:focus, .daterange-overlay .daterange-overlay-header button.daterange-overlay-close:active {
+        color: #007bff; }
+  .daterange-overlay .duration-switch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+    padding: 0 1rem 1.5rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem; }
+    .daterange-overlay .duration-switch .form-check {
+      padding-left: 0; }
+      .daterange-overlay .duration-switch .form-check input.form-check-input {
+        display: none; }
+      .daterange-overlay .duration-switch .form-check label {
+        margin: 0;
+        display: block;
+        white-space: nowrap;
+        font-size: 0.875rem;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        color: #212529;
+        border: 1px solid #e9ecef;
+        transition: color 0.3s, border 0.3s, background-color 0.3s;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding: 0 1rem; }
+        .daterange-overlay .duration-switch .form-check label:hover, .daterange-overlay .duration-switch .form-check label:focus, .daterange-overlay .duration-switch .form-check label:active {
+          border: 1px solid #007bff;
+          color: #007bff;
+          background-color: rgba(0, 123, 255, 0.1); }
+      .daterange-overlay .duration-switch .form-check input.form-check-input:checked + label {
+        border: 1px solid #007bff;
+        color: #fff;
+        background-color: #007bff;
+        font-weight: bolder; }
+  .daterange-overlay .daterange-overlay-content {
+    padding: 0 1rem 1.5rem 1rem; }
+  .daterange-overlay .daterange-overlay-footer {
+    padding: 0 1rem 1rem 1rem;
+    text-align: center; }
+  @media (max-width: 991.98px) {
+    .daterange-overlay {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(0);
+      width: 100%;
+      height: 100%;
+      border-radius: 0; }
+      .daterange-overlay .daterange-calendar-items {
+        width: 100%; }
+      .daterange-overlay.is-open {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap; }
+      .daterange-overlay .daterange-overlay-header,
+      .daterange-overlay .daterange-overlay-footer {
+        flex: 0; }
+      .daterange-overlay .daterange-overlay-footer {
+        padding-top: 1.5rem; }
+      .daterange-overlay .daterange-overlay-content {
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 1.5rem;
+        margin: -1.5rem -0.5rem 0 -0.5rem; } }
+  .daterange-overlay button.daterange-overlay-reset.btn.btn-link {
+    color: #5a6570;
+    transition: color .3s; }
+    .daterange-overlay button.daterange-overlay-reset.btn.btn-link:hover, .daterange-overlay button.daterange-overlay-reset.btn.btn-link:focus, .daterange-overlay button.daterange-overlay-reset.btn.btn-link:active {
+      color: #007bff;
+      text-decoration: none; }
+
+.daterange-calendar-items {
+  position: relative;
+  width: calc((17.5rem *2) + 1.5rem);
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */ }
+  .daterange-calendar-items .slider-controls {
+    position: absolute;
+    top: .25rem;
+    left: 0;
+    right: 0;
+    justify-content: space-between; }
+  .daterange-calendar-items div:not(.tns-outer) + .slider-controls {
+    opacity: 0; }
+  .daterange-calendar-items .daterange-calendar-items-inner:not(.tns-slider) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center; }
+    @media (min-width: 992px) {
+      .daterange-calendar-items .daterange-calendar-items-inner:not(.tns-slider) {
+        flex-wrap: nowrap;
+        overflow: hidden; } }
+    .daterange-calendar-items .daterange-calendar-items-inner:not(.tns-slider) .calendar-item {
+      flex: 0 0 17.5rem;
+      width: 100%;
+      max-width: 17.5rem; }
+  .daterange-calendar-items .calendar-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+    .daterange-calendar-items .calendar-item:not(.tns-item) {
+      flex: 0 0 17.5rem;
+      width: 100%;
+      max-width: 17.5rem; }
+    .daterange-calendar-items .calendar-item .calendar-item-month {
+      font-size: 1.125rem;
+      font-weight: bolder;
+      text-align: center;
+      margin-bottom: .5rem;
+      margin-top: 0;
+      color: #212529;
+      height: 2.5rem;
+      line-height: 2.5rem; }
+    .daterange-calendar-items .calendar-item .calendar-item-days {
+      display: flex;
+      flex-wrap: wrap; }
+      .daterange-calendar-items .calendar-item .calendar-item-days .day-item {
+        flex: 0 0 2.5rem;
+        width: 100%;
+        max-width: 2.5rem; }
+      .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-header {
+        padding-bottom: .5rem; }
+        .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-header .day-item {
+          font-size: 0.75rem;
+          color: #5a6570;
+          text-transform: uppercase;
+          text-align: center; }
+      .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates {
+        row-gap: .25rem; }
+        .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item {
+          height: 2.5rem;
+          color: #5a6570;
+          position: relative; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item * {
+            pointer-events: none; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item .day-item-inner {
+            width: 2.5rem;
+            height: 2.5rem;
+            position: relative;
+            z-index: 2;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+            transition: border 0.3s;
+            border-radius: 50%; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-between:after {
+            content: '';
+            display: block;
+            background-color: rgba(0, 123, 255, 0.15);
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-between.day-item-start:after {
+            left: 50%; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-between.day-item-end:after {
+            right: 50%; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-interactive {
+            color: #212529;
+            font-weight: bolder;
+            cursor: pointer; }
+            .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-interactive:hover .day-item-inner {
+              border: 1px solid #007bff; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-departure {
+            color: #28a745; }
+          .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-active {
+            color: #fff; }
+            .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates .day-item.day-item-active .day-item-inner {
+              background-color: #007bff;
+              border: 1px solid #007bff; }
+  .daterange-calendar-items .calendar-item.calendar-item-placeholder {
+    positioN: relative;
+    pointer-events: none; }
+@keyframes loading-gradient {
+  0% {
+    width: 0;
+    opacity: 1; }
+  100% {
+    width: 100%;
+    opacity: .5; } }
+    .daterange-calendar-items .calendar-item.calendar-item-placeholder:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 1;
+      width: 0;
+      z-index: 10;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+      background-repeat: repeat-x;
+      animation: loading-gradient 2s infinite; }
+    .daterange-calendar-items .calendar-item.calendar-item-placeholder * {
+      pointer-events: none; }
+    .daterange-calendar-items .calendar-item.calendar-item-placeholder .calendar-item-month {
+      position: relative; }
+      .daterange-calendar-items .calendar-item.calendar-item-placeholder .calendar-item-month:after {
+        content: '';
+        display: block;
+        background-color: #dadfe4;
+        height: 1.125rem;
+        border-radius: 0.25rem;
+        width: 5rem;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    .daterange-calendar-items .calendar-item.calendar-item-placeholder .calendar-item-days.calendar-item-days-dates .day-item.day-item-active .day-item-inner {
+      background-color: transparent;
+      border: 1px solid transparent; }
+    .daterange-calendar-items .calendar-item.calendar-item-placeholder .calendar-item-days.calendar-item-days-dates .day-item .day-item-inner {
+      background-color: #dadfe4 !important;
+      border: 1px solid #dadfe4 !important;
+      width: 2rem;
+      height: 2rem;
+      margin: 0.25rem; }
+    .daterange-calendar-items .calendar-item.calendar-item-placeholder .calendar-item-days.calendar-item-days-header .day-item {
+      position: relative; }
+      .daterange-calendar-items .calendar-item.calendar-item-placeholder .calendar-item-days.calendar-item-days-header .day-item:after {
+        content: '';
+        display: block;
+        background-color: #dadfe4;
+        height: 0.75rem;
+        border-radius: 0.25rem;
+        width: 1.5rem;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%); }
 
 header.header-main {
   background-color: #fff;
