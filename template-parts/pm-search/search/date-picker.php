@@ -29,7 +29,6 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
     $value = $dr[0]->format('Ymd') . '-' . $dr[1]->format('Ymd');
 }
 ?>
-<?php if(!empty($args['name'])) { ?><label for=""><?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?></label><?php } ?>
 <div>
     <input type="text"
         class="form-control travelshop-datepicker-input"
@@ -40,7 +39,7 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
         data-mindate="<?php echo $minDate;?>"
         data-maxdate="<?php echo $maxDate;?>"
         data-value="<?php echo $value; ?>"
-        placeholder="bitte wählen"
+        placeholder="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"
         data-ajax="<?php echo $use_ajax; ?>"
         data-departures='<?php echo $departures_dates;?>'
         value="<?php echo $human_readable_str; ?>"/>
