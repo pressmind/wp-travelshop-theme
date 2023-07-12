@@ -636,8 +636,8 @@ jQuery(function ($) {
 
                         // -- replace result content with stored placeholder
                         if ( $(e.target).hasClass('auto-complete-overlay') ) {
-                            var targetResultReset = $(e.target).parents('.string-search').find('.string-search-overlay-results');
-                            var thisPlaceholder = $(e.target).parents('.string-search').data('search-placeholder');
+                            var targetResultReset = $(e.target).parents('.search-field-input--fulltext').find('.string-search-overlay-results');
+                            var thisPlaceholder = $(e.target).parents('.search-field-input--fulltext').data('search-placeholder');
 
                             if ( targetResultReset.length > 0 ) {
                                 targetResultReset.html($('#searchStorage_' + thisPlaceholder).first().html());
@@ -651,7 +651,7 @@ jQuery(function ($) {
                     if ( $(e.target).hasClass('auto-complete-overlay') ) {
                         var thisSearchValue = $(e.target).val();
 
-                        $(e.target).parents('.string-search').find('.string-search-trigger').val(thisSearchValue);
+                        $(e.target).parents('.search-field-input--fulltext').find('.string-search-trigger').val(thisSearchValue);
                     }
                 });
                 $('.auto-complete').each(function(e) {
