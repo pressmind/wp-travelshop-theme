@@ -980,12 +980,11 @@ jQuery(function ($) {
     function openFullTextSearch( _this ) {
 
 
-        var thisWrapper = _this.parents('.search-field-input--fulltext');
+        var thisWrapper = _this.parents('.search-box-field--fulltext');
         var thisOverlay = thisWrapper.find(searchOverlayWrapper);
         var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
         var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .form-control');
 
-        console.log(thisWrapper);
         // get "trigger" position, for fixed overlay attrubutes
         var thisPosition = _this.offset();
         var thisWidth = _this.outerWidth();
