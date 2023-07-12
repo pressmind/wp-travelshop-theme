@@ -9,6 +9,7 @@ use \Pressmind\Search\CheapestPrice;
 use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
+use \Pressmind\Travelshop\CalendarGenerator;
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -67,8 +68,8 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     }
     $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
     $CalendarObject = $Calendar->getCalendarObject();
-//
-//    require 'template-parts/pm-search/search/date-range-calendar.php';
+
+    require 'template-parts/pm-search/search/date-range-calendar.php';
 
     exit;
 } else if ($_GET['action'] == 'offer-validation') {
