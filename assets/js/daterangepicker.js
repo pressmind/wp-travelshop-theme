@@ -75,8 +75,6 @@ jQuery(function ($) {
 
                 datePickerClose($(this));
 
-                submitFilter();
-
                 e.stopPropagation();
             });
 
