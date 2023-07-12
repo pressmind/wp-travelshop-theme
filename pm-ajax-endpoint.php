@@ -52,6 +52,24 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->result = $request;
     echo json_encode($Output);
     exit;
+} else if ($_GET['action'] == 'dateRangePicker') {
+    $currentDate = new DateTime('now');
+    $value = isset($_POST['value']) ? $_POST['value'] : '';
+    $minDate = isset($_POST['minDate']) ? $_POST['minDate'] : '';
+    $maxDate = isset($_POST['maxDate']) ? $_POST['maxDate'] : '';
+    $minYear = isset($_POST['minYear']) ? $_POST['minYear'] : '';
+    $maxYear = isset($_POST['maxYear']) ? $_POST['maxYear'] : '';
+    $departures = isset($_POST['departures']) ? $_POST['departures'] : '';
+
+    if ( is_array($departures) ) {
+        $departures = json_encode($departures);
+    }
+    $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
+    $CalendarObject = $Calendar->getCalendarObject();
+
+    require 'template-parts/pm-search/search/date-duration-calendar.php';
+
+    exit;
 } else if ($_GET['action'] == 'offer-validation') {
     $currentOffer = isset($_POST['offer_id']) ? $_POST['offer_id'] : null;
     $Output = array('state' => 'invalid');
