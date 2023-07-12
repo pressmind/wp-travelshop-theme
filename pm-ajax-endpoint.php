@@ -65,7 +65,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     if ( is_array($departures) ) {
         $departures = json_encode($departures);
     }
-//    $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
+    $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
 //    $CalendarObject = $Calendar->getCalendarObject();
 //
 //    require 'template-parts/pm-search/search/date-range-calendar.php';
