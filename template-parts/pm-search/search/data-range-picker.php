@@ -93,7 +93,7 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
         ?>
 
         <?php
-        require "date-range-picker-overlay.php";
+//        require "date-range-picker-overlay.php";
         ?>
     </div>
 
