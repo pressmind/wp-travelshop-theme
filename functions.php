@@ -59,6 +59,7 @@ require_once 'src/CategoryTreeTools.php';
 require_once 'src/PriceHandler.php';
 require_once 'src/Timer.php';
 require_once 'src/Calendar.php';
+require_once 'src/CalendarGenerator.php';
 require_once 'src/Template.php';
 
 // enable SMTP auth support

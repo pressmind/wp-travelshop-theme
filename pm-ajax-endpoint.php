@@ -33,6 +33,7 @@ require_once getenv('CONFIG_THEME');
 require_once 'bootstrap.php';
 require_once 'src/Search.php';
 require_once 'src/BuildSearch.php';
+require_once 'src/CalendarGenerator.php';
 require_once 'src/RouteHelper.php';
 require_once 'src/PriceHandler.php';
 require_once 'src/Template.php';
