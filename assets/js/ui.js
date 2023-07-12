@@ -962,11 +962,11 @@ jQuery(function ($) {
     /**
      * List filter category dropdowns
      */
-    let filterCategoryDropdownToggle = '.category-tree-field-items-toggle';
-    let filterCategoryDropdown = '.category-tree-field-items-dropdown';
-    let filterCategoryBackdrop = '.category-tree-field-items-backdrop';
+    let filterCategoryDropdownToggle = '.category-tree-field-dropdown-toggle';
+    let filterCategoryDropdown = '.category-tree-field-dropdown';
+    let filterCategoryBackdrop = '.category-tree-field-backdrop';
     let filterCategoryDropdownClose = '.close-category-dropdown';
-    let filterCategoryDropdownPrompt = '.category-tree-field-items-dropdown-prompt';
+    let filterCategoryDropdownPrompt = '.category-tree-field-dropdown-prompt';
 
     function initFilterCategoryDropdown() {
         var categoryDropdownToggle = $('body').find(filterCategoryDropdownToggle);

@@ -25,7 +25,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
             </button>
             <?php // @todo: did some changes to quellcode to use different view types for dropdowns ?>
             <div class="category-tree-field-dropdown">
-                <div class="category-tree-field-items-dropdown-header d-flex flex-row flex-nowrap justify-content-between">
+                <div class="category-tree-field-dropdown d-flex flex-row flex-nowrap justify-content-between">
                     <div class="h5 mb-0">
                         <?php echo $args['name']; ?>
                     </div>
@@ -67,7 +67,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                     ?>
                 </div>
 
-                <div class="category-tree-field-items-dropdown-footer">
+                <div class="category-tree-field-dropdown-footer">
                     <button class="btn btn-primary btn-block mt-3 filter-prompt">
                         Auswahl übernehmen
                     </button>
@@ -75,6 +75,6 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
             </div>
         </div>
 
-        <div class="category-tree-field-items-backdrop"></div>
+        <div class="category-tree-field-backdrop"></div>
     </div>
 <?php } ?>
