@@ -16,7 +16,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
     ?>
     <div class="search-box-field search-box-field--category">
 
-        <div class="search-field-input search-field-input--category category-tree-field-dropdown">
+        <div class="search-field-input search-field-input--category">
             <button class="category-tree-field-dropdown-toggle search-field-input-field" type="button">
                 <span class="selected-options" data-placeholder="<?php echo $args['name']; ?>"><?php echo $args['name']; ?></span>
 
@@ -25,7 +25,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
             </button>
             <?php // @todo: did some changes to quellcode to use different view types for dropdowns ?>
             <div class="category-tree-field-dropdown">
-                <div class="category-tree-field-dropdown d-flex flex-row flex-nowrap justify-content-between">
+                <div class="category-tree-field-dropdown-header d-flex flex-row flex-nowrap justify-content-between">
                     <div class="h5 mb-0">
                         <?php echo $args['name']; ?>
                     </div>
