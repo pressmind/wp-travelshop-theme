@@ -72,17 +72,14 @@ $args = array_merge($args, $result);
             </div>
         </div>
         <div class="search-box-submit">
-            <div class="search-box-field search-box-field--submit">
-                <a class="btn btn-primary btn-block" data-instant data-instant-intensity="0" href="<?php echo '/' . trim(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['route'],'/'). '/'; ?>">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+            <a class="btn btn-primary btn-block" data-instant data-instant-intensity="0" href="<?php echo '/' . trim(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['route'],'/'). '/'; ?>">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
 
-                    <img class="loader" src="<?php echo WEBSERVER_HTTP; ?>/wp-content/themes/travelshop/assets/img/loading-dots.svg">
-                    <span class="search-bar-total-count" data-default="Suchen" data-total-count-singular="Reise anzeigen"
-                          data-total-count-plural="Reisen anzeigen">
-                        <?php echo empty($args['total_result']) ? 'Suchen' : $args['total_result'] . ' Reisen anzeigen'; ?></span>
-                </a>
-            </div>
+                <img class="loader" src="<?php echo WEBSERVER_HTTP; ?>/wp-content/themes/travelshop/assets/img/loading-dots.svg">
+                <span class="search-bar-total-count" data-default="Suchen" data-total-count-singular="Reise anzeigen"
+                      data-total-count-plural="Reisen anzeigen">
+                    <?php echo empty($args['total_result']) ? 'Suchen' : $args['total_result'] . ' Reisen anzeigen'; ?></span>
+            </a>
         </div>
-
     </div>
 </form>

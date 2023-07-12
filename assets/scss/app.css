@@ -13488,6 +13488,15 @@ ul.checklist {
 #wpadminbar {
   z-index: 1039 !important; }
 
+.search-wrapper .search-wrapper--inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 15px; }
+  .search-wrapper .search-wrapper--inner .search-box-fields {
+    flex: 1; }
+  .search-wrapper .search-wrapper--inner .search-box-submit {
+    flex: 0; }
 .search-wrapper .search-box-fields {
   display: flex;
   flex-direction: row;

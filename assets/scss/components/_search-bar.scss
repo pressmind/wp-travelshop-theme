@@ -1,5 +1,23 @@
 .search-wrapper {
 
+  // -- search inner
+  .search-wrapper--inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    gap: ($grid-gutter-width / 2);
+
+    // -- field / submit layout
+    .search-box-fields {
+      flex: 1;
+    }
+
+    .search-box-submit {
+      flex: 0;
+    }
+  }
+
   // -- search fields
   .search-box-fields {
     display: flex;
