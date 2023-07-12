@@ -1,6 +1,9 @@
 jQuery(function ($) {
 
 
+    let openClass = 'is-open';
+    let activeClass = 'is-active';
+
     // ------------------------------------------------
     // -- little fix for 100vw
     // ------------------------------------------------
