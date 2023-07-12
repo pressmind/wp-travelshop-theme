@@ -54,7 +54,7 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
 
     <button class="search-field-input-field travelshop-datepicker-input"
             type="button"
-            data-type="daterange"
+            data-type="datedurationrange"
             readonly
             data-mindate="<?php echo $minDate;?>"
             data-maxdate="<?php echo $maxDate;?>"
