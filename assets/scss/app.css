@@ -12190,7 +12190,7 @@ ul.checklist {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
-.daterange-overlay-backdrop {
+.category-tree-field-backdrop, .daterange-overlay-backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -12201,7 +12201,7 @@ ul.checklist {
   transition: opacity .3s;
   pointer-events: none;
   opacity: 0; }
-  .open.daterange-overlay-backdrop, .is-open.daterange-overlay-backdrop {
+  .open.category-tree-field-backdrop, .open.daterange-overlay-backdrop, .is-open.category-tree-field-backdrop, .is-open.daterange-overlay-backdrop {
     pointer-events: auto;
     opacity: 1; }
 
