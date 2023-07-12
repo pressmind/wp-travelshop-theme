@@ -29,7 +29,7 @@ if (empty($_GET['pm-dr']) === false && $use_ajax == '1') {
     $value = $dr[0]->format('Ymd') . '-' . $dr[1]->format('Ymd');
 }
 ?>
-<div>
+<div class="search-field-input search-field-input--datepicker">
     <input type="text"
         class="form-control travelshop-datepicker-input"
         data-type="daterange"
