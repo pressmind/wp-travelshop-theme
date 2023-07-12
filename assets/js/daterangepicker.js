@@ -1,4 +1,6 @@
 jQuery(function ($) {
+    let openClass = 'is-open';
+
     /**
      * Daterange picker
      */
