@@ -459,11 +459,10 @@ jQuery(function ($) {
             }
 
             // check and set price-range
-            let price_range = $(form).find('input[name=pm-pr]').val();
-            price_range.replace(',', '-');
-            let price_mm_range = $(form).find('input[name=pm-pr]').data('min') + '-' + $(form).find('input[name=pm-pr]').data('max');
-            if (price_range && price_mm_range != price_range && price_range != '') {
-                query.push('pm-pr=' + price_range);
+            let price_range = $(form).find("input[name=pm-pr]").val();
+            let price_mm_range = $(form).find("input[name=pm-pr]").data("min") + "-" + $(form).find("input[name=pm-pr]").data("max");
+            if (price_range && price_mm_range != price_range && price_range != "") {
+                query.push("pm-pr=" + price_range)
             }
 
             // check and set duration-range
