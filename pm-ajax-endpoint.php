@@ -62,12 +62,12 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $maxYear = isset($_POST['maxYear']) ? $_POST['maxYear'] : '';
     $departures = isset($_POST['departures']) ? $_POST['departures'] : '';
 
-    if ( is_array($departures) ) {
-        $departures = json_encode($departures);
-    }
-    $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
-    $CalendarObject = $Calendar->getCalendarObject();
-
+//    if ( is_array($departures) ) {
+//        $departures = json_encode($departures);
+//    }
+//    $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
+//    $CalendarObject = $Calendar->getCalendarObject();
+//
 //    require 'template-parts/pm-search/search/date-range-calendar.php';
 
     exit;
