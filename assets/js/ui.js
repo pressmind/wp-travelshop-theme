@@ -962,11 +962,11 @@ jQuery(function ($) {
     /**
      * List filter category dropdowns
      */
-    let filterCategoryDropdownToggle = '.category-tree-field-dropdown-toggle';
-    let filterCategoryDropdown = '.category-tree-field-dropdown';
+    let filterCategoryDropdownToggle = '.search-field-input--category-toggle';
+    let filterCategoryDropdown = '.search-field-input--category';
     let filterCategoryBackdrop = '.category-tree-field-backdrop';
     let filterCategoryDropdownClose = '.close-category-dropdown';
-    let filterCategoryDropdownPrompt = '.category-tree-field-dropdown-prompt';
+    let filterCategoryDropdownPrompt = '.search-field-input--category-prompt';
 
     function initFilterCategoryDropdown() {
         var categoryDropdownToggle = $('body').find(filterCategoryDropdownToggle);
@@ -1005,7 +1005,7 @@ jQuery(function ($) {
         categoryDropdownInput.unbind('change');
 
         categoryDropdownInput.on('change', function() {
-            var thisDropdownWrapper = $(this).parents('.category-tree-field-items');
+            var thisDropdownWrapper = $(this).parents('.search-field-input--category');
             var thisDropdownCheckedInputs = thisDropdownWrapper.find('input[type="checkbox"]:checked');
             var thisPlaceholder = thisDropdownWrapper.find(filterCategoryDropdownToggle + ' .placeholder');
             var thisPlaceholderDefault = thisDropdownWrapper.find(filterCategoryDropdownToggle).data('placeholder');
