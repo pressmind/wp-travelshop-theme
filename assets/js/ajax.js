@@ -713,7 +713,7 @@ jQuery(function ($) {
                             }
 
                             if ( $(this).hasClass('auto-complete-overlay') ) {
-                                var targetResultDraw = $(this).parents('.string-search').find('.string-search-overlay-results');
+                                var targetResultDraw = $(this).parents('.search-field-input--fulltext').find('.string-search-overlay-results');
                                 var thisInputContainerClass = $(this).data('containerclass');
 
                                 if ( targetResultDraw.length > 0 ) {
