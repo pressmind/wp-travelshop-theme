@@ -13500,7 +13500,10 @@ ul.checklist {
     flex-wrap: wrap; }
     .search-wrapper .search-wrapper--inner .search-box-fields.search-box-fields--gap {
       gap: 15px; }
+    .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-search {
+      flex: 0; }
     .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-pickers {
+      flex: 1;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap; }

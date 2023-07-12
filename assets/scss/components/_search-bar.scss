@@ -19,8 +19,14 @@
         gap: ($grid-gutter-width / 2);
       }
 
+      // -- search
+      .search-bar-fields-search {
+        flex: 0;
+      }
+
       // -- pickers
       .search-bar-fields-pickers {
+        flex: 1;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
