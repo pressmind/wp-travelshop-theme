@@ -15,14 +15,11 @@ if (empty($_GET['pm-c'][$args['fieldname']]) === false && preg_match_all("/[a-zA
 if (empty($args['categories'][$args['fieldname']][0]) === false) {
     ?>
     <div class="search-box-field search-box-field--category">
-        <div>
-            <div class="form-group mb-lg-0 category-tree">
-                <label for=""><?php echo $args['name']; ?></label>
                 <div class="dropdown">
                     <button class="dropdownReiseziel select-form-control dropdown-toggle" type="button"
                             data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                        <span class="selected-options" data-placeholder="bitte wählen">bitte wählen</span>
+                        <span class="selected-options" data-placeholder="<?php echo $args['name']; ?>"><?php echo $args['name']; ?></span>
 
                         <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
 
@@ -62,42 +59,12 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                                                 <?php echo in_array($item->id_item, $selected) ? 'checked' : ''; ?>>
 
                                             <span>
-                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
-                                    </span>
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
+                                            </span>
 
                                             <label class="form-check-label" for="<?php echo $uuid; ?>">
                                                 <?php echo $item->name; ?>
                                             </label>
-                                            <?php /* if ($has_childs === true) { ?>
-
-                                <div class="list-filter-second-level">
-                                    <?php foreach ($childs[$item->id_item] as $child_item) {
-                                        $uuid = 'ti-'.uniqid();
-                                        ?>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                   id="<?php echo $uuid; ?>"
-                                                   data-id-parent="<?php echo $item->id_item; ?>"
-                                                   data-id="<?php echo $child_item->id_item; ?>"
-                                                   data-name="<?php echo $args['fieldname']; ?>"><span><i><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            class="icon icon-tabler icon-tabler-check" width="12"
-                                                            height="12" viewBox="0 0 24 24" stroke-width="3"
-                                                            stroke="#ffffff" fill="none" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M5 12l5 5l10 -10"/>
-</svg></i></span>
-                                            <label class="form-check-label"
-                                                   for="<?php echo $uuid; ?>">
-                                                <?php echo $child_item->name; ?>                                            </label>
-                                        </div>
-                                    <?php } ?>
-
-
-                                </div>
-
-                            <?php } */ ?>
                                         </div>
                                         <?php
                                     }
@@ -111,9 +78,6 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                             </div>
                         </div>
                     </div>
-                </div>
-
             </div>
-        </div>
     </div>
 <?php } ?>
