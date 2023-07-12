@@ -13518,6 +13518,8 @@ ul.checklist {
 #wpadminbar {
   z-index: 1039 !important; }
 
+.search-wrapper .search-box-field {
+  position: relative; }
 .search-wrapper .search-wrapper--inner {
   display: flex;
   flex-wrap: wrap;
