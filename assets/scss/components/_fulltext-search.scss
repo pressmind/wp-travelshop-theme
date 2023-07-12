@@ -1,0 +1,296 @@
+.autocomplate-suggestions-overlay {
+  display: none !important;
+
+  // hiding wrapper wich contains search result for usage in overlay search
+}
+
+.string-search-overlay {
+  position: absolute !important;
+  z-index: ($zindex-modal-backdrop + 1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity $animation-speed-default;
+
+  max-width: 26rem;
+  min-width: 26rem;
+  padding: .5rem;
+
+  @include border-radius($border-radius);
+
+  background-color: $body-bg;
+  box-shadow: $dropdown-box-shadow;
+
+  top:-.5rem;
+  left:-.5rem;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  // -- results
+  .string-search-overlay-results {
+    padding: 0 1rem;
+    position: relative;
+    max-height: 36.25rem;
+    overflow-y: auto;
+
+    .string-search-placeholder-group{
+
+      &:first-child {
+        padding-top: 1rem;
+      }
+
+      + .string-search-placeholder-group {
+        margin-top: 1rem;
+        border-top: $hr-border-width solid $hr-border-color;
+      }
+    }
+
+    .string-search-placeholder-link {
+      margin-top: 1rem;
+
+      a {
+        font-size: $font-size-sm;
+        color: $body-color-light;
+        font-weight: $font-weight-normal;
+        transition: color .3s;
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .string-search-placeholder-title {
+      padding-top: 1rem;
+      margin: 0 0 1rem 0;
+
+      font-size: $font-size-sm;
+      color: $body-color;
+      font-weight: $font-weight-bold;
+    }
+
+    .string-search-placeholder-items {
+      .items-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        margin: -.375rem;
+
+        > .search-item {
+          display: block;
+          padding: .375rem;
+
+          flex: 0 0 100%;
+          max-width: 100%;
+          width: 100%;
+          line-height: 1;
+
+          > a {
+            display: flex;
+            flex-direction:row;
+            flex-wrap: nowrap;
+
+            transition: color $animation-speed-default;
+            color: $body-color;
+
+            text-decoration: none;
+
+            gap: .75rem;
+            align-items: center;
+            font-weight: $font-weight-bold;
+
+            @include media-breakpoint-up(md) {
+              font-size: $font-size-lg;
+            }
+
+            .search-item-image {
+              flex: 0 0 2.5rem;
+              width:  100%;
+              max-width: 2.5rem;
+
+              height: 2.5rem;
+              position: relative;
+              overflow: hidden;
+
+              @include border-radius($border-radius-sm);
+              @extend %media-cover;
+            }
+
+            .search-item-badge {
+              height: 1.75rem; // 28px
+              border: 1px solid $body-color-light;
+              color: $body-color-light;
+              font-size: $font-size-xs;
+              display: flex;
+              align-items: center;
+              font-weight: $font-weight-bold;
+              text-transform: uppercase;
+
+              padding: 0 $font-size-xs;
+              transition: color .3s, background-color .3s, border .3s;
+
+              @include border-radius($border-radius-sm);
+            }
+            .search-item-body {
+              flex: 1;
+
+              .search-item-sub-title {
+                color: $body-color-light;
+                font-size: $font-size-sm;
+                font-weight: $font-weight-normal;
+                margin: .25rem 0 0 0;
+              }
+            }
+
+            &:hover, &:focus, &:active {
+              color: $primary;
+
+              .search-item-badge {
+                color: #fff;
+                background-color: $primary;
+                border: 1px solid $primary;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .string-search-placeholder-footer {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-top: 1px solid $hr-border-color;
+
+      margin-top: 1rem;
+
+      a {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1;
+
+        text-decoration: none;
+        transition: color $animation-speed-default;
+
+        color: $body-color;
+
+        @include media-breakpoint-up(md) {
+          font-size: $font-size-lg;
+        }
+
+        gap: .5rem;
+
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: $body-color;
+          transition:  color $animation-speed-default;
+        }
+
+        &:hover, &:focus, &:active {
+          color: $primary;
+
+          svg {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  .string-search-overlay-input {
+    border-bottom: $hr-border-width solid $hr-border-color;
+    padding-bottom: .5rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  // -- mobile
+  @include media-breakpoint-down(md) {
+    position: fixed !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+
+    @include border-radius(0);
+
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    display: flex;
+    flex-direction: column;
+
+    .string-search-overlay-input {
+      flex: 0;
+
+      left: 0;
+      top: 0;
+
+      margin: -0.5rem -0.5rem 0.5rem -0.6rem;
+      padding: 0.5rem;
+
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+
+      position: relative;
+      z-index: 4;
+
+
+      > div {
+        flex: 1;
+      }
+
+      button.string-search-overlay-close {
+        @include button-reset();
+
+        width: 3rem;
+        height: 3rem;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: $body-color-light;
+        transition: color $animation-speed-default;
+        margin-right: 0;
+
+        > svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+
+        &:hover, &:focus, &:active {
+          color: $primary;
+        }
+      }
+    }
+
+    .string-search-overlay-results {
+      overflow-x: auto;
+      max-height: none !important;
+
+      &:after {
+        display: none;
+      }
+    }
+
+  }
+}
+
+.string-search-overlay-backdrop {
+  @extend %backdrop-default;
+}

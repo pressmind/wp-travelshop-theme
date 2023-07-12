@@ -963,6 +963,87 @@ jQuery(function ($) {
     }
 
     /**
+     * Search overlay functionality
+     * open + close + clear
+     * and set varialbe triggers to use full text search overlay
+     */
+
+    let searchOverlayTrigger = '.string-search-trigger';
+    let searchOverlayBackdrop = '.string-search-overlay-backdrop';
+    let searchOverlayWrapper = '.string-search-overlay';
+    let searchOverlayClose = '.string-search-overlay-close';
+
+    /**
+     * Open Fulltext Search Overlay
+     * @param _this
+     */
+    function openFullTextSearch( _this ) {
+
+        var thisWrapper = _this.parents('.string-search');
+        var thisOverlay = thisWrapper.find(searchOverlayWrapper);
+        var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
+        var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .form-control');
+
+        // get "trigger" position, for fixed overlay attrubutes
+        var thisPosition = _this.offset();
+        var thisWidth = _this.outerWidth();
+
+        // set positioning to overlay
+        thisOverlay.css({
+            'width': thisWidth + 'px'
+        });
+
+        thisOverlay.addClass(openClass);
+        thisOverlayBackdrop.addClass(openClass);
+
+        thisOverlayInput.focus();
+    }
+
+    /**
+     * Close overlay
+     */
+    function closeFullTextSearch() {
+        $(searchOverlayWrapper).removeClass(openClass);
+        $(searchOverlayBackdrop).removeClass(openClass);
+    }
+
+    if( $(searchOverlayClose).length > 0 ) {
+        $(document).on('click touch', searchOverlayClose, function(e) {
+            e.preventDefault();
+
+            closeFullTextSearch();
+
+            e.stopPropagation();
+        })
+    }
+
+    if ( $(searchOverlayBackdrop).length > 0 ) {
+        $(document).on('click touch', searchOverlayBackdrop, function(e) {
+            e.preventDefault();
+
+            closeFullTextSearch();
+
+            e.stopPropagation();
+        })
+    }
+
+    if ( $(searchOverlayTrigger).length > 0 ) {
+        $(document).on('click touch', searchOverlayTrigger, function(e){
+            e.preventDefault();
+
+            var thisPlaceholder = $(this).parents('.string-search').data('search-placeholder');
+
+            // get placehodler + insert
+            var getContent = $('#searchStorage_' + thisPlaceholder).html();
+            $(document).find('.string-search-overlay-results').html(getContent);
+
+            openFullTextSearch($(this));
+
+            e.stopPropagation();
+        })
+    }
+
+    /**
      * List filter category dropdowns
      */
     let filterCategoryDropdownToggle = '.category-tree-field-dropdown-toggle';
