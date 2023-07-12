@@ -979,7 +979,7 @@ jQuery(function ($) {
      */
     function openFullTextSearch( _this ) {
 
-        var thisWrapper = _this.parents('.search-box-field--fulltext');
+        var thisWrapper = _this.parents('.search-field-input--fulltext');
         var thisOverlay = thisWrapper.find(searchOverlayWrapper);
         var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
         var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .form-control');
@@ -1031,7 +1031,7 @@ jQuery(function ($) {
         $(document).on('click touch', searchOverlayTrigger, function(e){
             e.preventDefault();
 
-            var thisPlaceholder = $(this).parents('.search-box-field--fulltext').data('search-placeholder');
+            var thisPlaceholder = $(this).parents('.search-field-input--fulltext').data('search-placeholder');
 
             console.log(thisPlaceholder);
 
