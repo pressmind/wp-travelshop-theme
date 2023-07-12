@@ -1013,6 +1013,8 @@ jQuery(function ($) {
             var thisPlaceholder = thisDropdownWrapper.find(filterCategoryDropdownToggle + ' .selected-options');
             var thisPlaceholderDefault = thisDropdownWrapper.find(filterCategoryDropdownToggle).data('placeholder');
 
+            console.log(thisDropdownCheckedInputs);
+
             if ( thisDropdownCheckedInputs.length < 1 ) {
                 // set placeholder to placeholder
                 thisPlaceholder.text(thisPlaceholderDefault);
