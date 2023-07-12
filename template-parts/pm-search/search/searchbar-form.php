@@ -41,7 +41,8 @@ $args = array_merge($args, $result);
                     <div class="search-bar-fields-search">
                         <div class="search-box-field search-box-field--fulltext">
                             <?php
-                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search.php', ['name' => $field['name']]);
+                            $searchPlaceholder = isset(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['searchPlaceholder']) ? TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['searchPlaceholder'] : 'search-1';
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search.php', ['args' => $args, 'placeholder' => $searchPlaceholder, 'name' => $field['name']]);
                             ?>
                         </div>
                     </div>
