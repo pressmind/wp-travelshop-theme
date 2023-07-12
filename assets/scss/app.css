@@ -13494,15 +13494,20 @@ ul.checklist {
   flex-direction: row;
   gap: 15px; }
   .search-wrapper .search-wrapper--inner .search-box-fields {
-    flex: 1; }
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .search-wrapper .search-wrapper--inner .search-box-fields.search-box-fields--gap {
+      gap: 15px; }
+    .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-pickers {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-pickers .search-box-field {
+        flex: 1; }
   .search-wrapper .search-wrapper--inner .search-box-submit {
     flex: 0; }
-.search-wrapper .search-box-fields {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-  .search-wrapper .search-box-fields.search-box-fields--gap {
-    gap: 15px; }
 .search-wrapper .search-box {
   padding: 30px;
   background-color: #fff;
