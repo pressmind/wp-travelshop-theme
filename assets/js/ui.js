@@ -1033,6 +1033,8 @@ jQuery(function ($) {
 
             var thisPlaceholder = $(this).parents('.search-box-field--fulltext').data('search-placeholder');
 
+            console.log(thisPlaceholder);
+
             // get placehodler + insert
             var getContent = $('#searchStorage_' + thisPlaceholder).html();
             $(document).find('.string-search-overlay-results').html(getContent);
