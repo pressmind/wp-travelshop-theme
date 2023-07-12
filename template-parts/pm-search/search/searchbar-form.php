@@ -33,13 +33,13 @@ $args = array_merge($args, $result);
 <form id="main-search" method="GET" action="<?php echo SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['id_object_type']) . '/','/'); ?>">
     <input type="hidden" name="pm-ot" value="<?php echo implode(',',$args['id_object_type']); ?>">
     <div class="search-wrapper--inner search-box">
-        <div class="row">
+        <div class="search-box-fields">
             <?php
             foreach(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['fields'] as $field){
 
                 if($field['fieldname'] == 'date_picker'){
                     ?>
-                    <div class="col-12 col-lg-3 travelshop-datepicker">
+                    <div class="search-box-field search-box-field--datepicker travelshop-datepicker">
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => $field['name'], 'departure_min' => $args['departure_min'], 'departure_max' => $args['departure_max'], 'departure_dates' => $args['departure_dates'], 'use_ajax' => 1]);
                         ?>
@@ -47,7 +47,7 @@ $args = array_merge($args, $result);
                 <?php
                 }else if($field['fieldname'] == 'string_search'){
                     ?>
-                    <div class="col-12 col-lg-3">
+                    <div class="search-box-field search-box-field--fulltext">
                         <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search.php', ['name' => $field['name']]);
                         ?>
@@ -59,20 +59,18 @@ $args = array_merge($args, $result);
                 }
             }
             ?>
-            <div class="col-12 col-lg-3 mb-md-0">
-                <div class="form-group mb-0">
-                    <label class="d-none d-md-block">&nbsp;</label>
-                    <a class="btn btn-primary btn-block" data-instant data-instant-intensity="0" href="<?php echo '/' . trim(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['route'],'/'). '/'; ?>">
+            <div class="search-box-field search-box-field--submit">
+                <label class="d-none d-md-block">&nbsp;</label>
+                <a class="btn btn-primary btn-block" data-instant data-instant-intensity="0" href="<?php echo '/' . trim(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['route'],'/'). '/'; ?>">
 
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
 
 
-                        <img class="loader" src="<?php echo WEBSERVER_HTTP; ?>/wp-content/themes/travelshop/assets/img/loading-dots.svg">
-                        <span class="search-bar-total-count" data-default="Suchen" data-total-count-singular="Reise anzeigen"
-                              data-total-count-plural="Reisen anzeigen">
-                            <?php echo empty($args['total_result']) ? 'Suchen' : $args['total_result'] . ' Reisen anzeigen'; ?></span>
-                    </a>
-                </div>
+                    <img class="loader" src="<?php echo WEBSERVER_HTTP; ?>/wp-content/themes/travelshop/assets/img/loading-dots.svg">
+                    <span class="search-bar-total-count" data-default="Suchen" data-total-count-singular="Reise anzeigen"
+                          data-total-count-plural="Reisen anzeigen">
+                        <?php echo empty($args['total_result']) ? 'Suchen' : $args['total_result'] . ' Reisen anzeigen'; ?></span>
+                </a>
             </div>
         </div>
 

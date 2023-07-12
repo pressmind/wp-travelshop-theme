@@ -14,7 +14,7 @@ if (empty($_GET['pm-c'][$args['fieldname']]) === false && preg_match_all("/[a-zA
 }
 if (empty($args['categories'][$args['fieldname']][0]) === false) {
     ?>
-    <div class="col-12 col-lg-3">
+    <div class="search-box-field search-box-field--category">
         <div>
             <div class="form-group mb-lg-0 category-tree">
                 <label for=""><?php echo $args['name']; ?></label>
