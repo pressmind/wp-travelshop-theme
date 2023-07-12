@@ -63,7 +63,7 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
             data-departures='<?php echo $departures_dates;?>'>
 
         <span class="selected-options selected-options-fade">
-            <span class="selected-options-date" data-default="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"><?php echo !empty($human_readable_str) ? $human_readable_str : 'Reisezeitraum'; ?></span> &middot; <span class="selected-options-duration" data-default="beliebig"><?php echo !empty($duration_readable) ? $duration_readable : 'beliebig'; ?></span>
+            <span class="selected-options-date" data-default="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"><?php echo !empty($human_readable_str) ? $human_readable_str : 'Reisezeitraum'; ?></span>
         </span>
         <svg class="input-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
 
@@ -76,7 +76,7 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
 <div class="daterange-overlay">
     <div class="daterange-overlay-header d-flex flex-row flex-nowrap justify-content-between justify-content-lg-center">
         <div class="h5 d-none d-lg-block">
-            <span class="selected-options-date" data-default="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"><?php echo !empty($human_readable_str) ? $human_readable_str : 'Reisezeitraum'; ?></span> &middot; <span class="selected-options-duration" data-default="beliebig"><?php echo !empty($duration_readable) ? $duration_readable : 'beliebig'; ?></span>
+            <span class="selected-options-date" data-default="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"><?php echo !empty($human_readable_str) ? $human_readable_str : 'Reisezeitraum'; ?></span>
         </div>
         <div class="h5 d-block d-lg-none">
             <?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>
