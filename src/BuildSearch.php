@@ -149,7 +149,7 @@ class BuildSearch
 
 
         $order = array();
-        $allowed_orders = array('rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc', 'name-asc', 'name-desc', 'code-asc', 'code-desc');
+        $allowed_orders = array('rand', 'price-desc', 'price-asc', 'date_departure-asc', 'date_departure-desc', 'name-asc', 'name-desc', 'code-asc', 'code-desc', 'list');
 
         if (empty($request[$prefix.'-o']) === false && in_array($request[$prefix.'-o'], $allowed_orders) === true) {
 
