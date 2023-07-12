@@ -1,4 +1,5 @@
 <?php
+use Pressmind\Travelshop\Template;
 /**
  * @var $args['name']
  */
