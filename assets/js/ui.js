@@ -979,6 +979,8 @@ jQuery(function ($) {
      */
     function openFullTextSearch( _this ) {
 
+        console.log('this');
+
         var thisWrapper = _this.parents('.search-field-input--fulltext');
         var thisOverlay = thisWrapper.find(searchOverlayWrapper);
         var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
@@ -1032,8 +1034,6 @@ jQuery(function ($) {
             e.preventDefault();
 
             var thisPlaceholder = $(this).parents('.search-field-input--fulltext').data('search-placeholder');
-
-            console.log(thisPlaceholder);
 
             // get placehodler + insert
             var getContent = $('#searchStorage_' + thisPlaceholder).html();
