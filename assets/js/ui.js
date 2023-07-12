@@ -1010,7 +1010,7 @@ jQuery(function ($) {
         categoryDropdownInput.on('change', function() {
             var thisDropdownWrapper = $(this).parents('.search-field-input--category');
             var thisDropdownCheckedInputs = thisDropdownWrapper.find('input[type="checkbox"]:checked');
-            var thisPlaceholder = thisDropdownWrapper.find(filterCategoryDropdownToggle + ' .placeholder');
+            var thisPlaceholder = thisDropdownWrapper.find(filterCategoryDropdownToggle + ' .selected-options');
             var thisPlaceholderDefault = thisDropdownWrapper.find(filterCategoryDropdownToggle).data('placeholder');
 
             if ( thisDropdownCheckedInputs.length < 1 ) {
