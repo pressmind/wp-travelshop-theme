@@ -58,7 +58,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
                                             </span>
 
-                            <label class="form-check-label" for="<?php echo $uuid; ?>">
+                            <label class="form-check-label" data-label-name="<?php echo $item->name; ?>" for="<?php echo $uuid; ?>">
                                 <?php echo $item->name; ?>
                             </label>
                         </div>
