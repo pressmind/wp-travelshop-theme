@@ -52,18 +52,20 @@ $args = array_merge($args, $result);
             <div class="search-bar-fields-pickers">
             <?php
             foreach(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['fields'] as $field){
+                if($field['fieldname'] !== 'string_search')  {
 
-                if($field['fieldname'] == 'date_picker'){
-                    ?>
-                    <div class="search-box-field search-box-field--datepicker travelshop-datepicker">
-                        <?php
-                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => $field['name'], 'departure_min' => $args['departure_min'], 'departure_max' => $args['departure_max'], 'departure_dates' => $args['departure_dates'], 'use_ajax' => 1]);
+                    if($field['fieldname'] == 'date_picker'){
                         ?>
-                    </div>
-                <?php
-                }else{
-                    // draw category tree based search fields
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/category-tree-dropdown.php', array_merge($args, ['name' => $field['name'], 'fieldname' => $field['fieldname'], 'behavior' => $field['behavior']]));
+                        <div class="search-box-field search-box-field--datepicker travelshop-datepicker">
+                            <?php
+                            echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/date-picker.php', ['name' => $field['name'], 'departure_min' => $args['departure_min'], 'departure_max' => $args['departure_max'], 'departure_dates' => $args['departure_dates'], 'use_ajax' => 1]);
+                            ?>
+                        </div>
+                        <?php
+                    }else{
+                        // draw category tree based search fields
+                        echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/category-tree-dropdown.php', array_merge($args, ['name' => $field['name'], 'fieldname' => $field['fieldname'], 'behavior' => $field['behavior']]));
+                    }
                 }
             }
             ?>
