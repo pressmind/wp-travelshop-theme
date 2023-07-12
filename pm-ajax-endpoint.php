@@ -68,7 +68,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
     $CalendarObject = $Calendar->getCalendarObject();
 
-    require 'template-parts/pm-search/search/date-duration-calendar.php';
+    require 'template-parts/pm-search/search/date-range-calendar.php';
 
     exit;
 } else if ($_GET['action'] == 'offer-validation') {
