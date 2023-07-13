@@ -14,7 +14,7 @@ use Pressmind\Travelshop\Search;
             <div class="input-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
             </div>
-            <input class="form-control auto-complete auto-complete-overlay"  data-containerclass="autoCompleteContainerClass--SearchBar--1" type="search" data-autocomplete="true" placeholder="Wo soll es hingehen?" aria-label="Search" name="pm-t" value="<?php echo !empty($_GET['pm-t']) ? $_GET['pm-t'] : '';?>">
+            <input class="auto-complete auto-complete-overlay"  data-containerclass="autoCompleteContainerClass--SearchBar--1" type="search" data-autocomplete="true" placeholder="Wo soll es hingehen?" aria-label="Search" name="pm-t" value="<?php echo !empty($_GET['pm-t']) ? $_GET['pm-t'] : '';?>">
             <div class="lds-dual-ring"></div>
         </div>
 

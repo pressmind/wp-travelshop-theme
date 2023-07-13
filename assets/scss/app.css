@@ -13636,7 +13636,8 @@ ul.checklist {
   border-left: 1px solid #ced4da; }
 .search-wrapper .search-box-field {
   position: relative; }
-  .search-wrapper .search-box-field .search-field-input-field {
+  .search-wrapper .search-box-field .search-field-input-field,
+  .search-wrapper .search-box-field .auto-complete-overlay {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -13653,9 +13654,13 @@ ul.checklist {
     position: relative;
     z-index: 2; }
     @media (prefers-reduced-motion: reduce) {
-      .search-wrapper .search-box-field .search-field-input-field {
+      .search-wrapper .search-box-field .search-field-input-field,
+      .search-wrapper .search-box-field .auto-complete-overlay {
         transition: none; } }
-    .search-wrapper .search-box-field .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active {
+    .search-wrapper .search-box-field .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active,
+    .search-wrapper .search-box-field .auto-complete-overlay:hover,
+    .search-wrapper .search-box-field .auto-complete-overlay:focus,
+    .search-wrapper .search-box-field .auto-complete-overlay:active {
       border: 0.125rem solid #212529; }
 .search-wrapper .search-wrapper--inner {
   display: flex;

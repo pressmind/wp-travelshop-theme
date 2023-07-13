@@ -66,7 +66,8 @@
   .search-box-field {
     position: relative;
 
-    .search-field-input-field {
+    .search-field-input-field,
+    .auto-complete-overlay {
       @include button-reset();
       
       border: $input-border-big-width solid transparent;
