@@ -26,6 +26,15 @@
 }
 
 .string-search-overlay-input .input-wrapper {
+  @include border-radius($input-border-radius);
+  border: $input-border-width solid $input-border-color;
+
+  > input.auto-complete-overlay {
+    margin: -$input-border-width;
+  }
+}
+
+.string-search-overlay-input .input-wrapper input.auto-complete-overlay {
   @extend %fulltext-input;
 }
 
