@@ -4,19 +4,16 @@
   background-color: $body-bg-highlight;
 
   .product-calendar-group-items {
+
     /**
      * some defaults
      */
+
     .product-calendar-group-title,
     .product-calendar-items-title,
     .product-calendar-group-item {
       padding-left: $travel-card-spacer-x;
       padding-right: $travel-card-spacer-x;
-    }
-
-    .product-calendar-group-item-product {
-      padding-left: ($grid-gutter-width / 2);
-      padding-right: ($grid-gutter-width / 2);
     }
 
     /**
