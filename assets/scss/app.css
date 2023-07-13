@@ -12228,10 +12228,10 @@ ul.checklist {
   z-index: 1040;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s;
-  pointer-events: none;
+  pointer-events: none !important;
   opacity: 0; }
   .open.category-tree-field-backdrop, .open.daterange-overlay-backdrop, .open.string-search-overlay-backdrop, .is-open.category-tree-field-backdrop, .is-open.daterange-overlay-backdrop, .is-open.string-search-overlay-backdrop {
-    pointer-events: auto;
+    pointer-events: auto !important;
     opacity: 1; }
 
 .dropdown .dropdown-toggle:after {
