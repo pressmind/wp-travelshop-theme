@@ -16,6 +16,7 @@
       padding-right: $travel-card-spacer-x;
     }
 
+
     /**
      * Group title
      */
@@ -24,6 +25,17 @@
       h3 {
         margin: ($travel-card-spacer-x / 2) 0;
       }
+    }
+
+    /**
+     * Group item
+     */
+
+    .product-calendar-group-item {
+      @include border-radius($travel-card-border-radius);
+      background-color: $travel-card-bg;
+      padding-top: $travel-card-spacer-y;
+      padding-bottom: $travel-card-spacer-y;
     }
   }
 }

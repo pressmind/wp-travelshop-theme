@@ -15509,6 +15509,9 @@ ul.checklist {
      */
     /**
      * Group title
+     */
+    /**
+     * Group item
      */ }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title,
     .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title,
@@ -15517,6 +15520,11 @@ ul.checklist {
       padding-right: 1.25rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title h3 {
       margin: 0.625rem 0; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
+      border-radius: 0.25rem;
+      background-color: #fff;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem; }
 
 header.header-main {
   background-color: #fff;
