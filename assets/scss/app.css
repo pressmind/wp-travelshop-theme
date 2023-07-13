@@ -15540,9 +15540,24 @@ ul.checklist {
       background-color: #fff;
       padding-top: 0.75rem;
       padding-bottom: 0.75rem; }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper .circle {
+          margin-right: .25rem; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper svg {
+          width: 1.125rem;
+          height: 1.125rem;
+          margin-right: .5rem;
+          transition: transform 0.3s;
+          transform-origin: center; }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active .arrow--wrapper svg {
+          transform: scaleY(-1); }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-item {
       margin-top: 0.4166666667rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product {

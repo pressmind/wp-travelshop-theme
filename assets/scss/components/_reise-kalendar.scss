@@ -50,8 +50,35 @@
       padding-top: $travel-card-spacer-y;
       padding-bottom: $travel-card-spacer-y;
 
+      // -- arrow wrapper
+      .arrow--wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        .circle {
+          margin-right: .25rem;
+        }
+
+        svg {
+          width: $font-size-lg;
+          height: $font-size-lg;
+          margin-right: .5rem;
+
+          transition: transform $animation-speed-default;
+          transform-origin: center;
+        }
+      }
+
       &.is-active {
         @include border-bottom-radius(0);
+
+        .arrow--wrapper {
+          svg {
+            transform: scaleY(-1);
+          }
+        }
       }
     }
 
