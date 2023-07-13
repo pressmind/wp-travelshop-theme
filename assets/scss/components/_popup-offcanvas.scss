@@ -7,10 +7,6 @@
 @include placeholder('offcanvas-open') {
   opacity: 1;
   pointer-events: auto;
-
-  * {
-    pointer-events: auto;
-  }
 }
 
 @include placeholder('offcanvas-header') {
@@ -86,10 +82,6 @@
   border: 0;
   margin: 0;
   border-radius: 0;
-
-  * {
-    pointer-events: none;
-  }
 }
 
 @include placeholder('offcanvas-content') {
