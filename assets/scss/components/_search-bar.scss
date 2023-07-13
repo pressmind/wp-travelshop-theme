@@ -35,7 +35,7 @@
       @include border-radius($input-border-radius);
 
       height: 3rem;
-      line-height: 3rem;
+      line-height: (3rem - ($input-border-big-width * 2));
 
       &:hover, &:focus, &:active {
         border: $input-border-big-width solid $input-border-active-color;

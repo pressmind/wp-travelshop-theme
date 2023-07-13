@@ -13636,7 +13636,7 @@ ul.checklist {
     border: 0.125rem solid transparent;
     border-radius: 0.25rem;
     height: 3rem;
-    line-height: 3rem; }
+    line-height: 2.75rem; }
     .search-wrapper .search-box-field .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active {
       border: 0.125rem solid #212529; }
 .search-wrapper .search-wrapper--inner {
