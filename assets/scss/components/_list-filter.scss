@@ -52,6 +52,10 @@
         &.list-filter-box-date-range-picker {
           position: relative;
 
+          .search-field-input-field {
+            @extend .form-control;
+          }
+
           // -- datepicker input
           .search-field-input.search-field-input--datepicker {
             @extend %datepicker-input;
