@@ -52,8 +52,20 @@
         &.list-filter-box-date-range-picker {
           position: relative;
 
+          @include media-breakpoint-up(lg) {
+            .daterange-overlay {
+              left: -0.5rem;
+              transform: translateX(0);
+
+              .daterange-overlay-header {
+                justify-content: start !important;
+              }
+            }
+          }
+
           .search-field-input-field {
             @extend .form-control;
+            background-color: $input-bg !important;
           }
 
           // -- datepicker input

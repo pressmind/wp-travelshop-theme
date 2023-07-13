@@ -13647,6 +13647,14 @@ ul.checklist {
     margin: 0 0 2.75rem 0; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker {
     position: relative; }
+    @media (min-width: 992px) {
+      .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .daterange-overlay {
+        left: -0.5rem;
+        transform: translateX(0); }
+        .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .daterange-overlay .daterange-overlay-header {
+          justify-content: start !important; } }
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field {
+      background-color: #fff !important; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check + .form-check, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check + .form-check {
     margin-top: 0.25rem; }
   @media (max-width: 767.98px) {
