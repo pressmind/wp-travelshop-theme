@@ -16813,7 +16813,7 @@ footer.footer-main {
       overflow: hidden;
       text-overflow: ellipsis; }
   .detail-mobile-bar .detail-mobile-bar-booking {
-    flex: 1; }
+    flex: 0; }
     .detail-mobile-bar .detail-mobile-bar-booking .btn {
       white-space: nowrap; }
   @media (max-width: 991.98px) {
