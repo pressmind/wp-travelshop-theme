@@ -86,12 +86,12 @@
 
                 transition: background-color .3s, color $animation-speed-default;
 
-                &:hover, &:focus, &:active, &.is--active {
+                &:hover, &:focus, &:active, &.is-active {
                     color: $body-color;
                     background-color: rgba(#fff, .5);
                 }
 
-                &.is--active {
+                &.is-active {
                     font-weight: $font-weight-bold;
                 }
             }
@@ -102,7 +102,7 @@
                 button.search-wrapper--tabs_btn {
                     background-color: rgba($secondary, .15);
 
-                    &:hover, &:focus, &:active, &.is--active {
+                    &:hover, &:focus, &:active, &.is-active {
                         color: #fff;
                         background-color: #007bff;
                     }
@@ -116,7 +116,7 @@
                 button.search-wrapper--tabs_btn {
                     background-color: rgba(#bdc3c7, .6);
 
-                    &:hover, &:focus, &:active, &.is--active {
+                    &:hover, &:focus, &:active, &.is-active {
                         background-color: #bdc3c7;
                     }
                 }
@@ -137,12 +137,12 @@
 
                     border-right: 1px solid rgba($body-color, .05);
 
-                    &:hover, &:focus, &:active, &.is--active {
+                    &:hover, &:focus, &:active, &.is-active {
                         background-color: #fff;
                         color: $body-color;
                     }
 
-                    &.is--active {
+                    &.is-active {
                         height: calc(3rem + 1px);
                         bottom: -1px;
                         position: relative;

@@ -36,7 +36,7 @@
       }
     }
 
-    .is--active .arrow--wrapper svg {
+    .is-active .arrow--wrapper svg {
       transform: translateY(-50%) rotate(180deg);
     }
 
@@ -120,7 +120,7 @@
           background-color: rgba($body-color, .025);
         }
 
-        &.is--active {
+        &.is-active {
           border-bottom: 0;
         }
       }

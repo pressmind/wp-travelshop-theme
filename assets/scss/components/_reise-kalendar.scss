@@ -16,6 +16,12 @@
       padding-right: $travel-card-spacer-x;
     }
 
+    /**
+     * Items header
+     */
+    .product-calendar-items-title {
+      padding-bottom: ($travel-card-spacer-x / 2);
+    }
 
     /**
      * Group title
@@ -23,7 +29,8 @@
 
     .product-calendar-group-title {
       h3 {
-        margin: ($travel-card-spacer-x / 2) 0;
+        padding: ($travel-card-spacer-x / 2) 0;
+        margin: 0;
       }
     }
 
@@ -36,6 +43,15 @@
       background-color: $travel-card-bg;
       padding-top: $travel-card-spacer-y;
       padding-bottom: $travel-card-spacer-y;
+
+      &.is-active {
+        @include border-bottom-radius(0);
+      }
+    }
+
+    // spacing
+    .product-calendar-group-item-product + .product-calendar-group-item {
+      margin-top: .25rem;
     }
 
     /**

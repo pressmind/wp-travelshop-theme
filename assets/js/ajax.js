@@ -600,8 +600,8 @@ jQuery(function ($) {
 
         this.searchboxSwitch = function (){
             $(".search-wrapper--tabs_btn").on('click', function (e) {
-                $(this).parents().find(".search-wrapper--tabs_btn").removeClass('is--active');
-                $(this).addClass('is--active');
+                $(this).parents().find(".search-wrapper--tabs_btn").removeClass('is-active');
+                $(this).addClass('is-active');
                 let query_string = 'action=searchbar&pm-tab='+$(this).data('pm-tab') + '&pm-box='+$(this).data('pm-box');
                 _this.call(query_string, null, null, _this.resultHandlerSearchBar);
             });
@@ -1064,16 +1064,16 @@ jQuery(function ($) {
                     e.preventDefault();
                     let row_id = $(this).data('row-id');
 
-                    if ( $(this).hasClass('is--active') ) { // close
-                        $(this).removeClass('is--active');
+                    if ( $(this).hasClass('is-active') ) { // close
+                        $(this).removeClass('is-active');
                         $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').removeClass('is-open');
 
                     } else { // open & load product
                         let pm_id = $(this).data('pm-id');
                         let pm_dr = $(this).data('pm-dr');
-                        $('.product-calendar-group-item').removeClass('is--active');
+                        $('.product-calendar-group-item').removeClass('is-active');
                         $('.product-calendar-group-item--product').removeClass('is-open');
-                        $(this).addClass('is--active');
+                        $(this).addClass('is-active');
                         let query_string = 'action=pm-view&view=Teaser3&pm-id='+pm_id+'&pm-dr='+pm_dr;
                         _this.call(query_string, null, null, _this.calendarRowClickResultHandler, '.product-calendar-group-item--product[data-row-id="'+row_id+'"]');
                         $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').addClass('is-open');

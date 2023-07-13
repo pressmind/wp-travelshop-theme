@@ -13448,13 +13448,17 @@ ul.checklist {
  * another dimensions for travel calendar
  */
 .product-calendar-group-item--product .card-travel.card-travel--stripe {
-  border-radius: 0.25rem;
-  border-bottom: 0 !important; }
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom: 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.125); }
   .product-calendar-group-item--product .card-travel.card-travel--stripe .card-body {
     padding: 1.25rem; }
   .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image img {
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
   @media (min-width: 768px) {
     .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image {
       flex: 0 0 33.3333333333%;
@@ -13777,7 +13781,7 @@ ul.checklist {
       border-color: #dee2e6;
       color: #495057;
       font-weight: 400; }
-    .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+    .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active {
       background-color: #fff;
       border-color: #dee2e6;
       color: #495057;
@@ -13797,7 +13801,7 @@ ul.checklist {
   .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
     background-color: rgba(255, 255, 255, 0.7);
     border-color: rgba(255, 255, 255, 0.7); }
-  .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+  .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active {
     background-color: rgba(255, 255, 255, 0.7);
     border-color: rgba(255, 255, 255, 0.7); }
 
@@ -13810,7 +13814,7 @@ ul.checklist {
   .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
     background-color: rgba(0, 123, 255, 0.7);
     border-color: rgba(0, 123, 255, 0.7); }
-  .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+  .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active {
     background-color: #007bff;
     border-color: #007bff; }
 
@@ -13823,7 +13827,7 @@ ul.checklist {
   .silver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn:hover {
     background-color: rgba(173, 181, 189, 0.7);
     border-color: rgba(173, 181, 189, 0.7); }
-  .silver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+  .silver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active {
     background-color: #adb5bd;
     border-color: #adb5bd; }
 
@@ -13834,7 +13838,7 @@ ul.checklist {
   border-right-width: 0;
   border-left-width: 0;
   border-bottom-width: 0; }
-  .sliver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active, .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active, .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
+  .sliver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active, .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active, .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is-active {
     padding-bottom: 15px;
     margin-bottom: 0; }
 
@@ -15508,6 +15512,9 @@ ul.checklist {
      * some defaults
      */
     /**
+     * Items header
+     */
+    /**
      * Group title
      */
     /**
@@ -15521,13 +15528,21 @@ ul.checklist {
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
       padding-left: 1.25rem;
       padding-right: 1.25rem; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title {
+      padding-bottom: 0.625rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title h3 {
-      margin: 0.625rem 0; }
+      padding: 0.625rem 0;
+      margin: 0; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
       border-radius: 0.25rem;
       background-color: #fff;
       padding-top: 0.75rem;
       padding-bottom: 0.75rem; }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-item {
+      margin-top: .25rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product {
       display: none; }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product.is-open {

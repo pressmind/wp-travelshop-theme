@@ -365,8 +365,9 @@
  * another dimensions for travel calendar
  */
 .product-calendar-group-item--product .card-travel.card-travel--stripe {
-  border-radius: $travel-card-border-radius;
+  @include border-bottom-radius($travel-card-border-radius);
   border-bottom: 0 !important;
+  border-top: $travel-card-border-width solid $travel-card-border-color;
 
   .card-body {
     padding: $travel-card-spacer-x;
@@ -375,6 +376,7 @@
   .card-image {
     img {
       @include border-right-radius(0);
+      @include border-top-radius(0)
     }
   }
 

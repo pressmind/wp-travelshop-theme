@@ -247,7 +247,7 @@
       }
 
       // -- active state
-      &.is--active {
+      &.is-active {
         background-color: $search-bar-tabs-link-active-bg;
         border-color: $search-bar-tabs-link-active-border-color;
         color: $search-bar-tabs-link-active-color;
@@ -288,7 +288,7 @@
         }
 
         // -- active state
-        &.is--active {
+        &.is-active {
           background-color: rgba($search-bar-transparent-theme-color, .7);
           border-color: rgba($search-bar-transparent-theme-color, .7);
         }
@@ -319,7 +319,7 @@
         }
 
         // -- active state
-        &.is--active {
+        &.is-active {
           background-color: $search-bar-main-theme-color;
           border-color: $search-bar-main-theme-color;
         }
@@ -350,7 +350,7 @@
         }
 
         // -- active state
-        &.is--active {
+        &.is-active {
           background-color: $search-bar-silver-theme-color;
           border-color: $search-bar-silver-theme-color;
         }
@@ -377,7 +377,7 @@
         border-bottom-width: 0;
 
         // -- active state
-        &.is--active {
+        &.is-active {
             padding-bottom: $search-bar-padding-x;
             margin-bottom: 0;
         }
