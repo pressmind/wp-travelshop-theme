@@ -182,7 +182,7 @@
 
   button.daterange-overlay-reset.btn.btn-link {
     color: $body-color-light;
-    transition: color .3s;
+    transition: color $animation-speed-default;
 
     &:hover, &:focus, &:active {
       color: $primary;

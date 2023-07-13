@@ -118,7 +118,7 @@ div.daterangepicker {
 
                     border: 1px solid $hr-border-color;
 
-                    transition: background-color .3s, color .3s, border .3s;
+                    transition: background-color .3s, color .3s, border $animation-speed-default;
 
 
                     &:hover, &:focus, &:active {

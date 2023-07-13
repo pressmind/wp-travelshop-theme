@@ -152,7 +152,7 @@
         position:relative;
 
         color: $primary;
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         text-decoration: none;
 
@@ -203,7 +203,7 @@
         text-align: center;
 
         line-height: 1;
-        transition: color .3s;
+        transition: color $animation-speed-default;
         text-decoration: none;
 
         display: flex;
@@ -215,7 +215,7 @@
           width: 2rem;
           height: 2rem;
 
-          transition: color .3s;
+          transition: color $animation-speed-default;
           color: $color--whatsapp;
           margin: 0 auto .25rem auto;
         }

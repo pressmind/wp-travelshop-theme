@@ -84,7 +84,7 @@
                 background-color: rgba(#fff, .15);
                 color: lighten($body-color, 15%);
 
-                transition: background-color .3s, color .3s;
+                transition: background-color .3s, color $animation-speed-default;
 
                 &:hover, &:focus, &:active, &.is--active {
                     color: $body-color;

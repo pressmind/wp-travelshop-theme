@@ -50,7 +50,7 @@
       justify-content: space-between;
       align-items: center;
 
-      transition: color .3s;
+      transition: color $animation-speed-default;
 
       @include font-size-generator($h5-font-sizes);
       font-weight: $headings-font-weight;
@@ -63,7 +63,7 @@
         opacity: .5;
 
         color: $body-color-light;
-        transition: transform .3s;
+        transition: transform $animation-speed-default;
       }
     }
 

@@ -413,7 +413,7 @@
 			font-weight: $font-weight-bold;
 
 			background-color: $gray-200;
-			transition: background-color .3s, color .3s;
+			transition: background-color .3s, color $animation-speed-default;
 			padding: 2rem;
 
 			@include border-radius(.25rem);

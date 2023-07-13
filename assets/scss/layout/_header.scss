@@ -32,7 +32,7 @@
 
     // -- small version?
     @if ( $header-small == true ) {
-      transition: padding-top .3s, padding-bottom .3s;
+      transition: padding-top .3s, padding-bottom $animation-speed-default;
 
       &.affix {
         padding-top: $header-small-padding-y;
@@ -75,7 +75,7 @@
 
         > svg {
           color: $header-action-icon-color;
-          transition: color .3s;
+          transition: color $animation-speed-default;
 
           width: $header-action-icon-width;
           height: $header-action-icon-height;
@@ -118,7 +118,7 @@
     // -- hotline
     .hotline-link {
       color: $header-hotline-info-color;
-      transition: color .3s;
+      transition: color $animation-speed-default;
       text-decoration: none;
 
       display: flex;
@@ -135,7 +135,7 @@
         flex: 0 0 $header-action-height;
 
         color: $header-hotline-icon-color;
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         height: $header-action-height;
 
@@ -169,7 +169,7 @@
 
         .hotline-number {
           color: $header-hotline-color;
-          transition: color .3s;
+          transition: color $animation-speed-default;
 
           font-size: $font-size-lg;
         }

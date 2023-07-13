@@ -266,7 +266,7 @@
       // set link settings for better optik + reading / usage
       > a {
         color: inherit;
-        transition: color .3s;
+        transition: color $animation-speed-default;
         text-decoration: none;
 
         &:hover {

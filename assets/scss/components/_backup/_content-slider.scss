@@ -36,7 +36,7 @@
       outline: none;
       box-shadow: none;
       background-color: rgba($body-color, .5);
-      transition: background-color .3s;
+      transition: background-color $animation-speed-default;
       position:relative;
 
       @include media-breakpoint-up(md) {

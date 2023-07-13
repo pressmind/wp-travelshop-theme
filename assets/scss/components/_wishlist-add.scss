@@ -31,7 +31,7 @@
   position: relative;
   cursor: pointer;
 
-  transition: color .3s;
+  transition: color $animation-speed-default;
 
   svg {
     pointer-events: none !important;

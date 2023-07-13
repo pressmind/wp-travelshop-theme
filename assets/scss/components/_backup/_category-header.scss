@@ -290,7 +290,7 @@
     .category-header-text {
       a {
         color: inherit;
-        transition: all .3s;
+        transition: all $animation-speed-default;
         font-weight: $font-weight-bold;
 
         &:hover, &:focus, &:active {
@@ -331,7 +331,7 @@
 
       a {
         color: inherit;
-        transition: all .3s;
+        transition: all $animation-speed-default;
         font-weight: $font-weight-bold;
 
         &:hover, &:focus, &:active {

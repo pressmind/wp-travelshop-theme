@@ -151,7 +151,7 @@ figure.wp-block-image {
     h3, h1 {
       a {
         color: $body-color;
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         &:hover, &:focus, &:active {
           color: $primary;
@@ -353,7 +353,7 @@ figure.wp-block-image {
 
   .author-title a {
     color: inherit;
-    transition: color .3s;
+    transition: color $animation-speed-default;
 
     &:hover, &:focus, &:active {
       color: $primary;
@@ -373,7 +373,7 @@ figure.wp-block-image {
       border-radius: 50%;
 
       background-color: $gray-400;
-      transition: background-color .3s;
+      transition: background-color $animation-speed-default;
 
       position: relative;
 
@@ -523,7 +523,7 @@ figure.wp-block-image {
 
           > a {
             color: inherit;
-            transition: color .3s;
+            transition: color $animation-speed-default;
 
             &:hover, &:focus, &:active {
               color: $primary;
@@ -556,7 +556,7 @@ figure.wp-block-image {
 
         a {
           color: inherit;
-          transition: color .3s;
+          transition: color $animation-speed-default;
 
           &:hover, &:focus, &:active {
             color: $body-color;
@@ -736,7 +736,7 @@ figure.wp-block-image {
     .blog-list-entry--title {
       a {
         color: $body-color;
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         &:hover, &:focus, &:active {
           text-decoration: none;
@@ -758,7 +758,7 @@ figure.wp-block-image {
         color: inherit;
         text-decoration:none;
 
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         &:hover, &:focus, &:active {
           color: $body-color;
@@ -838,7 +838,7 @@ figure.wp-block-image {
             line-height: 24px;
             font-size: 1rem;
             color: $body-color;
-            transition: color .3s;
+            transition: color $animation-speed-default;
             font-weight: bold;
           }
 

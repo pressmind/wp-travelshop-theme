@@ -107,7 +107,7 @@
 
 			button.dropdown-toggle {
 				color: $primary;
-				transition: color 0.3s;
+				transition: color 0$animation-speed-default;
 
 				&:hover {
 					color: darken($primary, 15%);
@@ -203,7 +203,7 @@
 				display: block;
 				padding-bottom: 0.5rem;
 				color: $gray-700;
-				transition: all 0.3s;
+				transition: all 0$animation-speed-default;
 
 				&:active,
 				&:focus {

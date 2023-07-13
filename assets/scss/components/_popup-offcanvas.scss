@@ -39,7 +39,7 @@
     margin: (-$offcanvas-header-padding-y) (-$offcanvas-header-padding-x) (-$offcanvas-header-padding-y) auto;
 
     color: $popup-close-color;
-    transition: color .3s;
+    transition: color $animation-speed-default;
 
     // -- svg size
     svg {
@@ -77,7 +77,7 @@
   background-color: rgba($offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
 
   overflow: hidden;
-  transition: opacity .3s;
+  transition: opacity $animation-speed-default;
   opacity: 0;
 
   padding:0;
@@ -97,7 +97,7 @@
   flex-direction: column;
 
   position: fixed;
-  transition: opacity .3s, transform .3s;
+  transition: opacity .3s, transform $animation-speed-default;
   opacity:0;
 
   background-color: $offcanvas-bg;

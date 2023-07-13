@@ -13,7 +13,7 @@
   bottom: 0;
 
   width: 300px;
-  transition: left 0.3s, opacity 0.3s;
+  transition: left 0.3s, opacity 0$animation-speed-default;
   left: -300px;
   opacity: 0;
 
@@ -51,7 +51,7 @@
     // margin-bottom: $grid-gutter-width / 2;
 
     color: $gray-600;
-    transition: all 0.3s;
+    transition: all 0$animation-speed-default;
 
     &:active,
     &:focus,
@@ -92,7 +92,7 @@
         padding: 0 $grid-gutter-width;
         display: block;
 
-        transition: all 0.3s;
+        transition: all 0$animation-speed-default;
 
         &.dropdown-toggle {
           position: relative;
@@ -103,7 +103,7 @@
           }
 
           i {
-            transition: transform 0.3s;
+            transition: transform 0$animation-speed-default;
             position: absolute;
             right: $grid-gutter-width;
             top: 50%;
@@ -139,7 +139,7 @@
           padding: ($grid-gutter-width / 3) $grid-gutter-width
             ($grid-gutter-width / 3) (($grid-gutter-width / 2) * 3);
 
-          transition: all 0.3s;
+          transition: all 0$animation-speed-default;
 
           &:hover,
           &:focus,

@@ -28,7 +28,7 @@
   // -- change look & feel of btn-link
   &.btn-link, &.btn-link-light {
     color: $body-color;
-    transition: color .3s;
+    transition: color $animation-speed-default;
     text-decoration: none;
 
     border: 0; // reset border, not needed, prevent shifts
@@ -69,7 +69,7 @@
 .booking-btn {
 
   // add opacity to transitions
-  transition: color .3s, border-color .3s, background-color .3s, opacity .3s;
+  transition: color .3s, border-color .3s, background-color .3s, opacity $animation-speed-default;
 
   &.green {
     @include button-variant($booking-green, $booking-green, lighten($booking-green, 15%), lighten($booking-green, 15%), darken($booking-green, 10%), darken($booking-green, 10%));

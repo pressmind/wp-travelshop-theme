@@ -28,7 +28,7 @@
         top:50%;
         left:0;
         transform: translateY(-50%);
-        transition: transform .3s;
+        transition: transform $animation-speed-default;
 
         * {
           fill: $body-color;
@@ -113,7 +113,7 @@
           }
         }
         border-bottom: 1px solid #ccc;
-        transition: background-color .3s;
+        transition: background-color $animation-speed-default;
         cursor: pointer;
 
         &:hover {

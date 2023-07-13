@@ -213,7 +213,7 @@
 
       font-weight: $search-bar-tabs-font-weight;
 
-      transition: border-color .3s, color .3s, background-color .3s;
+      transition: border-color .3s, color .3s, background-color $animation-speed-default;
 
       @if ( $search-bar-tabs-border-width != 0 ) {
         border-top-width: $search-bar-tabs-border-width;

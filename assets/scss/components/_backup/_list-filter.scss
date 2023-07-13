@@ -36,7 +36,7 @@
       right: $grid-gutter-width;
       color: rgba($body-color, .5);
       background-color: rgba(#000, .1);
-      transition:all .3s;
+      transition:all $animation-speed-default;
 
       &:hover, &:focus, &:active {
         outline: none;
@@ -85,7 +85,7 @@
                 border: 1px solid rgba($body-color, .5);
                 border-radius: $card-border-radius;
 
-                transition: all .3s;
+                transition: all $animation-speed-default;
 
                 i {
                   display: none;
@@ -174,7 +174,7 @@
             text-align: center;
             color: rgba($body-color, .5);
             //background-color: rgba(#000, .1);
-            transition: all .3s;
+            transition: all $animation-speed-default;
             padding:0;
             display: block;
             font-size: .7125rem;
@@ -190,7 +190,7 @@
             }
 
             i {
-              transition: all .3s;
+              transition: all $animation-speed-default;
             }
             @include media-breakpoint-down(sm) {
               width: 25px;
@@ -312,7 +312,7 @@
 
     z-index: 9999;
 
-    transition: opacity .3s;
+    transition: opacity $animation-speed-default;
     opacity:0;
     pointer-events: none;
 
@@ -357,7 +357,7 @@
         border: 1px solid rgba($body-color, .5);
         border-radius: $card-border-radius;
 
-        transition: all .3s;
+        transition: all $animation-speed-default;
 
         i {
           display: none;
@@ -417,7 +417,7 @@
     text-align: center;
     color: rgba($body-color, .5);
     //background-color: rgba(#000, .1);
-    transition: all .3s;
+    transition: all $animation-speed-default;
     padding:0;
     display: block;
     font-size: .7125rem;
@@ -433,7 +433,7 @@
     }
 
     i {
-      transition: all .3s;
+      transition: all $animation-speed-default;
     }
   }
 

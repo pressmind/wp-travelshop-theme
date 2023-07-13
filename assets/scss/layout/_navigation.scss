@@ -11,7 +11,7 @@ nav#navbar {
     > li.nav-item {
       > a.nav-link {
         color: $navbar-light-color;
-        transition: color .3s;
+        transition: color $animation-speed-default;
         text-decoration: none;
 
         font: {
@@ -32,7 +32,7 @@ nav#navbar {
 
             color: $navbar-light-color;
 
-            transition: transform .3s;
+            transition: transform $animation-speed-default;
           }
         }
 

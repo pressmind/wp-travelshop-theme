@@ -35,7 +35,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   cursor: pointer;
   color: $body-color;
-  transition: color .3s;
+  transition: color $animation-speed-default;
 
   &:hover {
     color: $primary;
@@ -118,7 +118,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       line-height: 0;
       color: $body-color-light;
 
-      transition: color .3s;
+      transition: color $animation-speed-default;
 
       height: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
       width: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
@@ -189,13 +189,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       border: $custom-checkbox-input-border-width solid $custom-checkbox-input-border-color;
     }
 
-    transition: background-color .3s, border-color .3s;
+    transition: background-color .3s, border-color $animation-speed-default;
 
     svg {
       width: $custom-checkbox-input-icon-size;
       height: $custom-checkbox-input-icon-size;
       display: none;
-      transition: color .3s;
+      transition: color $animation-speed-default;
       color: $custom-checkbox-input-icon-color;
 
       position: absolute;
@@ -266,7 +266,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         top: 50%;
         left: 50%;
 
-        transition: transform .3s;
+        transition: transform $animation-speed-default;
         transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2));
       }
     }
@@ -425,13 +425,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       border: $custom-radio-input-border-width solid $custom-radio-input-border-color;
     }
 
-    transition: background-color .3s, border-color .3s;
+    transition: background-color .3s, border-color $animation-speed-default;
 
     svg {
       width: $custom-radio-input-icon-size;
       height: $custom-radio-input-icon-size;
       display: none;
-      transition: color .3s;
+      transition: color $animation-speed-default;
       color: $custom-radio-input-icon-color;
 
       position: absolute;

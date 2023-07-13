@@ -8,7 +8,7 @@
 
   background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
 
-  transition: opacity .3s;
+  transition: opacity $animation-speed-default;
 
   pointer-events: none;
   opacity:0;

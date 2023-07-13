@@ -22,7 +22,7 @@
 
 		button.btn.btn-link {
 			color: rgba($body-color, 0.5);
-			transition: all 0.3s;
+			transition: all 0$animation-speed-default;
 			text-align: center;
 			font-size: $font-size-base;
 			font-size: 1.125rem;
@@ -86,7 +86,7 @@ input[type="search"]::-webkit-search-results-decoration {
 		}
 
 		cursor: pointer;
-		transition: all 0.3s;
+		transition: all 0$animation-speed-default;
 
 		&:hover {
 			color: $primary;
@@ -165,7 +165,7 @@ button.select-form-control {
 		right: 0.75rem;
 		top: 50%;
 
-		transition: transform 0.3s;
+		transition: transform 0$animation-speed-default;
 
 		z-index: 3;
 

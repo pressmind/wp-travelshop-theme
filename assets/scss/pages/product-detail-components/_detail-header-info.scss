@@ -7,7 +7,7 @@
 
   > a {
     color: rgba($detail-header-info-color, .5);
-    transition: color .3s;
+    transition: color $animation-speed-default;
     text-decoration: none;
 
     &:hover, &:focus, &:active {

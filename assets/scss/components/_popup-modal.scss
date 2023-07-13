@@ -39,7 +39,7 @@
     margin: (-$modal-header-padding-y) (-$modal-header-padding-x) (-$modal-header-padding-y) auto;
 
     color: $popup-close-color;
-    transition: color .3s;
+    transition: color $animation-speed-default;
 
     // -- svg size
     svg {
@@ -116,7 +116,7 @@
 
   overflow: hidden;
 
-  transition: opacity .3s;
+  transition: opacity $animation-speed-default;
   opacity:0;
 
   padding: $modal-dialog-margin;

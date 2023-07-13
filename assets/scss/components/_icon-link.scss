@@ -7,7 +7,7 @@
   gap: .25rem;
 
   color: $body-color;
-  transition: color .3s;
+  transition: color $animation-speed-default;
 
   text-decoration: none;
 

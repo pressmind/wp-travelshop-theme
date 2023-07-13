@@ -9,7 +9,7 @@
   background-color: rgba($body-color, .7);
   z-index: 1600;
 
-  transition: opacity .3s;
+  transition: opacity $animation-speed-default;
   opacity: 0;
   pointer-events: none;
 

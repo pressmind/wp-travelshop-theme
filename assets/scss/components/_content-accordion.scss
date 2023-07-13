@@ -58,13 +58,13 @@
         height: $font-size-lg;
 
         color: $accordion-toggle-icon-color;
-        transition: color .3s, transform .3s;
+        transition: color .3s, transform $animation-speed-default;
       }
 
       .accordion-toggle--title {
         margin-bottom: 0 !important;
         color: $accordion-toggle-color;
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         display: flex;
         flex-wrap: wrap;

@@ -20,7 +20,7 @@
     justify-content: center;
     pointer-events: auto;
 
-    transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
+    transition: border-color .3s, color .3s, background-color .3s, opacity $animation-speed-default;
     background-color: $slider-controls-bg;
     color: $slider-controls-color;
 
@@ -64,7 +64,7 @@
 
 %slider-controls-if-initialized {
   .slider-controls {
-    transition: opacity .3s;
+    transition: opacity $animation-speed-default;
     opacity: 0;
   }
 

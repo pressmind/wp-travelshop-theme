@@ -23,7 +23,7 @@
 
 %media-hover-scale {
   img {
-    transition: transform .3s;
+    transition: transform $animation-speed-default;
     transform: scale(1); // scale 1 by default
   }
 

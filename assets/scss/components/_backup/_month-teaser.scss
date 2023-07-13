@@ -40,7 +40,7 @@
         color: $body-color;
         font-size: $font-size-lg;
         font-weight: $font-weight-bold;
-        transition: color .3s;
+        transition: color $animation-speed-default;
 
         svg {
           height: 1.25rem;
@@ -50,7 +50,7 @@
           position: absolute;
           top: 50%;
           right: 1.5rem;
-          transition: right .3s;
+          transition: right $animation-speed-default;
 
           transform: translateY(-50%) rotate(-90deg);
 

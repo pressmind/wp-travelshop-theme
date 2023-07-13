@@ -9238,9 +9238,9 @@ a.text-dark:hover, a.text-dark:focus {
     position: relative;
     left: auto !important; }
   .tns-gallery > .tns-moving {
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    transition: all 0.25s; }
+    -webkit-transition: all 0 0.3s;
+    -moz-transition: all 0 0.3s;
+    transition: all 0 0.3s; }
 
 .tns-autowidth {
   display: inline-block; }
@@ -11344,7 +11344,7 @@ body.fl-builder .content-block.content-page {
   overflow: hidden; }
 
 .media-hover-scale img {
-  transition: transform .3s;
+  transition: transform 0.3s;
   transform: scale(1); }
 .media-hover-scale:hover img {
   transform: scale(1.1); }
@@ -11467,7 +11467,7 @@ hr + .content-block {
     line-height: 0;
     justify-content: center;
     pointer-events: auto;
-    transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s, opacity 0.3s;
     background-color: transparent;
     color: #212529;
     width: 2rem;
@@ -11491,7 +11491,7 @@ hr + .content-block {
       opacity: 0.25; }
 
 .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls {
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   opacity: 0; }
 .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-outer + .slider-controls, .detail-header-gallery .detail-header-gallery-slider .tns-outer + .slider-controls {
   opacity: 1; }
@@ -11525,7 +11525,7 @@ hr + .content-block {
   align-items: center;
   gap: .25rem;
   color: #212529;
-  transition: color .3s;
+  transition: color 0.3s;
   text-decoration: none; }
   .icon-link .icon {
     width: 1.125rem;
@@ -11584,7 +11584,7 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: #fff;
   cursor: pointer;
   color: #212529;
-  transition: color .3s;
+  transition: color 0.3s;
   z-index: 5; }
   .list-filter-box.datepicker > div .input-clear:hover, .select-form-control .input-clear:hover, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .input-clear:hover {
     color: #007bff; }
@@ -11651,7 +11651,7 @@ form.form-string-search.input-group {
       padding: 0;
       line-height: 0;
       color: #5a6570;
-      transition: color .3s;
+      transition: color 0.3s;
       height: 2.25rem;
       width: 2.25rem; }
       form.form-string-search.input-group .input-group-append button.input-group-btn svg {
@@ -11698,7 +11698,7 @@ form.form-string-search.input-group {
     top: 0.75rem;
     transform: translateY(-0.5rem);
     border: 1px solid #adb5bd;
-    transition: background-color .3s, border-color .3s; }
+    transition: background-color 0.3s, border-color 0.3s; }
     .search-field-input--category .category-tree-field-dropdown .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-check > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-check > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .form-check > span svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .form-check > span svg,
     .search-field-input--category .category-tree-field-dropdown .category-tree-field-items .form-check > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-check > div:not(.list-filter-second-level) svg,
@@ -11711,7 +11711,7 @@ form.form-string-search.input-group {
       width: 0.875rem;
       height: 0.875rem;
       display: none;
-      transition: color .3s;
+      transition: color 0.3s;
       color: #fff;
       position: absolute;
       top: 50%;
@@ -11780,7 +11780,7 @@ form.form-string-search.input-group {
       position: absolute;
       top: 50%;
       left: 50%;
-      transition: transform .3s;
+      transition: transform 0.3s;
       transform: translate(-0.4375rem, -0.4375rem); }
   .search-field-input--category .category-tree-field-dropdown .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .has-second-level.form-check .list-filter-second-level, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.category-tree .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.board-type .has-second-level.form-check .list-filter-second-level, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.transport-type .has-second-level.form-check .list-filter-second-level {
     display: none; }
@@ -11910,7 +11910,7 @@ form.form-string-search.input-group {
     top: 0.75rem;
     transform: translateY(-0.5rem);
     border: 1px solid #adb5bd;
-    transition: background-color .3s, border-color .3s; }
+    transition: background-color 0.3s, border-color 0.3s; }
     .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > span svg,
     .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
     .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg,
@@ -11920,7 +11920,7 @@ form.form-string-search.input-group {
       width: 0.5rem;
       height: 0.5rem;
       display: none;
-      transition: color .3s;
+      transition: color 0.3s;
       color: #fff;
       position: absolute;
       top: 50%;
@@ -12148,8 +12148,8 @@ ul.checklist {
       -webkit-transform: scale(1.1) rotateZ(270deg);
       transform: scale(1.1) rotateZ(270deg); }
     .spinner .sk-folding-cube .sk-cube2:before {
-      -webkit-animation-delay: 0.3s;
-      animation-delay: 0.3s; }
+      -webkit-animation-delay: 0 0.3s;
+      animation-delay: 0 0.3s; }
     .spinner .sk-folding-cube .sk-cube3:before {
       -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s; }
@@ -12196,7 +12196,7 @@ ul.checklist {
   bottom: 0;
   z-index: 1040;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   pointer-events: none;
   opacity: 0; }
   .open.category-tree-field-backdrop, .open.daterange-overlay-backdrop, .open.string-search-overlay-backdrop, .is-open.category-tree-field-backdrop, .is-open.daterange-overlay-backdrop, .is-open.string-search-overlay-backdrop {
@@ -12226,7 +12226,7 @@ ul.checklist {
     justify-content: center; }
   .btn.btn-link, .btn.btn-link-light {
     color: #212529;
-    transition: color .3s;
+    transition: color 0.3s;
     text-decoration: none;
     border: 0; }
     .btn.btn-link.btn-bold, .btn.btn-link-light.btn-bold {
@@ -12247,7 +12247,7 @@ ul.checklist {
 
 .btn.booking-btn,
 .booking-btn {
-  transition: color .3s, border-color .3s, background-color .3s, opacity .3s; }
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s, opacity 0.3s; }
   .btn.booking-btn.green,
   .booking-btn.green {
     color: #fff;
@@ -12455,7 +12455,7 @@ ul.checklist {
 .add-to-wishlist {
   position: relative;
   cursor: pointer;
-  transition: color .3s;
+  transition: color 0.3s;
   width: 2rem;
   height: 2rem; }
   .add-to-wishlist svg {
@@ -12719,7 +12719,7 @@ ul.checklist {
       padding: 1rem 1rem;
       margin: -1rem -1rem -1rem auto;
       color: #212529;
-      transition: color .3s; }
+      transition: color 0.3s; }
       .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button svg {
         pointer-events: none;
         width: 1.125rem;
@@ -12744,7 +12744,7 @@ ul.checklist {
     background-color: rgba(0, 0, 0, 0.5);
     container-name: backdrop;
     overflow: hidden;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     opacity: 0;
     padding: 0;
     pointer-events: none;
@@ -12758,7 +12758,7 @@ ul.checklist {
     display: flex;
     flex-direction: column;
     position: fixed;
-    transition: opacity .3s, transform .3s;
+    transition: opacity 0.3s, transform 0.3s;
     transform: translateY(2rem);
     opacity: 0;
     background-color: #fff;
@@ -12842,7 +12842,7 @@ ul.checklist {
       padding: 1rem 1rem;
       margin: -1rem -1rem -1rem auto;
       color: #212529;
-      transition: color .3s; }
+      transition: color 0.3s; }
       .content-block.content-block-list-filter .list-filter-header > button svg {
         pointer-events: none;
         width: 1.125rem;
@@ -12871,7 +12871,7 @@ ul.checklist {
       padding: 1rem 1rem;
       margin: -1rem -1rem -1rem auto;
       color: #212529;
-      transition: color .3s; }
+      transition: color 0.3s; }
       .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button svg, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button svg, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button svg {
         pointer-events: none;
         width: 1.125rem;
@@ -12899,7 +12899,7 @@ ul.checklist {
     padding: 1rem 1rem;
     margin: -1rem -1rem -1rem auto;
     color: #212529;
-    transition: color .3s; }
+    transition: color 0.3s; }
     .page-share .page-share-fallback .page-share-fallback-header > button svg, .teaser-block .teaser-block-modal .teaser-block-modal-header > button svg {
       pointer-events: none;
       width: 1.125rem;
@@ -12990,7 +12990,7 @@ ul.checklist {
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     opacity: 0;
     padding: 0.5rem;
     pointer-events: none;
@@ -13017,7 +13017,7 @@ ul.checklist {
     outline: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     opacity: 0;
     padding: 0.5rem;
     pointer-events: none;
@@ -13043,7 +13043,7 @@ ul.checklist {
   outline: 0;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   opacity: 0;
   padding: 0.5rem;
   pointer-events: none;
@@ -13398,7 +13398,7 @@ ul.checklist {
           font-size: 1.25rem; } }
       .card-travel .card-body h1.card-title > a {
         color: inherit;
-        transition: color .3s;
+        transition: color 0.3s;
         text-decoration: none; }
         .card-travel .card-body h1.card-title > a:hover {
           color: #007bff; }
@@ -13500,7 +13500,7 @@ ul.checklist {
       padding-right: 2rem; }
       .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a {
         color: inherit;
-        transition: color .3s;
+        transition: color 0.3s;
         text-decoration: none; }
         .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a:hover {
           color: #007bff; }
@@ -13553,7 +13553,7 @@ ul.checklist {
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
-      transition: color .3s;
+      transition: color 0.3s;
       font-size: 1rem;
       font-weight: 500; }
       @media (min-width: 992px) {
@@ -13564,7 +13564,7 @@ ul.checklist {
         height: 1.5rem;
         opacity: .5;
         color: #5a6570;
-        transition: transform .3s; }
+        transition: transform 0.3s; }
     .teaser.month-teaser > a:hover div.month-teaser-title {
       color: #007bff; }
       .teaser.month-teaser > a:hover div.month-teaser-title svg {
@@ -13725,7 +13725,7 @@ ul.checklist {
     border-style: solid;
     color: #6c757d;
     font-weight: 400;
-    transition: border-color .3s, color .3s, background-color .3s;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
     border-top-width: 1px;
     border-right-width: 1px;
     border-left-width: 1px;
@@ -14034,7 +14034,7 @@ ul.checklist {
       line-height: 0;
       width: 1.125rem;
       height: 1.125rem;
-      transition: color .3s;
+      transition: color 0.3s;
       cursor: pointer; }
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .remove-from-wishlist > svg {
         pointer-events: none;
@@ -14051,7 +14051,7 @@ ul.checklist {
       .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a {
         color: inherit;
         text-decoration: none;
-        transition: color .3s; }
+        transition: color 0.3s; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:hover, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
           text-decoration: none; }
         .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:active, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-data .name > a:focus {
@@ -14141,7 +14141,7 @@ ul.checklist {
     border-style: solid;
     border-color: #e9ecef;
     background-color: #fff;
-    transition: border-color .3s, color .3s, background-color .3s;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
     padding: 0.75rem 1rem;
     gap: 0.5rem;
     font-size: 1rem; }
@@ -14208,7 +14208,7 @@ ul.checklist {
       width: 2rem;
       height: 2rem;
       line-height: 0;
-      transition: color .3s,opacity .3s;
+      transition: color 0.3s, opacity 0.3s;
       color: #5a6570; }
       .personen-select .personen-select-counter button.personen-select-counter-btn > svg {
         width: 2rem;
@@ -14279,11 +14279,11 @@ ul.checklist {
       width: 1.125rem;
       height: 1.125rem;
       color: #5a6570;
-      transition: color .3s, transform .3s; }
+      transition: color 0.3s, transform 0.3s; }
     .accordion-wrapper .accordion-item .accordion-toggle .accordion-toggle--title {
       margin-bottom: 0 !important;
       color: #212529;
-      transition: color .3s;
+      transition: color 0.3s;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -15089,7 +15089,7 @@ ul.checklist {
         margin: -1.5rem -0.5rem 0 -0.5rem; } }
   .daterange-overlay button.daterange-overlay-reset.btn.btn-link {
     color: #5a6570;
-    transition: color .3s; }
+    transition: color 0.3s; }
     .daterange-overlay button.daterange-overlay-reset.btn.btn-link:hover, .daterange-overlay button.daterange-overlay-reset.btn.btn-link:focus, .daterange-overlay button.daterange-overlay-reset.btn.btn-link:active {
       color: #007bff;
       text-decoration: none; }
@@ -15300,7 +15300,7 @@ ul.checklist {
         font-size: 0.875rem;
         color: #5a6570;
         font-weight: 400;
-        transition: color .3s;
+        transition: color 0.3s;
         text-decoration: none; }
         .string-search-overlay .string-search-overlay-results .string-search-placeholder-link a:hover, .string-search-overlay .string-search-overlay-results .string-search-placeholder-link a:focus, .string-search-overlay .string-search-overlay-results .string-search-placeholder-link a:active {
           color: #007bff;
@@ -15354,7 +15354,7 @@ ul.checklist {
             font-weight: 700;
             text-transform: uppercase;
             padding: 0 0.75rem;
-            transition: color .3s, background-color .3s, border .3s;
+            transition: color 0.3s, background-color 0.3s, border 0.3s;
             border-radius: 0.2rem; }
           .string-search-overlay .string-search-overlay-results .string-search-placeholder-items .items-wrapper > .search-item > a .search-item-body {
             flex: 1; }
@@ -15460,7 +15460,7 @@ header.header-main {
   color: #212529;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  transition: padding-top .3s, padding-bottom .3s;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
   position: fixed;
   right: 0;
   left: 0;
@@ -15506,7 +15506,7 @@ header.header-main {
       justify-content: center; }
       header.header-main .header-action .header-action--icon > svg {
         color: #5a6570;
-        transition: color .3s;
+        transition: color 0.3s;
         width: 1.75rem;
         height: 1.75rem; }
     header.header-main .header-action:hover .header-action--icon > svg, header.header-main .header-action:focus .header-action--icon > svg, header.header-main .header-action:active .header-action--icon > svg {
@@ -15528,7 +15528,7 @@ header.header-main {
         border-radius: 50%; }
   header.header-main .hotline-link {
     color: #5a6570;
-    transition: color .3s;
+    transition: color 0.3s;
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -15540,7 +15540,7 @@ header.header-main {
       max-width: 2rem;
       flex: 0 0 2rem;
       color: #007bff;
-      transition: color .3s;
+      transition: color 0.3s;
       height: 2rem;
       display: flex;
       align-items: center;
@@ -15562,7 +15562,7 @@ header.header-main {
         white-space: nowrap; }
       header.header-main .hotline-link .hotline-info .hotline-number {
         color: #212529;
-        transition: color .3s;
+        transition: color 0.3s;
         font-size: 1.125rem; }
       header.header-main .hotline-link .hotline-info .hotline-title {
         font-size: 0.875rem; }
@@ -15583,7 +15583,7 @@ nav#navbar ul.navbar-nav {
   align-items: baseline; }
   nav#navbar ul.navbar-nav > li.nav-item > a.nav-link {
     color: #434b53;
-    transition: color .3s;
+    transition: color 0.3s;
     text-decoration: none;
     font-size: 1.125rem;
     font-weight: 400;
@@ -15596,7 +15596,7 @@ nav#navbar ul.navbar-nav {
       width: 0.875rem;
       height: 0.875rem;
       color: #434b53;
-      transition: transform .3s; }
+      transition: transform 0.3s; }
     nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:hover, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:focus, nav#navbar ul.navbar-nav > li.nav-item > a.nav-link:active {
       text-decoration: none;
       color: #007bff; }
@@ -15689,7 +15689,7 @@ footer.footer-main {
           gap: 0.5rem; } }
       footer.footer-main .footer-main--boxes .nav.flex-column a {
         color: #212529;
-        transition: color .3s;
+        transition: color 0.3s;
         text-decoration: none; }
         footer.footer-main .footer-main--boxes .nav.flex-column a:hover {
           color: #007bff;
@@ -15707,7 +15707,7 @@ footer.footer-main {
       font-size: 0.875rem; }
       footer.footer-main .footer-main--meta .nav.flex-row a {
         color: #5a6570;
-        transition: color .3s;
+        transition: color 0.3s;
         text-decoration: none; }
         footer.footer-main .footer-main--meta .nav.flex-row a:hover {
           color: #212529;
@@ -15792,7 +15792,7 @@ footer.footer-main {
 
 .booking-entrypoint-calendar {
   opacity: 1;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   pointer-events: auto; }
   .booking-entrypoint-calendar .booking-entrypoint-calender-duration {
     display: flex;
@@ -15824,7 +15824,7 @@ footer.footer-main {
         padding: 0.6125rem 1.125rem;
         line-height: 1;
         border-radius: 0rem;
-        transition: background-color .3s, color .3s, transform .3s; }
+        transition: background-color 0.3s, color 0.3s, transform 0.3s; }
         .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button.active, .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button:hover, .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button:focus, .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button:active {
           color: #212529; }
         .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button:hover, .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button:active, .booking-entrypoint-calendar .booking-entrypoint-calender-duration .duration-switch > button:focus {
@@ -15859,7 +15859,7 @@ footer.footer-main {
         border-style: solid;
         color: #5a6570;
         pointer-events: auto;
-        transition: background-color .3s, opacity .3s, color .3s, border-color .3s; }
+        transition: background-color 0.3s, opacity 0.3s, color 0.3s, border-color 0.3s; }
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg {
           width: 0.75rem;
           height: 0.75rem; }
@@ -15931,7 +15931,7 @@ footer.footer-main {
         text-align: center;
         font-weight: 700;
         text-decoration: none;
-        transition: background-color .3s;
+        transition: background-color 0.3s;
         border-radius: 20rem; }
         .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a:hover, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a:focus, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-day.travel-date > a:active {
           text-decoration: none; }
@@ -16182,7 +16182,7 @@ footer.footer-main {
       display: block;
       position: relative;
       color: #007bff;
-      transition: color .3s;
+      transition: color 0.3s;
       text-decoration: none;
       padding-left: 1.75rem; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-hotline a.hotline-link .hotline-info,
@@ -16222,7 +16222,7 @@ footer.footer-main {
       color: #212529;
       text-align: center;
       line-height: 1;
-      transition: color .3s;
+      transition: color 0.3s;
       text-decoration: none;
       display: flex;
       flex-direction: column;
@@ -16231,7 +16231,7 @@ footer.footer-main {
       .detail-box .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link svg {
         width: 2rem;
         height: 2rem;
-        transition: color .3s;
+        transition: color 0.3s;
         color: #4aac20;
         margin: 0 auto .25rem auto; }
       .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:hover, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:focus, .detail-box .detail-box-contact .detail-contact-wrapper .detail-contact-whatsapp a.whatsapp-link:active,
@@ -16484,7 +16484,7 @@ footer.footer-main {
 .detail-gallery-overlay {
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   position: fixed;
   top: 0;
   left: 0;
@@ -16512,7 +16512,7 @@ footer.footer-main {
     line-height: 0;
     justify-content: center;
     pointer-events: auto;
-    transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s, opacity 0.3s;
     background-color: rgba(33, 37, 41, 0.4);
     color: #fff;
     width: 2rem;
@@ -16608,7 +16608,7 @@ footer.footer-main {
       display: inline-block;
       cursor: pointer;
       opacity: .5;
-      transition: opacity .3s; }
+      transition: opacity 0.3s; }
       .detail-gallery-overlay #detail-gallery-thumbnails .detail-gallery-thumbnail-item:hover, .detail-gallery-overlay #detail-gallery-thumbnails .detail-gallery-thumbnail-item.tns-nav-active {
         opacity: 1; }
       .detail-gallery-overlay #detail-gallery-thumbnails .detail-gallery-thumbnail-item img {
@@ -16625,7 +16625,7 @@ footer.footer-main {
       margin-bottom: 0.5rem; } }
   .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a, .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--attributes > a {
     color: rgba(33, 37, 41, 0.5);
-    transition: color .3s;
+    transition: color 0.3s;
     text-decoration: none; }
     .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:hover, .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--attributes > a:hover, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:focus, .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--attributes > a:focus, .detail-header-info .detail-header-info-top .detail-header-info-top-attributes > a:active, .detail-mobile-bar .detail-mobile-bar-info .detail-mobile-bar-info--attributes > a:active {
       color: #212529; }
@@ -16798,7 +16798,7 @@ footer.footer-main {
   border-top: 1px solid #e9ecef;
   padding: .75rem 0;
   display: none;
-  transition: transform .25s;
+  transition: transform 0.3s;
   transform: translateY(100%);
   opacity: 1; }
   .detail-mobile-bar .detail-mobile-bar-row {

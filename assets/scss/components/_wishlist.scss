@@ -86,7 +86,7 @@
           width: $font-size-lg;
           height: $font-size-lg;
 
-          transition: color .3s;
+          transition: color $animation-speed-default;
           cursor: pointer;
 
           > svg {
@@ -114,7 +114,7 @@
           > a {
             color: inherit;
             text-decoration: none;
-            transition: color .3s;
+            transition: color $animation-speed-default;
 
             &:active, &:hover, &:focus {
               text-decoration: none;

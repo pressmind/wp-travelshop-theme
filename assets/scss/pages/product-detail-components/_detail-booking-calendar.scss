@@ -19,7 +19,7 @@
 
   .booking-entrypoint-calendar {
     opacity: 1;
-    transition: opacity .3s;
+    transition: opacity $animation-speed-default;
     pointer-events: auto;
 
     // -- duration switch
@@ -62,7 +62,7 @@
 
           @include border-radius(($border-radius - .25rem));
 
-          transition: background-color .3s, color .3s, transform .3s;
+          transition: background-color .3s, color .3s, transform $animation-speed-default;
 
           &.active, &:hover, &:focus, &:active {
             color: $body-color;
@@ -141,7 +141,7 @@
 
           pointer-events: auto;
 
-          transition: background-color .3s, opacity .3s, color .3s, border-color .3s;
+          transition: background-color .3s, opacity .3s, color .3s, border-color $animation-speed-default;
 
           &:not([disabled]):hover {
             border-color: $primary;
@@ -259,7 +259,7 @@
                 font-weight: $font-weight-bold;
 
                 text-decoration: none;
-                transition: background-color .3s;
+                transition: background-color $animation-speed-default;
 
                 &:hover, &:focus, &:active {
                   text-decoration: none;
