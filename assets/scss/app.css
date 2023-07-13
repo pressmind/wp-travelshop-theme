@@ -15491,6 +15491,11 @@ ul.checklist {
         .string-search-overlay .string-search-overlay-results:after {
           display: none; } }
 
+.product-calendar-wrap {
+  padding: .5rem;
+  border-radius: 0.25rem;
+  background-color: #e9ecef; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;
