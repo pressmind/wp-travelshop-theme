@@ -53,10 +53,10 @@ $random = rand(1, 999999);
         <div class="col-12 col-lg-4">
             <strong><?php echo $args['headline']; ?></strong>
         </div>
-        <div class="col-6 col-lg-2">
+        <div class="col-12 col-lg-2">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
         </div>
-        <div class="col-6 col-lg-3 text-lg-right">
+        <div class="col-12 col-lg-3 text-lg-right">
         <span class="price">
             <?php
             if (!empty($cheapest_price) && ($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {
