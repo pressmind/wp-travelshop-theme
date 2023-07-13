@@ -16820,6 +16820,7 @@ footer.footer-main {
     .detail-mobile-bar {
       display: block; } }
   .detail-mobile-bar.show {
+    display: block;
     transform: translateY(0);
     opacity: 1; }
 
