@@ -48,6 +48,16 @@
           }
         }
 
+        // -- daterange picker
+        &.list-filter-box-date-range-picker {
+          position: relative;
+
+          // -- datepicker input
+          .search-field-input.search-field-input--datepicker {
+            @extend %datepicker-input;
+          }
+        }
+
         // -- category definition, board-type definition, transport-type definition
         &.category-tree,
         &.board-type,
