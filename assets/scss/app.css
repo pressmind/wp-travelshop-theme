@@ -11615,6 +11615,23 @@ input[type="search"]::-webkit-search-results-decoration {
   transform: none; }
 
 /**
+ * Select
+ */
+select.form-control {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 2rem;
+  cursor: pointer;
+  height: calc( 1.5em + 0.75rem + 2px );
+  line-height: calc( 1.5em + 0.75rem + 2px )-0.0625rem;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMTMuNjYsMTAxLjY2bC04MCw4MGE4LDgsMCwwLDEtMTEuMzIsMGwtODAtODBBOCw4LDAsMCwxLDUzLjY2LDkwLjM0TDEyOCwxNjQuNjlsNzQuMzQtNzQuMzVhOCw4LDAsMCwxLDExLjMyLDExLjMyWiI+PC9wYXRoPjwvc3ZnPg==), #fff;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - .75rem) 0.9375rem;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+/**
  * Define fadeout right, to make text longer than input fadeout into form bg-color
  */
 .select-form-control .selected-options:after {
