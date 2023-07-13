@@ -15544,7 +15544,7 @@ ul.checklist {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-item {
-      margin-top: 0.625rem; }
+      margin-top: 0.4166666667rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product {
       display: none; }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product.is-open {
