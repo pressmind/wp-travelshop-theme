@@ -15543,8 +15543,9 @@ ul.checklist {
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
         display: flex;
         align-items: center;
-        gap: .5rem;
         flex-direction: row; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper + small {
+          padding-left: .75rem; }
         @media (min-width: 992px) {
           .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
             justify-content: end; } }

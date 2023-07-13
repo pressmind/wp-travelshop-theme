@@ -54,8 +54,12 @@
       .price {
         display: flex;
         align-items: center;
-        gap: .5rem;
         flex-direction: row;
+
+        .discount-wrapper + small {
+          padding-left: .75rem;
+        }
+
         @include media-breakpoint-up(lg) {
           justify-content: end;
         }
