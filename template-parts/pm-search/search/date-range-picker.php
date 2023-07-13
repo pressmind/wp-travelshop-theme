@@ -65,7 +65,9 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
         <span class="selected-options selected-options-fade">
             <span class="selected-options-date" data-default="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"><?php echo !empty($human_readable_str) ? $human_readable_str : 'Reisezeitraum'; ?></span>
         </span>
-        <svg class="input-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+        <div class="input-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+        </div>
 
     </button>
     <svg class="input-clear datepicker-clear" <?php if (!empty($_GET['pm-dr']) && $use_ajax == "1") { echo 'style="display: block;"'; } else { echo 'style="display: none;"'; } ?>><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
