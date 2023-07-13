@@ -471,6 +471,12 @@ $booking-calendar-active-day-border-color: $primary !default;
 $booking-calendar-active-offer-bg: $primary !default;
 $booking-calendar-border-radius: 20rem !default;
 $booking-calendar-item-size: 3rem !default;
+
+/**
+ * Calendar control
+ */
+$calendar-gutter: 16px;
+
 /**
  * Searchbar
  * --------------------------------------------
