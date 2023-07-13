@@ -32,6 +32,10 @@
   // -- pickers
   .search-bar-fields-pickers {
     .search-box-field {
+      .search-field-input {
+        margin: -$input-border-width;
+      }
+
       + .search-box-field {
         border-left: $input-border-width solid $input-border-color;
       }
@@ -48,6 +52,8 @@
       border: $input-border-big-width solid transparent;
       @include border-radius($input-border-radius);
       @include transition($input-transition);
+
+      width: 100%;
 
       padding-left: $input-padding-x;
       padding-right: $input-padding-x;

@@ -13628,6 +13628,8 @@ ul.checklist {
   border: 1px solid #ced4da; }
 .search-wrapper .search-bar-fields-search .search-box-field {
   margin: -1px; }
+.search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
+  margin: -1px; }
 .search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {
   border-left: 1px solid #ced4da; }
 .search-wrapper .search-box-field {
@@ -13641,6 +13643,7 @@ ul.checklist {
     border: 0.125rem solid transparent;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     height: 3rem;
