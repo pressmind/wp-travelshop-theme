@@ -90,7 +90,7 @@ if (count($items) == 0) {
                                 <div class="product-calendar-group-item row" data-row-id="<?php echo $month_count . "-" . $date_count; ?>" data-pm-id="<?php echo $item->id; ?>" data-pm-dr="<?php echo $CheapestPriceFilter->date_from->format("Ymd") . '-' . $CheapestPriceFilter->date_to->format("Ymd"); ?>">
                                     <div class="col-12 col-md-3">
                                         <div class="arrow--wrapper">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
                                             <i class="circle green"></i>
                                             <?php

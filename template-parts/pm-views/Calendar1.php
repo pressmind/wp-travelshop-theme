@@ -35,7 +35,7 @@ $random = rand(1, 999999);
 <div class="product-calendar-group-item row" data-row-id="<?php echo $random; ?>" data-pm-id="<?php echo $args['id_media_object']; ?>">
     <div class="col-12 col-lg-3">
         <div class="arrow--wrapper">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
             <i class="circle green"></i>
             <?php
