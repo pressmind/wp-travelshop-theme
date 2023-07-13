@@ -18,9 +18,17 @@
   background-color: $body-bg;
   box-shadow: $dropdown-box-shadow;
 
+  * {
+    pointer-events: none !important;
+  }
+
   &.is-open {
     opacity: 1;
     pointer-events: auto !important;
+
+    * {
+      pointer-events: auto !important;
+    }
   }
 
   // -- header

@@ -12725,7 +12725,9 @@ ul.checklist {
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select.show, .dropdown-menu.dropdown-menu-booking-person-select.show, .dropdown-menu.dropdown-menu-wishlist.show, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay {
     opacity: 1;
-    pointer-events: auto; } }
+    pointer-events: auto; }
+    .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-booking-person-select.show *, .dropdown-menu.dropdown-menu-wishlist.show *, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay * {
+      pointer-events: auto; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header {
     display: flex !important;
@@ -12779,7 +12781,9 @@ ul.checklist {
     pointer-events: none;
     border: 0;
     margin: 0;
-    border-radius: 0; } }
+    border-radius: 0; }
+    .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-booking-person-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay * {
+      pointer-events: none; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-content, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-content {
     display: flex;
@@ -12831,16 +12835,22 @@ ul.checklist {
   .content-block.content-block-list-filter.is-open {
     opacity: 1;
     display: flex;
-    pointer-events: auto; } }
+    pointer-events: auto; }
+    .content-block.content-block-list-filter.is-open * {
+      pointer-events: auto; } }
 @media (min-width: 768px) {
   .dropdown-menu.dropdown-menu-booking-select.show, .dropdown-menu.dropdown-menu-wishlist.show, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay {
     opacity: 1;
     display: flex;
-    pointer-events: auto; } }
+    pointer-events: auto; }
+    .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-wishlist.show *, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay * {
+      pointer-events: auto; } }
 .page-share.is-open .page-share-fallback, .teaser-block .teaser-block-modal.show {
   opacity: 1;
   display: flex;
   pointer-events: auto; }
+  .page-share.is-open .page-share-fallback *, .teaser-block .teaser-block-modal.show * {
+    pointer-events: auto; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-header {
     align-items: center;
@@ -13017,7 +13027,9 @@ ul.checklist {
     pointer-events: none;
     border: 0;
     margin: 0;
-    border-radius: 0; } }
+    border-radius: 0; }
+    .content-block.content-block-list-filter * {
+      pointer-events: none; } }
 @media (min-width: 768px) {
   .dropdown-menu.dropdown-menu-booking-select, .dropdown-menu.dropdown-menu-wishlist, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay {
     position: fixed !important;
@@ -13042,7 +13054,9 @@ ul.checklist {
     pointer-events: none;
     border: 0;
     margin: 0;
-    border-radius: 0; } }
+    border-radius: 0; }
+    .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay * {
+      pointer-events: none; } }
 .page-share .page-share-fallback, .teaser-block .teaser-block-modal {
   position: fixed !important;
   top: 0 !important;
@@ -13067,6 +13081,8 @@ ul.checklist {
   border: 0;
   margin: 0;
   border-radius: 0; }
+  .page-share .page-share-fallback *, .teaser-block .teaser-block-modal * {
+    pointer-events: none; }
 @media (min-width: 768px) {
   .page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner {
     max-width: 768px; } }
@@ -15051,9 +15067,13 @@ ul.checklist {
   border-radius: 0.25rem;
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175); }
+  .daterange-overlay * {
+    pointer-events: none !important; }
   .daterange-overlay.is-open {
     opacity: 1;
     pointer-events: auto !important; }
+    .daterange-overlay.is-open * {
+      pointer-events: auto !important; }
   .daterange-overlay .daterange-overlay-header {
     align-items: center;
     padding: 0 1.5rem .5rem 1.5rem;
