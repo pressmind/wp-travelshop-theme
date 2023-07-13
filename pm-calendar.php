@@ -19,7 +19,7 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1 style="margin: 1.5rem 0 .5rem 0">Reisekalender</h1>
+                        <h1>Reisekalender</h1>
                         <div id="search-result">
                             <?php
                             // this content will be replaced by ajax during the search, @see travelshop/assets/js/ajax.js
