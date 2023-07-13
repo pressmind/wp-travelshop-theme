@@ -49,6 +49,11 @@
       background-color: $travel-card-bg;
       padding-top: $travel-card-spacer-x;
       padding-bottom: $travel-card-spacer-x;
+      cursor: pointer;
+
+      &:not(.is-active) {
+        background-color: rgba($travel-card-bg, .75);
+      }
 
       // -- price
       .price {
