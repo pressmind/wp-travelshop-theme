@@ -13684,7 +13684,8 @@ ul.checklist {
     flex: 1;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    align-items: start; }
     .search-wrapper .search-wrapper--inner .search-box-fields.search-box-fields--gap {
       gap: 8px; }
     @media (max-width: 767.98px) {
