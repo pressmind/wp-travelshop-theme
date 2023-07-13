@@ -81,7 +81,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
     <?php if($view == 'Calendar1') { ?>
         <div class="product-calendar-wrap">
             <div class="product-calendar-group">
-                <div class="product-calendar-group--items">
+                <div class="product-calendar-group-items">
                     <?php
                         $currentMonth = 0;
                         foreach ($args['items'] as $item) {

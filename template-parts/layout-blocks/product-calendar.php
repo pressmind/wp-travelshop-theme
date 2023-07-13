@@ -72,7 +72,7 @@ if (count($items) == 0) {
                             </h3>
                         </div>
 
-                        <div class="product-calendar-group--items">
+                        <div class="product-calendar-group-items">
                             <div class="product-calendar-items-title d-none d-md-block">
                                 <div class="row">
                                     <div class="col-3">Reisezeitraum</div>

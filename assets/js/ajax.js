@@ -1059,8 +1059,8 @@ jQuery(function ($) {
         }
 
         this.initCalendarRowClick = function(){
-            if ( $('.product-calendar-group--items').length > 0 ) {
-                $('.product-calendar-group--items').on('click', '.product-calendar-group-item', function(e) {
+            if ( $('.product-calendar-group-items').length > 0 ) {
+                $('.product-calendar-group-items').on('click', '.product-calendar-group-item', function(e) {
                     e.preventDefault();
                     let row_id = $(this).data('row-id');
 
