@@ -11597,18 +11597,18 @@ input[type="search"]::-webkit-search-results-decoration {
   .list-filter-box.datepicker > div .input-clear:hover, .select-form-control .input-clear:hover, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .input-clear:hover {
     color: #007bff; }
 
-.select-form-control.input-has-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field, .string-search-overlay-input .input-wrapper > input, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext > input, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+.select-form-control.input-has-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext > input, .string-search-overlay-input .input-wrapper > input, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
   position: relative;
   padding-left: 2.25rem; }
 
-.select-form-control .dropdown-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .string-search-overlay-input .input-wrapper .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
+.select-form-control .dropdown-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon, .string-search-overlay-input .input-wrapper .input-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
   position: absolute;
   top: 50%;
   left: 0.75rem;
   color: #212529;
   line-height: 0;
   transform: translateY(-50%); }
-  .select-form-control .dropdown-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon svg, .string-search-overlay-input .input-wrapper .input-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon svg {
+  .select-form-control .dropdown-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon svg, .string-search-overlay-input .input-wrapper .input-icon svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon svg {
     width: 1.125rem;
     height: 1.125rem; }
 
@@ -13621,14 +13621,6 @@ ul.checklist {
   .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field {
     text-align: left; }
 
-.search-wrapper .search-box-field .string-search-overlay-input .input-wrapper,
-.string-search-overlay-input .input-wrapper {
-  border-radius: 0.25rem;
-  border: 1px solid #ced4da; }
-  .search-wrapper .search-box-field .string-search-overlay-input .input-wrapper > input.auto-complete-overlay,
-  .string-search-overlay-input .input-wrapper > input.auto-complete-overlay {
-    margin: -1px; }
-
 .search-wrapper .search-bar-fields-search,
 .search-wrapper .search-bar-fields-pickers {
   background-color: #fff;
@@ -13803,6 +13795,14 @@ ul.checklist {
   .sliver .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active, .main-color .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active, .transparent .search-wrapper .search-wrapper--tabs button.search-wrapper--tabs_btn.is--active {
     padding-bottom: 8px;
     margin-bottom: 0; }
+
+/**
+ * Search input
+ */
+.search-wrapper .search-box-field .string-search-overlay-input .input-wrapper,
+.string-search-overlay-input .input-wrapper {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da; }
 
 .layout-block.layout-block-search-header {
   padding: 16px 0;

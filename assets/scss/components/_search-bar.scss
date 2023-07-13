@@ -25,20 +25,6 @@
   }
 }
 
-.search-wrapper .search-box-field .string-search-overlay-input .input-wrapper,
-.string-search-overlay-input .input-wrapper {
-  @include border-radius($input-border-radius);
-  border: $input-border-width solid $input-border-color;
-
-  > input.auto-complete-overlay {
-    margin: -$input-border-width;
-  }
-}
-
-.string-search-overlay-input .input-wrapper {
-  @extend %fulltext-input;
-}
-
 .search-wrapper {
 
   // -- fields
@@ -370,4 +356,17 @@
       }
     }
   }
+}
+
+/**
+ * Search input
+ */
+.search-wrapper .search-box-field .string-search-overlay-input .input-wrapper,
+.string-search-overlay-input .input-wrapper {
+  @include border-radius($input-border-radius);
+  border: $input-border-width solid $input-border-color;
+}
+
+.string-search-overlay-input .input-wrapper {
+  @extend %fulltext-input;
 }
