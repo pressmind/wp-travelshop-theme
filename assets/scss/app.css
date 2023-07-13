@@ -13448,7 +13448,8 @@ ul.checklist {
  * another dimensions for travel calendar
  */
 .product-calendar-group-item--product .card-travel.card-travel--stripe {
-  border-radius: 0.25rem; }
+  border-radius: 0.25rem;
+  border-bottom: 0 !important; }
   .product-calendar-group-item--product .card-travel.card-travel--stripe .card-body {
     padding: 1.25rem; }
   .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image img {

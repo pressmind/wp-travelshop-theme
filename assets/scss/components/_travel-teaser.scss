@@ -366,6 +366,7 @@
  */
 .product-calendar-group-item--product .card-travel.card-travel--stripe {
   border-radius: $travel-card-border-radius;
+  border-bottom: 0 !important;
 
   .card-body {
     padding: $travel-card-spacer-x;
