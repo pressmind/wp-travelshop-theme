@@ -46,6 +46,7 @@
 
     @include media-breakpoint-down($search-bar-mobile-break) {
       min-width: unset;
+      width: 100%;
     }
   }
 
@@ -56,9 +57,9 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-
     @include media-breakpoint-down($search-bar-mobile-break) {
       flex-direction: column;
+      width: 100%;
     }
 
     .search-box-field {

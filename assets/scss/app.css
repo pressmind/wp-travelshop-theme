@@ -13625,7 +13625,8 @@ ul.checklist {
     margin: -1px; }
   @media (max-width: 767.98px) {
     .search-wrapper .search-bar-fields-search {
-      min-width: unset; } }
+      min-width: unset;
+      width: 100%; } }
 .search-wrapper .search-bar-fields-pickers {
   flex: 1;
   display: flex;
@@ -13633,7 +13634,8 @@ ul.checklist {
   flex-wrap: wrap; }
   @media (max-width: 767.98px) {
     .search-wrapper .search-bar-fields-pickers {
-      flex-direction: column; } }
+      flex-direction: column;
+      width: 100%; } }
   .search-wrapper .search-bar-fields-pickers .search-box-field {
     flex: 1; }
     .search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
