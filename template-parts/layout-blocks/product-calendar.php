@@ -73,11 +73,13 @@ if (count($items) == 0) {
                         </div>
 
                         <div class="product-calendar-group--items">
-                            <div class="product-calendar-items--title row d-none d-md-flex">
-                                <div class="col-3">Reisezeitraum</div>
-                                <div class="col-4">Reise</div>
-                                <div class="col-2">Dauer</div>
-                                <div class="col-3 md-align-right">Preis</div>
+                            <div class="product-calendar-items--title d-none d-md-flex">
+                                <div class="row">
+                                    <div class="col-3">Reisezeitraum</div>
+                                    <div class="col-4">Reise</div>
+                                    <div class="col-2">Dauer</div>
+                                    <div class="col-3 md-align-right">Preis</div>
+                                </div>
                             </div>
                             <?php
                             $date_count = 1;

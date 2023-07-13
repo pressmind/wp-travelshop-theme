@@ -94,11 +94,13 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
                                     ?>
                                 </h3>
                             </div>
-                            <div class="product-calendar-items--title row d-none d-lg-flex">
-                                <div class="col-3">Reisezeitraum</div>
-                                <div class="col-4">Reise</div>
-                                <div class="col-2">Dauer</div>
-                                <div class="col-3 md-align-right">Preis</div>
+                            <div class="product-calendar-items--title  d-none d-lg-flex">
+                                <div class="row">
+                                    <div class="col-3">Reisezeitraum</div>
+                                    <div class="col-4">Reise</div>
+                                    <div class="col-2">Dauer</div>
+                                    <div class="col-3 md-align-right">Preis</div>
+                                </div>
                             </div>
                             <?php }
                             $currentMonth = $item['cheapest_price']->date_departures[0]->format('m');
