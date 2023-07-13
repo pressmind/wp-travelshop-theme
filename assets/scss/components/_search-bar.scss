@@ -138,7 +138,6 @@
         gap: ($grid-gutter-width / 2);
       }
 
-
       @include media-breakpoint-down($search-bar-mobile-break) {
         flex-direction: column;
       }
