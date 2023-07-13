@@ -13621,9 +13621,11 @@ ul.checklist {
   .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field {
     text-align: left; }
 
+.search-wrapper .search-box-field .string-search-overlay-input .input-wrapper,
 .string-search-overlay-input .input-wrapper {
   border-radius: 0.25rem;
   border: 1px solid #ced4da; }
+  .search-wrapper .search-box-field .string-search-overlay-input .input-wrapper > input.auto-complete-overlay,
   .string-search-overlay-input .input-wrapper > input.auto-complete-overlay {
     margin: -1px; }
 
