@@ -16800,7 +16800,7 @@ footer.footer-main {
   display: none;
   transition: transform 0.3s;
   transform: translateY(100%);
-  opacity: 1; }
+  opacity: 0; }
   .detail-mobile-bar .detail-mobile-bar-row {
     gap: .5rem; }
   .detail-mobile-bar .detail-mobile-bar-info {
@@ -16820,7 +16820,6 @@ footer.footer-main {
     .detail-mobile-bar {
       display: block; } }
   .detail-mobile-bar.show {
-    display: block;
     transform: translateY(0);
     opacity: 1; }
 
