@@ -328,61 +328,66 @@ jQuery(function ($) {
     /**
      * Search Dauer
      */
-    function searchDauerSelectFunction() {
+    // function searchDauerSelectFunction() {
+    //
+    //     let searchDauer = $('body').find('.duration-range-wrapper');
+    //     let searchDauerSelect = $('body').find('.form-control-select-dauer');
+    //     let searchDauerButton = $('body').find('button.travelshop-datepicker-input');
+    //
+    //     if ( searchDauer.hasClass('initialized') ) {
+    //         return;
+    //     }
+    //
+    //     searchDauer.addClass('initialized');
+    //
+    //     if ( searchDauer.length > 0 ) {
+    //         var searchInput = searchDauer.find('input');
+    //         var searchLabel = searchDauer.find('label');
+    //         var searchCheck = searchDauer.find('.form-check');
+    //         var searchPlaceholder = searchDauerButton.parents('.search-box-field').find('.selected-options-duration');
+    //
+    //         searchInput.unbind();
+    //         searchLabel.unbind();
+    //         searchCheck.unbind();
+    //
+    //         searchCheck.on('click', function(e){
+    //             e.preventDefault();
+    //
+    //             // -- reset value
+    //             searchDauer.find('input').prop('checked', false);
+    //
+    //             // -- set checked
+    //             $(this).find('input').prop('checked', true);
+    //
+    //             // -- get value
+    //             var thisValue = $(this).find('input').attr('id');
+    //
+    //             if ( thisValue === 'reset' ) {
+    //                 searchDauerSelect.find('option[value=""]').prop('selected', true);
+    //
+    //                 $(document).find(datePickerClear).hide();
+    //             } else {
+    //                 thisValue = thisValue.replace('duration-', '');
+    //                 searchDauerSelect.find('option[value="'+thisValue+'"]').prop('selected', true);
+    //                 $(document).find(datePickerClear).show();
+    //             }
+    //
+    //             // -- trigger change
+    //             searchDauerSelect.trigger('change');
+    //
+    //             // -- set value in dropdown
+    //             searchPlaceholder.text($(this).find('label').text().trim());
+    //
+    //             e.stopPropagation();
+    //         });
+    //     }
+    // }
+    //
+    // searchDauerSelectFunction();
 
-        let searchDauer = $('body').find('.duration-range-wrapper');
-        let searchDauerSelect = $('body').find('.form-control-select-dauer');
-        let searchDauerButton = $('body').find('button.travelshop-datepicker-input');
-
-        if ( searchDauer.hasClass('initialized') ) {
-            return;
-        }
-
-        searchDauer.addClass('initialized');
-
-        if ( searchDauer.length > 0 ) {
-            var searchInput = searchDauer.find('input');
-            var searchLabel = searchDauer.find('label');
-            var searchCheck = searchDauer.find('.form-check');
-            var searchPlaceholder = searchDauerButton.parents('.search-box-field').find('.selected-options-duration');
-
-            searchInput.unbind();
-            searchLabel.unbind();
-            searchCheck.unbind();
-
-            searchCheck.on('click', function(e){
-                e.preventDefault();
-
-                // -- reset value
-                searchDauer.find('input').prop('checked', false);
-
-                // -- set checked
-                $(this).find('input').prop('checked', true);
-
-                // -- get value
-                var thisValue = $(this).find('input').attr('id');
-
-                if ( thisValue === 'reset' ) {
-                    searchDauerSelect.find('option[value=""]').prop('selected', true);
-
-                    $(document).find(datePickerClear).hide();
-                } else {
-                    thisValue = thisValue.replace('duration-', '');
-                    searchDauerSelect.find('option[value="'+thisValue+'"]').prop('selected', true);
-                    $(document).find(datePickerClear).show();
-                }
-
-                // -- trigger change
-                searchDauerSelect.trigger('change');
-
-                // -- set value in dropdown
-                searchPlaceholder.text($(this).find('label').text().trim());
-
-                e.stopPropagation();
-            });
-        }
-    }
-
-    searchDauerSelectFunction();
+    // -- reinitialize
+    $( document ).ajaxComplete(function( event, xhr, settings ) {
+        datePickerInit();
+    });
 
 });
