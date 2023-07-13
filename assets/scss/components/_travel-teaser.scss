@@ -360,3 +360,24 @@
     }
   }
 }
+
+/**
+ * another dimensions for travel calendar
+ */
+.product-calendar-group-item--product .card-travel.card-travel--stripe {
+  @include media-breakpoint-up(md) {
+    .card-image {
+      flex: 0 0 ((100% / 12) * 4); // 4 of 12
+      width: 100%;
+      max-width: ((100% / 12) * 4);
+    }
+
+
+    .card-body {
+      flex: 0 0 ((100% / 12) * 8); // 8 of 12
+      width: 100%;
+      max-width: ((100% / 12) * 8);
+    }
+  }
+
+}

@@ -13445,6 +13445,19 @@ ul.checklist {
       border-bottom: 1px solid rgba(0, 0, 0, 0.125); } }
 
 /**
+ * another dimensions for travel calendar
+ */
+@media (min-width: 768px) {
+  .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image {
+    flex: 0 0 33.3333333333%;
+    width: 100%;
+    max-width: 33.3333333333%; }
+  .product-calendar-group-item--product .card-travel.card-travel--stripe .card-body {
+    flex: 0 0 66.6666666667%;
+    width: 100%;
+    max-width: 66.6666666667%; } }
+
+/**
  * Styling for category product teaser
  */
 .teaser.category-product-teaser {
