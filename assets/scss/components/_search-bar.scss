@@ -35,8 +35,6 @@
 
       .search-field-input {
         margin: -$input-border-width;
-        position: relative;
-        z-index: 2;
       }
 
       + .search-box-field {
@@ -63,6 +61,9 @@
 
       height: 3rem;
       line-height: (3rem - ($input-border-big-width * 2));
+
+      position: relative;
+      z-index: 2;
 
       &:hover, &:focus, &:active {
         border: $input-border-big-width solid $input-border-active-color;

@@ -13629,9 +13629,7 @@ ul.checklist {
 .search-wrapper .search-bar-fields-search .search-box-field {
   margin: -1px; }
 .search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
-  margin: -1px;
-  position: relative;
-  z-index: 2; }
+  margin: -1px; }
 .search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {
   border-left: 1px solid #ced4da; }
 .search-wrapper .search-box-field {
@@ -13649,7 +13647,9 @@ ul.checklist {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     height: 3rem;
-    line-height: 2.75rem; }
+    line-height: 2.75rem;
+    position: relative;
+    z-index: 2; }
     @media (prefers-reduced-motion: reduce) {
       .search-wrapper .search-box-field .search-field-input-field {
         transition: none; } }
