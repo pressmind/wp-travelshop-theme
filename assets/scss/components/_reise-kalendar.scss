@@ -50,6 +50,7 @@
       padding-top: $travel-card-spacer-x;
       padding-bottom: $travel-card-spacer-x;
       cursor: pointer;
+      transition: background-color $animation-speed-default;
 
       &:not(.is-active):hover {
         background-color: rgba($travel-card-bg, .75);
