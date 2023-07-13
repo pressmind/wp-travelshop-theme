@@ -2,7 +2,7 @@
   position: absolute !important;
 
   z-index: ($zindex-modal-backdrop + 1);
-  pointer-events: none;
+  pointer-events: none !important;
   transition: opacity $animation-speed-default;
   opacity: 0;
 
@@ -20,7 +20,7 @@
 
   &.is-open {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
 
   // -- header

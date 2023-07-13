@@ -15056,7 +15056,7 @@ ul.checklist {
 .daterange-overlay {
   position: absolute !important;
   z-index: 1041;
-  pointer-events: none;
+  pointer-events: none !important;
   transition: opacity 0.3s;
   opacity: 0;
   width: calc((17.5rem *2) + 1.5rem + 3rem);
@@ -15069,7 +15069,7 @@ ul.checklist {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175); }
   .daterange-overlay.is-open {
     opacity: 1;
-    pointer-events: auto; }
+    pointer-events: auto !important; }
   .daterange-overlay .daterange-overlay-header {
     align-items: center;
     padding: 0 1.5rem .5rem 1.5rem;
