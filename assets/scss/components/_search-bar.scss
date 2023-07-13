@@ -47,6 +47,7 @@
       
       border: $input-border-big-width solid transparent;
       @include border-radius($input-border-radius);
+      @include transition($input-transition);
 
       padding-left: $input-padding-x;
       padding-right: $input-padding-x;

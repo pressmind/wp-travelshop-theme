@@ -13640,10 +13640,14 @@ ul.checklist {
     padding: 0;
     border: 0.125rem solid transparent;
     border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     height: 3rem;
     line-height: 2.75rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .search-wrapper .search-box-field .search-field-input-field {
+        transition: none; } }
     .search-wrapper .search-box-field .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active {
       border: 0.125rem solid #212529; }
 .search-wrapper .search-wrapper--inner {
