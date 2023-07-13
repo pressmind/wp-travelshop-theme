@@ -106,7 +106,7 @@
 
           &:hover, &:focus, &:active {
             background-color: transparent;
-            border: 2px solid $body-color;
+            border: $input-border-big-width solid $input-border-active-color;
             box-shadow: none;
             outline: none;
           }
@@ -115,14 +115,14 @@
           &.has-error:hover,
           &.has-error:focus,
           &.has-error:active {
-            border: 2px solid $danger;
+            border: $input-border-big-width solid $danger;
           }
         }
 
         &.open > button.booking-filter-field--date-range,
         &.show > button.select-form-control {
           background-color: transparent;
-          border: 2px solid $body-color;
+          border: $input-border-big-width solid $input-border-active-color;
           box-shadow: none;
           outline: none;
         }

@@ -106,3 +106,9 @@ $breadcrumb-font-size: $font-size-sm !default;
 $animation-speed-default: .3s !default;
 $animation-speed-fast: .15s !default;
 $animation-speed-slow: .6s !default;
+
+/**
+ * Input
+ */
+$input-border-active-color: $body-color !default;
+$input-border-big-width: .125rem !default;

@@ -7,8 +7,12 @@
     .search-field-input-field {
       @include button-reset();
       
-      border: .125rem solid transparent;
+      border: $input-border-big-width solid transparent;
       @include border-radius($input-border-radius);
+
+      &:hover, &:focus, &:active {
+        border: $input-border-big-width solid $input-border-active-color;
+      }
     }
   }
 

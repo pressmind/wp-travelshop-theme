@@ -40,6 +40,9 @@
 /**
  * Animations
  */
+/**
+ * Input
+ */
 @import url(vendors/pretty-dropdowns/prettydropdowns.css);
 @import url(vendors/lightbox2/lightbox.min.css);
 :root {
@@ -10858,6 +10861,9 @@ html.force--consent.show--consent body {
 /**
  * Animations
  */
+/**
+ * Input
+ */
 /***
  ** Define own variables in this file
  ***/
@@ -13618,8 +13624,10 @@ ul.checklist {
     box-shadow: none;
     background: transparent;
     padding: 0;
-    border: .125rem solid transparent;
+    border: 0.125rem solid transparent;
     border-radius: 0.25rem; }
+    .search-wrapper .search-box-field .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active {
+      border: 0.125rem solid #212529; }
 .search-wrapper .search-wrapper--inner {
   display: flex;
   flex-wrap: wrap;
@@ -16026,7 +16034,7 @@ footer.footer-main {
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:focus,
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control:active {
             background-color: transparent;
-            border: 2px solid #212529;
+            border: 0.125rem solid #212529;
             box-shadow: none;
             outline: none; }
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.booking-filter-field--date-range.has-error:active,
@@ -16034,10 +16042,10 @@ footer.footer-main {
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:hover,
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:focus,
           .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item button.select-form-control.has-error:active {
-            border: 2px solid #dc3545; }
+            border: 0.125rem solid #dc3545; }
         .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.open > button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-items-boxed .booking-filter-item.show > button.select-form-control {
           background-color: transparent;
-          border: 2px solid #212529;
+          border: 0.125rem solid #212529;
           box-shadow: none;
           outline: none; }
 
