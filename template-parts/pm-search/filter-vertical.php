@@ -42,7 +42,13 @@
                 // echo '<hr />';
                 $args['name'] = 'Zeitraum';
                 $args['use_ajax'] = 1;
+                ?>
+                <div class="list-filter-box list-filter-box-date-range-picker travelshop-datepicker">
+                <?php
                 require 'search/date-range-picker.php';
+                ?>
+                </div>
+                <?php
                 require 'filter/order.php';
                 require 'filter/price-range.php';
                 require 'filter/duration-range.php';
