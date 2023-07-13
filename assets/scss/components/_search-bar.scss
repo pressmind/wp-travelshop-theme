@@ -1,15 +1,15 @@
 %datepicker-input {
   position: relative;
 
-  @extend %input-has-icon;
-
   .search-field-input-field {
     text-align: left;
+    @extend %input-has-icon;
+
+    .input-icon {
+      @extend %input-icon;
+    }
   }
 
-  .input-icon {
-    @extend %input-icon;
-  }
 }
 
 .search-wrapper {
