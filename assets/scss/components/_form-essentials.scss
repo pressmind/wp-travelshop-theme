@@ -46,7 +46,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 %input-has-icon {
   position: relative;
-  padding-left: ($input-padding-x + $input-padding-y + $custom-input-icon-size);
+  padding-left: ($input-padding-x + $input-padding-y + $custom-input-icon-size) !important;
 }
 
 %input-icon {

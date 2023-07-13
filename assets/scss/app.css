@@ -11599,7 +11599,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .select-form-control.input-has-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext > input, .string-search-overlay-input .input-wrapper > input, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
   position: relative;
-  padding-left: 2.25rem; }
+  padding-left: 2.25rem !important; }
 
 .select-form-control .dropdown-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon, .string-search-overlay-input .input-wrapper .input-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
   position: absolute;
