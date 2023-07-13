@@ -78,7 +78,7 @@ if (count($items) == 0) {
                                     <div class="col-3">Reisezeitraum</div>
                                     <div class="col-4">Reise</div>
                                     <div class="col-2">Dauer</div>
-                                    <div class="col-3 md-align-right">Preis</div>
+                                    <div class="col-3 text-md-right">Preis</div>
                                 </div>
                             </div>
                             <?php
@@ -112,7 +112,7 @@ if (count($items) == 0) {
                                       <div class="col-6 col-md-2">
                                           <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
                                       </div>
-                                      <div class="col-6 col-md-3 md-align-right">
+                                      <div class="col-6 col-md-3 text-md-right">
                                         <span class="price">
                                             <?php
                                             if (!empty($cheapest_price) && ($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {

@@ -99,7 +99,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
                                     <div class="col-3">Reisezeitraum</div>
                                     <div class="col-4">Reise</div>
                                     <div class="col-2">Dauer</div>
-                                    <div class="col-3 md-align-right">Preis</div>
+                                    <div class="col-3 text-right">Preis</div>
                                 </div>
                             </div>
                             <?php }
