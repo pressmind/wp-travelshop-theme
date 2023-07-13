@@ -1,5 +1,13 @@
 .search-wrapper {
 
+  // -- fields
+  .search-bar-fields-search,
+  .search-bar-fields-pickers {
+    background-color: $input-bg;
+    @include border-radius($border-radius);
+    border: $input-border-width solid $input-border-color;
+  }
+
   // -- search box field
   .search-box-field {
     position: relative;
