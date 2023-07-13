@@ -15538,8 +15538,16 @@ ul.checklist {
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
       border-radius: 0.25rem;
       background-color: #fff;
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem; }
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem; }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        flex-direction: row; }
+        @media (min-width: 992px) {
+          .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
+            justify-content: end; } }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper {
         display: flex;
         flex-direction: row;
