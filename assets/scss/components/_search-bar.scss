@@ -1,3 +1,17 @@
+%datepicker-input {
+  position: relative;
+
+  @extend %input-has-icon;
+
+  .search-field-input-field {
+    text-align: left;
+  }
+
+  .input-icon {
+    @extend %input-icon;
+  }
+}
+
 .search-wrapper {
 
   // -- fields
@@ -43,6 +57,11 @@
       &:hover, &:focus, &:active {
         border: $input-border-big-width solid $input-border-active-color;
       }
+    }
+
+    // -- datepicker input
+    .search-field-input.search-field-input--datepicker {
+      @extend %datepicker-input;
     }
   }
 
