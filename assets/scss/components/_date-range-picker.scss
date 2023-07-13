@@ -233,6 +233,12 @@
         max-width: 17.5rem;
       }
     }
+
+    &.tns-slider {
+      .calendar-item {
+        min-width: 19rem;
+      }
+    }
   }
 
   .calendar-item {

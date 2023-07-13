@@ -15146,6 +15146,8 @@ ul.checklist {
       flex: 0 0 17.5rem;
       width: 100%;
       max-width: 17.5rem; }
+  .daterange-calendar-items .daterange-calendar-items-inner.tns-slider .calendar-item {
+    min-width: 19rem; }
   .daterange-calendar-items .calendar-item {
     display: flex;
     flex-direction: column;
