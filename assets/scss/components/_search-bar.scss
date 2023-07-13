@@ -34,6 +34,9 @@
       border: $input-border-big-width solid transparent;
       @include border-radius($input-border-radius);
 
+      padding-left: $input-padding-x;
+      padding-right: $input-padding-x;
+
       height: 3rem;
       line-height: (3rem - ($input-border-big-width * 2));
 
