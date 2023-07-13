@@ -42,10 +42,10 @@
                 // echo '<hr />';
                 $args['name'] = 'Zeitraum';
                 $args['use_ajax'] = 1;
-                require 'search/date-picker.php';
+                require 'search/date-range-picker.php';
                 require 'filter/order.php';
                 require 'filter/price-range.php';
-                require 'search/date-range-picker.php';
+                require 'filter/duration-range.php';
                 require 'filter/transport_type.php';
                 require 'filter/board_type.php';
                 foreach(TS_FILTERS as $filter){
