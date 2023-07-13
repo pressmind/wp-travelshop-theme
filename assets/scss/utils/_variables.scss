@@ -527,6 +527,8 @@ $search-bar-pane-border-color: $search-bar-tabs-link-active-border-color !defaul
 $search-bar-padding-y: $grid-gutter-width !default;
 $search-bar-padding-x: ($grid-gutter-width / 2) !default;
 
+$search-bar-input-height: 3rem !default;
+
 // themes
 $search-bar-silver-theme-color: $gray-500 !default;
 $search-bar-main-theme-color: $primary !default;

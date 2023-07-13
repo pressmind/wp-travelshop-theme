@@ -13685,6 +13685,9 @@ ul.checklist {
         flex: 1; }
   .search-wrapper .search-wrapper--inner .search-box-submit {
     flex: 0; }
+    .search-wrapper .search-wrapper--inner .search-box-submit button.btn {
+      height: 2.9375rem;
+      line-height: 2.6875rem; }
 .search-wrapper .search-box {
   padding: 16px;
   background-color: #fff;

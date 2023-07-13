@@ -75,8 +75,8 @@
       padding-left: $input-padding-x;
       padding-right: $input-padding-x;
 
-      height: 3rem;
-      line-height: (3rem - ($input-border-big-width * 2));
+      height: $search-bar-input-height;
+      line-height: ($search-bar-input-height - ($input-border-big-width * 2));
 
       position: relative;
       z-index: 2;
@@ -136,6 +136,11 @@
 
     .search-box-submit {
       flex: 0;
+
+      button.btn {
+        height: ($search-bar-input-height - pxToRem($btn-border-width));
+        line-height: (($search-bar-input-height - pxToRem($btn-border-width)) - ($input-border-big-width * 2))
+      }
     }
   }
 
