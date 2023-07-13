@@ -678,7 +678,7 @@ jQuery(function ($) {
                             var re = new RegExp(`${currentValue}`, 'gi');
                             let img = typeof suggestion.img != 'undefined' ? '<div class="suggestion-featured-image"><img src="' + suggestion.img + '" /></div>' : '';
                             let price = typeof suggestion.price != 'undefined' ? '<div class="suggestion-price"><small>schon ab</small><br /><strong>' + suggestion.price + '</strong></div>' : '';
-                            let arrow = suggestion.type != 'media_object' ? '<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="https://development-stanglmeier-de.pressmind.dev/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#arrow-up-right"></use></svg>' : '';
+                            let arrow = suggestion.type != 'media_object' ? '<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#arrow-up-right"></use></svg>' : '';
                             return '<div class="string-search-suggestion">' +
                                 '<div class="suggestion-left">' +
                                 img +
