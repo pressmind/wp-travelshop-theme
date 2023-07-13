@@ -13621,6 +13621,10 @@ ul.checklist {
   background-color: #fff;
   border-radius: 0.25rem;
   border: 1px solid #ced4da; }
+.search-wrapper .search-bar-fields-search .search-box-field {
+  margin: -1px; }
+.search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {
+  border-left: 1px solid #ced4da; }
 .search-wrapper .search-box-field {
   position: relative; }
   .search-wrapper .search-box-field .search-field-input-field {

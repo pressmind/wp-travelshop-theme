@@ -8,6 +8,22 @@
     border: $input-border-width solid $input-border-color;
   }
 
+  // -- search
+  .search-bar-fields-search {
+    .search-box-field {
+      margin: -$input-border-width;
+    }
+  }
+
+  // -- pickers
+  .search-bar-fields-pickers {
+    .search-box-field {
+      + .search-box-field {
+        border-left: $input-border-width solid $input-border-color;
+      }
+    }
+  }
+
   // -- search box field
   .search-box-field {
     position: relative;
