@@ -13677,6 +13677,9 @@ ul.checklist {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 8px; }
+  @media (max-width: 767.98px) {
+    .search-wrapper .search-wrapper--inner {
+      flex-direction: column; } }
   .search-wrapper .search-wrapper--inner .search-box-fields {
     flex: 1;
     display: flex;
