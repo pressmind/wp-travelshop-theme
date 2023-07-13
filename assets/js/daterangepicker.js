@@ -292,6 +292,8 @@ jQuery(function ($) {
 
                 $(document).find(datePickerClear).show();
 
+
+                $(document).find(datePickerCalendarInput).trigger('change');
             } else {
                 $(document).find(datePickerTrigger).attr('data-value', '');
                 $(document).find(datePickerCalendarInput).attr('data-value', '');
@@ -299,8 +301,6 @@ jQuery(function ($) {
                 $(document).find(datePickerButtonString).text($(document).find(datePickerButtonString).data('default'));
                 $(document).find(datePickerClear).hide();
             }
-
-            $(document).find(datePickerCalendarInput).trigger('change');
 
         });
     }
