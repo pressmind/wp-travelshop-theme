@@ -32,8 +32,11 @@
   // -- pickers
   .search-bar-fields-pickers {
     .search-box-field {
+
       .search-field-input {
         margin: -$input-border-width;
+        position: relative;
+        z-index: 2;
       }
 
       + .search-box-field {
