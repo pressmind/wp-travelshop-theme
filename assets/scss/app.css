@@ -13447,15 +13447,22 @@ ul.checklist {
 /**
  * another dimensions for travel calendar
  */
-@media (min-width: 768px) {
-  .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image {
-    flex: 0 0 33.3333333333%;
-    width: 100%;
-    max-width: 33.3333333333%; }
+.product-calendar-group-item--product .card-travel.card-travel--stripe {
+  border-radius: 0.25rem; }
   .product-calendar-group-item--product .card-travel.card-travel--stripe .card-body {
-    flex: 0 0 66.6666666667%;
-    width: 100%;
-    max-width: 66.6666666667%; } }
+    padding: 1.25rem; }
+  .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  @media (min-width: 768px) {
+    .product-calendar-group-item--product .card-travel.card-travel--stripe .card-image {
+      flex: 0 0 33.3333333333%;
+      width: 100%;
+      max-width: 33.3333333333%; }
+    .product-calendar-group-item--product .card-travel.card-travel--stripe .card-body {
+      flex: 0 0 66.6666666667%;
+      width: 100%;
+      max-width: 66.6666666667%; } }
 
 /**
  * Styling for category product teaser
@@ -15500,6 +15507,9 @@ ul.checklist {
   .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
     padding-left: 1.25rem;
     padding-right: 1.25rem; }
+  .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product {
+    padding-left: 15px;
+    padding-right: 15px; }
 
 header.header-main {
   background-color: #fff;

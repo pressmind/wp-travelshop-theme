@@ -365,6 +365,18 @@
  * another dimensions for travel calendar
  */
 .product-calendar-group-item--product .card-travel.card-travel--stripe {
+  border-radius: $travel-card-border-radius;
+
+  .card-body {
+    padding: $travel-card-spacer-x;
+  }
+
+  .card-image {
+    img {
+      @include border-right-radius(0);
+    }
+  }
+
   @include media-breakpoint-up(md) {
     .card-image {
       flex: 0 0 ((100% / 12) * 4); // 4 of 12
