@@ -442,12 +442,12 @@ jQuery(function ($) {
 
             console.log(curScrollPosition);
             console.log(detailMobileBarThreshold);
-            console.log(detailContentThreshold);
 
             // fix to not show mobile bar if content is scroll through
             var detailContentPosition = $('.detail-section-content').offset().top;
             var detailContentHeight = $('.detail-section-content').height();
             var detailContentThreshold = detailContentPosition + detailContentHeight - $(window).height();
+            console.log(detailContentThreshold);
 
             if ( curScrollPosition > detailMobileBarThreshold && curScrollPosition < detailContentThreshold ) {
                 detailMobileBar.addClass('show');
