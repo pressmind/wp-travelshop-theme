@@ -292,7 +292,7 @@ jQuery(function ($) {
 
                 $(document).find(datePickerClear).show();
 
-
+                // change if date is set.
                 $(document).find(datePickerCalendarInput).trigger('change');
             } else {
                 $(document).find(datePickerTrigger).attr('data-value', '');
