@@ -11584,7 +11584,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .list-filter-box.datepicker > div .input-clear, .select-form-control .input-clear, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .input-clear {
   position: absolute;
   top: 50%;
-  right: 0.375rem;
+  right: 0.75rem;
   display: none;
   margin-top: -0.5625rem;
   width: 1.125rem;
@@ -11599,12 +11599,12 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .select-form-control.input-has-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field, .string-search-overlay-input > input, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext > input, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
   position: relative;
-  padding-left: 1.875rem; }
+  padding-left: 2.25rem; }
 
 .select-form-control .dropdown-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .string-search-overlay-input .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
   position: absolute;
   top: 50%;
-  left: 0.375rem;
+  left: 0.75rem;
   color: #212529;
   line-height: 0;
   transform: translateY(-50%); }
@@ -13626,8 +13626,10 @@ ul.checklist {
   background-color: #fff;
   border-radius: 0.25rem;
   border: 1px solid #ced4da; }
-.search-wrapper .search-bar-fields-search .search-box-field {
-  margin: -1px; }
+.search-wrapper .search-bar-fields-search {
+  min-width: 18rem; }
+  .search-wrapper .search-bar-fields-search .search-box-field {
+    margin: -1px; }
 .search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
   margin: -1px; }
 .search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {

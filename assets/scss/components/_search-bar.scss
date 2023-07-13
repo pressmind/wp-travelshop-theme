@@ -41,6 +41,8 @@
 
   // -- search
   .search-bar-fields-search {
+    min-width: 18rem;
+
     .search-box-field {
       margin: -$input-border-width;
     }
