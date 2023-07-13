@@ -87,7 +87,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
                         foreach ($args['items'] as $item) {
                             // var_dump($item['cheapest_price']->date_departures[0]); 
                             if($currentMonth != $item['cheapest_price']->date_departures[0]->format('m')) { ?>
-                            <div class="product-calendar-group--title">
+                            <div class="product-calendar-group-title">
                                 <h3><?php
                                     echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
                                         'date' => $item['cheapest_price']->date_departures[0]]);

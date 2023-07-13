@@ -32,30 +32,31 @@ $cheapest_price = $args['cheapest_price'];
 $random = rand(1, 999999);
 ?>
 
-<div class="product-calendar-group-item row" data-row-id="<?php echo $random; ?>" data-pm-id="<?php echo $args['id_media_object']; ?>">
-    <div class="col-12 col-lg-3">
-        <div class="arrow--wrapper">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+<div class="product-calendar-group-item " data-row-id="<?php echo $random; ?>" data-pm-id="<?php echo $args['id_media_object']; ?>">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="arrow--wrapper">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
-            <i class="circle green"></i>
-            <?php
-            if(!empty($cheapest_price)) {
-                // var_dump($cheapest_price);
-                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
-                    'date_departure' => $cheapest_price->date_departures[0],
-                    //'date_arrival' => $cheapest_price->date_arrival
-                ]);
-            }
-            ?>
+                <i class="circle green"></i>
+                <?php
+                if(!empty($cheapest_price)) {
+                    // var_dump($cheapest_price);
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
+                        'date_departure' => $cheapest_price->date_departures[0],
+                        //'date_arrival' => $cheapest_price->date_arrival
+                    ]);
+                }
+                ?>
+            </div>
         </div>
-    </div>
-    <div class="col-12 col-lg-4">
-        <strong><?php echo $args['headline']; ?></strong>
-    </div>
-    <div class="col-6 col-lg-2">
-        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
-    </div>
-    <div class="col-6 col-lg-3 md-align-right">
+        <div class="col-12 col-lg-4">
+            <strong><?php echo $args['headline']; ?></strong>
+        </div>
+        <div class="col-6 col-lg-2">
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
+        </div>
+        <div class="col-6 col-lg-3 md-align-right">
         <span class="price">
             <?php
             if (!empty($cheapest_price) && ($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {
@@ -73,9 +74,14 @@ $random = rand(1, 999999);
             }
             ?>
         </span>
+        </div>
     </div>
 </div>
-<div class="product-calendar-group-item--product row" data-row-id="<?php echo $random; ?>">
-    <?php // this section will get the content by ajax; (pm-view/Teaser*), see ajax.js:initCalendarRowClick(); 
-    ?>
+
+
+<div class="product-calendar-group-item-product">
+    <div class="row product-calendar-group-item--product" data-row-id="<?php echo $random; ?>">
+        <?php // this section will get the content by ajax; (pm-view/Teaser*), see ajax.js:initCalendarRowClick();
+        ?>
+    </div>
 </div>

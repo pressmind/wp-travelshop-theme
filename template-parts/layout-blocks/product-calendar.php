@@ -64,7 +64,7 @@ if (count($items) == 0) {
                 foreach ($itemsGroupedByMonth as $items) { ?>
                     <div class="product-calendar-group">
 
-                        <div class="product-calendar-group--title">
+                        <div class="product-calendar-group-title">
                             <h3><?php
                                 echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', [
                                     'date' => $items[0]->date_departure]);
@@ -89,29 +89,30 @@ if (count($items) == 0) {
                                 $CheapestPriceFilter->date_from = $CheapestPriceFilter->date_to = $item->date_departure;
                                 $cheapest_price = $mo->getCheapestPrice($CheapestPriceFilter);
                             ?>
-                                <div class="product-calendar-group-item row" data-row-id="<?php echo $month_count . "-" . $date_count; ?>" data-pm-id="<?php echo $item->id; ?>" data-pm-dr="<?php echo $CheapestPriceFilter->date_from->format("Ymd") . '-' . $CheapestPriceFilter->date_to->format("Ymd"); ?>">
-                                    <div class="col-12 col-md-3">
-                                        <div class="arrow--wrapper">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+                                <div class="product-calendar-group-item " data-row-id="<?php echo $month_count . "-" . $date_count; ?>" data-pm-id="<?php echo $item->id; ?>" data-pm-dr="<?php echo $CheapestPriceFilter->date_from->format("Ymd") . '-' . $CheapestPriceFilter->date_to->format("Ymd"); ?>">
+                                  <div class="row">
+                                      <div class="col-12 col-md-3">
+                                          <div class="arrow--wrapper">
+                                              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
-                                            <i class="circle green"></i>
-                                            <?php
-                                            if(!empty($cheapest_price)) {
-                                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
-                                                    'date_departure' => $cheapest_price->date_departure,
-                                                    'date_arrival' => $cheapest_price->date_arrival
-                                                ]);
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <strong><?php echo $item->name; ?></strong>
-                                    </div>
-                                    <div class="col-6 col-md-2">
-                                        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
-                                    </div>
-                                    <div class="col-6 col-md-3 md-align-right">
+                                              <i class="circle green"></i>
+                                              <?php
+                                              if(!empty($cheapest_price)) {
+                                                  echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
+                                                      'date_departure' => $cheapest_price->date_departure,
+                                                      'date_arrival' => $cheapest_price->date_arrival
+                                                  ]);
+                                              }
+                                              ?>
+                                          </div>
+                                      </div>
+                                      <div class="col-12 col-md-4">
+                                          <strong><?php echo $item->name; ?></strong>
+                                      </div>
+                                      <div class="col-6 col-md-2">
+                                          <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
+                                      </div>
+                                      <div class="col-6 col-md-3 md-align-right">
                                         <span class="price">
                                             <?php
                                             if (!empty($cheapest_price) && ($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {
@@ -129,12 +130,15 @@ if (count($items) == 0) {
                                             }
                                             ?>
                                         </span>
-                                    </div>
+                                      </div>
+                                  </div>
                                 </div>
 
-                                <div class="product-calendar-group-item--product row" data-row-id="<?php echo $month_count . "-" . $date_count; ?>">
-                                    <?php // this section will get the content by ajax; (pm-view/Teaser*), see ajax.js:initCalendarRowClick(); 
-                                    ?>
+                                <div class="product-calendar-group-item-product">
+                                    <div class="row product-calendar-group-item--product" data-row-id="<?php echo $month_count . "-" . $date_count; ?>">
+                                        <?php // this section will get the content by ajax; (pm-view/Teaser*), see ajax.js:initCalendarRowClick();
+                                        ?>
+                                    </div>
                                 </div>
                             <?php
                                 $date_count++;
