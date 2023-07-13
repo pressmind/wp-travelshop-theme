@@ -13619,13 +13619,31 @@ ul.checklist {
   border-radius: 0.25rem;
   border: 1px solid #ced4da; }
 .search-wrapper .search-bar-fields-search {
-  min-width: 18rem; }
+  min-width: 18rem;
+  flex: 0; }
   .search-wrapper .search-bar-fields-search .search-box-field {
     margin: -1px; }
-.search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
-  margin: -1px; }
-.search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {
-  border-left: 1px solid #ced4da; }
+  @media (max-width: 767.98px) {
+    .search-wrapper .search-bar-fields-search {
+      min-width: unset; } }
+.search-wrapper .search-bar-fields-pickers {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media (max-width: 767.98px) {
+    .search-wrapper .search-bar-fields-pickers {
+      flex-direction: column; } }
+  .search-wrapper .search-bar-fields-pickers .search-box-field {
+    flex: 1; }
+    .search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
+      margin: -1px; }
+    .search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {
+      border-left: 1px solid #ced4da; }
+      @media (max-width: 767.98px) {
+        .search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {
+          border-left: 0;
+          border-top: 1px solid #ced4da; } }
 .search-wrapper .search-box-field {
   position: relative; }
   .search-wrapper .search-box-field .search-field-input-field,
@@ -13666,15 +13684,9 @@ ul.checklist {
     flex-wrap: wrap; }
     .search-wrapper .search-wrapper--inner .search-box-fields.search-box-fields--gap {
       gap: 8px; }
-    .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-search {
-      flex: 0; }
-    .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-pickers {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap; }
-      .search-wrapper .search-wrapper--inner .search-box-fields .search-bar-fields-pickers .search-box-field {
-        flex: 1; }
+    @media (max-width: 767.98px) {
+      .search-wrapper .search-wrapper--inner .search-box-fields {
+        flex-direction: column; } }
   .search-wrapper .search-wrapper--inner .search-box-submit {
     flex: 0; }
     .search-wrapper .search-wrapper--inner .search-box-submit button.btn, .search-wrapper .search-wrapper--inner .search-box-submit .btn, .search-wrapper .search-wrapper--inner .search-box-submit a.btn {
