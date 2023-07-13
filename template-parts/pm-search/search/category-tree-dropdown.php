@@ -17,7 +17,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
     <div class="search-box-field search-box-field--category">
 
         <div class="search-field-input search-field-input--category">
-            <button class="category-tree-field-dropdown-toggle search-field-input-field"  data-placeholder="<?php echo $args['name']; ?>" type="button">
+            <button class="category-tree-field-dropdown-toggle search-field-input-field select-form-control"  data-placeholder="<?php echo $args['name']; ?>" type="button">
                 <span class="selected-options" ><?php echo $args['name']; ?></span>
 
                 <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
