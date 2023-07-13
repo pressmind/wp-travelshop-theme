@@ -16798,9 +16798,9 @@ footer.footer-main {
   border-top: 1px solid #e9ecef;
   padding: .75rem 0;
   display: none;
-  transition: transform .25s, opacity .25s;
+  transition: transform .25s;
   transform: translateY(100%);
-  opacity: 0; }
+  opacity: 1; }
   .detail-mobile-bar .detail-mobile-bar-row {
     gap: .5rem; }
   .detail-mobile-bar .detail-mobile-bar-info {

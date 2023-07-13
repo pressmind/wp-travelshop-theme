@@ -51,9 +51,9 @@
     }
 
     // -- show hide mechanism
-    transition: transform .25s, opacity .25s;
+    transition: transform .25s;
     transform: translateY(100%);
-    opacity: 0;
+    opacity: 1;
 
     &.show {
       display: block;
