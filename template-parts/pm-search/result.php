@@ -94,7 +94,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
                                     ?>
                                 </h3>
                             </div>
-                            <div class="product-calendar-items--title  d-none d-lg-flex">
+                            <div class="product-calendar-items-title  d-none d-lg-block">
                                 <div class="row">
                                     <div class="col-3">Reisezeitraum</div>
                                     <div class="col-4">Reise</div>
