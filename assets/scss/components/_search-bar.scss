@@ -10,6 +10,23 @@
     }
   }
 
+  .input-clear {
+    @extend %input-clear;
+  }
+}
+
+%fulltext-input {
+  > input {
+    @extend %input-has-icon;
+  }
+
+  .input-icon {
+    @extend %input-icon;
+  }
+}
+
+.string-search-overlay-input {
+  @extend %fulltext-input;
 }
 
 .search-wrapper {
@@ -73,6 +90,11 @@
     // -- datepicker input
     .search-field-input.search-field-input--datepicker {
       @extend %datepicker-input;
+    }
+
+    // -- Fulltext
+    .search-field-input.search-field-input--fulltext {
+      @extend %fulltext-input;
     }
   }
 
