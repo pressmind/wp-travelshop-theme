@@ -15503,14 +15503,23 @@ ul.checklist {
   padding: .5rem;
   border-radius: 0.25rem;
   background-color: #e9ecef; }
-  .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title,
-  .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title,
-  .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem; }
-  .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product {
-    padding-left: 15px;
-    padding-right: 15px; }
+  .product-calendar-wrap .product-calendar-group-items {
+    /**
+     * some defaults
+     */
+    /**
+     * Group title
+     */ }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title,
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title,
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product {
+      padding-left: 15px;
+      padding-right: 15px; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title h3 {
+      margin: 0.625rem 0; }
 
 header.header-main {
   background-color: #fff;
