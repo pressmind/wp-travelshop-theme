@@ -1773,7 +1773,7 @@ pre {
   .table-responsive > .table-bordered {
     border: 0; }
 
-.form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+.form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
   display: block;
   width: 100%;
   height: calc( 1.5em + 0.75rem + 2px );
@@ -1788,25 +1788,25 @@ pre {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
-    .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+    .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
       transition: none; } }
-  .form-control::-ms-expand, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range::-ms-expand {
+  .form-control::-ms-expand, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field::-ms-expand, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range::-ms-expand {
     background-color: transparent;
     border: 0; }
-  .form-control:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:focus {
+  .form-control:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:focus {
     color: #495057;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .form-control::placeholder, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range::placeholder {
+  .form-control::placeholder, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field::placeholder, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range::placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:disabled, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:disabled, .form-control[readonly], .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button[readonly].booking-filter-field--date-range {
+  .form-control:disabled, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:disabled, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:disabled, .form-control[readonly], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker [readonly].search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button[readonly].booking-filter-field--date-range {
     background-color: #e9ecef;
     opacity: 1; }
 
-select.form-control:focus::-ms-value {
+select.form-control:focus::-ms-value, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker select.search-field-input-field:focus::-ms-value {
   color: #495057;
   background-color: #fff; }
 
@@ -1863,10 +1863,10 @@ select.form-control:focus::-ms-value {
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-select.form-control[size], select.form-control[multiple] {
+select.form-control[size], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker select[size].search-field-input-field, select.form-control[multiple], .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker select[multiple].search-field-input-field {
   height: auto; }
 
-textarea.form-control {
+textarea.form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker textarea.search-field-input-field {
   height: auto; }
 
 .form-group {
@@ -1933,25 +1933,28 @@ textarea.form-control {
   background-color: rgba(40, 167, 69, 0.9);
   border-radius: 0.25rem; }
 
-.was-validated .form-control:valid, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid, .form-control.is-valid, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range {
+.was-validated .form-control:valid, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:valid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:valid, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid, .form-control.is-valid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-valid.search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range {
   border-color: #28a745;
   padding-right: calc( 1.5em + 0.75rem );
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: center right calc( 0.375em + 0.1875rem );
   background-size: calc( 0.75em + 0.375rem ) calc( 0.75em + 0.375rem ); }
-  .was-validated .form-control:valid:focus, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid:focus, .form-control.is-valid:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range:focus {
+  .was-validated .form-control:valid:focus, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:valid:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:valid:focus, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid:focus, .form-control.is-valid:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-valid.search-field-input-field:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range:focus {
     border-color: #28a745;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
-  .was-validated .form-control:valid ~ .valid-feedback, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid ~ .valid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid ~ .valid-feedback,
+  .was-validated .form-control:valid ~ .valid-feedback, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:valid ~ .valid-feedback, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:valid ~ .valid-feedback, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid ~ .valid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid ~ .valid-feedback,
   .was-validated .form-control:valid ~ .valid-tooltip,
+  .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:valid ~ .valid-tooltip,
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:valid ~ .valid-tooltip,
   .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:valid ~ .valid-tooltip,
-  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range ~ .valid-feedback,
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-valid.search-field-input-field ~ .valid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range ~ .valid-feedback,
   .form-control.is-valid ~ .valid-tooltip,
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-valid.search-field-input-field ~ .valid-tooltip,
   .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-valid.booking-filter-field--date-range ~ .valid-tooltip {
     display: block; }
 
-.was-validated textarea.form-control:valid, textarea.form-control.is-valid {
+.was-validated textarea.form-control:valid, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker textarea.search-field-input-field:valid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated textarea.search-field-input-field:valid, textarea.form-control.is-valid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker textarea.is-valid.search-field-input-field {
   padding-right: calc( 1.5em + 0.75rem );
   background-position: top calc( 0.375em + 0.1875rem ) right calc( 0.375em + 0.1875rem ); }
 
@@ -2026,25 +2029,28 @@ textarea.form-control {
   background-color: rgba(220, 53, 69, 0.9);
   border-radius: 0.25rem; }
 
-.was-validated .form-control:invalid, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid, .form-control.is-invalid, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range {
+.was-validated .form-control:invalid, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:invalid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:invalid, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid, .form-control.is-invalid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-invalid.search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range {
   border-color: #dc3545;
   padding-right: calc( 1.5em + 0.75rem );
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
   background-repeat: no-repeat;
   background-position: center right calc( 0.375em + 0.1875rem );
   background-size: calc( 0.75em + 0.375rem ) calc( 0.75em + 0.375rem ); }
-  .was-validated .form-control:invalid:focus, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid:focus, .form-control.is-invalid:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range:focus {
+  .was-validated .form-control:invalid:focus, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:invalid:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:invalid:focus, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid:focus, .form-control.is-invalid:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-invalid.search-field-input-field:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range:focus {
     border-color: #dc3545;
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); }
-  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid ~ .invalid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid ~ .invalid-feedback,
+  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:invalid ~ .invalid-feedback, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:invalid ~ .invalid-feedback, .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid ~ .invalid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid ~ .invalid-feedback,
   .was-validated .form-control:invalid ~ .invalid-tooltip,
+  .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field:invalid ~ .invalid-tooltip,
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated .search-field-input-field:invalid ~ .invalid-tooltip,
   .was-validated .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range:invalid ~ .invalid-tooltip,
-  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range ~ .invalid-feedback,
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .was-validated button.booking-filter-field--date-range:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-invalid.search-field-input-field ~ .invalid-feedback, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range ~ .invalid-feedback,
   .form-control.is-invalid ~ .invalid-tooltip,
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .is-invalid.search-field-input-field ~ .invalid-tooltip,
   .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.is-invalid.booking-filter-field--date-range ~ .invalid-tooltip {
     display: block; }
 
-.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
+.was-validated textarea.form-control:invalid, .was-validated .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker textarea.search-field-input-field:invalid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .was-validated textarea.search-field-input-field:invalid, textarea.form-control.is-invalid, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker textarea.is-invalid.search-field-input-field {
   padding-right: calc( 1.5em + 0.75rem );
   background-position: top calc( 0.375em + 0.1875rem ) right calc( 0.375em + 0.1875rem ); }
 
@@ -2116,7 +2122,7 @@ textarea.form-control {
       flex-flow: row wrap;
       align-items: center;
       margin-bottom: 0; }
-    .form-inline .form-control, .form-inline .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .form-inline button.booking-filter-field--date-range {
+    .form-inline .form-control, .form-inline .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .form-inline .search-field-input-field, .form-inline .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .form-inline button.booking-filter-field--date-range {
       display: inline-block;
       width: auto;
       vertical-align: middle; }
@@ -2849,7 +2855,7 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%; }
-  .input-group > .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range,
+  .input-group > .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range,
   .input-group > .form-control-plaintext,
   .input-group > .custom-select,
   .input-group > .custom-file {
@@ -2857,35 +2863,40 @@ input[type="button"].btn-block {
     flex: 1 1 auto;
     width: 1%;
     margin-bottom: 0; }
-    .input-group > .form-control + .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > .form-control + button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + button.booking-filter-field--date-range,
+    .input-group > .form-control + .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field + .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .form-control + .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field + .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > button.booking-filter-field--date-range + .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > .form-control + button.booking-filter-field--date-range, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > .search-field-input-field + button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field + button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + button.booking-filter-field--date-range,
     .input-group > .form-control + .custom-select,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field + .custom-select,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + .custom-select,
     .input-group > .form-control + .custom-file,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field + .custom-file,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range + .custom-file,
     .input-group > .form-control-plaintext + .form-control,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .form-control-plaintext + .search-field-input-field,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > .form-control-plaintext + button.booking-filter-field--date-range,
     .input-group > .form-control-plaintext + .custom-select,
     .input-group > .form-control-plaintext + .custom-file,
     .input-group > .custom-select + .form-control,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .custom-select + .search-field-input-field,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > .custom-select + button.booking-filter-field--date-range,
     .input-group > .custom-select + .custom-select,
     .input-group > .custom-select + .custom-file,
     .input-group > .custom-file + .form-control,
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .custom-file + .search-field-input-field,
     .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > .custom-file + button.booking-filter-field--date-range,
     .input-group > .custom-file + .custom-select,
     .input-group > .custom-file + .custom-file {
       margin-left: -1px; }
-  .input-group > .form-control:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range:focus,
+  .input-group > .form-control:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field:focus, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range:focus,
   .input-group > .custom-select:focus,
   .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
     z-index: 3; }
   .input-group > .custom-file .custom-file-input:focus {
     z-index: 4; }
-  .input-group > .form-control:not(:last-child), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range:not(:last-child),
+  .input-group > .form-control:not(:last-child), .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field:not(:last-child), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range:not(:last-child),
   .input-group > .custom-select:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
-  .input-group > .form-control:not(:first-child), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range:not(:first-child),
+  .input-group > .form-control:not(:first-child), .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group > .search-field-input-field:not(:first-child), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group > button.booking-filter-field--date-range:not(:first-child),
   .input-group > .custom-select:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
@@ -2943,11 +2954,11 @@ input[type="button"].btn-block {
   .input-group-text input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group-lg > .form-control:not(textarea), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-lg > button.booking-filter-field--date-range:not(textarea),
+.input-group-lg > .form-control:not(textarea), .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group-lg > .search-field-input-field:not(textarea), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-lg > button.booking-filter-field--date-range:not(textarea),
 .input-group-lg > .custom-select {
   height: calc( 1.5em + 1rem + 2px ); }
 
-.input-group-lg > .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-lg > button.booking-filter-field--date-range,
+.input-group-lg > .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group-lg > .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-lg > button.booking-filter-field--date-range,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
@@ -2958,11 +2969,11 @@ input[type="button"].btn-block {
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.input-group-sm > .form-control:not(textarea), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-sm > button.booking-filter-field--date-range:not(textarea),
+.input-group-sm > .form-control:not(textarea), .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group-sm > .search-field-input-field:not(textarea), .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-sm > button.booking-filter-field--date-range:not(textarea),
 .input-group-sm > .custom-select {
   height: calc( 1.5em + 0.5rem + 2px ); }
 
-.input-group-sm > .form-control, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-sm > button.booking-filter-field--date-range,
+.input-group-sm > .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .input-group-sm > .search-field-input-field, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .input-group-sm > button.booking-filter-field--date-range,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
@@ -11617,7 +11628,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /**
  * Select
  */
-select.form-control {
+select.form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker select.search-field-input-field {
   padding-top: 0;
   padding-bottom: 0;
   padding-right: 2rem;
@@ -11654,7 +11665,7 @@ select.form-control {
  */
 form.form-string-search.input-group {
   position: relative; }
-  form.form-string-search.input-group .form-control, form.form-string-search.input-group .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range form.form-string-search.input-group button.booking-filter-field--date-range {
+  form.form-string-search.input-group .form-control, form.form-string-search.input-group .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker form.form-string-search.input-group .search-field-input-field, form.form-string-search.input-group .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range form.form-string-search.input-group button.booking-filter-field--date-range {
     border-radius: 0.25rem;
     padding-right: 2.25rem; }
   form.form-string-search.input-group .input-group-append {
@@ -13176,7 +13187,7 @@ ul.checklist {
 
 .list-filter-box.datepicker > div {
   position: relative; }
-  .list-filter-box.datepicker > div input.form-control[readonly] {
+  .list-filter-box.datepicker > div input.form-control[readonly], .list-filter-box.datepicker > div .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker input[readonly].search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .list-filter-box.datepicker > div input[readonly].search-field-input-field {
     background: #fff;
     opacity: 1; }
   .list-filter-box.datepicker > div .input-clear {
