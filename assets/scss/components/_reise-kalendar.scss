@@ -51,7 +51,7 @@
       padding-bottom: $travel-card-spacer-x;
       cursor: pointer;
 
-      &:not(.is-active) {
+      &:not(.is-active):hover {
         background-color: rgba($travel-card-bg, .75);
       }
 

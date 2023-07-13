@@ -15541,7 +15541,7 @@ ul.checklist {
       padding-top: 1.25rem;
       padding-bottom: 1.25rem;
       cursor: pointer; }
-      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item:not(.is-active) {
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item:not(.is-active):hover {
         background-color: rgba(255, 255, 255, 0.75); }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
         display: flex;
