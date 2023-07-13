@@ -202,7 +202,7 @@
             }
           }
 
-          .form-check.is--open {
+          .form-check.is-open {
             .list-filter-second-level {
               display: block;
             }
@@ -316,7 +316,7 @@
     opacity:0;
     pointer-events: none;
 
-    &.is--open {
+    &.is-open {
       opacity: 1;
       pointer-events: auto;
     }
@@ -437,7 +437,7 @@
     }
   }
 
-  .form-check.is--open {
+  .form-check.is-open {
     .list-filter-second-level {
       display: block;
     }

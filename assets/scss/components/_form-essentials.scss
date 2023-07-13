@@ -278,7 +278,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     // -- show if open state
     //    and icon state if opened
-    &.is--open {
+    &.is-open {
 
       button.toggle-second-level {
         svg {
@@ -352,7 +352,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     // -- show if open state
     //    and icon state if opened
-    &.is--open {
+    &.is-open {
       button.toggle-second-level {
         svg {
           transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2)) scaleY(-1);

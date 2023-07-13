@@ -120,7 +120,7 @@
         }
       }
 
-      &.is--open {
+      &.is-open {
         @extend %modal-open-down-#{$filter-mobile-break};
       }
 
@@ -161,7 +161,7 @@
       }
 
       // -- open state
-      &.is--open {
+      &.is-open {
         @extend %apple-like-open-down-#{$filter-mobile-break};
 
         > form .list-filter {
@@ -194,7 +194,7 @@
       }
 
       // -- open state
-      &.is--open {
+      &.is-open {
         @extend %offcanvas-open-down-#{$filter-mobile-break};
 
         > form .list-filter {

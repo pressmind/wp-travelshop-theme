@@ -126,7 +126,7 @@ jQuery(function ($) {
             });
             let leaveMessageInt = setInterval(() => {
                 if(aboutToleave) {
-                    $('#modal-id-post-automodal').addClass('is--open');
+                    $('#modal-id-post-automodal').addClass('is-open');
                     if($('#auto-modal-content').attr('data-multiple') == 'false') {
                         localStorage.setItem('leaveMessageFired', 'true');
                         clearInterval(leaveMessageInt);
@@ -136,7 +136,7 @@ jQuery(function ($) {
         }
         if(active && $('#auto-modal-content').attr('data-type') == 'delay') {
             timeoutId = setTimeout(() => {
-                $('#modal-id-post-automodal').addClass('is--open');
+                $('#modal-id-post-automodal').addClass('is-open');
             }, $('#auto-modal-content').attr('data-delay'))
         }
 

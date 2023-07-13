@@ -13,7 +13,7 @@
   opacity: 0;
   pointer-events: none;
 
-  &.is--open {
+  &.is-open {
     z-index: 5000;
     opacity: 1;
     pointer-events: auto;

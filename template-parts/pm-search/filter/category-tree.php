@@ -35,7 +35,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                 if(empty($selected) === false && $has_childs === true){
                     foreach ($childs[$item->id_item] as $child_item){
                         if(in_array($child_item->id_item, $selected) === true){
-                            $is_open = ' is--open';
+                            $is_open = ' is-open';
                             break;
                         }
                     }

@@ -22,7 +22,7 @@
 
   z-index: $zindex-offcanvas;
 
-  &.is--open {
+  &.is-open {
     left: 0;
     opacity: 1;
     pointer-events: auto;

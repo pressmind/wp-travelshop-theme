@@ -388,7 +388,7 @@ body {
 
 	transition: transform 0$animation-speed-default;
 
-	&.is--open {
+	&.is-open {
 		opacity: 1;
 		pointer-events: auto;
 		transform: translateY(0%);

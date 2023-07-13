@@ -6,19 +6,19 @@ jQuery(function ($) {
 
     // Filter toggle second level filter (open second level tree item)
     $('#search-filter').on('click', '.toggle-second-level', function (e) {
-        $(this).parent().toggleClass('is--open');
+        $(this).parent().toggleClass('is-open');
     });
 
 
     // Filter toggle
     $('.list-filter-close').on('click', function (e) {
         e.preventDefault();
-        $('.content-block-list-filter').removeClass('is--open');
+        $('.content-block-list-filter').removeClass('is-open');
     });
 
     $('#search-result').on('click', '.list-filter-open', function (e) {
         e.preventDefault();
-        $('.content-block-list-filter').addClass('is--open');
+        $('.content-block-list-filter').addClass('is-open');
     });
 
     // -- make filter span-checkboxes clickable
@@ -53,7 +53,7 @@ jQuery(function ($) {
 
         var $target = $($(this).data('target'));
 
-        $target.addClass('is--open');
+        $target.addClass('is-open');
 
         e.stopPropagation();
     });
@@ -76,7 +76,7 @@ jQuery(function ($) {
 
     $offcanvasBackdrop.on('hide.bs.modal', function (e) {
         // -- reset class from offcanvas
-        $('.offcanvas.is--open').removeClass('is--open');
+        $('.offcanvas.is-open').removeClass('is-open');
     });
 
 // ------------------------------------------
@@ -89,7 +89,7 @@ jQuery(function ($) {
 
         $searchToggle.on('click', function (e) {
             $searchBackdrop.modal('show');
-            $searchWrapper.addClass('is--open');
+            $searchWrapper.addClass('is-open');
 
             e.stopPropagation();
         });
@@ -103,11 +103,11 @@ jQuery(function ($) {
         });
 
         $searchBackdrop.on('hide.bs.modal', function (e) {
-            $searchWrapper.removeClass('is--open');
+            $searchWrapper.removeClass('is-open');
         });
 
         $searchBackdrop.on('show.bs.modal', function (e) {
-            $searchWrapper.addClass('is--open');
+            $searchWrapper.addClass('is-open');
         });
     }
 

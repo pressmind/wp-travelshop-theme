@@ -37,5 +37,19 @@
       padding-top: $travel-card-spacer-y;
       padding-bottom: $travel-card-spacer-y;
     }
+
+    /**
+     * Group Product item
+     */
+
+    .product-calendar-group-item-product {
+      .product-calendar-group-item--product {
+        display: none;
+
+        &.is-open {
+          display: block;
+        }
+      }
+    }
   }
 }

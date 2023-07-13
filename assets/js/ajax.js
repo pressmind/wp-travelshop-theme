@@ -1066,17 +1066,17 @@ jQuery(function ($) {
 
                     if ( $(this).hasClass('is--active') ) { // close
                         $(this).removeClass('is--active');
-                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').removeClass('is--open');
+                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').removeClass('is-open');
 
                     } else { // open & load product
                         let pm_id = $(this).data('pm-id');
                         let pm_dr = $(this).data('pm-dr');
                         $('.product-calendar-group-item').removeClass('is--active');
-                        $('.product-calendar-group-item--product').removeClass('is--open');
+                        $('.product-calendar-group-item--product').removeClass('is-open');
                         $(this).addClass('is--active');
                         let query_string = 'action=pm-view&view=Teaser3&pm-id='+pm_id+'&pm-dr='+pm_dr;
                         _this.call(query_string, null, null, _this.calendarRowClickResultHandler, '.product-calendar-group-item--product[data-row-id="'+row_id+'"]');
-                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').addClass('is--open');
+                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').addClass('is-open');
                     }
                     e.stopPropagation();
                 })
@@ -1200,7 +1200,7 @@ jQuery(function ($) {
                     e.preventDefault();
                     let modalId = $(e.target).data('modal-id');
                     // -- show modal
-                    $('body').find('#modal-id-post-' + modalId).addClass('is--open');
+                    $('body').find('#modal-id-post-' + modalId).addClass('is-open');
                     if($(e.target).hasClass('booking-btn') || $(e.target).hasClass('stretched-link')) {
                         $('.modal-loader').css('display', 'flex');
                         setTimeout(() => {
@@ -1210,15 +1210,15 @@ jQuery(function ($) {
                             }, 200);
                         }, 500);
                     }
-                    let target = document.querySelector('.is--open .modal-body-outer');
+                    let target = document.querySelector('.is-open .modal-body-outer');
                     bodyScrollLock.disableBodyScroll(target);
                     e.stopPropagation();
                 })
 
                 $('.modal-close, .modal-close-btn').on('click', function (e) {
                     e.preventDefault();
-                    let target = document.querySelector('.is--open .modal-body-outer');
-                    $(e.target).closest('.is--open').removeClass('is--open');
+                    let target = document.querySelector('.is-open .modal-body-outer');
+                    $(e.target).closest('.is-open').removeClass('is-open');
                     bodyScrollLock.enableBodyScroll;
                     e.stopPropagation();
                 })
