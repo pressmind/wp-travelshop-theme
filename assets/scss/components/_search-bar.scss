@@ -137,7 +137,13 @@
     .search-box-submit {
       flex: 0;
 
-      button.btn {
+      button.btn, .btn, a.btn {
+        padding-top:0;
+        padding-bottom:0;
+
+        padding-left: $input-padding-x;
+        padding-right: $input-padding-x;
+
         height: ($search-bar-input-height - pxToRem($btn-border-width));
         line-height: (($search-bar-input-height - pxToRem($btn-border-width)) - ($input-border-big-width * 2))
       }
