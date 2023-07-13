@@ -31,7 +31,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                     </div>
 
                     <button type="button" class="close-category-dropdown d-flex d-lg-none">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="https://development-stanglmeier-de.pressmind.dev/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#x"></use></svg>
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                     </button>
                 </div>
                 <div class="category-tree-field-items multi-level-checkboxes">
