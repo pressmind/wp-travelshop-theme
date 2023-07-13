@@ -13688,6 +13688,7 @@ ul.checklist {
     .search-wrapper .search-wrapper--inner .search-box-submit button.btn, .search-wrapper .search-wrapper--inner .search-box-submit .btn, .search-wrapper .search-wrapper--inner .search-box-submit a.btn {
       padding-top: 0;
       padding-bottom: 0;
+      white-space: nowrap;
       padding-left: 0.75rem;
       padding-right: 0.75rem;
       height: 2.9375rem;

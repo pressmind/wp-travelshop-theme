@@ -140,6 +140,7 @@
       button.btn, .btn, a.btn {
         padding-top:0;
         padding-bottom:0;
+        white-space: nowrap;
 
         padding-left: $input-padding-x;
         padding-right: $input-padding-x;
