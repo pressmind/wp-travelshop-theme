@@ -461,7 +461,7 @@ $category-dropdown-person-offcanvas-direction: 'left' !default;
  */
 $booking-calendar-mobile-break: sm !default;
 $booking-calendar-dropdown-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
-$booking-calendar-dropdown-modal-max-width: lg !default; // defines max width of modal. max widths are the breakpoints widths
+$booking-calendar-dropdown-modal-max-width: xl !default; // defines max width of modal. max widths are the breakpoints widths
 $booking-calendar-dropdown-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
 $booking-calendar-dropdown-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
 $booking-calendar-dropdown-offcanvas-direction: 'left' !default;
@@ -470,7 +470,7 @@ $booking-calendar-active-day-border-width: 2px !default;
 $booking-calendar-active-day-border-color: $primary !default;
 $booking-calendar-active-offer-bg: $primary !default;
 $booking-calendar-border-radius: 20rem !default;
-$booking-calendar-item-size: 5rem !default;
+$booking-calendar-item-size: 4rem !default;
 
 /**
  * Calendar control
