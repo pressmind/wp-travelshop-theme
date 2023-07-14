@@ -62,6 +62,70 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     <input class="booking-filter-field--slider-index" type="hidden" name="offer" value="0" />
 
     <div class="booking-filter-items-boxed">
+
+
+
+        <div class="booking-filter-item booking-filter-item--persons">
+            <div class="dropdown">
+                <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="dropdown-icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
+                </span>
+                    <small class="d-block">Anzahl Personen</small>
+                    <span class="selected-options">
+                    2 Personen
+                </span>
+                    <span class="dropdown-clear input-clear">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                </span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-booking-person-select" aria-labelledby="dropdownPersons" x-placement="top-start">
+                    <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-content">
+                            <div class="dropdown-menu-header d-none">
+                                <div class="h4">
+                                    Anzahl Personen
+                                </div>
+                                <button class="filter-prompt" data-type="close-popup" type="button">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                </button>
+                            </div>
+
+                            <div class="dropdown-menu-body">
+                                <div class="personen-select">
+                                    <div class="personen-select-title">
+                                        Personen
+                                    </div>
+
+                                    <div class="personen-select-counter">
+                                        <button type="button"  class="personen-select-counter-btn" data-type="-">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
+                                        </button>
+                                        <input readonly type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="" data-target-input=".dropdownPersons .selected-options"/>
+                                        <button type="button" class="personen-select-counter-btn" data-type="+">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#plus-circle"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="info-text mt-3">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#info"></use></svg>
+                                    Informationen bezüglich Reisen mit Kindern sowie Reisen mit Haustieren finden Sie in der Buchung.
+                                </div>
+                            </div>
+
+                            <div class="dropdown-menu-footer">
+                                <button class="btn btn-primary btn-block mt-3 filter-prompt">
+                                    Auswahl übernehmen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="booking-filter-item booking-filter-item--date-range">
             <button class="booking-filter-field booking-filter-field--date-range" data-placeholder="Bitte wählen">
             <span class="booking-filter-field--icon">
@@ -176,67 +240,6 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             </div>
         </div>
         <?php } ?>
-
-        <div class="booking-filter-item booking-filter-item--persons">
-            <div class="dropdown">
-                <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="dropdown-icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
-                </span>
-                    <small class="d-block">Anzahl Personen</small>
-                    <span class="selected-options">
-                    2 Personen
-                </span>
-                    <span class="dropdown-clear input-clear">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                </span>
-                </button>
-
-                <div class="dropdown-menu dropdown-menu-booking-person-select" aria-labelledby="dropdownPersons" x-placement="top-start">
-                    <div class="dropdown-menu-inner">
-                        <div class="dropdown-menu-content">
-                            <div class="dropdown-menu-header d-none">
-                                <div class="h4">
-                                    Anzahl Personen
-                                </div>
-                                <button class="filter-prompt" data-type="close-popup" type="button">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                                </button>
-                            </div>
-
-                            <div class="dropdown-menu-body">
-                                <div class="personen-select">
-                                    <div class="personen-select-title">
-                                        Personen
-                                    </div>
-
-                                    <div class="personen-select-counter">
-                                        <button type="button"  class="personen-select-counter-btn" data-type="-">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
-                                        </button>
-                                        <input readonly type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="" data-target-input=".dropdownPersons .selected-options"/>
-                                        <button type="button" class="personen-select-counter-btn" data-type="+">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#plus-circle"></use></svg>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="info-text mt-3">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#info"></use></svg>
-                                    Informationen bezüglich Reisen mit Kindern sowie Reisen mit Haustieren finden Sie in der Buchung.
-                                </div>
-                            </div>
-
-                            <div class="dropdown-menu-footer">
-                                <button class="btn btn-primary btn-block mt-3 filter-prompt">
-                                    Auswahl übernehmen
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 </div>
