@@ -53,6 +53,8 @@ $args['usps'] = $moc->usp_default;
 $args['services_included'] = $moc->leistungen_default;
 $args['intro'] = $moc->einleitung_default;
 
+print_r($mo->touristic_base->booking_on_request);
+
 /**
  * Set the Cheapest Price, based on the current search parameters
  * @todo add idd and idbp to the cheapest price filter
