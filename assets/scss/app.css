@@ -13703,7 +13703,14 @@ ul.checklist {
       flex-direction: column;
       width: 100%; } }
   .search-wrapper .search-bar-fields-pickers .search-box-field {
-    flex: 1; }
+    flex: 0 0 33.3333333333%;
+    width: 100%;
+    max-width: 33.3333333333%; }
+    @media (max-width: 767.98px) {
+      .search-wrapper .search-bar-fields-pickers .search-box-field {
+        flex: 1;
+        width: unset;
+        max-width: unset; } }
     .search-wrapper .search-bar-fields-pickers .search-box-field .search-field-input {
       margin: -1px; }
     .search-wrapper .search-bar-fields-pickers .search-box-field + .search-box-field {

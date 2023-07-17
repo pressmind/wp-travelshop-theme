@@ -63,7 +63,15 @@
     }
 
     .search-box-field {
-      flex: 1;
+      flex: 0 0 ( 100% / $search-bar-field-columns );
+      width: 100%;
+      max-width: ( 100% / $search-bar-field-columns );
+
+      @include media-breakpoint-down($search-bar-mobile-break) {
+        flex: 1;
+        width: unset;
+        max-width: unset;
+      }
 
       .search-field-input {
         margin: -$input-border-width;
