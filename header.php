@@ -73,7 +73,8 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
     <div class="container">
         <div class="row header-main-row align-items-center">
             <div class="col-auto d-block d-lg-none">
-                <button type="button" class="header-action header-action--navtoggle toggler navbar-toggler"
+                <button class="header-action header-action--navtoggle toggler navbar-toggler offcanvas-toggler" type="button" data-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="header-action--icon">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#list"></use></svg>
                     </div>
@@ -191,11 +192,5 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
         </div>
     </div>
 </header>
-
-<nav class="page-navigation-offcanvas d-flex flex-column d-lg-none">
-    <?php load_template( get_stylesheet_directory().'/template-parts/header/menu-offcanvas.php', true, ( has_nav_menu('primary') === true ? nav_menu_2_tree('primary') : null)); ?>
-</nav>
-
-<div class="offcanvas-backdrop"></div>
 
 <div class="datepicker-backdrop"></div>
