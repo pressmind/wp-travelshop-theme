@@ -177,7 +177,7 @@
 .offcanvas-backdrop {
   @extend %backdrop-default;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-up(lg) {
     display: none;
   }
 }

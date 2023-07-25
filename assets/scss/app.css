@@ -15784,9 +15784,9 @@ nav#navbar ul.navbar-nav {
 .page-navigation-offcanvas {
   position: fixed;
   top: 0;
-  right: -10rem;
+  right: -20rem;
   bottom: 0;
-  width: 10rem;
+  width: 20rem;
   z-index: 1070;
   background-color: #fff;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -15827,11 +15827,11 @@ nav#navbar ul.navbar-nav {
     padding: 0 1.5rem 1rem 1.5rem;
     position: relative; }
     .page-navigation-offcanvas .offcanvas-inner .sub-layer {
-      width: 10rem;
+      width: 20rem;
       position: absolute;
       top: 0;
       left: auto;
-      right: -10rem;
+      right: -20rem;
       bottom: 0;
       background-color: #fff;
       z-index: 2;
@@ -15887,7 +15887,7 @@ nav#navbar ul.navbar-nav {
         width: 1.25rem;
         height: 1.25rem; }
 
-@media (max-width: 991.98px) {
+@media (min-width: 992px) {
   .offcanvas-backdrop {
     display: none; } }
 
