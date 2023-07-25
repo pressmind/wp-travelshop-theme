@@ -15879,8 +15879,9 @@ nav#navbar ul.navbar-nav {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    height: 2.5rem;
-    line-height: 2.5rem; }
+    padding: 0;
+    height: 2rem;
+    line-height: 2rem; }
     .page-navigation-offcanvas .nav-item > a.nav-link > span.icon, .page-navigation-offcanvas .sub-layer-items > a.nav-link > span.icon {
       line-height: 1; }
       .page-navigation-offcanvas .nav-item > a.nav-link > span.icon svg, .page-navigation-offcanvas .sub-layer-items > a.nav-link > span.icon svg {
