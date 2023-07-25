@@ -29,6 +29,65 @@ jQuery(function ($) {
 
     let isMobile = deviceDetection(); // initial false
 
+    /**
+     * Offcanvas functionality
+     * @type {jQuery|HTMLElement|*}
+     */
+
+        // -- menu toggle
+    let navToggle = $('button.navbar-toggler');
+    let navBackdrop = $('.offcanvas-backdrop');
+    let navOffcanvas = $('.page-navigation-offcanvas');
+    let navOffcanvasClose = $('.offcanvas-close');
+
+    navToggle.click(function(e) {
+        e.preventDefault();
+
+        $(this).toggleClass(openClass);
+        $(this).children().toggleClass(openClass);
+
+        navBackdrop.toggleClass(openClass);
+        navOffcanvas.toggleClass(openClass);
+
+
+        e.stopPropagation();
+    });
+
+    navOffcanvasClose.click(function(e) {
+        e.preventDefault();
+
+        navToggle.removeClass(openClass);
+        navToggle.children().removeClass(openClass);
+
+        navBackdrop.removeClass(openClass);
+        navOffcanvas.removeClass(openClass);
+
+        e.stopPropagation();
+    });
+
+    // -- offcanvas
+    let subLayerToggle = $('.sub-layer-toggle');
+    let subLayer  = $('.sub-layer');
+    let subLayerBack = $('.sub-layer-back');
+
+    subLayerToggle.on('click', function(e) {
+        e.preventDefault();
+
+        let subLayerId = $(this).data('sub-layer');
+
+        $(subLayerId).addClass(openClass);
+
+        e.stopPropagation();
+    });
+
+    subLayerBack.on('click', function(e) {
+        e.preventDefault();
+
+        $(this).parent().parent().removeClass(openClass);
+
+        e.stopPropagation();
+    });
+
     // ------------------------------------------------
     // -- share page
     // ------------------------------------------------
@@ -1168,6 +1227,15 @@ jQuery(function ($) {
         // -- backdrop checker
         if ( $target.css('container-name') === 'backdrop' ) {
             $target.parent().find('button[data-type="close-popup"]').trigger('click');
+        }
+
+        // -- offcanvas behaviour
+        if ( !$target.closest('.page-navigation-offcanvas').length && navToggle.hasClass(openClass)) {
+            navToggle.toggleClass(openClass);
+            navToggle.children().toggleClass(openClass);
+
+            navBackdrop.toggleClass(openClass);
+            navOffcanvas.toggleClass(openClass);
         }
     });
 });

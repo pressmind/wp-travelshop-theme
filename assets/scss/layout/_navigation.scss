@@ -4,20 +4,32 @@
  * based on navbar variables
  */
 
+%navigation-item {
+  color: $navbar-light-color;
+  transition: color $animation-speed-default;
+  text-decoration: none;
+
+  font: {
+    size: $navbar-font-size;
+    weight: $navbar-font-weight;
+  }
+}
+
+%navigation-item-active {
+  color: $navbar-light-active-color;
+
+  font: {
+    weight: $navbar-active-font-weight;
+  }
+}
+
 nav#navbar {
   ul.navbar-nav {
     align-items: baseline;
 
     > li.nav-item {
       > a.nav-link {
-        color: $navbar-light-color;
-        transition: color $animation-speed-default;
-        text-decoration: none;
-
-        font: {
-          size: $navbar-font-size;
-          weight: $navbar-font-weight;
-        }
+        @extend %navigation-item;
 
         display: flex;
         flex-direction: row;
@@ -53,11 +65,7 @@ nav#navbar {
 
       // -- active state
       &.active > a.nav-link {
-        color: $navbar-light-active-color;
-
-        font: {
-          weight: $navbar-active-font-weight;
-        }
+        @extend %navigation-item-active;
       }
     }
   }
