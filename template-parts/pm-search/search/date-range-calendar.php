@@ -13,7 +13,7 @@
                     ?>
                     <div class="calendar-item">
 
-                        <div class="calendar-item-month">
+                        <div class="calendar-item-month h5">
                             <?php echo $Month['title']; ?>
                         </div>
 

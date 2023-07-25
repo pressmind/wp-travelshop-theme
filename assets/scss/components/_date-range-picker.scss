@@ -1,3 +1,54 @@
+%calender-slider-controls {
+  @extend %slider-controls;
+  @extend %slider-controls-inner;
+
+  // positioning
+  position: absolute;
+  left:50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  // add max-width
+  width: 100%;
+  max-width: ( ( ($grid-gutter-width / 2) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) ;
+
+  // -- generate top position, to make it center with month name, everytime
+  @each $breakpoint, $size in $h5-font-sizes {
+    @if $breakpoint == null {
+      top: ( (($size * $headings-line-height) + 2rem) / 2 );
+    } @else {
+      @if map-has-key($grid-breakpoints, $breakpoint) {
+        $breakpoint: map-get($grid-breakpoints, $breakpoint);
+      }
+
+      @media ( min-width: $breakpoint ) {
+        top: ( (($size * $headings-line-height) + 2rem) / 2 );
+      }
+    }
+  }
+
+  > button {
+    border-width: 1px;
+    border-color: $hr-border-color;
+    border-style: solid;
+    color: $body-color-light;
+
+    > svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    pointer-events: auto;
+
+    transition: background-color .3s, opacity .3s, color .3s, border-color $animation-speed-default;
+
+    &:not([disabled]):hover {
+      border-color: $primary;
+    }
+  }
+}
+
 .daterange-overlay {
   position: absolute !important;
 
@@ -206,14 +257,7 @@
   width: calc((17.5rem *2) + 1.5rem);
 
   .slider-controls{
-    @extend %slider-controls;
-
-    position: absolute;
-    top: .25rem;
-    left: 0;
-    right: 0;
-    justify-content: space-between;
-
+    @extend %calender-slider-controls;
   }
 
   div:not(.tns-outer) + .slider-controls {
@@ -262,15 +306,9 @@
 
     // -- month
     .calendar-item-month {
-      font-size: $font-size-lg;
-      font-weight: $font-weight-bolder;
+      margin: 0;
       text-align: center;
-      margin-bottom: .5rem;
-      margin-top: 0;
-      color: $body-color;
-
-      height: 2.5rem;
-      line-height: 2.5rem;
+      padding: 1rem 0;
     }
 
     // -- days

@@ -15,7 +15,7 @@
                     ?>
                     <div class="calendar-item calendar-item-placeholder">
 
-                        <div class="calendar-item-month">
+                        <div class="calendar-item-month h5">
                             &nbsp;
                         </div>
 
