@@ -38,46 +38,6 @@ jQuery(function ($) {
     addFilterCheckboxEventListener();
 
 
-// -- offcanvas
-    var $offcanvasToggle = $('.offcanvas-toggler'),
-        $offcanvasBackdrop = $('#offanvas-backdrop'),
-        $offcanvasClose = $('.offcanvas-close');
-
-    $offcanvasToggle.unbind('click');
-
-    $offcanvasToggle.on('click', function (e) {
-        e.preventDefault();
-
-        // -- trigger modal.
-        $offcanvasBackdrop.modal('show');
-
-        var $target = $($(this).data('target'));
-
-        $target.addClass('is-open');
-
-        e.stopPropagation();
-    });
-
-    $offcanvasBackdrop.unbind('click');
-
-    $offcanvasBackdrop.on('click', function (e) {
-        e.preventDefault();
-
-        $offcanvasBackdrop.modal('hide');
-
-        e.stopPropagation();
-    });
-
-
-    $offcanvasClose.on('click', function () {
-        $offcanvasBackdrop.modal('hide');
-
-    });
-
-    $offcanvasBackdrop.on('hide.bs.modal', function (e) {
-        // -- reset class from offcanvas
-        $('.offcanvas.is-open').removeClass('is-open');
-    });
 
 // ------------------------------------------
 // --- Search toggle
