@@ -113,6 +113,7 @@ class Search
                     $item['cheapest_price']->price_regular_before_discount = $document['prices']['price_regular_before_discount'];
                     $item['cheapest_price']->earlybird_discount = $document['prices']['earlybird_discount'];
                     $item['cheapest_price']->earlybird_discount_f = $document['prices']['earlybird_discount_f'];
+                    $item['cheapest_price']->earlybird_name = empty($document['prices']['earlybird_name']) ? null : $document['prices']['earlybird_name'];
                     $item['cheapest_price']->date_departures = [];
                     if (!empty($document['prices']['date_departures'])) {
                         foreach ($document['prices']['date_departures'] as $date_departure) {
@@ -127,6 +128,10 @@ class Search
                     $document['prices'] = null;
                 }
                 if (!empty($document['dates_per_month'])) {
+                    $document['dates_per_month'] = array_filter($document['dates_per_month'], function($item) {
+                        return !empty($item['five_dates_in_month']);
+                    });
+                    $document['dates_per_month'] = array_values($document['dates_per_month']);
                     $item['dates_per_month'] = $document['dates_per_month'];
                     foreach ($document['dates_per_month'] as $k => $month) {
                         foreach ($month['five_dates_in_month'] as $k1 => $date) {
