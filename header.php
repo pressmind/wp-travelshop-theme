@@ -193,4 +193,10 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
     </div>
 </header>
 
+<nav class="page-navigation-offcanvas d-flex flex-column d-lg-none">
+    <?php load_template( get_stylesheet_directory().'/template-parts/header/menu-offcanvas.php', true, ( has_nav_menu('primary') === true ? nav_menu_2_tree('primary') : null)); ?>
+</nav>
+
+<div class="offcanvas-backdrop"></div>
+
 <div class="datepicker-backdrop"></div>
