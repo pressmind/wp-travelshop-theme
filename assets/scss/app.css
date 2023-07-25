@@ -15084,6 +15084,11 @@ ul.checklist {
     .daterange-calendar-items .slider-controls > button:not([disabled]):hover, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover {
       border-color: #007bff; }
 
+.daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-header .day-item, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
+  color: rgba(33, 37, 41, 0.5);
+  text-transform: uppercase;
+  font-size: 0.75rem; }
+
 .daterange-overlay {
   position: absolute !important;
   z-index: 1041;
@@ -15262,9 +15267,6 @@ ul.checklist {
       .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-header {
         padding-bottom: .5rem; }
         .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-header .day-item {
-          font-size: 0.75rem;
-          color: #5a6570;
-          text-transform: uppercase;
           text-align: center; }
       .daterange-calendar-items .calendar-item .calendar-item-days.calendar-item-days-dates {
         row-gap: .25rem; }
@@ -16183,9 +16185,6 @@ footer.footer-main {
             border-bottom-right-radius: 20rem;
             position: relative; }
       .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner .calendar-item .calendar-item-wrapper > div.calendar-item-weekday {
-        color: rgba(33, 37, 41, 0.5);
-        text-transform: uppercase;
-        font-size: 0.75rem;
         height: 1rem;
         padding: 0;
         margin: 0 0 .75rem 0; }

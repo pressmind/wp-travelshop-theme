@@ -176,9 +176,7 @@
             }
 
             > div.calendar-item-weekday {
-              color: rgba($body-color, .5);
-              text-transform: uppercase;
-              font-size: $font-size-xs;
+              @extend %calendar-weekday;
               height: 1rem;
 
               padding: 0;

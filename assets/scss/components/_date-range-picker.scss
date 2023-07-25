@@ -49,6 +49,12 @@
   }
 }
 
+%calendar-weekday {
+  color: rgba($body-color, .5);
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+}
+
 .daterange-overlay {
   position: absolute !important;
 
@@ -326,10 +332,9 @@
         padding-bottom: .5rem;
 
         .day-item {
-          font-size: $font-size-xs;
-          color: $body-color-light;
-          text-transform: uppercase;
           text-align: center;
+
+          @extend %calendar-weekday;
         }
       }
 
