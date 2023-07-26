@@ -57,6 +57,14 @@
       cursor: pointer;
       transition: background-color $animation-speed-default;
 
+      @include media-breakpoint-down(lg) {
+        padding: 0.75rem;
+
+        > .row {
+          
+        }
+      }
+
       &:not(.is-active):hover {
         background-color: rgba($travel-card-bg, .75);
       }

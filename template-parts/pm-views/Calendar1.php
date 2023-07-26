@@ -34,7 +34,7 @@ $random = rand(1, 999999);
 
 <div class="product-calendar-group-item " data-row-id="<?php echo $random; ?>" data-pm-id="<?php echo $args['id_media_object']; ?>">
     <div class="row">
-        <div class="col-12 col-lg-3">
+        <div class="col-date col-12 col-lg-3">
             <div class="arrow--wrapper">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
@@ -50,13 +50,13 @@ $random = rand(1, 999999);
                 ?>
             </div>
         </div>
-        <div class="col-12 col-lg-4">
+        <div class="col-title col-12 col-lg-4">
             <strong><?php echo $args['headline']; ?></strong>
         </div>
-        <div class="col-12 col-lg-2">
+        <div class="col-duration col-12 col-lg-2">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
         </div>
-        <div class="col-12 col-lg-3 text-lg-right">
+        <div class="col-price col-12 col-lg-3 text-lg-right">
         <span class="price">
             <?php
             if (!empty($cheapest_price) && ($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {
