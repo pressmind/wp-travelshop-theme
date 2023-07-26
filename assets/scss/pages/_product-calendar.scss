@@ -137,8 +137,8 @@
           color: $body-color;
           display: block;
 
-          height: 2.5rem;
-          line-height: 2.5rem;
+          height: 2rem;
+          line-height: 2rem;
 
           @include border-radius(2.5rem);
 
@@ -148,7 +148,9 @@
           transition: background-color $animation-speed-default, color $animation-speed-default;
 
           @include media-breakpoint-up(md) {
-            font-size: $font-size-lg;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            padding: 0 1.25rem;
           }
 
           &:hover, &:focus, &:active, &.is-active {

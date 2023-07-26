@@ -17163,15 +17163,17 @@ footer.footer-main {
     text-decoration: none;
     color: #212529;
     display: block;
-    height: 2.5rem;
-    line-height: 2.5rem;
+    height: 2rem;
+    line-height: 2rem;
     border-radius: 2.5rem;
     padding: 0 1rem;
     background-color: #e9ecef;
     transition: background-color 0.3s, color 0.3s; }
     @media (min-width: 768px) {
       .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a {
-        font-size: 1.125rem; } }
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding: 0 1.25rem; } }
     .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a:hover, .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a:focus, .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a:active, .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a.is-active {
       background-color: #007bff;
       color: #fff; }

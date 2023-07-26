@@ -55,8 +55,13 @@ if (empty($travel_months)) {
                     if(empty($image_url)){
                         $image_url = '/placeholder.svg?wh=80x80&text='.HelperFunctions::monthNumberToLocalMonthName($item['from']->format('n'));
                     }
+                    $active = false;
+                    $duration_string = $item['from']->format('Ymd').'-'.$item['to']->format('Ymd');
+                    if ( !empty($_GET) && isset($_GET['pm-dr']) && $_GET['pm-dr'] === $duration_string ) {
+                        $active = true;
+                    }
                     ?>
-                    <a class="" href='<?php echo RouteHelper::get_url_by_object_type($args['id_object_type']) . '/?pm-o=date_departure-asc&pm-dr='.$item['from']->format('Ymd').'-'.$item['to']->format('Ymd'); ?>'
+                    <a class="<?php echo ($active) ? 'is-active' : ''; ?>" href='<?php echo RouteHelper::get_url_by_object_type($args['id_object_type']) . '/?pm-o=date_departure-asc&pm-dr='.$item['from']->format('Ymd').'-'.$item['to']->format('Ymd'); ?>'
                        title="<?php echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/month-name.php', ['date' => $item['from']]); ?>">
 
                         <?php
