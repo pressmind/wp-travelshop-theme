@@ -26,7 +26,7 @@ if (empty($travel_months)) {
 ?>
 <section class="content-block content-block-month-teaser">
     <div class="row row-products">
-        <div class="month-badges d-flex flex-row flex-wrap">
+        <div class="col-12 month-badges d-flex flex-row flex-wrap">
             <?php
             // -- use Grouped Array to render Items
             $month_count = 1;
