@@ -13494,6 +13494,12 @@ ul.checklist {
       max-width: 66.6666666667%; } }
 
 /**
+ * Little border fix for stripe
+ */
+.card-travel-wrapper.card-travel.card-travel--stripe:last-child .card-travel.card-travel--stripe {
+  border-bottom: 0; }
+
+/**
  * Styling for category product teaser
  */
 .teaser.category-product-teaser {
