@@ -97,8 +97,8 @@
         }
       }
 
-      // -- arrow wrapper
-      .arrow--wrapper {
+
+      .date-wrapper {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -107,6 +107,13 @@
         .circle {
           margin-right: .25rem;
         }
+      }
+        // -- arrow wrapper
+      .arrow--wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
 
         svg {
           width: $font-size-lg;
