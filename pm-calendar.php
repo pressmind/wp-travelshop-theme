@@ -27,7 +27,7 @@ get_header();
                         $args['text'] = '';
                         $args['id_object_type'] = TS_TOUR_PRODUCTS;
                         $args['calendar'] = true;
-                        load_template_transient(get_stylesheet_directory() . '/template-parts/layout-blocks/month-teaser.php', false, $args);
+                        load_template_transient(get_stylesheet_directory() . '/template-parts/layout-blocks/month-badge.php', false, $args);
                         ?>
 
                         <div id="search-result">
