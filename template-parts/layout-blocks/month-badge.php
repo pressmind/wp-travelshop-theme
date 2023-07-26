@@ -28,6 +28,17 @@ if (empty($travel_months)) {
     <div class="row row-products">
         <div class="col-12 month-badges d-flex flex-row flex-wrap">
             <?php
+            $filtered = false;
+            if ( !empty($_GET) && isset($_GET['pm-dr']) && !empty($_GET['pm-dr']) ) {
+                $filtered = true;
+            }
+            ?>
+            <div class='month-badge'>
+                <a class="<?php echo (!$filtered) ? 'is-active' : ''; ?>" href="/calendar">
+                    Alle
+                </a>
+            </div>
+            <?php
             // -- use Grouped Array to render Items
             $month_count = 1;
             foreach ($travel_months as $item) {
