@@ -38,6 +38,25 @@ $random = rand(1, 999999);
             <div class="arrow--wrapper">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
+                <div class="date-wrapper d-none d-lg-flex">
+                    <i class="circle green"></i>
+                    <?php
+                    if(!empty($cheapest_price)) {
+                        // var_dump($cheapest_price);
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
+                            'date_departure' => $cheapest_price->date_departures[0],
+                            //'date_arrival' => $cheapest_price->date_arrival
+                        ]);
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-title col-12 col-lg-4">
+            <strong><?php echo $args['headline']; ?></strong>
+        </div>
+        <div class="col-duration col-6 col-lg-2">
+            <div class="date-wrapper d-lg-none">
                 <i class="circle green"></i>
                 <?php
                 if(!empty($cheapest_price)) {
@@ -49,11 +68,6 @@ $random = rand(1, 999999);
                 }
                 ?>
             </div>
-        </div>
-        <div class="col-title col-12 col-lg-4">
-            <strong><?php echo $args['headline']; ?></strong>
-        </div>
-        <div class="col-duration col-6 col-lg-2">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
         </div>
         <div class="col-price col-6 col-lg-3 text-right">

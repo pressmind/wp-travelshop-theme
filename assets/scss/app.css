@@ -17189,7 +17189,7 @@ footer.footer-main {
         align-items: baseline; }
         .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper + small {
           padding-left: .75rem; }
-        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discound-wrapper .discount-wrapper--inner {
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper .discount-wrapper--inner {
           justify-content: end; }
         @media (max-width: 991.98px) {
           .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
