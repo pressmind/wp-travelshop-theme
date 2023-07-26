@@ -11460,6 +11460,12 @@ hr + .content-block {
   padding: 0;
   margin: 0; }
 
+.row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article, .row.row-introduction, .content-main--calendar .content-block-month-teaser {
+  margin-bottom: 1rem; }
+  @media (min-width: 768px) {
+    .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article, .row.row-introduction, .content-main--calendar .content-block-month-teaser {
+      margin-bottom: 30px; } }
+
 /**
  * Placeholder for slider controls
  * for usage on various elements
@@ -12051,19 +12057,14 @@ form.form-string-search.input-group {
   @media (min-width: 768px) {
     .row.row-products:not(.is-slider) {
       margin-bottom: -30px; } }
-  .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
-    margin-bottom: 1rem; }
+  .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
+    margin-bottom: 0; }
     @media (min-width: 768px) {
-      .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article {
+      .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
+        margin-bottom: 1rem; } }
+    @media (min-width: 768px) {
+      .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
         margin-bottom: 30px; } }
-    .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
-      margin-bottom: 0; }
-      @media (min-width: 768px) {
-        .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
-          margin-bottom: 1rem; } }
-      @media (min-width: 768px) {
-        .row.row-products:not(.is-slider) > div.card-travel-wrapper, .row.row-products:not(.is-slider) > article.card-travel-wrapper {
-          margin-bottom: 30px; } }
 
 .content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
   margin-bottom: 0; }
@@ -12074,19 +12075,14 @@ form.form-string-search.input-group {
     .content-block.content-block-travel-cols .row.row-products:not(.is-slider) {
       margin-bottom: -30px; } }
 
-.row.row-introduction {
-  margin-bottom: 1rem; }
-  @media (min-width: 768px) {
-    .row.row-introduction {
-      margin-bottom: 30px; } }
-  .row.row-introduction p {
-    margin-bottom: 0; }
-  .row.row-introduction h1, .row.row-introduction h2, .row.row-introduction h3, .row.row-introduction h4, .row.row-introduction h5, .row.row-introduction h6 {
-    margin-bottom: 0; }
-    .row.row-introduction h1 + p, .row.row-introduction h2 + p, .row.row-introduction h3 + p, .row.row-introduction h4 + p, .row.row-introduction h5 + p, .row.row-introduction h6 + p {
-      margin-top: 1rem; }
-  .row.row-introduction p + p {
+.row.row-introduction p {
+  margin-bottom: 0; }
+.row.row-introduction h1, .row.row-introduction h2, .row.row-introduction h3, .row.row-introduction h4, .row.row-introduction h5, .row.row-introduction h6 {
+  margin-bottom: 0; }
+  .row.row-introduction h1 + p, .row.row-introduction h2 + p, .row.row-introduction h3 + p, .row.row-introduction h4 + p, .row.row-introduction h5 + p, .row.row-introduction h6 + p {
     margin-top: 1rem; }
+.row.row-introduction p + p {
+  margin-top: 1rem; }
 
 ul.checklist {
   list-style-type: none;
@@ -15567,81 +15563,6 @@ ul.checklist {
         .string-search-overlay .string-search-overlay-results:after {
           display: none; } }
 
-.product-calendar-wrap {
-  padding: .5rem;
-  border-radius: 0.25rem;
-  background-color: #e9ecef; }
-  .product-calendar-wrap .product-calendar-group-items {
-    /**
-     * some defaults
-     */
-    /**
-     * Items header
-     */
-    /**
-     * Group title
-     */
-    /**
-     * Group item
-     */
-    /**
-     * Group Product item
-     */ }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title,
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title,
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem; }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title {
-      padding-bottom: 0.625rem; }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title h3 {
-      padding: 0.625rem 0;
-      margin-bottom: 0; }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-title h3 {
-      padding-top: 1.25rem; }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
-      border-radius: 0.25rem;
-      background-color: #fff;
-      padding-top: 1.25rem;
-      padding-bottom: 1.25rem;
-      cursor: pointer;
-      transition: background-color 0.3s; }
-      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item:not(.is-active):hover {
-        background-color: rgba(255, 255, 255, 0.75); }
-      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
-        display: flex;
-        align-items: center;
-        flex-direction: row; }
-        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper + small {
-          padding-left: .75rem; }
-        @media (min-width: 992px) {
-          .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
-            justify-content: end; } }
-      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center; }
-        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper .circle {
-          margin-right: .25rem; }
-        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper svg {
-          width: 1.125rem;
-          height: 1.125rem;
-          margin-right: .5rem;
-          transition: transform 0.3s;
-          transform-origin: center; }
-      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active {
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0; }
-        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active .arrow--wrapper svg {
-          transform: scaleY(-1); }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-item {
-      margin-top: 0.4166666667rem; }
-    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product {
-      display: none; }
-      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product.is-open {
-        display: block; }
-
 header.header-main {
   background-color: #fff;
   color: #212529;
@@ -17160,6 +17081,102 @@ footer.footer-main {
   margin-bottom: 0; }
   .detail-section .detail-info-section.detail-info-section--intro p + p, .detail-section .detail-info-section.detail-info-section--intro p + ul, .detail-section .detail-info-section.detail-info-section--intro p + ol, .detail-section .detail-info-section.detail-info-section--intro p + h1, .detail-section .detail-info-section.detail-info-section--intro p + h2, .detail-section .detail-info-section.detail-info-section--intro p + h3, .detail-section .detail-info-section.detail-info-section--intro p + h4, .detail-section .detail-info-section.detail-info-section--intro ul + p, .detail-section .detail-info-section.detail-info-section--intro ul + ul, .detail-section .detail-info-section.detail-info-section--intro ul + ol, .detail-section .detail-info-section.detail-info-section--intro ul + h1, .detail-section .detail-info-section.detail-info-section--intro ul + h2, .detail-section .detail-info-section.detail-info-section--intro ul + h3, .detail-section .detail-info-section.detail-info-section--intro ul + h4, .detail-section .detail-info-section.detail-info-section--intro ol + p, .detail-section .detail-info-section.detail-info-section--intro ol + ul, .detail-section .detail-info-section.detail-info-section--intro ol + ol, .detail-section .detail-info-section.detail-info-section--intro ol + h1, .detail-section .detail-info-section.detail-info-section--intro ol + h2, .detail-section .detail-info-section.detail-info-section--intro ol + h3, .detail-section .detail-info-section.detail-info-section--intro ol + h4, .detail-section .detail-info-section.detail-info-section--intro h1 + p, .detail-section .detail-info-section.detail-info-section--intro h1 + ul, .detail-section .detail-info-section.detail-info-section--intro h1 + ol, .detail-section .detail-info-section.detail-info-section--intro h1 + h1, .detail-section .detail-info-section.detail-info-section--intro h1 + h2, .detail-section .detail-info-section.detail-info-section--intro h1 + h3, .detail-section .detail-info-section.detail-info-section--intro h1 + h4, .detail-section .detail-info-section.detail-info-section--intro h2 + p, .detail-section .detail-info-section.detail-info-section--intro h2 + ul, .detail-section .detail-info-section.detail-info-section--intro h2 + ol, .detail-section .detail-info-section.detail-info-section--intro h2 + h1, .detail-section .detail-info-section.detail-info-section--intro h2 + h2, .detail-section .detail-info-section.detail-info-section--intro h2 + h3, .detail-section .detail-info-section.detail-info-section--intro h2 + h4, .detail-section .detail-info-section.detail-info-section--intro h3 + p, .detail-section .detail-info-section.detail-info-section--intro h3 + ul, .detail-section .detail-info-section.detail-info-section--intro h3 + ol, .detail-section .detail-info-section.detail-info-section--intro h3 + h1, .detail-section .detail-info-section.detail-info-section--intro h3 + h2, .detail-section .detail-info-section.detail-info-section--intro h3 + h3, .detail-section .detail-info-section.detail-info-section--intro h3 + h4, .detail-section .detail-info-section.detail-info-section--intro h4 + p, .detail-section .detail-info-section.detail-info-section--intro h4 + ul, .detail-section .detail-info-section.detail-info-section--intro h4 + ol, .detail-section .detail-info-section.detail-info-section--intro h4 + h1, .detail-section .detail-info-section.detail-info-section--intro h4 + h2, .detail-section .detail-info-section.detail-info-section--intro h4 + h3, .detail-section .detail-info-section.detail-info-section--intro h4 + h4 {
     margin-top: 1rem; }
+
+.product-calendar-wrap {
+  padding: .5rem;
+  border-radius: 0.25rem;
+  background-color: #e9ecef; }
+  .product-calendar-wrap .product-calendar-group-items {
+    /**
+     * some defaults
+     */
+    /**
+     * Items header
+     */
+    /**
+     * Group title
+     */
+    /**
+     * Group item
+     */
+    /**
+     * Group Product item
+     */ }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title,
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title,
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-items-title {
+      padding-bottom: 0.625rem; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title h3 {
+      padding: 0.625rem 0;
+      margin-bottom: 0; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-title h3 {
+      padding-top: 1.25rem; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
+      border-radius: 0.25rem;
+      background-color: #fff;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s; }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item:not(.is-active):hover {
+        background-color: rgba(255, 255, 255, 0.75); }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
+        display: flex;
+        align-items: center;
+        flex-direction: row; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper + small {
+          padding-left: .75rem; }
+        @media (min-width: 992px) {
+          .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
+            justify-content: end; } }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper .circle {
+          margin-right: .25rem; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper svg {
+          width: 1.125rem;
+          height: 1.125rem;
+          margin-right: .5rem;
+          transition: transform 0.3s;
+          transform-origin: center; }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item.is-active .arrow--wrapper svg {
+          transform: scaleY(-1); }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-item {
+      margin-top: 0.4166666667rem; }
+    .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product {
+      display: none; }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product .product-calendar-group-item--product.is-open {
+        display: block; }
+
+.content-main--calendar .content-block-month-teaser .month-badges {
+  gap: .5rem; }
+  .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a {
+    text-decoration: none;
+    color: #212529;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 2.5rem;
+    padding: 0 1rem;
+    background-color: #e9ecef;
+    transition: background-color 0.3s, color 0.3s; }
+    @media (min-width: 768px) {
+      .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a {
+        font-size: 1.125rem; } }
+    .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a:hover, .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a:focus, .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a:active, .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a.is-active {
+      background-color: #007bff;
+      color: #fff; }
+    .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a.is-active {
+      font-weight: 700; }
 
 html #wpadminbar {
   top: auto !important;

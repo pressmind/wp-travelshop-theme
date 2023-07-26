@@ -6,11 +6,7 @@
   }
 
   > div, > article {
-    margin-bottom: 1rem;
-
-    @include media-breakpoint-up(md) {
-      margin-bottom: $grid-gutter-width;
-    }
+    @extend %spacing-bottom;
 
     // -- little change for card travel wrapper, to make margins another way if small teaser / break is active
     &.card-travel-wrapper {
@@ -48,11 +44,7 @@
 }
 
 .row.row-introduction {
-  margin-bottom: 1rem;
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: $grid-gutter-width;
-  }
+  @extend %spacing-bottom;
 
   p {
     margin-bottom: 0;

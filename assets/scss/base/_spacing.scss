@@ -1,0 +1,7 @@
+%spacing-bottom {
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: $grid-gutter-width;
+  }
+}

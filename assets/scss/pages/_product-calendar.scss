@@ -123,3 +123,44 @@
     }
   }
 }
+
+.content-main--calendar{
+  .content-block-month-teaser {
+    @extend %spacing-bottom;
+
+    .month-badges {
+      gap: .5rem;
+
+      .month-badge {
+        > a {
+          text-decoration: none;
+          color: $body-color;
+          display: block;
+
+          height: 2.5rem;
+          line-height: 2.5rem;
+
+          @include border-radius(2.5rem);
+
+          padding: 0 $btn-padding-x-lg;
+          background-color: $body-bg-highlight;
+
+          transition: background-color $animation-speed-default, color $animation-speed-default;
+
+          @include media-breakpoint-up(md) {
+            font-size: $font-size-lg;
+          }
+
+          &:hover, &:focus, &:active, &.is-active {
+            background-color: $primary;
+            color: #fff;
+          }
+
+          &.is-active {
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+  }
+}

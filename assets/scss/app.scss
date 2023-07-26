@@ -28,6 +28,7 @@
 @import "base/prices";
 @import "base/status-circles";
 @import "base/content";
+@import "base/spacing";
 //@import "base/_backup/typography";
 //@import "base/_backup/container";
 //@import "base/_backup/beaverbuilder";
@@ -77,7 +78,6 @@
 @import "components/image-gallery";
 @import "components/date-range-picker";
 @import "components/fulltext-search";
-@import "components/reise-kalendar";
 
 // -- layout
 //@import "layout/_backup/footer";
@@ -96,6 +96,7 @@
 //@import "pages/_backup/detail2";
 @import "pages/product-results";
 @import "pages/product-detail";
+@import "pages/product-calendar";
 
 // -- themes
 // this just an example for you're theme starting point
