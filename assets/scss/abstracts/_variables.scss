@@ -112,3 +112,23 @@ $animation-speed-slow: .6s !default;
  */
 $input-border-active-color: $body-color !default;
 $input-border-big-width: .125rem !default;
+
+// Pagination
+$pagination-font-size: $font-size-base;
+$pagination-font-weight: $font-weight-bold;
+$pagination-color: $primary;
+$pagination-bg: transparent;
+$pagination-border-color: $primary;
+
+$pagination-hover-color: $primary;
+$pagination-hover-bg: rgba($primary, .1);
+$pagination-hover-border-color: $primary;
+
+$pagination-active-color: #fff;
+$pagination-active-bg: $primary;
+$pagination-active-font-weight: $font-weight-bold;
+$pagination-active-border-color: $primary;
+
+$pagination-disabled-color: $gray-600;
+$pagination-disabled-bg: transparent;
+$pagination-disabled-border-color: $hr-border-color;

@@ -4,8 +4,8 @@ ul.pagination{
   li.page-item {
     a.page-link {
       padding:0;
-      background-color: transparent;
-      border-radius: $border-radius;
+      background-color: $pagination-bg;
+      border-radius: $btn-border-radius;
 
       width: 2.5rem;
       height: 2.5rem;
@@ -14,18 +14,18 @@ ul.pagination{
 
       transition: background-color $animation-speed-default, color $animation-speed-default, border-color $animation-speed-default;
 
-      font-size: $font-size-lg;
-      font-weight: $font-weight-bold;
+      font-size: $pagination-font-size;
+      font-weight: $pagination-font-weight;
 
       align-items: center;
       justify-content: center;
-      color: $primary;
+      color: $pagination-color;
       text-decoration: none;
 
       border: {
         width: 1px;
         style: solid;
-        color: $primary;
+        color: $pagination-border-color;
       }
 
       &:active, &:hover, &:focus {
@@ -33,20 +33,20 @@ ul.pagination{
       }
 
       &:active, &:focus {
-        color: $primary;
-        background-color: transparent;
+        color: $pagination-color;
+        background-color: $pagination-bg;
       }
 
       &:hover {
-        border-color: $primary;
-        background-color: rgba($primary, .1);
-        color: $primary;
+        border-color: $pagination-hover-border-color;
+        background-color: $pagination-hover-bg;
+        color: $pagination-hover-color;
       }
 
       &.page-link-chevron {
         border-width: 0;
         background-color: transparent;
-        color: $primary;
+        color: $pagination-color;
 
         svg {
           height: $font-size-lg;
@@ -54,7 +54,7 @@ ul.pagination{
         }
 
         &:hover {
-          background-color: rgba($primary, .1);
+          background-color: $pagination-hover-bg;
         }
       }
     }
@@ -62,8 +62,9 @@ ul.pagination{
     &.disabled {
       > .page-link,
       > .page-link.page-link-chevron {
-        color: $body-color-light;
-        border-color: $hr-border-color;
+        color: $pagination-disabled-color;
+        background-color: $pagination-disabled-bg;
+        border-color: $pagination-disabled-border-color;
 
         pointer-events: none;
       }
@@ -71,10 +72,10 @@ ul.pagination{
 
     &.active {
       > .page-link {
-        color: #fff;
-        border-color: $primary;
-        background-color: $primary;
-        font-weight: $font-weight-bolder;
+        color: $pagination-active-color;
+        border-color: $pagination-active-border-color;
+        background-color: $pagination-active-bg;
+        font-weight: $pagination-active-font-weight;
       }
     }
   }

@@ -3887,14 +3887,14 @@ input[type="button"].btn-block {
   margin-left: -1px;
   line-height: 1.25;
   color: #007bff;
-  background-color: #fff;
-  border: 1px solid #dee2e6; }
+  background-color: transparent;
+  border: 1px solid #007bff; }
   .page-link:hover {
     z-index: 2;
-    color: #0056b3;
+    color: #007bff;
     text-decoration: none;
-    background-color: #e9ecef;
-    border-color: #dee2e6; }
+    background-color: rgba(0, 123, 255, 0.1);
+    border-color: #007bff; }
   .page-link:focus {
     z-index: 2;
     outline: 0;
@@ -3916,8 +3916,8 @@ input[type="button"].btn-block {
   color: #6c757d;
   pointer-events: none;
   cursor: auto;
-  background-color: #fff;
-  border-color: #dee2e6; }
+  background-color: transparent;
+  border-color: #e9ecef; }
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
@@ -15573,7 +15573,7 @@ ul.pagination {
     height: 2.5rem;
     display: flex;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 700;
     align-items: center;
     justify-content: center;
@@ -15602,14 +15602,15 @@ ul.pagination {
         background-color: rgba(0, 123, 255, 0.1); }
   ul.pagination li.page-item.disabled > .page-link,
   ul.pagination li.page-item.disabled > .page-link.page-link-chevron {
-    color: #5a6570;
+    color: #6c757d;
+    background-color: transparent;
     border-color: #e9ecef;
     pointer-events: none; }
   ul.pagination li.page-item.active > .page-link {
     color: #fff;
     border-color: #007bff;
     background-color: #007bff;
-    font-weight: bolder; }
+    font-weight: 700; }
 
 header.header-main {
   background-color: #fff;
