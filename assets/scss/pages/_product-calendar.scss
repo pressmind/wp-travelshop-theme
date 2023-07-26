@@ -32,6 +32,11 @@
         padding: ($travel-card-spacer-x / 2) 0;
         margin-bottom: 0;
       }
+
+      @include media-breakpoint-down(lg) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     .product-calendar-group-item-product + .product-calendar-group-title {

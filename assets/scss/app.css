@@ -17164,6 +17164,10 @@ footer.footer-main {
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title h3 {
       padding: 0.625rem 0;
       margin-bottom: 0; }
+    @media (max-width: 1199.98px) {
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title {
+        padding-left: 0;
+        padding-right: 0; } }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-title h3 {
       padding-top: 1.25rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
