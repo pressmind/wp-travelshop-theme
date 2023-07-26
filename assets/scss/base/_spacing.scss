@@ -5,3 +5,11 @@
     margin-bottom: $grid-gutter-width;
   }
 }
+
+%spacing-top {
+  margin-top: 1rem;
+
+   @include media-breakpoint-up(md) {
+     margin-top: $grid-gutter-width;
+   }
+}

@@ -16049,6 +16049,15 @@ footer.footer-main {
           transition: 0.4s;
           border-radius: 50%; }
 
+.content-block-travel-cols .row.row-products .card-travel-wrapper--stripe:last-child {
+  margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .content-block-travel-cols .row.row-products .card-travel-wrapper--stripe:last-child {
+      margin-bottom: 1rem; } }
+  @media (min-width: 768px) {
+    .content-block-travel-cols .row.row-products .card-travel-wrapper--stripe:last-child {
+      margin-bottom: 30px; } }
+
 /**
  * Import Detail "components"
  */
