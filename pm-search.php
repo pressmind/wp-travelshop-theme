@@ -24,7 +24,7 @@ get_header();
     $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
     ?>
     <?php the_breadcrumb(null); ?>
-    <div class="content-main" id="content-main">
+    <div class="content-main content-main--results" id="content-main">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-3">

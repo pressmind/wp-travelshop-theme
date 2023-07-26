@@ -83,17 +83,19 @@
   }
 }
 
-.content-block-travel-cols {
-  .row.row-products {
-    .card-travel-wrapper--stripe:last-child {
-      margin-bottom: 0;
+.content-main.content-main--results {
+  .content-block-travel-cols {
+    .row.row-products {
+      .card-travel-wrapper--stripe:last-child {
+        margin-bottom: 0;
 
-      @include get-custom-breakpoint($travel-card-break) {
-        margin-bottom: 1rem;
-      }
+        @include get-custom-breakpoint($travel-card-break) {
+          margin-bottom: 1rem;
+        }
 
-      @include media-breakpoint-up(md) {
-        margin-bottom: $grid-gutter-width;
+        @include media-breakpoint-up(md) {
+          margin-bottom: $grid-gutter-width;
+        }
       }
     }
   }
