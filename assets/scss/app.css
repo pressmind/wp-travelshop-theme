@@ -17198,13 +17198,18 @@ footer.footer-main {
               flex: 0 0 100%;
               width: 100%;
               max-width: 100%; } }
+      .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .date-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center; }
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .date-wrapper .circle {
+          margin-right: .25rem; }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center; }
-        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper .circle {
-          margin-right: .25rem; }
         .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper svg {
           width: 1.125rem;
           height: 1.125rem;
