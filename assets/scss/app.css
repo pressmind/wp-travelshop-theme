@@ -17184,13 +17184,20 @@ footer.footer-main {
         background-color: rgba(255, 255, 255, 0.75); }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
         display: flex;
-        align-items: center;
-        flex-direction: row; }
+        justify-content: end;
+        flex-direction: row;
+        align-items: baseline; }
         .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper + small {
           padding-left: .75rem; }
-        @media (min-width: 992px) {
+        .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discound-wrapper .discount-wrapper--inner {
+          justify-content: end; }
+        @media (max-width: 991.98px) {
           .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price {
-            justify-content: end; } }
+            flex-wrap: wrap; }
+            .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .price .discount-wrapper {
+              flex: 0 0 100%;
+              width: 100%;
+              max-width: 100%; } }
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item .arrow--wrapper {
         display: flex;
         flex-direction: row;

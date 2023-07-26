@@ -61,7 +61,7 @@
         padding: 0.75rem;
 
         > .row {
-          
+
         }
       }
 
@@ -72,15 +72,28 @@
       // -- price
       .price {
         display: flex;
-        align-items: center;
+        justify-content: end;
         flex-direction: row;
+        align-items: baseline;
 
         .discount-wrapper + small {
           padding-left: .75rem;
         }
 
-        @include media-breakpoint-up(lg) {
-          justify-content: end;
+        .discound-wrapper {
+          .discount-wrapper--inner {
+            justify-content: end;
+          }
+        }
+
+        @include media-breakpoint-down(md) {
+          flex-wrap: wrap;
+
+          .discount-wrapper {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+          }
         }
       }
 
