@@ -25,6 +25,7 @@ $view = 'Teaser1';
 if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
     $view = $_GET['view'];
 }
+echo $view;
 ?>
 <div class="list-filter-toggle mb-4">
     <button class="btn btn-block btn-secondary list-filter-open">
