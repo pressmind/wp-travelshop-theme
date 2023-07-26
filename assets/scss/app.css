@@ -15606,7 +15606,10 @@ ul.pagination {
     background-color: transparent;
     border-color: #e9ecef;
     pointer-events: none; }
-  ul.pagination li.page-item.active > .page-link {
+  ul.pagination li.page-item.active > .page-link,
+  ul.pagination li.page-item.active > .page-link:hover,
+  ul.pagination li.page-item.active > .page-link:focus,
+  ul.pagination li.page-item.active > .page-link:active {
     color: #fff;
     border-color: #007bff;
     background-color: #007bff;

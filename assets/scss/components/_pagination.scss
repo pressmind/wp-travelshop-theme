@@ -71,7 +71,10 @@ ul.pagination{
     }
 
     &.active {
-      > .page-link {
+      > .page-link,
+      > .page-link:hover,
+      > .page-link:focus,
+      > .page-link:active {
         color: $pagination-active-color;
         border-color: $pagination-active-border-color;
         background-color: $pagination-active-bg;
