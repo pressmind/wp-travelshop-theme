@@ -35,7 +35,7 @@ if (empty($travel_months)) {
             ?>
             <div class='month-badge'>
                 <a class="<?php echo (!$filtered) ? 'is-active' : ''; ?>" href="/calendar">
-                    Alle
+                    Alle Monate
                 </a>
             </div>
             <?php
