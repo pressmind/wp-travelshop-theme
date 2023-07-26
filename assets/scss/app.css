@@ -17166,8 +17166,8 @@ footer.footer-main {
       margin-bottom: 0; }
     @media (max-width: 1199.98px) {
       .product-calendar-wrap .product-calendar-group-items .product-calendar-group-title {
-        padding-left: 0;
-        padding-right: 0; } }
+        padding-left: .5rem;
+        padding-right: .5rem; } }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item-product + .product-calendar-group-title h3 {
       padding-top: 1.25rem; }
     .product-calendar-wrap .product-calendar-group-items .product-calendar-group-item {
