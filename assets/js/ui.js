@@ -1226,11 +1226,15 @@ jQuery(function ($) {
     function categoryTreeExpand() {
         var thisTreeExpandWrapper = $('body').find(categoryTreeExpandWrapper);
 
-        console.log('hi');
 
-        thisTreeExpandWrapper.each(function() {
+        thisTreeExpandWrapper.each(function(e) {
+            e.preventDefault();
+
             var thisWrapper = $(this);
             var thisToggle = thisWrapper.find(categoryTreeExpandToggle);
+
+            thisToggle.unbind('click');
+            thisToggle.unbind('touch');
 
             thisToggle.on('click touch', function(e) {
                 var thisState = thisWrapper.data('expanded');
@@ -1251,6 +1255,8 @@ jQuery(function ($) {
                     thisWrapper.data('expanded', true);
                 }
             });
+
+            e.stopPropagation();
         })
     }
 
