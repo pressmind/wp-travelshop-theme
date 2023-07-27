@@ -1231,6 +1231,9 @@ jQuery(function ($) {
             var thisWrapper = $(this);
             var thisToggle = thisWrapper.find(categoryTreeExpandToggle);
 
+            thisToggle.unbind('click');
+            thisToggle.unbind('touch');
+
             thisToggle.on('click touch', function(e) {
                 e.preventDefault();
 
