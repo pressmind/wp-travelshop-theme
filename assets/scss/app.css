@@ -11475,7 +11475,8 @@ hr + .content-block {
   .stars-wrapper .star-item {
     overflow: hidden;
     height: 1rem;
-    width: 0; }
+    width: 0;
+    line-height: 1; }
     .stars-wrapper .star-item svg {
       width: 1rem;
       height: 1rem; }
