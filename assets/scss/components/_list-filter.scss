@@ -53,6 +53,7 @@
             text-align: left;
             display: block;
             width: 100%;
+            font-weight: $font-weight-bold;
 
             &:focus, &:active {
               color: $body-color;
