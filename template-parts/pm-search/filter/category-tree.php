@@ -102,5 +102,16 @@ if (empty($args['categories'][$fieldname][0]) === false) {
             }
             ?>
         </div>
+        <?php
+        if ($type !== null && $type === 'expand') {
+            ?>
+            <div class="list-filter-box-footer">
+                <button type="button" class="category-tree-field-items-expand">
+                    Alle anzeigen
+                </button>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 <?php } ?>
