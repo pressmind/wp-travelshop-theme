@@ -11485,6 +11485,9 @@ hr + .content-block {
     .stars-wrapper .star-item.is-half {
       width: 0.5rem; }
 
+.list-filter-box .stars-wrapper {
+  transform: translateY(-0.125rem); }
+
 /**
  * Placeholder for slider controls
  * for usage on various elements

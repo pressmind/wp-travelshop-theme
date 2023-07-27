@@ -30,3 +30,9 @@
 .stars-wrapper {
   @extend %stars;
 }
+
+.list-filter-box {
+  .stars-wrapper {
+    transform: translateY(-.125rem);
+  }
+}
