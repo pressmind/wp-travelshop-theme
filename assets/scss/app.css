@@ -13660,7 +13660,8 @@ ul.checklist {
       transition: color 0.3s;
       text-align: left;
       display: block;
-      width: 100%; }
+      width: 100%;
+      font-weight: 700; }
       .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button:active {
         color: #212529;
         text-decoration: underline; }
