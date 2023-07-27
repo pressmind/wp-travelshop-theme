@@ -11472,16 +11472,16 @@ hr + .content-block {
   flex-wrap: nowrap;
   gap: .25rem;
   line-height: 1; }
-  .stars-wrapper .stars-item {
+  .stars-wrapper .star-item {
     overflow: hidden;
     height: 1.125rem;
     width: 0; }
-    .stars-wrapper .stars-item svg {
+    .stars-wrapper .star-item svg {
       width: 1.125rem;
       height: 1.125rem; }
-    .stars-wrapper .stars-item.is-full {
+    .stars-wrapper .star-item.is-full {
       width: 1.125rem; }
-    .stars-wrapper .stars-item.is-half {
+    .stars-wrapper .star-item.is-half {
       width: 0.5625rem; }
 
 /**
