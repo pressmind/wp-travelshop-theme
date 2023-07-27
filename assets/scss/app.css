@@ -11466,6 +11466,24 @@ hr + .content-block {
     .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article, .row.row-introduction, .content-main--calendar .content-block-month-teaser {
       margin-bottom: 30px; } }
 
+.stars-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: .25rem;
+  line-height: 1; }
+  .stars-wrapper .stars-item {
+    overflow: hidden;
+    height: 1.125rem;
+    width: 0; }
+    .stars-wrapper .stars-item svg {
+      width: 1.125rem;
+      height: 1.125rem; }
+    .stars-wrapper .stars-item.is-full {
+      width: 1.125rem; }
+    .stars-wrapper .stars-item.is-half {
+      width: 0.5625rem; }
+
 /**
  * Placeholder for slider controls
  * for usage on various elements

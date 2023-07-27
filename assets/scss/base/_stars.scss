@@ -1,0 +1,31 @@
+%stars {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: .25rem;
+
+  line-height: 1;
+
+  .stars-item {
+    overflow: hidden;
+    height: $font-size-lg;
+    width: 0;
+
+    svg {
+      width: $font-size-lg;
+      height: $font-size-lg;
+    }
+
+    &.is-full {
+      width: $font-size-lg;
+    }
+
+    &.is-half {
+      width: ($font-size-lg / 2);
+    }
+  }
+}
+
+.stars-wrapper {
+  @extend %stars;
+}
