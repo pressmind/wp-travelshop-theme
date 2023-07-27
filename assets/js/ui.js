@@ -1233,8 +1233,10 @@ jQuery(function ($) {
 
             console.log(thisTreeExpandToggle);
             thisTreeExpandToggle.on('click touch', function(e) {
+                console.log('clicked');
                 // find non preview items
                 var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
+                console.log(thisNonPreviewItems);
 
                 thisNonPreviewItems.toggleClass('d-none');
             });
