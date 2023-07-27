@@ -1233,10 +1233,22 @@ jQuery(function ($) {
             var thisToggle = thisWrapper.find(categoryTreeExpandToggle);
 
             thisToggle.on('click touch', function(e) {
-                // find non preview items
-                var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
+                var thisState = thisWrapper.data('expanded');
 
-                thisNonPreviewItems.toggleClass('d-none');
+                // find non preview items
+                var thisItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
+
+                if ( thisState === 'true' ) {
+                    thisItems.addClass('d-none');
+
+                    // set new state
+                    thisWrapper.data('expanded', 'false');
+                } else {
+                    thisItems.removeClass('d-none');
+
+                    // set new state
+                    thisWrapper.data('expanded', 'true');
+                }
             });
         })
     }
