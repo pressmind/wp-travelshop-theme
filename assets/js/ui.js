@@ -1224,10 +1224,9 @@ jQuery(function ($) {
     let categoryTreeExpandToggle = '.category-tree-field-items-expand';
 
     function categoryTreeExpand() {
-        var categoryTreeExpandWrapper = $('body').find(categoryTreeExpandWrapper);
-        var categoryTreeExpandToggle = $('body').find(categoryTreeExpandToggle);
+        var thisTreeExpandToggle = $('body').find(categoryTreeExpandToggle);
 
-        categoryTreeExpandToggle.on('click touch', function(e) {
+        thisTreeExpandToggle.on('click touch', function(e) {
 
             // find non preview items
             var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
