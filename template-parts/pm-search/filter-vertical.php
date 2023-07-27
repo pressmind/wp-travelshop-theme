@@ -37,7 +37,6 @@
                 </button>
             </div>
             <div class="list-filter-boxes">
-                <h1>test</h1>
                 <?php
                 // require 'search/string-search.php';
                 // echo '<hr />';
