@@ -15,6 +15,8 @@ use Pressmind\Travelshop\Template;
      $selected = empty($matches[0]) ? array() : $matches[0];
  }
 
+ echo $type;
+
 if (empty($args['categories'][$fieldname][0]) === false) {
     ?>
     <div class="list-filter-box category-tree">
