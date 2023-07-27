@@ -1227,9 +1227,7 @@ jQuery(function ($) {
         var thisTreeExpandWrapper = $('body').find(categoryTreeExpandWrapper);
 
 
-        thisTreeExpandWrapper.each(function(e) {
-            e.preventDefault();
-
+        thisTreeExpandWrapper.each(function() {
             var thisWrapper = $(this);
             var thisToggle = thisWrapper.find(categoryTreeExpandToggle);
 
@@ -1237,6 +1235,8 @@ jQuery(function ($) {
             thisToggle.unbind('touch');
 
             thisToggle.on('click touch', function(e) {
+                e.preventDefault();
+
                 var thisState = thisWrapper.data('expanded');
 
                 // find non preview items
@@ -1254,9 +1254,9 @@ jQuery(function ($) {
                     // set new state
                     thisWrapper.data('expanded', true);
                 }
-            });
 
-            e.stopPropagation();
+                e.stopPropagation();
+            });
         })
     }
 
