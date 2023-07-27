@@ -8,20 +8,20 @@
 
   .star-item {
     overflow: hidden;
-    height: $font-size-lg;
+    height: $font-size-base;
     width: 0;
 
     svg {
-      width: $font-size-lg;
-      height: $font-size-lg;
+      width: $font-size-base;
+      height: $font-size-base;
     }
 
     &.is-full {
-      width: $font-size-lg;
+      width: $font-size-base;
     }
 
     &.is-half {
-      width: ($font-size-lg / 2);
+      width: ($font-size-base / 2);
     }
   }
 }
