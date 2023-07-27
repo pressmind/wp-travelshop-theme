@@ -1,4 +1,4 @@
-<div class="stars-wrapper">
+<div class="stars-wrapper" <?php echo (isset($args['name']) && !empty($args['name'])) ? 'title="' . $args['name'] . '"' : '';?>>
     <?php
     for ( $i = 0; $i < 5; $i++ ) {
         $ratingItemClass = '';

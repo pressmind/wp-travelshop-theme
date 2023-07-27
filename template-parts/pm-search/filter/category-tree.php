@@ -78,7 +78,8 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                         <?php
                         if ( $type === 'stars' ) {
                             echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/stars.php', [
-                                'rating' => floatval($item->name)
+                                'rating' => floatval($item->name),
+                                'name' => $item->name,
                             ]);
                         } else {
                             echo $item->name;

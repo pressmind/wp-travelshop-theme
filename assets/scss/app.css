@@ -11467,10 +11467,10 @@ hr + .content-block {
       margin-bottom: 30px; } }
 
 .stars-wrapper {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: .25rem;
+  gap: 0.125rem;
   line-height: 1; }
   .stars-wrapper .star-item {
     overflow: hidden;
