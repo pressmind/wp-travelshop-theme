@@ -31,6 +31,17 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                     $childs[$item->id_parent][] = $item;
                 }
             }
+            $expand = false;
+            $dataPreview = '';
+            $dataPreviewClass = '';
+            $iterateItems = 1;
+
+            if ( ($type !== null && $type === 'expand') ) {
+                $expand = true;
+                $dataPreview = 'true';
+                $dataPreviewClass = '';
+            }
+
             foreach ($args['categories'][$fieldname][0] as $item) {
                 $uuid = 'ti-'.uniqid();
                 $has_childs = !empty($childs[$item->id_item]) && count($childs[$item->id_item]) > 1;
@@ -44,8 +55,13 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                         }
                     }
                 }
+
+                if ( $expand && $iterateItems > $preview ) {
+                    $dataPreview = 'false';
+                    $dataPreviewClass = 'd-none';
+                }
                 ?>
-                <div class="form-check <?php echo $has_childs ? 'has-second-level' : ''; echo $is_open;?>">
+                <div data-preview="<?php echo $dataPreview; ?>" class="form-check <?php echo $dataPreviewClass; ?> <?php echo $has_childs ? 'has-second-level' : ''; echo $is_open;?>">
 
                     <input class="form-check-input" type="checkbox"
                            id="<?php echo $uuid; ?>"
@@ -99,6 +115,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                     <?php } ?>
                 </div>
                 <?php
+                $iterateItems++;
             }
             ?>
         </div>
@@ -106,7 +123,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
         if ($type !== null && $type === 'expand') {
             ?>
             <div class="list-filter-box-footer">
-                <button type="button" class="category-tree-field-items-expand">
+                <button type="button" class="category-tree-field-items-expand" data-more="Alle anzeigen" data-less="Weniger anzeigen">
                     Alle anzeigen
                 </button>
             </div>
