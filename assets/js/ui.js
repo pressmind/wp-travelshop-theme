@@ -1229,14 +1229,12 @@ jQuery(function ($) {
         console.log('hi');
 
         thisTreeExpandWrapper.each(function() {
-            var thisTreeExpandToggle = $(this).find(categoryTreeExpandToggle);
+            var thisWrapper = $(this);
+            var thisToggle = thisWrapper.find(categoryTreeExpandToggle);
 
-            console.log(thisTreeExpandToggle);
-            thisTreeExpandToggle.on('click touch', function(e) {
-                console.log('clicked');
+            thisToggle.on('click touch', function(e) {
                 // find non preview items
                 var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
-                console.log(thisNonPreviewItems);
 
                 thisNonPreviewItems.toggleClass('d-none');
             });
