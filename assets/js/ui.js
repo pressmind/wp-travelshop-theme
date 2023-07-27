@@ -1217,6 +1217,36 @@ jQuery(function ($) {
         }
     });
 
+    // -----------------------
+    // -- category tree toggle
+    // -----------------------
+    let categoryTreeExpandWrapper = '.category-tree-expand';
+    let categoryTreeExpandToggle = '.category-tree-field-items-expand';
+
+    function categoryTreeExpand() {
+        var categoryTreeExpandWrapper = $('body').find(categoryTreeExpandWrapper);
+        var categoryTreeExpandToggle = $('body').find(categoryTreeExpandToggle);
+
+        categoryTreeExpandToggle.on('click touch', function(e) {
+
+            // find non preview items
+            var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
+
+            thisNonPreviewItems.toggleClass('d-none');
+
+        });
+    }
+
+    if ( $('body').find(categoryTreeExpandWrapper).length > 0 ) {
+        categoryTreeExpand();
+    }
+
+    // -- reinitialize
+    $( document ).ajaxComplete(function( event, xhr, settings ) {
+        if ( $('body').find(categoryTreeExpandWrapper).length > 0 ) {
+            categoryTreeExpand();
+        }
+    });
 
     // -----------------------
     // -- click handling document
