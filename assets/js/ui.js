@@ -1224,16 +1224,21 @@ jQuery(function ($) {
     let categoryTreeExpandToggle = '.category-tree-field-items-expand';
 
     function categoryTreeExpand() {
-        var thisTreeExpandToggle = $('body').find(categoryTreeExpandToggle);
+        var thisTreeExpandWrapper = $('body').find(categoryTreeExpandWrapper);
 
-        thisTreeExpandToggle.on('click touch', function(e) {
+        console.log('hi');
 
-            // find non preview items
-            var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
+        thisTreeExpandWrapper.each(function() {
+            var thisTreeExpandToggle = $(this).find(categoryTreeExpandToggle);
 
-            thisNonPreviewItems.toggleClass('d-none');
+            console.log(thisTreeExpandToggle);
+            thisTreeExpandToggle.on('click touch', function(e) {
+                // find non preview items
+                var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
 
-        });
+                thisNonPreviewItems.toggleClass('d-none');
+            });
+        })
     }
 
     if ( $('body').find(categoryTreeExpandWrapper).length > 0 ) {
