@@ -1246,10 +1246,16 @@ jQuery(function ($) {
                 if ( thisState === true ) {
                     thisItems.addClass('d-none');
 
+                    // set new text
+                    $(this).text($(this).data('more'));
+
                     // set new state
                     thisWrapper.data('expanded', false);
                 } else {
                     thisItems.removeClass('d-none');
+
+                    // set new text
+                    $(this).text($(this).data('less'));
 
                     // set new state
                     thisWrapper.data('expanded', true);
