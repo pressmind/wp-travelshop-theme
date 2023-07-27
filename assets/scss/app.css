@@ -13647,6 +13647,25 @@ ul.checklist {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-title > strong,
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box > label > strong {
       font-weight: 700; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer {
+    margin: 0.75rem 0 0 0; }
+    .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      font-size: 0.875rem;
+      color: #212529;
+      transition: color 0.3s;
+      text-align: left;
+      display: block;
+      width: 100%; }
+      .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button:active {
+        color: #212529;
+        text-decoration: underline; }
+      .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button:hover {
+        color: #007bff; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-price .list-filter-box-title {
     margin: 0 0 2.75rem 0; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker {

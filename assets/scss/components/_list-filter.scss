@@ -41,12 +41,37 @@
           }
         }
 
+        // -- footer
+        .list-filter-box-footer {
+          margin: $filter-spacer-y 0 0 0;
+
+          button {
+            @include button-reset();
+            font-size: $font-size-sm;
+            color: $body-color;
+            transition: color $animation-speed-default;
+            text-align: left;
+            display: block;
+            width: 100%;
+
+            &:focus, &:active {
+              color: $body-color;
+              text-decoration: underline;
+            }
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+
         // -- header change for title
         &.list-filter-box-price {
           .list-filter-box-title {
             margin: 0 0 ($filter-spacer-y + 2rem) 0;
           }
         }
+
 
         // -- daterange picker
         &.list-filter-box-date-range-picker {
