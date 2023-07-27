@@ -1239,16 +1239,16 @@ jQuery(function ($) {
                 var thisItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
 
                 console.log(thisState);
-                if ( thisState === 'true' ) {
+                if ( thisState === true ) {
                     thisItems.addClass('d-none');
 
                     // set new state
-                    thisWrapper.data('expanded', 'false');
+                    thisWrapper.data('expanded', false);
                 } else {
                     thisItems.removeClass('d-none');
 
                     // set new state
-                    thisWrapper.data('expanded', 'true');
+                    thisWrapper.data('expanded', true);
                 }
             });
         })
