@@ -1,9 +1,12 @@
 <?php
+use Pressmind\Travelshop\Template;
 /**
  * @todo optimize id, data tags in checkboxes
  * @var string $name
  * @var string $fieldname (fieldname_sectioname)
  * @var string $behavior (fieldname_sectioname)
+ * @var string $type
+ * @var int $preview
  * @var $args['categories']
  */
 
@@ -55,7 +58,15 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
                     </span>
                     <label class="form-check-label" for="<?php echo $uuid; ?>">
-                        <?php echo $item->name; ?>
+                        <?php
+                        if ( $type === 'stars' ) {
+                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/stars.php', [
+                                'rating' => floatval($item->name)
+                            ]);
+                        } else {
+                            echo $item->name;
+                        }
+                        ?>
                         <span class="small">(<?php echo $item->count_in_search; ?>)</span>
                     </label>
                     <?php if ($has_childs === true) { ?>

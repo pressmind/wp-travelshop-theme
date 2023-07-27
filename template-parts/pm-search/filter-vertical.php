@@ -59,6 +59,8 @@
                     $fieldname = $filter['fieldname'];
                     $name = $filter['name'];
                     $behavior = $filter['behavior'];
+                    $type = isset($filter['type']) ? $filter['type'] : null;
+                    $preview = isset($filter['preview']) ? $filter['preview'] : 5;
                     require 'filter/category-tree.php';
                 }
                 ?>
