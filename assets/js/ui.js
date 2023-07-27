@@ -1238,6 +1238,7 @@ jQuery(function ($) {
                 // find non preview items
                 var thisItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
 
+                console.log(thisState);
                 if ( thisState === 'true' ) {
                     thisItems.addClass('d-none');
 
