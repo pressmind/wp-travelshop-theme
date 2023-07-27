@@ -18,7 +18,7 @@ use Pressmind\Travelshop\Template;
 
 if (empty($args['categories'][$fieldname][0]) === false) {
     ?>
-    <div class="list-filter-box category-tree">
+    <div class="list-filter-box category-tree <?php echo ($type !== null && $type === 'expand') ? 'category-tree-expand' : ''; ?>">
         <div class="list-filter-box-title">
             <strong><?php echo $name; ?></strong>
         </div>

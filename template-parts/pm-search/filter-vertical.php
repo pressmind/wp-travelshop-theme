@@ -55,7 +55,6 @@
                 require 'filter/transport_type.php';
                 require 'filter/board_type.php';
                 foreach(TS_FILTERS as $filter){
-                    print_r($filter);
                     $fieldname = $filter['fieldname'];
                     $name = $filter['name'];
                     $behavior = $filter['behavior'];
