@@ -1238,7 +1238,7 @@ jQuery(function ($) {
                 var thisNonPreviewItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
                 console.log(thisNonPreviewItems);
 
-                thisNonPreviewItems.toggleClass('d-none');
+                thisNonPreviewItems.removeClass('d-none');
             });
         })
     }
