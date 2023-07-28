@@ -24,7 +24,18 @@ if (empty($args['categories'][$fieldname][0]) === false) {
         </div>
         <?php
         if ( $search ) {
-            echo "search!!";
+            ?>
+            <div class="list-filter-box-search">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="<?php echo $name; ?> suchen" />
+                    <div class="input-group-append">
+                        <button class="input-group-btn" aria-label="Suchen">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <?php
         }
         ?>
         <div class="category-tree-field-items list-filter-box-body">
