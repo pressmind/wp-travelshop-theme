@@ -1334,7 +1334,7 @@ jQuery(function ($) {
             var thisField = $(this);
 
             // -- filter logic
-            thisField.on('keydown', function(e) {
+            thisField.on('keyup', function(e) {
                 e.preventDefault();
 
                 var thisField = $(this);
