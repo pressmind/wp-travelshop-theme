@@ -1367,6 +1367,9 @@ jQuery(function ($) {
 
                             var labelHTML = labelPrefix + labelHighlight + labelSuffix;
 
+                            console.log(labelPrefix);
+                            console.log(labelHighlight);
+                            console.log(labelSuffix);
                             console.log(labelHTML);
 
                             // thisItem.find('.form-check-label-inner').text(thisItemLabel);
