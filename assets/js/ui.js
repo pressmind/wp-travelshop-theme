@@ -1302,6 +1302,7 @@ jQuery(function ($) {
      * List filter search
      */
     function listFilterSearch() {
+        console.log($('body').find(listFilterSearchField));
         var getFields = $('body').find(listFilterSearchField);
         var getSearchReset = $('body').find(listFilterReset);
 
