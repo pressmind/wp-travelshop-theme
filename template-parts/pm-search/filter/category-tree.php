@@ -23,7 +23,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
             <strong><?php echo $name; ?></strong>
         </div>
         <?php
-        if ( $search ) {
+        if ( $search && $type !== 'expand') {
             ?>
             <div class="list-filter-box-search">
                 <div class="input-group">
