@@ -1284,7 +1284,7 @@ jQuery(function ($) {
      * @param items
      * @param fallback
      */
-    function listFilterSearchReset(wrapper, items, fallback, searchField = null) {
+    function listFilterSearchReset(wrapper, items, fallback, field) {
         // reset / show all
         items.removeClass('d-none');
 
@@ -1295,9 +1295,7 @@ jQuery(function ($) {
         listFilterSearchResetLabel(items);
 
         // -- reset value
-        if ( searchField !== null ) {
-            searchField.attr('value', '');
-        }
+        field.attr('value', '');
     }
 
     /**
