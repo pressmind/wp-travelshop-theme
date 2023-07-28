@@ -1241,7 +1241,7 @@ jQuery(function ($) {
                 var thisValue = $(this).val();
                 var thisWrapper = $(this).parents(listFilterSearchWrapper);
 
-                if ( thisValue.length > listFilterSearchMin ) {
+                if ( thisValue.length >= listFilterSearchMin ) {
                     // filter search items
                     // by given string
                     var thisOptions = thisWrapper.find(listFilterSearchTarget);
