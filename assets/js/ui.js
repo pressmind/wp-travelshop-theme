@@ -1224,12 +1224,53 @@ jQuery(function ($) {
     let listFilterSearchWrapper = '.list-filter-box';
     let listFilterSearchTarget = '.list-filter-box-body > .form-check';
     let listFilterSearchMin = 3;
+    let listFilterFallback = '.form-check-fallback';
+    let listFilterReset = '.reset-filter-search';
 
+    /**
+     * List filter search reset
+     * @param wrapper
+     * @param items
+     * @param fallback
+     */
+    function listFilterSearchReset(wrapper, items, fallback) {
+        // reset / show all
+        items.removeClass('d-none');
+
+        // -- fallback handling
+        fallback.removeClass('d-none');
+    }
+
+    /**
+     * List filter search
+     */
     function listFilterSearch() {
         var getFields = $('body').find(listFilterSearchField);
+        var getSearchReset = $('body').find(listFilterReset);
 
         getFields.unbind('keyup');
+        getSearchReset.unbind('click touch');
 
+        // reset
+        getSearchReset.each(function() {
+
+            var thisReset = $(this);
+
+            thisReset.on('click touch', function(e) {
+                e.preventDefault();
+
+                var thisWrapper = $(this).parents(listFilterSearchWrapper);
+                var thisFallback = thisWrapper.find(listFilterFallback);
+                var thisOptions = thisWrapper.find(listFilterSearchTarget);
+
+                listFilterSearchReset(thisWrapper, thisOptions, thisFallback);
+
+                e.stopPropagation();
+            });
+
+        });
+
+        // -- search
         getFields.each(function() {
 
             var thisField = $(this);
@@ -1240,6 +1281,7 @@ jQuery(function ($) {
 
                 var thisValue = $(this).val().toLowerCase();
                 var thisWrapper = $(this).parents(listFilterSearchWrapper);
+                var thisFallback = thisWrapper.find(listFilterFallback);
 
                 if ( thisValue.length >= listFilterSearchMin ) {
                     // filter search items
@@ -1247,12 +1289,20 @@ jQuery(function ($) {
                     var thisOptions = thisWrapper.find(listFilterSearchTarget);
                     var thisValidOptions = thisWrapper.find(listFilterSearchTarget + '[data-name-lowercase*="'+thisValue+'"]');
 
-                    thisOptions.addClass('d-none');
-                    thisValidOptions.removeClass('d-none');
+                    if ( thisValidOptions.length > 0 ) {
+                        thisOptions.addClass('d-none');
+                        thisValidOptions.removeClass('d-none');
+
+                        // -- fallback handling
+                        thisFallback.addClass('d-none');
+                    } else {
+                        // -- fallback handling
+                        thisFallback.removeClass('d-none');
+                    }
 
                 } else {
-                    // reset / show all
-                    thisWrapper.find(listFilterSearchTarget).removeClass('d-none');
+                    // reset search
+                    listFilterSearchReset(thisWrapper, thisWrapper.find(listFilterSearch), thisFallback);
                 }
 
                 e.stopPropagation();

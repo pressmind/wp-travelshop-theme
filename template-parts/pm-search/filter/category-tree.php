@@ -40,6 +40,14 @@ if (empty($args['categories'][$fieldname][0]) === false) {
         ?>
         <div class="category-tree-field-items list-filter-box-body">
             <input type="hidden" name="<?php echo $fieldname;?>-behavior" value="<?php echo empty($behavior) ? 'OR' : $behavior; ?>">
+            <?php if ( $search ) { ?>
+            <div class="form-check-fallback d-none">
+                Keine passenden Ergebnisse gefunden.<br>
+                <a href="#" class="reset-filter-search">
+                    Suche zurücksetzen
+                </a>
+            </div>
+            <?php } ?>
             <?php
             $childs = [];
             if(!empty($args['categories'][$fieldname][1])){
