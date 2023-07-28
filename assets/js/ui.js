@@ -1362,9 +1362,10 @@ jQuery(function ($) {
                             var resultStrEnd = searchStrLength + resultStrStart;
 
                             var labelPrefix = thisItemName.substring(0, resultStrStart);
-                            var labelSuffix = thisItemName.substring(resultStrEnd, 99);
+                            var labelSuffix = thisItemName.substring(resultStrEnd + 1, 99);
+                            var labelHighlight = thisItemName.substring(resultStrStart, resultStrEnd);
 
-                            var labelHTML = labelPrefix + labelSuffix;
+                            var labelHTML = labelPrefix + labelHighlight + labelSuffix;
 
                             console.log(labelHTML);
 
