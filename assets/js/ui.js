@@ -1354,25 +1354,15 @@ jQuery(function ($) {
 
                         // -- set strong
                         thisOptions.each(function() {
-                            var thisItem = $(this);
-                            var thisItemName = thisItem.data('name');
-                            var thisItemNameLowercase = thisItem.data('name-lowercase');
-                            var searchStrLength = thisValue.length;
-                            var resultStrStart = thisItemNameLowercase.indexOf(0, thisValue);
-                            var resultStrEnd = searchStrLength + resultStrStart;
+                            var thisOption = $(this);
+                            var thisLabel = $(this).find('.form-check-label-inner');
+                            var thisString = $(this).data('name');
+                            var highlightRegex = new RegExp(thisString, "gi");
+                            var newLabel = thisString.replace(highlightRegex, function(a,b) {
+                                return '<strong>' + a + '</strong>';
+                            });
 
-                            var labelPrefix = thisItemName.substring(0, resultStrStart);
-                            var labelSuffix = thisItemName.substring(resultStrEnd + 1, 99);
-                            var labelHighlight = thisItemName.substring(resultStrStart, resultStrEnd);
-
-                            var labelHTML = labelPrefix + labelHighlight + labelSuffix;
-
-                            console.log(labelPrefix);
-                            console.log(labelHighlight);
-                            console.log(labelSuffix);
-                            console.log(labelHTML);
-
-                            // thisItem.find('.form-check-label-inner').text(thisItemLabel);
+                            thisLabel.html(newLabel);
                         });
 
                         // -- fallback handling
