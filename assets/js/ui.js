@@ -1296,6 +1296,9 @@ jQuery(function ($) {
                         // -- fallback handling
                         thisFallback.addClass('d-none');
                     } else {
+                        // hide all
+                        thisOptions.addClass('d-none');
+
                         // -- fallback handling
                         thisFallback.removeClass('d-none');
                     }
