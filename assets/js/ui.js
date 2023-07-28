@@ -1252,6 +1252,7 @@ jQuery(function ($) {
 
                 } else {
                     // reset / show all
+                    thisWrapper.find(listFilterSearchTarget).removeClass('d-none');
                 }
 
                 e.stopPropagation();
