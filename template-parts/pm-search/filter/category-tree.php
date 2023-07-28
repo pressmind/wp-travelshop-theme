@@ -77,7 +77,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                     $dataPreviewClass = 'd-none';
                 }
                 ?>
-                <div data-preview="<?php echo $dataPreview; ?>" data-name="<?php echo $item->name; ?>" class="form-check <?php echo $dataPreviewClass; ?> <?php echo $has_childs ? 'has-second-level' : ''; echo $is_open;?>">
+                <div data-preview="<?php echo $dataPreview; ?>" data-name="<?php echo $item->name; ?>" data-name-lowercase="<?php echo strtolower($item->name); ?>" class="form-check <?php echo $dataPreviewClass; ?> <?php echo $has_childs ? 'has-second-level' : ''; echo $is_open;?>">
 
                     <input class="form-check-input" type="checkbox"
                            id="<?php echo $uuid; ?>"

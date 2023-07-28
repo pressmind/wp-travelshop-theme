@@ -1238,14 +1238,14 @@ jQuery(function ($) {
             thisField.on('keyup', function(e) {
                 e.preventDefault();
 
-                var thisValue = $(this).val();
+                var thisValue = $(this).val().toLowerCase();
                 var thisWrapper = $(this).parents(listFilterSearchWrapper);
 
                 if ( thisValue.length >= listFilterSearchMin ) {
                     // filter search items
                     // by given string
                     var thisOptions = thisWrapper.find(listFilterSearchTarget);
-                    var thisValidOptions = thisWrapper.find(listFilterSearchTarget + '[data-name*="'+thisValue+'"]');
+                    var thisValidOptions = thisWrapper.find(listFilterSearchTarget + '[data-name-lowercase*="'+thisValue+'"]');
 
                     thisOptions.addClass('d-none');
                     thisValidOptions.removeClass('d-none');
