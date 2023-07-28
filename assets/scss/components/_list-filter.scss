@@ -43,7 +43,7 @@
 
         // -- search
         .list-filter-box-search {
-          margin: $filter-spacer-y 0 0 0;
+          margin: 0 0 $filter-spacer-y  0;
 
           .input-group {
             @extend %custom-input-group;
