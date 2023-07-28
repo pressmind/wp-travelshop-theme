@@ -1354,7 +1354,6 @@ jQuery(function ($) {
 
                         // -- set strong
                         thisOptions.each(function() {
-                            var thisOption = $(this);
                             var thisLabel = $(this).find('.form-check-label-inner');
                             var thisString = $(this).data('name');
                             var highlightRegex = new RegExp(thisValue, "gi");
