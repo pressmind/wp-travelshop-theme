@@ -1238,7 +1238,7 @@ jQuery(function ($) {
         items.removeClass('d-none');
 
         // -- fallback handling
-        fallback.removeClass('d-none');
+        fallback.addClass('d-none');
     }
 
     /**
@@ -1295,6 +1295,9 @@ jQuery(function ($) {
 
                         // -- fallback handling
                         thisFallback.addClass('d-none');
+                    } else {
+                        // -- fallback handling
+                        thisFallback.removeClass('d-none');
                     }
 
                 } else {
