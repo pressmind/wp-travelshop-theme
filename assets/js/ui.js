@@ -1233,12 +1233,17 @@ jQuery(function ($) {
      * @param items
      * @param fallback
      */
-    function listFilterSearchReset(wrapper, items, fallback) {
+    function listFilterSearchReset(wrapper, items, fallback, searchField = null) {
         // reset / show all
         items.removeClass('d-none');
 
         // -- fallback handling
         fallback.addClass('d-none');
+
+        // -- reset value
+        if ( thisField !== null ) {
+            thisField.attr('value', '');
+        }
     }
 
     /**
@@ -1279,6 +1284,7 @@ jQuery(function ($) {
             thisField.on('keyup', function(e) {
                 e.preventDefault();
 
+                var thisField = $(this);
                 var thisValue = $(this).val().toLowerCase();
                 var thisWrapper = $(this).parents(listFilterSearchWrapper);
                 var thisFallback = thisWrapper.find(listFilterFallback);
@@ -1305,7 +1311,7 @@ jQuery(function ($) {
 
                 } else {
                     // reset search
-                    listFilterSearchReset(thisWrapper, thisWrapper.find(listFilterSearchTarget), thisFallback);
+                    listFilterSearchReset(thisWrapper, thisWrapper.find(listFilterSearchTarget), thisFallback, thisField);
                 }
 
                 e.stopPropagation();
