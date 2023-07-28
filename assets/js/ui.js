@@ -1295,8 +1295,8 @@ jQuery(function ($) {
         listFilterSearchResetLabel(items);
 
         // -- reset value
-        if ( thisField !== null ) {
-            thisField.attr('value', '');
+        if ( searchField !== null ) {
+            searchField.attr('value', '');
         }
     }
 
