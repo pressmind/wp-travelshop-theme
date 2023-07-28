@@ -1248,8 +1248,7 @@ jQuery(function ($) {
         var getFields = $('body').find(listFilterSearchField);
         var getSearchReset = $('body').find(listFilterReset);
 
-        getFields.unbind('keyup');
-        getFields.unbind('change');
+        getFields.unbind();
         getSearchReset.unbind('click touch');
 
         // reset
