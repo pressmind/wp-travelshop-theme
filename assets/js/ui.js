@@ -1351,6 +1351,15 @@ jQuery(function ($) {
 
             var thisField = $(this);
 
+
+            thisField.on('keyup', function(e) {
+                e.preventDefault();
+
+                $(this).trigger('change');
+
+                e.stopPropagation();
+            });
+
             // -- filter logic
             thisField.on('change', function(e) {
                 e.preventDefault();
