@@ -1267,8 +1267,9 @@ jQuery(function ($) {
                 var thisWrapper = $(this).parents(listFilterSearchWrapper);
                 var thisFallback = thisWrapper.find(listFilterFallback);
                 var thisOptions = thisWrapper.find(listFilterSearchTarget);
+                var thisField = thisWrapper.find(listFilterSearchField);
 
-                listFilterSearchReset(thisWrapper, thisOptions, thisFallback);
+                listFilterSearchReset(thisWrapper, thisOptions, thisFallback, thisField);
 
                 e.stopPropagation();
             });
