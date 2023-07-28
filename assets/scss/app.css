@@ -11691,18 +11691,18 @@ select.form-control, .content-block.content-block-list-filter .list-filter .list
  * ----------------------------------------------
  * its using variables from inputs + input groups
  */
-form.form-string-search.input-group {
+form.form-string-search.input-group, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group {
   position: relative; }
-  form.form-string-search.input-group .form-control, form.form-string-search.input-group .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker form.form-string-search.input-group .search-field-input-field, form.form-string-search.input-group .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range form.form-string-search.input-group button.booking-filter-field--date-range {
+  form.form-string-search.input-group .form-control, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .form-control, form.form-string-search.input-group .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker form.form-string-search.input-group .search-field-input-field, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .list-filter-box-search .input-group .search-field-input-field, form.form-string-search.input-group .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range form.form-string-search.input-group button.booking-filter-field--date-range, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group button.booking-filter-field--date-range {
     border-radius: 0.25rem;
     padding-right: 2.25rem; }
-  form.form-string-search.input-group .input-group-append {
+  form.form-string-search.input-group .input-group-append, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .input-group-append {
     line-height: 0;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 4; }
-    form.form-string-search.input-group .input-group-append button.input-group-btn {
+    form.form-string-search.input-group .input-group-append button.input-group-btn, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .input-group-append button.input-group-btn {
       border: 0;
       outline: none;
       box-shadow: none;
@@ -11713,10 +11713,10 @@ form.form-string-search.input-group {
       transition: color 0.3s;
       height: 2.25rem;
       width: 2.25rem; }
-      form.form-string-search.input-group .input-group-append button.input-group-btn svg {
+      form.form-string-search.input-group .input-group-append button.input-group-btn svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .input-group-append button.input-group-btn svg {
         width: 1.125rem;
         height: 1.125rem; }
-      form.form-string-search.input-group .input-group-append button.input-group-btn:hover, form.form-string-search.input-group .input-group-append button.input-group-btn:focus, form.form-string-search.input-group .input-group-append button.input-group-btn:active {
+      form.form-string-search.input-group .input-group-append button.input-group-btn:hover, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .input-group-append button.input-group-btn:hover, form.form-string-search.input-group .input-group-append button.input-group-btn:focus, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .input-group-append button.input-group-btn:focus, form.form-string-search.input-group .input-group-append button.input-group-btn:active, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search .input-group .input-group-append button.input-group-btn:active {
         color: #007bff; }
 
 /**

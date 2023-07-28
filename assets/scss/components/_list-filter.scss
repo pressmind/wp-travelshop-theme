@@ -41,6 +41,13 @@
           }
         }
 
+        // -- search
+        .list-filter-box-search {
+          .input-group {
+            @extend %custom-input-group;
+          }
+        }
+
         // -- footer
         .list-filter-box-footer {
           margin: $filter-spacer-y 0 0 0;
