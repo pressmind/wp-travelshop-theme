@@ -3,6 +3,7 @@ jQuery(function ($) {
 
     let openClass = 'is-open';
     let activeClass = 'is-active';
+    let hiddenClass = 'is-hidden';
 
     // ------------------------------------------------
     // -- little fix for 100vw
@@ -1244,6 +1245,36 @@ jQuery(function ($) {
         if ( thisField !== null ) {
             thisField.attr('value', '');
         }
+    }
+
+    /**
+     * List filter accordion
+     */
+    let listFilterTitle = '.list-filter .list-filter-box-title';
+    let listFilterWrapper = '.list-filter-box';
+
+    function listFilterAccordion() {
+        var getFilterTitles = $('body').find(listFilterTitle);
+
+        getFilterTitles.unbind();
+
+        getFilterTitles.bind('click touch', function(e) {
+            e.preventDefault();
+
+            var thisWrapper = $(this).parents(listFilterWrapper);
+
+            thisWrapper.toggleClass(hiddenClass);
+
+            e.stopPropagation();
+        })
+    }
+
+    if ( $('body').find(listFilterTitle).length > 0 ) {
+        listFilterAccordion();
+    }
+
+    if ( $('body').find(listFilterTitle).length > 0 ) {
+        listFilterSearch();
     }
 
     /**
