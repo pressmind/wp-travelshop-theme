@@ -1301,8 +1301,7 @@ jQuery(function ($) {
     /**
      * List filter search
      */
-    function listFilterSearch() {
-        console.log(listFilterSearchField);
+    function listFilterSearch(listFilterSearchField) {
         var getFields = $('body').find(listFilterSearchField);
         var getSearchReset = $('body').find(listFilterReset);
 
@@ -1397,13 +1396,13 @@ jQuery(function ($) {
     }
 
     if ( $('body').find(listFilterSearchField).length > 0 ) {
-        listFilterSearch();
+        listFilterSearch(listFilterSearchField);
     }
 
     // -- reinitialize
     $( document ).ajaxComplete(function( event, xhr, settings ) {
         if ( $('body').find(listFilterSearchField).length > 0 ) {
-            listFilterSearch();
+            listFilterSearch(listFilterSearchField);
         }
     });
 
