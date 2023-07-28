@@ -13669,6 +13669,8 @@ ul.checklist {
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-title > strong,
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box > label > strong {
       font-weight: 700; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-search {
+    margin: 0.75rem 0 0 0; }
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer {
     margin: 0.75rem 0 0 0; }
     .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box .list-filter-box-footer button {

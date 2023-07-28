@@ -1218,6 +1218,60 @@ jQuery(function ($) {
     });
 
     // -----------------------
+    // -- list filter search
+    // -----------------------
+    let listFilterSearchField = '.list-filter-box-search input';
+    let listFilterSearchWrapper = '.list-filter-box';
+    let listFilterSearchTarget = '.list-filter-box-body > .form-check';
+    let listFilterSearchMin = 3;
+
+    function listFilterSearch() {
+        var getFields = $('body').find(listFilterSearchField);
+
+        getFields.unbind('keyup');
+
+        getFields.each(function() {
+
+            var thisField = $(this);
+
+            // -- filter logic
+            thisField.on('keyup', function(e) {
+                e.preventDefault();
+
+                var thisValue = $(this).val();
+                var thisWrapper = $(this).parents(listFilterSearchWrapper);
+
+                if ( thisValue.length > listFilterSearchMin ) {
+                    // filter search items
+                    // by given string
+                    var thisOptions = thisWrapper.find(listFilterSearchTarget);
+                    var thisValidOptions = thisWrapper.find(listFilterSearchTarget + '[data-name*="'+thisValue+'"]');
+
+                    thisOptions.addClass('d-none');
+                    thisValidOptions.removeClass('d-none');
+
+                } else {
+                    // reset / show all
+                }
+
+                e.stopPropagation();
+            });
+
+        });
+    }
+
+    if ( $('body').find(listFilterSearchField).length > 0 ) {
+        listFilterSearch();
+    }
+
+    // -- reinitialize
+    $( document ).ajaxComplete(function( event, xhr, settings ) {
+        if ( $('body').find(listFilterSearchField).length > 0 ) {
+            listFilterSearch();
+        }
+    });
+
+    // -----------------------
     // -- category tree toggle
     // -----------------------
     let categoryTreeExpandWrapper = '.category-tree-expand';
