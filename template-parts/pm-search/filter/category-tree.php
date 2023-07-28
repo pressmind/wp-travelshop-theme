@@ -108,7 +108,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
                                 'name' => $item->name,
                             ]);
                         } else {
-                            echo $item->name;
+                            echo '<span class="form-check-label-inner">' . $item->name . '</span>';
                         }
                         ?>
                         <span class="small">(<?php echo $item->count_in_search; ?>)</span>

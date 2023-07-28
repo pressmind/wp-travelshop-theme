@@ -1218,41 +1218,17 @@ jQuery(function ($) {
         }
     });
 
+
+
     // -----------------------
-    // -- list filter search
+    // -- accordion
     // -----------------------
-    let listFilterSearchField = '.list-filter-box-search input';
-    let listFilterSearchWrapper = '.list-filter-box';
-    let listFilterSearchTarget = '.list-filter-box-body > .form-check';
-    let listFilterSearchMin = 3;
-    let listFilterFallback = '.form-check-fallback';
-    let listFilterReset = '.reset-filter-search';
-
-    /**
-     * List filter search reset
-     * @param wrapper
-     * @param items
-     * @param fallback
-     */
-    function listFilterSearchReset(wrapper, items, fallback, searchField = null) {
-        // reset / show all
-        items.removeClass('d-none');
-
-        // -- fallback handling
-        fallback.addClass('d-none');
-
-        // -- reset value
-        if ( thisField !== null ) {
-            thisField.attr('value', '');
-        }
-    }
-
-    /**
-     * List filter accordion
-     */
     let listFilterTitle = '.list-filter .list-filter-box-title';
     let listFilterWrapper = '.list-filter-box';
 
+    /**
+     * List filter accordion functionality
+     */
     function listFilterAccordion() {
         var getFilterTitles = $('body').find(listFilterTitle);
 
@@ -1275,6 +1251,53 @@ jQuery(function ($) {
 
     if ( $('body').find(listFilterTitle).length > 0 ) {
         listFilterSearch();
+    }
+
+    // -----------------------
+    // -- list filter search
+    // -----------------------
+    let listFilterSearchField = '.list-filter-box-search input';
+    let listFilterSearchWrapper = '.list-filter-box';
+    let listFilterSearchTarget = '.list-filter-box-body > .form-check';
+    let listFilterSearchMin = 3;
+    let listFilterFallback = '.form-check-fallback';
+    let listFilterReset = '.reset-filter-search';
+
+    /**
+     * Reset label
+     * @param items
+     */
+    function listFilterSearchResetLabel(items){
+
+        // -- reset label
+        items.each(function() {
+            var thisItem = $(this);
+            var thisItemLabel = thisItem.data('name');
+
+            thisItem.find('.form-check-label-inner').text(thisItemLabel);
+        });
+    }
+
+    /**
+     * List filter search reset
+     * @param wrapper
+     * @param items
+     * @param fallback
+     */
+    function listFilterSearchReset(wrapper, items, fallback, searchField = null) {
+        // reset / show all
+        items.removeClass('d-none');
+
+        // -- fallback handling
+        fallback.addClass('d-none');
+
+        // -- reset label
+        listFilterSearchResetLabel(items);
+
+        // -- reset value
+        if ( thisField !== null ) {
+            thisField.attr('value', '');
+        }
     }
 
     /**
@@ -1331,11 +1354,33 @@ jQuery(function ($) {
                         thisOptions.addClass('d-none');
                         thisValidOptions.removeClass('d-none');
 
+                        // -- set strong
+                        thisOptions.each(function() {
+                            var thisItem = $(this);
+                            var thisItemName = thisItem.data('name');
+                            var thisItemNameLowercase = thisItem.data('name-lowercase');
+                            var searchStrLength = thisValue.length;
+                            var resultStrStart = thisItemNameLowercase.indexOf(0, thisValue);
+                            var resultStrEnd = searchStrLength + resultStrStart;
+
+                            var labelPrefix = thisItemName.substring(0, resultStrStart);
+                            var labelSuffix = thisItemName.substring(0, resultStrEnd);
+
+                            var labelHTML = labelPrefix + labelSuffix;
+
+                            console.log(labelHTML);
+
+                            thisItem.find('.form-check-label-inner').text(thisItemLabel);
+                        });
+
                         // -- fallback handling
                         thisFallback.addClass('d-none');
                     } else {
                         // hide all
                         thisOptions.addClass('d-none');
+
+                        // -- reset label
+                        listFilterSearchResetLabel(thisOptions);
 
                         // -- fallback handling
                         thisFallback.removeClass('d-none');
