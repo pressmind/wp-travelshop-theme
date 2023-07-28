@@ -1302,7 +1302,7 @@ jQuery(function ($) {
 
                 } else {
                     // reset search
-                    listFilterSearchReset(thisWrapper, thisWrapper.find(listFilterSearch), thisFallback);
+                    listFilterSearchReset(thisWrapper, thisWrapper.find(listFilterSearchTarget), thisFallback);
                 }
 
                 e.stopPropagation();
