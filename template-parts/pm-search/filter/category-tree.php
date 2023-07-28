@@ -22,6 +22,11 @@ if (empty($args['categories'][$fieldname][0]) === false) {
         <div class="list-filter-box-title">
             <strong><?php echo $name; ?></strong>
         </div>
+        <?php
+        if ( $search ) {
+            echo "search!!";
+        }
+        ?>
         <div class="category-tree-field-items list-filter-box-body">
             <input type="hidden" name="<?php echo $fieldname;?>-behavior" value="<?php echo empty($behavior) ? 'OR' : $behavior; ?>">
             <?php

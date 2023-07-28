@@ -57,6 +57,7 @@
                 foreach(TS_FILTERS as $filter){
                     $fieldname = $filter['fieldname'];
                     $name = $filter['name'];
+                    $search = isset($filter['search']) ? $filter['search'] : false;
                     $behavior = $filter['behavior'];
                     $type = isset($filter['type']) ? $filter['type'] : null;
                     $preview = isset($filter['preview']) ? $filter['preview'] : 5;
