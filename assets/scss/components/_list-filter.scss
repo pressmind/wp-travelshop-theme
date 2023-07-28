@@ -180,6 +180,12 @@
           .list-filter-box-search {
             display: none;
           }
+
+          &.list-filter-box-price {
+            .list-filter-box-title {
+              margin-bottom: $filter-spacer-y;
+            }
+          }
         }
       }
     }

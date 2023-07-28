@@ -13732,6 +13732,8 @@ ul.checklist {
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.is-hidden .list-filter-box-footer,
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.is-hidden .list-filter-box-search {
     display: none; }
+  .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.is-hidden.list-filter-box-price .list-filter-box-title {
+    margin-bottom: 0.75rem; }
 .content-block.content-block-list-filter .list-filter-footer {
   padding-top: 0.75rem;
   margin-top: 0.75rem;
