@@ -1351,7 +1351,7 @@ jQuery(function ($) {
 
             var thisField = $(this);
 
-
+            // -- keyup trigger
             thisField.on('keyup', function(e) {
                 e.preventDefault();
 
