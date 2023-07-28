@@ -1279,6 +1279,24 @@ jQuery(function ($) {
     }
 
     /**
+     * highlight label part
+     * @param items
+     */
+    function listFilterSearchHighlightLabel(items, value) {
+        // -- set strong
+        items.each(function() {
+            var thisLabel = $(this).find('.form-check-label-inner');
+            var thisString = $(this).data('name');
+            var highlightRegex = new RegExp(value, "gi");
+            var newLabel = thisString.replace(highlightRegex, function(a,b) {
+                return '<strong>' + a + '</strong>';
+            });
+
+            thisLabel.html(newLabel);
+        });
+    }
+
+    /**
      * List filter search reset
      * @param wrapper
      * @param items
@@ -1352,17 +1370,8 @@ jQuery(function ($) {
                         thisOptions.addClass('d-none');
                         thisValidOptions.removeClass('d-none');
 
-                        // -- set strong
-                        thisOptions.each(function() {
-                            var thisLabel = $(this).find('.form-check-label-inner');
-                            var thisString = $(this).data('name');
-                            var highlightRegex = new RegExp(thisValue, "gi");
-                            var newLabel = thisString.replace(highlightRegex, function(a,b) {
-                                return '<strong>' + a + '</strong>';
-                            });
-
-                            thisLabel.html(newLabel);
-                        });
+                        // -- highlight label
+                        listFilterSearchHighlightLabel(thisOptions, thisValue);
 
                         // -- fallback handling
                         thisFallback.addClass('d-none');
