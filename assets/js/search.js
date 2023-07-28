@@ -36,40 +36,40 @@ jQuery(function ($) {
     }
 
     addFilterCheckboxEventListener();
-
-
-
-// ------------------------------------------
-// --- Search toggle
-// ------------------------------------------
-    if ($('#search').length > 0) {
-        var $searchToggle = $('.search-toggler'),
-            $searchWrapper = $('.header-main .col-search'),
-            $searchBackdrop = $('#search-backdrop');
-
-        $searchToggle.on('click', function (e) {
-            $searchBackdrop.modal('show');
-            $searchWrapper.addClass('is-open');
-
-            e.stopPropagation();
-        });
-
-        $searchBackdrop.unbind('click');
-
-        $searchBackdrop.on('click', function (e) {
-            e.preventDefault();
-            $searchBackdrop.modal('hide');
-            e.stopPropagation();
-        });
-
-        $searchBackdrop.on('hide.bs.modal', function (e) {
-            $searchWrapper.removeClass('is-open');
-        });
-
-        $searchBackdrop.on('show.bs.modal', function (e) {
-            $searchWrapper.addClass('is-open');
-        });
-    }
+//
+//
+//
+// // ------------------------------------------
+// // --- Search toggle
+// // ------------------------------------------
+//     if ($('#search').length > 0) {
+//         var $searchToggle = $('.search-toggler'),
+//             $searchWrapper = $('.header-main .col-search'),
+//             $searchBackdrop = $('#search-backdrop');
+//
+//         $searchToggle.on('click', function (e) {
+//             $searchBackdrop.modal('show');
+//             $searchWrapper.addClass('is-open');
+//
+//             e.stopPropagation();
+//         });
+//
+//         $searchBackdrop.unbind('click');
+//
+//         $searchBackdrop.on('click', function (e) {
+//             e.preventDefault();
+//             $searchBackdrop.modal('hide');
+//             e.stopPropagation();
+//         });
+//
+//         $searchBackdrop.on('hide.bs.modal', function (e) {
+//             $searchWrapper.removeClass('is-open');
+//         });
+//
+//         $searchBackdrop.on('show.bs.modal', function (e) {
+//             $searchWrapper.addClass('is-open');
+//         });
+//     }
 
     // ------------------------------------------
     // --- rangeslider

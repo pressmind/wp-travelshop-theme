@@ -1352,7 +1352,7 @@ jQuery(function ($) {
             var thisField = $(this);
 
             // -- filter logic
-            thisField.on('keyup', function(e) {
+            thisField.on('change', function(e) {
                 e.preventDefault();
 
                 var thisField = $(this);
