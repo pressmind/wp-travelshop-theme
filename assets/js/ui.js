@@ -1368,7 +1368,7 @@ jQuery(function ($) {
 
                             console.log(labelHTML);
 
-                            thisItem.find('.form-check-label-inner').text(thisItemLabel);
+                            // thisItem.find('.form-check-label-inner').text(thisItemLabel);
                         });
 
                         // -- fallback handling
