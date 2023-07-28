@@ -1,6 +1,8 @@
 <div class="list-filter-box list-filter-box-checkboxes list-filter-box-sorting">
     <div class="list-filter-box-title">
         <strong>Sortieren nach</strong>
+
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
     </div>
 
     <div class="list-filter-box-body">

@@ -21,6 +21,8 @@ if (empty($args['categories'][$fieldname][0]) === false) {
     <div <?php echo ($type !== null && $type === 'expand') ? 'data-expanded="false"' : ''; ?>class="list-filter-box category-tree <?php echo ($type !== null && $type === 'expand') ? 'category-tree-expand' : ''; ?>">
         <div class="list-filter-box-title">
             <strong><?php echo $name; ?></strong>
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
+
         </div>
         <?php
         if ( $search && $type !== 'expand') {

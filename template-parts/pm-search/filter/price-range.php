@@ -18,6 +18,8 @@ if (isset($_GET['pm-pr']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $_GET
 <div class="list-filter-box list-filter-box-price">
     <div class="list-filter-box-title">
         <strong>Preis</strong>
+
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
     </div>
     <div class="list-filter-box-body" style="width: 90%; margin: 0 auto;">
         <?php

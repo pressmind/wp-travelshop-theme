@@ -15,6 +15,8 @@ if (empty($_GET['pm-bt']) === false) {
 <div class="list-filter-box board-type">
     <div class="list-filter-box-title">
         <strong>Verpflegung</strong>
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
+
     </div>
     <div class="list-filter-box-body">
         <?php
