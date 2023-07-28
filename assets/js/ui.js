@@ -1362,7 +1362,7 @@ jQuery(function ($) {
                             var resultStrEnd = searchStrLength + resultStrStart;
 
                             var labelPrefix = thisItemName.substring(0, resultStrStart);
-                            var labelSuffix = thisItemName.substring(0, resultStrEnd);
+                            var labelSuffix = thisItemName.substring(resultStrEnd, 99);
 
                             var labelHTML = labelPrefix + labelSuffix;
 
