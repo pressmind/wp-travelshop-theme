@@ -639,6 +639,9 @@ jQuery(function ($) {
                             var targetResultReset = $(e.target).parents('.search-box-field--fulltext').find('.string-search-overlay-results');
                             var thisPlaceholder = $(e.target).parents('.search-field-input--fulltext').data('search-placeholder');
 
+                            console.log(targetResultReset);
+                            console.log(thisPlaceholder);
+
                             if ( targetResultReset.length > 0 ) {
                                 targetResultReset.html($('#searchStorage_' + thisPlaceholder).first().html());
                             }
