@@ -34,6 +34,7 @@ $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' =>
 
         var_dump($args['offer_id']);
         var_dump($offer->id);
+        var_dump($activeOffer);
         ?>
         <div class="booking-offer-item">
             <label for="offer<?php echo $offer->id; ?>">
