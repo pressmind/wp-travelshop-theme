@@ -1191,8 +1191,10 @@ jQuery(function ($) {
 
             var thisTarget = $(e.target);
 
+            console.log(thisTarget);
+
             if ( !thisTarget.hasClass('input-clear') ) {
-    
+
                 var thisDropdown = $(this);
                 var thisDropdownWrapper = thisDropdown.parent();
 
