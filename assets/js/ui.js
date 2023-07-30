@@ -1112,6 +1112,7 @@ jQuery(function ($) {
     let filterCategoryBackdrop = '.category-tree-field-backdrop';
     let filterCategoryDropdownClose = '.close-category-dropdown';
     let filterCategoryDropdownPrompt = '.filter-prompt';
+    let filterCategoryDropdownClear = '.input-clear';
 
     function initFilterCategoryDropdown() {
         var categoryDropdownToggle = $('body').find(filterCategoryDropdownToggle);
@@ -1141,7 +1142,6 @@ jQuery(function ($) {
 
             $(this).closest('.' + openClass).parent().find(filterCategoryBackdrop).removeClass(openClass);
             $(this).closest('.' + openClass).removeClass(openClass);
-            submitFilter();
 
             e.stopPropagation();
         });
@@ -1154,16 +1154,18 @@ jQuery(function ($) {
             var thisDropdownCheckedInputs = thisDropdownWrapper.find('input[type="checkbox"]:checked');
             var thisPlaceholder = thisDropdownWrapper.find(filterCategoryDropdownToggle + ' .selected-options');
             var thisPlaceholderDefault = thisDropdownWrapper.find(filterCategoryDropdownToggle).data('placeholder');
-
-            console.log(thisDropdownCheckedInputs);
+            var thisDropdownClear = thisDropdownWrapper.find(filterCategoryDropdownClear);
 
             if ( thisDropdownCheckedInputs.length < 1 ) {
                 // set placeholder to placeholder
                 thisPlaceholder.text(thisPlaceholderDefault);
+                thisDropdownClear.removeClass('d-block');
             } else {
                 var newPlaceholderString = '';
                 var newPlaceholderSeperator = '';
                 var iterateCheckedItems = 0;
+
+                thisDropdownClear.addClass('d-block');
 
                 thisDropdownCheckedInputs.each(function() {
                     var thisItemLabel = $(this).parent().find('.form-check-label').data('label-name');
