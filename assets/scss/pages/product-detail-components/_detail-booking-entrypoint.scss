@@ -128,5 +128,21 @@
         }
       }
     }
+
+    // -- offer list
+    .booking-filter-items {
+      margin-top: 1rem;
+
+      .booking-filter-item--dates {
+
+        .booking-offer-items {
+          .booking-offer-item {
+            .booking-offer-item-label {
+              @extend %share-action-button;
+            }
+          }
+        }
+      }
+    }
   }
 }
