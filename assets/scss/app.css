@@ -16487,6 +16487,7 @@ footer.footer-main {
     .detail-booking-entrypoint .booking-filter .booking-filter-items {
       margin-top: 1rem; }
       .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label {
+        cursor: pointer;
         gap: 0.5rem !important; }
         .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input {
           display: none; }

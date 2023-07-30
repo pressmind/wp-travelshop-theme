@@ -139,6 +139,7 @@
           .booking-offer-item {
             .booking-offer-item-label {
               @extend %share-action-button;
+              cursor: pointer;
 
               // gap reset
               gap: 0.5rem !important;
