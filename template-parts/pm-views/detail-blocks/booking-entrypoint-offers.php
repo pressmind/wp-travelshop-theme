@@ -24,5 +24,23 @@ $filter->occupancies_disable_fallback = false;
 $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 ?>
 
-<?php print_r($args); ?>
-<?php print_r($offers); ?>
+<div class="booking-offer-items">
+    <?php
+    foreach ( $offers as $offer ) {
+        ?>
+        <div class="booking-offer-item">
+            <label for="offer<?php echo $offer->id; ?>">
+                <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" />
+
+                <div class="booking-offer-item-inner">
+                    <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
+                        'date_departure' => $offer->date_departure,
+                        'date_arrival' => $offer->date_arrival
+                    ]);?>
+                </div>
+            </label>
+        </div>
+        <?php
+    }
+    ?>
+</div>
