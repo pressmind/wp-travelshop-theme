@@ -431,10 +431,12 @@ jQuery(function ($) {
 
             // -- reset active state of offers
             $(offerList).find(offerItem).removeClass(offerItemActiveClassName);
+            thisOffer.find('input').prop('checked', false);
             $(offerList).find('input').removeAttr('checked');
 
             // -- set this state
             thisOffer.addClass(offerItemActiveClassName);
+            thisOffer.find('input').prop('checked', true);
             thisOffer.find('input').attr('checked', 'checked');
 
             e.stopPropagation();

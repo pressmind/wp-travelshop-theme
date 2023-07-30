@@ -16497,7 +16497,7 @@ footer.footer-main {
           color: #212529;
           border-color: #212529;
           background-color: #fff;
-          border-width: .125rem; }
+          box-shadow: inset 0 0 0.0625rem 0 #212529; }
 
 .detail-box {
   margin-top: 0.5rem;
