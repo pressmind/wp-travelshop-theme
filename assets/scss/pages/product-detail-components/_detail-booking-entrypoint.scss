@@ -146,6 +146,10 @@
 
                 + span {
                   @extend %custom-radio-circle;
+
+                  // -- simple reset
+                  top: unset !important;
+                  transform: translateY(0) !important;
                 }
               }
 
