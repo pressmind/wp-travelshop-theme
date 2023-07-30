@@ -69,7 +69,7 @@ foreach($offers as $offer){
         <div class="booking-offer-item">
             <label data-price-html='<?php echo $priceHTML; ?>'
                    for="offer<?php echo $offer->id; ?>"
-                   class="booking-offer-item-label <?php ($activeOffer) ? 'is-active' : ''; ?>"
+                   class="booking-offer-item-label <?php echo ($activeOffer) ? 'is-active' : ''; ?>"
                    data-offer-id="<?php echo $offer->id; ?>"
                    data-daterange="<?php echo $dateDateRange; ?>"
             >
