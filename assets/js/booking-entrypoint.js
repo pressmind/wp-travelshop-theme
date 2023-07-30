@@ -432,6 +432,7 @@ jQuery(function ($) {
             var thisOfferPrice = thisOffer.data('price-html');
             var thisOfferDuration = thisOffer.data('duration');
             var thisOfferDateRange = thisOffer.data('daterange');
+            var thisOfferBookingUrl = thisOffer.data('booking-url');
 
             // -- reset active state of offers
             $(offerList).find(offerItem).removeClass(offerItemActiveClassName);
@@ -448,6 +449,7 @@ jQuery(function ($) {
             $('.booking-filter-field--offer-id').val(thisOfferID);
             $('.booking-filter-field--duration').val(thisOfferDuration);
             $('.booking-filter-field--daterange').val(thisOfferDateRange);
+            $('.booking-filter-field--bookingurl').val(thisOfferBookingUrl);
 
             // refresh price
             if ( thisOfferPrice !== '' ) {
