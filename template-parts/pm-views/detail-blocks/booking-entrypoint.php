@@ -245,7 +245,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     </div>
 
     <?php
-    if ( $args['view'] === 'row' ) {
+    if ( $args['view'] === 'rows' ) {
         ?>
         <div class="booking-filter-items-dates">
             <div class="h5">Termin wählen</div>
