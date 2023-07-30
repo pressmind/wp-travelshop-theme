@@ -130,9 +130,9 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         <?php if ( $args['view'] === 'calendar' ) { ?>
         <div class="booking-filter-item booking-filter-item--date-range">
             <button class="booking-filter-field booking-filter-field--date-range" data-placeholder="Bitte wählen">
-            <span class="booking-filter-field--icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
-            </span>
+                <span class="booking-filter-field--icon">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+                </span>
                 <small class="d-block">Termin wählen</small>
                 <span class="booking-filter-field--text">
                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
@@ -253,7 +253,8 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <div class="booking-filter-item--dates">
                 <?php echo Template::render(APPLICATION_PATH.'/pm-views/detail-blocks/booking-offers-rows.php', [
                     'date_departure' => $args['cheapest_price']->date_departure,
-                    'date_arrival' => $args['cheapest_price']->date_arrival
+                    'date_arrival' => $args['cheapest_price']->date_arrival,
+                    'offer_id' => $args['cheapest_price']->id
                 ]);?>
             </div>
         </div>
