@@ -1225,7 +1225,8 @@ jQuery(function ($) {
 
             thisDropdownInputs.removeAttr('checked');
 
-            thisDropdownInputs[0].trigger('change');
+            console.log(thisDropdownInputs);
+            thisDropdownInputs.trigger('change');
 
 
             e.stopPropagation();
