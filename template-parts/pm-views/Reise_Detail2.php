@@ -516,7 +516,7 @@ $args['breadcrumb'][] = $tmp;
                             // = = = > load the price box < = = =
                             $id_price_box_modal = uniqid();
                             $args['id_modal_price_box'] = $id_price_box_modal;
-                            $args['view'] = (isset($_GET) && isset($_GET['view'])) ? $_GET['view'] : 'calendar';
+                            $args['view'] = (isset($_GET) && isset($_GET['view'])) ? $_GET['view'] : 'calendar'; // @todo: steuerung nach anzahl terminen, view "row", default "calendar"
                             echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint.php', $args);
 
                             // = = = > load the on request row (only shown if the full product is on request < = = =
