@@ -39,6 +39,10 @@ foreach($offers as $offer){
 }
 ?>
 
+<pre>
+    <?php print_r($date_to_cheapest_price);
+</pre>
+
 <div class="booking-offer-items">
     <?php
     $activeOffer = false;
