@@ -247,8 +247,15 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     <?php
     if ( $args['view'] === 'rows' ) {
         ?>
-        <div class="booking-filter-items-dates">
+        <div class="booking-filter-items">
             <div class="h6">Termin wählen</div>
+
+            <div class="booking-filter-item--dates">
+                <?php echo Template::render(APPLICATION_PATH.'/pm-views/detail-blocks/booking-offers-rows.php', [
+                    'date_departure' => $args['cheapest_price']->date_departure,
+                    'date_arrival' => $args['cheapest_price']->date_arrival
+                ]);?>
+            </div>
         </div>
         <?php
     }
