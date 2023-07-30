@@ -51,7 +51,7 @@ foreach($offers as $offer){
             $activeOffer = true;
         }
 
-        $current_date = $offer->date_departure->format('Y-m-d');
+        $current_date = $offer->date_departure->format('Y-m-j');
 
         $priceHTML = '';
 
