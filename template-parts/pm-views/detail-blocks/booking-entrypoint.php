@@ -257,6 +257,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     'date_departure' => $args['cheapest_price']->date_departure,
                     'date_arrival' => $args['cheapest_price']->date_arrival,
                     'offer_id' => $args['cheapest_price']->id,
+                    'url' => $args['url'],
                     'filter' => [
                             'pm-tr' => $args['cheapest_price']->transport_type
                     ]
