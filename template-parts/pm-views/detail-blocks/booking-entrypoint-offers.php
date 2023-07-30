@@ -77,6 +77,11 @@ foreach($offers as $offer){
             >
                 <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" <?php echo ($activeOffer) ? 'checked="checked"' : ''; ?> />
 
+
+                <span>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
+                </span>
+
                 <div class="booking-offer-item-inner">
                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
                         'date_departure' => $offer->date_departure,
