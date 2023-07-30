@@ -25,9 +25,7 @@ $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' =>
 
 $date_to_cheapest_price = [];
 foreach($offers as $offer){
-    if($offer->duration != $args['cheapest_price']->duration) {
-        continue;
-    }
+
     // if the date has multiple prices, display only the cheapest
     if (!empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]) &&
         $offer->price_total < $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]->price_total
