@@ -31,6 +31,8 @@ $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' =>
         if ( $activeOffer === $args['offer_id'] ) {
             $activeOffer = true;
         }
+
+        echo $args['offer_id'];
         ?>
         <div class="booking-offer-item">
             <label for="offer<?php echo $offer->id; ?>">
