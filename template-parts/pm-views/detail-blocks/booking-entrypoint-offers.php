@@ -28,17 +28,13 @@ $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' =>
     <?php
     $activeOffer = false;
     foreach ( $offers as $offer ) {
-        if ( $activeOffer === $args['offer_id'] ) {
+        if ( $offer->id === $args['offer_id'] ) {
             $activeOffer = true;
         }
-
-        var_dump($args['offer_id']);
-        var_dump($offer->id);
-        var_dump($activeOffer);
         ?>
         <div class="booking-offer-item">
             <label for="offer<?php echo $offer->id; ?>">
-                <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" <?php echo (!$activeOffer) ? '' : 'checked="checked"'; ?> />
+                <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" <?php echo ($activeOffer) ? 'checked="checked"' : ''; ?> />
 
                 <div class="booking-offer-item-inner">
                     <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
