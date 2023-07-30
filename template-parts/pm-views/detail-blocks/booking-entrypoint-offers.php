@@ -44,9 +44,7 @@ foreach($offers as $offer){
     <?php
     $activeOffer = false;
     foreach ( $offers as $offer ) {
-        if ( $offer->id === $args['offer_id'] ) {
-            $activeOffer = true;
-        }
+        $activeOffer = ( $offer->id === $args['offer_id'] ) ? true : false;
 
         $current_date = $offer->date_departure->format('Y-m-j');
 

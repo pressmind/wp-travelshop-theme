@@ -14296,7 +14296,7 @@ ul.checklist {
 .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer {
   margin-top: 0; }
 
-.page-share .share-buttons .share-button {
+.page-share .share-buttons .share-button, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -14314,9 +14314,9 @@ ul.checklist {
   gap: 0.5rem;
   font-size: 1rem; }
   @media (min-width: 768px) {
-    .page-share .share-buttons .share-button {
+    .page-share .share-buttons .share-button, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label {
       gap: 1rem; } }
-  .page-share .share-buttons .share-button:hover, .page-share .share-buttons .share-button:focus, .page-share .share-buttons .share-button:active {
+  .page-share .share-buttons .share-button:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:hover, .page-share .share-buttons .share-button:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:focus, .page-share .share-buttons .share-button:active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:active {
     color: #212529;
     border-color: #212529;
     background-color: #e9ecef;
@@ -16483,31 +16483,6 @@ footer.footer-main {
           outline: none; }
     .detail-booking-entrypoint .booking-filter .booking-filter-items {
       margin-top: 1rem; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        border-radius: 0.25rem;
-        text-decoration: none;
-        font-weight: 700;
-        color: #212529;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #e9ecef;
-        background-color: #fff;
-        transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-        padding: 0.75rem 1rem;
-        gap: 0.5rem;
-        font-size: 1rem; }
-        @media (min-width: 768px) {
-          .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label {
-            gap: 1rem; } }
-        .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:active {
-          color: #212529;
-          border-color: #212529;
-          background-color: #e9ecef;
-          text-decoration: none; }
 
 .detail-box {
   margin-top: 0.5rem;
