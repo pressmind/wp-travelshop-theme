@@ -254,7 +254,10 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 <?php echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/booking-entrypoint-offers.php', [
                     'date_departure' => $args['cheapest_price']->date_departure,
                     'date_arrival' => $args['cheapest_price']->date_arrival,
-                    'offer_id' => $args['cheapest_price']->id
+                    'offer_id' => $args['cheapest_price']->id,
+                    'filter' => [
+                            'pm-tr' => $args['cheapest_price']->transport_type
+                    ]
                 ]);?>
             </div>
         </div>
