@@ -1191,8 +1191,6 @@ jQuery(function ($) {
 
             var thisTarget = $(e.target);
 
-            console.log(thisTarget);
-
             if ( !thisTarget.hasClass('input-clear') && !thisTarget.hasClass('input-clear') ) {
 
                 var thisDropdown = $(this);
@@ -1226,7 +1224,6 @@ jQuery(function ($) {
 
             thisDropdownInputs.removeAttr('checked');
             thisDropdownInputFirst.trigger('change');
-
 
             e.stopPropagation();
 
@@ -1468,7 +1465,6 @@ jQuery(function ($) {
                 // find non preview items
                 var thisItems = $(this).parents(categoryTreeExpandWrapper).find('.form-check[data-preview="false"]');
 
-                console.log(thisState);
                 if ( thisState === true ) {
                     thisItems.addClass('d-none');
 
