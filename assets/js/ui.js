@@ -1222,11 +1222,10 @@ jQuery(function ($) {
 
             var thisClear = $(this);
             var thisDropdownInputs = thisClear.parents(filterCategoryDropdown).find('input.form-check-input');
+            var thisDropdownInputFirst = thisClear.parents(filterCategoryDropdown).find('input.form-check-input:first');
 
             thisDropdownInputs.removeAttr('checked');
-
-            console.log(thisDropdownInputs);
-            thisDropdownInputs.trigger('change');
+            thisDropdownInputFirst.trigger('change');
 
 
             e.stopPropagation();
