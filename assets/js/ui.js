@@ -1211,12 +1211,17 @@ jQuery(function ($) {
         // -- clear dropdown
         categoryDropdownToggle.find(filterCategoryDropdownClear).on('click touch', function(e) {
 
+            e.preventDefault();
+
             var thisClear = $(this);
             var thisDropdownInputs = thisClear.parents(filterCategoryDropdown).find('input.form-check-input');
 
             thisDropdownInputs.removeAttr('checked');
 
             thisDropdownInputs[0].trigger('change');
+
+
+            e.stopPropagation();
 
         });
     }
