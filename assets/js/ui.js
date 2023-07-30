@@ -1189,21 +1189,26 @@ jQuery(function ($) {
         categoryDropdownToggle.on('click touch', function(e) {
             e.preventDefault();
 
-            var thisDropdown = $(this);
-            var thisDropdownWrapper = thisDropdown.parent();
+            var thisTarget = $(e.target);
 
-            if ( thisDropdownWrapper.hasClass(openClass) ) {
-                // -- add Class to this item
-                thisDropdownWrapper.removeClass(openClass);
-                thisDropdownWrapper.parent().find(filterCategoryBackdrop).removeClass(openClass);
+            if ( !thisTarget.hasClass('input-clear') ) {
+    
+                var thisDropdown = $(this);
+                var thisDropdownWrapper = thisDropdown.parent();
 
-            } else {
-                // remove all opens
-                $('body').find(filterCategoryDropdownToggle).parent().removeClass(openClass);
-                thisDropdownWrapper.addClass(openClass);
-                thisDropdownWrapper.parent().find(filterCategoryBackdrop).addClass(openClass);
+                if ( thisDropdownWrapper.hasClass(openClass) ) {
+                    // -- add Class to this item
+                    thisDropdownWrapper.removeClass(openClass);
+                    thisDropdownWrapper.parent().find(filterCategoryBackdrop).removeClass(openClass);
+
+                } else {
+                    // remove all opens
+                    $('body').find(filterCategoryDropdownToggle).parent().removeClass(openClass);
+                    thisDropdownWrapper.addClass(openClass);
+                    thisDropdownWrapper.parent().find(filterCategoryBackdrop).addClass(openClass);
+                }
+
             }
-
 
             e.stopPropagation();
         });
