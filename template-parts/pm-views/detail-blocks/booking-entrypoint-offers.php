@@ -72,6 +72,7 @@ foreach($offers as $offer){
                    class="booking-offer-item-label <?php echo ($activeOffer) ? 'is-active' : ''; ?>"
                    data-offer-id="<?php echo $offer->id; ?>"
                    data-duration="<?php echo $offer->duration; ?>"
+                   data-booking-url="<?php echo IB3Tools::get_bookinglink($date_to_cheapest_price[$current_date], $args['url'], null, null, true);?>"
                    data-daterange="<?php echo $dateDateRange; ?>"
             >
                 <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" <?php echo ($activeOffer) ? 'checked="checked"' : ''; ?> />
