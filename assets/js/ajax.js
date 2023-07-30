@@ -637,7 +637,7 @@ jQuery(function ($) {
                         // -- replace result content with stored placeholder
                         if ( $(e.target).hasClass('auto-complete-overlay') ) {
                             var targetResultReset = $(e.target).parents('.search-box-field--fulltext').find('.string-search-overlay-results');
-                            var thisPlaceholder = $(e.target).parents('.search-field-input--fulltext').data('search-placeholder');
+                            var thisPlaceholder = $(e.target).parents('.search-box-field--fulltext').find('.search-field-input--fulltext').data('search-placeholder');
 
                             console.log(targetResultReset);
                             console.log(thisPlaceholder);
