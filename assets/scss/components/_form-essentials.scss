@@ -396,6 +396,73 @@ select.form-control {
 /**
  * Custom radio , with second level
  */
+%custom-radio-circle {
+  display: block;
+
+  height: $custom-radio-input-size;
+  max-width: 100%;
+  width: $custom-radio-input-size;
+  flex: 0 0 $custom-radio-input-size;
+
+  position: relative;
+
+  line-height: 0;
+
+  border-radius: $custom-radio-input-border-radius;
+  background-color: $custom-radio-input-bg;
+
+  // offset top to make it center with first line
+  // little calculation based on font size base and lineheight
+  top: ( ($custom-radio-font-size * $custom-radio-line-height) / 2 );
+  transform: translateY(-($custom-radio-input-size / 2));
+
+  @if ( $custom-radio-input-border-width != 0 ) {
+    border: $custom-radio-input-border-width solid $custom-radio-input-border-color;
+  }
+
+  transition: background-color .3s, border-color $animation-speed-default;
+
+  svg {
+    width: $custom-radio-input-icon-size;
+    height: $custom-radio-input-icon-size;
+    display: none;
+    transition: color $animation-speed-default;
+    color: $custom-radio-input-icon-color;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-($custom-radio-input-icon-size/2), -($custom-radio-input-icon-size/2));
+  }
+}
+
+%custom-radio-circle-hover {
+  background-color: $custom-radio-input-hover-bg;
+
+  @if ( $custom-radio-input-border-width != 0 ) {
+    border: $custom-radio-input-border-width solid $custom-radio-input-hover-border-color;
+  }
+
+  svg {
+    display: none;
+    color: $custom-radio-input-hover-icon-color;
+  }
+}
+
+%custom-radio-circle-active {
+  background-color: $custom-radio-input-active-bg !important;
+
+  @if ( $custom-radio-input-border-width != 0 ) {
+    border: $custom-radio-input-border-width solid $custom-radio-input-active-border-color;
+  }
+
+  svg {
+    display: block !important;
+    color: $custom-radio-input-active-icon-color;
+  }
+}
+
 %custom-radio {
   display: flex;
   flex-direction: row;
@@ -424,77 +491,21 @@ select.form-control {
   // custom input
   > span,
   > div:not(.list-filter-second-level) {
-    display: block;
-
-    height: $custom-radio-input-size;
-    max-width: 100%;
-    width: $custom-radio-input-size;
-    flex: 0 0 $custom-radio-input-size;
-
-    position: relative;
-
-    line-height: 0;
-
-    border-radius: $custom-radio-input-border-radius;
-    background-color: $custom-radio-input-bg;
-
-    // offset top to make it center with first line
-    // little calculation based on font size base and lineheight
-    top: ( ($custom-radio-font-size * $custom-radio-line-height) / 2 );
-    transform: translateY(-($custom-radio-input-size / 2));
-
-    @if ( $custom-radio-input-border-width != 0 ) {
-      border: $custom-radio-input-border-width solid $custom-radio-input-border-color;
-    }
-
-    transition: background-color .3s, border-color $animation-speed-default;
-
-    svg {
-      width: $custom-radio-input-icon-size;
-      height: $custom-radio-input-icon-size;
-      display: none;
-      transition: color $animation-speed-default;
-      color: $custom-radio-input-icon-color;
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      transform: translate(-($custom-radio-input-icon-size/2), -($custom-radio-input-icon-size/2));
-    }
+    @extend %custom-radio-circle;
   }
 
   // hover
   &:hover {
     > span,
     > div:not(.list-filter-second-level) {
-
-      background-color: $custom-radio-input-hover-bg;
-
-      @if ( $custom-radio-input-border-width != 0 ) {
-        border: $custom-radio-input-border-width solid $custom-radio-input-hover-border-color;
-      }
-
-      svg {
-        display: none;
-        color: $custom-radio-input-hover-icon-color;
-      }
+      @extend %custom-radio-circle-hover;
     }
   }
 
   // active
   input:checked + span,
   input:checked + div:not(.list-filter-second-level) {
-    background-color: $custom-radio-input-active-bg !important;
-
-    @if ( $custom-radio-input-border-width != 0 ) {
-      border: $custom-radio-input-border-width solid $custom-radio-input-active-border-color;
-    }
-
-    svg {
-      display: block !important;
-      color: $custom-radio-input-active-icon-color;
-    }
+    @extend %custom-radio-circle-active,
   }
 }
 

@@ -140,9 +140,32 @@
             .booking-offer-item-label {
               @extend %share-action-button;
 
-              &.is-active {
+              // -- input
+              > input {
+                display: none;
+
+                + span {
+                  @extend %custom-radio-circle;
+                }
+              }
+
+              &:hover, &:focus, &:active {
+                > input + span {
+                  @extend %custom-radio-circle-hover;
+                }
+              }
+
+              > input:checked + span {
+                @extend %custom-radio-circle-active;
+              }
+
+              &.is-active,
+              &.is-active:hover,
+              &.is-active:active,
+              &.is-active:focus {
                 color: $share-item-hover-color;
                 border-color: $share-item-hover-border-color;
+                background-color: $share-item-bg;
                 border-width: .125rem; // 2px
               }
             }

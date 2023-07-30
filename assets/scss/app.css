@@ -11996,6 +11996,75 @@ form.form-string-search.input-group, .content-block.content-block-list-filter .l
 /**
  * Custom radio , with second level
  */
+.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > span,
+.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level),
+.detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > div:not(.list-filter-second-level), .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input + span {
+  display: block;
+  height: 1rem;
+  max-width: 100%;
+  width: 1rem;
+  flex: 0 0 1rem;
+  position: relative;
+  line-height: 0;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 0.75rem;
+  transform: translateY(-0.5rem);
+  border: 1px solid #adb5bd;
+  transition: background-color 0.3s, border-color 0.3s; }
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > span svg,
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg,
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > div:not(.list-filter-second-level) svg, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input + span svg {
+    width: 0.5rem;
+    height: 0.5rem;
+    display: none;
+    transition: color 0.3s;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-0.25rem, -0.25rem); }
+
+.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > span,
+.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level),
+.detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > div:not(.list-filter-second-level), .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:hover > input + span, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:focus > input + span, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:active > input + span {
+  background-color: #fff;
+  border: 1px solid #007bff; }
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > span svg,
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level) svg,
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > div:not(.list-filter-second-level) svg, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:hover > input + span svg, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:focus > input + span svg, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:active > input + span svg {
+    display: none;
+    color: #fff; }
+
+.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + span,
+.dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level),
+.dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level),
+.detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div:not(.list-filter-second-level), .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input:checked + span {
+  background-color: #007bff !important;
+  border: 1px solid #007bff; }
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + span svg,
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level) svg,
+  .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level) svg,
+  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div:not(.list-filter-second-level) svg, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input:checked + span svg {
+    display: block !important;
+    color: #fff; }
+
 .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio {
   display: flex;
   flex-direction: row;
@@ -12010,72 +12079,6 @@ form.form-string-search.input-group, .content-block.content-block-list-filter .l
   .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > label, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > label, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > label, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > label, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > label {
     flex: 1;
     margin-bottom: 0; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > span,
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level),
-  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > div:not(.list-filter-second-level) {
-    display: block;
-    height: 1rem;
-    max-width: 100%;
-    width: 1rem;
-    flex: 0 0 1rem;
-    position: relative;
-    line-height: 0;
-    border-radius: 50%;
-    background-color: #fff;
-    top: 0.75rem;
-    transform: translateY(-0.5rem);
-    border: 1px solid #adb5bd;
-    transition: background-color 0.3s, border-color 0.3s; }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > span svg,
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio > div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio > div:not(.list-filter-second-level) svg,
-    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio > div:not(.list-filter-second-level) svg {
-      width: 0.5rem;
-      height: 0.5rem;
-      display: none;
-      transition: color 0.3s;
-      color: #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-0.25rem, -0.25rem); }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > span,
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level),
-  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > div:not(.list-filter-second-level) {
-    background-color: #fff;
-    border: 1px solid #007bff; }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > span svg,
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio:hover > div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio:hover > div:not(.list-filter-second-level) svg,
-    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio:hover > div:not(.list-filter-second-level) svg {
-      display: none;
-      color: #fff; }
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + span, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + span, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + span, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + span,
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level),
-  .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level),
-  .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div:not(.list-filter-second-level) {
-    background-color: #007bff !important;
-    border: 1px solid #007bff; }
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + span svg, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + span svg, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + span svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + span svg,
-    .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio input:checked + div:not(.list-filter-second-level) svg,
-    .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio input:checked + div:not(.list-filter-second-level) svg,
-    .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--transport-type .booking-filter-radio .form-radio input:checked + div:not(.list-filter-second-level) svg {
-      display: block !important;
-      color: #fff; }
 
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items .form-radio, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body .form-radio, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items .form-radio, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body .form-radio {
@@ -16483,9 +16486,12 @@ footer.footer-main {
           outline: none; }
     .detail-booking-entrypoint .booking-filter .booking-filter-items {
       margin-top: 1rem; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active {
+      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input {
+        display: none; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:focus {
         color: #212529;
         border-color: #212529;
+        background-color: #fff;
         border-width: .125rem; }
 
 .detail-box {
