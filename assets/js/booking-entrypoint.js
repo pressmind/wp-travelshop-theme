@@ -428,7 +428,7 @@ jQuery(function ($) {
             e.preventDefault();
 
             var thisOffer = $(this);
-            var thisOfferId = thisOffer.data('offer-id');
+            var thisOfferID = thisOffer.data('offer-id');
             var thisOfferPrice = thisOffer.data('price-html');
             var thisOfferDuration = thisOffer.data('duration');
             var thisOfferDateRange = thisOffer.data('daterange');
@@ -442,6 +442,17 @@ jQuery(function ($) {
             thisOffer.addClass(offerItemActiveClassName);
             thisOffer.find('input').prop('checked', true);
             thisOffer.find('input').attr('checked', 'checked');
+
+            // set dateID to booking entrypoint form
+            // set daterange to booking entrypoint form
+            $('.booking-filter-field--offer-id').val(thisOfferID);
+            $('.booking-filter-field--duration').val(thisOfferDuration);
+            $('.booking-filter-field--daterange').val(thisOfferDateRange);
+
+            // refresh price
+            if ( thisOfferPrice !== '' ) {
+                $('.booking-action-row .price-box-discount').html(thisOfferPrice);
+            }
 
             e.stopPropagation();
         });
