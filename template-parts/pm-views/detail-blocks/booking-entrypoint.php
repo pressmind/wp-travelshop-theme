@@ -126,6 +126,8 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             </div>
         </div>
 
+
+        <?php if ( $args['view'] === 'calendar' ) { ?>
         <div class="booking-filter-item booking-filter-item--date-range">
             <button class="booking-filter-field booking-filter-field--date-range" data-placeholder="Bitte wählen">
             <span class="booking-filter-field--icon">
@@ -143,7 +145,6 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     +8
                 </span>
             </button>
-
             <div class="booking-filter-calendar-overlay">
                 <div class="booking-filter-calendar-overlay-inner">
                     <div class="booking-filter-calendar-overlay-content">
@@ -170,6 +171,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 </div>
             </div>
         </div>
+        <?php } ?>
 
         <?php if ( in_array('FLUG', $transport_types) ) { ?>
         <div class="booking-filter-item booking-filter-item--airport <?php echo ( $args['cheapest_price']->transport_type !== 'FLUG' ) ? 'd-none' : ''; ?>">
