@@ -24,4 +24,5 @@ $filter->occupancies_disable_fallback = false;
 $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
 ?>
 
+<?php print_r($args); ?>
 <?php print_r($offers); ?>
