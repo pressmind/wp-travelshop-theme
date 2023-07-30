@@ -339,7 +339,7 @@ template {
   display: none !important; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .page-share .share-object .share-object-body strong, .h6 {
+.h1, .h2, .h3, .h4, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong, .h6 {
   margin-bottom: 1rem;
   font-weight: 500;
   line-height: 1.2; }
@@ -356,7 +356,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.5rem; }
 
-h5, .h5, .page-share .share-object .share-object-body strong {
+h5, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong {
   font-size: 1.25rem; }
 
 h6, .h6 {
@@ -11136,7 +11136,7 @@ body {
     body {
       padding-top: 91px; } }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .page-share .share-object .share-object-body strong, h6, .h6, .personen-select .personen-select-title {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong, h6, .h6, .personen-select .personen-select-title {
   font-weight: 500;
   margin-bottom: 1rem;
   line-height: 1.2; }
@@ -11190,10 +11190,10 @@ h4, .h4 {
     h4, .h4 {
       font-size: 1.5rem; } }
 
-h5, .h5, .page-share .share-object .share-object-body strong {
+h5, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong {
   font-size: 1rem; }
   @media (min-width: 992px) {
-    h5, .h5, .page-share .share-object .share-object-body strong {
+    h5, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong {
       font-size: 1.25rem; } }
 
 h6, .h6 {
@@ -11263,7 +11263,7 @@ body.fl-builder .content-block.content-page {
   margin-top: 0 !important;
   padding-top: 0 !important; }
 
-.media-cover > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .string-search-overlay .string-search-overlay-results .string-search-placeholder-items .items-wrapper > .search-item > a .search-item-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img, .page-share .share-object .share-object-image > img, .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item .accordion-gallery-item--image > img,
+.media-cover > img, .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-featured-image > img, .teaser.category-product-teaser .teaser-category-image > a .teaser-image > img, .teaser.month-teaser > a div.month-teaser-image > img, .teaser.wp-teaser .teaser-image > img, .teaser.image-teaser .teaser-image > img, .string-search-overlay .string-search-overlay-results .string-search-placeholder-items .items-wrapper > .search-item > a .search-item-image > img, .layout-block.layout-block-search-header .layout-block-search-header--media > img, .jumbotron .jumbotron-background > img, .dropdown-menu.dropdown-menu-wishlist #wishlist-result .wishlist-item .wishlist-item-image > a > img, .page-share .share-object .share-object-image > img, .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item .accordion-gallery-item--image > img,
 .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item .text-block-gallery-item--image > img,
 .accordion-block-gallery .text-block-gallery--inner .teaser-block-gallery-item .teaser-block-gallery-item--image > img,
 .accordion-block-gallery .text-block-gallery--inner .text-block-gallery-item .accordion-gallery-item--image > img,
@@ -11353,7 +11353,7 @@ body.fl-builder .content-block.content-page {
   width: 100%;
   height: 100%; }
 
-.media-cover, .teaser.category-product-teaser .teaser-category-image > a .teaser-image, .teaser.month-teaser > a div.month-teaser-image, .teaser.wp-teaser .teaser-image, .teaser.image-teaser .teaser-image, .string-search-overlay .string-search-overlay-results .string-search-placeholder-items .items-wrapper > .search-item > a .search-item-image {
+.media-cover, .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-featured-image, .teaser.category-product-teaser .teaser-category-image > a .teaser-image, .teaser.month-teaser > a div.month-teaser-image, .teaser.wp-teaser .teaser-image, .teaser.image-teaser .teaser-image, .string-search-overlay .string-search-overlay-results .string-search-placeholder-items .items-wrapper > .search-item > a .search-item-image {
   position: relative;
   overflow: hidden; }
 
@@ -11560,6 +11560,65 @@ hr + .content-block {
   .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
     color: #212529;
     background-color: #fff; }
+.string-search-overlay-results > div:first-child.autocomplete-suggestion {
+  padding-top: 1rem; }
+  .string-search-overlay-results > div:first-child.autocomplete-suggestion + .autocomplete-group {
+    margin-top: 0 !important;
+    border-top: 0 !important; }
+.string-search-overlay-results > div:not(.string-search-placeholder):last-child {
+  padding-bottom: 1rem; }
+
+.autocomplete-group {
+  padding-top: 1rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.875rem;
+  color: #212529;
+  font-weight: 700; }
+
+.autocomplete-suggestion + .autocomplete-group {
+  margin-top: 1rem;
+  border-top: 1px solid #e9ecef; }
+.autocomplete-suggestion .string-search-suggestion {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  align-items: center; }
+  .autocomplete-suggestion .string-search-suggestion .suggestion-left {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .75rem;
+    align-items: center; }
+    .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-featured-image {
+      flex: 0 0 2.5rem;
+      width: 100%;
+      max-width: 2.5rem;
+      height: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.2rem; }
+    .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-string {
+      flex: 1;
+      font-weight: 700; }
+      @media (min-width: 768px) {
+        .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-string {
+          font-size: 1.125rem; } }
+  .autocomplete-suggestion .string-search-suggestion .suggestion-right,
+  .autocomplete-suggestion .string-search-suggestion .suggestion-price,
+  .autocomplete-suggestion .string-search-suggestion > svg {
+    flex: 0; }
+  .autocomplete-suggestion .string-search-suggestion .suggestion-price {
+    white-space: nowrap;
+    text-align: right; }
+  .autocomplete-suggestion .string-search-suggestion > svg {
+    width: 1.25rem;
+    height: 1.25rem; }
+.autocomplete-suggestion + .autocomplete-suggestion {
+  margin-top: .75rem; }
+
 .icon-link {
   display: flex;
   flex-direction: row;
@@ -12618,7 +12677,7 @@ ul.checklist {
       margin-right: -.5rem;
       margin-bottom: 1.5rem;
       border-bottom: 1px solid #e9ecef; }
-      .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header .h5, .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header strong {
+      .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header .h5, .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header .autocomplete-group, .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body .search-field-input--category .category-tree-field-dropdown .category-tree-field-dropdown-header strong {
         margin-bottom: 0;
         height: 3rem;
         line-height: 3rem; }
@@ -15187,7 +15246,7 @@ ul.checklist {
     margin-right: -.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #e9ecef; }
-    .daterange-overlay .daterange-overlay-header .h5, .daterange-overlay .daterange-overlay-header .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body .daterange-overlay .daterange-overlay-header strong {
+    .daterange-overlay .daterange-overlay-header .h5, .daterange-overlay .daterange-overlay-header .autocomplete-group, .daterange-overlay .daterange-overlay-header .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body .daterange-overlay .daterange-overlay-header strong {
       margin-bottom: 0;
       height: 3rem;
       line-height: 3rem; }
@@ -16024,11 +16083,11 @@ footer.footer-main {
       @media (min-width: 992px) {
         footer.footer-main .footer-main--boxes .col-footer-box {
           padding-bottom: 30px; } }
-    footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
+    footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .autocomplete-group, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
       margin-bottom: 0;
       padding-bottom: 0.5rem; }
       @media (min-width: 992px) {
-        footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
+        footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .autocomplete-group, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
           padding-bottom: 1rem; } }
     footer.footer-main .footer-main--boxes .nav.flex-column {
       gap: 0.25rem; }
