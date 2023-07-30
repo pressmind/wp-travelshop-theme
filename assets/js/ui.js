@@ -1193,7 +1193,7 @@ jQuery(function ($) {
 
             console.log(thisTarget);
 
-            if ( !thisTarget.hasClass('input-clear') ) {
+            if ( !thisTarget.hasClass('input-clear') && !thisTarget.hasClass('input-clear') ) {
 
                 var thisDropdown = $(this);
                 var thisDropdownWrapper = thisDropdown.parent();
