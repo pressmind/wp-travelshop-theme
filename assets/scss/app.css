@@ -16486,16 +16486,18 @@ footer.footer-main {
           outline: none; }
     .detail-booking-entrypoint .booking-filter .booking-filter-items {
       margin-top: 1rem; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input {
-        display: none; }
-        .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input + span {
-          top: unset !important;
-          transform: translateY(0) !important; }
-      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:focus {
-        color: #212529;
-        border-color: #212529;
-        background-color: #fff;
-        border-width: .125rem; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label {
+        gap: 0.5rem !important; }
+        .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input {
+          display: none; }
+          .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label > input + span {
+            top: unset !important;
+            transform: translateY(0) !important; }
+        .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:active, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active:focus {
+          color: #212529;
+          border-color: #212529;
+          background-color: #fff;
+          border-width: .125rem; }
 
 .detail-box {
   margin-top: 0.5rem;

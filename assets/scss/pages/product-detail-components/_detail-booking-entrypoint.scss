@@ -140,6 +140,9 @@
             .booking-offer-item-label {
               @extend %share-action-button;
 
+              // gap reset
+              gap: 0.5rem !important;
+
               // -- input
               > input {
                 display: none;

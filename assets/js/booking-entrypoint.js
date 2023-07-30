@@ -414,4 +414,32 @@ jQuery(function ($) {
             requestHandlerBookingCalendar(calendarRequest);
         }
     }
+
+    /**
+     * Offers list
+     */
+    let offerList = '.booking-offer-items';
+    let offerItem = '.booking-offer-item-label';
+    let offerItemActiveClassName = 'is-active';
+
+    if ( $(offerList).length > 0 && $(offerItem).length > 0 ) {
+
+        $(offerItem).on('click touch', function(e) {
+            e.preventDefault();
+
+            var thisOffer = $(this);
+
+            // -- reset active state of offers
+            $(offerList).find(offerItem).removeClass(offerItemActiveClassName);
+            $(offerList).find('input').removeAttr('checked');
+
+            // -- set this state
+            thisOffer.addClass(offerItemActiveClassName);
+            thisOffer.find('input').attr('checked', 'checked');
+
+            e.stopPropagation();
+        });
+
+    }
+
 });
