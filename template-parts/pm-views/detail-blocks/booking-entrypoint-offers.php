@@ -39,9 +39,6 @@ foreach($offers as $offer){
 }
 ?>
 
-<pre>
-    <?php print_r($date_to_cheapest_price['2024-02-06']); ?>
-</pre>
 
 <div class="booking-offer-items">
     <?php
