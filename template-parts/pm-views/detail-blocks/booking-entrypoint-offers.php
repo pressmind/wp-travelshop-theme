@@ -71,6 +71,7 @@ foreach($offers as $offer){
                    for="offer<?php echo $offer->id; ?>"
                    class="booking-offer-item-label <?php echo ($activeOffer) ? 'is-active' : ''; ?>"
                    data-offer-id="<?php echo $offer->id; ?>"
+                   data-duration="<?php echo $offer->duration; ?>"
                    data-daterange="<?php echo $dateDateRange; ?>"
             >
                 <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" <?php echo ($activeOffer) ? 'checked="checked"' : ''; ?> />

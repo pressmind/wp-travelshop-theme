@@ -428,6 +428,10 @@ jQuery(function ($) {
             e.preventDefault();
 
             var thisOffer = $(this);
+            var thisOfferId = thisOffer.data('offer-id');
+            var thisOfferPrice = thisOffer.data('price-html');
+            var thisOfferDuration = thisOffer.data('duration');
+            var thisOfferDateRange = thisOffer.data('daterange');
 
             // -- reset active state of offers
             $(offerList).find(offerItem).removeClass(offerItemActiveClassName);
