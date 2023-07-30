@@ -66,9 +66,6 @@ global $PMTravelShop;
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 <?php } ?>
-<?php
-load_template_transient(get_template_directory().'/template-parts/layout-blocks/cookie-consent.php', false);
-?>
 <header class="header-main">
     <div class="container">
         <div class="row header-main-row align-items-center">

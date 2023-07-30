@@ -148,6 +148,12 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
 </footer>
 
 <?php require 'template-parts/pm-search/search/string-search-placeholder.php'; ?>
+
+
+<?php
+load_template_transient(get_template_directory().'/template-parts/layout-blocks/cookie-consent.php', false);
+?>
+
 <?php //load_template(get_template_directory() . '/template-parts/layout-blocks/auto-modal.php'); ?>
 <?php
 wp_footer();
