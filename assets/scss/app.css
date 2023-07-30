@@ -16483,6 +16483,10 @@ footer.footer-main {
           outline: none; }
     .detail-booking-entrypoint .booking-filter .booking-filter-items {
       margin-top: 1rem; }
+      .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label.is-active {
+        color: #212529;
+        border-color: #212529;
+        border-width: .125rem; }
 
 .detail-box {
   margin-top: 0.5rem;

@@ -139,6 +139,12 @@
           .booking-offer-item {
             .booking-offer-item-label {
               @extend %share-action-button;
+
+              &.is-active {
+                color: $share-item-hover-color;
+                border-color: $share-item-hover-border-color;
+                border-width: .125rem; // 2px
+              }
             }
           }
         }
