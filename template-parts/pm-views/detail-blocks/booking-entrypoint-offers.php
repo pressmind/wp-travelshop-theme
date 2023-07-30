@@ -62,9 +62,19 @@ foreach($offers as $offer){
                 'cheapest_price' => $date_to_cheapest_price[$current_date],
             ]);
         }
+
+        $dateDateRange = Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
+            'date_departure' => $date_to_cheapest_price[$current_date]->date_departure,
+            'date_arrival' => $date_to_cheapest_price[$current_date]->date_arrival
+        ]);
         ?>
         <div class="booking-offer-item">
-            <label data-price-html='<?php echo $priceHTML; ?>' for="offer<?php echo $offer->id; ?>" class="booking-offer-item-label" data-offer-id="<?php echo $offer->id; ?>">
+            <label data-price-html='<?php echo $priceHTML; ?>'
+                   for="offer<?php echo $offer->id; ?>"
+                   class="booking-offer-item-label"
+                   data-offer-id="<?php echo $offer->id; ?>"
+                   data-daterange="<?php echo $dateDateRange; ?>"
+            >
                 <input type="radio" name="offer" id="offer<?php echo $offer->id; ?>" <?php echo ($activeOffer) ? 'checked="checked"' : ''; ?> />
 
                 <div class="booking-offer-item-inner">
