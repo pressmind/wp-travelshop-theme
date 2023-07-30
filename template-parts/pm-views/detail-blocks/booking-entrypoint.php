@@ -251,7 +251,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <div class="h6">Termin wählen</div>
 
             <div class="booking-filter-item--dates">
-                <?php echo Template::render(APPLICATION_PATH.'/pm-views/detail-blocks/booking-entrypoint-offers.php', [
+                <?php echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/booking-entrypoint-offers.php', [
                     'date_departure' => $args['cheapest_price']->date_departure,
                     'date_arrival' => $args['cheapest_price']->date_arrival,
                     'offer_id' => $args['cheapest_price']->id
