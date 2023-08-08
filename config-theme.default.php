@@ -366,6 +366,7 @@ define('TS_SEARCH_AUTOCOMPLETE', []);
  * ]);
  * </code>
  */
+
 define('TS_SEARCH', []);
 
 /**

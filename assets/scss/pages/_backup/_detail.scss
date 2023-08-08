@@ -1,0 +1,349 @@
+.content-block-detail-info-grid {
+	// -- price box
+	.detail-price-box {
+		position: relative;
+		border: 1px solid $card-border-color;
+		padding: $grid-gutter-width 15px $grid-gutter-width 15px;
+		margin: 0 0 $grid-gutter-width 0;
+		@include border-radius($card-border-radius);
+
+		.add-to-wishlist {
+			position: absolute;
+			cursor: pointer;
+			right: 0;
+			top: 0;
+			padding: .5rem;
+			svg {
+				pointer-events: none;
+				.wishlist-heart {
+					fill: #fff;
+					stroke: $primary;
+				}
+			}
+			&.active {
+				svg {
+					.wishlist-heart {
+						stroke: $primary;
+						fill: $primary;
+					}
+				}
+			}
+		}
+
+		.discount-wrapper {
+			position: relative;
+			margin: 1rem 0 0.8rem 0;
+
+			top: 5px;
+			/* margin-bottom: 3px; */
+
+			p {
+				font-size: 0.8rem;
+
+				margin: 0;
+
+				width: 100%;
+				text-align: center;
+
+				.msg {
+					background-color: white;
+					position: relative;
+					padding: 0px 2px;
+				}
+			}
+
+			hr {
+				display: block;
+				position: absolute;
+				bottom: 7px;
+				margin: 1px;
+				width: 100%;
+			}
+
+			@include discount_label;
+
+			.discount-label{
+				padding: 5px 10px;
+			}
+
+		}
+
+		a.detail-pdf-download {
+			color: $gray-700;
+			transition: color;
+
+			&:focus,
+			&:active {
+				color: $gray-700;
+				text-decoration: none;
+			}
+
+			&:hover,
+			&:hover:focus,
+			&:hover:active {
+				color: $primary;
+				text-decoration: none;
+			}
+		}
+
+		// -- termine dropdown
+		.dropdown.dropdown-termine {
+			button.dropdown-toggle,
+			button.dropdown-toggle:hover,
+			button.dropdown-toggle:focus,
+			button.dropdown-toggle:active,
+			button.dropdown-toggle:hover:active,
+			button.dropdown-toggle:hover:focus {
+				border: 0;
+				padding: 0;
+				background: transparent;
+				outline: none;
+				box-shadow: none;
+
+				&:after {
+					display: none;
+				}
+			}
+
+			button.dropdown-toggle {
+				color: $primary;
+				transition: color 0$animation-speed-default;
+
+				&:hover {
+					color: darken($primary, 15%);
+				}
+			}
+
+			// -- dropdown
+			.dropdown-menu {
+				padding: 0.75rem;
+				font-size: 0.75rem;
+
+				p {
+					margin: 0;
+
+					+ p {
+						margin: 0.5rem 0 0 0;
+						padding-top: 0.5rem;
+						border-top: 1px solid $gray-400;
+					}
+				}
+			}
+		}
+
+		.circle {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			text-align: center;
+			display: inline-block;
+			background-color: gray;
+			margin-right: 4px;
+
+			&.green {
+				background-color: #28a745;
+			}
+
+			&.orange {
+				background-color: orange;
+			}
+
+			&.red {
+				background-color: red;
+			}
+		}
+	}
+
+	// -- booking button
+	a.btn-booking {
+		margin: 0 0 $grid-gutter-width 0;
+		font-weight: bold;
+
+		&.green{
+			background-color: $cta-detail-page;
+			border-color: $cta-detail-page;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: lighten( $cta-detail-page, 15%)!important;
+				border-color: lighten( $cta-detail-page, 15%)!important;
+			}
+			&.active {
+				background-color: darken( $cta-detail-page, 30%)!important;
+				border-color: lighten( $cta-detail-page, 30%)!important;
+			}
+		}
+
+
+
+	}
+}
+
+// -- scroll nav
+.detail-scroll-nav {
+	margin: $grid-gutter-width 0;
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		border-bottom: 1px solid $card-border-color;
+
+		> li {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+
+			+ li {
+				margin: 0 0 0 1.5rem;
+			}
+
+			a {
+				display: block;
+				padding-bottom: 0.5rem;
+				color: $gray-700;
+				transition: all 0$animation-speed-default;
+
+				&:active,
+				&:focus {
+					color: $gray-700;
+					text-decoration: none;
+				}
+
+				&:hover,
+				&:hover:focus,
+				&:hover:active {
+					color: $primary;
+					text-decoration: none;
+				}
+			}
+
+			&.active a,
+			&.active a:hover,
+			&.active a:focus,
+			&.active a:active,
+			&.active a:hover:focus,
+			&.active a:hover:active {
+				color: $primary;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// -- detail reise content
+.detail-reise-content {
+	// -- h3
+	h3 {
+		font-size: 1.5rem;
+		margin: 0 0 1.5rem;
+	}
+
+	// -- h5
+	h5 {
+		font-weight: 700;
+		font-size: $font-size-sm;
+		letter-spacing: 1.5px;
+		margin: 0 0 0.625rem;
+		text-transform: uppercase;
+	}
+
+	p + h5 {
+		margin-top: 1.25rem;
+	}
+
+	img {
+		margin-bottom: 1rem;
+	}
+
+	ul.default-list {
+		margin: 0 0 1rem 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			padding: 0 0 0 0;
+			position: relative;
+			margin: 0;
+
+			+ li {
+				margin: 0.25rem 0 0 0;
+			}
+
+			i {
+				position: absolute;
+				left: 0;
+				top: 3px;
+
+				font-size: 1.125rem;
+				color: $primary;
+			}
+		}
+		li:before {
+			content: "\00BB \0020";
+		}
+	}
+
+	ul.checked-list {
+		margin: 0 0 1rem 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			padding: 0 0 0 0;
+			position: relative;
+			margin: 0 0 0 25px;
+
+			i {
+				position: absolute;
+				left: 0;
+				top: 3px;
+
+				font-size: 1.125rem;
+				color: $primary;
+			}
+		}
+		li:before {
+			content: "";
+			background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22icon%20icon-tabler%20icon-tabler-check%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2024%2024%22%20stroke-width%3D%223%22%20stroke%3D%22%2373b116%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M5%2012l5%205l10%20-10%22%20%2F%3E%0A%3C%2Fsvg%3E");
+			background-repeat: no-repeat;
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			left: -22px;
+			top: 4px;
+			display: block;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.sticky-container {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 85px;
+		margin-bottom: 2rem;
+	}
+}
+
+// -- sticky booking cta
+.sticky-booking-cta {
+	display: none;
+}
+
+@include media-breakpoint-down(md) {
+	.sticky-booking-cta {
+		position: fixed;
+		z-index: 50;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		display: block;
+
+		padding: $grid-gutter-width;
+		background-color: #fff;
+		border-top: $gray-400 1px solid;
+	}
+}

@@ -1,0 +1,259 @@
+// -- image grid
+.detail-image-grid {
+  .detail-image-grid-holder {
+    margin: 0 0 $grid-gutter-width 0;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      @include border-radius($card-border-radius);
+    }
+
+    @include noselect();
+
+    span.copyright {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      padding: .25rem;
+
+      line-height: 1;
+      font-size: $font-size-sm;
+
+      @include border-radius($card-border-radius 0 $card-border-radius 0);
+
+      color: #fff;
+      background-color: rgba(#000, .25);
+    }
+
+    span.more-images {
+      @include border-radius($card-border-radius);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 4;
+      bottom: 0;
+      pointer-events: none;
+      background-color: rgba(#000, .25);
+
+      span.count {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        font-size: 2rem;
+        font-weight: bold;
+
+        color: #fff;
+        text-shadow: 0 0 10px rgba(#000, .5);
+
+        transform: translate(-50%, -50%);
+      }
+    }
+
+
+    .detail-image-grid-holder-inner {
+      @include aspect-ratio(1600, 1000);
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &--small .detail-image-grid-holder-inner {
+      @include aspect-ratio(300, 288);
+    }
+  }
+}
+
+// ------------------------------------------
+// --- Gallery Overlay
+// -------------------------------------------
+
+.detail-gallery-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(#000, .85);
+
+  transition: opacity $animation-speed-default;
+  opacity: 0;
+  pointer-events: none;
+
+  &.is--show {
+    pointer-events: auto;
+    opacity: 1;
+
+  }
+
+  // -- close
+  button.detail-gallery-overlay-close {
+    @include resetbutton();
+
+    position: absolute;
+    top: $grid-gutter-width;
+    right: $grid-gutter-width;
+
+    color: rgba(#fff, .5);
+    transition: color $animation-speed-default;
+    font-size: 1rem;
+    background-color: rgba(#fff, .05);
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    text-shadow: 0 0 10px #000;
+    line-height: 40px;
+    text-align: center;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  // -- slider
+  .detail-gallery-overlay-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -40px;
+    height: 70vh;
+    left: 0;
+    right: 0;
+    bottom: auto;
+
+    .tns-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: $grid-gutter-width;
+      right: $grid-gutter-width;
+
+      margin-top: 40px;
+      pointer-events: none;
+      z-index: 20;
+
+      >button {
+        pointer-events: none;
+        @include resetbutton();
+        display: inline-block;
+        float: left;
+        color: rgba(#fff, .5);
+        transition: color $animation-speed-default;
+        text-shadow: 0 0 10px #000;
+
+        font-size: 1rem;
+
+        background-color: rgba(#fff, .05);
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        line-height: 40px;
+        text-align: center;
+
+        &:hover {
+          color: #fff;
+        }
+
+        +button {
+          float: right;
+        }
+      }
+    }
+
+    .detail-gallery-overlay-item {
+      position: relative;
+
+      // -- image handling
+      .detail-gallery-overlay-item--image {
+        height: 70vh;
+        position: relative;
+        width: 100%;
+
+        >img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 50px;
+          top: 0;
+
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      // -- caption
+      .detail-gallery-overlay-item--caption {
+        position: absolute;
+        bottom: $grid-gutter-width;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 10;
+        color: #fff;
+        text-shadow: 0 10px 10px #000;
+        text-align: center;
+
+        small {
+          display: block;
+          clear: both;
+          margin-top: ($grid-gutter-width / 3);
+        }
+
+        @include noselect();
+      }
+    }
+  }
+
+  &.is--show .detail-gallery-overlay-slider .tns-controls button {
+    pointer-events: auto;
+  }
+
+  // -- thumbnails
+  #detail-gallery-thumbnails {
+    position: absolute;
+    bottom: $grid-gutter-width;
+    left: 0;
+    right: 0;
+
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+    overflow-y: auto;
+    text-align: center;
+    white-space: nowrap;
+
+    .detail-gallery-thumbnail-item {
+      display: inline-block;
+
+      cursor: pointer;
+      opacity: .5;
+
+      transition: opacity $animation-speed-default;
+
+      &:hover,
+      &.tns-nav-active {
+        opacity: 1;
+      }
+
+      img {
+        height: 50px !important;
+        width: 50px !important;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ global $wp_query;
 ?>
     <main>
 
-        <div class="content-main content-main--posts">
+        <div class="content-main content-main--posts" id="content-main">
 
             <div class="container">
 

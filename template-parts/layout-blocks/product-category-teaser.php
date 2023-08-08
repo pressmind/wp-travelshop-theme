@@ -29,8 +29,8 @@ use Pressmind\Travelshop\Template;
  */
 ?>
 <section class="content-block content-block-teaser-group">
-    <div class="row">
-        <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
+    <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
+    <div class="row row-introduction">
             <div class="col-12">
                 <?php if(!empty($args['headline'])){ ?>
                     <h2 class="mt-0">
@@ -41,10 +41,15 @@ use Pressmind\Travelshop\Template;
                     <p><?php echo $args['text'];?></p>
                 <?php } ?>
             </div>
-        <?php } ?>
+    </div>
+    <?php } ?>
 
-        <?php
-        if(!empty($args['teasers'])){
+
+    <?php
+    if(!empty($args['teasers'])){
+        ?>
+        <div class="row row-products">
+            <?php
 
             // if is empty or is not divide trough 12, set default
             if(empty($args['teaser_count_desktop']) || 12 % $args['teaser_count_desktop'] != 0){
@@ -56,12 +61,12 @@ use Pressmind\Travelshop\Template;
                 $image = !empty($teaser['image']) ? $teaser['image'] : get_stylesheet_directory_uri() . '/assets/img/slide-1-mobile.jpg';
                 ?>
                 <div class="col-12 col-sm-6 <?php echo 'col-lg-'.(12/$args['teaser_count_desktop']); ?>">
-                    <article class="teaser category-teaser">
+                    <article class="teaser category-product-teaser">
 
                         <div class="teaser-category-image">
                             <a href="<?php echo $teaser['link'];?>" target="<?php echo !empty($teaser['link_target']) ? $teaser['link_target'] : '_self';?>">
-                                <div class="teaser-image" role="img" aria-label="<?php echo !empty($teaser['headline']) ? $teaser['headline'] : ''; ?>" style="background-image: url('<?php echo $image; ?>');">
-
+                                <div class="teaser-image">
+                                    <img src="<?php echo $image; ?>" loading="lazy" title="<?php echo !empty($teaser['headline']) ? $teaser['headline'] : ''; ?>" />
                                 </div>
                                 <div class="teaser-body">
                                     <?php if(!empty($teaser['headline'])){ ?>
@@ -72,36 +77,38 @@ use Pressmind\Travelshop\Template;
                                 </div>
                             </a>
                         </div>
-                    <?php
-                    $result = Search::getResult($teaser['search'] ?? [], 2, 4, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
-                    if(!empty($_GET['debug'])) {
-                        echo '<pre>';
-                        echo "Filter:\n";
-                        echo "Duration:".$result['mongodb']['duration_filter_ms']."\n";
-                        echo $result['mongodb']['aggregation_pipeline_filter'];
-                        echo "\n";
-                        echo "Search:\n";
-                        echo "Duration:".$result['mongodb']['duration_search_ms']."\n";
-                        echo $result['mongodb']['aggregation_pipeline_search'];
-                        echo '</pre>';
-                    }
-                    if(count($result['items']) > 0){
-                    ?>
-                        <div class="teaser-body">
-                            <div class="row teaser-products">
-                                <?php
-                                foreach ($result['items'] as $item) {
-                                    echo Template::render(__DIR__.'/../pm-views/'.($args['view'] ?? 'Teaser4').'.php', $item);
-                                }
-                                ?>
+                        <?php
+                        $result = Search::getResult($teaser['search'] ?? [], 2, 4, false, false, TS_TTL_FILTER, TS_TTL_SEARCH);
+                        if(!empty($_GET['debug'])) {
+                            echo '<pre>';
+                            echo "Filter:\n";
+                            echo "Duration:".$result['mongodb']['duration_filter_ms']."\n";
+                            echo $result['mongodb']['aggregation_pipeline_filter'];
+                            echo "\n";
+                            echo "Search:\n";
+                            echo "Duration:".$result['mongodb']['duration_search_ms']."\n";
+                            echo $result['mongodb']['aggregation_pipeline_search'];
+                            echo '</pre>';
+                        }
+                        if(count($result['items']) > 0){
+                            ?>
+                            <div class="teaser-body">
+                                <div class="teaser-products">
+                                    <?php
+                                    foreach ($result['items'] as $item) {
+                                        echo Template::render(__DIR__.'/../pm-views/'.($args['view'] ?? 'Teaser4').'.php', $item);
+                                    }
+                                    ?>
+                                </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
                     </article>
                 </div>
                 <?php
             }
-        }
-        ?>
-    </div>
+            ?>
+        </div>
+        <?php
+    }
+    ?>
 </section>

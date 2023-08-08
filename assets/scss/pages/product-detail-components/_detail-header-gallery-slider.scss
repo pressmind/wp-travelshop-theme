@@ -1,0 +1,73 @@
+// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+@if ( $detail-page-use-default == true ) {
+  .detail-header-gallery {
+    .detail-header-gallery-slider {
+      overflow: hidden;
+
+      // - controls
+      .slider-controls {
+        @extend %slider-controls;
+        @extend %slider-controls-large-up-lg;
+        @extend %slider-controls-inner;
+
+        // theme
+        @extend %slider-controls-on-image;
+
+        // set element specific spacing left/right
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
+      }
+
+      // slider controls if initialized
+      @extend %slider-controls-if-initialized;
+
+      .detail-header-gallery-slider--counter {
+        position: absolute;
+        z-index: 2;
+
+        font-size: $font-size-xs;
+        padding: $badge-padding-y $badge-padding-x;
+        line-height: 1;
+        color: #fff;
+        background-color: rgba($body-color, .75);
+
+        @include border-radius($badge-border-radius);
+
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
+        @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
+      }
+
+      // -- slider item
+      .detail-header-gallery-slider-item {
+        position: relative;
+
+        .detail-header-gallery-slider-item--image{
+          @include aspect-ratio(16, 9);
+          position: relative;
+
+          > img {
+            @extend %media-cover-image;
+          }
+        }
+
+        .detail-header-gallery-slider-item--copyright {
+          @extend %copyright-on-image;
+
+          @include spacing-generator($detail-header-gallery-spacer-x, 'around', bottom);
+          @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+        }
+      }
+
+      // -- prevent layout shifts
+      .detail-header-gallery-slider--inner:not(.tns-slider) {
+        .detail-header-gallery-slider-item {
+          display: none;
+
+          &:first-child {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

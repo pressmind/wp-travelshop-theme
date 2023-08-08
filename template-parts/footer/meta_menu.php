@@ -11,8 +11,8 @@ if (has_nav_menu($args['menu_location'])) {
     $locations = get_nav_menu_locations(); //get all menu locations
     $footer_menu = wp_get_nav_menu_object($locations[$args['menu_location']]);
     ?>
-    <nav class="nav flex-column">
-        <ul class="">
+    <nav>
+        <ul class="nav flex-row">
             <?php
             wp_nav_menu(
                 array(

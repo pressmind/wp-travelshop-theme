@@ -1,0 +1,65 @@
+%copyright-on-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  font-size: .6125rem; // 10px
+  color: #fff;
+  text-shadow: 0 0 .5rem rgba(#000, .25);
+  line-height: 1;
+}
+
+%copyright-on-image-vertical {
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+}
+
+// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+@if ( $detail-page-use-default == true ) {
+  .detail-header-gallery {
+    position: relative;
+    overflow: hidden;
+
+    @include border-radius($detail-header-gallery-border-radius);
+
+    // -- reset borrder radius to generate box-like header
+    @include media-breakpoint-down($detail-header-column-break) {
+      @include border-bottom-radius(0);
+    }
+
+    // -- full width
+    @include media-breakpoint-down(xs) {
+      @include border-radius(0);
+      margin-left: -($grid-gutter-width / 2);
+      margin-right: -($grid-gutter-width / 2);
+    }
+
+    .detail-header-badge {
+      @extend %product-badge;
+      @extend %product-badge-danger;
+
+      position: absolute;
+      z-index: 2;
+
+      @include spacing-generator($detail-header-gallery-spacer-x, 'around', top);
+      @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+    }
+
+    .detail-header-gallery-slider {
+      display: none;
+    }
+
+    @if ( $detail-header-gallery-grid-break != null ) {
+      @include media-breakpoint-down($detail-header-gallery-grid-break) {
+        .detail-header-gallery-slider {
+          display: block;
+        }
+
+        .detail-header-gallery-grid {
+          display: none;
+        }
+      }
+    }
+
+  }
+}

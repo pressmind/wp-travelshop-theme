@@ -1,0 +1,74 @@
+.month-teaser-group {
+  .teaser.month-teaser {
+    > a {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      color: $body-color;
+      transition: none;
+      text-decoration: none;
+      width: 100%;
+
+      .month-teaser-image {
+        flex: 0 0 30%;
+        width: 100%;
+        max-width: 30%;
+        position: relative;
+
+        > div {
+          position: absolute;
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .month-teaser-title {
+        flex: 0 0 70%;
+        width: 100%;
+        max-width: 70%;
+        padding: 1.5rem;
+        position: relative;
+        line-height: 1;
+        color: $body-color;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        transition: color $animation-speed-default;
+
+        svg {
+          height: 1.25rem;
+          width: 1.25rem;
+          opacity: .5;
+
+          position: absolute;
+          top: 50%;
+          right: 1.5rem;
+          transition: right $animation-speed-default;
+
+          transform: translateY(-50%) rotate(-90deg);
+
+          * {
+            fill: $body-color;
+          }
+        }
+      }
+
+      &:hover, &:focus, &:active {
+        .month-teaser-title {
+          color: $primary;
+
+          svg {
+            right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

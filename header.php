@@ -13,6 +13,7 @@ global $PMTravelShop;
     ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
     <?php } ?>
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg">
+    <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1.jpg" media="(min-width: 601px)">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1-mobile.jpg" media="(max-width: 600px)">
     <?php if(TS_PWA){
@@ -74,40 +75,33 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
 ?>
 <header class="header-main">
     <div class="container">
-        <div class="row header-main-row">
-            <div class="col-auto align-self-center d-block d-lg-none">
-                <button class="toggler navbar-toggler offcanvas-toggler" type="button" data-target="#navbar"
-                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <line x1="4" y1="6" x2="20" y2="6" />
-                        <line x1="4" y1="12" x2="20" y2="12" />
-                        <line x1="4" y1="18" x2="20" y2="18" />
-                    </svg>
+        <div class="row header-main-row align-items-center">
+            <div class="col-auto d-block d-lg-none">
+                <button class="header-action header-action--navtoggle toggler navbar-toggler" type="button">
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#list"></use></svg>
+                    </div>
                 </button>
             </div>
-            <div class="col-auto align-self-center ">
+            <div class="col col-lg-auto">
                 <a class="navbar-brand" href="<?php echo site_url(); ?>">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg" height="24" width="142"
                          class="d-inline-block align-middle" alt="<?php echo get_bloginfo( 'name' );?>">
                 </a>
             </div>
-            <div class="col align-self-center p-0">
-                <?php  load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
+            <div class="col p-0 d-none d-lg-block">
+                <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
-            <?php if(!empty(TS_SINGLE_SEARCH)){ ?>
-            <div class="col-auto align-self-center  d-none d-lg-block col-search" id="search">
+            <?php if(!empty(TS_SINGLE_SEARCH)){?>
+            <div class="col-auto  d-none d-xl-block col-search" id="search">
                 <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
                     <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
                            aria-label="Search" name="pm-t">
                     <div class="input-group-append">
-                        <button class="btn btn-link" aria-label="Suchen">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"/>
-                                <circle cx="10" cy="10" r="7" />
-                                <line x1="21" y1="21" x2="15" y2="15" />
-                            </svg>
+                        <button class="input-group-btn" aria-label="Suchen">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+
                         </button>
                     </div>
                 </form>
@@ -115,30 +109,28 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
             <?php } ?>
 
 
-            <div class="col-auto align-self-center">
-                <div class="travelshop_hotline_batch">
-                    <small>Service-Hotline</small><br/>
-                    <a href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>"><?php echo do_shortcode('[ts-company-hotline]');?></a>
-                    <a class="phone-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="35"
-                             height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
-                             stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/>
-                        </svg>
-                    </a>
-                </div>
+            <div class="col-auto">
+                <a class="hotline-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>">
+                    <span class="hotline-icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
+                    </span>
+
+                    <div class="hotline-info">
+                        <div class="hotline-title">
+                            <?php echo do_shortcode('[ts-company-hotline-info]'); ?>
+                        </div>
+                        <div class="hotline-number">
+                            <?php echo do_shortcode('[ts-company-hotline]');?>
+                        </div>
+                    </div>
+
+                </a>
             </div>
-            <div class="col-auto align-self-center p-r-0">
-                <a href="/calendar" title="Reisekalender" class="calendar calendar-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <rect x="4" y="5" width="16" height="16" rx="2"></rect>
-                        <line x1="16" y1="3" x2="16" y2="7"></line>
-                        <line x1="8" y1="3" x2="8" y2="7"></line>
-                        <line x1="4" y1="11" x2="20" y2="11"></line>
-                        <rect x="8" y="15" width="2" height="2"></rect>
-                    </svg>
+            <div class="col-auto pr-0">
+                <a href="/calendar" title="Reisekalender" class="header-action header-action--calendar">
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+                    </div>
                 </a>
             </div>
             <div class="col-auto align-self-center header-action-col user-login logged-out p-r-0" style="margin-bottom: 1px;">
@@ -164,13 +156,21 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                         </span>
                 </div>
             </div>
-            <div class="col-auto align-self-center dropdown">
-                <button class="toggler wishlist-toggler" type="button" data-toggle="dropdown" aria-haspopup="true"
+            <div class="col-auto d-block pr-0 d-xl-none">
+                <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
+                        aria-expanded="false" aria-label="Toggle Search">
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                    </div>
+                </button>
+            </div>
+            <div class="col-auto dropdown">
+                <button class="header-action header-action--wishlist toggler wishlist-toggler" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" data-offset="40,20">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
-                    </svg>
+                    <div class="header-action--icon">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#heart-straight"></use></svg>
+                    </div>
+
                     <span class="wishlist-count">0</span>
                 </button>
 
@@ -212,6 +212,35 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                         aria-expanded="false" aria-label="Toggle Search">
                     <i class="la la-search"></i>
                 </button>
+                    <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-content">
+                            <div class="dropdown-menu-header d-none">
+                                <div class="h4">
+                                    Merkliste
+                                </div>
+
+                                <button class="close-wishlist" data-type="close-popup" type="button">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                </button>
+                            </div>
+
+                            <div class="dropdown-menu-body">
+                                <div id="wishlist-result" class="wishlist-items">
+
+                                    <div class="alert alert-info p-2 m-0" role="alert">
+                                        Keine Reisen auf der Merkliste
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: none;" class="dropdown-menu-footer">
+                                <a href='#' class="btn btn-outline-primary btn-block">
+                                    Zur Merkliste
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -226,3 +255,20 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
         </div>
     </div>
 </header>
+
+<nav class="page-navigation-offcanvas d-flex flex-column d-xl-none">
+    <?php
+
+    if (has_nav_menu('primary') === true) {
+        $navTree = nav_menu_2_tree('primary');
+    } else {
+        $navTree = null;
+    }
+
+    load_template( get_stylesheet_directory().'/template-parts/header/menu-offcanvas.php', true, $navTree);
+    ?>
+</nav>
+
+<div class="offcanvas-backdrop"></div>
+
+<div class="datepicker-backdrop"></div>

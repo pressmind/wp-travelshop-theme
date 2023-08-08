@@ -29,13 +29,94 @@ class Shortcodes
         add_shortcode('ts-company-facebook', [$this, 'ts_company_facebook']);
         add_shortcode('ts-company-twitter', [$this, 'ts_company_twitter']);
         add_shortcode('ts-company-insta', [$this, 'ts_company_insta']);
+        add_shortcode('ts-company-pinterest', [$this, 'ts_company_pinterest']);
+        add_shortcode('ts-company-whatsapp', [$this, 'ts_company_whatsapp']);
         add_shortcode('ts-company-youtube', [$this, 'ts_company_youtube']);
         add_shortcode('ts-company-qualitybus', [$this, 'ts_company_qualitybus']);
+        add_shortcode('ts-search-title', [$this, 'ts_search_title']);
+        add_shortcode('ts-search-group-link', [$this, 'ts_search_group_link']);
+        add_shortcode('ts-search-group-link-text', [$this, 'ts_search_group_link_text']);
+        add_shortcode('ts-search-link', [$this, 'ts_search_link']);
+        add_shortcode('ts-search-link-text', [$this, 'ts_search_link_text']);
+        add_shortcode('ts-search-group-two-title', [$this, 'ts_search_group_two_title']);
+        add_shortcode('ts-search-group-two-link', [$this, 'ts_search_group_two_link']);
+        add_shortcode('ts-search-group-two-link-text', [$this, 'ts_search_group_two_link_text']);
+        add_shortcode('ts-search-group-three-title', [$this, 'ts_search_group_three_title']);
+        add_shortcode('ts-search-group-three-link', [$this, 'ts_search_group_three_link']);
+        add_shortcode('ts-search-group-three-link-text', [$this, 'ts_search_group_three_link_text']);
+        add_shortcode('ts-search-group-four-title', [$this, 'ts_search_group_four_title']);
+        add_shortcode('ts-search-group-four-link', [$this, 'ts_search_group_four_link']);
+        add_shortcode('ts-search-group-four-link-text', [$this, 'ts_search_group_four_link_text']);
 
         // TODO
         // add_shortcode('ts-ct-items', [$this, 'categoryTreeItems']);
     }
+    public function ts_search_title()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-title');
+    }
 
+    public function ts_search_group_two_link()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-link');
+    }
+
+    public function ts_search_group_two_link_text()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-link-text');
+    }
+    public function ts_search_group_two_title()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-title');
+    }
+
+    public function ts_search_group_three_link()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-link');
+    }
+
+    public function ts_search_group_three_link_text()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-link-text');
+    }
+    public function ts_search_group_three_title()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-title');
+    }
+
+    public function ts_search_group_four_link()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-link');
+    }
+
+    public function ts_search_group_four_link_text()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-link-text');
+    }
+    public function ts_search_group_four_title()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-two-title');
+    }
+
+    public function ts_search_group_link()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-link');
+    }
+
+    public function ts_search_group_link_text()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-group-link-text');
+    }
+
+    public function ts_search_link()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-link');
+    }
+
+    public function ts_search_link_text()
+    {
+        return $this->get_wpsf_option('search', 'search', 'search-link-text');
+    }
     public function ts_company_name()
     {
         return $this->get_wpsf_option('contact', 'contact', 'ts-company-name');
@@ -114,6 +195,16 @@ class Shortcodes
     public function ts_company_insta()
     {
         return $this->get_wpsf_option('contact', 'socialmedia', 'ts-company-insta');
+    }
+
+    public function ts_company_pinterest()
+    {
+        return $this->get_wpsf_option('contact', 'socialmedia', 'ts-company-pinterest');
+    }
+
+    public function ts_company_whatsapp()
+    {
+        return $this->get_wpsf_option('contact', 'socialmedia', 'ts-company-whatsapp');
     }
 
     public function ts_company_youtube()
@@ -309,4 +400,3 @@ class Shortcodes
 
 
 }
-

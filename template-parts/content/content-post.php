@@ -1,6 +1,6 @@
 <?php the_breadcrumb(null);?>
 <main>
-    <div class="content-main content-main--posts">
+    <div class="content-main content-main--posts" id="content-main">
         <div class="container">
             <div class="content-block content-block-blog">
                 <div class="row">

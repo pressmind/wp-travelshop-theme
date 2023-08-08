@@ -1,0 +1,84 @@
+// ================================
+// -- base reset container if
+// -- beaverbuilder used
+// ================================
+body.fl-builder .content-block.content-page > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+// ================================
+// -- beaverbuilder bootstrap fix
+// ================================
+// -- make beaverbuilder work
+// -- with bootstrap container
+// -- and its sizes
+// ================================
+
+.fl-builder-content {
+  // fixed width row + inner
+  .fl-row.fl-row-fixed-width {
+    @extend .container;
+
+    .fl-row-content-wrap {
+      padding-left: 0;
+      padding-right: 0;
+
+      .fl-row-content.fl-row-fixed-width {
+        max-width: 100%;
+      }
+
+      // remove spacings left/right to remove "content-hops"
+      .fl-module-content {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
+  // full width row
+  .fl-row.fl-row-full-width {
+
+    .fl-row-content-wrap {
+      padding-left: 0;
+      padding-right: 0;
+
+      // fixed inner width
+      .fl-row-content.fl-row-fixed-width {
+        @extend .container;
+      }
+
+      // fluid inner width
+      .fl-row-content.fl-row-full-width {
+        @extend .container-fluid;
+
+        // -- simple fix for category header + slider
+        .fl-module-category-header,
+        .fl-module-slider-mixed-content {
+          margin-left: -($grid-gutter-width / 2) !important;
+          margin-right: -($grid-gutter-width / 2)  !important;
+        }
+      }
+
+      // remove spacings left/right to remove "content-hops"
+      .fl-module-content {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+// -- fix zinde of header main if fl-edit
+body.fl-builder-edit header.header-main {
+  z-index: 9 !important;
+}
+
+// -- fix spacing between header and bb content
+body.fl-builder .content-block.content-page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

@@ -11,8 +11,8 @@ get_header();
     $args['headline'] = 'Finde deine Traumreise!';
     $args['search_box'] = 'default_search_box';
     $args['search_box_tab'] = 0;
-    load_template(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $args);
-    $request = array_merge(['pm-ot' => $wp_query->get('pm-ot'), 'pm-o' => $wp_query->get('pm-o')], $_GET);
+//    load_template(get_template_directory() . '/template-parts/layout-blocks/search-header.php', false, $args);
+    $request = array_merge($_GET, ['pm-ot' => $wp_query->get('pm-ot')]);
     $output = null;
     $view = 'Teaser1';
     if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
@@ -24,7 +24,7 @@ get_header();
     $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
     ?>
     <?php the_breadcrumb(null); ?>
-    <div class="content-main">
+    <div class="content-main content-main--results" id="content-main">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-3">
@@ -44,7 +44,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <hr class="mt-0 mb-0">
+            <hr class="mt-cb mb-0">
             <?php load_template_transient(get_template_directory() . '/template-parts/layout-blocks/info-teaser.php'); ?>
         </div>
     </div>

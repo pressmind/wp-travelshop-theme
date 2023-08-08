@@ -71,6 +71,33 @@ body.fl-builder .content-block.content-page > .container {
   }
 }
 
+/**
+ * Some defaults for beaverbuilder and block usage
+ */
+.fl-builder-content {
+  .content-block {
+    margin-top: 0 !important;
+  }
+}
+
+#content-main {
+  overflow-x: hidden;
+}
+
+/**
+ * Cols beaver builder
+ */
+
+.fl-col-group {
+  margin-left: -($grid-gutter-width / 2) !important;
+  margin-right: -($grid-gutter-width / 2) !important;
+
+  > .fl-col {
+    padding-left: $grid-gutter-width / 2 !important;
+    padding-right: $grid-gutter-width / 2 !important;
+  }
+}
+
 
 // -- fix zinde of header main if fl-edit
 body.fl-builder-edit header.header-main {

@@ -1,11 +1,6 @@
 .idea
 vendor
 composer.lock
-pm-config.php
-config-theme.php
-template-parts/pm-views/*_Detail1.php
-template-parts/pm-views/*_Detail2.php
-Custom/MediaType/*.php
 docs/objecttypes/*.html
 assets/scss/*.map
 assets/scss/.sass-cache/

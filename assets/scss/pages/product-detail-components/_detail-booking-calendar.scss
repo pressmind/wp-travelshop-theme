@@ -1,0 +1,541 @@
+// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+@if ( $detail-page-use-default == true ) {
+
+  %active-day-item {
+    @include border-radius($booking-calendar-border-radius);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    pointer-events:none;
+
+    display: block;
+    border: $booking-calendar-active-day-border-width solid $booking-calendar-active-day-border-color;
+  }
+
+  .booking-entrypoint-calendar {
+    opacity: 1;
+    transition: opacity $animation-speed-default;
+    pointer-events: auto;
+
+    // -- duration switch
+    .booking-entrypoint-calender-duration {
+      // - duration switch
+      display: flex;
+      justify-content: center;
+
+
+      @include media-breakpoint-down($booking-calendar-mobile-break) {
+        padding: 1rem;
+        margin: -1rem -1rem 0 -1rem;
+        position: sticky;
+        top: -1rem;
+
+        background-color: #fff;
+
+        z-index: 5;
+      }
+
+      .duration-switch {
+        background-color: $body-bg-highlight;
+        padding: .25rem;
+
+        @include border-radius($border-radius);
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: .25rem;
+
+        > button {
+          @include button-reset();
+
+          color: $body-color-light;
+          font-size: $font-size-base;
+          padding: 0.6125rem 1.125rem;
+          line-height: 1;
+
+          @include border-radius(($border-radius - .25rem));
+
+          transition: background-color .3s, color .3s, transform $animation-speed-default;
+
+          &.active, &:hover, &:focus, &:active {
+            color: $body-color;
+          }
+
+          &:hover, &:active, &:focus {
+            background-color: rgba(#fff, .5);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+
+          &.active {
+            background-color: #fff;
+            color: $body-color;
+          }
+        }
+      }
+    }
+
+    // -- calendar itself
+    .booking-entrypoint-calendar-outer {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .tns-ovh {
+
+        max-width: ( ( ($grid-gutter-width / 2) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) + 1px ;
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .slider-controls {
+        @extend %calender-slider-controls;
+      }
+
+      @extend %slider-controls-if-initialized;
+
+      .booking-entrypoint-calendar-inner {
+
+        // -- calendar item
+        .calendar-item {
+
+          // -- month name
+          .calendar-item-month {
+            margin: 0;
+            text-align: center;
+            padding: 1rem 0;
+          }
+
+          // -- calendar days
+          .calendar-item-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            width: 100%;
+            max-width: ( $booking-calendar-item-size * 7 ); // 40px * 7 days
+
+            > div.calendar-item-day {
+              flex: 0 0 $booking-calendar-item-size;
+              width: 100%;
+              max-width: $booking-calendar-item-size;
+              height: $booking-calendar-item-size;
+
+              // center inner
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              // make text center in circle
+              -webkit-box-direction: normal !important;
+              -webkit-box-orient: vertical !important;
+              -webkit-box-pack: center !important;
+              -webkit-box-align: center !important;
+
+              &:not(.calendar-item-weekday) {
+                line-height: 1;
+
+                margin-top: .125rem; // spacer 2 px
+              }
+
+              &.active-duration {
+                background-color: rgba(#000, .05);
+
+                &.active {
+                  @include border-left-radius($booking-calendar-border-radius);
+                }
+
+                &.travel-date:not(.active) {
+                  @include border-left-radius($booking-calendar-border-radius);
+                }
+
+                &.active-duration-first {
+                  @include border-left-radius(0);
+                }
+
+                &.active-duration-last {
+                  @include border-right-radius($booking-calendar-border-radius);
+                  position: relative;
+
+                  &:after {
+                    @extend %active-day-item;
+                  }
+                }
+              }
+            }
+
+            > div.calendar-item-weekday {
+              @extend %calendar-weekday;
+              height: 1rem;
+
+              padding: 0;
+              margin: 0 0 .75rem 0;
+            }
+
+            // -- travel date
+            > div.calendar-item-day.travel-date {
+              > a {
+                width: $booking-calendar-item-size;
+                height: $booking-calendar-item-size;
+
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                // make text center in circle
+                -webkit-box-direction: normal !important;
+                -webkit-box-orient: vertical !important;
+                -webkit-box-pack: center !important;
+                -webkit-box-align: center !important;
+
+                position: absolute;
+                top:0;
+                left:0;
+                right:0;
+
+                text-align: center;
+                font-weight: $font-weight-bold;
+
+                text-decoration: none;
+                transition: background-color $animation-speed-default;
+
+                &:hover, &:focus, &:active {
+                  text-decoration: none;
+                }
+
+                > div {
+                  font-weight: 400;
+                  font-size: .6125rem;
+                }
+
+                @include border-radius($booking-calendar-border-radius);
+              }
+
+              // -- active
+              &.active > a {
+                background-color: $booking-calendar-active-offer-bg !important;
+              }
+
+              // -- states
+              &.bookable {
+                > a {
+                  background-color: $booking-green;
+                  color: $booking-green-color;
+
+                  &:hover {
+                    background-color: lighten($booking-green, 15%);
+                  }
+                }
+              }
+
+              &.request {
+                > a {
+                  background-color: $booking-orange;
+                  color: $booking-orange-color;
+
+                  &:hover {
+                    background-color: lighten($booking-orange, 15%);
+                  }
+                }
+              }
+
+              &.stop {
+                > a {
+                  background-color: rgba($booking-gray, .5);
+                  color: $booking-gray-color;
+
+                  &:hover {
+                    background-color: rgba($booking-gray, .75);
+                  }
+                }
+              }
+
+
+            }
+          }
+        }
+
+        // -- if not slider
+        &:not(.tns-slider) {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          margin: 0 ( -$grid-gutter-width / 2 );
+          overflow: hidden;
+
+          max-width: ( ( ($grid-gutter-width) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) ;
+
+          @include media-breakpoint-down($booking-calendar-mobile-break) {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+          }
+
+          > .calendar-item {
+            padding: 0 ( $grid-gutter-width / 2 );
+
+            // @todo: add colum sizes later? bzw. add mobile break
+            width: 100%;
+
+            // do something to prevent to wide calendar
+            flex: 0 0 ( ($grid-gutter-width) + (remToPx($booking-calendar-item-size) * 7) );
+            max-width: ( ($grid-gutter-width) + (remToPx($booking-calendar-item-size) * 7) );
+          }
+        }
+      }
+    }
+  }
+
+  .is-loading {
+    > .booking-entrypoint-calendar {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.booking-filter-calendar-overlay {
+  position: absolute;
+  top: 100%;
+  right:0;
+
+  background-color: $dropdown-bg;
+  border: $dropdown-border-width solid $dropdown-border-color;
+  box-shadow: $dropdown-box-shadow;
+
+  padding: 1rem;
+
+  margin: $dropdown-spacer 0 0;
+
+  z-index: $zindex-dropdown;
+
+  min-width: ( ( ($grid-gutter-width) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) + ( remToPx(1rem) * 2 );
+
+  @include border-radius($dropdown-border-radius);
+
+  .booking-filter-calendar-overlay-footer {
+    margin-top: 1rem;
+  }
+
+  display: none;
+}
+
+.open > .booking-filter-calendar-overlay {
+  display: block;
+}
+
+.booking-filter-item.booking-filter-item--date-range {
+
+  // -- desktop modal view
+  @if ( $booking-calendar-dropdown-modal == true ) {
+    $temp-calendar-dropdown-modal-string: '';
+
+    @if ( $booking-calendar-dropdown-mobile-break != null ) {
+      $temp-calendar-dropdown-modal-string: '-up-#{getNextBreakpoint($booking-calendar-dropdown-mobile-break)}';
+    }
+
+    .booking-filter-calendar-overlay {
+      @extend %modal-wrapper#{$temp-calendar-dropdown-modal-string};
+
+      .booking-filter-calendar-overlay-inner {
+        @extend %modal-inner#{$temp-calendar-dropdown-modal-string};
+
+        @if ( $booking-calendar-dropdown-mobile-break != null ) {
+          @include media-breakpoint-up(getNextBreakpoint($booking-calendar-dropdown-mobile-break)) {
+            max-width: #{getMediaBreakpointUp($booking-calendar-dropdown-modal-max-width)};
+          }
+        } @else {
+          @extend %modal-inner-width-#{$booking-calendar-dropdown-modal-max-width};
+        }
+
+
+        .booking-filter-calendar-overlay-content {
+          @extend %modal-content#{$temp-calendar-dropdown-modal-string};
+        }
+      }
+
+      .booking-filter-calendar-overlay-header {
+        @extend %modal-header#{$temp-calendar-dropdown-modal-string};
+      }
+
+      .booking-filter-calendar-overlay-body {
+        @extend %modal-body#{$temp-calendar-dropdown-modal-string};
+      }
+
+      .booking-filter-calendar-overlay-footer {
+        @extend %modal-footer#{$temp-calendar-dropdown-modal-string};
+      }
+    }
+
+    // -- open state
+    &.open > .booking-filter-calendar-overlay {
+      @extend %modal-open#{$temp-calendar-dropdown-modal-string};
+    }
+  }
+
+  // -- mobile friendly views
+  @if ( $booking-calendar-dropdown-mobile-break != null ) {
+
+    // -- modal view
+    @if ( $booking-calendar-dropdown-mobile-view-type == 'modal' or $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+
+      .booking-filter-calendar-overlay {
+
+        @extend %modal-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+
+        @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-wrapper-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-inner {
+          @extend %modal-inner-down-#{$booking-calendar-dropdown-mobile-break};
+
+
+          @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+            @extend %modal-inner-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+          }
+
+          .booking-filter-calendar-overlay-content {
+            @extend %modal-content-down-#{$booking-calendar-dropdown-mobile-break};
+
+            @if ( $booking-calendar-dropdown-mobile-view-type == 'modal-fullscreen' ) {
+              @extend %modal-content-fullscreen-down-#{$booking-calendar-dropdown-mobile-break};
+            }
+          }
+        }
+
+        .booking-filter-calendar-overlay-header {
+          @extend %modal-header-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-body {
+          @extend %modal-body-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-footer {
+          @extend %modal-footer-down-#{$booking-calendar-dropdown-mobile-break};
+
+          @if ( $booking-calendar-dropdown-mobile-break != null ) {
+            @include media-breakpoint-down($booking-calendar-dropdown-mobile-break) {
+
+              .btn.btn-primary {
+                width: 100%;
+                justify-content: space-around;
+              }
+            }
+          }
+        }
+      }
+
+      // -- open state
+      &.open > .booking-filter-calendar-overlay {
+        @extend %modal-open-down-#{$booking-calendar-dropdown-mobile-break};
+      }
+    }
+
+
+
+    // -- apple-like view
+    @if ( $booking-calendar-dropdown-mobile-view-type == 'apple-like' ) {
+      .booking-filter-calendar-overlay {
+        @extend %apple-like-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %apple-like-content-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-header {
+          @extend %apple-like-header-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-body {
+          @extend %apple-like-body-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-footer {
+          @extend %apple-like-footer-down-#{$booking-calendar-dropdown-mobile-break};
+
+          @if ( $booking-calendar-dropdown-mobile-break != null ) {
+            @include media-breakpoint-down($booking-calendar-dropdown-mobile-break) {
+              margin-top: 0;
+
+              .btn.btn-primary {
+                width: 100%;
+                justify-content: space-around;
+              }
+            }
+          }
+        }
+      }
+
+      // -- open state
+      &.open > .booking-filter-calendar-overlay {
+        @extend %apple-like-open-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %apple-like-content-open-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+      }
+
+    }
+
+    // -- offcanvas view
+    @if ( $booking-calendar-dropdown-mobile-view-type == 'offcanvas' ) {
+      .booking-filter-calendar-overlay {
+        @extend %offcanvas-wrapper-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %offcanvas-content-down-#{$booking-calendar-dropdown-mobile-break};
+          @extend %offcanvas-direction-#{$booking-calendar-dropdown-offcanvas-direction}-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-header {
+          @extend %offcanvas-header-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-body {
+          @extend %offcanvas-body-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+
+        .booking-filter-calendar-overlay-footer {
+          @extend %offcanvas-footer-down-#{$booking-calendar-dropdown-mobile-break};
+
+          @if ( $booking-calendar-dropdown-mobile-break != null ) {
+            @include media-breakpoint-down($booking-calendar-dropdown-mobile-break) {
+              margin-top: 0;
+
+              .btn.btn-primary {
+                width: 100%;
+                justify-content: space-around;
+              }
+            }
+          }
+        }
+      }
+
+      // -- open state
+      &.open > .booking-filter-calendar-overlay{
+        @extend %offcanvas-open-down-#{$booking-calendar-dropdown-mobile-break};
+
+        .booking-filter-calendar-overlay-content {
+          @extend %offcanvas-content-open-down-#{$booking-calendar-dropdown-mobile-break};
+        }
+      }
+
+    }
+  }
+}

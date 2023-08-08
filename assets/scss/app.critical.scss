@@ -1,34 +1,34 @@
-// -- vendors
-@import "vendors/bootstrap/bootstrap";
-@import "vendors/rSlider/rSlider";
-@import "vendors/tiny-slider/tiny-slider"; 
-@import "vendors/daterangepicker/daterangepicker";
-
-// -- abstracts
-@import "abstracts/variables";
-
-// -- utls
-@import "utils/variables";
-@import "utils/mixins";
-
-// -- base
-@import "base/typography";
-@import "base/container";
-
-// -- icons
-//@import "icons/tabler-icons.css";
-
-@import "components/offcanvas";
-@import "components/search-header";
-@import "components/content-blocks";
-@import "components/forms";
-
-// -- layout
-@import "layout/footer";
-@import "layout/header";
-@import "layout/navigation";
-
-// -- pages
-@import "pages/home";
+//// -- vendors
+//@import "vendors/bootstrap/bootstrap";
+//@import "vendors/ion-rangeslider/range-slider";
+//@import "vendors/tiny-slider/tiny-slider";
+//@import "vendors/daterangepicker/daterangepicker";
+//
+//// -- abstracts
+//@import "abstracts/variables";
+//
+//// -- utls
+//@import "utils/variables";
+//@import "utils/mixins";
+//
+//// -- base
+//@import "base/_backup/typography";
+//@import "base/_backup/container";
+//
+//// -- icons
+////@import "icons/tabler-icons.css";
+//
+//@import "components/offcanvas";
+//@import "components/search-header";
+//@import "components/content-blocks";
+//@import "components/forms";
+//
+//// -- layout
+//@import "layout/_backup/footer";
+//@import "layout/_backup/header";
+//@import "layout/_backup/navigation";
+//
+//// -- pages
+//@import "pages/_backup/home";
 
 // -- themes

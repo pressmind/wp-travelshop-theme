@@ -1,0 +1,154 @@
+/**
+ * File defines usable placeholders for offcanvas elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
+
+
+@include placeholder('offcanvas-open') {
+  opacity: 1;
+  pointer-events: auto;
+
+  * {
+    pointer-events: auto;
+  }
+}
+
+@include placeholder('offcanvas-header') {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: $offcanvas-header-padding;
+  border-bottom: $offcanvas-header-border-width solid $offcanvas-header-border-color;
+
+  @include border-radius(0);
+
+  > *:not(button) {
+    margin-bottom: 0;
+  }
+
+  > button {
+    @include button-reset();
+
+    line-height: 1;
+
+    // -- make visible, important!
+    display: block !important;
+
+    padding: $offcanvas-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$offcanvas-header-padding-y) (-$offcanvas-header-padding-x) (-$offcanvas-header-padding-y) auto;
+
+    color: $popup-close-color;
+    transition: color $animation-speed-default;
+
+    // -- svg size
+    svg {
+      pointer-events: none;
+      width: $popup-close-icon-size;
+      height: $popup-close-icon-size;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $popup-close-hover-color;
+    }
+  }
+}
+
+@include placeholder('offcanvas-wrapper') {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right:0;
+  bottom:0;
+
+  width: 100%;
+  min-width: unset !important;
+  height: 100%;
+
+  transform: none !important;
+  will-change: unset !important;
+  container-name: backdrop;
+
+  z-index: $offcanvas-zindex;
+
+  display: block;
+  outline: 0;
+
+  background-color: rgba($offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
+
+  overflow: hidden;
+  transition: opacity $animation-speed-default;
+  opacity: 0;
+
+  padding:0;
+  pointer-events: none;
+
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+@include placeholder('offcanvas-content') {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  transition: opacity .3s, transform $animation-speed-default;
+  opacity:0;
+
+  background-color: $offcanvas-bg;
+
+  @include border-radius(0);
+
+  box-shadow: $offcanvas-box-shadow;
+  padding:0;
+
+  width: $offcanvas-max-width;
+
+  bottom:0;
+  top: 0;
+}
+
+@include placeholder('offcanvas-direction-left') {
+  right: 0;
+  left: auto;
+
+  transform: translateX($offcanvas-max-width);
+}
+
+@include placeholder('offcanvas-direction-right') {
+  left: 0;
+  right: auto;
+  transform: translateX(-$offcanvas-max-width);
+}
+
+@include placeholder('offcanvas-content-open') {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+@include placeholder('offcanvas-footer') {
+  padding: $offcanvas-inner-padding;
+  border-top: $offcanvas-footer-border-width solid $offcanvas-footer-border-color;
+  // -- resets for dropdown behaviour
+  * {
+    margin-top: 0 !important;
+  }
+}
+
+@include placeholder('offcanvas-body') {
+  position: relative;
+  padding: $offcanvas-inner-padding;
+  flex: 1;
+
+  margin: 0 !important;
+  max-height: unset !important;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}

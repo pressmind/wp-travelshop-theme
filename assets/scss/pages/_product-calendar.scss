@@ -1,0 +1,215 @@
+.product-calendar-wrap {
+  padding: .5rem;
+  @include border-radius($border-radius);
+  background-color: $body-bg-highlight;
+
+  .product-calendar-group-items {
+
+    /**
+     * some defaults
+     */
+
+    .product-calendar-group-title,
+    .product-calendar-items-title,
+    .product-calendar-group-item {
+      padding-left: $travel-card-spacer-x;
+      padding-right: $travel-card-spacer-x;
+    }
+
+    /**
+     * Items header
+     */
+    .product-calendar-items-title {
+      padding-bottom: ($travel-card-spacer-x / 2);
+    }
+
+    /**
+     * Group title
+     */
+
+    .product-calendar-group-title {
+      h3 {
+        padding: ($travel-card-spacer-x / 2) 0;
+        margin-bottom: 0;
+      }
+
+      @include media-breakpoint-down(lg) {
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+    }
+
+    .product-calendar-group-item-product + .product-calendar-group-title {
+      h3 {
+        padding-top: $travel-card-spacer-x;
+      }
+    }
+
+    /**
+     * Group item
+     */
+
+    .product-calendar-group-item {
+      @include border-radius($travel-card-border-radius);
+      background-color: $travel-card-bg;
+      padding-top: $travel-card-spacer-x;
+      padding-bottom: $travel-card-spacer-x;
+      cursor: pointer;
+      transition: background-color $animation-speed-default;
+
+      @include media-breakpoint-down(lg) {
+        padding: 0.75rem;
+
+        > .row {
+
+        }
+      }
+
+      &:not(.is-active):hover {
+        background-color: rgba($travel-card-bg, .75);
+      }
+
+      // -- price
+      .price {
+        display: flex;
+        justify-content: end;
+        flex-direction: row;
+        align-items: baseline;
+
+        .discount-wrapper + small {
+          padding-left: .75rem;
+        }
+
+        .discount-wrapper {
+          .discount-wrapper--inner {
+            justify-content: end;
+          }
+        }
+
+        @include media-breakpoint-down(md) {
+          flex-wrap: wrap;
+
+          .discount-wrapper {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        .col-date {
+          margin-bottom: -1.125rem;
+          position: relative;
+          top: .25rem;
+        }
+
+        .col-title {
+          strong {
+            padding-left: 1.375rem;
+          }
+        }
+      }
+
+
+      .date-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        .circle {
+          margin-right: .25rem;
+        }
+      }
+        // -- arrow wrapper
+      .arrow--wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        svg {
+          width: $font-size-lg;
+          height: $font-size-lg;
+          margin-right: .5rem;
+
+          transition: transform $animation-speed-default;
+          transform-origin: center;
+        }
+      }
+
+      &.is-active {
+        @include border-bottom-radius(0);
+
+        .arrow--wrapper {
+          svg {
+            transform: scaleY(-1);
+          }
+        }
+      }
+    }
+
+    // spacing
+    .product-calendar-group-item-product + .product-calendar-group-item {
+      margin-top: ($travel-card-spacer-x / 3);
+    }
+
+    /**
+     * Group Product item
+     */
+
+    .product-calendar-group-item-product {
+      .product-calendar-group-item--product {
+        display: none;
+
+        &.is-open {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.content-main--calendar{
+  .content-block-month-teaser {
+    @extend %spacing-bottom;
+
+    .month-badges {
+      gap: .5rem;
+
+      .month-badge {
+        > a {
+          text-decoration: none;
+          color: $body-color;
+          display: block;
+
+          height: 2rem;
+          line-height: 2rem;
+
+          @include border-radius(2.5rem);
+
+          padding: 0 $btn-padding-x-lg;
+          background-color: $body-bg-highlight;
+
+          transition: background-color $animation-speed-default, color $animation-speed-default;
+
+          @include media-breakpoint-up(md) {
+            height: 2.5rem;
+            line-height: 2.5rem;
+            padding: 0 1.25rem;
+          }
+
+          &:hover, &:focus, &:active, &.is-active {
+            background-color: $primary;
+            color: #fff;
+          }
+
+          &.is-active {
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -198,7 +198,34 @@ jQuery(function ($) {
                 }
 
                 if (key == 'search-filter') {
-                    _this.priceRangeSliderInit();
+                    new rSlider({
+                        target: '#js-range-slider',
+                        values: { min: parseInt($(".js-range-slider").attr('data-min')), max: parseInt($(".js-range-slider").attr('data-max'))},
+                        step: parseInt($(".js-range-slider").attr('data-step')),
+                        set: [parseInt($(".js-range-slider").attr('data-val-from')), parseInt($(".js-range-slider").attr('data-val-to'))],
+                        range: true,
+                        tooltip: true,
+                        scale: true,
+                        labels: false,
+                        disabled: $(".js-range-slider").attr('data-disable') == 'true'
+                    });
+                    let timeout;
+                    let timestamp = + new Date();
+                    if($(window).width() >= 768) {
+                        document.querySelector('#js-range-slider').addEventListener('change', (e) => {
+                            if(((+ new Date()) - timestamp) <= 1000) {
+                                clearTimeout(timeout);
+                            }
+                            timestamp = + new Date;
+                            timeout = setTimeout(() => {
+                                let form = $('#js-range-slider').closest('form');
+                                let query_string = _this.buildSearchQuery(form);
+                                _this.setSpinner('#pm-search-result');
+                                _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                                e.preventDefault();
+                            }, 1000);
+                        });
+                    }
                 }
             }
 
@@ -224,6 +251,37 @@ jQuery(function ($) {
             window.history.pushState(null, '', window.location.pathname + '?' + query_string);
             _this.dateRangePickerInit();
             _this.filter();
+        }
+
+        if ($('.js-range-slider').length > 0) {
+            var rSliderElement = new rSlider({
+                target: '#js-range-slider',
+                values: { min: parseInt($(".js-range-slider").attr('data-min')), max: parseInt($(".js-range-slider").attr('data-max'))},
+                step: parseInt($(".js-range-slider").attr('data-step')),
+                set: [parseInt($(".js-range-slider").attr('data-val-from')), parseInt($(".js-range-slider").attr('data-val-to'))],
+                range: true,
+                tooltip: true,
+                scale: false,
+                labels: false,
+                disabled: $(".js-range-slider").attr('data-disable') == 'true'
+            });
+            let timeout;
+            let timestamp = + new Date();
+            if($(window).width() >= 768) {
+                document.querySelector('#js-range-slider').addEventListener('change', (e) => {
+                    if(((+ new Date()) - timestamp) <= 1000) {
+                        clearTimeout(timeout);
+                    }
+                    timestamp = + new Date;
+                    timeout = setTimeout(() => {
+                        let form = $('#js-range-slider').closest('form');
+                        let query_string = _this.buildSearchQuery(form);
+                        _this.setSpinner('#pm-search-result');
+                        _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                        e.preventDefault();
+                    }, 1000);
+                });
+            }
         }
 
         this.scrollTo = function (scrollto) {
@@ -524,10 +582,10 @@ jQuery(function ($) {
             }
 
             // check and set price-range
-            let price_range = $(form).find('input[name=pm-pr]').val();
-            let price_mm_range = $(form).find('input[name=pm-pr]').data('min') + '-' + $(form).find('input[name=pm-pr]').data('max');
-            if (price_range && price_mm_range != price_range && price_range != '') {
-                query.push('pm-pr=' + price_range);
+            let price_range = $(form).find("input[name=pm-pr]").val();
+            let price_mm_range = $(form).find("input[name=pm-pr]").data("min") + "-" + $(form).find("input[name=pm-pr]").data("max");
+            if (price_range && price_mm_range != price_range && price_range != "") {
+                query.push("pm-pr=" + price_range)
             }
 
             // check and set duration-range
@@ -594,6 +652,13 @@ jQuery(function ($) {
                     _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
                     e.preventDefault();
                 });
+                $('.js-range-slider').on('mouseup', () => {
+                    let form = $(this).closest('form');
+                    let query_string = _this.buildSearchQuery(form);
+                    _this.setSpinner('#pm-search-result');
+                    _this.call(query_string, '#search-result', null, _this.resultHandlerSearch);
+                    e.preventDefault();
+                });
             }
 
             $("#search-filter").one('click', ".list-filter-box-submit", function (e) {
@@ -628,6 +693,10 @@ jQuery(function ($) {
              */
             $('#main-search').on('change', '.search-box input, .search-box select', function (e) {
 
+                if($(e.target).parent().hasClass('has-second-level')) {
+                    $(e.target).is(':checked') ? $(e.target).parent().addClass('active') : $(e.target).parent().removeClass('active');
+                }
+
                 let form = $('#main-search');
                 // build the query string and set him on the search button
                 let query_string = _this.buildSearchQuery(form);
@@ -654,8 +723,8 @@ jQuery(function ($) {
 
         this.searchboxSwitch = function (){
             $(".search-wrapper--tabs_btn").on('click', function (e) {
-                $(this).parents().find(".search-wrapper--tabs_btn").removeClass('is--active');
-                $(this).addClass('is--active');
+                $(this).parents().find(".search-wrapper--tabs_btn").removeClass('is-active');
+                $(this).addClass('is-active');
                 let query_string = 'action=searchbar&pm-tab='+$(this).data('pm-tab') + '&pm-box='+$(this).data('pm-box');
                 _this.call(query_string, null, null, _this.resultHandlerSearchBar);
             });
@@ -673,70 +742,114 @@ jQuery(function ($) {
 
         this.autoCompleteInit = function (){
             if ($('.auto-complete').length > 0) {
-                $('.auto-complete').keydown((e) => {
-                    if(e.keyCode == 8 && e.target.value.length < 2) {
+                var autoCompleteContainerClass = 'autocomplete-suggestions';
+
+                // -- submit form on return?
+                $('.auto-complete').keypress(function(e) {
+                    if ( e.which == 10 || e.which == 13 ) {
+                        $(this).parents('form').submit();
+                    }
+                });
+
+                $('.auto-complete').keyup((e) => {
+                    if(e.keyCode == 8 && $.trim(e.target.value).length < 3) {
                         $(e.target).autocomplete('disable');
                         $(e.target).parent().find('.string-search-clear').hide();
                         $(e.target).parent().find('.lds-dual-ring').hide();
+
+                        // -- replace result content with stored placeholder
+                        if ( $(e.target).hasClass('auto-complete-overlay') ) {
+                            var targetResultReset = $(e.target).parents('.search-box-field--fulltext').find('.string-search-overlay-results');
+                            var thisPlaceholder = $(e.target).parents('.search-box-field--fulltext').find('.search-field-input--fulltext').data('search-placeholder');
+
+
+                            if ( targetResultReset.length > 0 ) {
+                                targetResultReset.html($('#searchStorage_' + thisPlaceholder).first().html());
+                            }
+                        }
                     } else {
                         $(e.target).autocomplete('enable');
                     }
-                });
-                $('.auto-complete').autocomplete({
-                    serviceUrl: '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=autocomplete',
-                    type: 'GET',
-                    dataType: 'json',
-                    paramName: 'pm-t',
-                    deferRequestBy: 0,
-                    minChars: 2,
-                    width: 'flex',
-                    groupBy: 'category',
-                    preventBadQueries: false,
-                    tabDisabled: true,
-                    preserveInput: true,
-                    formatResult: function (suggestion, currentValue){
-                        var re = new RegExp(`${currentValue}`, 'gi');
-                        let img = typeof suggestion.img != 'undefined' ? '<div class="suggestion-featured-image"><img src="' + suggestion.img + '" /></div>' : '';
-                        let price = typeof suggestion.price != 'undefined' ? '<div class="suggestion-price"><small>schon ab</small><br /><strong>' + suggestion.price + '</strong></div>' : '';
-                        let arrow = suggestion.type != 'media_object' ? '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-left" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">\n' +
-                            '  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>\n' +
-                            '  <line x1="7" y1="7" x2="17" y2="17" />\n' +
-                            '  <polyline points="16 7 7 7 7 16" />\n' +
-                            '</svg>' : '';
-                        return '<div class="string-search-suggestion">' +
-                            '<div class="suggestion-left">' +
-                            img +
-                            '<div class="suggestion-string">' + suggestion.value.replace(re, '<strong>$&</strong>') + '</div>' +
-                            '</div>' +
-                            price +
-                            arrow +
-                            '</div>';
-                    },
-                    onSelect: function (suggestion) {
-                        if (suggestion.data.type == 'link') {
-                            document.location.href = suggestion.data.url;
-                        } else if (suggestion.data.type == 'search') {
-                            var url = $(this).parents('form').attr('action');
-                            url += '?' + suggestion.data.search_request;
-                            document.location.href = url;
-                        }
-                    },
-                    onSearchStart: function () {
-                        $(this).parent().find('.lds-dual-ring').show();
-                        $(this).parent().find('.string-search-clear').hide();
-                        $(this).parent().find('.string-search-clear').hide();
-                    },
-                    onSearchComplete: function() {
-                        $(this).parent().find('.lds-dual-ring').hide();
-                        $(this).parent().find('.string-search-clear').show().click(() => {
-                            $(this).val('');
-                            $(this).parent().find('.string-search-clear').hide();
-                        });
-                        if($(this).autocomplete().disabled) {
-                            $(this).parent().find('.string-search-clear').hide();
-                        }
+
+                    // get value and set it to overlay "fake" input
+                    if ( $(e.target).hasClass('auto-complete-overlay') ) {
+                        var thisSearchValue = $(e.target).val();
+
+                        $(e.target).parents('.search-box-field--fulltext').find('.string-search-trigger').val(thisSearchValue);
                     }
-                })
+                });
+                $('.auto-complete').each(function(e) {
+                    if ( $(this).hasClass('auto-complete-overlay') ) {
+                        autoCompleteContainerClass = 'autocomplate-suggestions-overlay ' + $(this).data('containerclass');
+                    } else {
+                        autoCompleteContainerClass = 'autocomplete-suggestions';
+                    }
+
+                    $(this).autocomplete({
+                        serviceUrl: '/wp-content/themes/travelshop/pm-ajax-endpoint.php?action=autocomplete',
+                        type: 'GET',
+                        dataType: 'json',
+                        paramName: 'pm-t',
+                        deferRequestBy: 0,
+                        containerClass: autoCompleteContainerClass,
+                        minChars: 3,
+                        width: 'flex',
+                        groupBy: 'category',
+                        preventBadQueries: false,
+                        tabDisabled: true,
+                        preserveInput: true,
+                        formatResult: function (suggestion, currentValue){
+                            var re = new RegExp(`${currentValue}`, 'gi');
+                            let img = typeof suggestion.img != 'undefined' ? '<div class="suggestion-featured-image"><img src="' + suggestion.img + '" /></div>' : '';
+                            let price = typeof suggestion.price != 'undefined' ? '<div class="suggestion-price"><small>schon ab</small><br /><strong>' + suggestion.price + '</strong></div>' : '';
+                            let arrow = suggestion.type != 'media_object' ? '<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="/wp-content/themes/travelshop/assets/img/phosphor-sprite.svg#arrow-up-right"></use></svg>' : '';
+                            return '<div class="string-search-suggestion">' +
+                                '<div class="suggestion-left">' +
+                                img +
+                                '<div class="suggestion-string">' + suggestion.value?.replace(re, '<strong>$&</strong>') + '</div>' +
+                                '</div>' +
+                                price +
+                                arrow +
+                                '</div>';
+                        },
+                        onSelect: function (suggestion) {
+                            if (suggestion.data.type == 'link') {
+                                document.location.href = suggestion.data.url;
+                            } else if (suggestion.data.type == 'search') {
+                                var url = $(this).parents('form').attr('action');
+                                url += '?' + suggestion.data.search_request;
+                                document.location.href = url;
+                            }
+                        },
+                        onSearchStart: function () {
+                            $(this).parent().find('.lds-dual-ring').show();
+                            $(this).parent().find('.string-search-clear').hide();
+                            $(this).parent().find('.string-search-clear').hide();
+                        },
+                        onSearchComplete: function() {
+                            $(this).parent().find('.lds-dual-ring').hide();
+                            $(this).parent().find('.string-search-clear').show().click(() => {
+                                $(this).val('');
+                                $(this).parent().find('.string-search-clear').hide();
+                            });
+                            if($(this).autocomplete().disabled) {
+                                $(this).parent().find('.string-search-clear').hide();
+                            }
+
+                            if ( $(this).hasClass('auto-complete-overlay') ) {
+                                var targetResultDraw = $(this).parents('.search-box-field--fulltext').find('.string-search-overlay-results');
+                                var thisInputContainerClass = $(this).data('containerclass');
+
+                                if ( targetResultDraw.length > 0 ) {
+                                    var storeResultHtml = $('.' + thisInputContainerClass).html();
+
+                                    targetResultDraw.html(storeResultHtml);
+                                }
+                            }
+                        }
+                    })
+
+                });
             }
         }
 
@@ -983,13 +1096,20 @@ jQuery(function ($) {
 
                 // -- prevent dropdown close when clicked inside
                 $('.dropdown-menu-select').on('click', function (e) {
+
+                    // -- little hook
+                    // -- backdrop checker
+                    if ( $(e.target).css('container-name') === 'backdrop' ) {
+                        $(e.target).parent().find('button[data-type="close-popup"]').trigger('click');
+                    }
+
                     e.stopPropagation();
                 });
 
                 $('.dropdown-menu-select .filter-prompt').on('click', function (e) {
                     e.preventDefault();
 
-                    $(this).parents('.dropdown').find('.dropdown-toggle').trigger('click');
+                    $(e.target).parents('.dropdown').find('.dropdown-menu-select').removeClass('show');
 
                     e.stopPropagation();
                 })
@@ -1003,69 +1123,71 @@ jQuery(function ($) {
                     }
                 });
 
-
                 // -- create label text on input change, put it into span
                 $('.dropdown-menu-select').find('input').on('click change', function (e) {
-                    var placeHolderTag = $(e.target).parents('.dropdown').find('.selected-options'),
-                        placeHolderDefaultText = placeHolderTag.data('placeholder'),
-                        placeHolderGetText = placeHolderTag.text(),
-                        placeHolderOptionsText = '',
-                        that = $(this);
+                    $(e.target).parent().siblings().find('.form-check-input').prop('checked', false);
+                    setTimeout( () => {
+                        var placeHolderTag = $(e.target).parents('.dropdown').find('.selected-options'),
+                            placeHolderDefaultText = placeHolderTag.data('placeholder'),
+                            placeHolderGetText = placeHolderTag.text(),
+                            placeHolderOptionsText = '',
+                            that = $(this);
 
-                    if (placeHolderGetText != placeHolderDefaultText) {
-                        placeHolderOptionsText = placeHolderGetText;
-                    }
-
-                    var thatValue = that.parent().find('> label').text();
-                    thatValue = $.trim(thatValue);
-
-                    var allBoxes = $(this).parent().parent().find('input');
-                    var allEmpty = true;
-
-                    $(allBoxes).each(function (key, input) {
-                        if (input.checked) {
-                            allEmpty = false;
+                        if (placeHolderGetText != placeHolderDefaultText) {
+                            placeHolderOptionsText = placeHolderGetText;
                         }
-                    });
 
-                    // function to hide/show the clear-button
-                    if (!allEmpty) {
-                        $(this).parent().parent().parent().parent().find('.dropdown-clear').show();
-                        $(this).parent().parent().parent().parent().find('.dropdown-icon').hide();
-                    } else {
-                        $(this).parent().parent().parent().parent().find('.dropdown-clear').hide();
-                        $(this).parent().parent().parent().parent().find('.dropdown-icon').show();
-                    }
+                        var thatValue = that.parent().find('> label').text();
+                        thatValue = $.trim(thatValue);
 
-                    if (that.prop('checked') === true) {
-                        if(that.attr('type') == 'radio') {
-                            placeHolderOptionsText = thatValue;
+                        var allBoxes = $(this).parent().parent().find('input');
+                        var allEmpty = true;
+
+                        $(allBoxes).each(function (key, input) {
+                            if (input.checked) {
+                                allEmpty = false;
+                            }
+                        });
+
+                        // function to hide/show the clear-button
+                        if (!allEmpty) {
+                            $(this).parent().parent().parent().parent().find('.dropdown-clear').show();
+                            $(this).parent().parent().parent().parent().find('.dropdown-icon').hide();
                         } else {
-                            if (placeHolderOptionsText != '' && !placeHolderOptionsText.includes(thatValue)) {
-                                placeHolderOptionsText = placeHolderOptionsText + ', ' + thatValue;
+                            $(this).parent().parent().parent().parent().find('.dropdown-clear').hide();
+                            $(this).parent().parent().parent().parent().find('.dropdown-icon').show();
+                        }
+
+                        if (that.prop('checked') === true) {
+                            if(that.attr('type') == 'radio') {
+                                placeHolderOptionsText = thatValue;
                             } else {
-                                if(!placeHolderOptionsText.includes(thatValue)) {
-                                    placeHolderOptionsText = thatValue;
+                                if (placeHolderOptionsText != '' && !placeHolderOptionsText.includes(thatValue)) {
+                                    placeHolderOptionsText = /*placeHolderOptionsText + ', ' +*/ thatValue;
+                                } else {
+                                    if(!placeHolderOptionsText.includes(thatValue)) {
+                                        placeHolderOptionsText = thatValue;
+                                    }
+                                }
+                            }
+                        } else {
+                            if (placeHolderGetText.indexOf(',') != -1) {
+                                if (placeHolderGetText.indexOf(thatValue) == 0) {
+                                    placeHolderOptionsText = placeHolderOptionsText.replace(thatValue + ', ', '');
+                                } else {
+                                    placeHolderOptionsText = placeHolderOptionsText.replace(', ' + thatValue, '');
+                                }
+                            } else {
+                                if (allEmpty) {
+                                    placeHolderOptionsText = $.trim(placeHolderDefaultText);
+                                } else {
+                                    placeHolderOptionsText = placeHolderOptionsText;
                                 }
                             }
                         }
-                    } else {
-                        if (placeHolderGetText.indexOf(',') != -1) {
-                            if (placeHolderGetText.indexOf(thatValue) == 0) {
-                                placeHolderOptionsText = placeHolderOptionsText.replace(thatValue + ', ', '');
-                            } else {
-                                placeHolderOptionsText = placeHolderOptionsText.replace(', ' + thatValue, '');
-                            }
-                        } else {
-                            if (allEmpty) {
-                                placeHolderOptionsText = $.trim(placeHolderDefaultText);
-                            } else {
-                                placeHolderOptionsText = placeHolderOptionsText;
-                            }
-                        }
-                    }
 
-                    placeHolderTag.text(placeHolderOptionsText);
+                        placeHolderTag.text(placeHolderOptionsText);
+                    }, 250);
                 });
 
                 $('.dropdown-clear').on('click', function (e) {
@@ -1094,24 +1216,24 @@ jQuery(function ($) {
         }
 
         this.initCalendarRowClick = function(){
-            if ( $('.product-calendar-group--items').length > 0 ) {
-                $('.product-calendar-group--items').on('click', '.product-calendar-group-item', function(e) {
+            if ( $('.product-calendar-group-items').length > 0 ) {
+                $('.product-calendar-group-items').on('click', '.product-calendar-group-item', function(e) {
                     e.preventDefault();
                     let row_id = $(this).data('row-id');
 
-                    if ( $(this).hasClass('is--active') ) { // close
-                        $(this).removeClass('is--active');
-                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').removeClass('is--open');
+                    if ( $(this).hasClass('is-active') ) { // close
+                        $(this).removeClass('is-active');
+                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').removeClass('is-open');
 
                     } else { // open & load product
                         let pm_id = $(this).data('pm-id');
                         let pm_dr = $(this).data('pm-dr');
-                        $('.product-calendar-group-item').removeClass('is--active');
-                        $('.product-calendar-group-item--product').removeClass('is--open');
-                        $(this).addClass('is--active');
+                        $('.product-calendar-group-item').removeClass('is-active');
+                        $('.product-calendar-group-item--product').removeClass('is-open');
+                        $(this).addClass('is-active');
                         let query_string = 'action=pm-view&view=Teaser3&pm-id='+pm_id+'&pm-dr='+pm_dr;
                         _this.call(query_string, null, null, _this.calendarRowClickResultHandler, '.product-calendar-group-item--product[data-row-id="'+row_id+'"]');
-                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').addClass('is--open');
+                        $('.product-calendar-group-item--product[data-row-id="'+row_id+'"]').addClass('is-open');
                     }
                     e.stopPropagation();
                 })
@@ -1130,23 +1252,25 @@ jQuery(function ($) {
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify({'checks' : [{
-                    'id_offer' : id_offer,
-                    'quantity' : quantity
-                }]}),
+                        'id_offer' : id_offer,
+                        'quantity' : quantity
+                    }]}),
             }).done(function (response) {
                 let data = response.data[0];
                 $(booking_btn).find('span').html(data.btn_msg);
                 $(booking_btn).attr('title', data.msg);
                 $(booking_btn).find('.loader').hide();
                 $(booking_btn).removeClass('green');
+                $(booking_btn).find('svg').show();
                 $(booking_btn).addClass(data.class);
-                if(data.bookable === true){
-                    $(booking_btn).find('svg').show();
+                if(data.bookable === true && data.booking_type != 'request'){
                     let href = new URL($(booking_btn).attr('href'));
                     if(href.searchParams.get('t') != 'request'){
                         href.searchParams.set('t', data.booking_type);
                     }
                     location.href = href.toString();
+                } else if(data.bookable === true) {
+                    $(booking_btn).click(() => {location.href = $(booking_btn).attr('href') + '&t='+data.booking_type});
                 }
             }));
         }
@@ -1168,7 +1292,7 @@ jQuery(function ($) {
                     _this.lastScroll = _this.nowScroll;
                 });
             }
-            $('.clear-filter').unbind().click((e) => {
+            $('.clear-filter').unbind().on('click', (e) => {
                 $('.modal-loader').css('display', 'flex');
                 $('.datepicker-clear').trigger('click');
                 $('input:checked').prop('checked', false).trigger('change');
@@ -1228,11 +1352,12 @@ jQuery(function ($) {
 
         this.initModals = function() {
             if ($('.modal-wrapper').length > 0) {
-                $('a[data-modal="true"]').unbind().on('click', function (e) {
+                $('a[data-modal="true"]').on('click', function (e) {
+                    console.log('Modal open');
                     e.preventDefault();
                     let modalId = $(e.target).data('modal-id');
                     // -- show modal
-                    $('body').find('#modal-id-post-' + modalId).addClass('is--open');
+                    $('body').find('#modal-id-post-' + modalId).addClass('is-open');
                     if($(e.target).hasClass('booking-btn') || $(e.target).hasClass('stretched-link')) {
                         $('.modal-loader').css('display', 'flex');
                         setTimeout(() => {
@@ -1242,16 +1367,16 @@ jQuery(function ($) {
                             }, 200);
                         }, 500);
                     }
-                    let target = document.querySelector('.is--open .modal-body-outer');
+                    let target = document.querySelector('.is-open .modal-body-outer');
                     bodyScrollLock.disableBodyScroll(target);
                     e.stopPropagation();
                 })
 
-                $('.modal-close, .modal-close-btn').unbind().on('click', function (e) {
+                $('.modal-close, .modal-close-btn').on('click', function (e) {
                     e.preventDefault();
-                    let target = document.querySelector('.is--open .modal-body-outer');
-                    $(e.target).closest('.is--open').removeClass('is--open');
-                    bodyScrollLock.enableBodyScroll(target);
+                    let target = document.querySelector('.is-open .modal-body-outer');
+                    $(e.target).closest('.is-open').removeClass('is-open');
+                    bodyScrollLock.enableBodyScroll;
                     e.stopPropagation();
                 })
 
@@ -1359,7 +1484,7 @@ jQuery(function ($) {
                     $(this).find('.loader').show();
                     $(this).find('svg').hide();
                     $(this).find('span').html('');
-                    _this.checkAvailability($(this).data('id-offer'), 1, this);
+                    _this.checkAvailability($(this).data('id-offer'), 1, $(e.target));
                 });
             }
         }
@@ -1370,10 +1495,10 @@ jQuery(function ($) {
                     sURLVariables = sPageURL.split('&'),
                     sParameterName,
                     i;
-            
+
                 for (i = 0; i < sURLVariables.length; i++) {
                     sParameterName = sURLVariables[i].split('=');
-            
+
                     if (sParameterName[0] === sParam) {
                         return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
                     }
@@ -1382,7 +1507,7 @@ jQuery(function ($) {
             };
             if(getUrlParameter(partnerParam)) {
                 localStorage.setItem('partnerParam', getUrlParameter(partnerParam));
-                localStorage.setItem('partnerTimestamp', + new Date()); 
+                localStorage.setItem('partnerTimestamp', + new Date());
             }
             if(localStorage.getItem('partnerParam') && localStorage.getItem('partnerTimestamp')) {
                 if(localStorage.getItem('partnerTimestamp') >= (+ new Date() - (partnerTimeout * 86400000) )) {
@@ -1391,7 +1516,7 @@ jQuery(function ($) {
                         $(item).attr('href', href + '&ida=' + localStorage.getItem('partnerParam'));
                     });
                 }
-                
+
             }
         }
 

@@ -62,43 +62,42 @@ if($args['showVisited'] == 'false') {
 <?php } ?>
 <section<?php !empty($args['uid']) ? ' id="' . $args['uid'] . '"' : ''; ?>
         class="content-block content-block-travel-cols">
-    <div class="row row-introduction <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>align-items-baseline<?php } ?>">
-        <?php if (!empty($args['headline']) || !empty($args['intro'])){ ?>
+    <?php if (!empty($args['headline']) || !empty($args['text'])){ ?>
+        <div class="row row-introduction <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>align-items-baseline<?php } ?>">
+            <div class="col-12 <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>col-md<?php } ?>">
+                <?php if (!empty($args['headline'])) { ?>
+                    <h2 class="mt-0">
+                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['headline']); ?>
+                    </h2>
+                <?php } ?>
 
-        <div class="col-12 <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>col-md<?php } ?>">
-            <?php if (!empty($args['headline'])) { ?>
-                <h2 class="mt-0">
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'] ?? 'X', $args['headline']); ?>
-                </h2>
+                <?php if (!empty($args['text'])) { ?>
+                    <p>
+                        <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['text']); ?>
+                    </p>
+                <?php } ?>
+            </div>
+            <?php if ($args['showVisited'] == 'false' && isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
+            <div class="col-12 col-md-auto pb-4">
+                <a href="<?php echo $more_results_link; ?>"
+                   title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>"
+                   class="btn-further">
+                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>
+                    <svg style="display: none;">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use>
+                    </svg>
+                </a>
+            </div>
             <?php } ?>
         </div>
-        <?php if (isset($has_more_items) && $has_more_items === false) { ?>
-    </div>
-    <div class="row">
-        <?php } ?>
-        <?php if ($args['showVisited'] == 'false' && isset($args['link_top']) && $args['link_top'] === true && $has_more_items === true) { ?>
-        <div class="col-12 col-md-auto pb-4">
-            <a href="<?php echo $more_results_link; ?>"
-               title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>"
-               class="btn-further">
-                <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_top_text']); ?>
-                <svg style="display: none;">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                         href="/wp-content/themes/travelshop/assets/img/icon-sprite.svg#ui-icon-chevron-right"></use>
-                </svg>
-            </a>
-        </div>
-        <?php } ?>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <?php if (!empty($args['text'])) { ?>
-                <p>
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'] ?? 'X', $args['text']); ?>
-                </p>
-            <?php } ?>
-        </div>
-        <?php } ?>
+    <?php } ?>
+
+
+
+
+
+    <div class="row row-products">
         <?php
 
         // Example 1: Using the the shortcode ts-list for displaying the product teasers
@@ -149,7 +148,7 @@ if($args['showVisited'] == 'false') {
     </div>
 
     <?php if (isset($args['link_bottom']) && $args['link_bottom'] === true && $has_more_items === true) { ?>
-        <div class="row">
+        <div class="row row-button">
             <div class="col-12 text-center pb-4">
                 <a href="<?php echo $more_results_link; ?>"
                    title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_bottom_text']); ?>"

@@ -1,0 +1,535 @@
+%calender-slider-controls {
+  @extend %slider-controls;
+  @extend %slider-controls-inner;
+
+  // positioning
+  position: absolute;
+  left:50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  // add max-width
+  width: 100%;
+  max-width: ( ( ($grid-gutter-width / 2) + ( remToPx($booking-calendar-item-size) * 7 ) ) * 2 ) ;
+
+  // -- generate top position, to make it center with month name, everytime
+  @each $breakpoint, $size in $h5-font-sizes {
+    @if $breakpoint == null {
+      top: ( (($size * $headings-line-height) + 2rem) / 2 );
+    } @else {
+      @if map-has-key($grid-breakpoints, $breakpoint) {
+        $breakpoint: map-get($grid-breakpoints, $breakpoint);
+      }
+
+      @media ( min-width: $breakpoint ) {
+        top: ( (($size * $headings-line-height) + 2rem) / 2 );
+      }
+    }
+  }
+
+  > button {
+    border-width: 1px;
+    border-color: $hr-border-color;
+    border-style: solid;
+    color: $body-color-light;
+
+    > svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    pointer-events: auto;
+
+    transition: background-color .3s, opacity .3s, color .3s, border-color $animation-speed-default;
+
+    &:not([disabled]):hover {
+      border-color: $primary;
+    }
+  }
+}
+
+%calendar-weekday {
+  color: rgba($body-color, .5);
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+}
+
+.daterange-overlay {
+  position: absolute !important;
+
+  z-index: ($zindex-modal-backdrop + 1);
+  pointer-events: none !important;
+  transition: opacity $animation-speed-default;
+  opacity: 0;
+
+  width: calc((17.5rem *2) + 1.5rem + 3rem);
+
+  padding: .5rem;
+  top: -.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include border-radius($border-radius);
+
+  background-color: $body-bg;
+  box-shadow: $dropdown-box-shadow;
+
+  * {
+    pointer-events: none !important;
+  }
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto !important;
+
+    * {
+      pointer-events: auto !important;
+    }
+  }
+
+  // -- header
+  .daterange-overlay-header {
+    align-items: center;
+    padding: 0 1.5rem .5rem 1.5rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+    margin-bottom: 1.5rem;
+
+    border-bottom: $hr-border-width solid $hr-border-color;
+
+    .h5 {
+      margin-bottom: 0;
+
+      height: 3rem;
+      line-height: 3rem;
+    }
+
+
+    button.daterange-overlay-close {
+      @include button-reset();
+
+      width: 3rem;
+      height: 3rem;
+      align-items: center;
+      justify-content: center;
+
+      color: $body-color-light;
+      transition: color $animation-speed-default;
+      margin-right: -1rem;
+
+      > svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      &:hover, &:focus, &:active {
+        color: $primary;
+      }
+    }
+  }
+
+  .duration-switch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+    padding: 0 1rem 1.5rem 1rem;
+    border-bottom: $hr-border-width solid $hr-border-color;
+    margin-bottom: 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+
+    .form-check {
+      padding-left: 0;
+
+      input.form-check-input {
+        display: none;
+      }
+
+      label {
+        margin: 0;
+        display: block;
+        white-space: nowrap;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+
+        cursor: pointer;
+
+        @include border-radius($border-radius);
+
+        color: $body-color;
+        border: 1px solid $hr-border-color;
+
+        transition: color $animation-speed-default, border $animation-speed-default, background-color $animation-speed-default;
+
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding: 0 1rem;
+
+        &:hover, &:focus, &:active {
+          border: 1px solid $primary;
+          color: $primary;
+          background-color: rgba($primary, .1);
+        }
+      }
+
+      input.form-check-input:checked + label {
+        border: 1px solid $primary;
+        color: #fff;
+        background-color: $primary;
+
+        font-weight: $font-weight-bolder;
+      }
+    }
+  }
+
+
+  // -- content
+  .daterange-overlay-content {
+    padding: 0 1rem 1.5rem 1rem;
+  }
+
+  // -- footer
+  .daterange-overlay-footer {
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+  }
+
+
+  @include media-breakpoint-down(md) {
+    position: fixed !important;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    transform: translateX(0);
+
+    width: 100%;
+    height: 100%;
+
+    .daterange-calendar-items {
+      width: 100%;
+    }
+
+    @include border-radius(0);
+
+    &.is-open {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    .daterange-overlay-header,
+    .daterange-overlay-footer {
+      flex: 0;
+    }
+
+    .daterange-overlay-footer {
+      padding-top: 1.5rem;
+    }
+
+    .daterange-overlay-content {
+      flex: 1;
+
+
+      overflow-x: hidden;
+      overflow-y: scroll;
+      padding: 1.5rem;
+      margin: -1.5rem -0.5rem 0 -0.5rem;
+
+    }
+  }
+
+
+  button.daterange-overlay-reset.btn.btn-link {
+    color: $body-color-light;
+    transition: color $animation-speed-default;
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
+
+// -- calendar items
+.daterange-calendar-items {
+
+  position: relative;
+  width: calc((17.5rem *2) + 1.5rem);
+
+  .slider-controls{
+    @extend %calender-slider-controls;
+  }
+
+  div:not(.tns-outer) + .slider-controls {
+    opacity: 0;
+  }
+
+  @include disable-browser-select();
+
+  .daterange-calendar-items-inner {
+    &:not(.tns-slider) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+
+      @include media-breakpoint-up(lg) {
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+
+      .calendar-item {
+        flex: 0 0 17.5rem;
+        width: 100%;
+        max-width: 17.5rem;
+      }
+    }
+
+    &.tns-slider {
+      .calendar-item {
+        min-width: 19rem;
+      }
+    }
+  }
+
+  .calendar-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &:not(.tns-item) {
+      flex: 0 0 17.5rem;
+      width: 100%;
+      max-width: 17.5rem;
+    }
+
+    // -- month
+    .calendar-item-month {
+      margin: 0;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    // -- days
+    .calendar-item-days {
+      display: flex;
+      flex-wrap: wrap;
+
+      .day-item {
+        flex: 0 0 2.5rem;
+        width: 100%;
+        max-width: 2.5rem;
+      }
+
+      &.calendar-item-days-header {
+        padding-bottom: .5rem;
+
+        .day-item {
+          text-align: center;
+
+          @extend %calendar-weekday;
+        }
+      }
+
+      &.calendar-item-days-dates {
+        row-gap: .25rem;
+
+        .day-item {
+          height: 2.5rem;
+          color: $body-color-light;
+          position: relative;
+
+          * {
+            pointer-events: none;
+          }
+
+          .day-item-inner {
+            width: 2.5rem;
+            height: 2.5rem;
+
+            position: relative;
+            z-index: 2;
+
+            font-size: $font-size-sm;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid transparent;
+
+            transition: border $animation-speed-default;
+
+            @include border-radius(50%);
+          }
+
+          &.day-item-between {
+            &:after {
+              content: '';
+              display: block;
+
+              background-color: rgba($primary, .15);
+
+              position:absolute;
+              z-index: 1;
+
+              left:0;
+              top:0;
+              right:0;
+              bottom:0;
+            }
+
+            &.day-item-start {
+              &:after {
+                left: 50%;
+              }
+
+            }
+
+            &.day-item-end {
+              &:after {
+                right: 50%;
+              }
+            }
+          }
+
+          &.day-item-interactive {
+            color: $body-color;
+            font-weight: $font-weight-bolder;
+
+            cursor: pointer;
+
+            &:hover {
+              .day-item-inner {
+                border: 1px solid $primary;
+              }
+            }
+          }
+
+          &.day-item-departure {
+            color: $success;
+          }
+
+          &.day-item-active {
+            color: #fff;
+
+            .day-item-inner {
+              background-color: $primary;
+              border: 1px solid $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .calendar-item.calendar-item-placeholder {
+
+    positioN: relative;
+
+
+
+    @keyframes loading-gradient {
+      0% {
+        width: 0;
+        opacity: 1;
+      }
+
+      100% {
+        width: 100%;
+        opacity: .5;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+
+      opacity: 1;
+
+      width: 0;
+
+      z-index: 10;
+      @include gradient-x(rgba(#fff, 0), rgba(#fff, .9));
+
+      animation: loading-gradient 2s infinite;
+    }
+
+    pointer-events: none;
+
+    * {
+      pointer-events: none;
+    }
+
+    .calendar-item-month {
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        background-color: darken($body-bg-highlight, 5%);
+        height: $font-size-lg;
+
+        @include border-radius($border-radius);
+
+        width: 5rem;
+        top: 50%;
+
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .calendar-item-days.calendar-item-days-dates .day-item.day-item-active .day-item-inner {
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
+
+    .calendar-item-days.calendar-item-days-dates .day-item .day-item-inner {
+      background-color: darken($body-bg-highlight, 5%) !important;
+      border: 1px solid darken($body-bg-highlight, 5%) !important;
+      width: 2rem;
+      height: 2rem;
+      margin: 0.25rem;
+    }
+
+    .calendar-item-days.calendar-item-days-header .day-item {
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        background-color: darken($body-bg-highlight, 5%);
+        height: $font-size-xs;
+
+        @include border-radius($border-radius);
+
+        width: 1.5rem;
+        top: 50%;
+
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+
+
+.daterange-overlay-backdrop {
+  @extend %backdrop-default;
+}

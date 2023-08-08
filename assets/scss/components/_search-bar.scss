@@ -1,183 +1,408 @@
-.layout-block-search-bar {
-    .layout-block-search-bar--search {
-        .search-box {
-            padding: 2rem;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            box-shadow: 0 5px 10px rgba(0,0,0,.25);
-            border-radius: $border-radius;
-            margin: 1rem 0;
-            background: #fff;
-            >div >div >label {
-                color: #212529;
-            }
-            .btn-block {
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            }
-            @include media-breakpoint-up(md) {
-                flex-direction: row;
-                >div {
-                    flex: 0 0 23%;
-                }
-                .btn-block {
-                    margin: 1rem 0 0 0;
-                }
-            }
-            @include media-breakpoint-up(lg) {
-                align-items: flex-end;
-                >div {
-                    flex: 0 0 19%;
-                }
-                .btn-block {
-                    margin: 0;
-                }
-            }
-        }
-        &.transparent {
-            .search-box {
-                background: rgba(255,255,255,.5);
-            }
-        }
-        &.main-color {
-            .search-box {
-                background: #007bff;
+%datepicker-input {
+  position: relative;
 
-                >div >div >label {
-                    color: #ffffff;
-                }
-            }
-        }
-        &.silver {
-            .search-box {
-                background: #bdc3c7;
-            }
-        }
+  .search-field-input-field {
+    text-align: left;
+    @extend %input-has-icon;
+
+    .input-icon {
+      @extend %input-icon;
     }
+  }
+
+  .input-clear {
+    @extend %input-clear;
+  }
 }
 
-// -- tab handling
-.layout-block-search-bar,
-.layout-block-search-header {
+%fulltext-input {
+  > input {
+    @extend %input-has-icon;
+  }
 
-    .layout-block-search-bar--search,
-    .layout-block-search-header--search {
-
-        .search-wrapper--tabs {
-            + form > .search-wrapper--inner {
-                margin-top: 0;
-                border-top-left-radius: 0 !important;
-            }
-
-            // -- button bases-style
-            button.search-wrapper--tabs_btn {
-                border: 0;
-                outline: none;
-                box-shadow: none;
-
-                height: 3rem;
-                padding: 0 30px;
-
-                border-top-left-radius: $border-radius;
-                border-top-right-radius: $border-radius;
-
-                background-color: rgba(#fff, .15);
-                color: lighten($body-color, 15%);
-
-                transition: background-color .3s, color .3s;
-
-                &:hover, &:focus, &:active, &.is--active {
-                    color: $body-color;
-                    background-color: rgba(#fff, .5);
-                }
-
-                &.is--active {
-                    font-weight: $font-weight-bold;
-                }
-            }
-        }
-
-        &.main-color {
-            .search-wrapper--tabs {
-                button.search-wrapper--tabs_btn {
-                    background-color: rgba($secondary, .15);
-
-                    &:hover, &:focus, &:active, &.is--active {
-                        color: #fff;
-                        background-color: #007bff;
-                    }
-                }
-            }
-        }
-
-
-        &.silver {
-            .search-wrapper--tabs {
-                button.search-wrapper--tabs_btn {
-                    background-color: rgba(#bdc3c7, .6);
-
-                    &:hover, &:focus, &:active, &.is--active {
-                        background-color: #bdc3c7;
-                    }
-                }
-            }
-        }
-
-
-        &.transparent {
-            .search-wrapper--tabs {
-
-                button.search-wrapper--tabs_btn {
-                    background-color: #fff;
-                    background-color: rgba(#bdc3c7, .6);
-
-                    border-top: 1px solid rgba($body-color, .05);
-
-                    border-left: 1px solid rgba($body-color, .05);
-
-                    border-right: 1px solid rgba($body-color, .05);
-
-                    &:hover, &:focus, &:active, &.is--active {
-                        background-color: #fff;
-                        color: $body-color;
-                    }
-
-                    &.is--active {
-                        height: calc(3rem + 1px);
-                        bottom: -1px;
-                        position: relative;
-                        z-indeX: 2;
-                    }
-                }
-
-
-                + form > .search-wrapper--inner {
-                    margin-top: 0;
-                    border-top-left-radius: 0 !important;
-                    box-shadow: none;
-
-                    border-top: 1px solid rgba($body-color, .05);
-                    border-bottom: 1px solid rgba($body-color, .05);
-                    border-left: 1px solid rgba($body-color, .05);
-                    border-right: 1px solid rgba($body-color, .05);
-                }
-            }
-
-
-        }
-    }
+  .input-icon {
+    @extend %input-icon;
+  }
 }
 
-.layout-block-search-bar--search {
-    &.mt-2rem {
-        margin-top: 2rem;
+.search-wrapper {
+
+  // -- fields
+  .search-bar-fields-search,
+  .search-bar-fields-pickers {
+    background-color: $input-bg;
+    @include border-radius($border-radius);
+    border: $input-border-width solid $input-border-color;
+  }
+
+  // -- search
+  .search-bar-fields-search {
+    min-width: 18rem;
+    flex: 0;
+
+    .search-box-field {
+      margin: -$input-border-width;
     }
 
-    @include media-breakpoint-up(md) {
-        &.mt-mb-offset {
-            margin-top: -6rem;
-            position: relative;
-            z-index: 5;
-        }
+    @include media-breakpoint-down($search-bar-mobile-break) {
+      min-width: unset;
+      width: 100%;
     }
+  }
+
+  // -- pickers
+  .search-bar-fields-pickers {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-down($search-bar-mobile-break) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .search-box-field {
+      flex: 0 0 ( 100% / $search-bar-field-columns );
+      width: 100%;
+      max-width: ( 100% / $search-bar-field-columns );
+
+      @include media-breakpoint-down($search-bar-mobile-break) {
+        flex: 1;
+        width: unset;
+        max-width: unset;
+      }
+
+      .search-field-input {
+        margin: -$input-border-width;
+      }
+
+      + .search-box-field {
+        border-left: $input-border-width solid $input-border-color;
+
+
+        @include media-breakpoint-down($search-bar-mobile-break) {
+          border-left: 0;
+          border-top: $input-border-width solid $input-border-color;
+        }
+      }
+    }
+  }
+
+  // -- search box field
+  .search-box-field {
+    position: relative;
+
+    .search-field-input-field,
+    .auto-complete-overlay {
+      @include button-reset();
+      
+      border: $input-border-big-width solid transparent;
+      @include border-radius($input-border-radius);
+      @include transition($input-transition);
+
+      width: 100%;
+
+      padding-left: $input-padding-x;
+      padding-right: $input-padding-x;
+
+      height: $search-bar-input-height;
+      line-height: ($search-bar-input-height - ($input-border-big-width * 2));
+
+      position: relative;
+      z-index: 2;
+
+      &:hover, &:focus, &:active {
+        border: $input-border-big-width solid $input-border-active-color;
+      }
+    }
+
+    // -- datepicker input
+    .search-field-input.search-field-input--datepicker {
+      @extend %datepicker-input;
+    }
+
+    // -- Fulltext
+    .search-field-input.search-field-input--fulltext {
+      @extend %fulltext-input;
+    }
+  }
+
+  // -- search inner
+  .search-wrapper--inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    gap: ($grid-gutter-width / 2);
+
+    @include media-breakpoint-down($search-bar-mobile-break) {
+      flex-direction: column;
+    }
+
+
+    // -- field / submit layout
+    .search-box-fields {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: start;
+
+      &.search-box-fields--gap {
+        gap: ($grid-gutter-width / 2);
+      }
+
+      @include media-breakpoint-down($search-bar-mobile-break) {
+        flex-direction: column;
+      }
+    }
+
+    .search-box-submit {
+      flex: 0;
+
+      button.btn, .btn, a.btn {
+        padding-top:0;
+        padding-bottom:0;
+        white-space: nowrap;
+
+        padding-left: $input-padding-x;
+        padding-right: $input-padding-x;
+
+        height: ($search-bar-input-height - pxToRem($btn-border-width));
+        line-height: (($search-bar-input-height - pxToRem($btn-border-width)) - ($input-border-big-width * 2))
+      }
+    }
+  }
+
+  // -- search-box
+  .search-box {
+    padding: $search-bar-padding-y;
+    background-color: $search-bar-pane-bg;
+    border-width: $search-bar-pane-border-width;
+    border-color: $search-bar-pane-border-color;
+    border-style: solid;
+
+    @include border-radius($search-bar-pane-border-radius);
+
+    @if ( $search-bar-use-shadow == true ) {
+      box-shadow: $search-bar-box-shadow;
+    }
+  }
+
+  // -- rest top left border radius if tabs given
+  .search-wrapper--tabs + form .search-box {
+    @include border-top-left-radius(0);
+  }
+
+  // -- string search change
+  .string-search {
+    > div {
+      position: relative;
+
+      > svg {
+        position: absolute;
+
+        width: $font-size-base;
+        height: $font-size-base;
+        color: $body-color;
+        right: $input-padding-x;
+        top: 50%;
+
+
+        z-index: 4;
+
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  // -- tabs
+  .search-wrapper--tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: $search-bar-tabs-gap;
+
+    button.search-wrapper--tabs_btn {
+      @include button-reset();
+      @include border-top-radius($search-bar-tabs-border-radius);
+
+      padding: $search-bar-padding-x $search-bar-padding-y;
+      background-color: $search-bar-tabs-bg;
+      border-color: $search-bar-tabs-border-color;
+      border-style: solid;
+      color: $search-bar-tabs-color;
+
+      font-weight: $search-bar-tabs-font-weight;
+
+      transition: border-color .3s, color .3s, background-color $animation-speed-default;
+
+      @if ( $search-bar-tabs-border-width != 0 ) {
+        border-top-width: $search-bar-tabs-border-width;
+        border-right-width: $search-bar-tabs-border-width;
+        border-left-width: $search-bar-tabs-border-width;
+        border-bottom-width: 0;
+      }
+
+      // -- hover state
+      &:hover {
+        background-color: $search-bar-tabs-link-hover-bg;
+        border-color: $search-bar-tabs-link-hover-border-color;
+        color: $search-bar-tabs-link-hover-color;
+        font-weight: $search-bar-tabs-link-hover-font-weight;
+      }
+
+      // -- active state
+      &.is-active {
+        background-color: $search-bar-tabs-link-active-bg;
+        border-color: $search-bar-tabs-link-active-border-color;
+        color: $search-bar-tabs-link-active-color;
+        font-weight: $search-bar-tabs-link-active-font-weight;
+
+        @if ( $search-bar-tabs-border-width != 0 ) {
+          padding-bottom: ( $search-bar-padding-x + $search-bar-tabs-border-width );
+          margin-bottom: -$search-bar-tabs-border-width;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * color themes
+ */
+
+// transparent
+.transparent {
+  .search-wrapper {
+    // -- panel
+    .search-box {
+      border-color: rgba($search-bar-transparent-theme-color, .7);
+      background-color: rgba($search-bar-transparent-theme-color, .7);
+    }
+
+    // -- tabs
+    .search-wrapper--tabs {
+      button.search-wrapper--tabs_btn {
+        background-color: rgba($search-bar-transparent-theme-color, .5);
+        border-color: rgba($search-bar-transparent-theme-color, .5);
+
+        // -- hover state
+        &:hover {
+          background-color: rgba($search-bar-transparent-theme-color, .7);
+          border-color: rgba($search-bar-transparent-theme-color, .7);
+        }
+
+        // -- active state
+        &.is-active {
+          background-color: rgba($search-bar-transparent-theme-color, .7);
+          border-color: rgba($search-bar-transparent-theme-color, .7);
+        }
+      }
+    }
+  }
+}
+
+// main color
+.main-color {
+  .search-wrapper {
+    // -- panel
+    .search-box {
+      border-color: $search-bar-main-theme-color;
+      background-color: $search-bar-main-theme-color;
+    }
+
+    // -- tabs
+    .search-wrapper--tabs {
+      button.search-wrapper--tabs_btn {
+        background-color: rgba($search-bar-main-theme-color, .5);
+        border-color: rgba($search-bar-main-theme-color, .5);
+
+        // -- hover state
+        &:hover {
+          background-color: rgba($search-bar-main-theme-color, .7);
+          border-color: rgba($search-bar-main-theme-color, .7);
+        }
+
+        // -- active state
+        &.is-active {
+          background-color: $search-bar-main-theme-color;
+          border-color: $search-bar-main-theme-color;
+        }
+      }
+    }
+  }
+}
+
+// silver color
+.silver {
+  .search-wrapper {
+    // -- panel
+    .search-box {
+      border-color: $search-bar-silver-theme-color;
+      background-color: $search-bar-silver-theme-color;
+    }
+
+    // -- tabs
+    .search-wrapper--tabs {
+      button.search-wrapper--tabs_btn {
+        background-color: rgba($search-bar-silver-theme-color, .5);
+        border-color: rgba($search-bar-silver-theme-color, .5);
+
+        // -- hover state
+        &:hover {
+          background-color: rgba($search-bar-silver-theme-color, .7);
+          border-color: rgba($search-bar-silver-theme-color, .7);
+        }
+
+        // -- active state
+        &.is-active {
+          background-color: $search-bar-silver-theme-color;
+          border-color: $search-bar-silver-theme-color;
+        }
+      }
+    }
+  }
+}
+
+// remove borders, for color themes, not needed
+.sliver, .main-color, .transparent {
+  .search-wrapper {
+
+    // -- search-box
+    .search-box {
+      border-width: 0;
+    }
+
+    // -- tabs
+    .search-wrapper--tabs {
+      button.search-wrapper--tabs_btn {
+        border-top-width: 0;
+        border-right-width: 0;
+        border-left-width: 0;
+        border-bottom-width: 0;
+
+        // -- active state
+        &.is-active {
+            padding-bottom: $search-bar-padding-x;
+            margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Search input
+ */
+.search-wrapper .search-box-field .string-search-overlay-input .input-wrapper,
+.string-search-overlay-input .input-wrapper {
+  @include border-radius($input-border-radius);
+  border: $input-border-width solid $input-border-color;
+}
+
+.string-search-overlay-input .input-wrapper {
+  @extend %fulltext-input;
 }

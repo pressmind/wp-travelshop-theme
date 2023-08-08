@@ -1,0 +1,39 @@
+%price-small {
+  color: $price-small-color;
+  @include font-size-generator($price-small-font-sizes);
+
+  small {
+    color: $price-small-color;
+    @include font-size-generator($price-small-font-sizes);
+  }
+
+  strong {
+    font-weight: $price-small-price-font-weight;
+  }
+
+  > strong {
+    color: $price-small-price-color;
+
+    @include font-size-generator($price-small-price-font-sizes);
+  }
+}
+
+%price-default {
+  color: $price-default-color;
+  @include font-size-generator($price-default-font-sizes);
+
+  small {
+    color: $price-default-color;
+    @include font-size-generator($price-default-font-sizes);
+  }
+
+  strong {
+    font-weight: $price-default-price-font-weight;
+  }
+
+  > strong {
+    color: $price-default-price-color;
+
+    @include font-size-generator($price-default-price-font-sizes);
+  }
+}

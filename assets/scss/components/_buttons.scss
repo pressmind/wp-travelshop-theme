@@ -1,0 +1,143 @@
+/**
+ * Booking button
+ */
+
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  gap: .25rem;
+  align-items: center;
+
+  .loader {
+    display: none;
+    width: auto;
+
+    height: $btn-font-size * $btn-line-height;
+  }
+
+  > svg {
+    width: $btn-font-size;
+    height: $btn-font-size;
+  }
+
+  &.btn-block {
+    display: flex;
+    justify-content: center;
+  }
+
+  // -- change look & feel of btn-link
+  &.btn-link, &.btn-link-light {
+    color: $body-color;
+    transition: color $animation-speed-default;
+    text-decoration: none;
+
+    border: 0; // reset border, not needed, prevent shifts
+
+    &.btn-bold {
+      font-weight: $btn-font-weight;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active, &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &.btn-link-light {
+    color: $body-color-light;
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+    }
+  }
+
+  &.btn-lg {
+    @include media-breakpoint-down(sm) {
+      font-size: 1.125rem !important;
+    }
+  }
+}
+
+.btn.booking-btn,
+.booking-btn {
+
+  // add opacity to transitions
+  transition: color .3s, border-color .3s, background-color .3s, opacity $animation-speed-default;
+
+  &.green {
+    @include button-variant($booking-green, $booking-green, lighten($booking-green, 15%), lighten($booking-green, 15%), darken($booking-green, 10%), darken($booking-green, 10%));
+
+    // -- set color
+    color: $booking-green-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-green-color;
+    }
+  }
+  &.red {
+    @include button-variant($booking-red, $booking-red, lighten($booking-red, 15%), lighten($booking-red, 15%), darken($booking-red, 10%), darken($booking-red, 10%));
+
+    // -- set color
+    color: $booking-red-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-red-color;
+    }
+  }
+  &.orange {
+    @include button-variant($booking-orange, $booking-orange, lighten($booking-orange, 15%), lighten($booking-orange, 15%), darken($booking-orange, 10%), darken($booking-orange, 10%));
+
+    // -- set color
+    color: $booking-orange-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-orange-color;
+    }
+  }
+  &.gray,
+  &.btn-disabled {
+    @include button-variant($booking-gray, $booking-gray, lighten($booking-gray, 10%), lighten($booking-gray, 10%), darken($booking-gray, 10%), darken($booking-gray, 10%));
+
+    // -- set color
+    color: $booking-gray-color;
+
+    &:hover, &:focus, &:active {
+      color: $booking-gray-color;
+    }
+  }
+
+  * {
+    pointer-events: none;
+  }
+
+  &.btn-disabled {
+    pointer-events: none;
+    opacity: .25;
+    cursor: not-allowed;
+  }
+
+  // -- loader height
+  .loader {
+    height: $booking-btn-loader-height;
+    width: auto;
+
+    margin: ( (($btn-font-size * $btn-line-height) - $booking-btn-loader-height) / 2 ) auto;
+  }
+
+  &.btn-lg {
+    .loader {
+      margin: ( (($btn-font-size-lg * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+
+      @include media-breakpoint-down(sm) {
+        margin: ( ((1.125rem * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+      }
+    }
+  }
+}

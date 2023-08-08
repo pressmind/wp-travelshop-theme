@@ -1,0 +1,155 @@
+.product-calendar-wrap {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1), 0 0 .25rem rgba(0,0,0,.05);
+  margin-bottom: 2rem;
+
+  .product-calendar-group {
+
+    // -- group split
+    .product-calendar-group-title {
+      h3 {
+        margin:0;
+        padding: 1rem 1rem .5rem 1rem;
+        display: block;
+      }
+    }
+
+    .md-align-right {
+      text-align: right;
+    }
+
+    .arrow--wrapper {
+      padding-left: 2rem;
+      position: relative;
+      svg {
+        width: 1rem;
+        height: auto;
+
+        position: absolute;
+        top:50%;
+        left:0;
+        transform: translateY(-50%);
+        transition: transform $animation-speed-default;
+
+        * {
+          fill: $body-color;
+        }
+      }
+    }
+
+    .is-active .arrow--wrapper svg {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    // -- items
+    .product-calendar-group-items {
+
+      // -- title
+      .product-calendar-items-title {
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: 0 ;
+        border-bottom: 1px solid #ccc;
+
+        > div {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+      }
+
+      // -- group item
+      .product-calendar-group-item {
+
+        padding: 1rem 0;
+        margin: 0;
+        @include media-breakpoint-down(sm) {
+          .col-12.col-md-4,
+          .col-6.col-md-2 {
+            padding-left: 2.875rem;
+          }
+        }
+
+        .discount-wrapper {
+          position: relative;
+          margin: 0 0 0.15rem 0;
+
+          p {
+            font-size: 0.8rem;
+            text-align: right;
+            margin: 0;
+
+            .msg {
+              background-color: white;
+              position: relative;
+              padding: 0px 2px;
+            }
+          }
+
+          hr {
+            display: none;
+          }
+
+          @include discount_label;
+        }
+
+        .circle.green {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          text-align: center;
+          display: inline-block;
+          background-color: gray;
+          margin-right: 4px;
+          background-color: #28a745;
+        }
+
+        @include media-breakpoint-up(md) {
+
+          > div {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
+        border-bottom: 1px solid #ccc;
+        transition: background-color $animation-speed-default;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba($body-color, .025);
+        }
+
+        &.is-active {
+          border-bottom: 0;
+        }
+      }
+
+      // -- teaser item
+      .product-calendar-group-item--product {
+        display: none;
+        border-bottom: 1px solid #ccc;
+          margin-left: 0;
+          margin-right: 0;
+
+        .travelshop-teaser-mega-stripe {
+          margin-bottom: 1rem;
+
+          .stripe-content-head {
+            border-bottom: 0;
+            padding-bottom:0;
+          }
+
+          @include media-breakpoint-up(md) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
+
+        &.is-open {
+          display: block;
+        }
+      }
+    }
+  }
+}

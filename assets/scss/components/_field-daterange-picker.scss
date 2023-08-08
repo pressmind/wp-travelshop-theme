@@ -1,0 +1,18 @@
+.list-filter-box.datepicker {
+  > div {
+    position: relative;
+
+    // -- make input normal behaviour, remove the readonly behaviour
+    input.form-control[readonly] {
+      background: $input-bg;
+      opacity: 1;
+    }
+
+    // -- input clear
+    .input-clear {
+      display: none;
+
+      @extend %input-clear;
+    }
+  }
+}

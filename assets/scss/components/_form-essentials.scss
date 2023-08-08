@@ -1,0 +1,555 @@
+/**
+ * in this section essentials for form types are defined
+ * as placeholders. These are defined by variables + extended
+ * in every state/position wich needs this styling
+ */
+
+/**
+ * Remove X action from chrome + firefox + ms styles
+ */
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+/**
+ * Define input clear button, by default / globally
+ */
+%input-clear {
+  position: absolute;
+  top: 50%;
+  right: $input-padding-x;
+  display: none;
+
+  margin-top: -($font-size-lg / 2);
+
+  width: $font-size-lg;
+  height: $font-size-lg;
+
+  background-color: $input-bg;
+
+  cursor: pointer;
+  color: $body-color;
+  transition: color $animation-speed-default;
+
+  &:hover {
+    color: $primary;
+  }
+
+  z-index: 5;
+}
+
+%input-has-icon {
+  position: relative;
+  padding-left: ($input-padding-x + $input-padding-y + $custom-input-icon-size) !important;
+}
+
+%input-icon {
+  position: absolute;
+  top: 50%;
+  left: $input-padding-x;
+  color: $custom-input-icon-color;
+  line-height: 0;
+
+  transform: translateY(-50%);
+
+  svg {
+    width: $custom-input-icon-size;
+    height: $custom-input-icon-size;
+  }
+}
+
+%input-icon-top {
+  top: $input-padding-y;
+  transform: none;
+}
+
+/**
+ * Select
+ */
+// -- select fix
+select.form-control {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 2rem;
+
+  cursor: pointer;
+
+  height: $input-height;
+  line-height: ($input-height - pxToRem($input-border-width));
+
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMTMuNjYsMTAxLjY2bC04MCw4MGE4LDgsMCwwLDEtMTEuMzIsMGwtODAtODBBOCw4LDAsMCwxLDUzLjY2LDkwLjM0TDEyOCwxNjQuNjlsNzQuMzQtNzQuMzVhOCw4LDAsMCwxLDExLjMyLDExLjMyWiI+PC9wYXRoPjwvc3ZnPg==), $input-bg;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - .75rem) ((($input-line-height * .5rem) + $input-padding-y) - (.5rem - pxToRem($input-border-width)));
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/**
+ * Define fadeout right, to make text longer than input fadeout into form bg-color
+ */
+
+%input-fadeout {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4rem; // 64px
+  pointer-events: none;
+
+  @include gradient-x(rgba($input-bg, 0), $input-bg, 0, 70%);
+
+  z-index: 2;
+}
+
+/**
+ * Custom input group, used ie. for string search
+ * ----------------------------------------------
+ * its using variables from inputs + input groups
+ */
+%custom-input-group {
+  position: relative;
+
+  .form-control {
+    @include border-radius($input-border-radius);
+
+    // -- make padding right based of append square
+    padding-right: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
+  }
+
+  .input-group-append {
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    right:0;
+
+    // -- z-index to prevent bugs on focus/hover
+    z-index: 4;
+
+    button.input-group-btn {
+      @include button-reset();
+
+      line-height: 0;
+      color: $body-color-light;
+
+      transition: color $animation-speed-default;
+
+      height: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
+      width: ( $input-font-size * $input-line-height ) + ( $input-padding-y * 2 );
+
+      svg {
+        width: $font-size-lg;
+        height: $font-size-lg;
+      }
+
+      &:hover, &:focus, &:active {
+        color: $primary;
+      }
+    }
+  }
+}
+
+/**
+ * Custom checkbox , with second level
+ */
+%custom-checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding-left: 0;
+
+  gap: $custom-checkbox-gutter;
+  font-size: $custom-checkbox-font-size;
+  line-height: $custom-checkbox-line-height;
+
+  // clickable element!
+  cursor: pointer;
+
+  // hide input by default
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  // label
+  > label {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  // custom input
+  > span,
+  > div:not(.list-filter-second-level) {
+    display: block;
+
+    max-width: 100%;
+    height: $custom-checkbox-input-size;
+    width: $custom-checkbox-input-size;
+    flex: 0 0 $custom-checkbox-input-size;
+
+    position: relative;
+
+    line-height: 0;
+
+    border-radius: $custom-checkbox-input-border-radius;
+    background-color: $custom-checkbox-input-bg;
+
+    // offset top to make it center with first line
+    // little calculation based on font size base and lineheight
+    top: ( ($custom-checkbox-font-size * $custom-checkbox-line-height) / 2 );
+    transform: translateY(-($custom-checkbox-input-size / 2));
+
+    @if ( $custom-checkbox-input-border-width != 0 ) {
+      border: $custom-checkbox-input-border-width solid $custom-checkbox-input-border-color;
+    }
+
+    transition: background-color .3s, border-color $animation-speed-default;
+
+    svg {
+      width: $custom-checkbox-input-icon-size;
+      height: $custom-checkbox-input-icon-size;
+      display: none;
+      transition: color $animation-speed-default;
+      color: $custom-checkbox-input-icon-color;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2));
+    }
+  }
+
+  // hover
+  &:hover {
+    > span,
+    > div:not(.list-filter-second-level)  {
+
+      background-color: $custom-checkbox-input-hover-bg;
+
+      @if ( $custom-checkbox-input-border-width != 0 ) {
+        border: $custom-checkbox-input-border-width solid $custom-checkbox-input-hover-border-color;
+      }
+
+      svg {
+        display: none;
+        color: $custom-checkbox-input-hover-icon-color;
+      }
+    }
+  }
+
+  // active
+  input:checked + span,
+  input:checked + div:not(.list-filter-second-level) {
+    background-color: $custom-checkbox-input-active-bg !important;
+
+    @if ( $custom-checkbox-input-border-width != 0 ) {
+      border: $custom-checkbox-input-border-width solid $custom-checkbox-input-active-border-color;
+    }
+
+    svg {
+      display: block !important;
+      color: $custom-checkbox-input-active-icon-color;
+    }
+  }
+
+  // additional if second level exists. toggle button
+
+  &.has-second-level {
+    // uses definitions of input check. to make it even in styling / sizes
+    button.toggle-second-level {
+      @include button-reset();
+
+      width: 100%;
+      height: $custom-checkbox-input-size;
+      max-width: $custom-checkbox-input-size;
+      flex: 0 0 $custom-checkbox-input-size;
+
+      position: relative;
+
+      // offset top to make it center with first line
+      // little calculation based on font size base and lineheight
+      top: ( ($custom-checkbox-font-size * $custom-checkbox-line-height) / 2 );
+      transform: translateY(-($custom-checkbox-input-size / 2));
+
+      svg {
+        width: $custom-checkbox-input-icon-size;
+        height: $custom-checkbox-input-icon-size;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transition: transform $animation-speed-default;
+        transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2));
+      }
+    }
+
+    // -- hide by default
+    .list-filter-second-level {
+      display: none;
+    }
+
+    // -- show if open state
+    //    and icon state if opened
+    &.is-open {
+
+      button.toggle-second-level {
+        svg {
+          transform: translate(-($custom-checkbox-input-icon-size/2), -($custom-checkbox-input-icon-size/2)) scaleY(-1);
+        }
+      }
+
+      .list-filter-second-level {
+        display: block;
+      }
+    }
+  }
+
+  // second level definition
+  .list-filter-second-level {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: ( $custom-checkbox-spacer - $custom-checkbox-gutter );
+
+    // padding left, icon input size + gutter
+    padding-left: ( $custom-checkbox-input-size + $custom-checkbox-gutter );
+  }
+}
+
+@include placeholder('custom-checkbox-large') {
+  gap: $custom-checkbox-large-gutter;
+  font-size: $custom-checkbox-large-font-size;
+  line-height: $custom-checkbox-large-line-height;
+
+  // custom input
+  > span,
+  > div:not(.list-filter-second-level) {
+    height: $custom-checkbox-large-input-size;
+    width: $custom-checkbox-large-input-size;
+    flex: 0 0 $custom-checkbox-large-input-size;
+
+    // offset top to make it center with first line
+    // little calculation based on font size base and lineheight
+    top: ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) / 2 );
+    transform: translateY(-($custom-checkbox-large-input-size / 2));
+
+    svg {
+      width: $custom-checkbox-large-input-icon-size;
+      height: $custom-checkbox-large-input-icon-size;
+      transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2));
+    }
+  }
+
+  // additional if second level exists. toggle button
+
+  &.has-second-level {
+    // uses definitions of input check. to make it even in styling / sizes
+    button.toggle-second-level {
+      max-width: 100%;
+      height: $custom-checkbox-large-input-size;
+      width: $custom-checkbox-large-input-size;
+      flex: 0 0 $custom-checkbox-large-input-size;
+
+      top: ( ($custom-checkbox-large-font-size * $custom-checkbox-large-line-height) / 2 );
+      transform: translateY(-($custom-checkbox-large-input-size / 2));
+
+      svg {
+        width: $custom-checkbox-large-input-icon-size;
+        height: $custom-checkbox-large-input-icon-size;
+        transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2));
+      }
+    }
+
+
+    // -- show if open state
+    //    and icon state if opened
+    &.is-open {
+      button.toggle-second-level {
+        svg {
+          transform: translate(-($custom-checkbox-large-input-icon-size/2), -($custom-checkbox-large-input-icon-size/2)) scaleY(-1);
+        }
+      }
+    }
+  }
+
+  // second level definition
+  .list-filter-second-level {
+    margin-top: ( $custom-checkbox-large-spacer - $custom-checkbox-large-gutter );
+
+    // padding left, icon input size + gutter
+    padding-left: ( $custom-checkbox-large-input-size + $custom-checkbox-large-gutter );
+  }
+}
+
+
+/**
+ * Custom radio , with second level
+ */
+%custom-radio-circle {
+  display: block;
+
+  height: $custom-radio-input-size;
+  max-width: 100%;
+  width: $custom-radio-input-size;
+  flex: 0 0 $custom-radio-input-size;
+
+  position: relative;
+
+  line-height: 0;
+
+  border-radius: $custom-radio-input-border-radius;
+  background-color: $custom-radio-input-bg;
+
+  // offset top to make it center with first line
+  // little calculation based on font size base and lineheight
+  top: ( ($custom-radio-font-size * $custom-radio-line-height) / 2 );
+  transform: translateY(-($custom-radio-input-size / 2));
+
+  @if ( $custom-radio-input-border-width != 0 ) {
+    border: $custom-radio-input-border-width solid $custom-radio-input-border-color;
+  }
+
+  transition: background-color .3s, border-color $animation-speed-default;
+
+  svg {
+    width: $custom-radio-input-icon-size;
+    height: $custom-radio-input-icon-size;
+    display: none;
+    transition: color $animation-speed-default;
+    color: $custom-radio-input-icon-color;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-($custom-radio-input-icon-size/2), -($custom-radio-input-icon-size/2));
+  }
+}
+
+%custom-radio-circle-hover {
+  background-color: $custom-radio-input-hover-bg;
+
+  @if ( $custom-radio-input-border-width != 0 ) {
+    border: $custom-radio-input-border-width solid $custom-radio-input-hover-border-color;
+  }
+
+  svg {
+    display: none;
+    color: $custom-radio-input-hover-icon-color;
+  }
+}
+
+%custom-radio-circle-active {
+  background-color: $custom-radio-input-active-bg !important;
+
+  @if ( $custom-radio-input-border-width != 0 ) {
+    border: $custom-radio-input-border-width solid $custom-radio-input-active-border-color;
+  }
+
+  svg {
+    display: block !important;
+    color: $custom-radio-input-active-icon-color;
+  }
+}
+
+%custom-radio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding-left: 0;
+
+  gap: $custom-radio-gutter;
+  font-size: $custom-radio-font-size;
+  line-height: $custom-radio-line-height;
+
+  // clickable element!
+  cursor: pointer;
+
+  // hide input by default
+  input[type='radio'] {
+    display: none;
+  }
+
+  // label
+  > label {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  // custom input
+  > span,
+  > div:not(.list-filter-second-level) {
+    @extend %custom-radio-circle;
+  }
+
+  // hover
+  &:hover {
+    > span,
+    > div:not(.list-filter-second-level) {
+      @extend %custom-radio-circle-hover;
+    }
+  }
+
+  // active
+  input:checked + span,
+  input:checked + div:not(.list-filter-second-level) {
+    @extend %custom-radio-circle-active,
+  }
+}
+
+@include placeholder('custom-radio-large') {
+  gap: $custom-radio-large-gutter;
+  font-size: $custom-radio-large-font-size;
+  line-height: $custom-radio-large-line-height;
+
+  // custom input
+  > span,
+  > div:not(.list-filter-second-level) {
+    height: $custom-radio-large-input-size;
+    max-width: 100%;
+    width: $custom-radio-large-input-size;
+    flex: 0 0 $custom-radio-large-input-size;
+
+    // offset top to make it center with first line
+    // little calculation based on font size base and lineheight
+    top: ( ($custom-radio-large-font-size * $custom-radio-large-line-height) / 2 );
+    transform: translateY(-($custom-radio-large-input-size / 2));
+
+    svg {
+      width: $custom-radio-large-input-icon-size;
+      height: $custom-radio-large-input-icon-size;
+      transform: translate(-($custom-radio-large-input-icon-size/2), -($custom-radio-large-input-icon-size/2));
+    }
+  }
+
+}
+
+// -- helper for inline checkbox and radios
+@include placeholder('custom-radio-checkbox-inline') {
+  display: flex;
+  flex-direction: row;
+  gap: .75rem;
+  flex-wrap: nowrap;
+
+  > .form-check,
+  > .form-radio {
+    flex-wrap: nowrap;
+    gap: .25rem;
+
+    > label {
+      white-space: nowrap;
+    }
+  }
+}

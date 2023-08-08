@@ -1,0 +1,146 @@
+/**
+ * File defines usable placeholders for apple-like elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
+
+@include placeholder('apple-like-open') {
+  opacity: 1;
+  pointer-events: auto;
+
+  * {
+    pointer-events: auto;
+  }
+}
+
+@include placeholder('apple-like-header') {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: $apple-like-header-padding;
+  border-bottom: $apple-like-header-border-width solid $apple-like-header-border-color;
+
+  @include border-top-radius($apple-like-border-radius);
+
+  > *:not(button) {
+    margin-bottom: 0;
+  }
+
+  > button {
+    @include button-reset();
+
+    line-height: 1;
+
+    // -- make visible, important!
+    display: block !important;
+
+    padding: $apple-like-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$apple-like-header-padding-y) (-$apple-like-header-padding-x) (-$apple-like-header-padding-y) auto;
+
+    color: $popup-close-color;
+    transition: color $animation-speed-default;
+
+    // -- svg size
+    svg {
+      pointer-events: none;
+
+      width: $popup-close-icon-size;
+      height: $popup-close-icon-size;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $popup-close-hover-color;
+    }
+  }
+}
+
+@include placeholder('apple-like-wrapper') {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right:0;
+  bottom:0;
+
+  width: 100%;
+  min-width: unset !important;
+  height: 100%;
+
+  transform: none !important;
+  will-change: unset !important;
+
+  z-index: $apple-like-zindex;
+
+  display: block;
+  outline: 0;
+
+  background-color: rgba($apple-like-backdrop-bg, $apple-like-backdrop-opacity);
+  container-name: backdrop;
+
+  overflow: hidden;
+  transition: opacity $animation-speed-default;
+  opacity: 0;
+
+  padding:0;
+  pointer-events: none;
+
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+@include placeholder('apple-like-content') {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  transition: opacity .3s, transform $animation-speed-default;
+
+  transform: translateY($apple-like-offset);
+  opacity:0;
+
+  background-color: $apple-like-bg;
+
+  @include border-bottom-radius(0);
+  @include border-top-radius($apple-like-border-radius);
+
+  box-shadow: $apple-like-box-shadow;
+  padding:0;
+
+  max-height: $apple-like-max-height;
+  height: auto;
+
+  bottom:0;
+  left:0;
+  right: 0;
+  top: auto;
+}
+
+@include placeholder('apple-like-content-open') {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+@include placeholder('apple-like-footer') {
+  padding: $apple-like-inner-padding;
+  border-top: $apple-like-footer-border-width solid $apple-like-footer-border-color;
+  // -- resets for dropdown behaviour
+  * {
+    margin-top: 0 !important;
+  }
+}
+
+@include placeholder('apple-like-body') {
+  position: relative;
+  padding: $apple-like-inner-padding;
+
+  margin: 0 !important;
+  max-height: unset !important;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}

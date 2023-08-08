@@ -1,0 +1,38 @@
+%stars {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.125rem;
+
+  line-height: 1;
+
+  .star-item {
+    overflow: hidden;
+    height: $font-size-base;
+    width: 0;
+    line-height: 0;
+
+    svg {
+      width: $font-size-base;
+      height: $font-size-base;
+    }
+
+    &.is-full {
+      width: $font-size-base;
+    }
+
+    &.is-half {
+      width: ($font-size-base / 2);
+    }
+  }
+}
+
+.stars-wrapper {
+  @extend %stars;
+}
+
+.list-filter-box {
+  .stars-wrapper {
+    transform: translateY(-.125rem);
+  }
+}

@@ -9,11 +9,24 @@ use \Pressmind\Search\CheapestPrice;
 use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
+use \Pressmind\Travelshop\CalendarGenerator;
+use \DateTime;
 
 ini_set('display_errors', 'On');
 error_reporting(-1);
 
 define('DOING_AJAX', true);
+
+// -- little fix for icon paths
+if ( !function_exists('get_stylesheet_directory_uri') ) {
+
+    function get_stylesheet_directory_uri() {
+        return '/wp-content/themes/travelshop';
+    }
+
+}
+require_once 'functions/checklist_formatter.php';
+require_once 'functions/remove_empty_paragraphs.php';
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->safeLoad();
@@ -21,6 +34,7 @@ require_once getenv('CONFIG_THEME');
 require_once 'bootstrap.php';
 require_once 'src/Search.php';
 require_once 'src/BuildSearch.php';
+require_once 'src/CalendarGenerator.php';
 require_once 'src/RouteHelper.php';
 require_once 'src/PriceHandler.php';
 require_once 'src/Template.php';
@@ -40,6 +54,204 @@ $request = json_decode(file_get_contents('php://input'));
 if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output->result = $request;
     echo json_encode($Output);
+    exit;
+} else if ($_GET['action'] == 'dateRangePicker') {
+    $currentDate = new DateTime('now');
+    $value = isset($_POST['value']) ? $_POST['value'] : '';
+    $minDate = isset($_POST['minDate']) ? $_POST['minDate'] : '';
+    $maxDate = isset($_POST['maxDate']) ? $_POST['maxDate'] : '';
+    $minYear = isset($_POST['minYear']) ? $_POST['minYear'] : '';
+    $maxYear = isset($_POST['maxYear']) ? $_POST['maxYear'] : '';
+    $departures = isset($_POST['departures']) ? $_POST['departures'] : '';
+
+    if ( is_array($departures) ) {
+        $departures = json_encode($departures);
+    }
+    $Calendar = new CalendarGenerator($currentDate, $value, $minDate, $maxDate, $minYear, $maxYear,$departures);
+    $CalendarObject = $Calendar->getCalendarObject();
+
+    require 'template-parts/pm-search/search/date-range-calendar.php';
+
+    exit;
+} else if ($_GET['action'] == 'offer-validation') {
+    $currentOffer = isset($_POST['offer_id']) ? $_POST['offer_id'] : null;
+    $Output = array('state' => 'invalid');
+
+    if ( $currentOffer === null ) {
+        $Output = array('state' => 'invalid');
+        echo json_encode($Output);
+        exit;
+    }
+
+    $id_media_object = (int)$_POST['media_object_id'];
+
+    if ( empty($id_media_object) ) {
+        $Output = array('state' => 'invalid');
+        echo json_encode($Output);
+        exit;
+    }
+
+    $args = [];
+    $mo = new \Pressmind\ORM\Object\MediaObject($id_media_object);
+
+    $CheapestPriceFilter = new CheapestPrice();
+
+    $valid_params = [];
+
+    // duration
+    if (empty($_POST['pm-du']) === false) {
+        $durationRange = BuildSearch::extractDurationRange($_POST['pm-du']);
+        if ($durationRange !== false) {
+            $valid_params['pm-du'] = $_POST['pm-du'];
+            $CheapestPriceFilter->duration_from = $durationRange[0];
+            $CheapestPriceFilter->duration_to = $durationRange[1];
+        }
+    }
+
+    // transport_type
+    if (empty($_POST['pm-tr']) === false) {
+        $transport_types = BuildSearch::extractTransportTypes($_POST['pm-tr']);
+        if(!empty($transport_types)){
+            $valid_params['pm-tr'] = $_POST['pm-tr'];
+            $CheapestPriceFilter->transport_types = $transport_types;
+        }
+    }
+
+    $args['media_object'] = $mo;
+    $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
+
+    // -- collecting offers based on data set
+    // -- @todo: airport have to be added heare, if pm-tr === 'FLUG' for validation.
+
+    // valid offers array
+    $validOffers = [];
+
+    if ( empty($args['cheapest_price']) || !empty($args['booking_on_request']) ) {
+        $Output = array('state' => 'invalid');
+        echo json_encode($Output);
+        exit;
+    }
+
+    $filter = new CheapestPrice();
+    $filter->occupancies_disable_fallback = false;
+    if ( !empty($_POST['pm-tr']) ) {
+        $filter->transport_types = [$_POST['pm-tr']];
+    }
+
+    /**
+     * @var \Pressmind\ORM\Object\CheapestPriceSpeed[] $offers
+     */
+    $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
+
+    /**
+     * @var \Pressmind\ORM\Object\CheapestPriceSpeed[] $date_to_cheapest_price
+     */
+    $date_to_cheapest_price = [];
+    $durations = [];
+    $transport_types = [];
+    foreach($offers as $offer){
+        if($offer->duration != $args['cheapest_price']->duration) {
+            continue;
+        }
+        // if the date has multiple prices, display only the cheapest
+        if (!empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]) &&
+            $offer->price_total < $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')]->price_total
+        ) {
+            // set the cheapier price
+            $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')] = $offer;
+        } elseif (empty($date_to_cheapest_price[$offer->date_departure->format('Y-m-j')])
+        ){
+            $date_to_cheapest_price[$offer->date_departure->format('Y-m-j')] = $offer;
+        }
+    }
+
+    // find the min and max date range
+    $from = new DateTime(array_key_first($date_to_cheapest_price));
+    $from->modify('first day of this month');
+    $to = new DateTime(array_key_last($date_to_cheapest_price));
+    $to->modify('first day of next month');
+
+    // display always three month, even if only one or two months have a valid travel date
+    $interval = $to->diff($from);
+    if ($interval->format('%m') < 3) {
+        $add_months = 3 - $interval->format('%m');
+        $to->modify('+' . $add_months . ' month');
+    }
+
+    $today = new DateTime();
+    // loop trough all months
+    foreach (new DatePeriod($from, new DateInterval('P1M'), $to) as $dt) {
+        // fill the calendar grid
+        $days = array_merge(
+            array_fill(1, $dt->format('N') - 1, ' '),
+            range(1, $dt->format('t'))
+        );
+        if (count($days) < 35) {
+            $delta = 35 - count($days);
+            $days = array_merge($days, array_fill(1, $delta, ' '));
+        }
+
+        foreach ($days as $day) {
+            $current_date = $dt->format('Y-m-') . $day;
+
+            if (!empty($date_to_cheapest_price[$current_date])) {
+                if ( !in_array($date_to_cheapest_price[$current_date]->id, $validOffers) ) {
+                    array_push($validOffers, $date_to_cheapest_price[$current_date]->id);
+                }
+            }
+        }
+    }
+
+    if ( in_array($currentOffer, $validOffers ) ) {
+        $Output = array('state' => 'valid');
+        echo json_encode($Output);
+        exit;
+    }
+
+    $Output = array('state' => 'invalid');
+    echo json_encode($Output);
+    exit;
+} else if ($_GET['action'] == 'detail-booking-calendar' ) {
+    /**
+     *  Action is rendering booking calendar via ajax - to prevent sourcecode in HTML not needed
+     *  + re-rendering calendar on various actions by values
+     */
+    $id_media_object = (int)$_POST['media_object_id'];
+    if ( empty($id_media_object) ) {
+        exit;
+    }
+
+    $args = [];
+    $mo = new \Pressmind\ORM\Object\MediaObject($id_media_object);
+
+    $CheapestPriceFilter = new CheapestPrice();
+
+    $valid_params = [];
+
+    // duration
+    if (empty($_POST['pm-du']) === false) {
+        $durationRange = BuildSearch::extractDurationRange($_POST['pm-du']);
+        if ($durationRange !== false) {
+            $valid_params['pm-du'] = $_POST['pm-du'];
+            $CheapestPriceFilter->duration_from = $durationRange[0];
+            $CheapestPriceFilter->duration_to = $durationRange[1];
+        }
+    }
+
+    // transport_type
+    if (empty($_POST['pm-tr']) === false) {
+        $transport_types = BuildSearch::extractTransportTypes($_POST['pm-tr']);
+        if(!empty($transport_types)){
+            $valid_params['pm-tr'] = $_POST['pm-tr'];
+            $CheapestPriceFilter->transport_types = $transport_types;
+        }
+    }
+
+    $args['media_object'] = $mo;
+    $args['filter'] = isset($_POST) ? $_POST : null;
+    $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
+
+    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint-calendar.php', $args);
     exit;
 } else if ($_GET['action'] == 'search') {
     $output = null;

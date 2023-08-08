@@ -49,9 +49,9 @@ if(!empty($args['cheapest_price'])){
 }
 
 ?>
-<article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper">
-    <div class="card card-travel">
-            <div class="card-image-holder col-5 col-sm-5 col-md-12 p-0">
+<article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper card-travel-wrapper--default">
+    <div class="card-travel">
+            <div class="card-image">
                 <?php
                 echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/card-badge.php', [
                     'cheapest_price' => $args['cheapest_price'],
@@ -69,35 +69,37 @@ if(!empty($args['cheapest_price'])){
                     <?php
                     echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/image.php', [
                         'image' => $args['image'],
-                        'class' => 'card-img-top',
+                        'class' => 'responsive-image',
                     ]);
                     ?>
                 </a>
             </div>
 
-        <section class="card-body col-7 col-sm-7 col-md-12">
-            <?php
+        <section class="card-body">
+            <div class="card-body--top">
+                <?php
                 if(!empty($_GET['debug'])){
                     echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/debug-textsearch.php', $args);
                 }
-            ?>
-            <h1 class="card-title">
-                <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
-            </h1>
-            <?php
-            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
-                'attributes' => array_filter([$args['travel_type'] ?? [], $args['destination'] ?? []]),
-            ]);
-            ?>
-            <?php if (empty($args['subline']) === false) { ?>
-                <p class="card-text subline">
-                    <?php echo $args['subline']; ?>
-                    <span class="fade-out"></span>
-                </p>
-            <?php } ?>
-            <div class="bottom-aligned">
+                ?>
+                <h1 class="card-title">
+                    <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
+                </h1>
+                <?php
+                echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
+                    'attributes' => array_filter([$args['travel_type'] ?? [], $args['destination'] ?? []]),
+                ]);
+                ?>
+                <?php if (empty($args['subline']) === false) { ?>
+                    <p class="card-text card-text--fade-out lh-3">
+                        <?php echo $args['subline']; ?>
+                        <span class="fade-out"></span>
+                    </p>
+                <?php } ?>
+            </div>
+            <div class="card-body--bottom">
                 <?php if(!is_null($args['cheapest_price'])){ ?>
-                <div class="card-text date-row">
+                <div class="date-row">
                     <span class="small">
                         <span>
                         <?php
@@ -120,31 +122,28 @@ if(!empty($args['cheapest_price'])){
                     ?>
                 </div>
                 <?php } ?>
-                <div class="card-text price-row">
+                <div class="price-row">
+                    <?php
+                    if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
+                        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
+                            'prefix' => '<hr>',
+                            'cheapest_price' => $args['cheapest_price'],
+                            'discount' => $discount,
+                            'hide-price-total' => true,
+                            'hide-discount-valid-to' => true,
+                        ], 0);
+                    }
+                    ?>
+                    <a href="<?php echo $args['url']; ?>" class="btn btn-primary">
                         <?php
-                        if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
-                            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
-                                'prefix' => '<hr>',
-                                'cheapest_price' => $args['cheapest_price'],
-                                'discount' => $discount,
-                                'hide-price-total' => true,
-                                'hide-discount-valid-to' => true,
-                            ], 0);
+                        if(!is_null($args['cheapest_price'])) {
+                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', ['cheapest_price' => $args['cheapest_price'],
+                            ]);
+                        }else{
+                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
                         }
                         ?>
-                        <a href="<?php echo $args['url'];?>" class="travel-teaser-link">
-                            <div class="btn btn-primary">
-                            <?php
-                            if(!is_null($args['cheapest_price'])) {
-                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
-                                    'cheapest_price' => $args['cheapest_price'],
-                                ]);
-                            }else{
-                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
-                            }
-                            ?>
-                            </div>
-                        </a>
+                    </a>
                 </div>
             </div>
         </section>

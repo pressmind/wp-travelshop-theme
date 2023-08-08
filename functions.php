@@ -59,6 +59,7 @@ require_once 'src/CategoryTreeTools.php';
 require_once 'src/PriceHandler.php';
 require_once 'src/Timer.php';
 require_once 'src/Calendar.php';
+require_once 'src/CalendarGenerator.php';
 require_once 'src/Template.php';
 //require_once 'src/GeoIP.php';
 
@@ -115,6 +116,12 @@ require_once 'functions/sitemaps.php';
 
 // Images
 require_once 'functions/images.php';
+
+// Checklist
+require_once 'functions/checklist_formatter.php';
+
+// Remove empty p tags
+require_once 'functions/remove_empty_paragraphs.php';
 
 // Admin Stuff
 require_once 'functions/after_wp_save.php';

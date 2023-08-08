@@ -1,0 +1,199 @@
+// -- input group
+.input-group {
+	position: relative;
+
+	&.form-string-search {
+		max-width: 145px;
+		@include media-breakpoint-up(xl) {
+			max-width: 180px;
+		}
+	}
+
+	.form-control {
+		border-radius: $input-border-radius !important;
+	}
+
+	.input-group-append {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		z-index: 5;
+
+		button.btn.btn-link {
+			color: rgba($body-color, 0.5);
+			transition: all 0$animation-speed-default;
+			text-align: center;
+			font-size: $font-size-base;
+			font-size: 1.125rem;
+
+			// -- height settings, and width
+			padding: 0;
+			border: 0;
+
+			height: 2.375rem; // 38px;
+			width: 2.375rem;
+			line-height: 2.375rem;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none;
+			}
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.travelshop-datepicker-input {
+	background: #fff !important;
+	cursor: pointer;
+}
+
+.form-check {
+	@include noselect();
+}
+
+.form-control.bootstrap-multiselect {
+	display: none !important;
+}
+
+// -- disable X on search inputs.
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+}
+
+// -- autocomplete
+.autocomplete-suggestions {
+	padding: ($grid-gutter-width / 3) * 2;
+	min-width: 15rem; // 240px, min width, to make it look nicer
+
+	@include border-radius($dropdown-border-radius);
+	background: $dropdown-bg;
+	border: $dropdown-border-width solid $dropdown-border-color;
+	margin-top: $dropdown-spacer;
+	box-shadow: $dropdown-box-shadow;
+
+	.autocomplete-suggestion {
+		+ .autocomplete-suggestion {
+			margin-top: 0.5rem; // 8px;
+		}
+
+		cursor: pointer;
+		transition: all 0$animation-speed-default;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+// -- Select
+.dropdown-menu.dropdown-menu-select {
+	padding: 0.5rem 1rem 1rem 1rem;
+	min-width: 100%;
+	text-align: left;
+}
+
+// -- select button
+button.select-form-control {
+	@extend .form-control;
+	text-align: left;
+	position: relative;
+
+	&:after {
+		display: none !important;
+	}
+
+	position: relative;
+
+	span.selected-options {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+		width: auto;
+		overflow: hidden;
+
+		position: relative;
+		z-index: 1;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 60px;
+			pointer-events: none;
+
+			@include gradient-x(rgba(#fff, 0), #fff, 0, 70%);
+		}
+		span {
+			margin-right: 0.25rem;
+		}
+	}
+
+	.dropdown-clear,
+	.dropdown-icon {
+		position: absolute;
+		right: 0.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		pointer-events: visible;
+		display: none;
+		path,
+		line {
+			pointer-events: none;
+		}
+	}
+
+	.dropdown-icon {
+		display: block;
+		stroke: #444;
+	}
+
+	i.la {
+		position: absolute;
+		right: 0.75rem;
+		top: 50%;
+
+		transition: transform 0$animation-speed-default;
+
+		z-index: 3;
+
+		margin-top: -8px;
+	}
+}
+
+.dropdown.show button.select-form-control {
+	i.la {
+		transform: rotate(180deg);
+	}
+}
+
+.form-group.category-tree {
+	margin-bottom: 1rem;
+	.dropdown-menu.dropdown-menu-select {
+		top: 100% !important;
+		transform: translate(0,0) !important;
+
+		.multi-level-checkboxes {
+
+			padding-left: 1rem;
+			padding-right: 1rem;
+			margin-left: -1rem;
+			margin-right: -1rem;
+
+			overflow-y: auto;
+			max-height: ( ( ( 1rem * 1.5 ) + 0.25rem ) * 12);
+		}
+	}
+}

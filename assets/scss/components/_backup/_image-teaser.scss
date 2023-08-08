@@ -1,0 +1,37 @@
+.teaser.image-teaser {
+  border: 0;
+
+  .teaser-image {
+    @include border-radius($card-border-radius);
+
+    background-color: lightgray;
+    background-position: center;
+    background-size: cover;
+
+    height: 218px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.15);
+      @include border-radius($card-border-radius);
+    }
+
+   }
+
+  .teaser-body {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+
+    z-index: 10;
+
+    color: #fff;
+    text-shadow: 0 0 10px rgba(#000, .25);
+  }
+}

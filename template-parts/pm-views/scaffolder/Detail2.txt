@@ -393,7 +393,7 @@ $args['breadcrumb'][] = $tmp;
 <script>
     let currentMOID = <?php echo $args['id_media_object']; ?>;
 </script>
-<div class="content-main">
+<div class="content-main" id="content-main">
     <article class="detail-page-v2-container">
         <section class="container">
             <div class="row">

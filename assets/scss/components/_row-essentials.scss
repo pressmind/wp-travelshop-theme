@@ -1,0 +1,68 @@
+.row.row-products:not(.is-slider) {
+  margin-bottom: -1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: -$grid-gutter-width;
+  }
+
+  > div, > article {
+    @extend %spacing-bottom;
+
+    &.card-travel-wrapper--stripe {
+      margin-bottom: 0;
+    }
+
+    // -- little change for card travel wrapper, to make margins another way if small teaser / break is active
+    &.card-travel-wrapper:not(.card-travel-wrapper--stripe) {
+      @if ( $travel-card-break != null ) {
+        margin-bottom: 0;
+
+        @include get-custom-breakpoint($travel-card-break) {
+          margin-bottom: 1rem;
+        }
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: $grid-gutter-width;
+        }
+
+      }
+    }
+  }
+}
+
+// -- little change on offset .row.row-products if break
+@if ( $travel-card-break != null ) {
+  .content-block.content-block-travel-cols {
+    .row.row-products:not(.is-slider) {
+      margin-bottom: 0;
+
+      @include get-custom-breakpoint($travel-card-break) {
+        margin-bottom: -1rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: -$grid-gutter-width;
+      }
+    }
+  }
+}
+
+.row.row-introduction {
+  @extend %spacing-bottom;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+
+    + p {
+      margin-top: 1rem;
+    }
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+}

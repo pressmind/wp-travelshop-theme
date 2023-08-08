@@ -27,6 +27,22 @@ add_filter('wpsf_register_settings_travelshop_wpsf', function ($wpsf_settings) {
             'id' => 'contact',
             'title' => 'Kontaktdaten',
         ),
+        array(
+            'id' => 'search',
+            'title' => 'Suche'
+        ),
+        array(
+            'id' => 'search_tabTwo',
+            'title' => 'Suche Tab #2'
+        ),
+        array(
+            'id' => 'search_tabThree',
+            'title' => 'Suche Tab #3'
+        ),
+        array(
+            'id' => 'search_tabFour',
+            'title' => 'Suche Tab #4'
+        )
         /*
         array(
             'id' => 'tab_2',
@@ -224,6 +240,762 @@ add_filter('wpsf_register_settings_travelshop_wpsf', function ($wpsf_settings) {
                     'default' => 'This is default',
                 ),
             ),
+        ),
+
+        array(
+            'tab_id' => 'search',
+            'section_id' => 'search',
+            'section_title' => 'Volltextsuche',
+            'section_order' => 1,
+            'fields' => array(
+
+
+
+                array(
+                    'id' => 'search-teaser-items',
+                    'title' => 'Platzhalter Teaser',
+                    'desc' => 'Shortcode: [ts-search-teaser-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'subtext',
+                            'title' => 'Subtitel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'badge',
+                            'title' => 'Badge',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+
+                array(
+                    'id' => 'search-title',
+                    'title' => 'Titel ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-link',
+                    'title' => 'Mehr Link ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link-text]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+
+                array(
+                    'id' => 'search-group-two-title',
+                    'title' => 'Titel ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-group-two-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-two-link',
+                    'title' => 'Mehr Link ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link]',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-two-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link-text]',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+                array(
+                    'id' => 'search-link-text',
+                    'title' => 'Suchlink Text',
+                    'desc' => 'Shortcode: [ts-search-link-text]<br>Link text to search page',
+                    'type' => 'text',
+                    'default' => 'Nicht sicher? Alle Reisen anzeigen'
+                ),
+                array(
+                    'id' => 'search-link',
+                    'title' => 'Suchlink',
+                    'desc' => 'Shortcode: [ts-search-link]<br>Link to search page',
+                    'type' => 'text',
+                    'default' => '/suche/'
+                ),
+
+            )
+        ),
+
+        array(
+            'tab_id' => 'search_tabTwo',
+            'section_id' => 'search_tabTwo',
+            'section_title' => 'Volltextsuche',
+            'section_order' => 1,
+            'fields' => array(
+
+
+
+                array(
+                    'id' => 'search-teaser-items',
+                    'title' => 'Platzhalter Teaser',
+                    'desc' => 'Shortcode: [ts-search-teaser-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'subtext',
+                            'title' => 'Subtitel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'badge',
+                            'title' => 'Badge',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+
+                array(
+                    'id' => 'search-title',
+                    'title' => 'Titel ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-link',
+                    'title' => 'Mehr Link ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link-text]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+
+                array(
+                    'id' => 'search-group-two-title',
+                    'title' => 'Titel ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-group-two-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-two-link',
+                    'title' => 'Mehr Link ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link]',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-two-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link-text]',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+                array(
+                    'id' => 'search-link-text',
+                    'title' => 'Suchlink Text',
+                    'desc' => 'Shortcode: [ts-search-link-text]<br>Link text to search page',
+                    'type' => 'text',
+                    'default' => 'Nicht sicher? Alle Reisen anzeigen'
+                ),
+                array(
+                    'id' => 'search-link',
+                    'title' => 'Suchlink',
+                    'desc' => 'Shortcode: [ts-search-link]<br>Link to search page',
+                    'type' => 'text',
+                    'default' => '/suche/'
+                ),
+
+            )
+        ),
+
+        array(
+            'tab_id' => 'search_tabThree',
+            'section_id' => 'search_tabThree',
+            'section_title' => 'Volltextsuche',
+            'section_order' => 1,
+            'fields' => array(
+
+
+
+                array(
+                    'id' => 'search-teaser-items',
+                    'title' => 'Platzhalter Teaser',
+                    'desc' => 'Shortcode: [ts-search-teaser-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'subtext',
+                            'title' => 'Subtitel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'badge',
+                            'title' => 'Badge',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+
+                array(
+                    'id' => 'search-title',
+                    'title' => 'Titel ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-link',
+                    'title' => 'Mehr Link ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link-text]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+
+                array(
+                    'id' => 'search-group-two-title',
+                    'title' => 'Titel ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-group-two-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-two-link',
+                    'title' => 'Mehr Link ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link]',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-two-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link-text]',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+                array(
+                    'id' => 'search-link-text',
+                    'title' => 'Suchlink Text',
+                    'desc' => 'Shortcode: [ts-search-link-text]<br>Link text to search page',
+                    'type' => 'text',
+                    'default' => 'Nicht sicher? Alle Reisen anzeigen'
+                ),
+                array(
+                    'id' => 'search-link',
+                    'title' => 'Suchlink',
+                    'desc' => 'Shortcode: [ts-search-link]<br>Link to search page',
+                    'type' => 'text',
+                    'default' => '/suche/'
+                ),
+
+            )
+        ),
+
+        array(
+            'tab_id' => 'search_tabFour',
+            'section_id' => 'search_tabFour',
+            'section_title' => 'Volltextsuche',
+            'section_order' => 1,
+            'fields' => array(
+
+
+
+                array(
+                    'id' => 'search-teaser-items',
+                    'title' => 'Platzhalter Teaser',
+                    'desc' => 'Shortcode: [ts-search-teaser-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'subtext',
+                            'title' => 'Subtitel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'badge',
+                            'title' => 'Badge',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+
+                array(
+                    'id' => 'search-title',
+                    'title' => 'Titel ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-link',
+                    'title' => 'Mehr Link ( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 1 )',
+                    'desc' => 'Shortcode: [ts-search-group-link-text]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+
+                array(
+                    'id' => 'search-group-two-title',
+                    'title' => 'Titel ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-title]<br>Title appears on top of fulltext search placeholder items',
+                    'type' => 'text',
+                    'default' => 'Aktuell beliebt'
+                ),
+
+                array(
+                    'id' => 'search-group-two-items',
+                    'title' => 'Platzhalter Elemente ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-search-group-two-items]',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => 'Spanien',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Image',
+                            'desc' => 'Needs id of media library item',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link',
+                            'desc' => 'Needs link of specific site',
+                            'placeholder' => '',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                array(
+                    'id' => 'search-group-two-link',
+                    'title' => 'Mehr Link ( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link]',
+                    'type' => 'text',
+                    'default' => '/reiseziele/'
+                ),
+
+                array(
+                    'id' => 'search-group-two-link-text',
+                    'title' => 'Mehr Link Text( Gruppe 2 )',
+                    'desc' => 'Shortcode: [ts-group-two-link-text]',
+                    'type' => 'text',
+                    'default' => 'Weitere Reiseziele anzeigen'
+                ),
+
+                array(
+                    'id' => 'search-link-text',
+                    'title' => 'Suchlink Text',
+                    'desc' => 'Shortcode: [ts-search-link-text]<br>Link text to search page',
+                    'type' => 'text',
+                    'default' => 'Nicht sicher? Alle Reisen anzeigen'
+                ),
+                array(
+                    'id' => 'search-link',
+                    'title' => 'Suchlink',
+                    'desc' => 'Shortcode: [ts-search-link]<br>Link to search page',
+                    'type' => 'text',
+                    'default' => '/suche/'
+                ),
+
+            )
         ),
 
         /*

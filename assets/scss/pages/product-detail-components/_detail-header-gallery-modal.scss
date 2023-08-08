@@ -1,0 +1,213 @@
+.detail-gallery-overlay {
+  //display: none ; // @todo: add styling later
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $animation-speed-default;
+
+  position: fixed;
+
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+
+  z-index: $zindex-modal;
+
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:not(.open) {
+    * {
+      pointer-events: none !important;
+    }
+  }
+
+  // -- gallery modal is a static component. just uses some bootstrap variables for backdrop
+
+  // close
+  button.detail-gallery-overlay-close {
+    @include button-reset();
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    z-index: 10;
+
+    @include media-breakpoint-up(lg) {
+      top: $grid-gutter-width;
+      right: $grid-gutter-width;
+    }
+
+    // -- use variables of slider controls for this one
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    justify-content: center;
+    pointer-events: auto;
+
+    transition: border-color .3s, color .3s, background-color .3s, opacity $animation-speed-default;
+    background-color: $slider-controls-on-image-bg;
+    color: $slider-controls-on-image-color;
+
+    width: $slider-controls-size;
+    height: $slider-controls-size;
+    flex: 0 0 $slider-controls-size;
+    max-width: 100%;
+
+    @include border-radius($slider-controls-border-radius);
+
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-width: $slider-controls-on-image-border-width;
+      border-style: solid;
+      border-color: $slider-controls-on-image-border-color;
+    }
+
+    > svg {
+      width: $slider-controls-icon-size;
+      height: $slider-controls-icon-size;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-on-image-hover-color;
+        background-color: $slider-controls-on-image-hover-bg;
+
+        @if ( $slider-controls-on-image-border-width != 0 ) {
+          border-color: $slider-controls-on-image-hover-border-color;
+        }
+      }
+    }
+
+    // -- disabled
+    &[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: $slider-controls-disabled-opacity;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: $slider-controls-large-size;
+      height: $slider-controls-large-size;
+      flex: 0 0 $slider-controls-large-size;
+
+      > svg {
+        width: $slider-controls-large-icon-size;
+        height: $slider-controls-large-icon-size;
+      }
+    }
+  }
+
+  // -- slider
+  .detail-gallery-overlay-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -40px;
+    height: 70vh;
+    left: 0;
+    right: 0;
+    bottom: auto;
+
+    .slider-controls {
+      @extend %slider-controls;
+      @extend %slider-controls-on-image;
+      @extend %slider-controls-inner;
+      @extend %slider-controls-large-up-lg;
+
+      left: 1rem;
+      right: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        right: $grid-gutter-width;
+        left: $grid-gutter-width;
+      }
+    }
+
+    .detail-gallery-overlay-item {
+      position: relative;
+
+      // -- image handling
+      .detail-gallery-overlay-item--image {
+        height: 70vh;
+        position: relative;
+        width: 100%;
+
+        >img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 50px;
+          top: 0;
+
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      // -- caption
+      .detail-gallery-overlay-item--caption {
+        position: absolute;
+        bottom: $grid-gutter-width;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 10;
+        color: $text-on-image-color;
+        text-shadow: $text-on-image-shadow;
+        text-align: center;
+
+        small {
+          display: block;
+          clear: both;
+          margin-top: ($grid-gutter-width / 3);
+        }
+
+        @include no-select();
+      }
+    }
+  }
+
+  // -- thumbnails
+  #detail-gallery-thumbnails {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+
+    @include media-breakpoint-up(lg) {
+      bottom: $grid-gutter-width;
+    }
+
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+    overflow-y: auto;
+    text-align: center;
+    white-space: nowrap;
+
+    .detail-gallery-thumbnail-item {
+      display: inline-block;
+
+      cursor: pointer;
+      opacity: .5;
+
+      transition: opacity $animation-speed-default;
+
+      &:hover,
+      &.tns-nav-active {
+        opacity: 1;
+      }
+
+      img {
+        height: 3rem !important;
+        width: 3rem !important;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+}

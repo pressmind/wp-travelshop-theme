@@ -1,0 +1,67 @@
+.personen-select {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .personen-select-title {
+    @extend %headings;
+    @include font-size-generator($h6-font-sizes);
+
+    font-weight: $headings-font-weight;
+
+    margin: 0;
+  }
+
+
+  .personen-select-counter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    button.personen-select-counter-btn {
+      @include button-reset();
+
+      width: 2rem;
+      height: 2rem;
+      line-height: 0;
+
+      transition: color .3s,opacity $animation-speed-default;
+      color: $body-color-light;
+
+      > svg {
+        width: 2rem;
+        height: 2rem;
+        pointer-events: none;
+      }
+
+      &:hover {
+        color: $body-color;
+      }
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active,
+      &[disabled]:focus {
+        cursor: not-allowed;
+        color: $body-color-light;
+        opacity: .5;
+      }
+    }
+
+    input.personen-select-counter-input {
+      @include input-reset();
+
+      width: 4rem;
+      height: 2rem;
+      text-align: center;
+      line-height: 2rem;
+      color: $body-color;
+      font-weight: $headings-font-weight;
+
+      @include font-size-generator($h5-font-sizes);
+    }
+  }
+
+}

@@ -1,0 +1,185 @@
+%share-action-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  @include border-radius($share-item-border-radius);
+
+  text-decoration: none;
+  font-weight: $share-item-font-weight;
+  color: $share-item-color;
+  border-width: $share-item-border-width;
+  border-style: solid;
+  border-color: $share-item-border-color;
+  background-color: $share-item-bg;
+  transition: border-color .3s, color .3s, background-color $animation-speed-default;
+
+  padding: $share-item-spacing-y $share-item-spacing-x;
+
+  @include spacing-generator($share-items-gaps, 'around', 'gap');
+  @include font-size-generator($share-item-font-sizes);
+
+  &:hover, &:focus, &:active {
+    color: $share-item-hover-color;
+    border-color: $share-item-hover-border-color;
+    background-color: $share-item-hover-bg;
+
+    text-decoration: none;
+  }
+}
+
+.page-share {
+
+  // -- share object
+  .share-object {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .5rem;
+    align-items: center;
+
+    margin-bottom: $modal-inner-padding;
+    padding-bottom: $modal-inner-padding;
+    border-bottom: $hr-border-width solid $hr-border-color;
+
+    @include media-breakpoint-up(md) {
+      gap: 1rem;
+    }
+
+    .share-object-image {
+      @include border-radius($card-border-radius);
+      @include aspect-ratio(1, 1);
+
+      overflow: hidden;
+
+      position: relative;
+      flex: 0 0 20%;
+      width: 100%;
+      max-width: 4rem;
+
+      > img {
+        @extend %media-cover-image;
+      }
+    }
+
+    .share-object-body {
+      flex: 1;
+
+      strong {
+        @extend .h5;
+
+        margin-bottom:0;
+      }
+    }
+  }
+
+  // -- share items
+  .share-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: -.25rem;
+
+    @include media-breakpoint-up(md) {
+      margin: -.5rem;
+    }
+
+    position: relative;
+
+    .share-buttons-col {
+      width: 100%;
+      padding: .25rem;
+
+      @include media-breakpoint-up(md) {
+        padding: .5rem;
+      }
+
+      @include spacing-generator($share-items-flex, 'around', 'flex');
+      @include spacing-generator($share-items-max-widths, 'around', 'max-width');
+    }
+
+    .share-button {
+      @extend %share-action-button;
+
+      > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        @include border-radius($share-item-border-radius);
+
+        @include media-breakpoint-up(md) {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+
+    // -- info items
+    .share-copy-info {
+      @include border-radius($border-radius);
+      padding: $badge-padding-y $badge-padding-x;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      font-size: $font-size-xs;
+      line-height: 1;
+
+      z-index: 10;
+      pointer-events: none;
+
+      position:absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,50%);
+
+      gap: .25rem;
+
+      color: #fff;
+
+      svg {
+        width: $font-size-base;
+        height: $font-size-base;
+      }
+
+      &--success {
+        background-color: $success;
+      }
+
+      &--error {
+        background-color: $danger;
+      }
+    }
+  }
+
+  // -- fallback as modal
+  .page-share-fallback {
+    @extend %modal-wrapper;
+
+    .page-share-fallback-inner {
+      @extend %modal-inner;
+      @extend %modal-inner-width-md;
+
+      .page-share-fallback-content {
+        @extend %modal-content;
+      }
+    }
+
+    .page-share-fallback-header {
+      @extend %modal-header;
+    }
+
+    .page-share-fallback-body {
+      @extend %modal-body;
+    }
+  }
+
+  // -- open state
+  &.is-open {
+    .page-share-fallback {
+      @extend %modal-open;
+    }
+  }
+}

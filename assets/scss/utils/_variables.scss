@@ -1,29 +1,914 @@
 /***
  ** Define own variables in this file
  ***/
-// -- header heights
-$header-height:                70px !default;
-$header-height-md:             80px !default;
-$header-height-lg:             90px !default;
-$header-height-xl:             100px !default;
 
-// -- add text-color
-$body-color-light:            $gray-500 !default;
+/**
+ * to-do
+ * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
+ */
+$enable-element-shadows: true !default;
+$global-element-shadow: 0 .5rem 1rem rgba(#000, .1) !default;
 
-// -- colors
-$primary:                   #0066ff; // the main color
-$cta-detail-page:           #27ae60; // booking button on the detail-page
+// u can set box shadows specific for elements, and disable shadows on various elements
+// to disable element just use valoe "null, none or unset" for the specific box shadow key
+// by default we only use box shadow for entrypoint booking, to make it more visible
+$specific-element-shadows: (
+  'detail-info-box': none,
+  'booking-entry-point': $global-element-shadow,
+  'travel-teaser': none,
+  'icon-teaser': none,
+  'image-teaser': none,
+  'wp-teaser': none,
+  'category-product-teaser': none,
+  'month-teaser': none,
+  'detail-box': none,
+  'detail-box-services': none,
+  'detail-box-trust': none,
+  'detail-box-contact': none,
+) !default;
 
-// booking btn colors for each state
-$booking-button-green:          $cta-detail-page;
-$booking-button-green-txt:      white;
-$booking-button-red:            #a40505;
-$booking-button-red-txt:        white;
-$booking-button-orange:         #e85900;
-$booking-button-orange-txt:     white;
-$booking-button-gray:           #262626;
-$booking-button-gray-txt:       white;
+/**
+ * Blank for placeholders
+ */
+$placeholders: ();
+
+/**
+ * Booking color set
+ * ------------------------------
+ * using bootstrap $success, $danger, $warning
+ * to make sure to change those variables to
+ * not have different colors in various elements.
+ */
+$booking-green: $success !default;
+$booking-green-color: $white !default;
+$booking-red: $danger !default;
+$booking-red-color: $white !default;
+$booking-orange: $warning !default;
+$booking-orange-color: $white !default;
+$booking-gray: $gray-600 !default;
+$booking-gray-color: $white !default;
+
+$booking-btn-loader-height: .75rem !default;
+
+/**
+ * Rating color
+ */
+$rating-color: $warning !default;
+
+/**
+ * Body
+ */
+$body-color-light: lighten($body-color, 25%) !default;
+$body-bg-highlight: $gray-200 !default;
+
+/**
+ * Text on image
+ */
+$text-on-image-color: #fff !default;
+$text-on-image-shadow: 0 0 .5rem rgba(#000, .5) !default;
+
+/**
+ * Headlines
+ */
+
+// -- sizes ( maps for responsive )
+$h1-font-sizes: (
+        null: 1.25rem, // 20px
+        sm: 1.5rem, // 24px
+        md: 2rem, // 32px
+        lg: $h1-font-size // 40px
+) !default;
+
+$h2-font-sizes: (
+        null: 1.125rem, // 18px
+        sm:   1.25rem, // 20px
+        md: 1.5rem, // 24px
+        lg: $h2-font-size // 32px
+) !default;
+
+$h3-font-sizes: (
+        null: 1.125rem, // 18px
+        sm:   1.25rem, // 20px
+        md: 1.5rem, // 24px
+        lg: $h3-font-size // 32px
+) !default;
+
+$h4-font-sizes: (
+        null: 1rem, // 16px
+        sm:   1.25rem, // 20px
+        lg: $h4-font-size // 24px
+) !default;
+
+$h5-font-sizes: (
+        null: 1rem, // 16px
+        lg: $h5-font-size // 20px
+) !default;
+
+$h6-font-sizes: (
+        null: $h6-font-size // 16px
+) !default;
+
+/**
+ * Accordion
+ */
+$accordion-border-width: 1px !default;
+$accordion-border-color: $hr-border-color !default;
+$accordion-bg: $body-color !default;
+$accordion-border-radius: $card-border-radius !default; // only used on boxed accordion.
+
+$accordion-toggle-color: $body-color !default;
+$accordion-toggle-hover-color: rgba($accordion-toggle-color, .75) !default;
+
+$accordion-toggle-icon-color: $body-color-light !default;
+$accordion-toggle-hover-icon-color: $body-color !default;
+
+$accordion-boxed-gutters: (
+        null: .25rem,
+        lg: .5rem
+) !default;
+
+$accordion-spacers-x: (
+        null: 1rem,
+        lg: 1.5rem
+) !default;
+
+$accordion-spacers-y: (
+        null: .75rem,
+        lg: 1rem
+) !default;
+
+/**
+ * Slider elements
+ */
+
+// -- slider controls
+$slider-controls-bg: transparent !default;
+$slider-controls-border-radius: 50% !default;
+$slider-controls-border-width: 1px !default;
+$slider-controls-border-color: $hr-border-color !default;
+$slider-controls-color: $body-color !default;
+$slider-controls-disabled-opacity: .25 !default;
+$slider-controls-size: 2rem !default;
+$slider-controls-icon-size: 1.125rem !default;
+$slider-controls-large-size: 2.5rem !default;
+$slider-controls-large-icon-size: 1.25rem !default;
+$slider-controls-hover-bg: $primary !default;
+$slider-controls-hover-border-color: $primary !default;
+$slider-controls-hover-color: #fff !default;
+
+$slider-controls-on-image-bg: rgba($body-color, .4) !default;
+$slider-controls-on-image-border-width: 0 !default;
+$slider-controls-on-image-border-color: transparent !default;
+$slider-controls-on-image-color: #fff !default;
+$slider-controls-on-image-hover-color: $body-color !default;
+$slider-controls-on-image-hover-border-color: transparent !default;
+$slider-controls-on-image-hover-bg: #fff !default;
+
+$slider-controls-on-image-light-bg: rgba($body-color, .4) !default;
+$slider-controls-on-image-light-border-width: 0 !default;
+$slider-controls-on-image-light-border-color: transparent !default;
+$slider-controls-on-image-light-color: #fff !default;
+$slider-controls-on-image-light-hover-color: $body-color !default;
+$slider-controls-on-image-light-hover-border-color: transparent !default;
+$slider-controls-on-image-light-hover-bg: #fff !default;
+
+/**
+ * Share page
+ */
+$share-items-gaps: (
+  null: .5rem,
+  md: 1rem
+) !default;
+$share-items-flex: (
+  null: 0 0 100%,
+  md: 0 0 50%
+) !default;
+$share-items-max-widths: (
+  null: 100%,
+  md: 100%
+) !default;
+
+$share-item-border-radius: $btn-border-radius !default;
+$share-item-spacing-y: .75rem !default;
+$share-item-spacing-x: 1rem !default;
+
+$share-item-border-width: 1px !default;
+$share-item-border-color: $hr-border-color !default;
+$share-item-bg: #fff !default;
+$share-item-color: $body-color !default;
+
+$share-item-hover-border-color: $body-color !default;
+$share-item-hover-bg: $body-bg-highlight !default;
+$share-item-hover-color: $body-color !default;
+
+$share-item-font-sizes: (
+  null: $font-size-base
+) !default;
+
+$share-item-font-weight: $font-weight-bold !default;
+
+/**
+ * Footer
+ * ---------------------------------------
+ * some variables wich used for default footer settings
+ */
+
+$footer-use-default: true !default;
+$footer-use-trust: true !default;
+
+$footer-trust-item-color: $body-color !default;
+$footer-trust-item-icon-max-widths: (
+      null: 2.5rem,
+      lg: 6rem
+) !default;
+$footer-trust-item-icon-border-radius: 50% !default;
+$footer-trust-item-icon-border-width: 0 !default;
+$footer-trust-item-icon-border-color: $primary;
+$footer-trust-item-icon-bg: $body-bg-highlight !default;
+$footer-trust-item-icon-color: $body-color-light !default;
+$footer-trust-item-title-margins: (
+        null: .5rem,
+        lg: 1rem
+) !default;
+$footer-trust-item-icon-paddings: (
+        null: .25rem,
+        lg: 1rem
+) !default;
+$footer-trust-item-font-sizes: (
+        null: .75rem,
+        lg: 1rem
+) !default;
+
+// -- global footer variables
+$footer-paddings-y: (
+        null: 1rem,
+        lg: $grid-gutter-width,
+) !default;
+$footer-bg: $body-bg-highlight !default;
+$footer-color: $body-color !default;
+$footer-line-height: $line-height-base !default;
+$footer-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+$footer-headings-bottom-margins: (
+  null: .5rem,
+        lg: 1rem
+) !default;
+
+$footer-paragraph-margins: (
+        null: .5rem,
+        lg: 1rem
+) !default;
+
+$footer-heading-color: $headings-color !default;
+
+$footer-nav-link-color: $body-color !default;
+$footer-nav-link-hover-color: $primary !default;
+$footer-nav-link-active-color: $footer-nav-link-hover-color !default;
+
+$footer-meta-nav-link-color: $body-color-light !default;
+$footer-meta-nav-link-hover-color: $body-color !default;
+$footer-meta-nav-link-active-color: $footer-meta-nav-link-hover-color !default;
+
+$footer-meta-font-sizes: (
+        null: $font-size-sm
+) !default;
+
+$footer-nav-link-spacers: (
+        null: .25rem,
+        lg: .5rem
+) !default;
+$footer-meta-nav-link-spacer: .5rem !default;
+
+// -- trust footer
+$footer-trust-bg: #fff !default;
 
 
-// -- z-index
-$zindex-offcanvas:            $zindex-tooltip !default;
+/**
+ * Header
+ * ---------------------------------------
+ * some variables wich used for default header settings
+ */
+
+// -- for offset padding in body, for sticky header.
+$header-heights: (
+        null: 72px,
+        lg: 91px,
+) !default;
+
+$header-use-default: true !default;
+
+$header-bg: $body-bg !default;
+$header-color: $body-color !default;
+$header-sticky: true !default;
+$header-small: true !default;
+$header-breakpoint: lg !default; // used for switch mobile/desktop header
+$header-reduce-paddings: xl !default; // used for reduce paddings to 1/3 of normal grid gutter
+$header-box-shadow: 0 .125rem .25rem rgba(0,0,0,.15) !default;
+
+// -- paddings
+$header-padding-y: 1.5rem !default;
+$header-small-padding-y: 1rem !default;
+
+$header-paddings-y: (
+        null: $header-small-padding-y,
+        #{$header-breakpoint}: $header-padding-y
+) !default;
+
+// -- header action definitions
+$header-action-width: 2rem !default; // 32px
+$header-action-height: 2rem !default; // 32px;
+$header-action-icon-width: 1.75rem !default; // 28px;
+$header-action-icon-height: 1.75rem !default; // 28px;
+
+$header-action-color: $body-color-light !default;
+$header-action-hover-color: $primary !default;
+$header-action-icon-color: $body-color-light !default;
+$header-action-hover-icon-color: $primary !default;
+
+$header-hotline-show-info: lg !default;
+$header-hotline-color: $body-color !default;
+$header-hotline-info-color: $header-action-color !default;
+$header-hotline-hover-color: $primary !default;
+$header-hotline-hover-info-color: $header-hotline-info-color !default;
+$header-hotline-icon-color: $primary !default;
+$header-hotline-hover-icon-color: $primary !default;
+
+$header-wishlist-count-color: #fff !default;
+$header-wishlist-count-bg: $primary !default;
+$header-wishlist-count-size: 1rem !default; // 16px;
+$header-wishlist-count-font-size: .6rem !default; // 10px
+
+/**
+ * Navigation
+ * ---------------------------------
+ * add some variables to extend bootstrap navbar
+ */
+
+$navbar-font-weight: $font-weight-base !default;
+$navbar-active-font-weight: $font-weight-bold !default;
+
+$navbar-font-size: $font-size-lg !default;
+
+$navbar-offcanvas-width: 20rem !default; // 320px
+$navbar-offcanvas-bg: #fff !default;
+$navbar-offcanvas-zindex: 1070 !default;
+$navbar-offcanvas-shadow: $box-shadow-lg !default;
+
+/**
+ * Custom form items
+ * --------------------------------------------
+ * defines various custom form items globally,
+ * to change them without searching scss/overriding
+ * it manually.
+ */
+
+// -- some basics
+$custom-input-icon-color: $body-color !default;
+$custom-input-icon-size: $font-size-lg !default;
+
+// -- checkbox ( used for category tree checkboxes )
+
+$custom-checkbox-gutter: .5rem !default; // defines spacing between label and input
+$custom-checkbox-spacer: .25rem !default; // Defines spacing between 2 elements
+$custom-checkbox-input-border-radius: $custom-checkbox-indicator-border-radius !default;
+$custom-checkbox-input-size: $font-size-base !default; // little calculation to make it fitting to font size
+$custom-checkbox-input-icon-size: $font-size-sm !default;
+$custom-checkbox-input-bg: $custom-control-indicator-bg !default;
+$custom-checkbox-input-border-width: $custom-control-indicator-border-width !default;
+$custom-checkbox-input-border-color: $custom-control-indicator-border-color !default;
+$custom-checkbox-input-icon-color: $white !default;
+
+$custom-checkbox-font-size: $font-size-base !default;
+$custom-checkbox-line-height: $line-height-base !default;
+
+// -- big variant
+$custom-checkbox-large-spacer: .5rem !default;
+$custom-checkbox-large-gutter: $custom-checkbox-gutter !default;
+$custom-checkbox-large-input-size: 1.5rem !default;
+$custom-checkbox-large-input-icon-size: $font-size-lg !default;
+$custom-checkbox-large-font-size: $font-size-xl !default;
+$custom-checkbox-large-line-height: $custom-checkbox-line-height !default;
+
+// -- states
+$custom-checkbox-input-hover-border-color: $primary !default;
+$custom-checkbox-input-hover-bg: $custom-control-indicator-bg !default;
+$custom-checkbox-input-hover-icon-color: $white !default;
+
+$custom-checkbox-input-active-border-color: $primary !default;
+$custom-checkbox-input-active-bg: $primary !default;
+$custom-checkbox-input-active-icon-color: $white !default;
+
+// -- radio ( used for category tree checkboxes )
+
+$custom-radio-gutter: $custom-checkbox-gutter !default; // defines spacing between label and input
+$custom-radio-spacer: $custom-checkbox-spacer !default; // Defines spacing between 2 elements
+$custom-radio-input-border-radius: 50% !default;
+$custom-radio-input-size: $custom-checkbox-input-size !default; // little calculation to make it fitting to font size
+$custom-radio-input-icon-size: $custom-radio-input-size / 2 !default;
+$custom-radio-input-bg: $custom-checkbox-input-bg !default;
+$custom-radio-input-border-width: $custom-checkbox-input-border-width !default;
+$custom-radio-input-border-color: $custom-checkbox-input-border-color !default;
+$custom-radio-input-icon-color: $custom-checkbox-input-icon-color !default;
+
+$custom-radio-font-size: $custom-checkbox-font-size !default;
+$custom-radio-line-height: $custom-checkbox-line-height !default;
+
+// -- big variant
+$custom-radio-large-spacer: $custom-checkbox-large-spacer !default;
+$custom-radio-large-gutter: $custom-checkbox-large-gutter !default;
+$custom-radio-large-input-size: $custom-checkbox-large-input-size !default;
+$custom-radio-large-input-icon-size: $custom-radio-large-input-size / 2 !default;
+$custom-radio-large-font-size: $custom-checkbox-large-font-size !default;
+$custom-radio-large-line-height: $custom-checkbox-large-line-height !default;
+
+// -- states
+$custom-radio-input-hover-border-color: $custom-checkbox-input-hover-border-color !default;
+$custom-radio-input-hover-bg: $custom-checkbox-input-hover-bg !default;
+$custom-radio-input-hover-icon-color: $custom-checkbox-input-hover-icon-color !default;
+
+$custom-radio-input-active-border-color: $custom-checkbox-input-active-border-color !default;
+$custom-radio-input-active-bg: $custom-checkbox-input-active-bg !default;
+$custom-radio-input-active-icon-color: $custom-checkbox-input-active-icon-color !default;
+
+/**
+ * Booking Category dropdown behaviour
+ * ------------------------------------
+ * can set modal view for desktop + max width
+ * of modal
+ * defines UX for moible friendly views
+ * and point to break
+ */
+$category-dropdown-booking-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$category-dropdown-booking-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
+$category-dropdown-booking-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$category-dropdown-booking-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
+$category-dropdown-booking-offcanvas-direction: 'left' !default;
+
+/**
+ * Person dropdown behaviour
+ * ------------------------------------
+ * can set modal view for desktop + max width
+ * of modal
+ * defines UX for moible friendly views
+ * and point to break
+ */
+$category-dropdown-person-modal: false !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$category-dropdown-person-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
+$category-dropdown-person-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$category-dropdown-person-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
+$category-dropdown-person-offcanvas-direction: 'left' !default;
+
+/**
+ * Booking calendar dropdown
+ */
+$booking-calendar-mobile-break: sm !default;
+$booking-calendar-dropdown-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$booking-calendar-dropdown-modal-max-width: lg !default; // defines max width of modal. max widths are the breakpoints widths
+$booking-calendar-dropdown-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$booking-calendar-dropdown-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
+$booking-calendar-dropdown-offcanvas-direction: 'left' !default;
+
+$booking-calendar-active-day-border-width: 2px !default;
+$booking-calendar-active-day-border-color: $primary !default;
+$booking-calendar-active-offer-bg: $primary !default;
+$booking-calendar-border-radius: 20rem !default;
+$booking-calendar-item-size: 3rem !default;
+
+/**
+ * Calendar control
+ */
+$calendar-gutter: 16px;
+
+/**
+ * Searchbar
+ * --------------------------------------------
+ * searchbar uses some default tab variables
+ * from bootstrap. can be overwritten in
+ * theme varialbes file by bootstrap tabs
+ * variables or by own variables.
+ * You can either reset variables to make
+ * own/custom style easier to fit/work
+ */
+
+$search-bar-box-shadow: 0 .5rem 1rem rgba(#000, .15) !default;
+$search-bar-use-shadow: true !default;
+
+$search-bar-tabs-border-color: $gray-300 !default;
+$search-bar-tabs-border-width: $nav-tabs-border-width !default;
+$search-bar-tabs-border-radius: $nav-tabs-border-radius !default;
+
+$search-bar-tabs-font-weight: $font-weight-base !default;
+$search-bar-tabs-color: $gray-600 !default;
+$search-bar-tabs-bg: #fff !default;
+
+$search-bar-tabs-link-hover-border-color: $gray-300 !default;
+$search-bar-tabs-link-hover-color: $nav-tabs-link-active-color !default;
+$search-bar-tabs-link-hover-bg: $nav-tabs-link-active-bg !default;
+$search-bar-tabs-link-hover-font-weight: $search-bar-tabs-font-weight !default;
+
+$search-bar-tabs-link-active-color: $nav-tabs-link-active-color !default;
+$search-bar-tabs-link-active-bg: $nav-tabs-link-active-bg !default;
+$search-bar-tabs-link-active-font-weight: $font-weight-bold !default;
+$search-bar-tabs-link-active-border-color: $gray-300 !default;
+
+$search-bar-tabs-gap: .125rem !default; // 2px
+
+$search-bar-pane-border-radius: $search-bar-tabs-border-radius !default;
+$search-bar-pane-bg: $search-bar-tabs-link-active-bg !default;
+$search-bar-pane-border-width: $search-bar-tabs-border-width !default;
+$search-bar-pane-border-color: $search-bar-tabs-link-active-border-color !default;
+
+$search-bar-padding-y: $grid-gutter-width !default;
+$search-bar-padding-x: ($grid-gutter-width / 2) !default;
+
+$search-bar-input-height: 3rem !default;
+
+$search-bar-mobile-break: sm !default;
+$search-bar-field-columns: 3 !default;
+
+// themes
+$search-bar-silver-theme-color: $gray-500 !default;
+$search-bar-main-theme-color: $primary !default;
+$search-bar-transparent-theme-color: #fff !default;
+
+/**
+ * Popups/Popouts
+ * --------------------------------------------
+ * Defines basic Popup/Popout styles for
+ * apple like popup and offcanvas popup style
+ * most variables came from modals
+ */
+
+$popup-close-color: $body-color !default;
+$popup-close-hover-color: $primary !default;
+$popup-close-icon-size: $font-size-lg !default;
+
+// -- apple like
+$apple-like-border-radius: $border-radius !default;
+$apple-like-bg: $modal-content-bg !default;
+$apple-like-box-shadow: $box-shadow-lg !default;
+$apple-like-offset: 2rem !default; // defines animation length from bottom to top
+
+$apple-like-backdrop-bg: $modal-backdrop-bg !default;
+$apple-like-backdrop-opacity: $modal-backdrop-opacity !default;
+
+$apple-like-zindex: $zindex-modal !default;
+
+$apple-like-header-padding-y: $modal-header-padding-y !default;
+$apple-like-header-padding-x: $modal-header-padding-x !default;
+$apple-like-header-padding: $apple-like-header-padding-y $apple-like-header-padding-x !default;
+$apple-like-header-border-width: $modal-header-border-width !default;
+$apple-like-header-border-color: $modal-header-border-color !default;
+
+$apple-like-footer-border-width: $modal-footer-border-width !default;
+$apple-like-footer-border-color: $modal-footer-border-color !default;
+
+$apple-like-max-height: 75vh !default;
+$apple-like-inner-padding: $modal-inner-padding !default;
+
+// -- offcanvas
+$offcanvas-border-radius: 0 !default;
+$offcanvas-bg: $modal-content-bg !default;
+$offcanvas-box-shadow: $box-shadow-lg !default;
+$offcanvas-direction: 'left' !default;
+
+$offcanvas-backdrop-bg: $modal-backdrop-bg !default;
+$offcanvas-backdrop-opacity: $modal-backdrop-opacity !default;
+
+$offcanvas-zindex: $zindex-modal !default;
+
+$offcanvas-header-padding-y: $modal-header-padding-y !default;
+$offcanvas-header-padding-x: $modal-header-padding-x !default;
+$offcanvas-header-padding: $offcanvas-header-padding-y $offcanvas-header-padding-x !default;
+$offcanvas-header-border-width: $modal-header-border-width !default;
+$offcanvas-header-border-color: $modal-header-border-color !default;
+
+$offcanvas-footer-border-width: $modal-footer-border-width !default;
+$offcanvas-footer-border-color: $modal-footer-border-color !default;
+
+$offcanvas-max-width: 20rem !default;
+$offcanvas-inner-padding: $modal-inner-padding !default;
+
+/**
+ * Filter
+ * --------------------------------------------
+ * filter is using various bootstrap varialbes
+ * for styling to make filter style change by
+ * global bootstrap variables
+ */
+$filter-border-radius: $border-radius !default;
+$filter-border-width: 0 !default;
+$filter-border-color: black !default;
+$filter-bg: $body-bg-highlight !default;
+$filter-spacer-x: $card-spacer-x !default;
+$filter-spacer-y: $card-spacer-y !default;
+
+$filter-box-title-font-size: $font-size-base !default;
+$filter-box-title-font-weight: $font-weight-bold !default;
+
+$filter-box-divider: true !default;
+$filter-box-divider-width: 1px !default;
+$filter-box-divider-color: $gray-300 !default;
+
+$filter-mobile-break: sm !default; // down breakpoint, not up
+$filter-mobile-view-type: 'modal-fullscreen' !default; // you can choose between 'apple-like' ( drop op ), 'modal', 'modal-fullscreen' and 'offcanvas' it only changes filter wrapper style/animation in open-state
+$filter-offcanvas-direction: 'right' !default;
+
+
+/**
+ * Teasers
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+$teaser-spacer-y: $card-spacer-y !default;
+$teaser-spacer-x: $card-spacer-x !default;
+$teaser-border-width: $card-border-width !default;
+$teaser-border-radius: $card-border-radius !default;
+$teaser-border-color: $card-border-color !default;
+$teaser-bg: $card-bg !default;
+
+/**
+ * Price settings
+ */
+$price-small-color: $body-color !default;
+$price-small-price-color: $headings-color !default;
+$price-small-price-font-weight: $font-weight-bold !default;
+$price-small-font-sizes: (
+        null: $font-size-sm
+) !default;
+$price-small-price-font-sizes: (
+        null: $font-size-base,
+        lg: $font-size-lg
+) !default;
+
+
+$price-default-color: $body-color !default;
+$price-default-price-color: $headings-color !default;
+$price-default-price-font-weight: $font-weight-bold !default;
+$price-default-font-sizes: (
+        null: $font-size-base,
+) !default;
+$price-default-price-font-sizes: (
+        null: $font-size-xl,
+        lg: 1.5rem
+) !default;
+
+/**
+ * Category product teaser
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+$teaser-category-product-spacer-y: .25rem !default;
+$teaser-category-product-spacer-x: $card-spacer-x !default;
+$teaser-category-product-border-width: $card-border-width !default;
+$teaser-category-product-border-radius: $card-border-radius !default;
+$teaser-category-product-border-color: $card-border-color !default;
+$teaser-category-product-bg: $card-bg !default;
+
+$teaser-category-product-travel-card-title-sizes: (
+        null: 1rem, // 16px
+) !default; // its similar to $h5-font-sizes
+
+$teaser-category-product-body-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+
+$teaser-category-product-travel-card-title-color: $headings-color;
+$teaser-category-product-travel-card-title-hover-color: $primary;
+$teaser-category-product-travel-card-title-active-color: $primary;
+
+/**
+ * Travel cards
+ * --------------------------------------------
+ * useing bootstrap card variables by default,
+ * you can change global card styles by overriting
+ * card variables ( see defined values ) or
+ * you can change the style of this values
+ * to make travel cards different from default
+ * cards.
+ */
+
+// -- travelcard break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
+// -- you can set bootstrap breakpoint key or px value
+$travel-card-break: md !default;
+
+$travel-card-spacer-y: $card-spacer-y !default;
+$travel-card-spacer-x: $card-spacer-x !default;
+$travel-card-border-width: $card-border-width !default;
+$travel-card-border-radius: $card-border-radius !default;
+$travel-card-border-color: $card-border-color !default;
+$travel-card-bg: $card-bg !default;
+
+$travel-card-badge-pill: false !default;
+
+$travel-card-body-sizes: (
+  null: $font-size-sm,
+  lg: $font-size-base
+) !default;
+
+$travel-card-title-color: $headings-color;
+$travel-card-title-hover-color: $primary;
+$travel-card-title-active-color: $primary;
+
+$travel-card-title-sizes: (
+        null: 1rem, // 16px
+        lg: $h5-font-size // 20px
+) !default; // its similar to $h5-font-sizes
+
+/**
+ * Image teaser
+ */
+
+$image-teaser-spacer-y: $card-spacer-y !default;
+$image-teaser-spacer-x: $card-spacer-x !default;
+$image-teaser-border-radius: $card-border-radius !default;
+$image-teaser-image-aspect-ratio-width: 16 !default;
+$image-teaser-image-aspect-ratio-height: 9 !default;
+$image-teaser-image-overlay: true !default;
+$image-teaser-image-overlay-color: rgba(#000, .15) !default;
+
+/**
+ * WP teaser
+ */
+
+$wp-teaser-bg: $card-bg !important;
+$wp-teaser-border-radius: $card-border-radius !default;
+$wp-teaser-border-width: $card-border-width !default;
+$wp-teaser-border-color: $card-border-color !default;
+$wp-teaser-spacer-y: $card-spacer-y !default;
+$wp-teaser-spacer-x: $card-spacer-x !default;
+$wp-teaser-image-aspect-ratio-width: 16 !default;
+$wp-teaser-image-aspect-ratio-height: 9 !default;
+
+/**
+ * Icon teaser
+ */
+
+$icon-teaser-icon-bg: $gray-300 !default; // defines default background - without primary/secondary theming
+$icon-teaser-icon-outer-size: 5rem !default;
+$icon-teaser-icon-outer-size-small: 2.5rem !default;
+
+$icon-teaser-icon-size: 3rem !default;
+$icon-teaser-icon-size-small: 1.75rem !default;
+
+$icon-teaser-icon-color: #fff !default;
+
+$icon-teaser-bg: $card-bg !default;
+$icon-teaser-break: sm !default;
+$icon-teaser-text-align: center !default;
+$icon-teaser-border-radius: $card-border-radius !default;
+$icon-teaser-border-width: $card-border-width !default;
+$icon-teaser-border-color: $card-border-color !default;
+$icon-teaser-spacer-y: $card-spacer-y !default;
+$icon-teaser-spacer-x: $card-spacer-x !default;
+
+
+/**
+ * Wishlist
+ * ----------------------------
+ * defines wishlist dropdown/modal/modal-fullscreen/apple-like behaviour
+ */
+$wishlist-modal: true !default; // sets wishlist as modal in desktop - if breakpoint for mobile view null for mobile aswell
+$wishlist-modal-max-width: sm !default; // defines max width of modal. max widths are the breakpoints widths
+$wishlist-mobile-break: sm !default; // defines breakpoint down where dropdown should break into mobile friendly UX
+$wishlist-mobile-view-type: 'apple-like' !default; // you can use 'apple-like', 'offcanvas', 'modal' and 'modal-fullscreen'
+$wishlist-offcanvas-direction: 'right' !default; // direction of offcanvs, u can use 'left' and 'right'
+
+/**
+ * Add to wishlist
+ * ----------------------------
+ * set colors on image / default
+ */
+
+$add-to-wishlist-size: 2rem !default; // 32px for touch events
+$add-to-wishlist-icon-size: 1.5rem !default; // 24px for good seeable icon
+
+$add-to-wishlist-color: $body-color !default;
+$add-to-wishlist-hover-color: $primary !default;
+$add-to-wishlist-active-color: $primary !default;
+
+$add-to-wishlist-on-image-color: #fff !default;
+$add-to-wishlist-on-image-hover-color: rgba(#fff, .75) !default;
+$add-to-wishlist-on-image-active-color: #fff !default;
+
+/*
+ * Checklists
+ */
+$checklist-font-size: $font-size-base !default;
+$checklist-font-size-small: $font-size-sm !default;
+$checklist-line-height: $line-height-base !default;
+
+$checklist-icon-color: $booking-green !default;
+$checklist-icon-spacer: .25rem !default;
+$checklist-icon-size: $font-size-xl !default;
+$checklist-icon-size-small: $font-size-lg !default;
+
+$checklist-item-spacer: .5rem !default;
+$checklist-item-spacer-small: .25rem !default;
+
+/*
+ * Detail page
+ */
+$detail-max-container: xxl !default;
+$detail-page-use-default: true !default; // u can deactivate every scss part - except booking-entrypoint, because this is essential for booking
+$detail-page-section-paddings: (
+  null: 1.5rem,
+  md: $grid-gutter-width
+) !default;
+
+$detail-header-column-break: lg !default; // breakpoint down when cols in detail header break
+$detail-content-column-break: md !default; // breakpoint down when cols in detail content break
+
+// detail crosselling
+$detail-crossselling-bg: $body-bg !default;
+$detail-crossselling-divider-width: 1px !default;
+$detail-crossselling-divider-color: $hr-border-color !default;
+
+// detail header info
+$detail-header-info-border-radius: $card-border-radius !default;
+$detail-header-info-border-width: $card-border-width !default;
+$detail-header-info-border-color: $card-border-color !default;
+$detail-header-info-bg: $card-bg !default;
+$detail-header-info-color: $body-color !default;
+$detail-header-info-headline-sizes: $h4-font-sizes !default;
+
+$detail-header-info-bottom-bg: $card-bg !default;
+$detail-header-info-bottom-divider-width: $detail-header-info-border-width !default;
+$detail-header-info-bottom-divider-color: $detail-header-info-border-color !default;
+
+$detail-header-info-spacers-items:(
+        null: .25rem,
+        lg: .5rem
+) !default;
+$detail-header-info-font-sizes: (
+    null: $font-size-sm,
+    lg: $font-size-base
+) !default;
+$detail-header-info-spacers-x: (
+  null: $card-spacer-x,
+  lg: $grid-gutter-width
+) !default;
+$detail-header-info-spacers-y: (
+  null: .5rem,
+  lg: 1rem
+) !default;
+
+// detail header gallery
+$detail-header-gallery-border-radius: $card-border-radius !default;
+$detail-header-gallery-grid-break: md !default;
+$detail-header-gallery-spacer-x: (
+        null: $card-spacer-x,
+        lg: $grid-gutter-width
+) !default;
+
+
+// detail boxes
+// ---------------
+// found in detail sidebar
+$detail-box-spacers-x: $detail-header-info-spacers-x !default;
+$detail-box-spacers-y: $detail-header-info-spacers-y !default;
+$detail-box-bg: $detail-header-info-bg !default;
+$detail-box-border-radius: $detail-header-info-border-radius !default;
+$detail-box-color: $detail-header-info-color !default;
+$detail-box-border-width: $detail-header-info-border-width !default;
+$detail-box-border-color: $detail-header-info-border-color !default;
+$detail-box-font-sizes: $detail-header-info-font-sizes !default;
+
+$detail-box-light-bg: $body-bg-highlight !default;
+$detail-box-light-border-color: $body-bg-highlight !default;
+$detail-box-light-color: $body-color;
+
+$detail-box-success-bg: $success !default;
+$detail-box-success-border-color: $success !default;
+$detail-box-success-color: #fff !default;
+
+// detail booking entrypoint
+$booking-entrypoint-border-radius: $detail-header-info-border-radius !default;
+$booking-entrypoint-color: $detail-header-info-color !default;
+$booking-entrypoint-border-width: $detail-header-info-border-width !default;
+$booking-entrypoint-border-color: $detail-header-info-border-color !default;
+$booking-entrypoint-bg: $detail-header-info-bg !default;
+$booking-entrypoint-font-sizes: $detail-header-info-font-sizes !default;
+
+$booking-entrypoint-spacers-x: $detail-header-info-spacers-x !default;
+$booking-entrypoint-spacers-y: $detail-header-info-spacers-y !default;
+
+$booking-entrypoint-spacers-items:(
+        null: .25rem,
+        lg: .5rem
+) !default;

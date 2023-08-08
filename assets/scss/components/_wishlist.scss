@@ -1,0 +1,324 @@
+/**
+ * File deifnes style of wishlist dropdown and the items inside.
+ * + handling of "view-type"
+ */
+
+@include placeholder('wishlist-dropdown-manipulation') {
+  left: auto !important;
+  right: ($grid-gutter-width / 6) !important;
+  top: 100% !important;
+  transform: none !important;
+
+  // -- set widht/min-width for better optic
+  width: 100%;
+  min-width: 20rem;
+  padding: 1rem; // default padding
+
+  @include get-custom-breakpoint($header-reduce-paddings) {
+    right: ($grid-gutter-width / 2) !important;
+  }
+}
+
+.dropdown-menu.dropdown-menu-wishlist {
+
+  // -- make wishlsit dropdown right aligned
+  @if ( $wishlist-modal != true ) {
+    @if ( $wishlist-mobile-break != null ) {
+      @extend %wishlist-dropdown-manipulation-up-#{getNextBreakpoint($wishlist-mobile-break)};
+    }
+  }
+
+  // -- wishlist items
+  #wishlist-result {
+    .wishlist-item{
+      display: flex;
+      flex-direction: row;
+      gap: .75rem;
+
+      // -- image
+      .wishlist-item-image {
+        position: relative;
+
+        flex: 0 0 20%;
+        width: 100%;
+        max-width: 4rem;
+
+        > a {
+          @include border-radius($travel-card-border-radius);
+          overflow: hidden;
+
+          position: absolute;
+
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+
+          display: block;
+
+          @include aspect-ratio(1, 1);
+
+          > img {
+            @extend %media-cover-image;
+          }
+        }
+      }
+
+      // -- data
+      .wishlist-item-data {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        justify-content: space-between;
+
+        flex: 1;
+        position: relative;
+
+        // -- remove
+        .remove-from-wishlist {
+          color: $body-color-light;
+          position: absolute;
+          bottom:0;
+          right:0;
+
+          line-height: 0;
+          width: $font-size-lg;
+          height: $font-size-lg;
+
+          transition: color $animation-speed-default;
+          cursor: pointer;
+
+          > svg {
+            pointer-events: none;
+            width: $font-size-lg;
+            height: $font-size-lg;
+          }
+
+          &:hover {
+            color: $danger;
+          }
+        }
+
+        // -- title
+        .name {
+          font-size: $font-size-base;
+          font-weight: $headings-font-weight;
+
+          margin: 0 0 .5rem 0;
+
+          line-height: $line-height-sm;
+
+          display: block;
+
+          > a {
+            color: inherit;
+            text-decoration: none;
+            transition: color $animation-speed-default;
+
+            &:active, &:hover, &:focus {
+              text-decoration: none;
+            }
+
+            &:active, &:focus {
+              color: $travel-card-title-active-color;
+            }
+
+            &:hover, &:active:hover, &:focus:hover {
+              color: $travel-card-title-hover-color;
+            }
+
+            &:active {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .price {
+        color: $body-color;
+        line-height: 1;
+
+        > a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      // -- add divider
+      + .wishlist-item {
+        margin-top: .75rem;
+        padding-top: .75rem;
+
+        border-top: $travel-card-border-width solid $travel-card-border-color;
+      }
+    }
+  }
+
+  // Manipulate views
+  // -------------------------
+  // manipulation of wishlist view.
+  // mobile view can be overwritten by
+  // $wishlist-mobile-view-type
+  // if $wishlist-mobile-break is defined
+  // with bootstrap breakpoint.
+
+  // -- desktop modal view
+  @if ( $wishlist-modal == true ) {
+    $temp-wishlist-modal-string: '';
+
+    @if ( $wishlist-mobile-break != null ) {
+      $temp-wishlist-modal-string: '-up-#{getNextBreakpoint($wishlist-mobile-break)}';
+    }
+
+    @extend %modal-wrapper#{$temp-wishlist-modal-string};
+
+    .dropdown-menu-inner {
+      @extend %modal-inner#{$temp-wishlist-modal-string};
+
+      @if ( $wishlist-mobile-break != null ) {
+        @include media-breakpoint-up(getNextBreakpoint($wishlist-mobile-break)) {
+          max-width: #{getMediaBreakpointUp($wishlist-modal-max-width)};
+        }
+      } @else {
+        @extend %modal-inner-width-#{$wishlist-modal-max-width};
+      }
+
+
+      .dropdown-menu-content {
+        @extend %modal-content#{$temp-wishlist-modal-string};
+      }
+    }
+
+    .dropdown-menu-header {
+      @extend %modal-header#{$temp-wishlist-modal-string};
+    }
+
+    .dropdown-menu-body {
+      @extend %modal-body#{$temp-wishlist-modal-string};
+    }
+
+    .dropdown-menu-footer {
+      @extend %modal-footer#{$temp-wishlist-modal-string};
+    }
+
+    // -- open state
+    &.show {
+      @extend %modal-open#{$temp-wishlist-modal-string};
+    }
+  }
+
+  // -- mobile friendly views
+  @if ( $wishlist-mobile-break != null ) {
+
+    // -- modal view
+    @if ( $wishlist-mobile-view-type == 'modal' or $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+      @extend %modal-wrapper-down-#{$wishlist-mobile-break};
+
+      @if ( $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+        @extend %modal-wrapper-fullscreen-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-inner {
+        @extend %modal-inner-down-#{$wishlist-mobile-break};
+
+
+        @if ( $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-inner-fullscreen-down-#{$wishlist-mobile-break};
+        }
+
+        .dropdown-menu-content {
+          @extend %modal-content-down-#{$wishlist-mobile-break};
+
+          @if ( $wishlist-mobile-view-type == 'modal-fullscreen' ) {
+            @extend %modal-content-fullscreen-down-#{$wishlist-mobile-break};
+          }
+        }
+      }
+
+      .dropdown-menu-header {
+        @extend %modal-header-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-body {
+        @extend %modal-body-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-footer {
+        @extend %modal-footer-down-#{$wishlist-mobile-break};
+      }
+
+      // -- open state
+      &.show {
+        @extend %modal-open-down-#{$wishlist-mobile-break};
+      }
+    }
+
+
+
+    // -- apple-like view
+    @if ( $wishlist-mobile-view-type == 'apple-like' ) {
+      @extend %apple-like-wrapper-down-#{$wishlist-mobile-break};
+
+      .dropdown-menu-content {
+        @extend %apple-like-content-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-header {
+        @extend %apple-like-header-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-body {
+        @extend %apple-like-body-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-footer {
+        margin-top: 0;
+        @extend %apple-like-footer-down-#{$wishlist-mobile-break};
+      }
+
+      // -- open state
+      &.show {
+        @extend %apple-like-open-down-#{$wishlist-mobile-break};
+
+        .dropdown-menu-content {
+          @extend %apple-like-content-open-down-#{$wishlist-mobile-break};
+        }
+      }
+
+    }
+
+    // -- offcanvas view
+    @if ( $wishlist-mobile-view-type == 'offcanvas' ) {
+      @extend %offcanvas-wrapper-down-#{$wishlist-mobile-break};
+
+      .dropdown-menu-content {
+        @extend %offcanvas-content-down-#{$wishlist-mobile-break};
+        @extend %offcanvas-direction-#{$wishlist-offcanvas-direction}-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-header {
+        @extend %offcanvas-header-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-body {
+        @extend %offcanvas-body-down-#{$wishlist-mobile-break};
+      }
+
+      .dropdown-menu-footer {
+        margin-top: 0;
+        @extend %offcanvas-footer-down-#{$wishlist-mobile-break};
+      }
+
+      // -- open state
+      &.show {
+        @extend %offcanvas-open-down-#{$wishlist-mobile-break};
+
+        .dropdown-menu-content {
+          @extend %offcanvas-content-open-down-#{$wishlist-mobile-break};
+        }
+      }
+
+    }
+  }
+}

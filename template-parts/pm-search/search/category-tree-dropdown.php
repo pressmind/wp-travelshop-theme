@@ -14,89 +14,67 @@ if (empty($_GET['pm-c'][$args['fieldname']]) === false && preg_match_all("/[a-zA
 }
 if (empty($args['categories'][$args['fieldname']][0]) === false) {
     ?>
-    <div class="col-12 col-lg-3">
-        <div>
-            <div class="form-group mb-lg-0 category-tree">
-                <label for=""><?php echo $args['name']; ?></label>
-                <div class="dropdown">
-                    <button class="dropdownReiseziel select-from-control dropdown-toggle" type="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        <span class="selected-options" data-placeholder="bitte wählen">bitte wählen</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x dropdown-clear" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0066ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <line x1="18" y1="6" x2="6" y2="18" />
-                            <line x1="6" y1="6" x2="18" y2="18" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-select"
-                         aria-labelledby="dropdownReiseziel">
-                        <div class="category-tree-field-items multi-level-checkboxes">
-                            <input type="hidden" name="<?php echo $args['fieldname'];?>-behavior" value="<?php echo empty($args['behavior']) ? 'OR' : $args['behavior']; ?>">
-                            <?php
-                            $childs = [];
-                            if (!empty($args['categories'][$args['fieldname']][1])) {
-                                foreach ($args['categories'][$args['fieldname']][1] as $item) {
-                                    $childs[$item->id_parent][] = $item;
-                                }
-                            }
-                            foreach ($args['categories'][$args['fieldname']][0] as $item) {
-                                $uuid = 'ti-' . uniqid();
-                                $has_childs = !empty($childs[$item->id_item]) && count($childs[$item->id_item]) > 1;
-                                ?>
-                                <div class="form-check <?php echo $has_childs ? 'has-second-level' : ''; ?>">
-                                    <input class="form-check-input" type="checkbox"
-                                           data-id-parent="" data-id="<?php echo $item->id_item; ?>"
-                                           data-name="<?php echo $args['fieldname']; ?>"
-                                           id="<?php echo $uuid; ?>"
-                                        <?php echo in_array($item->id_item, $selected) ? 'checked' : ''; ?>><span><i>
-                                            <svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg>
-                                        </i></span>
-                                    <label class="form-check-label" for="<?php echo $uuid; ?>">
-                                        <?php echo $item->name; ?>
-                                    </label>
-                                    <?php /* if ($has_childs === true) { ?>
+    <div class="search-box-field search-box-field--category">
 
-                                <div class="list-filter-second-level">
-                                    <?php foreach ($childs[$item->id_item] as $child_item) {
-                                        $uuid = 'ti-'.uniqid();
-                                        ?>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                   id="<?php echo $uuid; ?>"
-                                                   data-id-parent="<?php echo $item->id_item; ?>"
-                                                   data-id="<?php echo $child_item->id_item; ?>"
-                                                   data-name="<?php echo $args['fieldname']; ?>"><span><i><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            class="icon icon-tabler icon-tabler-check" width="12"
-                                                            height="12" viewBox="0 0 24 24" stroke-width="3"
-                                                            stroke="#ffffff" fill="none" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M5 12l5 5l10 -10"/>
-</svg></i></span>
-                                            <label class="form-check-label"
-                                                   for="<?php echo $uuid; ?>">
-                                                <?php echo $child_item->name; ?>                                            </label>
-                                        </div>
-                                    <?php } ?>
+        <div class="search-field-input search-field-input--category">
+            <button class="category-tree-field-dropdown-toggle search-field-input-field select-form-control"  data-placeholder="<?php echo $args['name']; ?>" type="button">
+                <span class="selected-options" ><?php echo $args['name']; ?></span>
 
+                <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
 
-                                </div>
-
-                            <?php } */ ?>
-                                </div>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                        <button class="btn btn-primary btn-block mt-3 filter-prompt">
-                            Auswahl übernehmen
-                        </button>
+            </button>
+            <?php // @todo: did some changes to quellcode to use different view types for dropdowns ?>
+            <div class="category-tree-field-dropdown">
+                <div class="category-tree-field-dropdown-header d-flex flex-row flex-nowrap justify-content-between">
+                    <div class="h5 mb-0">
+                        <?php echo $args['name']; ?>
                     </div>
+
+                    <button type="button" class="close-category-dropdown d-flex d-lg-none">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                    </button>
+                </div>
+                <div class="category-tree-field-items multi-level-checkboxes">
+                    <input type="hidden" name="<?php echo $args['fieldname'];?>-behavior" value="<?php echo empty($args['behavior']) ? 'OR' : $args['behavior']; ?>">
+                    <?php
+                    $childs = [];
+                    if (!empty($args['categories'][$args['fieldname']][1])) {
+                        foreach ($args['categories'][$args['fieldname']][1] as $item) {
+                            $childs[$item->id_parent][] = $item;
+                        }
+                    }
+                    foreach ($args['categories'][$args['fieldname']][0] as $item) {
+                        $uuid = 'ti-' . uniqid();
+                        $has_childs = !empty($childs[$item->id_item]) && count($childs[$item->id_item]) > 1;
+                        ?>
+                        <div class="form-check <?php echo $has_childs ? 'has-second-level' : ''; ?>">
+                            <input class="form-check-input" type="checkbox"
+                                   data-id-parent="" data-id="<?php echo $item->id_item; ?>"
+                                   data-name="<?php echo $args['fieldname']; ?>"
+                                   id="<?php echo $uuid; ?>"
+                                <?php echo in_array($item->id_item, $selected) ? 'checked' : ''; ?>>
+
+                            <span>
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
+                                            </span>
+
+                            <label class="form-check-label" data-label-name="<?php echo $item->name; ?>" for="<?php echo $uuid; ?>">
+                                <?php echo $item->name; ?>
+                            </label>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
 
+                <div class="category-tree-field-dropdown-footer">
+                    <button class="btn btn-primary btn-block mt-3 filter-prompt">
+                        Auswahl übernehmen
+                    </button>
+                </div>
             </div>
         </div>
+
+        <div class="category-tree-field-backdrop"></div>
     </div>
 <?php } ?>
