@@ -21,7 +21,14 @@ $args[1] = isset($argv[1]) ? $argv[1] : null;
 
 $config = Registry::getInstance()->get('config');
 
-Writer::write('Image processor started', WRITER::OUTPUT_FILE, 'image_processor', Writer::TYPE_INFO);
+Writer::write('Image processor started', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+if(file_exists(APPLICATION_PATH.'/tmp/image_processor.lock') &&
+    time()-filemtime(APPLICATION_PATH.'/tmp/image_processor.lock') < 86400 && $args[1] != 'unlock'){
+    $pid = file_get_contents(APPLICATION_PATH.'/tmp/image_processor.lock');
+    Writer::write('is still running, check pid: '.$pid.', or try "sudo kill -9 '.$pid.' | php image_processor.php unlock"', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+    exit();
+}
+file_put_contents(APPLICATION_PATH.'/tmp/image_processor.lock', getmypid());
 
 try {
     /**
@@ -97,4 +104,5 @@ if(!empty($id_media_objects)){
     Writer::write('updated', WRITER::OUTPUT_SCREEN, 'image_processor', Writer::TYPE_INFO);
 }
 
-Writer::write('Image processor finished', WRITER::OUTPUT_FILE, 'image_processor', Writer::TYPE_INFO);
+Writer::write('Image processor finished, removing lock file', WRITER::OUTPUT_FILE, 'image_processor', Writer::TYPE_INFO);
+unlink(APPLICATION_PATH.'/tmp/image_processor.lock');

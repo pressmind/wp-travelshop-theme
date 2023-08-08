@@ -44,6 +44,7 @@
                 // echo '<hr />';
                 $args['name'] = 'Zeitraum';
                 $args['use_ajax'] = 1;
+                require 'search/string-search.php';
                 require 'search/date-picker.php';
                 require 'filter/order.php';
                 require 'filter/price-range.php';

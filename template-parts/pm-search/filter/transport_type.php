@@ -29,6 +29,7 @@ if (empty($_GET['pm-tr']) === false) {
                                     xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg></i></span>
                 <label class="form-check-label" for="<?php echo $uuid; ?>">
                     <?php echo ucfirst(strtolower($item->name)); ?>
+                    <span class="small">(<?php echo $item->count_in_search; ?>)</span>
                 </label>
             </div>
             <?php

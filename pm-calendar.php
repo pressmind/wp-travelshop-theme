@@ -12,7 +12,7 @@ get_header();
             $request = array_merge($_GET, ['pm-ot' => $wp_query->get('pm-ot')]);
             $request['pm-o'] = 'date_departure-asc';
             $_GET['view'] = 'Calendar1';
-            $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
+            $result = Search::getResult($request,2, 500, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
             $result['calendarpage'] = true;
             ?>
         <div class="content-main">

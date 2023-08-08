@@ -26,7 +26,7 @@ if (empty($args['media_object']->getItinerarySteps())) {
 $valid = false;
 foreach ($args['media_object']->getItinerarySteps() as $key => $step) {
     foreach ($step->sections as $section) {
-        if(!empty(strip_tags($section->content->headline))){
+        if(!empty(strip_tags((string)$section->content->headline))){
             $valid = true;
         }
     }
@@ -48,7 +48,7 @@ if(!$valid){
     <?php 
     foreach ($args['media_object']->getItinerarySteps() as $key => $step) {
         foreach ($step->sections as $section) {
-            if(empty(strip_tags($section->content->headline))){
+            if(empty(strip_tags((string)$section->content->headline))){
                 continue;
             }
             ?>
@@ -77,7 +77,11 @@ if(!$valid){
                         ?>
                     </div>
                     <!-- <div class="itinerary-step-catering">
-                        Hier kommt die Verpflegung hin
+                        <?php
+                            //var_dump($step->board[0]->breakfast);
+                            //var_dump($step->board[0]->lunch);
+                            //var_dump($step->board[0]->dinner);
+                    ?>
                     </div>-->
                 </div>
             </div>

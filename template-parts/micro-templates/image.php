@@ -16,5 +16,5 @@ if (!empty($args['image']['url'])) { ?>
          class="<?php echo $args['class'];?>"
          loading="lazy">
 <?php } else { ?>
-    <img src="/placeholder.svg?wh=<?php echo $args['width'];?>x<?php echo $args['height'];?>" class="<?php echo $args['class'];?>">
+    <img src="/wp-content/themes/travelshop/placeholder.svg.php?wh=200x150&text=image missing" class="<?php echo $args['class'];?>">
 <?php } ?>

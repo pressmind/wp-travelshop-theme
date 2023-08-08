@@ -156,6 +156,8 @@ get_header();
                 'uid' => 'index1',
                 'content_box_type' => 'boxed',
                 'content_alignment_horizontal' => 'center',
+                'content_alignment_horizontal_responsive' => '',
+                'content_alignment_horizontal_medium' => '',
                 'content_inner_padding' => '50',
                 'media_type' => 'image',
                 'background_overlay_type' => 'color',
@@ -170,6 +172,11 @@ get_header();
                 'btn_label' => 'Join our trips',
                 'image' => get_stylesheet_directory_uri().'/assets/img/slide-1.webp',
                 'bg_image_alt_text' => '',
+                'content_alignment_vertical' => '',
+                'content_alignment_vertical_medium' => '',
+                'content_alignment_vertical_responsive' => '',
+                'content_box_break' => '',
+                'content_box_text_align' => '',
         ];
         load_template_transient(get_template_directory().'/template-parts/layout-blocks/category-header-jumbotron.php', false, $args);
         ?>

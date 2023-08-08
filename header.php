@@ -93,9 +93,9 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 </a>
             </div>
             <div class="col align-self-center p-0">
-                <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
+                <?php  load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
-            <?php if(!empty(TS_SINGLE_SEARCH)){?>
+            <?php if(!empty(TS_SINGLE_SEARCH)){ ?>
             <div class="col-auto align-self-center  d-none d-lg-block col-search" id="search">
                 <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">

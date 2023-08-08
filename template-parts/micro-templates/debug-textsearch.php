@@ -8,4 +8,5 @@ foreach ($args['meta']['findings'] as $k => $v) {
     echo $k + 1 < count($args['meta']['findings']) ? ' ... ' : '';
     echo '</span>';
 }
+echo '<pre>sales prio: ' . $args['sales_priority'] . '</pre>';
 

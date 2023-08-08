@@ -95,6 +95,9 @@ $args['filter_data'] = [];
         $args['type'] = 'radio';
         $args['icon'] = '<svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon icon icon-tabler icon-tabler-plane-departure" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>   <path d="M15 12h5a2 2 0 0 1 0 4h-15l-3 -6h3l2 2h3l-2 -7h3z" transform="rotate(-15 12 12) translate(0 -1)"></path>   <line x1="3" y1="21" x2="21" y2="21"></line></svg>';
         foreach($args['booking_offers_intersection']->transport_1_airport_name as $key => $value) {
+            if(empty($args['filter_data'][$args['filter_val']][$key]) || $args['filter_data'][$args['filter_val2']][$key]){
+                continue;
+            }
             $args['filter_data'][$args['filter_val']][$key] = $args['booking_offers_intersection']->{$args['filter_val']}[$key];
             $args['filter_data'][$args['filter_val2']][$key] = $args['booking_offers_intersection']->{$args['filter_val2']}[$key];
         }

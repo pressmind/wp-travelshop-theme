@@ -27,67 +27,56 @@ if (MULTILANGUAGE_SITE) {
     $languages = $config['data']['languages']['allowed'];
 }
 
-foreach ($languages as $language) {
-
-    // Setup the search- and the detail-page route per object type
-    foreach ($config['data']['media_types_pretty_url'] as $object_type => $pretty_url) {
-
-        //Build only routes for primary media object types
-        if (!empty($config['data']['primary_media_type_ids']) && !in_array($object_type, $config['data']['primary_media_type_ids'])) {
-            continue;
-        }
-
-        $language_prefix = '';
-        if (MULTILANGUAGE_SITE) {
-            $language_prefix = 'de/'; // @TODO this is not ready here..
-        }
-
-        // - DETAIL PAGE ROUTE -
-        // Build a route for each media object type > detailpage <
-        // e.g. www.xxx.de/reise/reisename/
-        $route_prefix = $language_prefix . trim($pretty_url['prefix'], '/');
-        $routename = 'ts_default_' . $route_prefix . '_route';
-
-        $data = [];
-        $data['id_object_type'] = $object_type;
-        $data['type'] = 'detail';
-        $data['language'] = $language;
-        $data['base_url'] = $route_prefix;
-        $routes[$routename] = new Route('^' . $route_prefix . '/(.+?)', 'ts_detail_hook', 'pm-detail', $data);
+// - DETAIL PAGE ROUTE -
+// Build a route for each primary media object type > detailpage <
+// e.g. www.xxx.de/reise/reisename/
+foreach ($config['data']['media_types_pretty_url'] as $object_type => $pretty_url) {
+    if (!empty($config['data']['primary_media_type_ids']) && !in_array($object_type, $config['data']['primary_media_type_ids'])) {
+        continue;
     }
-    // Build Search Routes
-    foreach(TS_SEARCH_ROUTES as $search_route){
-        foreach($search_route['languages'] as $language_code => $language){
-            $language_prefix = '';
-            // - SEARCH ROUTE -
-            // Build a route for each media object type > searchpage <
-            // e.g. www.xxx.de/de/reise-suche/
-            // if route is not configured continue
-            $language_prefix = '';
-            if($language_code != 'default'){
-                $language_prefix = $language_code.'/';
-            }
-            $route_prefix = $language_prefix.trim($language['route'],'/');
-            $routename = 'ts_default_' . $route_prefix . '_route';
-            $data = [];
-            $data['id_object_types'] = $search_route['pm-ot'];
-            $data['order'] = !empty($search_route['pm-o']) ? $search_route['pm-o'] : 'price-asc';
-            $data['type'] = 'search';
-            $data['language'] = $language_code;
-            $data['base_url'] = $route_prefix;
-            $data['title'] = $language['title'];
-            $data['meta_description'] = $language['meta_description'];
-            $routes[$routename] = new Route('^' . $route_prefix . '/?', 'ts_search_hook', 'pm-search', $data);
-        }
-    }
-
-    // Setup the route for the calendar page
     $language_prefix = '';
-    if (MULTILANGUAGE_SITE) {
-        $language_prefix = 'de/'; // @TODO this is not ready here..
+    if (MULTILANGUAGE_SITE && !empty($pretty_url['language'])) {
+        $language_prefix = $pretty_url['language'].'/';
+    }
+    $route_prefix = $language_prefix . trim($pretty_url['prefix'], '/');
+    $routename = 'ts_default_' . $route_prefix . '_route';
+    $data = [];
+    $data['id_object_type'] = $object_type;
+    $data['type'] = 'detail';
+    $data['language'] = $pretty_url['language'];
+    $data['base_url'] = $route_prefix;
+    $routes[$routename] = new Route('^' . $route_prefix . '/(.+?)', 'ts_detail_hook', 'pm-detail', $data);
+}
+// - SEARCH ROUTE -
+// Build a route for each media object type > searchpage <
+// e.g. www.xxx.de/de/reise-suche/
+foreach(TS_SEARCH_ROUTES as $search_route){
+    foreach($search_route['languages'] as $language_code => $language){
+        $language_prefix = '';
+        if($language_code != 'default'){
+            $language_prefix = $language_code.'/';
+        }
+        $route_prefix = $language_prefix.trim($language['route'],'/');
+        $routename = 'ts_default_' . $route_prefix . '_route';
+        $data = [];
+        $data['id_object_types'] = $search_route['pm-ot'];
+        $data['order'] = !empty($search_route['pm-o']) ? $search_route['pm-o'] : 'price-asc';
+        $data['type'] = 'search';
+        $data['language'] = $language_code;
+        $data['base_url'] = $route_prefix;
+        $data['title'] = $language['title'];
+        $data['meta_description'] = $language['meta_description'];
+        $routes[$routename] = new Route('^' . $route_prefix . '/?', 'ts_search_hook', 'pm-search', $data);
+    }
+}
+
+// Setup the route for the calendar page
+foreach ($languages as $language) {
+    $language_prefix = '';
+    if (MULTILANGUAGE_SITE && !empty($pretty_url['language'])) {
+        $language_prefix = $pretty_url['language'].'/';
     }
     $route_prefix = $language_prefix .  'calendar';
-
     $routename = 'ts_default_' . $route_prefix . '_route';
     $data = [];
     $data['type'] = 'search';
@@ -96,26 +85,27 @@ foreach ($languages as $language) {
     $data['title'] = 'Reisekalender | ' . get_bloginfo('name');
     $data['meta_description'] = '';
     $routes[$routename] = new Route('^' . $route_prefix . '/?', 'ts_calendar_hook', 'pm-calendar', $data);
-
-    // route by id
-    $route_prefix = $language_prefix .  'id';
-    $data = [];
-    $data['type'] = 'detail-by-id';
-    $data['language'] = $language;
-    $data['base_url'] = $route_prefix;
-    $routename = 'ts_by_id_route';
-    $routes[$routename] = new Route('^' . $route_prefix . '/([0-9]+)', 'ts_detail_hook', 'pm-detail', $data);
-
-    // route by code
-    $route_prefix = $language_prefix .  'code';
-    $data = [];
-    $data['type'] = 'detail-by-code';
-    $data['language'] = $language;
-    $data['base_url'] = $route_prefix;
-    $routename = 'ts_by_code_route';
-    $routes[$routename] = new Route('^' . $route_prefix . '/(.+?)', 'ts_detail_hook', 'pm-detail', $data);
-
 }
+
+// route by id
+$route_prefix = $language_prefix .  'id';
+$data = [];
+$data['type'] = 'detail-by-id';
+$data['language'] = null;
+$data['base_url'] = $route_prefix;
+$routename = 'ts_by_id_route';
+$routes[$routename] = new Route('^' . $route_prefix . '/([0-9]+)', 'ts_detail_hook', 'pm-detail', $data);
+
+// route by code
+$route_prefix = $language_prefix .  'code';
+$data = [];
+$data['type'] = 'detail-by-code';
+$data['language'] = null;
+$data['base_url'] = $route_prefix;
+$routename = 'ts_by_code_route';
+$routes[$routename] = new Route('^' . $route_prefix . '/(.+?)', 'ts_detail_hook', 'pm-detail', $data);
+
+
 
 /**
  * Each route can have its own hook,

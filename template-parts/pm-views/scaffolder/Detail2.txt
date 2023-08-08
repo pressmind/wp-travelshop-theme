@@ -65,7 +65,7 @@ if (empty($_GET['pm-dr']) === false) {
     if ($dateRange !== false) {
         $valid_params['pm-dr'] = $_GET['pm-dr'];
         $CheapestPriceFilter->date_from = $dateRange[0];
-        //$CheapestPriceFilter->date_to = $dateRange[1];
+        $CheapestPriceFilter->date_to = $dateRange[1];
     }
 }
 if (empty($_GET['pm-du']) === false) {
@@ -103,7 +103,6 @@ if (empty($_GET['pm-hpid']) === false) {
 
 if (empty($_GET['pm-da']) === false) {
     $departure_airport = BuildSearch::extractAirport3L($_GET['pm-da']);
-    echo $departure_airport;
     if(!empty($departure_airport)){
         $valid_params['pm-da'] = $departure_airport;
         $CheapestPriceFilter->transport_1_airport = [$departure_airport];
@@ -113,7 +112,11 @@ if (empty($_GET['pm-da']) === false) {
 if($mo->id_object_type != TS_DAYTRIPS_PRODUCTS){
     //$CheapestPriceFilter->occupancies = [2];
 }
+
 $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
+if(empty($args['cheapest_price'])){ // Fallback prevents cache issues
+    $args['cheapest_price'] = $mo->getCheapestPrice();
+}
 
 $args['url'] = $mo->getPrettyUrl(TS_LANGUAGE_CODE).(!empty($valid_params) ? '?'.http_build_query($valid_params) : '');
 
@@ -334,10 +337,10 @@ $args['downloads'] = [];
 if(is_array($moc->upload_default)){
     foreach($moc->upload_default as $file){
         $args['downloads'][] = [
-            'description' => $file->description,
-            'url' => $file->getUri(),
-            'file_name' => $file->file_name,
-            'size' => $file->file_size,
+                'description' => $file->description,
+                'url' => $file->getUri(),
+                'file_name' => $file->file_name,
+                'size' => $file->file_size,
         ];
     }
 }

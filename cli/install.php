@@ -327,7 +327,8 @@ if($args[1] != 'only_static') {
                 'prefix' => '/' . HelperFunctions::human_to_machine($item->type_name) . '/',
                 'fields' => ['name' => 'name'],
                 'strategy' => 'count-up',
-                'suffix' => '/'
+                'suffix' => '/',
+                'language' => null
             ];
             $media_types_pretty_url[$item->id_type] = $pretty_url;
             $media_types_allowed_visibilities[$item->id_type] = [30];

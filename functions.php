@@ -60,6 +60,7 @@ require_once 'src/PriceHandler.php';
 require_once 'src/Timer.php';
 require_once 'src/Calendar.php';
 require_once 'src/Template.php';
+//require_once 'src/GeoIP.php';
 
 // enable SMTP auth support
 require_once 'functions/email_smtp.php';
@@ -70,6 +71,7 @@ require_once 'functions/cleanup_meta_includes.php';
 require_once 'functions/disable_emojis.php';
 require_once 'functions/disable_pagetypes.php';
 //require_once 'functions/disable_main_query.php';
+//require_once 'functions/wordpress_php8.1_fixes.php';
 
 // Menus
 require_once 'functions/menus.php';
@@ -121,7 +123,7 @@ require_once 'functions/after_wp_save.php';
 // Cache
 require_once 'src/RedisPageCache.php';
 
-// Sendmail
+// Sendmail TODO move!
 add_action('wp_ajax_nopriv_sendrequest', 'sendrequest');
 add_action('wp_ajax_sendrequest', 'sendrequest');
 function sendrequest() {

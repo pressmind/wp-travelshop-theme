@@ -131,7 +131,7 @@ class Migrate{
     public static function migrateMultisiteBlogTable(){
         global $wpdb;
         echo "update table: ".$wpdb->blogs." (blog id: ".self::$id_blog.") new site: ".self::$newSite."\n";
-        $url = trim(str_replace('https://www.', '', self::$newSite),'/');
+        $url = trim(str_replace(['https://www.', 'https://'], ['', ''], self::$newSite),'/');
         $r = $wpdb->update($wpdb->blogs, ['domain' => $url], ['blog_id' => self::$id_blog]);
         return !empty($r);
     }

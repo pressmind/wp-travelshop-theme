@@ -59,6 +59,7 @@ function buildTree(array &$elements, $parentId = 0)
                         $tmp = new stdClass();
                         $tmp->url =  site_url() . '/' . Pressmind\Travelshop\RouteHelper::get_url_by_object_type($id_object_type) . '/?pm-c['.$var_name.']='.$item->id;
                         $tmp->title = $item->name;
+                        $tmp->ID = null;
                         $element->wpse_children[] = $tmp;
                     }
                 }

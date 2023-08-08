@@ -12,11 +12,13 @@
  *            'items' => [],
  *            'mongodb' => [
  *              'aggregation_pipeline' => ''
- *            ]
+ *            ],
+ *            'view' => 'Teaser1'
  *           ];
  * </code>
  * @var array $args
  */
+
 ?>
 <section class="content-block content-block-pagination">
     <div class="row">
@@ -26,7 +28,7 @@
 
                     <li class="page-item<?php echo ($args['current_page'] == 1) ? ' disabled' : ''; ?>">
                         <a class="page-link"
-                           href="?action=search&<?php echo BuildSearch::getCurrentQueryString($args['current_page'] - 1, $args['page_size']); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>">
+                           href="?action=search&<?php echo BuildSearch::getCurrentQueryString($args['current_page'] - 1, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left"
                                  width="16" height="16" viewBox="0 2 24 24" stroke-width="2" stroke="#607D8B"
                                  fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -52,7 +54,7 @@
                         ?>
                         <li class="page-item<?php echo ($args['current_page'] == $page) ? ' active' : ''; ?>"><a
                                     class="page-link"
-                                    href="?action=search&<?php echo BuildSearch::getCurrentQueryString($page, $args['page_size']); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>"><?php echo $page; ?></a>
+                                    href="?action=search&<?php echo BuildSearch::getCurrentQueryString($page, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>"><?php echo $page; ?></a>
                         </li>
                     <?php } ?>
                     <?php if($args['pages'] != $to) { ?>
@@ -62,7 +64,7 @@
                     <?php } ?>
                     <li class="page-item<?php echo ($args['current_page'] == $args['pages']) ? ' disabled' : ''; ?>"><a
                                 class="page-link"
-                                href="<?php echo ($args['current_page'] >= $args['pages']) ? '#' : '?action=search&' . BuildSearch::getCurrentQueryString($args['current_page'] + 1, $args['page_size']); ?><?php echo isset($args['uid']) ? '#' .  $args['uid'] : '';?>">
+                                href="<?php echo ($args['current_page'] >= $args['pages']) ? '#' : '?action=search&' . BuildSearch::getCurrentQueryString($args['current_page'] + 1, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' .  $args['uid'] : '';?>">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right"
                                  width="16" height="16" viewBox="0 2 24 24" stroke-width="2" stroke="#607D8B"
                                  fill="none" stroke-linecap="round" stroke-linejoin="round">

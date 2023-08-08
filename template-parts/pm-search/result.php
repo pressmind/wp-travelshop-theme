@@ -21,9 +21,9 @@ use Pressmind\Travelshop\Template;
  * @var array $args
  */
 
-$view = 'Teaser1';
+$args['view'] = 'Teaser1';
 if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== false){
-    $view = $_GET['view'];
+    $args['view'] = $_GET['view'];
 }
 ?>
 <div class="list-filter-toggle mb-4">
@@ -58,7 +58,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
     </div>
     <div class="pm-switch-result-view">
         <label class="pm-switch">
-            <input class="pm-switch-checkbox" type="checkbox" value="Teaser3" <?php echo $view == 'Teaser3' ? 'checked' : '';?>>
+            <input class="pm-switch-checkbox" type="checkbox" value="Teaser3" <?php echo $args['view'] == 'Teaser3' ? 'checked' : '';?>>
             <span class="pm-switch-slider">
                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-list" width="20"
                       height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -93,7 +93,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
         <div class="msg" data-text="Suche Angebote...">Suche Angebote...</div>
         <img class="brand" src="<?php echo SITE_URL;?>/wp-content/themes/travelshop/assets/img/travelshop-logo.svg">
     </div>
-    <?php if($view == 'Calendar1') { ?>
+    <?php if($args['view'] == 'Calendar1') { ?>
         <div class="product-calendar-wrap">
             <div class="product-calendar-group">
                 <div class="product-calendar-group--items">
@@ -118,7 +118,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
                             <?php }
                             $currentMonth = $item['cheapest_price']->date_departures[0]->format('m');
                             $item['class'] = 'col-12 col-md-6 col-lg-4';
-                            echo Template::render(__DIR__.'/../pm-views/'.$view.'.php', $item);
+                            echo Template::render(__DIR__.'/../pm-views/'.$args['view'].'.php', $item);
                         }
                         ?>
                 </div>
@@ -129,7 +129,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
             <?php
             foreach ($args['items'] as $item) {
                 $item['class'] = 'col-12 col-md-6 col-lg-4';
-                echo Template::render(__DIR__.'/../pm-views/'.$view.'.php', $item);
+                echo Template::render(__DIR__.'/../pm-views/'.$args['view'].'.php', $item);
             }
             if($args['total_result'] == 0){
                 ?>
@@ -146,7 +146,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
 <?php
 // Pagination
 if ($args['pages'] > 1) {
-    require 'result-pagination.php';
+    echo Template::render(__DIR__.'/result-pagination.php', $args);
 }
 
 /**

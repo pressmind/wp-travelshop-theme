@@ -22,7 +22,7 @@ final class PriceHandler
             $output['price_before_discount'] = self::format($cheapest_price->price_regular_before_discount);
             $output['price_delta'] = '-'.$cheapest_price->earlybird_discount.'%';
             $output['valid_to'] = $cheapest_price->earlybird_discount_date_to;
-            $output['name'] = $earlybird_name;
+            $output['name'] = empty($cheapest_price->earlybird_name) ? $earlybird_name : $cheapest_price->earlybird_name;
             $output['type'] = 'earlybird';
             return $output;
         }
@@ -32,7 +32,7 @@ final class PriceHandler
             $output['price_before_discount'] = self::format($cheapest_price->price_regular_before_discount);
             $output['price_delta'] = '-'.self::format($cheapest_price->earlybird_discount_f);
             $output['valid_to'] = $cheapest_price->earlybird_discount_date_to;
-            $output['name'] = $earlybird_name;
+            $output['name'] = empty($cheapest_price->earlybird_name) ? $earlybird_name : $cheapest_price->earlybird_name;
             $output['type'] = 'earlybird';
             return $output;
         }

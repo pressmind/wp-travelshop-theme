@@ -258,7 +258,7 @@ switch ($args[1]) {
         $helptext .= "php import.php fullimport\n";
         $helptext .= "php import.php fullimport -c=pm-config-example.php <loads the defined config>\n";
         $helptext .= "php import.php mediaobject 12345,12346  <single/multiple ids allowed  / imports one or more media objects>\n";
-        $helptext .= "php import.php objecttypes 12345,12346  <single/multiple ids allowed / imports media objects by given object types>\n";
+        $helptext .= "php import.php objecttypes 12345,12346  <single/multiple ids allowed / imports the object type model (NOT the media objects in this type)>\n";
         $helptext .= "php import.php itinerary 12345,12346    <single/multiple ids allowed / imports itineraries for the given media object types>\n";
         $helptext .= "php import.php destroy 12345,12346      <single/multiple ids allowed / removes the given media objects from the database>\n";
         $helptext .= "php import.php depublish 12345,12346    <single/multiple ids allowed / sets the given media objects to the visibility=10/nobody state>\n";

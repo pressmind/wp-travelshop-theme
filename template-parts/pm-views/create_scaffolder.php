@@ -4,7 +4,6 @@
  */
 $prefix = 'Reise';
 $files = [];
-$files[] = [$prefix.'_Detail1.php', 'scaffolder/Detail1.txt'];
 $files[] = [$prefix.'_Detail2.php', 'scaffolder/Detail2.txt'];
 
 foreach($files as $file){

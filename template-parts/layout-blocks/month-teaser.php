@@ -78,7 +78,7 @@ if (empty($travel_months)) {
                                     <div>
                                         <img src="<?php echo $image_url; ?>"
                                                  title="<?php echo $image_copyright; ?>"
-                                                 alt="<?php echo strip_tags($mo->name); ?>"
+                                                 alt="<?php echo strip_tags((string)$mo->name); ?>"
                                                  class="card-img-top"
                                                  loading="lazy">
                                     </div>
