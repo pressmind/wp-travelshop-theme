@@ -47,6 +47,8 @@ if($args['showVisited'] == 'false') {
             ?>
             <div class="badge badge-info" style="padding: 10px;">product-teaser has zero items</div>
             <?php
+        } else {
+            echo '<strong>Aktuell sind an dieser Stelle keine neuen Reisen verfügbar.</strong>';
         }
         return;
     }
