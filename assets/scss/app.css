@@ -12341,29 +12341,40 @@ ul.checklist {
   gap: .25rem;
   align-items: center; }
 
-.btn.btn-block {
-  display: flex;
-  justify-content: center; }
-.btn.btn-link, .btn.btn-link-light {
-  color: #212529;
-  transition: color 0.3s;
-  text-decoration: none;
-  border: 0; }
-  .btn.btn-link.btn-bold, .btn.btn-link-light.btn-bold {
-    font-weight: 700; }
-  .btn.btn-link:hover, .btn.btn-link:focus, .btn.btn-link:active, .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
-    color: #007bff; }
-  .btn.btn-link:hover, .btn.btn-link-light:hover {
-    text-decoration: none; }
-  .btn.btn-link:active, .btn.btn-link:focus, .btn.btn-link-light:active, .btn.btn-link-light:focus {
-    text-decoration: underline; }
-.btn.btn-link-light {
-  color: #5a6570; }
-  .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
-    color: #007bff; }
-@media (max-width: 767.98px) {
-  .btn.btn-lg, .btn-group-lg > .btn {
-    font-size: 1.125rem !important; } }
+.btn {
+  position: relative; }
+  .btn.btn-block {
+    display: flex;
+    justify-content: center; }
+  .btn > .btn-loader-placeholder {
+    opacity: 0;
+    pointer-events: none; }
+    .btn > .btn-loader-placeholder + .btn-loader {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%); }
+  .btn.btn-link, .btn.btn-link-light {
+    color: #212529;
+    transition: color 0.3s;
+    text-decoration: none;
+    border: 0; }
+    .btn.btn-link.btn-bold, .btn.btn-link-light.btn-bold {
+      font-weight: 700; }
+    .btn.btn-link:hover, .btn.btn-link:focus, .btn.btn-link:active, .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
+      color: #007bff; }
+    .btn.btn-link:hover, .btn.btn-link-light:hover {
+      text-decoration: none; }
+    .btn.btn-link:active, .btn.btn-link:focus, .btn.btn-link-light:active, .btn.btn-link-light:focus {
+      text-decoration: underline; }
+  .btn.btn-link-light {
+    color: #5a6570; }
+    .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
+      color: #007bff; }
+  @media (max-width: 767.98px) {
+    .btn.btn-lg, .btn-group-lg > .btn {
+      font-size: 1.125rem !important; } }
 
 .btn.booking-btn,
 .booking-btn {

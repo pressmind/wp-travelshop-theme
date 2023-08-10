@@ -25,6 +25,8 @@
   @extend %btn-flex-attributes;
   @extend %btn-inner-elements;
 
+  position: relative;
+
   &.btn-block {
     display: flex;
     justify-content: center;
@@ -34,6 +36,20 @@
   > .btn-loader-placeholder {
     @extend %btn-flex-attributes;
     @extend %btn-inner-elements;
+  }
+
+  > .btn-loader-placeholder {
+    opacity:0;
+    pointer-events: none;
+
+    + .btn-loader {
+      position:absolute;
+      top:50%;
+      left:0;
+      right:0;
+
+      transform: translateY(-50%);
+    }
   }
 
   // -- change look & feel of btn-link
