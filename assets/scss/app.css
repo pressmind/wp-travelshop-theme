@@ -13865,11 +13865,12 @@ ul.checklist {
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.is-hidden.list-filter-box-price .list-filter-box-title {
     margin-bottom: 0.75rem; }
 .content-block.content-block-list-filter .list-filter-footer {
-  margin-top: 0.75rem;
   padding-top: 0.75rem;
+  margin-top: 0.75rem;
   border-top: 1px solid #dee2e6; }
-.content-block.content-block-list-filter .list-filter-footer {
-  margin-top: 0; }
+@media (max-width: 767.98px) {
+  .content-block.content-block-list-filter .list-filter-footer {
+    margin-top: 0; } }
 
 #wpadminbar {
   z-index: 1039 !important; }
