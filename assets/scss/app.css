@@ -13567,6 +13567,8 @@ ul.checklist {
             white-space: nowrap; }
             .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary > small span {
               display: inline; } }
+  .card-travel .date-row .dropdown .dropdown-toggle:hover .more-dates {
+    text-decoration: underline; }
   .card-travel .date-row .dropdown .dropdown-menu {
     margin-top: 0.5rem;
     border-color: rgba(0, 0, 0, 0.125);

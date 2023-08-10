@@ -348,6 +348,12 @@
   // -- date dropdown
   .date-row {
     .dropdown {
+      .dropdown-toggle:hover {
+        .more-dates {
+          text-decoration: underline;
+        }
+      }
+
       .dropdown-menu {
         margin-top: 0.5rem;
         border-color: $travel-card-border-color;
