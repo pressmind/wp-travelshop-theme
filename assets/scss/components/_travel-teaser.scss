@@ -353,6 +353,10 @@
         border-color: $travel-card-border-color;
         width: 100%;
         max-width: 16rem;
+        max-height: 14rem;
+        overflow-x: auto;
+
+        @include scrollbars('pill', .5rem, $gray-400, transparent);
 
         .dropdown-header,
         .dropdown-item {
@@ -383,6 +387,11 @@
           padding-top: .25rem;
           padding-bottom: .25rem;
           font-size: $font-size-xs;
+          margin-bottom: 0;
+        }
+
+        .dropdown-item + .dropdown-header {
+          margin-top: .25rem;
         }
       }
     }

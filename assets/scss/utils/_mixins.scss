@@ -325,3 +325,34 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+/**
+ * Scrollbar
+ */
+@mixin scrollbars($style, $size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    width: $size;
+    transition: background $animation-speed-default;
+
+    @if ( $style == 'pill' ) {
+      border-radius: ($size/2);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
