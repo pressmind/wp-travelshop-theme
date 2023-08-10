@@ -11,8 +11,6 @@
   .loader {
     display: none;
     width: auto;
-
-    height: $btn-font-size * $btn-line-height;
   }
 
   > svg {
@@ -23,6 +21,23 @@
   &.btn-block {
     display: flex;
     justify-content: center;
+  }
+
+  > .btn-loader {
+    display: inline-flex;
+    flex-direction: row;
+    gap: .25rem;
+    align-items: center;
+
+    .loader {
+      display: none;
+      width: auto;
+    }
+
+    > svg {
+      width: $btn-font-size;
+      height: $btn-font-size;
+    }
   }
 
   // -- change look & feel of btn-link

@@ -12339,14 +12339,24 @@ ul.checklist {
   align-items: center; }
   .btn .loader {
     display: none;
-    width: auto;
-    height: 1.5rem; }
+    width: auto; }
   .btn > svg {
     width: 1rem;
     height: 1rem; }
   .btn.btn-block {
     display: flex;
     justify-content: center; }
+  .btn > .btn-loader {
+    display: inline-flex;
+    flex-direction: row;
+    gap: .25rem;
+    align-items: center; }
+    .btn > .btn-loader .loader {
+      display: none;
+      width: auto; }
+    .btn > .btn-loader > svg {
+      width: 1rem;
+      height: 1rem; }
   .btn.btn-link, .btn.btn-link-light {
     color: #212529;
     transition: color 0.3s;
