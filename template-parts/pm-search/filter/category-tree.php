@@ -11,6 +11,7 @@ use Pressmind\Travelshop\Template;
  */
 
  $selected = array();
+
  if(empty($_GET['pm-c'][$fieldname]) === false && preg_match_all("/[a-zA-Z0-9\-]+(?=[,|\+]?)/", $_GET['pm-c'][$fieldname], $matches) > 0){
      $selected = empty($matches[0]) ? array() : $matches[0];
  }
@@ -25,7 +26,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
 
         </div>
         <?php
-        if ( $search && $type !== 'expand') {
+        if ( ($search && $type !== 'expand') && (count($args['categories'][$fieldname][0]) > 10)) {
             ?>
             <div class="list-filter-box-search">
                 <div class="input-group">
@@ -147,7 +148,7 @@ if (empty($args['categories'][$fieldname][0]) === false) {
             ?>
         </div>
         <?php
-        if ($type !== null && $type === 'expand') {
+        if ($type !== null && $type === 'expand' && count($args['categories'][$fieldname][0]) > $preview ) {
             ?>
             <div class="list-filter-box-footer">
                 <button type="button" class="category-tree-field-items-expand" data-more="Alle anzeigen" data-less="Weniger anzeigen">
