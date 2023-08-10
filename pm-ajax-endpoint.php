@@ -345,7 +345,6 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
 } else if ($_GET['action'] == 'autocomplete') {
     $args = Search::getResult($_GET,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
     ob_start();
-    echo 'hi';
     require 'template-parts/pm-search/autocomplete.php';
     $output = ob_get_contents();
     ob_end_clean();
