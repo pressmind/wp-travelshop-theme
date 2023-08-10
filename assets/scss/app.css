@@ -11489,14 +11489,8 @@ hr + .content-block {
   transform: translateY(-0.125rem); }
 
 img.loader {
-  height: 1rem;
+  height: 0.75rem;
   width: auto; }
-
-.btn-lg img.loader, .btn-group-lg > .btn img.loader {
-  height: 1.25rem; }
-
-.btn-sm img.loader, .btn-group-sm > .btn img.loader {
-  height: 0.875rem; }
 
 /**
  * Placeholder for slider controls
@@ -12332,51 +12326,42 @@ ul.checklist {
 /**
  * Booking button
  */
-.btn {
+.btn .loader {
+  display: none;
+  width: auto; }
+.btn > svg, .btn > .btn-loader > svg {
+  width: 1rem;
+  height: 1rem; }
+
+.btn, .btn > .btn-loader {
   display: inline-flex;
   flex-direction: row;
   gap: .25rem;
   align-items: center; }
-  .btn .loader {
-    display: none;
-    width: auto; }
-  .btn > svg {
-    width: 1rem;
-    height: 1rem; }
-  .btn.btn-block {
-    display: flex;
-    justify-content: center; }
-  .btn > .btn-loader {
-    display: inline-flex;
-    flex-direction: row;
-    gap: .25rem;
-    align-items: center; }
-    .btn > .btn-loader .loader {
-      display: none;
-      width: auto; }
-    .btn > .btn-loader > svg {
-      width: 1rem;
-      height: 1rem; }
-  .btn.btn-link, .btn.btn-link-light {
-    color: #212529;
-    transition: color 0.3s;
-    text-decoration: none;
-    border: 0; }
-    .btn.btn-link.btn-bold, .btn.btn-link-light.btn-bold {
-      font-weight: 700; }
-    .btn.btn-link:hover, .btn.btn-link:focus, .btn.btn-link:active, .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
-      color: #007bff; }
-    .btn.btn-link:hover, .btn.btn-link-light:hover {
-      text-decoration: none; }
-    .btn.btn-link:active, .btn.btn-link:focus, .btn.btn-link-light:active, .btn.btn-link-light:focus {
-      text-decoration: underline; }
-  .btn.btn-link-light {
-    color: #5a6570; }
-    .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
-      color: #007bff; }
-  @media (max-width: 767.98px) {
-    .btn.btn-lg, .btn-group-lg > .btn {
-      font-size: 1.125rem !important; } }
+
+.btn.btn-block {
+  display: flex;
+  justify-content: center; }
+.btn.btn-link, .btn.btn-link-light {
+  color: #212529;
+  transition: color 0.3s;
+  text-decoration: none;
+  border: 0; }
+  .btn.btn-link.btn-bold, .btn.btn-link-light.btn-bold {
+    font-weight: 700; }
+  .btn.btn-link:hover, .btn.btn-link:focus, .btn.btn-link:active, .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
+    color: #007bff; }
+  .btn.btn-link:hover, .btn.btn-link-light:hover {
+    text-decoration: none; }
+  .btn.btn-link:active, .btn.btn-link:focus, .btn.btn-link-light:active, .btn.btn-link-light:focus {
+    text-decoration: underline; }
+.btn.btn-link-light {
+  color: #5a6570; }
+  .btn.btn-link-light:hover, .btn.btn-link-light:focus, .btn.btn-link-light:active {
+    color: #007bff; }
+@media (max-width: 767.98px) {
+  .btn.btn-lg, .btn-group-lg > .btn {
+    font-size: 1.125rem !important; } }
 
 .btn.booking-btn,
 .booking-btn {

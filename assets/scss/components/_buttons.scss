@@ -2,12 +2,7 @@
  * Booking button
  */
 
-.btn {
-  display: inline-flex;
-  flex-direction: row;
-  gap: .25rem;
-  align-items: center;
-
+%btn-inner-elements {
   .loader {
     display: none;
     width: auto;
@@ -17,6 +12,18 @@
     width: $btn-font-size;
     height: $btn-font-size;
   }
+}
+
+%btn-flex-attributes {
+  display: inline-flex;
+  flex-direction: row;
+  gap: .25rem;
+  align-items: center;
+}
+
+.btn {
+  @extend %btn-flex-attributes;
+  @extend %btn-inner-elements;
 
   &.btn-block {
     display: flex;
@@ -24,20 +31,8 @@
   }
 
   > .btn-loader {
-    display: inline-flex;
-    flex-direction: row;
-    gap: .25rem;
-    align-items: center;
-
-    .loader {
-      display: none;
-      width: auto;
-    }
-
-    > svg {
-      width: $btn-font-size;
-      height: $btn-font-size;
-    }
+    @extend %btn-flex-attributes;
+    @extend %btn-inner-elements;
   }
 
   // -- change look & feel of btn-link
@@ -140,18 +135,18 @@
 
   // -- loader height
   .loader {
-    height: $booking-btn-loader-height;
+    height: $btn-loader-height;
     width: auto;
 
-    margin: ( (($btn-font-size * $btn-line-height) - $booking-btn-loader-height) / 2 ) auto;
+    margin: ( (($btn-font-size * $btn-line-height) - $btn-loader-height) / 2 ) auto;
   }
 
   &.btn-lg {
     .loader {
-      margin: ( (($btn-font-size-lg * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+      margin: ( (($btn-font-size-lg * $btn-line-height-lg) - $btn-loader-height) / 2 ) auto;
 
       @include media-breakpoint-down(sm) {
-        margin: ( ((1.125rem * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+        margin: ( ((1.125rem * $btn-line-height-lg) - $btn-loader-height) / 2 ) auto;
       }
     }
   }
