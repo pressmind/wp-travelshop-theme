@@ -13578,15 +13578,15 @@ ul.checklist {
       width: 0.5rem;
       height: 0.5rem; }
     .card-travel .date-row .dropdown .dropdown-menu::-webkit-scrollbar-thumb {
-      background: #ced4da;
+      background: rgba(0, 0, 0, 0.25);
       width: 0.5rem;
       transition: background 0.3s;
       border-radius: 0.25rem; }
     .card-travel .date-row .dropdown .dropdown-menu::-webkit-scrollbar-track {
-      background: transparent; }
+      background: #fff; }
     .card-travel .date-row .dropdown .dropdown-menu {
-      scrollbar-face-color: #ced4da;
-      scrollbar-track-color: transparent; }
+      scrollbar-face-color: rgba(0, 0, 0, 0.25);
+      scrollbar-track-color: #fff; }
     .card-travel .date-row .dropdown .dropdown-menu .dropdown-header,
     .card-travel .date-row .dropdown .dropdown-menu .dropdown-item {
       padding-left: 1rem;

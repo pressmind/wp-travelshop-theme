@@ -356,7 +356,7 @@
         max-height: 14rem;
         overflow-x: auto;
 
-        @include scrollbars('pill', .5rem, $gray-400, transparent);
+        @include scrollbars('pill', .5rem, rgba(#000, .25), $dropdown-bg);
 
         .dropdown-header,
         .dropdown-item {
