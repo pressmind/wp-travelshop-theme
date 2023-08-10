@@ -11488,6 +11488,16 @@ hr + .content-block {
 .list-filter-box .stars-wrapper {
   transform: translateY(-0.125rem); }
 
+img.loader {
+  height: 1rem;
+  width: auto; }
+
+.btn-lg img.loader, .btn-group-lg > .btn img.loader {
+  height: 1.25rem; }
+
+.btn-sm img.loader, .btn-group-sm > .btn img.loader {
+  height: 0.875rem; }
+
 /**
  * Placeholder for slider controls
  * for usage on various elements
