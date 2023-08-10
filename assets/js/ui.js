@@ -1043,7 +1043,7 @@ jQuery(function ($) {
         var thisWrapper = _this.parents('.search-box-field--fulltext');
         var thisOverlay = thisWrapper.find(searchOverlayWrapper);
         var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
-        var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .form-control');
+        var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .auto-complete');
 
         // get "trigger" position, for fixed overlay attrubutes
         var thisPosition = _this.offset();
