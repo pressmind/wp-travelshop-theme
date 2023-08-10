@@ -17,7 +17,7 @@ $today = new DateTime();
 $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ? 'd.m.' : 'd.m.Y';
 ?>
 <div class="dropdown">
-    <button class="btn <?php echo $args['departure_date_count'] == 1  || empty($args['dates_per_month']) ? ' disabled' : ' dropdown-toggle'; ?>"
+    <button class="btn <?php echo $args['departure_date_count'] == 0  || empty($args['dates_per_month']) ? ' disabled' : ' dropdown-toggle'; ?>"
             type="button"
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
@@ -27,7 +27,7 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
             'date_departure' => $args['date_departures'][0],
             'date_from_format ' => $date_format
         ]);
-        if ($args['departure_date_count'] > 1 && !empty($args['dates_per_month'])) {
+        if ($args['departure_date_count'] > 0 && !empty($args['dates_per_month'])) {
             ?>
             <span class="small more-dates">
                 (<?php echo $args['departure_date_count']; ?> <?php echo ($args['departure_date_count'] > 1) ? 'weitere Termine' : 'weiterer Termin';?>)
@@ -36,7 +36,7 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
         }
         ?>
     </button>
-    <?php if ($args['departure_date_count'] > 1 && !empty($args['dates_per_month'])) { ?>
+    <?php if ($args['departure_date_count'] > 0 && !empty($args['dates_per_month'])) { ?>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <?php
             foreach ($args['dates_per_month'] as $month) {
