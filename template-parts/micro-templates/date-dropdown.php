@@ -28,6 +28,13 @@ echo $args['departure_date_count'];
             'date_departure' => $args['date_departures'][0],
             'date_from_format ' => $date_format
         ]);
+        if ($args['departure_date_count'] > 0 && !empty($args['dates_per_month'])) {
+            ?>
+            <span class="small text-light more-dates">
+                +<?php echo $args['departure_date_count']; ?> <?php echo ($args['departure_date_count'] > 1) ? 'weitere Termine' : 'weiterer Termin';?>
+            </span>
+            <?php
+        }
         ?>
     </button>
     <?php if ($args['departure_date_count'] > 0 && !empty($args['dates_per_month'])) { ?>
