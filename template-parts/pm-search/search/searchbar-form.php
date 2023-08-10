@@ -27,7 +27,7 @@ if(empty(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['search'])){
     return;
 }
 
-$result = Search::getResult(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['search'],2, 12, true, true, TS_TTL_FILTER, TS_TTL_SEARCH);
+$result = Search::getResult(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['search'],2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH);
 $args = array_merge($args, $result);
 ?>
 <pre>
