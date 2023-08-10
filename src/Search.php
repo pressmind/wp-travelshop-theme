@@ -128,9 +128,6 @@ class Search
                     $document['prices'] = null;
                 }
                 if (!empty($document['dates_per_month'])) {
-                    echo "<pre>";
-                        print_r($document['dates_per_month']);
-                    echo "</pre>";
                     $document['dates_per_month'] = array_filter($document['dates_per_month'], function($item) {
                         return !empty($item['five_dates_in_month']);
                     });
