@@ -30,7 +30,7 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
         if ($args['departure_date_count'] > 0 && !empty($args['dates_per_month'])) {
             ?>
             <span class="small text-light more-dates">
-                +<?php echo $args['departure_date_count']; ?> <?php echo ($args['departure_date_count'] > 1) ? 'weitere Termine' : 'weiterer Termin';?>
+                (<?php echo $args['departure_date_count']; ?> <?php echo ($args['departure_date_count'] > 1) ? 'weitere Termine' : 'weiterer Termin';?>)
             </span>
             <?php
         }
