@@ -274,11 +274,11 @@ jQuery(function ($) {
             let total_count_span = btn.find('span');
             let str = '';
             if (data.count == 1) {
-                str = data.count + ' ' + total_count_span.data('total-count-singular');
+                str = data.count + ' asd ' + total_count_span.data('total-count-singular');
             } else if (data.count > 1 || data.count == 0) {
-                str = data.count + ' ' + total_count_span.data('total-count-plural');
+                str = data.count + ' asdf ' + total_count_span.data('total-count-plural');
             } else {
-                str = data.count + ' ' + total_count_span.data('total-count-default');
+                str = data.count + ' asdff ' + total_count_span.data('total-count-default');
             }
             total_count_span.html(str.trim());
         }
