@@ -45,6 +45,9 @@ if (empty($filteredParams) === false) {
 }
 ?>
 <article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper card-travel-wrapper--default ">
+    <pre>
+        <?php print_r($args); ?>
+    </pre>
     <div class="card-travel">
             <div class="card-image">
                 <?php
