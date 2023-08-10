@@ -37,13 +37,13 @@ jQuery(function ($) {
 
         this.setButtonLoader = function (btn) {
             btn.find('svg').hide();
-            btn.find('span').hide();
+            btn.find('span:not(.btn-loader)').hide();
             btn.find('.loader').show();
         }
 
         this.removeButtonLoader = function (btn) {
             btn.find('svg').show();
-            btn.find('span').show();
+            btn.find('span:not(.btn-loader)').show();
             btn.find('.loader').hide();
         }
 
