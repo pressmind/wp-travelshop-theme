@@ -79,6 +79,7 @@ $args = array_merge($args, $result);
                 <img class="loader" src="<?php echo WEBSERVER_HTTP; ?>/wp-content/themes/travelshop/assets/img/loading-dots.svg">
                 <span class="search-bar-total-count" data-default="Suchen" data-total-count-singular="Reise anzeigen"
                       data-total-count-plural="Reisen anzeigen">
+                    <?php echo $args['total_result']; ?>
                     <?php echo empty($args['total_result']) ? 'Suchen' : $args['total_result'] . ' Reisen anzeigen'; ?></span>
             </a>
         </div>
