@@ -16,7 +16,7 @@ use Pressmind\Travelshop\Template;
 $today = new DateTime();
 $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ? 'd.m.' : 'd.m.Y';
 ?>
-<div class="dropdown">
+<div class="dropdown position-static">
     <button class="btn <?php echo $args['departure_date_count'] == 0  || empty($args['dates_per_month']) ? ' disabled' : ' dropdown-toggle'; ?>"
             type="button"
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
