@@ -13564,6 +13564,32 @@ ul.checklist {
             white-space: nowrap; }
             .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row .btn.btn-primary > small span {
               display: inline; } }
+  .card-travel .date-row .dropdown .dropdown-menu {
+    margin-top: 0.5rem;
+    border-color: rgba(0, 0, 0, 0.125);
+    width: 100%;
+    max-width: 16rem; }
+    .card-travel .date-row .dropdown .dropdown-menu .dropdown-header,
+    .card-travel .date-row .dropdown .dropdown-menu .dropdown-item {
+      padding-left: 1rem;
+      padding-right: 1rem; }
+    .card-travel .date-row .dropdown .dropdown-menu .dropdown-item {
+      padding-top: .25rem;
+      padding-bottom: .25rem;
+      display: flex;
+      gap: .25rem;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      transition: background-color 0.3s;
+      font-size: 0.875rem; }
+      .card-travel .date-row .dropdown .dropdown-menu .dropdown-item:hover, .card-travel .date-row .dropdown .dropdown-menu .dropdown-item:focus, .card-travel .date-row .dropdown .dropdown-menu .dropdown-item:active {
+        color: #212529;
+        background-color: #f8f9fa; }
+    .card-travel .date-row .dropdown .dropdown-menu .dropdown-header {
+      padding-top: .25rem;
+      padding-bottom: .25rem;
+      font-size: 0.75rem; }
 
 .card-travel-wrapper:last-child .card-travel {
   margin-bottom: 0;

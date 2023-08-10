@@ -344,6 +344,49 @@
     }
 
   }
+
+  // -- date dropdown
+  .date-row {
+    .dropdown {
+      .dropdown-menu {
+        margin-top: 0.5rem;
+        border-color: $travel-card-border-color;
+        width: 100%;
+        max-width: 16rem;
+
+        .dropdown-header,
+        .dropdown-item {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .dropdown-item {
+          padding-top: .25rem;
+          padding-bottom: .25rem;
+
+          display: flex;
+          gap: .25rem;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          transition: background-color $animation-speed-default;
+          font-size: $font-size-sm;
+
+          &:hover, &:focus, &:active {
+            color: $dropdown-color;
+            background-color: $dropdown-link-hover-bg;
+          }
+        }
+
+        .dropdown-header {
+          padding-top: .25rem;
+          padding-bottom: .25rem;
+          font-size: $font-size-xs;
+        }
+      }
+    }
+  }
 }
 
 // -- reset border/padding/margin-bottom when small teaser for last child
