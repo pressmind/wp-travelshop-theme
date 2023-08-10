@@ -31,7 +31,7 @@ $result = Search::getResult(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]
 $args = array_merge($args, $result);
 ?>
 <pre>
-    <?php print_r($args); ?>
+    <?php print_r($result); ?>
 </pre>
 <form id="main-search" method="GET" action="<?php echo SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['id_object_type']) . '/','/'); ?>">
     <input type="hidden" name="pm-ot" value="<?php echo implode(',',$args['id_object_type']); ?>">
