@@ -271,14 +271,14 @@ jQuery(function ($) {
         this.resultHandlerSearchBarStandalone = function(data, query_string, scrollto, btn){
 
             _this.removeButtonLoader(btn);
-            let total_count_span = btn.find('span');
+            let total_count_span = btn.find('span.search-bar-total-count');
             let str = '';
             if (data.count == 1) {
-                str = data.count + ' asd ' + total_count_span.data('total-count-singular');
+                str = data.count + ' ' + total_count_span.data('total-count-singular');
             } else if (data.count > 1 || data.count == 0) {
-                str = data.count + ' asdf ' + total_count_span.data('total-count-plural');
+                str = data.count + ' ' + total_count_span.data('total-count-plural');
             } else {
-                str = data.count + ' asdff ' + total_count_span.data('total-count-default');
+                str = data.count + ' ' + total_count_span.data('total-count-default');
             }
             total_count_span.html(str.trim());
         }
