@@ -12351,10 +12351,11 @@ ul.checklist {
     pointer-events: none; }
     .btn > .btn-loader-placeholder + .btn-loader {
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 0;
       right: 0;
-      transform: translateY(-50%); }
+      bottom: 0;
+      justify-content: center; }
   .btn.btn-link, .btn.btn-link-light {
     color: #212529;
     transition: color 0.3s;
