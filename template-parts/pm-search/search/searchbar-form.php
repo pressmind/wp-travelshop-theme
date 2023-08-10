@@ -74,6 +74,10 @@ $args = array_merge($args, $result);
         </div>
         <div class="search-box-submit">
             <a class="btn btn-primary btn-block" data-instant data-instant-intensity="0" href="<?php echo '/' . trim(TS_SEARCH[$args['search_box']]['tabs'][$current_tab]['route'],'/'). '/'; ?>">
+                <span class="btn-loader-placeholder">
+                    <svg class="always-show"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                    888 Reisen anzeigen
+                </span>
                 <span class="btn-loader">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
                     <img class="loader" src="<?php echo WEBSERVER_HTTP; ?>/wp-content/themes/travelshop/assets/img/loading-dots.svg">

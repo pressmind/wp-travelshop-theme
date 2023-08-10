@@ -30,7 +30,8 @@
     justify-content: center;
   }
 
-  > .btn-loader {
+  > .btn-loader,
+  > .btn-loader-placeholder {
     @extend %btn-flex-attributes;
     @extend %btn-inner-elements;
   }

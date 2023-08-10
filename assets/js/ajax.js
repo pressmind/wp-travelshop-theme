@@ -36,14 +36,14 @@ jQuery(function ($) {
         }
 
         this.setButtonLoader = function (btn) {
-            btn.find('svg').hide();
-            btn.find('span:not(.btn-loader)').hide();
+            btn.find('svg:not(.always-show)').hide();
+            btn.find('span:not(.btn-loader):not(.btn-loader-placeholder)').hide();
             btn.find('.loader').show();
         }
 
         this.removeButtonLoader = function (btn) {
-            btn.find('svg').show();
-            btn.find('span:not(.btn-loader)').show();
+            btn.find('svg:not(.always-show)').show();
+            btn.find('span:not(.btn-loader):not(.btn-loader-placeholder)').show();
             btn.find('.loader').hide();
         }
 
