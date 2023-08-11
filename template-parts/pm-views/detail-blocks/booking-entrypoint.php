@@ -213,11 +213,11 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                             ]
                             ?>
 
-                            <div class="category-tree-field-items multi-level-checkboxes">
+                            <div class="booking-filter-radio-items">
                                 <?php $i = 0; ?>
                                 <?php foreach( $airports as $key => $value ) { ?>
                                     <div class="form-radio">
-                                        <input type="radio" class="form-radio-input" id="airport-<?php echo $key; ?>" name="airport" value="<?php echo $key; ?>" <?php if ( $i == 0 ) { ?>checked<?php } ?> />
+                                        <input type="radio" class="form-radio-input" id="airport-<?php echo $key; ?>" name="airport" value="<?php echo $key; ?>"  />
 
                                         <span>
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
