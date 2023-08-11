@@ -213,7 +213,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                             ]
                             ?>
 
-                            <div class="category-tree-field-items multi-level-checkboxes">
+                            <div class="booking-filter-radio-items">
                                 <?php $i = 0; ?>
                                 <?php foreach( $airports as $key => $value ) { ?>
                                     <div class="form-radio">
