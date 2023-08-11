@@ -40,6 +40,10 @@ define('TS_PARTNERLINK_VALID_DAYS', 30);
  */
 # define('TS_GTM_CODE', 'GTM-XYZ');
 
+/**
+ * Enable Agency Functionality
+ */
+define('AGENCY_FUNCTIONALITY', false);
 
 // Activate multilanguage support
 // one big change is the routing, if multilanguage, all routes have the language code as prefix:

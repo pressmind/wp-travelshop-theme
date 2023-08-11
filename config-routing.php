@@ -43,7 +43,7 @@ foreach ($config['data']['media_types_pretty_url'] as $object_type => $pretty_ur
     $data = [];
     $data['id_object_type'] = $object_type;
     $data['type'] = 'detail';
-    $data['language'] = $pretty_url['language'];
+    $data['language'] = $pretty_url['language'] ?? null;
     $data['base_url'] = $route_prefix;
     $routes[$routename] = new Route('^' . $route_prefix . '/(.+?)', 'ts_detail_hook', 'pm-detail', $data);
 }

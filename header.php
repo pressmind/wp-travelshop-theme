@@ -93,7 +93,7 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 </a>
             </div>
             <div class="col align-self-center p-0">
-                <?php  load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
+                <?php  load_template(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){ ?>
             <div class="col-auto align-self-center  d-none d-lg-block col-search" id="search">
