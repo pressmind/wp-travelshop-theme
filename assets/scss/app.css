@@ -12940,7 +12940,7 @@ ul.checklist {
     .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-footer *, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-footer *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-footer * {
       margin-top: 0 !important; } }
 @media (max-width: 767.98px) {
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-body {
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-booking-select .booking-filter-radio-items, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-body {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
@@ -13071,7 +13071,7 @@ ul.checklist {
     overflow-y: auto;
     overflow-x: hidden; } }
 @media (min-width: 768px) {
-  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-body {
+  .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-booking-select .booking-filter-radio-items, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-body {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
