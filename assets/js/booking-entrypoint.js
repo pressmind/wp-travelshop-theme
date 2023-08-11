@@ -18,8 +18,6 @@ jQuery(function ($) {
         bookingEntryTransportType.on('change', function(e) {
             var thisType = $(this).val();
 
-            console.log('changed');
-
             if ( thisType == 'FLUG' ) {
                 bookingEntryAirportField.removeClass('d-none');
             } else {
