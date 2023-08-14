@@ -15877,7 +15877,7 @@ ul.pagination {
   text-decoration: none; }
   .blog-sidebar a.category-link:hover, .blog-sidebar a.category-link:focus, .blog-sidebar a.category-link:active {
     color: #007bff; }
-  .blog-sidebar a.category-link:active {
+  .blog-sidebar a.category-link:active, .blog-sidebar a.category-link:focus {
     text-decoration: underline; }
 
 header.header-main {
