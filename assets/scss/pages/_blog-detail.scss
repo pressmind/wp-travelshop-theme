@@ -1,0 +1,31 @@
+.content-main.content-main--posts {
+  .blog-entry-single {
+
+    .blog-list-entry {
+
+
+      // -- comments
+      &.blog-list-entry-comments {
+
+        form.comment-form {
+          > p {
+            @extend .form-group;
+
+            input[type='text'],
+            input[type='email'],
+            textarea {
+              @extend .form-control;
+            }
+
+            &:not(.comment-form-cookies-consent) {
+              display: flex;
+              flex-direction: column;
+              gap: .5rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
