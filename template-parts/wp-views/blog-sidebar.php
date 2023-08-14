@@ -22,8 +22,8 @@
 
                     if ( $category->category_parent == 0 ) {
                     ?>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
+                    <div class="d-flex flex-column">
+                        <a class="d-flex justify-content-between align-items-center" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
 
                             <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
 
