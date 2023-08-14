@@ -274,7 +274,7 @@
                                     <?php if ( $post_thumbnail ) { ?>
                                     <div class="col-4 col-md-12">
                                         <div class="blog-list-entry-thumbnail">
-                                            <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+                                            <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="media-cover media-hover-scale media-border-radius ratio-16x9">
                                                 <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
                                             </a>
                                         </div>
