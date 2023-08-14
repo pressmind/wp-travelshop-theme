@@ -282,7 +282,7 @@
                                     <?php } ?>
 
                                     <div class="<?php if ( $post_thumbnail ) { ?>col-8<?php } else { ?>col-12<?php } ?> col-md-12">
-                                        <h1 class="blog-list-entry-title related">
+                                        <h1 class="blog-list-entry-title h5 related">
                                             <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                                                 <?php echo get_the_title(); ?>
                                             </a>
