@@ -1,7 +1,7 @@
-<div class="blog-sidebar">
+<div class="blog-sidebar d-flex flex-column gap-3">
 
-    <div class="teaser teaser-blog-sidebar teaser-blog-sidebar--search">
-        <div class="teaser-body">
+    <div class="card border-0 p-0">
+        <div class="teaser-body p-0">
             <?php echo get_search_form(); ?>
         </div>
     </div>
@@ -29,7 +29,7 @@
                     if ( $category->category_parent == 0 ) {
                     ?>
                     <div class="d-flex flex-column gap-2">
-                        <a class="d-flex justify-content-between align-items-center text-decoration-none text-dark" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
+                        <a class="d-flex justify-content-between align-items-center text-decoration-none category-link" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
 
                             <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
 
@@ -48,7 +48,7 @@
                                     $category_link = get_category_link( $category );
                                     if ( $category->category_parent == $category_id ) {
                                         ?>
-                                        <a class="d-flex justify-content-between align-items-center text-decoration-none text-dark" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
+                                        <a class="d-flex justify-content-between align-items-center text-decoration-none category-link" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
                                             <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
                                             <span class="badge badge-primary badge-pill">
                                                 <?php echo $category->count; ?>

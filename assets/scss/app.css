@@ -15871,6 +15871,15 @@ ul.pagination {
     background-color: #007bff;
     font-weight: 700; }
 
+.blog-sidebar a.category-link {
+  color: #212529;
+  transition: color .3s;
+  text-decoration: none; }
+  .blog-sidebar a.category-link:hover, .blog-sidebar a.category-link:focus, .blog-sidebar a.category-link:active {
+    color: #007bff; }
+  .blog-sidebar a.category-link:active {
+    text-decoration: underline; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;
