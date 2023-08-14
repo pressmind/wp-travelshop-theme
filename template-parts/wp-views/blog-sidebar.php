@@ -6,11 +6,11 @@
         </div>
     </div>
 
-    <div class="teaser teaser-blog-sidebar">
-        <div class="teaser-body">
+    <div class="card">
+        <div class="card-body">
             <h4>Kategorien</h4>
 
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column gap-2">
                 <?php
                 $categories = get_categories();
                 $current_cat_ID = get_query_var('cat');
@@ -42,7 +42,7 @@
                         <?php
                         if ( $category_children ) {
                             ?>
-                            <div class="d-flex flex-column pl-3">
+                            <div class="d-flex flex-column gap-2 pl-3">
                                 <?php
                                 foreach ( $categories as $category ) {
                                     $category_link = get_category_link( $category );
@@ -72,8 +72,8 @@
         </div>
     </div>
 
-    <div class="teaser teaser-blog-sidebar">
-        <div class="teaser-body">
+    <div class="card">
+        <div class="card-body">
             <h4>Stichworte</h4>
 
             <div class="d-flex flex-row flex-wrap gap-1">
