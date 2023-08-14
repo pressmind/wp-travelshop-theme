@@ -16158,6 +16158,10 @@ ul.pagination {
   .blog-sidebar a.category-link:active, .blog-sidebar a.category-link:focus {
     text-decoration: underline; }
 
+.posts-list {
+  display: flex;
+  flex-direction: column; }
+
 .blog-list-entry .blog-list-entry-body {
   padding-top: 1.25rem; }
 .blog-list-entry + .blog-list-entry {
