@@ -10883,6 +10883,9 @@ html.force--consent.show--consent body {
  * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
  */
 /**
+ * Ratios
+ */
+/**
  * Gaps ( flexbox )
  */
 /**
@@ -11401,6 +11404,268 @@ body.fl-builder .content-block.content-page {
       .booking-action .price-box-discount .price-total > strong {
         font-size: 1.5rem; } }
 
+/**
+ * Default aspect ratio classes
+ */
+.ratio-1x1 {
+  position: relative; }
+  .ratio-1x1:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%; }
+
+.ratio-4x3 {
+  position: relative; }
+  .ratio-4x3:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(3 / 4 * 100%); }
+
+.ratio-16x9 {
+  position: relative; }
+  .ratio-16x9:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(9 / 16 * 100%); }
+
+.ratio-21x9 {
+  position: relative; }
+  .ratio-21x9:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(9 / 21 * 100%); }
+
+/**
+ * Responsive aspect ratios
+ */
+.ratio-xs-1x1 {
+  position: relative; }
+  .ratio-xs-1x1:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%; }
+
+.ratio-xs-4x3 {
+  position: relative; }
+  .ratio-xs-4x3:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(3 / 4 * 100%); }
+
+.ratio-xs-16x9 {
+  position: relative; }
+  .ratio-xs-16x9:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(9 / 16 * 100%); }
+
+.ratio-xs-21x9 {
+  position: relative; }
+  .ratio-xs-21x9:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(9 / 21 * 100%); }
+
+@media (min-width: 576px) {
+  .ratio-sm-1x1 {
+    position: relative; }
+    .ratio-sm-1x1:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+
+  .ratio-sm-4x3 {
+    position: relative; }
+    .ratio-sm-4x3:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(3 / 4 * 100%); }
+
+  .ratio-sm-16x9 {
+    position: relative; }
+    .ratio-sm-16x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-sm-21x9 {
+    position: relative; }
+    .ratio-sm-21x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 21 * 100%); } }
+@media (min-width: 768px) {
+  .ratio-md-1x1 {
+    position: relative; }
+    .ratio-md-1x1:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+
+  .ratio-md-4x3 {
+    position: relative; }
+    .ratio-md-4x3:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(3 / 4 * 100%); }
+
+  .ratio-md-16x9 {
+    position: relative; }
+    .ratio-md-16x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-md-21x9 {
+    position: relative; }
+    .ratio-md-21x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 21 * 100%); } }
+@media (min-width: 992px) {
+  .ratio-lg-1x1 {
+    position: relative; }
+    .ratio-lg-1x1:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+
+  .ratio-lg-4x3 {
+    position: relative; }
+    .ratio-lg-4x3:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(3 / 4 * 100%); }
+
+  .ratio-lg-16x9 {
+    position: relative; }
+    .ratio-lg-16x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-lg-21x9 {
+    position: relative; }
+    .ratio-lg-21x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 21 * 100%); } }
+@media (min-width: 1200px) {
+  .ratio-xl-1x1 {
+    position: relative; }
+    .ratio-xl-1x1:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+
+  .ratio-xl-4x3 {
+    position: relative; }
+    .ratio-xl-4x3:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(3 / 4 * 100%); }
+
+  .ratio-xl-16x9 {
+    position: relative; }
+    .ratio-xl-16x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-xl-21x9 {
+    position: relative; }
+    .ratio-xl-21x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 21 * 100%); } }
+@media (min-width: 1360px) {
+  .ratio-xxl-1x1 {
+    position: relative; }
+    .ratio-xxl-1x1:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+
+  .ratio-xxl-4x3 {
+    position: relative; }
+    .ratio-xxl-4x3:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(3 / 4 * 100%); }
+
+  .ratio-xxl-16x9 {
+    position: relative; }
+    .ratio-xxl-16x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-xxl-21x9 {
+    position: relative; }
+    .ratio-xxl-21x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 21 * 100%); } }
+@media (min-width: 1560px) {
+  .ratio-xxxl-1x1 {
+    position: relative; }
+    .ratio-xxxl-1x1:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%; }
+
+  .ratio-xxxl-4x3 {
+    position: relative; }
+    .ratio-xxxl-4x3:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(3 / 4 * 100%); }
+
+  .ratio-xxxl-16x9 {
+    position: relative; }
+    .ratio-xxxl-16x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-xxxl-21x9 {
+    position: relative; }
+    .ratio-xxxl-21x9:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(9 / 21 * 100%); } }
 i.circle {
   width: .6125rem;
   height: .6125rem;

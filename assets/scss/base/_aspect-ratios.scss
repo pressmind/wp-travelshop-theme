@@ -1,0 +1,38 @@
+/**
+ * Default aspect ratio classes
+ */
+
+@each $name, $value in $aspect-ratios {
+  .ratio-#{$name} {
+    position: relative;
+
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: $value;
+    }
+  }
+}
+
+/**
+ * Responsive aspect ratios
+ */
+@each $breakpoint, $value in $grid-breakpoints {
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    @include media-breakpoint-up($breakpoint) {
+      @each $name, $value in $aspect-ratios {
+        .ratio-#{$breakpoint}-#{$name} {
+          position: relative;
+
+          &:before {
+            display: block;
+            content: "";
+            width: 100%;
+            padding-top: $value;
+          }
+        }
+      }
+    }
+  }
+}
