@@ -13,10 +13,14 @@
               @extend .form-control;
             }
 
-            &:not(.comment-form-cookies-consent) {
+            &:not(.comment-form-cookies-consent):not(.form-submit) {
               display: flex;
               flex-direction: column;
               gap: .5rem;
+
+              > label {
+                margin-bottom: 0;
+              }
             }
           }
         }

@@ -18025,10 +18025,12 @@ footer.footer-main {
   margin-top: 0;
   padding-top: 0; }
 
-.content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-comments form.comment-form > p:not(.comment-form-cookies-consent) {
+.content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-comments form.comment-form > p:not(.comment-form-cookies-consent):not(.form-submit) {
   display: flex;
   flex-direction: column;
   gap: .5rem; }
+  .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-comments form.comment-form > p:not(.comment-form-cookies-consent):not(.form-submit) > label {
+    margin-bottom: 0; }
 
 html #wpadminbar {
   top: auto !important;
