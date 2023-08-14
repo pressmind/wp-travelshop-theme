@@ -11366,6 +11366,9 @@ body.fl-builder .content-block.content-page {
   position: relative;
   overflow: hidden; }
 
+.media-border-radius > img {
+  border-radius: 0.25rem; }
+
 .media-hover-scale img {
   transition: transform 0.3s;
   transform: scale(1); }
@@ -11375,10 +11378,6 @@ body.fl-builder .content-block.content-page {
 .responsive-image {
   width: 100% !important;
   height: auto !important; }
-
-.media-border-radius {
-  border-radius: 0.25rem;
-  overflow: hidden; }
 
 .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price {
   color: #212529;
