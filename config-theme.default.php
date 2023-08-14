@@ -121,8 +121,8 @@ define('TS_SEARCH_ROUTES', []);
  * If your using the blogfeature it's recommend to enable this two auto generated pagetypes
  * if you dont use the blog feature set this pages to false, to avoid unvalid pages in the search engine indexes
  */
-define('BLOG_ENABLE_AUTHORPAGE', false);
-define('BLOG_ENABLE_CATEGORYPAGE', false);
+define('BLOG_ENABLE_AUTHORPAGE', true);
+define('BLOG_ENABLE_CATEGORYPAGE', true);
 
 /**
  * Default visibility level
