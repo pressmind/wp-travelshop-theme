@@ -342,7 +342,8 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong, .h6 {
   margin-bottom: 1rem;
   font-weight: 500;
-  line-height: 1.2; }
+  line-height: 1.2;
+  color: #212529; }
 
 h1, .h1 {
   font-size: 2.5rem; }
@@ -11148,6 +11149,7 @@ body {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .autocomplete-group, .page-share .share-object .share-object-body strong, h6, .h6, .personen-select .personen-select-title {
   font-weight: 500;
   margin-bottom: 1rem;
+  color: #212529;
   line-height: 1.2; }
 
 .teaser.category-product-teaser .teaser-category-image > a .teaser-body .teaser-title, .layout-block.layout-block-search-header .layout-block-search-header--search .h1, .jumbotron > .container > :not(.btn), .fl-builder-content .jumbotron > .fl-row.fl-row-fixed-width > :not(.btn), .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .jumbotron > .fl-row-content.fl-row-fixed-width > :not(.btn), .teaser.image-teaser .teaser-body :not(.btn) {
@@ -11392,6 +11394,7 @@ body.fl-builder .content-block.content-page {
   .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price strong {
     font-weight: 700; }
   .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price > strong {
+    color: #212529;
     font-size: 1rem; }
     @media (min-width: 992px) {
       .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price > strong {
@@ -11406,6 +11409,7 @@ body.fl-builder .content-block.content-page {
   .booking-action .price-box-discount .price-total strong {
     font-weight: 700; }
   .booking-action .price-box-discount .price-total > strong {
+    color: #212529;
     font-size: 1.25rem; }
     @media (min-width: 992px) {
       .booking-action .price-box-discount .price-total > strong {
@@ -13855,6 +13859,7 @@ ul.checklist {
             background-repeat: repeat-x; } }
     .card-travel .card-body h1.card-title {
       font-size: 1rem;
+      color: #212529;
       margin: 0 0 0.75rem 0; }
       @media (min-width: 992px) {
         .card-travel .card-body h1.card-title {
@@ -14036,6 +14041,7 @@ ul.checklist {
         font-size: 1rem; } }
     .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title {
       font-size: 1rem;
+      color: #212529;
       margin: 0 0 0.25rem 0;
       padding-right: 2rem; }
       .teaser.category-product-teaser .teaser-products .category-travel-card h1.card-title > a {
@@ -16170,6 +16176,7 @@ ul.pagination {
   .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
     margin: 0; }
     .blog-list-entry .blog-list-entry-header .blog-list-entry-title a {
+      color: #212529;
       text-decoration: none;
       transition: color 0.3s; }
       .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:hover, .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:focus, .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:active {
@@ -16520,6 +16527,7 @@ footer.footer-main {
         footer.footer-main .footer-main--boxes .col-footer-box {
           padding-bottom: 30px; } }
     footer.footer-main .footer-main--boxes .h5, footer.footer-main .footer-main--boxes .autocomplete-group, footer.footer-main .footer-main--boxes .page-share .share-object .share-object-body strong, .page-share .share-object .share-object-body footer.footer-main .footer-main--boxes strong {
+      color: #212529;
       margin-bottom: 0;
       padding-bottom: 0.5rem; }
       @media (min-width: 992px) {
