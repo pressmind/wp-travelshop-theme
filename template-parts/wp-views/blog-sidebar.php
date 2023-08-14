@@ -20,8 +20,8 @@
                     $category_id = $category->term_id;
                     $category_children = false;
 
-                    foreach ( $categories as $category ) {
-                        if ( $category->category_parent == $category_id ) {
+                    foreach ( $categories as $sub_category ) {
+                        if ( $sub_category->category_parent == $category_id ) {
                             $category_children = true;
                         }
                     }
