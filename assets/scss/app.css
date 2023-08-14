@@ -10884,6 +10884,9 @@ html.force--consent.show--consent body {
  * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
  */
 /**
+ * Responsive font sizhe
+ */
+/**
  * Ratios
  */
 /**
@@ -16184,8 +16187,17 @@ ul.pagination {
         text-decoration: none; }
       .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:focus, .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:active {
         text-decoration: underline; }
+.blog-list-entry .blog-list-entry-excerpt {
+  font-size: 0.875rem; }
+  @media (min-width: 992px) {
+    .blog-list-entry .blog-list-entry-excerpt {
+      font-size: 1rem; } }
 .blog-list-entry .blog-list-entry-more {
-  margin: 1rem 0 0 0; }
+  margin: 1rem 0 0 0;
+  font-size: 0.875rem; }
+  @media (min-width: 992px) {
+    .blog-list-entry .blog-list-entry-more {
+      font-size: 1rem; } }
 .blog-list-entry .blog-list-entry-body {
   padding-top: 1.25rem; }
 .blog-list-entry + .blog-list-entry {

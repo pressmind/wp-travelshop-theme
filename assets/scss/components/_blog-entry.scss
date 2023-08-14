@@ -33,8 +33,13 @@
     }
   }
 
+  .blog-list-entry-excerpt {
+    @include font-size-generator($responsive-font-size);
+  }
+
   .blog-list-entry-more {
     margin: 1rem 0 0 0;
+    @include font-size-generator($responsive-font-size);
   }
 
   .blog-list-entry-body {

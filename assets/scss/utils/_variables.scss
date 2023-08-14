@@ -27,6 +27,14 @@ $specific-element-shadows: (
   'detail-box-contact': none,
 ) !default;
 
+/**
+ * Responsive font sizhe
+ */
+
+$responsive-font-size: (
+  null: $font-size-sm,
+  lg: $font-size-base
+) !default;
 
 /**
  * Ratios
@@ -736,10 +744,7 @@ $travel-card-bg: $card-bg !default;
 
 $travel-card-badge-pill: false !default;
 
-$travel-card-body-sizes: (
-  null: $font-size-sm,
-  lg: $font-size-base
-) !default;
+$travel-card-body-sizes: $responsive-font-size !default;
 
 $travel-card-title-color: $headings-color;
 $travel-card-title-hover-color: $primary;
