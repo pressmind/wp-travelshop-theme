@@ -52,3 +52,8 @@
 .media-hover-scale {
   @extend %media-hover-scale;
 }
+
+.media-border-radius {
+  @include border-radius($border-radius);
+  overflow: hidden;
+}

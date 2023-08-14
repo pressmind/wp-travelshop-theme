@@ -11376,6 +11376,10 @@ body.fl-builder .content-block.content-page {
   width: 100% !important;
   height: auto !important; }
 
+.media-border-radius {
+  border-radius: 0.25rem;
+  overflow: hidden; }
+
 .teaser.category-product-teaser .teaser-products .category-travel-card .price-row .product-price {
   color: #212529;
   font-size: 0.875rem; }
