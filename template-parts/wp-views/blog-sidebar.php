@@ -29,7 +29,7 @@
                     if ( $category->category_parent == 0 ) {
                     ?>
                     <div class="d-flex flex-column gap-2">
-                        <a class="d-flex justify-content-between align-items-center" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
+                        <a class="d-flex justify-content-between align-items-center text-decoration-none" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
 
                             <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
 
@@ -48,7 +48,7 @@
                                     $category_link = get_category_link( $category );
                                     if ( $category->category_parent == $category_id ) {
                                         ?>
-                                        <a class="d-flex justify-content-between align-items-center" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
+                                        <a class="d-flex justify-content-between align-items-center text-decoration-none" href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
                                             <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
                                             <span class="badge badge-primary badge-pill">
                                                 <?php echo $category->count; ?>
