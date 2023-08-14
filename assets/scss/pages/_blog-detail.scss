@@ -7,6 +7,12 @@
           .post-item {
             .blog-list-entry-title {
               @extend %card-title-settings;
+
+              margin: 0 0 .5rem 0;
+
+              @include media-breakpoint-up(md) {
+                margin: $card-spacer-x 0 .5rem 0;
+              }
             }
           }
         }
