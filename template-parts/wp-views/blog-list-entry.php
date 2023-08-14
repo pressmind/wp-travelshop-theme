@@ -5,23 +5,23 @@
     ?>
 
     <?php if ( $post_thumbnail ) { ?>
-        <div class="blog-list-entry--thumbnail">
+        <div class="blog-list-entry-thumbnail">
             <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                 <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
             </a>
         </div>
     <?php } ?>
 
-    <div class="blog-list-entry--body">
-        <div class="blog-list-entry--header">
+    <div class="blog-list-entry-body">
+        <div class="blog-list-entry-header">
 
-            <h1 class="blog-list-entry--title h3">
-                <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+            <h1 class="blog-list-entry-title h3">
+                <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="media-cover ratio-16x9">
                     <?php echo get_the_title(); ?>
                 </a>
             </h1>
 
-            <div class="blog-list-entry--details">
+            <div class="blog-list-entry-details">
 
                 <?php
                 // Date
@@ -103,14 +103,14 @@
 
         if ( $post_excerpt ) {
             ?>
-            <div class="blog-list-entry--excerpt">
+            <div class="blog-list-entry-excerpt">
                 <?php echo $post_excerpt; ?>
             </div>
             <?php
         }
         ?>
 
-        <div class="blog-list-entry--more">
+        <div class="blog-list-entry-more">
             <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                 Weiterlesen
             </a>
