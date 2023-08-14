@@ -1,12 +1,9 @@
-.content-main.content-main--posts {
+.content-main.ccontent-main--posts {
   .blog-entry-single {
-
     .blog-list-entry {
-
 
       // -- comments
       &.blog-list-entry-comments {
-
         form.comment-form {
           > p {
             @extend .form-group;
@@ -26,6 +23,5 @@
         }
       }
     }
-
   }
 }

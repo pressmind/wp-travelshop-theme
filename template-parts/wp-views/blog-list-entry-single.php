@@ -152,7 +152,7 @@
 
     <?php if ( (bool) get_the_author_meta( 'description' ) && post_type_supports( get_post_type(), 'author' ) ) : ?>
 
-        <div class="blog-list-entry log-list-entry-author">
+        <div class="blog-list-entry blog-list-entry-author">
             <div class="log-list-entry-body">
 
 
@@ -249,7 +249,7 @@
         </div>
     <?php endif; ?>
 
-    <div class="blog-list-entry log-list-entry-related">
+    <div class="blog-list-entry blog-list-entry-related">
         <div class="log-list-entry-body">
             <h3>
                 Weitere Beiträge
@@ -343,7 +343,7 @@
         </div>
     </div>
 
-    <div class="blog-list-entry log-list-entry-postnav">
+    <div class="blog-list-entry blog-list-entry-postnav">
         <div class="log-list-entry-body">
             <?php
             // Previous/next post navigation.
@@ -383,7 +383,7 @@
         $post_comments_text = '0 Kommentare';
     }
     ?>
-    <div class="blog-list-entry log-list-entry-comments">
+    <div class="blog-list-entry blog-list-entry-comments">
         <div class="log-list-entry-body">
             <h3>
                 <?php echo $post_comments_text; ?> zu "<?php echo get_the_title(); ?>"

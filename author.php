@@ -17,7 +17,7 @@ get_header();
                             <h1 ><?php echo get_the_archive_title() ?></h1>
                             <?php if ( (bool) get_the_author_meta( 'description' ) && post_type_supports( get_post_type(), 'author' ) ) : ?>
 
-                                <div class="blog-list-entry log-list-entry-author">
+                                <div class="blog-list-entry blog-list-entry-author">
                                     <div class="log-list-entry-body">
 
 
