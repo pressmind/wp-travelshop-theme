@@ -10883,6 +10883,9 @@ html.force--consent.show--consent body {
  * @todo: add / use global box-shadow variable for setting box shadow on cards + teasers
  */
 /**
+ * Gaps ( flexbox )
+ */
+/**
  * Blank for placeholders
  */
 /**
@@ -11468,6 +11471,33 @@ hr + .content-block {
   @media (min-width: 768px) {
     .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article, .row.row-introduction, .content-main--calendar .content-block-month-teaser {
       margin-bottom: 30px; } }
+
+.gap-1 {
+  gap: 0.25rem; }
+
+.row-gap-1 {
+  row-gap: 0.25rem; }
+
+.column-gap-1 {
+  column-gap: 0.25rem; }
+
+.gap-2 {
+  gap: 0.5rem; }
+
+.row-gap-2 {
+  row-gap: 0.5rem; }
+
+.column-gap-2 {
+  column-gap: 0.5rem; }
+
+.gap-3 {
+  gap: 1rem; }
+
+.row-gap-3 {
+  row-gap: 1rem; }
+
+.column-gap-3 {
+  column-gap: 1rem; }
 
 .stars-wrapper {
   display: inline-flex;

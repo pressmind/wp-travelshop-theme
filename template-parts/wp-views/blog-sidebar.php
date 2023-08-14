@@ -76,7 +76,7 @@
         <div class="teaser-body">
             <h4>Stichworte</h4>
 
-            <div class="d-flex flex-row flex-wrap">
+            <div class="d-flex flex-row flex-wrap gap-1">
 
                 <?php
 

@@ -28,6 +28,15 @@ $specific-element-shadows: (
 ) !default;
 
 /**
+ * Gaps ( flexbox )
+ */
+$default-gaps: (
+  '1': .25rem,
+  '2': .5rem,
+  '3': 1rem
+) !default;
+
+/**
  * Blank for placeholders
  */
 $placeholders: ();

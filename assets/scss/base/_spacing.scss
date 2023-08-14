@@ -13,3 +13,20 @@
      margin-top: $grid-gutter-width;
    }
 }
+
+// -- generate gaps
+@if ( $default-gaps ) {
+  @each $name, $value in $default-gaps {
+    .gap-#{$name} {
+      gap: $value;
+    }
+
+    .row-gap-#{$name} {
+      row-gap: $value;
+    }
+
+    .column-gap-#{$name} {
+      column-gap: $value;
+    }
+  }
+}
