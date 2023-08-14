@@ -76,7 +76,7 @@
         <div class="teaser-body">
             <h4>Stichworte</h4>
 
-            <div class="post-tags">
+            <div class="d-flex flex-row flex-wrap">
 
                 <?php
 
@@ -92,7 +92,7 @@
 
                     $tag_link = get_tag_link( $tag->term_id );
                     ?>
-                        <a class="badge <?php if ( $current_tag_ID && $current_tag_ID === $tag->term_id ) { ?> badge-primary <?php } else { ?> badge-secondary <?php } ?>" href="<?php echo $tag_link; ?>" title='<?php echo $tag->name; ?>' class='<?php echo $tag->slug; ?>'>
+                        <a class="badge badge-pill <?php if ( $current_tag_ID && $current_tag_ID === $tag->term_id ) { ?> badge-primary <?php } else { ?> badge-secondary <?php } ?>" href="<?php echo $tag_link; ?>" title='<?php echo $tag->name; ?>' class='<?php echo $tag->slug; ?>'>
                             <?php echo $tag->name; ?>
                         </a>
                     <?php
