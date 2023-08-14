@@ -27,7 +27,7 @@ the_breadcrumb(null);
                             <div class="posts-list">
                                 <?php
                                 // -- wp query, all posts
-                                $count = 2;
+                                $count = get_option('posts_per_page', 10);
                                 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
                                 $offset = ($paged - 1) * $count;
 
@@ -46,13 +46,14 @@ the_breadcrumb(null);
 
                                     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                    <?php get_template_part('template-parts/wp-views/blog-list-entry'); ?>
+                                        <?php get_template_part('template-parts/wp-views/blog-list-entry'); ?>
 
-                                <?php endwhile; else : ?>
+                                    <?php endwhile; else : ?>
 
-                                    Keine Beiträge gefunden.
+                                        Keine Beiträge gefunden.
 
-                                <?php endif; ?>
+                                    <?php endif; ?>
+
                                 <?php wp_reset_postdata(); ?>
                             </div>
 
