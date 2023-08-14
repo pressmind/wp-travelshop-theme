@@ -27,7 +27,7 @@ the_breadcrumb(null);
                             <div class="posts-list">
                                 <?php
                                 // -- wp query, all posts
-                                $count = get_option('posts_per_page', 10);
+                                $count = get_option('posts_per_page', 2);
                                 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
                                 $offset = ($paged - 1) * $count;
 
