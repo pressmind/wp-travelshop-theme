@@ -1,3 +1,13 @@
 .blog-list-entry {
-  
+  @extend %spacing-bottom;
+
+  .blog-list-entry-body {
+    padding-top: $card-spacer-x;
+  }
+
+  + .blog-list-entry {
+    @extend %spacing-top;
+
+    border-top: $card-border-width solid $card-border-color;
+  }
 }
