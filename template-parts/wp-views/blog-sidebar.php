@@ -10,7 +10,7 @@
         <div class="teaser-body">
             <h4>Kategorien</h4>
 
-            <div class="post-categories">
+            <ul class="list-group">
                 <?php
                 $categories = get_categories();
                 $current_cat_ID = get_query_var('cat');
@@ -22,12 +22,14 @@
 
                     if ( $category->category_parent == 0 ) {
                     ?>
-                    <div class="post-category">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                         <a href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
 
-                            <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?>
-                            <?php echo $category->name; ?> (<?php echo $category->count; ?>)
-                            <?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
+                            <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
+
+                            <span class="badge badge-primary badge-pill">
+                                <?php echo $category->count; ?>
+                            </span>
 
                         </a>
 
@@ -48,12 +50,12 @@
                             }
                         }
                         ?>
-                    </div>
+                    </li>
                     <?php
                     }
                 }
                 ?>
-            </div>
+            </ul>
 
         </div>
     </div>
