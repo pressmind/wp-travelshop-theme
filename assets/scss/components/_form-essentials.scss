@@ -211,7 +211,7 @@ select.form-control {
       border: $custom-checkbox-input-border-width solid $custom-checkbox-input-border-color;
     }
 
-    transition: background-color .3s, border-color $animation-speed-default;
+    transition: background-color $animation-speed-default, border-color $animation-speed-default;
 
     svg {
       width: $custom-checkbox-input-icon-size;
@@ -420,7 +420,7 @@ select.form-control {
     border: $custom-radio-input-border-width solid $custom-radio-input-border-color;
   }
 
-  transition: background-color .3s, border-color $animation-speed-default;
+  transition: background-color $animation-speed-default, border-color $animation-speed-default;
 
   svg {
     width: $custom-radio-input-icon-size;

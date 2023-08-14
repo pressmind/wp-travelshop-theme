@@ -13,7 +13,7 @@
   bottom: 0;
 
   width: 300px;
-  transition: left 0.3s, opacity 0$animation-speed-default;
+  transition: left $animation-speed-default, opacity $animation-speed-default;
   left: -300px;
   opacity: 0;
 

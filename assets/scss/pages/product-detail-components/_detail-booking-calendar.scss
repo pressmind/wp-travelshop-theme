@@ -62,7 +62,7 @@
 
           @include border-radius(($border-radius - .25rem));
 
-          transition: background-color .3s, color .3s, transform $animation-speed-default;
+          transition: background-color $animation-speed-default, color $animation-speed-default, transform $animation-speed-default;
 
           &.active, &:hover, &:focus, &:active {
             color: $body-color;

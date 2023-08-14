@@ -72,7 +72,7 @@
                     </div>
                 <?php } ?>
 
-                <?php if ( $post_author_name ) { ?>&nbsp;
+                <?php if ( $post_author_name ) { ?>
                     <div>
                         Autor: <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a>
                     </div>

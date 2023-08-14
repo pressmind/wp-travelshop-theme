@@ -41,7 +41,7 @@
 
     pointer-events: auto;
 
-    transition: background-color .3s, opacity .3s, color .3s, border-color $animation-speed-default;
+    transition: background-color $animation-speed-default, opacity $animation-speed-default, color $animation-speed-default, border-color $animation-speed-default;
 
     &:not([disabled]):hover {
       border-color: $primary;

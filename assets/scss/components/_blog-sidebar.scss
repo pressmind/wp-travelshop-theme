@@ -2,7 +2,7 @@
 
   a.category-link {
     color: $body-color;
-    transition: color .3s;
+    transition: color $animation-speed-default;
     text-decoration: none;
 
     &:hover, &:focus, &:active {
