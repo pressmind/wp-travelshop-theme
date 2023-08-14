@@ -10,7 +10,7 @@
         <div class="teaser-body">
             <h4>Kategorien</h4>
 
-            <ul class="d-flex flex-column">
+            <div class="d-flex flex-column">
                 <?php
                 $categories = get_categories();
                 $current_cat_ID = get_query_var('cat');
@@ -22,7 +22,7 @@
 
                     if ( $category->category_parent == 0 ) {
                     ?>
-                    <li class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
                         <a href="<?php echo $category_link; ?>" title='<?php echo $category->name; ?>' class='<?php echo $category->slug; ?>'>
 
                             <?php if ( $current_cat_ID === $category->term_id ) { ?><strong><?php } ?><?php echo $category->name; ?><?php if ( $current_cat_ID === $category->term_id ) { ?></strong><?php } ?>
@@ -50,12 +50,12 @@
                             }
                         }
                         ?>
-                    </li>
+                    </div>
                     <?php
                     }
                 }
                 ?>
-            </ul>
+            </div>
 
         </div>
     </div>
