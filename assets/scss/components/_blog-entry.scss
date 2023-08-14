@@ -11,7 +11,10 @@
   }
 
   + .blog-list-entry {
-    @extend %spacing-top;
+
+    .blog-list-entry-thumbnail {
+      @extend %spacing-top;
+    }
 
     border-top: $hr-border-width solid $hr-border-color;
   }
