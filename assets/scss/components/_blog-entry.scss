@@ -1,57 +1,57 @@
 .posts-list {
   display: flex;
   flex-direction: column;
-}
 
-.blog-list-entry {
-  @extend %spacing-bottom;
+  .blog-list-entry {
+    @extend %spacing-bottom;
 
-  .blog-list-entry-header {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
+    .blog-list-entry-header {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
 
-    margin-bottom: 1rem;
+      margin-bottom: 1rem;
 
-    .blog-list-entry-title {
-      margin: 0;
+      .blog-list-entry-title {
+        margin: 0;
 
-      a {
-        color: $headings-color;
-        text-decoration: none;
-        transition: color $animation-speed-default;
-
-        &:hover, &:focus, &:active {
-          color: $primary;
+        a {
+          color: $headings-color;
           text-decoration: none;
-        }
+          transition: color $animation-speed-default;
 
-        &:focus, &:active {
-          text-decoration: underline;
+          &:hover, &:focus, &:active {
+            color: $primary;
+            text-decoration: none;
+          }
+
+          &:focus, &:active {
+            text-decoration: underline;
+          }
         }
       }
     }
-  }
 
-  .blog-list-entry-excerpt {
-    @include font-size-generator($responsive-font-size);
-  }
-
-  .blog-list-entry-more {
-    margin: 1rem 0 0 0;
-    @include font-size-generator($responsive-font-size);
-  }
-
-  .blog-list-entry-body {
-    padding-top: $card-spacer-x;
-  }
-
-  + .blog-list-entry {
-
-    .blog-list-entry-thumbnail {
-      @extend %spacing-top;
+    .blog-list-entry-excerpt {
+      @include font-size-generator($responsive-font-size);
     }
 
-    border-top: $hr-border-width solid $hr-border-color;
+    .blog-list-entry-more {
+      margin: 1rem 0 0 0;
+      @include font-size-generator($responsive-font-size);
+    }
+
+    .blog-list-entry-body {
+      padding-top: $card-spacer-x;
+    }
+
+    + .blog-list-entry {
+
+      .blog-list-entry-thumbnail {
+        @extend %spacing-top;
+      }
+
+      border-top: $hr-border-width solid $hr-border-color;
+    }
   }
 }
