@@ -44,15 +44,15 @@ the_breadcrumb(null);
                                 if ($the_query->have_posts()):
                                     ?>
 
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                                         <?php get_template_part('template-parts/wp-views/blog-list-entry'); ?>
 
-                                    <?php endwhile; else : ?>
+                                <?php endwhile; else : ?>
 
                                         Keine Beiträge gefunden.
 
-                                    <?php endif; ?>
+                                <?php endif; ?>
 
                                 <?php wp_reset_postdata(); ?>
                             </div>
