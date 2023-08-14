@@ -28,15 +28,6 @@ $specific-element-shadows: (
 ) !default;
 
 /**
- * Responsive font sizhe
- */
-
-$responsive-font-size: (
-  null: $font-size-sm,
-  lg: $font-size-base
-) !default;
-
-/**
  * Ratios
  */
 $aspect-ratios:  (
@@ -135,6 +126,20 @@ $h5-font-sizes: (
 $h6-font-sizes: (
         null: $h6-font-size // 16px
 ) !default;
+
+/**
+ * Responsive font sizhe
+ */
+
+$responsive-font-size: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+/**
+ * Responsive title sizes
+ */
+$card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
 
 /**
  * Accordion
@@ -750,10 +755,7 @@ $travel-card-title-color: $headings-color;
 $travel-card-title-hover-color: $primary;
 $travel-card-title-active-color: $primary;
 
-$travel-card-title-sizes: (
-        null: 1rem, // 16px
-        lg: $h5-font-size // 20px
-) !default; // its similar to $h5-font-sizes
+$travel-card-title-sizes: $card-title-sizes !default; // its similar to $h5-font-sizes
 
 /**
  * Image teaser
