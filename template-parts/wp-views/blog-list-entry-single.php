@@ -6,15 +6,15 @@
         ?>
 
         <?php if ( $post_thumbnail ) { ?>
-            <div class="blog-list-entry--thumbnail">
+            <div class="log-list-entry-thumbnail">
                 <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
             </div>
         <?php } ?>
 
-        <div class="blog-list-entry--body">
-            <div class="blog-list-entry--header">
+        <div class="log-list-entry-body">
+            <div class="log-list-entry-header">
 
-                <h1 class="blog-list-entry--title">
+                <h1 class="log-list-entry-title">
                         <?php echo get_the_title(); ?>
                 </h1>
 
@@ -23,7 +23,7 @@
                 $post_tags = wp_get_post_tags(get_the_ID());
                 ?>
 
-                <div class="blog-list-entry--details">
+                <div class="log-list-entry-details">
 
                     <?php
                     // Date
@@ -99,7 +99,7 @@
             </div>
 
 
-            <div class="blog-list-entry--content">
+            <div class="log-list-entry-content">
                 <?php the_content(); ?>
             </div>
 
@@ -107,7 +107,7 @@
 
             <?php if ( $post_categories || $post_tags ) { ?>
 
-            <div class="blog-list-entry--crosslinks">
+            <div class="log-list-entry-crosslinks">
 
                 <?php if ( $post_categories ) { ?>
                     <?php
@@ -152,8 +152,8 @@
 
     <?php if ( (bool) get_the_author_meta( 'description' ) && post_type_supports( get_post_type(), 'author' ) ) : ?>
 
-        <div class="blog-list-entry blog-list-entry--author">
-            <div class="blog-list-entry--body">
+        <div class="blog-list-entry log-list-entry-author">
+            <div class="log-list-entry-body">
 
 
                 <div class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
@@ -249,8 +249,8 @@
         </div>
     <?php endif; ?>
 
-    <div class="blog-list-entry blog-list-entry--related">
-        <div class="blog-list-entry--body">
+    <div class="blog-list-entry log-list-entry-related">
+        <div class="log-list-entry-body">
             <h3>
                 Weitere Beiträge
             </h3>
@@ -273,7 +273,7 @@
 
                                     <?php if ( $post_thumbnail ) { ?>
                                     <div class="col-4 col-md-12">
-                                        <div class="blog-list-entry--thumbnail">
+                                        <div class="log-list-entry-thumbnail">
                                             <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                                                 <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
                                             </a>
@@ -282,13 +282,13 @@
                                     <?php } ?>
 
                                     <div class="<?php if ( $post_thumbnail ) { ?>col-8<?php } else { ?>col-12<?php } ?> col-md-12">
-                                        <h1 class="blog-list-entry--title related">
+                                        <h1 class="log-list-entry-title related">
                                             <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                                                 <?php echo get_the_title(); ?>
                                             </a>
                                         </h1>
 
-                                        <div class="blog-list-entry--details">
+                                        <div class="log-list-entry-details">
 
                                             <?php
                                             // Date
@@ -320,7 +320,7 @@
 
                                             if ( $post_excerpt ) {
                                                 ?>
-                                                <div class="blog-list-entry--excerpt">
+                                                <div class="log-list-entry-excerpt">
                                                     <?php echo substr($post_excerpt, 0, 120) . '...'; ?>
                                                 </div>
                                                 <?php
@@ -343,8 +343,8 @@
         </div>
     </div>
 
-    <div class="blog-list-entry blog-list-entry--postnav">
-        <div class="blog-list-entry--body">
+    <div class="blog-list-entry log-list-entry-postnav">
+        <div class="log-list-entry-body">
             <?php
             // Previous/next post navigation.
             $post_next_label     = 'Nächster Artikel';
@@ -383,13 +383,13 @@
         $post_comments_text = '0 Kommentare';
     }
     ?>
-    <div class="blog-list-entry blog-list-entry--comments">
-        <div class="blog-list-entry--body">
+    <div class="blog-list-entry log-list-entry-comments">
+        <div class="log-list-entry-body">
             <h3>
                 <?php echo $post_comments_text; ?> zu "<?php echo get_the_title(); ?>"
             </h3>
 
-            <div class="blog-list-entry--comments-list">
+            <div class="log-list-entry-comments-list">
                 <?php comments_template(); ?>
             </div>
         </div>
