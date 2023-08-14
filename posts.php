@@ -13,7 +13,7 @@ the_breadcrumb(null);
                     <div class="row">
                         <div class="col-12">
                             <h1>
-                                <?php the_title(); ?>
+                                <?php the_title(); ?> asd
                             </h1>
                             <div class="content">
                                 <?php the_content(); ?>

@@ -13,7 +13,7 @@ get_header();
                 <div class="content-block content-block-blog--header">
                     <div class="row">
                         <div class="col-12">
-                            <h1><?php echo get_the_archive_title(); ?> asd</h1>
+                            <h1><?php echo get_the_archive_title(); ?></h1>
                         </div>
                     </div>
                 </div>
