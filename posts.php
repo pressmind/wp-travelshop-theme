@@ -60,7 +60,7 @@ the_breadcrumb(null);
                             <?php if ($count_posts > $count) { ?>
                                 <div class="posts-pagination">
                                     <nav>
-                                        <ul class="pagination">
+                                        <ul class="pagination justify-content-center">
                                             <?php
                                             $prev_page = $paged - 1;
                                             $prev_page_str = '';
@@ -78,15 +78,9 @@ the_breadcrumb(null);
                                                 echo 'disabled';
                                             } ?>">
                                                 <a href="<?php echo get_permalink(get_the_ID()) . $prev_page_str; ?>"
-                                                   class="page-link">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                         class="icon icon-tabler icon-tabler-chevron-left" width="16"
-                                                         height="16" viewBox="0 2 24 24" stroke-width="2"
-                                                         stroke="#607D8B" fill="none" stroke-linecap="round"
-                                                         stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <polyline points="15 6 9 12 15 18"></polyline>
-                                                    </svg>
+                                                   class="page-link page-link-chevron">
+                                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-left-bold"></use></svg>
+
                                                 </a>
                                             </li>
 
@@ -123,15 +117,9 @@ the_breadcrumb(null);
                                                     echo 'disabled';
                                                 } ?>">
                                                     <a href="<?php echo get_permalink(get_the_ID()); ?>page/<?php echo $next_page; ?>"
-                                                       class="page-link">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                             class="icon icon-tabler icon-tabler-chevron-right"
-                                                             width="16" height="16" viewBox="0 2 24 24" stroke-width="2"
-                                                             stroke="#607D8B" fill="none" stroke-linecap="round"
-                                                             stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                            <polyline points="9 6 15 12 9 18"></polyline>
-                                                        </svg>
+                                                       class="page-link page-link-chevron">
+                                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+
                                                     </a>
                                                 </li>
                                             <?php } ?>
