@@ -15,9 +15,9 @@ the_breadcrumb(null);
                             <h1>
                                 <?php the_title(); ?>
                             </h1>
-                            <p>
+                            <div class="content">
                                 <?php the_content(); ?>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
