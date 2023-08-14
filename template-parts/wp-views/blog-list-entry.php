@@ -21,7 +21,7 @@
                 </a>
             </h1>
 
-            <div class="blog-list-entry-details">
+            <div class="blog-list-entry-details small d-flex flex-row flex-wrap gap-2">
 
                 <?php
                 // Date
