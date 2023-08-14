@@ -6,7 +6,7 @@
   }
 }
 
-.content-block.content-block-blog--header {
+.content-block.content-block-blog-header {
   h1, .h1 {
     margin-bottom: 0;
     font-size: 1.75rem;
@@ -43,7 +43,7 @@ figure.wp-block-image {
 }
 
 .content-block.content-block-blog,
-.content-block.content-block-blog--header {
+.content-block.content-block-blog-header {
   @include media-breakpoint-down(sm) {
     margin-left: -($grid-gutter-width / 4);
     margin-right: -($grid-gutter-width / 4);

@@ -17,7 +17,7 @@ global $wp_query;
 
             <div class="container">
 
-                <div class="content-block content-block-blog--header">
+                <div class="content-block content-block-blog-header">
                     <div class="row">
                         <div class="col-12">
                                 <h1 >

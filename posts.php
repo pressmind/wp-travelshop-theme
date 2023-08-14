@@ -9,7 +9,7 @@ the_breadcrumb(null);
     <main>
         <div class="content-main content-main--posts" id="content-main">
             <div class="container">
-                <div class="content-block content-block-blog--header">
+                <div class="content-block content-block-blog-header">
                     <div class="row row-introduction">
                         <div class="col-12">
                             <h1>

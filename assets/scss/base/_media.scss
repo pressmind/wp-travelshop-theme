@@ -13,6 +13,7 @@
 }
 
 %media-cover {
+  display: block;
   position: relative;
   overflow: hidden;
 
@@ -22,6 +23,9 @@
 }
 
 %media-border-radius {
+  @include border-radius($border-radius);
+  overflow: hidden;
+
   > img {
     @include border-radius($border-radius);
   }

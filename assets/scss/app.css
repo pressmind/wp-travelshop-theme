@@ -11363,11 +11363,15 @@ body.fl-builder .content-block.content-page {
   height: 100%; }
 
 .media-cover, .autocomplete-suggestion .string-search-suggestion .suggestion-left .suggestion-featured-image, .teaser.category-product-teaser .teaser-category-image > a .teaser-image, .teaser.month-teaser > a div.month-teaser-image, .teaser.wp-teaser .teaser-image, .teaser.image-teaser .teaser-image, .string-search-overlay .string-search-overlay-results .string-search-placeholder-items .items-wrapper > .search-item > a .search-item-image {
+  display: block;
   position: relative;
   overflow: hidden; }
 
-.media-border-radius > img {
-  border-radius: 0.25rem; }
+.media-border-radius {
+  border-radius: 0.25rem;
+  overflow: hidden; }
+  .media-border-radius > img {
+    border-radius: 0.25rem; }
 
 .media-hover-scale img {
   transition: transform 0.3s;
@@ -17814,6 +17818,12 @@ footer.footer-main {
       color: #fff; }
     .content-main--calendar .content-block-month-teaser .month-badges .month-badge > a.is-active {
       font-weight: 700; }
+
+.content-main.content-main--posts .content-block.content-block-blog-header h1 + .content {
+  margin-top: 1rem; }
+.content-main.content-main--posts .content-block + .content-block {
+  margin-top: 0;
+  padding-top: 0; }
 
 html #wpadminbar {
   top: auto !important;
