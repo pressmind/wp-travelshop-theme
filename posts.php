@@ -11,7 +11,7 @@ the_breadcrumb(null);
             <div class="container">
                 <div class="content-block content-block-blog--header">
                     <div class="row row-introduction">
-                        <p class="col-12">
+                        <div class="col-12">
                             <h1>
                                 <?php the_title(); ?>
                             </h1>
