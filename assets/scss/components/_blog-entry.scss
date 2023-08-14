@@ -13,6 +13,6 @@
   + .blog-list-entry {
     @extend %spacing-top;
 
-    border-top: $card-border-width solid $card-border-color;
+    border-top: $hr-border-width solid $hr-border-color;
   }
 }

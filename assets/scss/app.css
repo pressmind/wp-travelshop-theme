@@ -16165,7 +16165,7 @@ ul.pagination {
 .blog-list-entry .blog-list-entry-body {
   padding-top: 1.25rem; }
 .blog-list-entry + .blog-list-entry {
-  border-top: 1px solid rgba(0, 0, 0, 0.125); }
+  border-top: 1px solid #e9ecef; }
 
 header.header-main {
   background-color: #fff;
