@@ -23,7 +23,7 @@
                 $post_tags = wp_get_post_tags(get_the_ID());
                 ?>
 
-                <div class="blog-list-entry-details">
+                <div class="blog-list-entry-details small d-flex flex-row flex-wrap gap-2">
 
                     <?php
                     // Date
@@ -282,13 +282,13 @@
                                     <?php } ?>
 
                                     <div class="<?php if ( $post_thumbnail ) { ?>col-8<?php } else { ?>col-12<?php } ?> col-md-12">
-                                        <h1 class="blog-list-entry-title h5 related">
+                                        <h1 class="blog-list-entry-title related">
                                             <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                                                 <?php echo get_the_title(); ?>
                                             </a>
                                         </h1>
 
-                                        <div class="blog-list-entry-details">
+                                        <div class="blog-list-entry-details small d-flex flex-row flex-wrap gap-2">
 
                                             <?php
                                             // Date

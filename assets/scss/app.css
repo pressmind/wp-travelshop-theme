@@ -13839,6 +13839,24 @@ ul.checklist {
 .card-travel .card-image .card-badge--new, .detail-header-gallery .detail-header-badge {
   background-color: #dc3545; }
 
+.card-travel .card-body h1.card-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
+  font-size: 1rem;
+  color: #212529;
+  margin: 0 0 0.75rem 0; }
+  @media (min-width: 992px) {
+    .card-travel .card-body h1.card-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
+      font-size: 1.25rem; } }
+  .card-travel .card-body h1.card-title > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a {
+    color: inherit;
+    transition: color 0.3s;
+    text-decoration: none; }
+    .card-travel .card-body h1.card-title > a:hover, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:hover {
+      color: #007bff; }
+    .card-travel .card-body h1.card-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .card-travel .card-body h1.card-title > a:focus, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:focus {
+      color: #007bff; }
+    .card-travel .card-body h1.card-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active {
+      text-decoration: underline; }
+
 /**
  * small ( 2 column ) travel card
  */
@@ -14012,22 +14030,10 @@ ul.checklist {
             background-image: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 33.3333333333%);
             background-repeat: repeat-x; } }
     .card-travel .card-body h1.card-title {
-      font-size: 1rem;
-      color: #212529;
-      margin: 0 0 0.75rem 0; }
+      font-size: 1rem; }
       @media (min-width: 992px) {
         .card-travel .card-body h1.card-title {
           font-size: 1.25rem; } }
-      .card-travel .card-body h1.card-title > a {
-        color: inherit;
-        transition: color 0.3s;
-        text-decoration: none; }
-        .card-travel .card-body h1.card-title > a:hover {
-          color: #007bff; }
-        .card-travel .card-body h1.card-title > a:active, .card-travel .card-body h1.card-title > a:focus {
-          color: #007bff; }
-        .card-travel .card-body h1.card-title > a:active {
-          text-decoration: underline; }
     .card-travel .card-body .card-body--bottom {
       padding-top: 0.75rem;
       /**

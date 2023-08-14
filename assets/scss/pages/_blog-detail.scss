@@ -1,6 +1,16 @@
 .content-main.content-main--posts {
   .blog-entry-single {
     .blog-list-entry {
+      // -- related
+      &.blog-list-entry-related {
+        .related-posts {
+          .post-item {
+            .blog-list-entry-title {
+              @extend %card-title-settings;
+            }
+          }
+        }
+      }
       // -- comments
       &.blog-list-entry-comments {
         form.comment-form {
