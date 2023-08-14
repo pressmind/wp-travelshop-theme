@@ -9,7 +9,7 @@
       color: $primary;
     }
     
-    &:active {
+    &:active, &:focus {
       text-decoration: underline;
     }
   }
