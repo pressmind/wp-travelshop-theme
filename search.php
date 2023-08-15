@@ -35,7 +35,7 @@ global $wp_query;
                 <div class="content-block content-block-blog">
                     <div class="row">
                         <div class="col-12 col-md-9">
-                            <div class="posts-list">
+                            <div class="posts-list" data-columns="<?php echo BLOG_LIST_COLUMNS; ?>">
                                 <?php
                                 // -- wp query, all posts
                                 global $wp;
