@@ -21,6 +21,14 @@
   }
 }
 
+%blog-list-entry-header {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  margin-bottom: 1rem;
+}
+
 .posts-list {
   display: flex;
   flex-direction: column;
@@ -29,11 +37,7 @@
     @extend %spacing-bottom;
 
     .blog-list-entry-header {
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-
-      margin-bottom: 1rem;
+      @extend %blog-list-entry-header;
 
       // -- details
       .blog-list-entry-details {
