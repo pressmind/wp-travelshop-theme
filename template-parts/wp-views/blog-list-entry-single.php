@@ -7,7 +7,9 @@
 
         <?php if ( $post_thumbnail ) { ?>
             <div class="blog-list-entry-thumbnail">
-                <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
+                <div class="media-cover media-border-radius media-hover-scale ratio-16x9">
+                    <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
+                </div>
             </div>
         <?php } ?>
 
@@ -44,50 +46,54 @@
 
 
                     <?php if ( $post_date ) { ?>
-                        <div>
-                            <a href="<?php echo $post_date_link; ?>" title="<?php echo $post_date; ?>"><?php echo $post_date; ?></a>
+                        <div class="blog-list-entry-details-item">
+                            <div class="blog-list-entry-details-item-inner">
+                                <a href="<?php echo $post_date_link; ?>" title="<?php echo $post_date; ?>"><?php echo $post_date; ?></a>
 
-                            <?php
-                            if ( $post_categories ) {
-                                $post_categories_html = '';
-                                $iterate_cats = 0;
-                                foreach ( $post_categories as $category ) {
-                                    $post_category = get_category($category);
+                                <?php
+                                if ( $post_categories ) {
+                                    $post_categories_html = '';
+                                    $iterate_cats = 0;
+                                    foreach ( $post_categories as $category ) {
+                                        $post_category = get_category($category);
 
-                                    if ( $iterate_cats > 0 ) {
-                                        $post_categories_html .= ', ';
+                                        if ( $iterate_cats > 0 ) {
+                                            $post_categories_html .= ', ';
+                                        }
+                                        $post_categories_html .= '<a href="'.get_category_link( $post_category->term_id ).'" title="'.$post_category->name.'">'.$post_category->name.'</a>';
+
+                                        $iterate_cats++;
+
                                     }
-                                    $post_categories_html .= '<a href="'.get_category_link( $post_category->term_id ).'" title="'.$post_category->name.'">'.$post_category->name.'</a>';
 
-                                    $iterate_cats++;
-
+                                    if ( !empty($post_categories_html) ) {
+                                        echo 'in ' . $post_categories_html;
+                                    }
                                 }
-
-                                if ( !empty($post_categories_html) ) {
-                                    echo 'in ' . $post_categories_html;
-                                }
-                            }
-                            ?>
+                                ?>
+                            </div>
                         </div>
                     <?php } ?>
 
                     <?php if ( $post_author_name ) { ?>
-                        <div>Autor: <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a></div>
+                        <div class="blog-list-entry-details-item"><div class="blog-list-entry-details-item-inner">Autor: <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a></div></div>
                     <?php } ?>
 
 
 
                     <?php if ( $post_comments ) { ?>
-                        <div>
-                            <?php
-                            $post_comments_text = count($post_comments) . ' Kommentare';
+                        <div class="blog-list-entry-details-item">
+                            <div class="blog-list-entry-details-item-inner">
+                                <?php
+                                $post_comments_text = count($post_comments) . ' Kommentare';
 
-                            if ( count($post_comments) == 1 ) {
-                                $post_comments_text = count($post_comments) . ' Kommentar';
-                            }
-                            ?>
-                            <a href="<?php echo get_the_permalink(); ?>#post-comments" title="<?php echo $post_comments_text; ?>"><?php echo $post_comments_text; ?></a>
-                        </div>
+                                if ( count($post_comments) == 1 ) {
+                                    $post_comments_text = count($post_comments) . ' Kommentar';
+                                }
+                                ?>
+                                <a href="<?php echo get_the_permalink(); ?>#post-comments" title="<?php echo $post_comments_text; ?>"><?php echo $post_comments_text; ?></a>
+                            </div>
+                       </div>
                     <?php } ?>
 
                 </div>

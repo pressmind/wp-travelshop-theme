@@ -1,6 +1,14 @@
 .content-main.content-main--posts {
   .blog-entry-single {
     .blog-list-entry {
+      // -- header
+      .block-list-entry-header {
+        // -- details
+        .blog-list-entry-details {
+          @extend %blog-entry-details;
+        }
+      }
+
       // -- related
       &.blog-list-entry-related {
         .related-posts {

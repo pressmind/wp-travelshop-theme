@@ -6,6 +6,21 @@
   }
 }
 
+%blog-entry-details {
+  // spacer
+  > div + div {
+    @extend %details-divider;
+  }
+
+  .blog-list-entry-details-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+  }
+}
+
 .posts-list {
   display: flex;
   flex-direction: column;
@@ -22,10 +37,7 @@
 
       // -- details
       .blog-list-entry-details {
-        // spacer
-        > div + div {
-          @extend %details-divider;
-        }
+        @extend %blog-entry-details;
       }
 
       // -- title
