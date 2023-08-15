@@ -5,6 +5,18 @@
       h1 + .content {
         margin-top: 1rem;
       }
+
+      // -- details
+      .blog-list-entry-details {
+        // spacer
+        > div + div {
+          &:before {
+            content: '/';
+            color: $body-color-light;
+            margin-right: .5rem;
+          }
+        }
+      }
     }
 
     + .content-block {

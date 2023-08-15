@@ -18029,6 +18029,10 @@ footer.footer-main {
 
 .content-main.content-main--posts .content-block.content-block-blog-header h1 + .content {
   margin-top: 1rem; }
+.content-main.content-main--posts .content-block.content-block-blog-header .blog-list-entry-details > div + div:before {
+  content: '/';
+  color: #5a6570;
+  margin-right: .5rem; }
 .content-main.content-main--posts .content-block + .content-block {
   margin-top: 0;
   padding-top: 0; }
