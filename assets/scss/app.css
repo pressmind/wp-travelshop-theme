@@ -16385,6 +16385,23 @@ ul.pagination {
     padding-top: 1.25rem; }
   .posts-list .blog-list-entry + .blog-list-entry {
     border-top: 1px solid #e9ecef; }
+  .posts-list[data-columns="2"] {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px; }
+    .posts-list[data-columns="2"] > .blog-list-entry {
+      flex: 0 0 100%;
+      max-width: 100%; }
+      @media (min-width: 768px) {
+        .posts-list[data-columns="2"] > .blog-list-entry {
+          flex: 0 0 50%;
+          max-width: 50%;
+          margin-bottom: 30px !important; }
+          .posts-list[data-columns="2"] > .blog-list-entry + .blog-list-entry {
+            border-top: 0 !important; }
+            .posts-list[data-columns="2"] > .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail {
+              margin-top: 0 !important; } }
 
 header.header-main {
   background-color: #fff;

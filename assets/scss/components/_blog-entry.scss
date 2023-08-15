@@ -76,4 +76,28 @@
       border-top: $hr-border-width solid $hr-border-color;
     }
   }
+
+  // -- 2 columns
+  &[data-columns="2"] {
+    @include make-row();
+
+    > .blog-list-entry {
+      @include make-col(12);
+
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+
+        margin-bottom: $grid-gutter-width !important;
+
+        + .blog-list-entry {
+
+          .blog-list-entry-thumbnail {
+            margin-top: 0 !important;
+          }
+
+          border-top: 0 !important;
+        }
+      }
+    }
+  }
 }
