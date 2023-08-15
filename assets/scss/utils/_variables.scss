@@ -77,6 +77,7 @@ $rating-color: $warning !default;
 /**
  * Body
  */
+$body-color-lighter: lighten($body-color, 35%) !default;
 $body-color-light: lighten($body-color, 25%) !default;
 $body-bg-highlight: $gray-200 !default;
 
