@@ -352,13 +352,14 @@
             $post_next_label     = 'Nächster Artikel';
             $post_prev_label = 'Vorheriger Artikel';
 
-            $post_nav_arrow = '<svg enable-background="new 0 0 443.52 443.52" version="1.1" viewBox="0 0 443.52 443.52" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m143.49 221.86 192.73-192.73c6.663-6.664 6.663-17.468 0-24.132-6.665-6.662-17.468-6.662-24.132 0l-204.8 204.8c-6.662 6.664-6.662 17.468 0 24.132l204.8 204.8c6.78 6.548 17.584 6.36 24.132-0.42 6.387-6.614 6.387-17.099 0-23.712l-192.73-192.73z"/></svg>';
+            $post_nav_arrow_prev = '<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="'.get_stylesheet_directory_uri(). '/assets/img/phosphor-sprite.svg#caret-left-bold"></use></svg>';
+            $post_nav_arrow_next = '<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="'.get_stylesheet_directory_uri(). '/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>';
 
 
             $post_nav = get_the_post_navigation(
                 array(
-                    'next_text' => '<p class="meta-nav">' . $post_nav_arrow . $post_next_label . '</p><p class="post-title">%title</p>',
-                    'prev_text' => '<p class="meta-nav">' . $post_prev_label . $post_nav_arrow . '</p><p class="post-title">%title</p>',
+                    'next_text' => '<p class="meta-nav">' . $post_nav_arrow_next . $post_next_label . '</p><p class="post-title">%title</p>',
+                    'prev_text' => '<p class="meta-nav">' . $post_prev_label . $post_nav_arrow_prev . '</p><p class="post-title">%title</p>',
                     'screen_reader_text' => __( 'A' )
                 )
             );
