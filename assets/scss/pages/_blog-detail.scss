@@ -4,6 +4,7 @@
       // -- header
       .blog-list-entry-header {
         @extend %blog-list-entry-header;
+        @extend %spacing-bottom;
 
         h1.blog-list-entry-title{
           margin: 0;
@@ -16,7 +17,7 @@
       }
 
       .blog-list-entry-thumbnail {
-        margin: 0 0 1rem 0;
+        @extend %spacing-bottom;
       }
 
       // -- related
@@ -88,6 +89,10 @@
             }
           }
         }
+      }
+
+      + .blog-list-entry {
+        @extend %spacing-top;
       }
     }
   }
