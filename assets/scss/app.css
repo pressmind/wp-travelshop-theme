@@ -16407,8 +16407,6 @@ ul.pagination {
           .posts-list[data-columns="2"] > .blog-list-entry .blog-list-entry-body .blog-list-entry-header h1.blog-list-entry-title {
             font-size: 1.25rem; } }
   @media (min-width: 768px) {
-          .posts-list[data-columns="2"] > .blog-list-entry .blog-list-entry-body .blog-list-entry-excerpt {
-            display: none; }
         .posts-list[data-columns="2"] > .blog-list-entry + .blog-list-entry {
           border-top: 0 !important; }
           .posts-list[data-columns="2"] > .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail {

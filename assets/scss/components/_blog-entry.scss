@@ -100,10 +100,6 @@
               @include font-size-generator($card-title-sizes);
             }
           }
-
-          .blog-list-entry-excerpt {
-            display: none;
-          }
         }
 
         + .blog-list-entry {
