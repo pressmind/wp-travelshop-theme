@@ -56,10 +56,11 @@
 
     .blog-list-entry-excerpt {
       @include font-size-generator($responsive-font-size);
+
+      margin: 0 0 1rem 0;
     }
 
     .blog-list-entry-more {
-      margin: 1rem 0 0 0;
       @include font-size-generator($responsive-font-size);
     }
 
@@ -89,6 +90,21 @@
         padding-right: ($grid-gutter-width / 2);
 
         margin-bottom: $grid-gutter-width !important;
+
+        .blog-list-entry-body{
+          padding-left: $card-spacer-y;
+          padding-right: $card-spacer-y;
+
+          .blog-list-entry-header {
+            h1.blog-list-entry-title {
+              @include font-size-generator($card-title-sizes);
+            }
+          }
+
+          .blog-list-entry-excerpt {
+            display: none;
+          }
+        }
 
         + .blog-list-entry {
 
