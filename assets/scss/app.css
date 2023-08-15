@@ -13839,22 +13839,22 @@ ul.checklist {
 .card-travel .card-image .card-badge--new, .detail-header-gallery .detail-header-badge {
   background-color: #dc3545; }
 
-.card-travel .card-body h1.card-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
+.card-travel .card-body h1.card-title, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
   font-size: 1rem;
   color: #212529;
   margin: 0 0 0.75rem 0; }
   @media (min-width: 992px) {
-    .card-travel .card-body h1.card-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
+    .card-travel .card-body h1.card-title, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
       font-size: 1.25rem; } }
-  .card-travel .card-body h1.card-title > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a {
+  .card-travel .card-body h1.card-title > a, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a {
     color: inherit;
     transition: color 0.3s;
     text-decoration: none; }
-    .card-travel .card-body h1.card-title > a:hover, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:hover {
+    .card-travel .card-body h1.card-title > a:hover, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:hover, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:hover {
       color: #007bff; }
-    .card-travel .card-body h1.card-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .card-travel .card-body h1.card-title > a:focus, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:focus {
+    .card-travel .card-body h1.card-title > a:active, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .card-travel .card-body h1.card-title > a:focus, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:focus, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:focus {
       color: #007bff; }
-    .card-travel .card-body h1.card-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active {
+    .card-travel .card-body h1.card-title > a:active, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active {
       text-decoration: underline; }
 
 /**
@@ -16324,6 +16324,11 @@ ul.pagination {
   .blog-sidebar a.category-link:active, .blog-sidebar a.category-link:focus {
     text-decoration: underline; }
 
+.posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-details > div + div:before {
+  content: '/';
+  color: #5a6570;
+  margin-right: .5rem; }
+
 .posts-list {
   display: flex;
   flex-direction: column; }
@@ -16333,16 +16338,17 @@ ul.pagination {
     gap: .5rem;
     margin-bottom: 1rem; }
     .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+      font-size: 1.125rem;
       margin: 0; }
-      .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title a {
-        color: #212529;
-        text-decoration: none;
-        transition: color 0.3s; }
-        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:hover, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:focus, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:active {
-          color: #007bff;
-          text-decoration: none; }
-        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:focus, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title a:active {
-          text-decoration: underline; }
+      @media (min-width: 576px) {
+        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+          font-size: 1.25rem; } }
+      @media (min-width: 768px) {
+        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+          font-size: 1.5rem; } }
+      @media (min-width: 992px) {
+        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+          font-size: 1.75rem; } }
   .posts-list .blog-list-entry .blog-list-entry-excerpt {
     font-size: 0.875rem; }
     @media (min-width: 992px) {
@@ -18029,10 +18035,6 @@ footer.footer-main {
 
 .content-main.content-main--posts .content-block.content-block-blog-header h1 + .content {
   margin-top: 1rem; }
-.content-main.content-main--posts .content-block.content-block-blog-header .blog-list-entry-details > div + div:before {
-  content: '/';
-  color: #5a6570;
-  margin-right: .5rem; }
 .content-main.content-main--posts .content-block + .content-block {
   margin-top: 0;
   padding-top: 0; }
