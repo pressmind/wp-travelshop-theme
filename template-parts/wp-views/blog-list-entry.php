@@ -73,9 +73,7 @@
                 <?php } ?>
 
                 <?php if ( $post_author_name ) { ?>
-                    <div>
-                        Autor: <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a>
-                    </div>
+                    <div>Autor: <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a></div>
                 <?php } ?>
                 <?php if ( $post_comments ) { ?>
                     <div>
@@ -86,9 +84,7 @@
                             $post_comments_text = count($post_comments) . ' Kommentar';
                         }
                         ?>
-                        <a href="<?php echo get_the_permalink(); ?>#post-comments" title="<?php echo $post_comments_text; ?>">
-                            <?php echo $post_comments_text; ?>
-                        </a>
+                        <a href="<?php echo get_the_permalink(); ?>#post-comments" title="<?php echo $post_comments_text; ?>"><?php echo $post_comments_text; ?></a>
                     </div>
                 <?php } ?>
 
