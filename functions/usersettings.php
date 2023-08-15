@@ -324,5 +324,16 @@ function parse_request($query)
 }
 // Register SE friendly url
 add_action('parse_request', 'parse_request');
-// Filter menu points
+
+// Hide Admin bar for every user, except administrators
+function ts_disable_admin_bar() {
+    if (current_user_can('administrator') || current_user_can('contributor') ) {
+        // user can view admin bar
+        show_admin_bar(true); // this line isn't essentially needed by default...
+    } else {
+        // hide admin bar
+        show_admin_bar(false);
+    }
+}
+add_action('after_setup_theme', 'ts_disable_admin_bar');
 ?>
