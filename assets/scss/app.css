@@ -16351,24 +16351,25 @@ ul.pagination {
 .posts-list .blog-list-entry .blog-list-entry-header, .content-main.content-main--posts .blog-entry-single .blog-list-entry .blog-list-entry-header {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
-  margin-bottom: 1rem; }
+  gap: .5rem; }
 
 .posts-list {
   display: flex;
   flex-direction: column; }
-  .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
-    font-size: 1.125rem;
-    margin: 0; }
-    @media (min-width: 576px) {
-      .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
-        font-size: 1.25rem; } }
-    @media (min-width: 768px) {
-      .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
-        font-size: 1.5rem; } }
-    @media (min-width: 992px) {
-      .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
-        font-size: 1.75rem; } }
+  .posts-list .blog-list-entry .blog-list-entry-header {
+    margin-bottom: 1rem; }
+    .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+      font-size: 1.125rem;
+      margin: 0; }
+      @media (min-width: 576px) {
+        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+          font-size: 1.25rem; } }
+      @media (min-width: 768px) {
+        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+          font-size: 1.5rem; } }
+      @media (min-width: 992px) {
+        .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title {
+          font-size: 1.75rem; } }
   .posts-list .blog-list-entry .blog-list-entry-excerpt {
     font-size: 0.875rem; }
     @media (min-width: 992px) {
@@ -18066,6 +18067,8 @@ footer.footer-main {
       align-items: start; }
       .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item > .row .col-4 {
         padding-right: 15px; } }
+.content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-thumbnail {
+  margin-bottom: 0; }
 .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
   margin: 0 0 .5rem 0; }
   @media (min-width: 768px) {

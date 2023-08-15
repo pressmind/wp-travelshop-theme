@@ -54,6 +54,10 @@
               }
             }
 
+            .blog-list-entry-thumbnail {
+              margin-bottom: 0;
+            }
+
             .blog-list-entry-title {
               @extend %card-title-settings;
 
