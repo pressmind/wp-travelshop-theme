@@ -117,7 +117,7 @@
                     foreach ( $post_categories as $category ) {
                         $post_category = get_category($category);
 
-                        $post_categories_html .= '<a class="badge badge-secondary" href="'.get_category_link( $post_category->term_id ).'" title="'.$post_category->name.'">'.$post_category->name.'</a>';
+                        $post_categories_html .= '<a class="badge badge-pill badge-secondary" href="'.get_category_link( $post_category->term_id ).'" title="'.$post_category->name.'">'.$post_category->name.'</a>';
 
                     }
                     ?>
@@ -132,7 +132,7 @@
 
                     foreach ( $post_tags as $tag ) {
 
-                        $post_tags_html .= '<a class="badge badge-secondary" href="'.get_tag_link( $tag->term_id ).'" title="'.$tag->name.'">'.$tag->name.'</a>';
+                        $post_tags_html .= '<a class="badge badge-pill badge-secondary" href="'.get_tag_link( $tag->term_id ).'" title="'.$tag->name.'">'.$tag->name.'</a>';
 
                     }
                     ?>
