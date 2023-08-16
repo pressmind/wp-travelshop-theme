@@ -16667,6 +16667,9 @@ ul.pagination {
   .author-bio .author-bio-content .author-description {
     margin: 1rem 0 0 0; }
 
+.row-introduction .author-bio {
+  margin-top: 1rem; }
+
 .social-links > a, .social-links > a.social-link {
   width: 2.5rem;
   height: 2.5rem;
