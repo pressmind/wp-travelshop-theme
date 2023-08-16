@@ -3,7 +3,6 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 // var_dump($actual_link);
 // @todo: build links to share pages with text
 
-print_r($args);
 if ( !isset( $args['share_options'] ) ) {
     $args['share_options'] = [
         'title' => 'Reisetipp',

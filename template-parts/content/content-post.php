@@ -33,7 +33,7 @@ use Pressmind\Travelshop\Template;
                 'caption' => ''
             ]
         ];
-        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $share_object]);
+        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['share_options' => $share_args, 'object' => $share_object]);
         ?>
     </div>
 </div>
