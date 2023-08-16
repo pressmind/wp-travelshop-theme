@@ -157,16 +157,17 @@
               > a {
                 @extend .d-flex;
                 @extend .flex-column;
-                @extend .gap-1;
+                @extend .gap-2;
 
                 text-decoration: none;
 
                 @include border-radius($btn-border-radius);
                 background-color: $body-bg-highlight;
-                padding: .5rem 1rem;
+                padding: 1rem;
 
                 > p {
                   margin:0;
+                  line-height: 1;
 
                   &.meta-nav {
                     @extend .d-flex;
@@ -179,11 +180,10 @@
                     font-size: $font-size-sm;
                     color: $body-color-lighter;
                     transition: color $animation-speed-default;
-                    line-height: 1;
 
                     > svg {
-                      width: $font-size-sm;
-                      height: $font-size-sm;
+                      width: $font-size-xs;
+                      height: $font-size-xs;
                     }
                   }
 
@@ -191,6 +191,9 @@
                     font-weight: $font-weight-bold;
                     color: $body-color;
                     transition: color $animation-speed-default;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                   }
                 }
 
