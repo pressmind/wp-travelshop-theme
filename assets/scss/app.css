@@ -5397,7 +5397,7 @@ button.bg-dark:focus {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex {
+.d-flex, .social-links {
   display: flex !important; }
 
 .d-inline-flex {
@@ -5638,7 +5638,7 @@ button.bg-dark:focus {
 .embed-responsive-1by1::before {
   padding-top: 100%; }
 
-.flex-row {
+.flex-row, .social-links {
   flex-direction: row !important; }
 
 .flex-column {
@@ -5650,10 +5650,10 @@ button.bg-dark:focus {
 .flex-column-reverse {
   flex-direction: column-reverse !important; }
 
-.flex-wrap {
+.flex-wrap, .social-links {
   flex-wrap: wrap !important; }
 
-.flex-nowrap {
+.flex-nowrap, .author-bio {
   flex-wrap: nowrap !important; }
 
 .flex-wrap-reverse {
@@ -11905,7 +11905,7 @@ hr + .content-block {
     .posts-list .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail, .content-main.content-main--posts .blog-entry-single .blog-list-entry .blog-list-entry-crosslinks, .content-main.content-main--posts .blog-entry-single .blog-list-entry + .blog-list-entry {
       margin-top: 30px; } }
 
-.gap-1 {
+.gap-1, .social-links {
   gap: 0.25rem; }
 
 .row-gap-1 {
@@ -16645,6 +16645,64 @@ ul.pagination {
         flex: 0 0 7.75rem;
         max-width: 7.75rem; } }
 
+.social-links > a, .social-links > a.social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  transition: color 0.3s, background-color 0.3s;
+  color: #212529;
+  background-color: #e9ecef;
+  text-decoration: none; }
+  .social-links > a > svg, .social-links > a.social-link > svg {
+    width: 1.125rem;
+    height: 1.125rem; }
+  .social-links > a:active, .social-links > a:focus, .social-links > a:hover {
+    color: #007bff;
+    background-color: #e9ecef; }
+  .social-links > a.social-link-whatsapp {
+    color: #fff;
+    background-color: #4aac20; }
+    .social-links > a.social-link-whatsapp:active, .social-links > a.social-link-whatsapp:focus, .social-links > a.social-link-whatsapp:hover {
+      color: #fff;
+      background-color: #255610; }
+  .social-links > a.social-link-youtube {
+    color: #fff;
+    background-color: #ff3333; }
+    .social-links > a.social-link-youtube:active, .social-links > a.social-link-youtube:focus, .social-links > a.social-link-youtube:hover {
+      color: #fff;
+      background-color: #cc0000; }
+  .social-links > a.social-link-twitter {
+    color: #fff;
+    background-color: #00a8f0; }
+    .social-links > a.social-link-twitter:active, .social-links > a.social-link-twitter:focus, .social-links > a.social-link-twitter:hover {
+      color: #fff;
+      background-color: #00608a; }
+  .social-links > a.social-link-pinterest {
+    color: #fff;
+    background-color: #cc1919; }
+    .social-links > a.social-link-pinterest:active, .social-links > a.social-link-pinterest:focus, .social-links > a.social-link-pinterest:hover {
+      color: #fff;
+      background-color: #710e0e; }
+  .social-links > a.social-link-instagram {
+    color: #fff;
+    background-color: #e1306c; }
+    .social-links > a.social-link-instagram:active, .social-links > a.social-link-instagram:focus, .social-links > a.social-link-instagram:hover {
+      color: #fff;
+      background-color: #951641; }
+  .social-links > a.social-link-linkedin {
+    color: #fff;
+    background-color: #006eb3; }
+    .social-links > a.social-link-linkedin:active, .social-links > a.social-link-linkedin:focus, .social-links > a.social-link-linkedin:hover {
+      color: #fff;
+      background-color: #002f4d; }
+  .social-links > a.social-link-facebook {
+    color: #fff;
+    background-color: #365396; }
+    .social-links > a.social-link-facebook:active, .social-links > a.social-link-facebook:focus, .social-links > a.social-link-facebook:hover {
+      color: #fff;
+      background-color: #1b294b; }
+
 header.header-main {
   background-color: #fff;
   color: #212529;
@@ -17007,17 +17065,17 @@ footer.footer-main {
     @media (min-width: 992px) {
       footer.footer-main .footer-main--meta {
         padding-bottom: 30px; } }
-    footer.footer-main .footer-main--meta .nav.flex-row {
+    footer.footer-main .footer-main--meta .nav.flex-row, footer.footer-main .footer-main--meta .nav.social-links {
       gap: 0.5rem;
       font-size: 0.875rem; }
-      footer.footer-main .footer-main--meta .nav.flex-row a {
+      footer.footer-main .footer-main--meta .nav.flex-row a, footer.footer-main .footer-main--meta .nav.social-links a {
         color: #5a6570;
         transition: color 0.3s;
         text-decoration: none; }
-        footer.footer-main .footer-main--meta .nav.flex-row a:hover {
+        footer.footer-main .footer-main--meta .nav.flex-row a:hover, footer.footer-main .footer-main--meta .nav.social-links a:hover {
           color: #212529;
           text-decoration: none; }
-        footer.footer-main .footer-main--meta .nav.flex-row a:active, footer.footer-main .footer-main--meta .nav.flex-row a:focus {
+        footer.footer-main .footer-main--meta .nav.flex-row a:active, footer.footer-main .footer-main--meta .nav.social-links a:active, footer.footer-main .footer-main--meta .nav.flex-row a:focus, footer.footer-main .footer-main--meta .nav.social-links a:focus {
           color: #212529;
           text-decoration: underline; }
 
