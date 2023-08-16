@@ -406,7 +406,7 @@ $args['breadcrumb'][] = $tmp;
         <div class="detail-section detail-section-topbar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md">
+                    <div class="col">
                         <?php
                         // = = = > load the breadcrumb  < = = =
                         the_breadcrumb(null, null, $args['breadcrumb']);
