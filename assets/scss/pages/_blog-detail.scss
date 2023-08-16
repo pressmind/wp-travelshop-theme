@@ -136,6 +136,15 @@
             }
           }
         }
+
+        .blog-list-entry-comments-list {
+          .post-comments {
+            .comment-respond {
+              @extend %spacing-top;
+              @extend %spacing-divider-top;
+            }
+          }
+        }
       }
 
       // -- post navigation
