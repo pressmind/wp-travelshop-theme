@@ -149,15 +149,6 @@
               @include make-col(12);
               text-align: center;
 
-              @include media-breakpoint-up(md) {
-                @include make-col(6);
-                text-align: left;
-
-                &.nav-next {
-                  text-align: left;
-                }
-              }
-
               > a {
                 @extend .d-flex;
                 @extend .flex-column;
@@ -208,20 +199,20 @@
 
               @include media-breakpoint-up(md) {
                 @include make-col(6);
-                text-align: left;
+                text-align: left !important;
 
                 > a {
                   > p.meta-nav {
-                    justify-content: start;
+                    justify-content: start !important;
                   }
                 }
 
                 &.nav-next {
-                  text-align: left;
+                  text-align: right !important;
 
                   > a {
                     > p.meta-nav {
-                      justify-content: end;
+                      justify-content: end !important;
                     }
                   }
                 }
