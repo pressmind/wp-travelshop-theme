@@ -4,8 +4,10 @@
  * Template Post Type: page
  */
 get_header();
-the_breadcrumb(null);
 ?>
+<!-- BREADCRUMB: START -->
+<?php the_breadcrumb(null);?>
+<!-- BREADCRUMB: END -->
     <main>
         <div class="content-main content-main--posts" id="content-main">
             <div class="container">

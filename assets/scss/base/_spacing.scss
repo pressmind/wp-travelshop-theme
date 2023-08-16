@@ -29,4 +29,22 @@
       column-gap: $value;
     }
   }
+
+  @each $breakpoint, $value in $grid-breakpoints {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+      @each $name, $value in $default-gaps {
+        .gap-#{$breakpoint}-#{$name} {
+          gap: $value;
+        }
+
+        .row-gap-#{$breakpoint}-#{$name} {
+          row-gap: $value;
+        }
+
+        .column-gap-#{$breakpoint}-#{$name} {
+          column-gap: $value;
+        }
+      }
+    }
+  }
 }
