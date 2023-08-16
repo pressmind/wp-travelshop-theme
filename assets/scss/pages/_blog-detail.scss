@@ -143,6 +143,11 @@
         .post-navigation {
           .nav-links {
             @include make-row();
+            @extend .gap-2;
+
+            @include media-breakpoint-up(md) {
+              gap: 0 !important;
+            }
 
             > div {
               @include make-col-ready();
@@ -155,6 +160,10 @@
                 @extend .gap-1;
 
                 text-decoration: none;
+
+                @include border-radius($btn-border-radius);
+                background-color: $body-bg-highlight;
+                padding: .5rem 1rem;
 
                 > p {
                   margin:0;
@@ -170,6 +179,7 @@
                     font-size: $font-size-sm;
                     color: $body-color-lighter;
                     transition: color $animation-speed-default;
+                    line-height: 1;
 
                     > svg {
                       width: $font-size-sm;
@@ -202,6 +212,9 @@
                 text-align: left !important;
 
                 > a {
+                  background-color: transparent;
+                  padding: 0;
+
                   > p.meta-nav {
                     justify-content: start !important;
                   }

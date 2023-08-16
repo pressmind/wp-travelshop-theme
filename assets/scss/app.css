@@ -11932,7 +11932,7 @@ hr + .content-block {
 .column-gap-1 {
   column-gap: 0.25rem; }
 
-.gap-2 {
+.gap-2, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links {
   gap: 0.5rem; }
 
 .row-gap-2 {
@@ -18442,6 +18442,9 @@ footer.footer-main {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
+  @media (min-width: 768px) {
+    .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links {
+      gap: 0 !important; } }
   .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div {
     position: relative;
     width: 100%;
@@ -18451,13 +18454,17 @@ footer.footer-main {
     max-width: 100%;
     text-align: center; }
     .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a {
-      text-decoration: none; }
+      text-decoration: none;
+      border-radius: 0.25rem;
+      background-color: #e9ecef;
+      padding: .5rem 1rem; }
       .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p {
         margin: 0; }
         .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
           font-size: 0.875rem;
           color: #717e8c;
-          transition: color 0.3s; }
+          transition: color 0.3s;
+          line-height: 1; }
           .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav > svg {
             width: 0.875rem;
             height: 0.875rem; }
@@ -18474,8 +18481,11 @@ footer.footer-main {
         flex: 0 0 50%;
         max-width: 50%;
         text-align: left !important; }
-        .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
-          justify-content: start !important; }
+        .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a {
+          background-color: transparent;
+          padding: 0; }
+          .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
+            justify-content: start !important; }
         .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div.nav-next {
           text-align: right !important; }
           .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div.nav-next > a > p.meta-nav {
