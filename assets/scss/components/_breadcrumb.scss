@@ -96,6 +96,14 @@
   }
 }
 
-main > .breadcrumb-wrapper {
+main > .breadcrumb-wrapper,
+main > .row .breadcrumb-wrapper {
   @extend %breadcrumb-no-spacing;
+}
+
+.container .breadcrumb-wrapper .container {
+  width: unset;
+  max-width: unset;
+  padding-left: unset;
+  padding-right: unset;
 }

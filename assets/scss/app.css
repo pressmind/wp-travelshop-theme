@@ -13916,10 +13916,12 @@ ul.checklist {
 /**
  * change breadcrumb in some aspects
  */
-main > .breadcrumb-wrapper, .detail-section.detail-section-topbar {
+main > .breadcrumb-wrapper,
+main > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
   padding: .5rem 0; }
   @media (min-width: 768px) {
-    main > .breadcrumb-wrapper, .detail-section.detail-section-topbar {
+    main > .breadcrumb-wrapper,
+    main > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
       padding: 1rem 0; } }
   main > .breadcrumb-wrapper .breadcrumb-wrapper .breadcrumb, .detail-section.detail-section-topbar .breadcrumb-wrapper .breadcrumb,
   main > .breadcrumb-wrapper .breadcrumb,
@@ -13973,6 +13975,11 @@ main > .breadcrumb-wrapper, .detail-section.detail-section-topbar {
           height: .6125rem; }
     .breadcrumb-wrapper .breadcrumb li:last-child {
       color: #212529; }
+
+.container .breadcrumb-wrapper .container, .fl-builder-content .fl-row.fl-row-fixed-width .breadcrumb-wrapper .container, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width .breadcrumb-wrapper .container, .container .breadcrumb-wrapper .fl-builder-content .fl-row.fl-row-fixed-width, .fl-builder-content .container .breadcrumb-wrapper .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-fixed-width .breadcrumb-wrapper .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width .breadcrumb-wrapper .fl-row.fl-row-fixed-width, .container .breadcrumb-wrapper .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .container .breadcrumb-wrapper .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-fixed-width .breadcrumb-wrapper .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row.fl-row-fixed-width .breadcrumb-wrapper .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width .breadcrumb-wrapper .fl-row-content.fl-row-fixed-width {
+  width: unset;
+  max-width: unset;
+  padding-left: unset; }
 
 .list-filter-box.datepicker > div {
   position: relative; }
