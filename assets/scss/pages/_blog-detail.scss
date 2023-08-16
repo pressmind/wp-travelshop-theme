@@ -115,6 +115,13 @@
       }
       // -- comments
       &.blog-list-entry-comments {
+
+        .blog-list-entry-body {
+          > h3 {
+            @extend %spacing-bottom;
+          }
+        }
+
         form.comment-form {
           > p {
             @extend .form-group;
