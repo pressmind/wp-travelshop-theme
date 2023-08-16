@@ -149,7 +149,7 @@
               @include make-col(12);
 
               @include media-breakpoint-up(md) {
-                @include make-col-ready(6);
+                @include make-col(6);
               }
             }
           }

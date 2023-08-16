@@ -18451,10 +18451,8 @@ footer.footer-main {
     max-width: 100%; }
     @media (min-width: 768px) {
       .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div {
-        position: relative;
-        width: 100%;
-        padding-right: 3;
-        padding-left: 3; } }
+        flex: 0 0 50%;
+        max-width: 50%; } }
 
 html #wpadminbar {
   top: auto !important;
