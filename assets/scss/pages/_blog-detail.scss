@@ -16,8 +16,49 @@
         }
       }
 
+      // -- thumbnail
       .blog-list-entry-thumbnail {
         @extend %spacing-bottom;
+      }
+
+      // -- body
+      .blog-list-entry-body {
+        .blog-list-entry-content {
+          .wp-block-image {
+            img {
+              @extend %responsive-image;
+            }
+
+            figcaption {
+              font-size: $font-size-sm;
+              font-style: italic;
+            }
+          }
+
+          ul, ol {
+            padding-left: 1.5rem;
+          }
+        }
+      }
+
+      // -- crosslinks
+      .blog-list-entry--crosslinks {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        @extend %spacing-top;
+
+        > div {
+          .badge {
+            margin-left: .5rem;
+            margin-right: .125rem;
+
+            + .badge {
+              margin-left: 0;
+            }
+          }
+        }
       }
 
       // -- related
@@ -67,46 +108,6 @@
 
               @include media-breakpoint-up(md) {
                 margin: $card-spacer-x 0 .5rem 0;
-              }
-            }
-
-            // -- body
-            .blog-list-entry-body {
-              .blog-list-entry-content {
-                .wp-block-image {
-                  img {
-                    @extend %responsive-image;
-                  }
-
-                  figcaption {
-                    font-size: $font-size-sm;
-                    font-style: italic;
-                  }
-                }
-
-                ul, ol {
-                  padding-left: 1.5rem;
-                }
-              }
-            }
-
-            // -- crosslinks
-            .blog-list-entry--crosslinks {
-              display: flex;
-              flex-direction: column;
-              gap: .5rem;
-
-              @extend %spacing-top;
-
-              > div {
-                .badge {
-                  margin-left: .5rem;
-                  margin-right: .125rem;
-
-                  + .badge {
-                    margin-left: 0;
-                  }
-                }
               }
             }
           }
