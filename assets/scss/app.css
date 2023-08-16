@@ -18442,6 +18442,19 @@ footer.footer-main {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
+  .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%; }
+    @media (min-width: 768px) {
+      .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div {
+        position: relative;
+        width: 100%;
+        padding-right: 3;
+        padding-left: 3; } }
 
 html #wpadminbar {
   top: auto !important;

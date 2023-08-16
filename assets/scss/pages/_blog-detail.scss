@@ -144,7 +144,14 @@
           .nav-links {
             @include make-row();
 
+            > div {
+              @include make-col-ready();
+              @include make-col(12);
 
+              @include media-breakpoint-up(md) {
+                @include make-col-ready(6);
+              }
+            }
           }
         }
       }
