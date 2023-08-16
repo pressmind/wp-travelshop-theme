@@ -255,99 +255,107 @@
         </div>
     <?php endif; ?>
 
-    <div class="blog-list-entry blog-list-entry-related">
-        <div class="blog-list-entry-body">
-            <h3>
-                Weitere Beiträge
-            </h3>
-
-            <div class="related-posts">
-                <div class="row">
-                    <?php
-
-                    $related = get_posts( array( 'category__in' => wp_get_post_categories(get_the_ID()), 'numberposts' => 3, 'post__not_in' => array(get_the_ID()) ) );
-                    if( $related ) foreach( $related as $post ) {
-                        setup_postdata($post); ?>
-
-                        <div class="col-12 col-md-4">
-                            <article class="post-item">
-                                <?php
-                                $post_thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                                ?>
-
-                                <div class="row">
-
-                                    <?php if ( $post_thumbnail ) { ?>
-                                    <div class="col-4 col-md-12">
-                                        <div class="blog-list-entry-thumbnail">
-                                            <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="media-cover media-hover-scale media-border-radius ratio-16x9">
-                                                <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <?php } ?>
-
-                                    <div class="<?php if ( $post_thumbnail ) { ?>col-8<?php } else { ?>col-12<?php } ?> col-md-12">
-                                        <h1 class="blog-list-entry-title related">
-                                            <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                                                <?php echo get_the_title(); ?>
-                                            </a>
-                                        </h1>
-
-                                        <div class="blog-list-entry-details small d-flex flex-row flex-wrap gap-2">
-
-                                            <?php
-                                            // Date
-                                            $post_date = get_the_date();
-                                            $post_date_link =  get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'));
-
-                                            $post_author_name = get_the_author_meta('display_name');
-
-                                            if ( $post_author_name ) {
-                                                $post_author_id = get_the_author_meta('ID');
-                                                $post_author_nicename = get_the_author_meta('user_nicename');
-                                                $post_author_link = get_author_posts_url($post_author_id, $post_author_nicename);
-                                            }
-
-                                            ?>
+    <?php
 
 
-                                            <?php if ( $post_date ) { ?>
-                                                <div>
-                                                    <a href="<?php echo $post_date_link; ?>" title="<?php echo $post_date; ?>"><?php echo $post_date; ?></a><?php if ( $post_author_name ) { ?>&nbsp;von <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a><?php } ?>
+    $related = get_posts( array( 'category__in' => wp_get_post_categories(get_the_ID()), 'numberposts' => 3, 'post__not_in' => array(get_the_ID()) ) );
+
+    if ( $related ) {
+        ?>
+        <div class="blog-list-entry blog-list-entry-related">
+            <div class="blog-list-entry-body">
+                <h3>
+                    Weitere Beiträge
+                </h3>
+
+                <div class="related-posts">
+                    <div class="row">
+                        <?php
+                        if( $related ) foreach( $related as $post ) {
+                            setup_postdata($post); ?>
+
+                            <div class="col-12 col-md-4">
+                                <article class="post-item">
+                                    <?php
+                                    $post_thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                                    ?>
+
+                                    <div class="row">
+
+                                        <?php if ( $post_thumbnail ) { ?>
+                                            <div class="col-4 col-md-12">
+                                                <div class="blog-list-entry-thumbnail">
+                                                    <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="media-cover media-hover-scale media-border-radius ratio-16x9">
+                                                        <img src="<?php echo $post_thumbnail; ?>" alt="<?php echo get_the_title(); ?>" />
+                                                    </a>
                                                 </div>
-                                            <?php } ?>
-
-                                        </div>
-
-                                        <?php if ( !$post_thumbnail ) { ?>
-                                            <?php
-                                            $post_excerpt = get_the_excerpt();
-
-                                            if ( $post_excerpt ) {
-                                                ?>
-                                                <div class="blog-list-entry-excerpt">
-                                                    <?php echo substr($post_excerpt, 0, 120) . '...'; ?>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
+                                            </div>
                                         <?php } ?>
+
+                                        <div class="<?php if ( $post_thumbnail ) { ?>col-8<?php } else { ?>col-12<?php } ?> col-md-12">
+                                            <h1 class="blog-list-entry-title related">
+                                                <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+                                                    <?php echo get_the_title(); ?>
+                                                </a>
+                                            </h1>
+
+                                            <div class="blog-list-entry-details small d-flex flex-row flex-wrap gap-2">
+
+                                                <?php
+                                                // Date
+                                                $post_date = get_the_date();
+                                                $post_date_link =  get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'));
+
+                                                $post_author_name = get_the_author_meta('display_name');
+
+                                                if ( $post_author_name ) {
+                                                    $post_author_id = get_the_author_meta('ID');
+                                                    $post_author_nicename = get_the_author_meta('user_nicename');
+                                                    $post_author_link = get_author_posts_url($post_author_id, $post_author_nicename);
+                                                }
+
+                                                ?>
+
+
+                                                <?php if ( $post_date ) { ?>
+                                                    <div>
+                                                        <a href="<?php echo $post_date_link; ?>" title="<?php echo $post_date; ?>"><?php echo $post_date; ?></a><?php if ( $post_author_name ) { ?>&nbsp;von <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a><?php } ?>
+                                                    </div>
+                                                <?php } ?>
+
+                                            </div>
+
+                                            <?php if ( !$post_thumbnail ) { ?>
+                                                <?php
+                                                $post_excerpt = get_the_excerpt();
+
+                                                if ( $post_excerpt ) {
+                                                    ?>
+                                                    <div class="blog-list-entry-excerpt">
+                                                        <?php echo substr($post_excerpt, 0, 120) . '...'; ?>
+                                                    </div>
+                                                    <?php
+                                                }
+                                                ?>
+                                            <?php } ?>
+                                        </div>
                                     </div>
-                                </div>
 
 
 
-                            </article>
-                        </div>
+                                </article>
+                            </div>
 
-                    <?php }
-                    wp_reset_postdata(); ?>
+                        <?php }
+                        wp_reset_postdata(); ?>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <?php
+    }
+    ?>
 
     <div class="blog-list-entry blog-list-entry-postnav">
         <div class="blog-list-entry-body">
