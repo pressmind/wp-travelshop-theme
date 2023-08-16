@@ -161,7 +161,7 @@
               > a {
                 @extend .d-flex;
                 @extend .flex-column;
-                @extend .gap-2;
+                @extend .gap-1;
 
                 text-decoration: none;
 
@@ -172,15 +172,17 @@
                     @extend .d-flex;
                     @extend .flex-row;
                     @extend .flex-nowrap;
-                    @extend .gap-2;
+                    @extend .gap-1;
+                    @extend .align-items-center;
+                    @extend .justify-content-center;
 
                     font-size: $font-size-sm;
                     color: $body-color-lighter;
                     transition: color $animation-speed-default;
 
                     > svg {
-                      width: $font-size-base;
-                      height: $font-size-base;
+                      width: $font-size-sm;
+                      height: $font-size-sm;
                     }
                   }
 
@@ -199,6 +201,27 @@
 
                     &.post-title {
                       color: $primary;
+                    }
+                  }
+                }
+              }
+
+              @include media-breakpoint-up(md) {
+                @include make-col(6);
+                text-align: left;
+
+                > a {
+                  > p.meta-nav {
+                    justify-content: start;
+                  }
+                }
+
+                &.nav-next {
+                  text-align: left;
+
+                  > a {
+                    > p.meta-nav {
+                      justify-content: end;
                     }
                   }
                 }

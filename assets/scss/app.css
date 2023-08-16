@@ -5680,7 +5680,7 @@ button.bg-dark:focus {
 .justify-content-end {
   justify-content: flex-end !important; }
 
-.justify-content-center {
+.justify-content-center, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
   justify-content: center !important; }
 
 .justify-content-between {
@@ -5695,7 +5695,7 @@ button.bg-dark:focus {
 .align-items-end {
   align-items: flex-end !important; }
 
-.align-items-center {
+.align-items-center, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
   align-items: center !important; }
 
 .align-items-baseline {
@@ -11923,7 +11923,7 @@ hr + .content-block {
     .spacing-bottom-divider {
       padding-bottom: 30px; } }
 
-.gap-1, .social-links {
+.gap-1, .social-links, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
   gap: 0.25rem; }
 
 .row-gap-1 {
@@ -11932,7 +11932,7 @@ hr + .content-block {
 .column-gap-1 {
   column-gap: 0.25rem; }
 
-.gap-2, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
+.gap-2 {
   gap: 0.5rem; }
 
 .row-gap-2 {
@@ -18466,8 +18466,8 @@ footer.footer-main {
           color: #717e8c;
           transition: color 0.3s; }
           .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav > svg {
-            width: 1rem;
-            height: 1rem; }
+            width: 0.875rem;
+            height: 0.875rem; }
         .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.post-title {
           font-weight: 700;
           color: #212529;
@@ -18476,6 +18476,17 @@ footer.footer-main {
         color: #212529; }
       .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a:hover > p.post-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a:focus > p.post-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a:active > p.post-title {
         color: #007bff; }
+    @media (min-width: 768px) {
+      .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+        text-align: left; }
+        .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a > p.meta-nav {
+          justify-content: start; }
+        .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div.nav-next {
+          text-align: left; }
+          .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div.nav-next > a > p.meta-nav {
+            justify-content: end; } }
 
 html #wpadminbar {
   top: auto !important;
