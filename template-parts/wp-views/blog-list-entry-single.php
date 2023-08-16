@@ -194,13 +194,13 @@
                         }
                         ?>
                         <?php if ( $author_website || !empty($author_social) ) { ?>
-                            <div class="author-links">
+                            <div class="author-links social-links d-flex flex-row gap-1 align-items-center">
 
                                 <?php
                                 if ( !empty($author_social) ) {
                                     foreach ( $author_social as $key => $social ) {
                                         ?>
-                                        <a href="<?php echo $social; ?>" target="_blank" class="author-link author-link--<?php echo $key; ?>">
+                                        <a href="<?php echo $social; ?>" target="_blank" class="social-link social-link-<?php echo $key; ?>">
                                             <?php
                                             switch ( $key ) {
                                                 case 'facebook':
@@ -235,7 +235,7 @@
                                 ?>
 
                                 <?php if ( $author_website ) { ?>
-                                    <a href="<?php echo $author_website; ?>" target="_blank" class="author-link author-link--website">
+                                    <a href="<?php echo $author_website; ?>" target="_blank" class="social-link">
                                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#globe"></use></svg>
                                     </a>
                                 <?php } ?>
