@@ -13979,7 +13979,8 @@ main > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
 .container .breadcrumb-wrapper .container, .fl-builder-content .fl-row.fl-row-fixed-width .breadcrumb-wrapper .container, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width .breadcrumb-wrapper .container, .container .breadcrumb-wrapper .fl-builder-content .fl-row.fl-row-fixed-width, .fl-builder-content .container .breadcrumb-wrapper .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-fixed-width .breadcrumb-wrapper .fl-row.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width .breadcrumb-wrapper .fl-row.fl-row-fixed-width, .container .breadcrumb-wrapper .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .container .breadcrumb-wrapper .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-fixed-width .breadcrumb-wrapper .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row.fl-row-fixed-width .breadcrumb-wrapper .fl-row-content.fl-row-fixed-width, .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-fixed-width .breadcrumb-wrapper .fl-row-content.fl-row-fixed-width {
   width: unset;
   max-width: unset;
-  padding-left: unset; }
+  padding-left: unset;
+  padding-right: unset; }
 
 .list-filter-box.datepicker > div {
   position: relative; }
