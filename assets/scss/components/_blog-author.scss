@@ -17,5 +17,13 @@
 
   .author-bio-content {
     @extend .col-auto;
+
+    h4.author-title {
+     @extend %card-title-styles;
+    }
+
+    .author-description {
+      margin: 1rem 0 0 0;
+    }
   }
 }

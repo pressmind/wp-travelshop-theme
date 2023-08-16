@@ -17,10 +17,7 @@
   background-color: $danger; // @todo: maybe green better? Cuz read is danger, in every shop new == green
 }
 
-%card-title-settings {
-  // -- set font sizes
-  @include font-size-generator($card-title-sizes);
-
+%card-title-styles {
   color: $travel-card-title-color;
   margin: 0 0 $travel-card-spacer-y 0;
 
@@ -42,6 +39,13 @@
       text-decoration: underline;
     }
   }
+}
+
+%card-title-settings {
+  // -- set font sizes
+  @include font-size-generator($card-title-sizes);
+
+  @extend %card-title-styles;
 }
 
 /**
