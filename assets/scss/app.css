@@ -18102,7 +18102,7 @@ footer.footer-main {
       margin: 1.25rem 0 0.5rem 0; } }
 .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-body .blog-list-entry-content .wp-block-image figcaption {
   font-size: 0.875rem;
-  text-style: italic; }
+  font-style: italic; }
 .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-body .blog-list-entry-content ul, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-body .blog-list-entry-content ol {
   padding-left: 1.5rem; }
 .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry--crosslinks {
