@@ -138,6 +138,17 @@
         }
       }
 
+      // -- post navigation
+      &.blog-list-entry-postnav {
+        .post-navigation {
+          .nav-links {
+            @include make-row();
+
+
+          }
+        }
+      }
+
       + .blog-list-entry {
         @extend %spacing-top;
         @extend %spacing-divider-top;

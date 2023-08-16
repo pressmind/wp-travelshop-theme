@@ -370,8 +370,8 @@
 
             $post_nav = get_the_post_navigation(
                 array(
-                    'next_text' => '<p class="meta-nav">' . $post_nav_arrow_next . $post_next_label . '</p><p class="post-title">%title</p>',
-                    'prev_text' => '<p class="meta-nav">' . $post_prev_label . $post_nav_arrow_prev . '</p><p class="post-title">%title</p>',
+                    'next_text' => '<p class="meta-nav">' . $post_next_label . $post_nav_arrow_next . '</p><p class="post-title">%title</p>',
+                    'prev_text' => '<p class="meta-nav">' . $post_nav_arrow_prev . $post_prev_label . '</p><p class="post-title">%title</p>',
                     'screen_reader_text' => __( 'A' )
                 )
             );

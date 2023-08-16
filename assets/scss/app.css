@@ -18437,6 +18437,11 @@ footer.footer-main {
   gap: .5rem; }
   .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-comments form.comment-form > p:not(.comment-form-cookies-consent):not(.form-submit) > label {
     margin-bottom: 0; }
+.content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
 
 html #wpadminbar {
   top: auto !important;
