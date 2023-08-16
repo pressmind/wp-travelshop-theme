@@ -12,6 +12,7 @@ use Pressmind\Travelshop\Template;
         $share_args = [
             'title' => 'Beitrag',
             'type' => 'Beitrag',
+            'title_prefix' => 'Teile diesen ',
             'name' => '',
             'text' => 'Ich empfehle den Beitrag',
             'buttons' => [

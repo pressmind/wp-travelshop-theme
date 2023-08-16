@@ -22,7 +22,6 @@ if ( !isset( $args['share_options'] ) ) {
     ];
 }
 
-print_r($args['share_options']);
 
 $args['share_options']['title_prefix'] = ( !isset($args['share_options']['title_prefix']) && !empty($args['share_options']['title_prefix']) ) ? $arg['share_options']['title_prefix'] : 'Teile diese ';
 
