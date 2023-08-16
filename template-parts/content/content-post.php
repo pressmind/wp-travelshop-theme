@@ -1,3 +1,7 @@
+<?php
+use Pressmind\Travelshop\Template;
+?>
+
 <div class="row align-items-center">
     <div class="col">
         <?php the_breadcrumb(null);?>
