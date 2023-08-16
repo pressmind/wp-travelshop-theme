@@ -11,6 +11,9 @@
   background-color: $body-bg-highlight;
   text-decoration: none;
 
+  // make rounded
+  @include border-radius(1.25rem);
+
   > svg {
     width: $font-size-lg;
     height: $font-size-lg;
@@ -18,7 +21,7 @@
 
   &:active, &:focus, &:hover {
     color: $primary;
-    background-color: $body-bg-highlight;
+    background-color: darken($body-bg-highlight, 10%);
   }
 
   // -- brand colors

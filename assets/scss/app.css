@@ -16653,13 +16653,14 @@ ul.pagination {
   transition: color 0.3s, background-color 0.3s;
   color: #212529;
   background-color: #e9ecef;
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 1.25rem; }
   .social-links > a > svg, .social-links > a.social-link > svg {
     width: 1.125rem;
     height: 1.125rem; }
   .social-links > a:active, .social-links > a:focus, .social-links > a:hover {
     color: #007bff;
-    background-color: #e9ecef; }
+    background-color: #cbd3da; }
   .social-links > a.social-link-whatsapp {
     color: #fff;
     background-color: #4aac20; }
