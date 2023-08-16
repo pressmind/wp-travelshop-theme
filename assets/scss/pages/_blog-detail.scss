@@ -77,6 +77,11 @@
                   img {
                     @extend %responsive-image;
                   }
+
+                  figcaption {
+                    font-size: $font-size-sm;
+                    text-style: italic;
+                  }
                 }
 
                 ul, ol {
@@ -90,6 +95,8 @@
               display: flex;
               flex-direction: column;
               gap: .5rem;
+
+              @extend %spacing-top;
 
               > div {
                 .badge {

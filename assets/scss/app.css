@@ -11892,10 +11892,10 @@ hr + .content-block {
     .row.row-products:not(.is-slider) > div, .row.row-products:not(.is-slider) > article, .row.row-introduction, .posts-list .blog-list-entry, .content-main--calendar .content-block-month-teaser, .content-main.content-main--posts .blog-entry-single .blog-list-entry .blog-list-entry-header, .content-main.content-main--posts .blog-entry-single .blog-list-entry .blog-list-entry-thumbnail {
       margin-bottom: 30px; } }
 
-.posts-list .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail, .content-main.content-main--posts .blog-entry-single .blog-list-entry + .blog-list-entry {
+.posts-list .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry--crosslinks, .content-main.content-main--posts .blog-entry-single .blog-list-entry + .blog-list-entry {
   margin-top: 1rem; }
   @media (min-width: 768px) {
-    .posts-list .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail, .content-main.content-main--posts .blog-entry-single .blog-list-entry + .blog-list-entry {
+    .posts-list .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry--crosslinks, .content-main.content-main--posts .blog-entry-single .blog-list-entry + .blog-list-entry {
       margin-top: 30px; } }
 
 .gap-1 {
@@ -18100,6 +18100,9 @@ footer.footer-main {
   @media (min-width: 768px) {
     .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
       margin: 1.25rem 0 0.5rem 0; } }
+.content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-body .blog-list-entry-content .wp-block-image figcaption {
+  font-size: 0.875rem;
+  text-style: italic; }
 .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-body .blog-list-entry-content ul, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-body .blog-list-entry-content ol {
   padding-left: 1.5rem; }
 .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry--crosslinks {
