@@ -2,7 +2,7 @@
 get_header();
 ?>
 <!-- BREADCRUMB: START -->
-<?php the_breadcrumb(null);?>
+<?php echo the_breadcrumb(null);?>
 <!-- BREADCRUMB: END -->
 
     <main>
