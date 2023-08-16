@@ -159,7 +159,9 @@
 
 
                 <div class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
-                    <?php echo get_avatar( get_the_author_meta( 'ID' ), '85' ); ?>
+                    <div class="author-bio-image media-cover ratio-1x1 media-circle">
+                        <?php echo get_avatar( get_the_author_meta( 'ID' ), '85' ); ?>
+                    </div>
                     <div class="author-bio-content">
                         <h4 class="author-title">
                             <a href="<?php echo $post_author_link; ?>" title="<?php echo $post_author_name; ?>"><?php echo $post_author_name; ?></a>

@@ -31,6 +31,15 @@
   }
 }
 
+%media-circle {
+  @include border-radius(100%);
+  overflow: hidden;
+
+  > img {
+    @include border-radius(100%);
+  }
+}
+
 %media-hover-scale {
   img {
     transition: transform $animation-speed-default;
@@ -65,4 +74,8 @@
 
 .media-border-radius {
   @extend %media-border-radius;
+}
+
+.media-circle {
+  @extend %media-circle;
 }

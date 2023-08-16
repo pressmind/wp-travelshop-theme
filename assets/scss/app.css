@@ -11519,6 +11519,12 @@ body.fl-builder .content-block.content-page {
   .media-border-radius > img {
     border-radius: 0.25rem; }
 
+.media-circle {
+  border-radius: 100%;
+  overflow: hidden; }
+  .media-circle > img {
+    border-radius: 100%; }
+
 .media-hover-scale img {
   transition: transform 0.3s;
   transform: scale(1); }
@@ -16598,10 +16604,12 @@ ul.pagination {
       margin-left: -15px;
       flex-direction: row; }
       .posts-list[data-columns="2"] > .blog-list-entry {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
         flex: 0 0 50%;
         max-width: 50%;
-        padding-left: 15px;
-        padding-right: 15px;
         margin-bottom: 30px !important; }
         .posts-list[data-columns="2"] > .blog-list-entry .blog-list-entry-body {
           padding-left: 0.75rem;
@@ -16616,6 +16624,25 @@ ul.pagination {
           border-top: 0 !important; }
           .posts-list[data-columns="2"] > .blog-list-entry + .blog-list-entry .blog-list-entry-thumbnail {
             margin-top: 0 !important; } }
+
+.author-bio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+  .author-bio .author-bio-content,
+  .author-bio .author-bio-image {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px; }
+  .author-bio .author-bio-content {
+    flex: 0 0 3.5rem;
+    max-width: 3.5rem; }
+    @media (min-width: 768px) {
+      .author-bio .author-bio-content {
+        flex: 0 0 7.75rem;
+        max-width: 7.75rem; } }
 
 header.header-main {
   background-color: #fff;

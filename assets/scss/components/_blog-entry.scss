@@ -85,9 +85,8 @@
       flex-direction: row;
 
       > .blog-list-entry {
+        @include make-col-ready();
         @include make-col(6);
-        padding-left: ($grid-gutter-width / 2);
-        padding-right: ($grid-gutter-width / 2);
 
         margin-bottom: $grid-gutter-width !important;
 

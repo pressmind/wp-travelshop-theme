@@ -1,0 +1,16 @@
+.author-bio {
+  @include make-row();
+
+  .author-bio-content,
+  .author-bio-image {
+    @include make-col-ready();
+  }
+
+  .author-bio-content {
+    @include make-col(3.5rem, 'custom');
+
+    @include media-breakpoint-up(md) {
+      @include make-col(7.75rem, 'custom');
+    }
+  }
+}
