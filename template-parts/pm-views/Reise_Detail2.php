@@ -406,13 +406,13 @@ $args['breadcrumb'][] = $tmp;
         <div class="detail-section detail-section-topbar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-12 col-md">
+                    <div class="col-md">
                         <?php
                         // = = = > load the breadcrumb  < = = =
                         the_breadcrumb(null, null, $args['breadcrumb']);
                         ?>
                     </div>
-                    <div class="d-none d-md-block col-md-auto">
+                    <div class="col-auto">
                         <?php
                         // = = = > simple share button < = = =
                         $share_args = [
