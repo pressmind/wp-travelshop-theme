@@ -146,10 +146,10 @@
 
             > div {
               @include make-col-ready();
-              @include make-col(1);
+              @include make-col(12);
 
               @include media-breakpoint-up(md) {
-                @include make-col-ready(2);
+                @include make-col-ready(6);
               }
             }
           }
