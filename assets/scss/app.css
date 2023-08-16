@@ -18447,14 +18447,14 @@ footer.footer-main {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    flex: 0 0 100%;
-    max-width: 100%; }
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%; }
     @media (min-width: 768px) {
       .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div {
         position: relative;
         width: 100%;
-        padding-right: 3;
-        padding-left: 3; } }
+        padding-right: 1;
+        padding-left: 1; } }
 
 html #wpadminbar {
   top: auto !important;
