@@ -1,9 +1,9 @@
 <?php
 get_header();
 ?>
-    <!-- BREADCRUMB: START -->
+<!-- BREADCRUMB: START -->
 <?php the_breadcrumb(null);?>
-    <!-- BREADCRUMB: END -->
+<!-- BREADCRUMB: END -->
 
     <main>
 
