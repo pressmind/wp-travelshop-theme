@@ -6,11 +6,15 @@
     @include make-col-ready();
   }
 
-  .author-bio-content {
+  .author-bio-image {
     @include make-col(3.5rem, 'custom');
 
     @include media-breakpoint-up(md) {
       @include make-col(7.75rem, 'custom');
     }
+  }
+
+  .author-bio-content {
+    @extend .col-auto;
   }
 }
