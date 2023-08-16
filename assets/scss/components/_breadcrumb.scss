@@ -97,7 +97,7 @@
 }
 
 main > .breadcrumb-wrapper,
-main > .row .breadcrumb-wrapper {
+main > .container > .row .breadcrumb-wrapper {
   @extend %breadcrumb-no-spacing;
 }
 

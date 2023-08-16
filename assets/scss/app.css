@@ -13917,14 +13917,22 @@ ul.checklist {
  * change breadcrumb in some aspects
  */
 main > .breadcrumb-wrapper,
-main > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
+main > .container > .row .breadcrumb-wrapper,
+.fl-builder-content main > .fl-row.fl-row-fixed-width > .row .breadcrumb-wrapper,
+.fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap main > .fl-row-content.fl-row-fixed-width > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
   padding: .5rem 0; }
   @media (min-width: 768px) {
     main > .breadcrumb-wrapper,
-    main > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
+    main > .container > .row .breadcrumb-wrapper,
+    .fl-builder-content main > .fl-row.fl-row-fixed-width > .row .breadcrumb-wrapper,
+    .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap main > .fl-row-content.fl-row-fixed-width > .row .breadcrumb-wrapper, .detail-section.detail-section-topbar {
       padding: 1rem 0; } }
-  main > .breadcrumb-wrapper .breadcrumb-wrapper .breadcrumb, .detail-section.detail-section-topbar .breadcrumb-wrapper .breadcrumb,
+  main > .breadcrumb-wrapper .breadcrumb-wrapper .breadcrumb,
+  .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap main > .fl-row-content.fl-row-fixed-width > .row .breadcrumb-wrapper .breadcrumb-wrapper .breadcrumb, .detail-section.detail-section-topbar .breadcrumb-wrapper .breadcrumb,
   main > .breadcrumb-wrapper .breadcrumb,
+  main > .container > .row .breadcrumb-wrapper .breadcrumb,
+  .fl-builder-content main > .fl-row.fl-row-fixed-width > .row .breadcrumb-wrapper .breadcrumb,
+  .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap main > .fl-row-content.fl-row-fixed-width > .row .breadcrumb-wrapper .breadcrumb,
   .detail-section.detail-section-topbar .breadcrumb {
     padding-top: 0;
     padding-bottom: 0;
