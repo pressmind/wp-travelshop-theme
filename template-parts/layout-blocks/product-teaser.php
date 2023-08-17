@@ -55,6 +55,20 @@ if (isset($args['has_more_items']) && $args['has_more_items'] === true) {
     $has_more_items = true;
 }
 $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(RouteHelper::get_url_by_object_type($args['search']['pm-ot']) . '/', '/') . '/?' . $result['query_string'] : '#ot-not-set';
+
+
+$layout_type = isset($args['layout_type']) ? $args['layout_type'] : 'default';
+$columns = isset($args['display_on_desktop']) ? (int)$args['display_on_desktop'] : 3;
+$mobile_slider = $args['mobile_slider'] = isset($args['mobile_slider']) ? $args['mobile_slider'] : false;
+
+if ( $layout_type !== 'slider' && $args['mobile_slider'] === 'yes' ) {
+    $mobile_slider = true;
+}
+
+if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' && $has_more_items === true) {
+    $mobile_slider = false;
+    $layout_type = 'default';
+}
 ?>
 <section<?php !empty($args['uid']) ? ' id="' . $args['uid'] . '"' : ''; ?>
         class="content-block content-block-travel-cols">
@@ -93,52 +107,64 @@ $more_results_link = !empty($args['search']['pm-ot']) ? SITE_URL . '/' . trim(Ro
         </div>
     <?php } ?>
     <div class="row row-products">
-        <?php
-
-        // Example 1: Using the the shortcode ts-list for displaying the product teasers
-        //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
-        // Note: the View-Template "Teaser1" can be found in travelshop/template-parts/pm-views/{OBJECT_TYPE_NAME}_{VIEWNAME}.php
-
-
-        // Example 2: Using the pressmind® web-core SDK (MySQL)
-        //$conditions = array();
-        //$conditions[] = Pressmind\Search\Condition\ObjectType::create(TS_TOUR_PRODUCTS);
-        //$search = new Pressmind\Search($conditions, ['start' => 0, 'length' => 4], ['' => 'RAND()']);
-        //$products = $search->getResults();
-        //foreach ($products as $product) {
-        //    echo  $product->render('Teaser1', TS_LANGUAGE_CODE);
-        //}
-
-        // Example 3: Use a $args['search] list (or $_GET)
-        // $search = BuildSearch::fromRequest(isset($args['search']) ? $args['search'] : [], 'pm', true, 4);
-        // $products = $search->getResults();
-
-        $view = 'Teaser1';
-        if (!empty($args['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $args['view']) !== false) {
-            $view = $args['view'];
-        }
-        foreach ($result['items'] as $item) {
-            echo Template::render(get_stylesheet_directory() . '/template-parts/pm-views/' . $view . '.php', $item);
-        }
-        if (isset($args['link_teaser']) && $args['link_teaser'] === true && $has_more_items === true) {
-            ?>
-            <div class="col-12 col-md-6 col-lg-3 card-travel-wrapper-link text-center pb-3">
-                <a class="btn-further btn-teaser-link d-none d-md-flex" href="<?php echo $more_results_link; ?>"
-                   title="<?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_teaser_text']); ?>">
-                    <?php echo str_replace('[TOTAL_RESULT]', $result['total_result'], $args['link_teaser_text']); ?>
-                    <span class="icon icon-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right"
-                             width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="#007BFF" fill="none"
-                             stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <polyline points="9 6 15 12 9 18"></polyline>
-                        </svg>
-                    </span>
-                </a>
-            </div>
+        <div class="col-12">
             <?php
-        }
-        ?>
+            $wrapper = 'row';
+            $item_wrapper = 'col-12 col-md-6 col-xl-4';
+
+            if ( $columns === 4 ) {
+                $item_wrapper = 'col-12 col-md-6 col-xl-3';
+            }
+
+            if ( $columns === 2 ) {
+                $item_wrapper = 'col-12 col-md-6';
+            }
+
+            if ( $layout_type === 'slider' ) {
+                $wrapper = 'item-slider-wrapper';
+                $item_wrapper = 'slider-item';
+            }
+
+            if ( $layout_type === 'default' && $mobile_slider ) {
+                $wrapper = 'item-default-wrapper item-slider-wrapper--mobile';
+                $item_wrapper = 'default-item slider-item';
+            }
+            ?>
+
+            <div class="<?php echo $wrapper; ?>" data-columns="<?php echo $columns; ?>">
+                <?php
+
+                // Example 1: Using the the shortcode ts-list for displaying the product teasers
+                //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
+                // Note: the View-Template "Teaser1" can be found in travelshop/template-parts/pm-views/{OBJECT_TYPE_NAME}_{VIEWNAME}.php
+
+
+                // Example 2: Using the pressmind® web-core SDK (MySQL)
+                //$conditions = array();
+                //$conditions[] = Pressmind\Search\Condition\ObjectType::create(TS_TOUR_PRODUCTS);
+                //$search = new Pressmind\Search($conditions, ['start' => 0, 'length' => 4], ['' => 'RAND()']);
+                //$products = $search->getResults();
+                //foreach ($products as $product) {
+                //    echo  $product->render('Teaser1', TS_LANGUAGE_CODE);
+                //}
+
+                // Example 3: Use a $args['search] list (or $_GET)
+                // $search = BuildSearch::fromRequest(isset($args['search']) ? $args['search'] : [], 'pm', true, 4);
+                // $products = $search->getResults();
+
+                $view = 'Teaser1';
+                if (!empty($args['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $args['view']) !== false) {
+                    $view = $args['view'];
+                }
+                foreach ($result['items'] as $item) {
+                    $item['class'] = $item_wrapper;
+                    echo Template::render(get_stylesheet_directory() . '/template-parts/pm-views/' . $view . '.php', $item);
+                }
+                // @todo: integrate "link teaser"
+                ?>
+            </div>
+        </div>
+
     </div>
 
     <?php if (isset($args['link_bottom']) && $args['link_bottom'] === true && $has_more_items === true) { ?>
