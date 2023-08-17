@@ -196,7 +196,8 @@
     }
 
     // -- Fulltext
-    .search-field-input-field {
+    .search-field-input-field,
+    .auto-complete-overlay {
       @extend %input-field-base;
     }
 
