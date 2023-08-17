@@ -1601,7 +1601,7 @@ jQuery(function ($) {
 
         itemSlider.each(function(e){
 
-            if ( !$(this).hasClass('tns-slider') ) {
+            if ( !$(this).hasClass('tns-slider') || !$(this).hasClass('item-slider-wrapper--mobile') ) {
                 thisSliderId = $(this).parents('.content-block').attr('id');
                 thisSliderColumns = $(this).data('columns');
                 thisSliderControls = '#' + thisSliderId + ' .slider-controls';
