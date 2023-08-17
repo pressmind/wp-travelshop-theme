@@ -48,5 +48,10 @@
         flex-wrap: wrap;
       }
     }
+
+    // -- slider controls
+    + .slider-controls {
+      display: none;
+    }
   }
 }
