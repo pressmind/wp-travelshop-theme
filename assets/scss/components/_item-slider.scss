@@ -46,6 +46,11 @@
     &.item-slider-wrapper--mobile {
       @include media-breakpoint-up(md) {
         flex-wrap: wrap;
+        margin-bottom: -$grid-gutter-width;
+
+        > .slider-item {
+          margin-bottom: $grid-gutter-width;
+        }
       }
     }
   }

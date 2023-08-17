@@ -16763,7 +16763,10 @@ ul.pagination {
       max-width: 25%; } }
   @media (min-width: 768px) {
     .item-slider-wrapper:not(.tns-slider).item-slider-wrapper--mobile {
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      margin-bottom: -30px; }
+      .item-slider-wrapper:not(.tns-slider).item-slider-wrapper--mobile > .slider-item {
+        margin-bottom: 30px; } }
 
 .row.row-products .slider-controls {
   display: none; }
