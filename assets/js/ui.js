@@ -1,6 +1,12 @@
 jQuery(function ($) {
+    // ------------------------------------------------
+    // -- BS Classes
+    // ------------------------------------------------
+    let BSGridGutterWidth = 30;
 
-
+    // ------------------------------------------------
+    // -- basic classes
+    // ------------------------------------------------
     let openClass = 'is-open';
     let activeClass = 'is-active';
     let hiddenClass = 'is-hidden';
@@ -1574,7 +1580,7 @@ jQuery(function ($) {
                 navPosition: "bottom",
                 mouseDrag: true,
                 disable: false,
-                gutter: 16,
+                gutter: BSGridGutterWidth,
                 loop: false,
                 items: 1,
                 slideBy: 1,
@@ -1610,7 +1616,7 @@ jQuery(function ($) {
                     navPosition: "bottom",
                     mouseDrag: true,
                     disable: false,
-                    gutter: 16,
+                    gutter: BSGridGutterWidth,
                     loop: false,
                     items: 1,
                     slideBy: 1,
