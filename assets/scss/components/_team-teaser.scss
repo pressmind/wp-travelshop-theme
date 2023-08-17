@@ -6,9 +6,17 @@
 
   .teaser-body {
     padding: $wp-teaser-spacer-x;
+    display: flex;
+    flex-direction: column;
+    gap: $image-teaser-spacer-y;
 
     h1 {
-      margin: 0 0 $image-teaser-spacer-y 0;
+      margin: 0;
+
+      small {
+        display: block;
+        clear: both;
+      }
     }
 
     @include border-radius($wp-teaser-border-radius);
