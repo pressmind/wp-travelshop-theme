@@ -12238,12 +12238,18 @@ img.loader {
   justify-content: space-between;
   z-index: 2;
   max-width: calc((var(--vw, 1vw) * 100) - .25rem);
-  width: 35.75rem;
-  width: 47rem;
-  width: 62rem;
-  width: 73.25rem;
-  width: 83.25rem;
-  width: 95.75rem; }
+  content: "6";
+  width: 33.875rem;
+  content: "6";
+  width: 45.125rem;
+  content: "6";
+  width: 60.125rem;
+  content: "6";
+  width: 71.375rem;
+  content: "6";
+  width: 81.375rem;
+  content: "6";
+  width: 93.875rem; }
   .row.row-products .slider-controls > button {
     color: #717e8c;
     background-color: #fff;
