@@ -32,6 +32,9 @@ if ( $layout_type !== 'slider' && $args['mobile_slider'] === 'yes' ) {
 
 $args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 9999));
 ?>
+<pre>
+    <?php print_r($args); ?>
+</pre>
 <section class="content-block content-block-teaser-group">
     <?php if(!empty($args['headline']) || !empty($args['text'])){?>
         <div class="row row-introduction">
