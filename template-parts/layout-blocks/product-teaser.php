@@ -129,7 +129,7 @@ $args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 999
 
             if ( $layout_type === 'default' && $mobile_slider ) {
                 $wrapper = 'item-default-wrapper item-slider-wrapper--mobile';
-                $item_wrapper = 'default-item slider-item';
+                $item_wrapper = 'slider-item';
             }
             ?>
 
