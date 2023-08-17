@@ -65,7 +65,7 @@
                             <?php if ( $item['mail'] || $item['phone'] ) { ?>
                                 <div class="teaser-body-contact">
                                     <?php if ( $item['mail'] ) { ?>
-                                        <a href="mailto:<?php echo $item['mail']; ?>" title="E-Mail an <?php echo $item['name']; ?>" class="icon-link">
+                                        <a href="mailto:<?php echo $item['mail']; ?>" title="E-Mail an <?php echo $item['name']; ?>" class="icon-link justify-content-center">
                                             <div class="icon">
                                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                             </div>
@@ -74,7 +74,7 @@
                                     <?php } ?>
 
                                     <?php if ( $item['phone'] ) { ?>
-                                        <a href="tel:<?php echo $item['phone']; ?>" title="Jetzt anrufen!" class="icon-link">
+                                        <a href="tel:<?php echo $item['phone']; ?>" title="Jetzt anrufen!" class="icon-link justify-content-center">
                                             <div class="icon">
                                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
                                             </div>
