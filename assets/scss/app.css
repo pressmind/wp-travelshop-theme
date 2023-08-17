@@ -12169,13 +12169,13 @@ img.loader {
  * Placeholder for slider controls
  * for usage on various elements
  */
-.daterange-calendar-items .slider-controls, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
+.daterange-calendar-items .slider-controls, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .row.row-products .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   pointer-events: none; }
-  .daterange-calendar-items .slider-controls > button, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
+  .daterange-calendar-items .slider-controls > button, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button, .row.row-products .slider-controls > button, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -12197,22 +12197,22 @@ img.loader {
     border-width: 1px;
     border-style: solid;
     border-color: #e9ecef; }
-    .daterange-calendar-items .slider-controls > button > svg, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
+    .daterange-calendar-items .slider-controls > button > svg, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button > svg, .row.row-products .slider-controls > button > svg, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button > svg, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button > svg {
       width: 1.125rem;
       height: 1.125rem; }
-    .daterange-calendar-items .slider-controls > button:not([disabled]):hover, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
+    .daterange-calendar-items .slider-controls > button:not([disabled]):hover, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button:not([disabled]):hover, .row.row-products .slider-controls > button:not([disabled]):hover, .detail-header-gallery .detail-header-gallery-slider .slider-controls > button:not([disabled]):hover, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button:not([disabled]):hover {
       color: #fff;
       background-color: #007bff;
       border-color: #007bff; }
-    .daterange-calendar-items .slider-controls > button[disabled], .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button[disabled], .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
+    .daterange-calendar-items .slider-controls > button[disabled], .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls > button[disabled], .row.row-products .slider-controls > button[disabled], .detail-header-gallery .detail-header-gallery-slider .slider-controls > button[disabled], .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button[disabled] {
       pointer-events: none;
       cursor: not-allowed;
       opacity: 0.25; }
 
-.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls {
+.row.row-products .slider-controls, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .slider-controls, .detail-header-gallery .detail-header-gallery-slider .slider-controls {
   transition: opacity 0.3s;
   opacity: 0; }
-.booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-outer + .slider-controls, .detail-header-gallery .detail-header-gallery-slider .tns-outer + .slider-controls {
+.row.row-products .tns-outer + .slider-controls, .booking-entrypoint-calendar .booking-entrypoint-calendar-outer .tns-outer + .slider-controls, .detail-header-gallery .detail-header-gallery-slider .tns-outer + .slider-controls {
   opacity: 1; }
 
 @media (min-width: 992px) {
@@ -12229,6 +12229,14 @@ img.loader {
   transform: translateY(-50%);
   left: 30px;
   right: 30px;
+  z-index: 2; }
+.row.row-products .slider-controls {
+  position: absolute;
+  top: 50%;
+  left: -7.5px;
+  right: -7.5px;
+  transform: translateY(-50%);
+  justify-content: space-between;
   z-index: 2; }
 .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
   color: #fff;
@@ -16768,10 +16776,6 @@ ul.pagination {
       .item-slider-wrapper:not(.tns-slider).item-slider-wrapper--mobile > .slider-item {
         margin-bottom: 30px; } }
 
-.row.row-products .slider-controls {
-  display: none; }
-.row.row-products .tns-outer + .slider-controls {
-  display: block; }
 .row.row-products > .col-12 > .row,
 .row.row-products > .col-12 > .position-relative > .row {
   margin-bottom: -30px; }

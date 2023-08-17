@@ -58,13 +58,13 @@
 
 // -- slider ccontrols
 .row.row-products {
+
   .slider-controls {
-    display: none;
+    @extend %slider-controls;
+    @extend %slider-controls-outer;
   }
 
-  .tns-outer + .slider-controls {
-    display: block;
-  }
+  @extend %slider-controls-if-initialized;
 
   >.col-12 > .row,
   >.col-12 > .position-relative > .row {

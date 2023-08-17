@@ -102,7 +102,14 @@
 }
 
 @include placeholder('slider-controls-outer') {
+  position: absolute;
+  top: 50%;
+  left: -($grid-gutter-width / 4 );
+  right: -($grid-gutter-width / 4 );
+  transform: translateY(-50%);
+  justify-content: space-between;
 
+  z-index: 2;
 }
 
 // -- different theming
