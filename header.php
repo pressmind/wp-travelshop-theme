@@ -88,7 +88,7 @@ global $PMTravelShop;
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
             <div class="col-auto  d-none d-xl-block col-search" id="search">
-                <form class="position-relative" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
+                <form class="position-relative search-box-field search-box-field--fulltext" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
 
                     <div class="input-group form-string-search my-2 my-lg-0 search-field-input search-field-input--fulltext" data-search-placeholder="search-1">

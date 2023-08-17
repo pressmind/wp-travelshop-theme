@@ -195,4 +195,9 @@
       }
     }
   }
+
+  // -- Fulltext
+  .search-field-input.search-field-input--fulltext {
+    @extend %fulltext-input;
+  }
 }
