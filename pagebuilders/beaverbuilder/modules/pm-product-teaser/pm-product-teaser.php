@@ -50,6 +50,43 @@ FLBuilder::register_module('TSPMProductTeaser', array(
                     ),
                 ),
             ),
+            'layout' => array(
+                'title' => __('Layout', 'fl-builder'),
+                'fields' => array(
+                    'layout_type' => array(
+                        'type' => 'select',
+                        'label' => __('Layout', 'fl-builder'),
+                        'options' => array(
+                            'default' => 'Default ( Row with same sizes )',
+                            'slider' => 'Item-Slider',
+                        ),
+                        'default' => 'default'
+                    ),
+
+                    'display_on_desktop' => array(
+                        'type' => 'select',
+                        'label' => __('Desktop Columns', 'fl-builder'),
+                        'options' => array(
+                            '2' => '2',
+                            '3' => '3',
+                            '4' => '4',
+                        ),
+                        'default' => '3',
+                        'description' => 'Only takes effect if Layout "Item-Slider" or "Default"'
+                    ),
+
+                    'mobile_slider' => array(
+                        'type' => 'select',
+                        'label' => __('Mobile slider', 'fl-builder'),
+                        'options' => array(
+                            'default' => 'No',
+                            'yes' => 'Yes'
+                        ),
+                        'default' => 'default',
+                        'description' => 'This is only used if Layout is not "Item-Slider"',
+                    ),
+                )
+            ),
             'more_button'    => array(
                 'title'  => __( 'More Buttons', 'fl-builder' ),
                 'fields' => array(
