@@ -73,7 +73,9 @@ if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' &&
     $layout_type = 'default';
 }
 
-$args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 9999));
+if ( !isset($args['uid']) ) {
+    $args['uid'] =  (rand(0, 9999) * rand(0, 9999));
+}
 ?>
 <section id="product-teaser-<?php echo $args['uid']; ?>"
         class="content-block content-block-travel-cols">

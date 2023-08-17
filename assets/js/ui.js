@@ -1569,7 +1569,6 @@ jQuery(function ($) {
     function itemSliderMobileInit(itemSliderMobile) {
         var thisSliderId, thisSliderContainer, thisSliderControls = null;
 
-        console.log(itemSliderMobile);
         itemSliderMobile.each(function(e){
             thisSliderId = $(this).parents('.content-block').attr('id');
             thisSliderControls = '#' + thisSliderId + ' .slider-controls';

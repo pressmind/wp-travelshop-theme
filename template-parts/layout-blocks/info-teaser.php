@@ -32,9 +32,11 @@ if ( $layout_type !== 'slider' && $args['mobile_slider'] === 'yes' ) {
     $mobile_slider = true;
 }
 
-$args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 9999));
+if ( !isset($args['uid']) ) {
+    $args['uid'] =  (rand(0, 9999) * rand(0, 9999));
+}
 ?>
-<section class="content-block content-block-teaser-group">
+<section class="content-block content-block-teaser-group" id="teaser-group-<?php echo $args['uid']; ?>">
     <?php if(!empty($args['headline']) || !empty($args['text'])){?>
         <div class="row row-introduction">
             <div class="col-12">
