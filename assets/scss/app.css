@@ -16853,6 +16853,9 @@ header.header-main {
         color: #007bff; }
       header.header-main .hotline-link:hover .hotline-icon, header.header-main .hotline-link:focus .hotline-icon, header.header-main .hotline-link:active .hotline-icon {
         color: #007bff; }
+  header.header-main .search-field-input.search-field-input--fulltext {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da; }
 
 /**
  * Navigation

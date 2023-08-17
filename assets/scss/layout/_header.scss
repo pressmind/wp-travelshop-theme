@@ -203,6 +203,9 @@
 
     .search-field-input.search-field-input--fulltext {
       @extend %fulltext-input;
+
+      @include border-radius($input-border-radius);
+      border: $input-border-width solid $input-border-color;
     }
   }
 }
