@@ -16772,9 +16772,11 @@ ul.pagination {
   display: none; }
 .row.row-products .tns-outer + .slider-controls {
   display: block; }
-.row.row-products > .col-12 > .row {
+.row.row-products > .col-12 > .row,
+.row.row-products > .col-12 > .position-relative > .row {
   margin-bottom: -30px; }
-  .row.row-products > .col-12 > .row > .col-12 {
+  .row.row-products > .col-12 > .row > .col-12,
+  .row.row-products > .col-12 > .position-relative > .row > .col-12 {
     margin-bottom: 30px; }
 
 header.header-main {
