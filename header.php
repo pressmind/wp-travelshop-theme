@@ -1,4 +1,5 @@
 <?php
+use Pressmind\Travelshop\Template;
 /**
  * @var PMTravelShop $PMTravelShop
  */
@@ -89,14 +90,20 @@ global $PMTravelShop;
             <div class="col-auto  d-none d-xl-block col-search" id="search">
                 <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
-                    <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
-                           aria-label="Search" name="pm-t">
-                    <div class="input-group-append">
-                        <button class="input-group-btn" aria-label="Suchen">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
 
-                        </button>
+                    <div class="search-field-input search-field-input--fulltext" data-search-placeholder="search-1">
+
+                        <div class="input-icon">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                        </div>
+                        <input class="search-field-input-field string-search-trigger" readonly type="search"  placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>" aria-label="Search" value="<?php echo !empty($_GET['pm-t']) ? $_GET['pm-t'] : '';?>">
+                        <div class="lds-dual-ring"></div>
                     </div>
+
+                    <?php
+                    // -- search overlay
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search-overlay.php', ['args' => $args['args'] ]);
+                    ?>
                 </form>
             </div>
             <?php } ?>
