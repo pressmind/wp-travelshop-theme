@@ -102,7 +102,7 @@ global $PMTravelShop;
 
                     <?php
                     // -- search overlay
-                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search-overlay.php', ['args' => $args['args'] ]);
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search-overlay.php', []);
                     ?>
                 </form>
             </div>
