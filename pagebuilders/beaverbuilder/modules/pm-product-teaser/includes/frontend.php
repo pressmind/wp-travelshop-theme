@@ -15,6 +15,10 @@ $args['link_teaser_text'] =  $settings->link_teaser_text;
 $args['link_bottom_text'] =  $settings->link_bottom_text;
 $args['pagination_bottom'] =  $settings->pagination_bottom;
 $args['uid'] = $module->node;
+$args['layout_type'] = $settings->layout_type;
+$args['display_on_desktop'] = $settings->display_on_desktop;
+$args['mobile_slider'] = $settings->mobile_slider;
+
 
 // bind the beaver builder settings to the query string api
 $args['search']['pm-ot'] = !empty($settings->{'pm-ot'}) ? $settings->{'pm-ot'} : ''; // id_object_type
