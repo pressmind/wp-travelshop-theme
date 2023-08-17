@@ -12233,11 +12233,19 @@ img.loader {
 .row.row-products .slider-controls {
   position: absolute;
   top: 50%;
-  left: -7.5px;
-  right: -7.5px;
+  left: -1rem;
+  right: -1rem;
   transform: translateY(-50%);
   justify-content: space-between;
-  z-index: 2; }
+  z-index: 2;
+  max-width: calc((var(--vw, 1vw) * 100) - .25rem); }
+  .row.row-products .slider-controls > button {
+    color: #717e8c;
+    background-color: #fff;
+    border-width: 0; }
+    .row.row-products .slider-controls > button:not([disabled]):hover {
+      color: #fff;
+      background-color: #007bff; }
 .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
   color: #fff;
   background-color: rgba(33, 37, 41, 0.4);

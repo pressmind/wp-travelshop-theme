@@ -104,12 +104,37 @@
 @include placeholder('slider-controls-outer') {
   position: absolute;
   top: 50%;
-  left: -($grid-gutter-width / 4 );
-  right: -($grid-gutter-width / 4 );
+  left: -($slider-controls-size / 2 );
+  right: -($slider-controls-size / 2 );
   transform: translateY(-50%);
   justify-content: space-between;
 
   z-index: 2;
+
+  max-width: calc((var(--vw, 1vw) * 100) - .25rem);
+
+  > button {
+    color: $slider-controls-outer-color;
+    background-color: $slider-controls-outer-bg;
+
+    border-width: $slider-controls-outer-border-width;
+
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-style: solid;
+      border-color: $slider-controls-outer-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-outer-hover-color;
+        background-color: $slider-controls-outer-hover-bg;
+
+        @if ( $slider-controls-outer-border-width != 0 ) {
+          border-color: $slider-controls-outer-hover-border-color;
+        }
+      }
+    }
+  }
 }
 
 // -- different theming
