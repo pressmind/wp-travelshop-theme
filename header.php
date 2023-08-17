@@ -88,10 +88,10 @@ global $PMTravelShop;
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
             <div class="col-auto  d-none d-xl-block col-search" id="search">
-                <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
+                <form class="form-string-search " action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
                     <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
 
-                    <div class="search-field-input search-field-input--fulltext" data-search-placeholder="search-1">
+                    <div class="input-group my-2 my-lg-0 search-field-input search-field-input--fulltext" data-search-placeholder="search-1">
 
                         <div class="input-icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
