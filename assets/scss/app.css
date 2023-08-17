@@ -12238,31 +12238,15 @@ img.loader {
   justify-content: space-between;
   z-index: 2;
   max-width: calc((var(--vw, 1vw) * 100) - .25rem);
-  content: "6";
-  content: "1";
-  width: 33.875rem;
-  content: "6";
-  content: "2";
-  width: 45.125rem;
-  content: "6";
-  content: "3";
-  width: 60.125rem;
-  content: "6";
-  content: "4";
-  width: 71.375rem;
-  content: "6";
-  content: "5";
-  width: 81.375rem;
-  content: "6";
-  content: "6";
   width: 93.875rem; }
   .row.row-products .slider-controls > button {
-    color: #717e8c;
+    color: #5a6570;
     background-color: #fff;
-    border-width: 0; }
+    border-width: 1px; }
     .row.row-products .slider-controls > button:not([disabled]):hover {
       color: #fff;
-      background-color: #007bff; }
+      background-color: #007bff;
+      border-color: #007bff; }
 .detail-header-gallery .detail-header-gallery-slider .slider-controls > button, .detail-gallery-overlay .detail-gallery-overlay-slider .slider-controls > button {
   color: #fff;
   background-color: rgba(33, 37, 41, 0.4);

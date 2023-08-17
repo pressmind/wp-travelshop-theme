@@ -111,12 +111,11 @@
   z-index: 2;
   max-width: calc((var(--vw, 1vw) * 100) - .25rem);
 
-  // set width by max ccontainer width
+  // set width by max container width
   @each $key, $value in $container-max-widths {
-    content: '#{length($container-max-widths)}';
-    content: '#{index(($container-max-widths), ($key $value))}';
-
-    width: ((pxToRem($value) - (pxToRem($grid-gutter-width))) + $slider-controls-size);
+    @if ( index(($container-max-widths), ($key $value)) == length($container-max-widths) ) {
+      width: ((pxToRem($value) - (pxToRem($grid-gutter-width))) + $slider-controls-size);
+    }
   }
 
   > button {
