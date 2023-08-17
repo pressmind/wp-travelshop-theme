@@ -65,4 +65,12 @@
   .tns-outer + .slider-controls {
     display: block;
   }
+
+  >.col-12 > .row {
+    margin-bottom: -$grid-gutter-width;
+
+    > .col-12 {
+      margin-bottom: $grid-gutter-width;
+    }
+  }
 }

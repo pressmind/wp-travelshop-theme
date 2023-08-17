@@ -16772,6 +16772,10 @@ ul.pagination {
   display: none; }
 .row.row-products .tns-outer + .slider-controls {
   display: block; }
+.row.row-products > .col-12 > .row {
+  margin-bottom: -30px; }
+  .row.row-products > .col-12 > .row > .col-12 {
+    margin-bottom: 30px; }
 
 header.header-main {
   background-color: #fff;
