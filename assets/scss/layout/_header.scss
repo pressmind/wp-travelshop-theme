@@ -194,10 +194,14 @@
         }
       }
     }
-  }
 
-  // -- Fulltext
-  .search-field-input.search-field-input--fulltext {
-    @extend %fulltext-input;
+    // -- Fulltext
+    .search-field-input-field {
+      @extend %input-field-base;
+    }
+
+    .search-field-input.search-field-input--fulltext {
+      @extend %fulltext-input;
+    }
   }
 }

@@ -25,6 +25,29 @@
   }
 }
 
+%input-field-base {
+  @include button-reset();
+
+  border: $input-border-big-width solid transparent;
+  @include border-radius($input-border-radius);
+  @include transition($input-transition);
+
+  width: 100%;
+
+  padding-left: $input-padding-x;
+  padding-right: $input-padding-x;
+
+  height: $search-bar-input-height;
+  line-height: ($search-bar-input-height - ($input-border-big-width * 2));
+
+  position: relative;
+  z-index: 2;
+
+  &:hover, &:focus, &:active {
+    border: $input-border-big-width solid $input-border-active-color;
+  }
+}
+
 .search-wrapper {
 
   // -- fields
@@ -95,26 +118,7 @@
 
     .search-field-input-field,
     .auto-complete-overlay {
-      @include button-reset();
-      
-      border: $input-border-big-width solid transparent;
-      @include border-radius($input-border-radius);
-      @include transition($input-transition);
-
-      width: 100%;
-
-      padding-left: $input-padding-x;
-      padding-right: $input-padding-x;
-
-      height: $search-bar-input-height;
-      line-height: ($search-bar-input-height - ($input-border-big-width * 2));
-
-      position: relative;
-      z-index: 2;
-
-      &:hover, &:focus, &:active {
-        border: $input-border-big-width solid $input-border-active-color;
-      }
+      @extend %input-field-base;
     }
 
     // -- datepicker input

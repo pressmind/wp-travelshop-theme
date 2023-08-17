@@ -12367,18 +12367,18 @@ input[type="search"]::-webkit-search-results-decoration {
   .list-filter-box.datepicker > div .input-clear:hover, .select-form-control .input-clear:hover, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .input-clear:hover, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .input-clear:hover {
     color: #007bff; }
 
-.select-form-control.input-has-icon, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext > input, .string-search-overlay-input .input-wrapper > input, .search-field-input.search-field-input--fulltext > input, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
+.select-form-control.input-has-icon, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext > input, .string-search-overlay-input .input-wrapper > input, header.header-main .search-field-input.search-field-input--fulltext > input, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range {
   position: relative;
   padding-left: 2.25rem !important; }
 
-.select-form-control .dropdown-icon, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon, .string-search-overlay-input .input-wrapper .input-icon, .search-field-input.search-field-input--fulltext .input-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
+.select-form-control .dropdown-icon, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon, .string-search-overlay-input .input-wrapper .input-icon, header.header-main .search-field-input.search-field-input--fulltext .input-icon, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon {
   position: absolute;
   top: 50%;
   left: 0.75rem;
   color: #212529;
   line-height: 0;
   transform: translateY(-50%); }
-  .select-form-control .dropdown-icon svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon svg, .string-search-overlay-input .input-wrapper .input-icon svg, .search-field-input.search-field-input--fulltext .input-icon svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon svg {
+  .select-form-control .dropdown-icon svg, .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field .input-icon svg, .search-wrapper .search-box-field .search-field-input.search-field-input--fulltext .input-icon svg, .string-search-overlay-input .input-wrapper .input-icon svg, header.header-main .search-field-input.search-field-input--fulltext .input-icon svg, .detail-booking-entrypoint .booking-filter .booking-filter-item.booking-filter-item--date-range button.booking-filter-field--date-range .booking-filter-field--icon svg {
     width: 1.125rem;
     height: 1.125rem; }
 
@@ -14618,6 +14618,33 @@ main > .container > .row .breadcrumb-wrapper,
   .content-block.content-block-list-filter .list-filter .list-filter-boxes .list-filter-box.list-filter-box-date-range-picker .search-field-input.search-field-input--datepicker .search-field-input-field, .search-wrapper .search-box-field .search-field-input.search-field-input--datepicker .search-field-input-field {
     text-align: left; }
 
+.search-wrapper .search-box-field .search-field-input-field,
+.search-wrapper .search-box-field .auto-complete-overlay, header.header-main .search-field-input-field {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  border: 0.125rem solid transparent;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  height: 3rem;
+  line-height: 2.75rem;
+  position: relative;
+  z-index: 2; }
+  @media (prefers-reduced-motion: reduce) {
+    .search-wrapper .search-box-field .search-field-input-field,
+    .search-wrapper .search-box-field .auto-complete-overlay, header.header-main .search-field-input-field {
+      transition: none; } }
+  .search-wrapper .search-box-field .search-field-input-field:hover,
+  .search-wrapper .search-box-field .auto-complete-overlay:hover, header.header-main .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus,
+  .search-wrapper .search-box-field .auto-complete-overlay:focus, header.header-main .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active,
+  .search-wrapper .search-box-field .auto-complete-overlay:active, header.header-main .search-field-input-field:active {
+    border: 0.125rem solid #212529; }
+
 .search-wrapper .search-bar-fields-search,
 .search-wrapper .search-bar-fields-pickers {
   background-color: #fff;
@@ -14660,32 +14687,6 @@ main > .container > .row .breadcrumb-wrapper,
           border-top: 1px solid #ced4da; } }
 .search-wrapper .search-box-field {
   position: relative; }
-  .search-wrapper .search-box-field .search-field-input-field,
-  .search-wrapper .search-box-field .auto-complete-overlay {
-    border: 0;
-    outline: none;
-    box-shadow: none;
-    background: transparent;
-    padding: 0;
-    border: 0.125rem solid transparent;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    width: 100%;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    height: 3rem;
-    line-height: 2.75rem;
-    position: relative;
-    z-index: 2; }
-    @media (prefers-reduced-motion: reduce) {
-      .search-wrapper .search-box-field .search-field-input-field,
-      .search-wrapper .search-box-field .auto-complete-overlay {
-        transition: none; } }
-    .search-wrapper .search-box-field .search-field-input-field:hover, .search-wrapper .search-box-field .search-field-input-field:focus, .search-wrapper .search-box-field .search-field-input-field:active,
-    .search-wrapper .search-box-field .auto-complete-overlay:hover,
-    .search-wrapper .search-box-field .auto-complete-overlay:focus,
-    .search-wrapper .search-box-field .auto-complete-overlay:active {
-      border: 0.125rem solid #212529; }
 .search-wrapper .search-wrapper--inner {
   display: flex;
   flex-wrap: wrap;
