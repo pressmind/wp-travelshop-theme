@@ -2,8 +2,8 @@
 
 ?>
 <section class="content-block content-block-team content-block-teaser-group">
-    <div class="row">
-        <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
+    <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
+        <div class="row row-introduction">
             <div class="col-12">
                 <?php if(!empty($args['headline'])){ ?>
                     <h2 class="mt-0">
@@ -14,8 +14,9 @@
                     <p><?php echo $args['text'];?></p>
                 <?php } ?>
             </div>
-        <?php } ?>
-
+        </div>
+    <?php } ?>
+    <div class="row row-products">
         <?php
         if(!empty($args['items'])){
             $colClass = 'col-12 col-sm-6 col-lg-3';
@@ -68,7 +69,7 @@
                                     <?php if ( $item['mail'] ) { ?>
                                         <a href="mailto:<?php echo $item['mail']; ?>" title="E-Mail an <?php echo $item['name']; ?>" class="icon-link">
                                             <div class="icon">
-                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                             </div>
                                             <?php echo $item['mail']; ?>
                                         </a>
