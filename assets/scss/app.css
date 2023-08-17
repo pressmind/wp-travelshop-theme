@@ -12233,12 +12233,15 @@ img.loader {
 .row.row-products .slider-controls {
   position: absolute;
   top: 50%;
-  left: -1rem;
-  right: -1rem;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
   justify-content: space-between;
   z-index: 2;
-  max-width: calc((var(--vw, 1vw) * 100) - .25rem); }
+  max-width: calc((var(--vw, 1vw) * 100) - .25rem);
+  width: 47rem;
+  width: 62rem;
+  width: 73.25rem;
+  width: 83.25rem; }
   .row.row-products .slider-controls > button {
     color: #717e8c;
     background-color: #fff;

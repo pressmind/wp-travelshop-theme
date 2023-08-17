@@ -104,14 +104,23 @@
 @include placeholder('slider-controls-outer') {
   position: absolute;
   top: 50%;
-  left: -($slider-controls-size / 2 );
-  right: -($slider-controls-size / 2 );
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
   justify-content: space-between;
 
   z-index: 2;
-
   max-width: calc((var(--vw, 1vw) * 100) - .25rem);
+
+  // set width by max ccontainer width
+  @each $key, $value in $container-max-widths {
+    $var: index(($container-max-widths), ($key $value)) !global;
+    $myKey: $key !global;
+    $myValue: $value !global;
+
+    @if ( $var != 1 and $var != length($container-max-widths) ) {
+      width: (pxToRem($value) + $slider-controls-size);
+    }
+  }
 
   > button {
     color: $slider-controls-outer-color;
