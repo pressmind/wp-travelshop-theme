@@ -783,7 +783,7 @@ $image-teaser-image-overlay-color: rgba(#000, .15) !default;
  * WP teaser
  */
 
-$wp-teaser-bg: $card-bg !important;
+$wp-teaser-bg: $card-bg !default;
 $wp-teaser-border-radius: $card-border-radius !default;
 $wp-teaser-border-width: $card-border-width !default;
 $wp-teaser-border-color: $card-border-color !default;
@@ -791,6 +791,18 @@ $wp-teaser-spacer-y: $card-spacer-y !default;
 $wp-teaser-spacer-x: $card-spacer-x !default;
 $wp-teaser-image-aspect-ratio-width: 16 !default;
 $wp-teaser-image-aspect-ratio-height: 9 !default;
+
+/**
+ * Team teaser
+ */
+
+$team-teaser-image-width: 10rem !default;
+$team-teaser-bg: $card-bg !default;
+$team-teaser-border-radius: $card-border-radius !default;
+$team-teaser-border-width: $card-border-width !default;
+$team-teaser-border-color: $card-border-color !default;
+$team-teaser-spacer-y: $card-spacer-y !default;
+$team-teaser-spacer-x: $card-spacer-x !default;
 
 /**
  * Icon teaser

@@ -11173,6 +11173,9 @@ html.force--consent.show--consent body {
  * WP teaser
  */
 /**
+ * Team teaser
+ */
+/**
  * Icon teaser
  */
 /**
@@ -14888,8 +14891,11 @@ header.header-main .auto-complete-overlay {
     position: relative;
     z-index: 4; }
 
+.teaser.team-teaser .teaser-image {
+  margin: 0 auto;
+  width: 10rem; }
 .teaser.team-teaser .teaser-body {
-  padding: 1.25rem;
+  padding: 11.25rem 1.25rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -14897,7 +14903,7 @@ header.header-main .auto-complete-overlay {
   border-color: rgba(0, 0, 0, 0.125);
   border-style: solid;
   border-width: 1px;
-  background-color: #fff !important; }
+  background-color: #fff; }
   .teaser.team-teaser .teaser-body h1 {
     margin: 0; }
     .teaser.team-teaser .teaser-body h1 small {
@@ -14909,7 +14915,7 @@ header.header-main .auto-complete-overlay {
   border-color: rgba(0, 0, 0, 0.125);
   border-style: solid;
   border-width: 1px;
-  background-color: #fff !important; }
+  background-color: #fff; }
   .teaser.wp-teaser .teaser-image {
     margin-top: -1px;
     margin-right: -1px;
