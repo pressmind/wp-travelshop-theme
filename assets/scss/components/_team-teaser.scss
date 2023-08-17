@@ -6,10 +6,30 @@
     position: relative;
     z-index: 2;
     width: $team-teaser-image-width;
+
+    @if ( $team-teaser-image-offset == true ) {
+      margin: 0 auto (-$team-teaser-image-width/2) auto;
+    } @else {
+      margin: 0 auto;
+    }
+
+    .media {
+      @if ( $team-teaser-image-circle == true ) {
+        @extend %media-circle;
+      }
+
+      @extend .ratio-#{$team-teaser-image-ratio};
+    }
   }
 
   .teaser-body {
-    padding: ($team-teaser-spacer-x + ($team-teaser-image-width/2)) $team-teaser-spacer-x $team-teaser-spacer-x $team-teaser-spacer-x;
+
+    @if ( $team-teaser-image-offset == true ) {
+      padding: ($team-teaser-spacer-x + ($team-teaser-image-width/2)) $team-teaser-spacer-x $team-teaser-spacer-x $team-teaser-spacer-x;
+    } @else {
+      padding: $team-teaser-spacer-x;
+    }
+
     display: flex;
     flex-direction: column;
     gap: $image-teaser-spacer-y;

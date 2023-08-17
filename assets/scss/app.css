@@ -11523,10 +11523,10 @@ body.fl-builder .content-block.content-page {
   .media-border-radius > img {
     border-radius: 0.25rem; }
 
-.media-circle {
+.media-circle, .teaser.team-teaser .teaser-image .media {
   border-radius: 100%;
   overflow: hidden; }
-  .media-circle > img {
+  .media-circle > img, .teaser.team-teaser .teaser-image .media > img {
     border-radius: 100%; }
 
 .media-hover-scale img {
@@ -11572,9 +11572,9 @@ body.fl-builder .content-block.content-page {
 /**
  * Default aspect ratio classes
  */
-.ratio-1x1 {
+.ratio-1x1, .teaser.team-teaser .teaser-image .media {
   position: relative; }
-  .ratio-1x1:before {
+  .ratio-1x1:before, .teaser.team-teaser .teaser-image .media:before {
     display: block;
     content: "";
     width: 100%;
@@ -11595,6 +11595,14 @@ body.fl-builder .content-block.content-page {
     content: "";
     width: 100%;
     padding-top: calc(9 / 16 * 100%); }
+
+.ratio-16x10 {
+  position: relative; }
+  .ratio-16x10:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(10 / 16 * 100%); }
 
 .ratio-21x9 {
   position: relative; }
@@ -11631,6 +11639,14 @@ body.fl-builder .content-block.content-page {
     width: 100%;
     padding-top: calc(9 / 16 * 100%); }
 
+.ratio-xs-16x10 {
+  position: relative; }
+  .ratio-xs-16x10:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(10 / 16 * 100%); }
+
 .ratio-xs-21x9 {
   position: relative; }
   .ratio-xs-21x9:before {
@@ -11664,6 +11680,14 @@ body.fl-builder .content-block.content-page {
       width: 100%;
       padding-top: calc(9 / 16 * 100%); }
 
+  .ratio-sm-16x10 {
+    position: relative; }
+    .ratio-sm-16x10:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(10 / 16 * 100%); }
+
   .ratio-sm-21x9 {
     position: relative; }
     .ratio-sm-21x9:before {
@@ -11695,6 +11719,14 @@ body.fl-builder .content-block.content-page {
       content: "";
       width: 100%;
       padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-md-16x10 {
+    position: relative; }
+    .ratio-md-16x10:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(10 / 16 * 100%); }
 
   .ratio-md-21x9 {
     position: relative; }
@@ -11728,6 +11760,14 @@ body.fl-builder .content-block.content-page {
       width: 100%;
       padding-top: calc(9 / 16 * 100%); }
 
+  .ratio-lg-16x10 {
+    position: relative; }
+    .ratio-lg-16x10:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(10 / 16 * 100%); }
+
   .ratio-lg-21x9 {
     position: relative; }
     .ratio-lg-21x9:before {
@@ -11759,6 +11799,14 @@ body.fl-builder .content-block.content-page {
       content: "";
       width: 100%;
       padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-xl-16x10 {
+    position: relative; }
+    .ratio-xl-16x10:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(10 / 16 * 100%); }
 
   .ratio-xl-21x9 {
     position: relative; }
@@ -11792,6 +11840,14 @@ body.fl-builder .content-block.content-page {
       width: 100%;
       padding-top: calc(9 / 16 * 100%); }
 
+  .ratio-xxl-16x10 {
+    position: relative; }
+    .ratio-xxl-16x10:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(10 / 16 * 100%); }
+
   .ratio-xxl-21x9 {
     position: relative; }
     .ratio-xxl-21x9:before {
@@ -11823,6 +11879,14 @@ body.fl-builder .content-block.content-page {
       content: "";
       width: 100%;
       padding-top: calc(9 / 16 * 100%); }
+
+  .ratio-xxxl-16x10 {
+    position: relative; }
+    .ratio-xxxl-16x10:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(10 / 16 * 100%); }
 
   .ratio-xxxl-21x9 {
     position: relative; }
@@ -14895,7 +14959,8 @@ header.header-main .auto-complete-overlay {
   margin: 0 auto -5rem auto;
   position: relative;
   z-index: 2;
-  width: 10rem; }
+  width: 10rem;
+  margin: 0 auto -5rem auto; }
 .teaser.team-teaser .teaser-body {
   padding: 6.25rem 1.25rem 1.25rem 1.25rem;
   display: flex;

@@ -34,6 +34,7 @@ $aspect-ratios:  (
     "1x1": 100%,
     "4x3": calc(3 / 4 * 100%),
     "16x9": calc(9 / 16 * 100%),
+    "16x10": calc(10 / 16 * 100%),
     "21x9": calc(9 / 21 * 100%)
 ) !default;
 
@@ -796,7 +797,10 @@ $wp-teaser-image-aspect-ratio-height: 9 !default;
  * Team teaser
  */
 
+$team-teaser-image-offset: true !default;
 $team-teaser-image-width: 10rem !default;
+$team-teaser-image-circle: true !default;
+$team-teaser-image-ratio: '1x1' !default; // ratios from $aspect-ratios
 $team-teaser-bg: $card-bg !default;
 $team-teaser-border-radius: $card-border-radius !default;
 $team-teaser-border-width: $card-border-width !default;

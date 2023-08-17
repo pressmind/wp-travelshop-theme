@@ -37,7 +37,7 @@
                         if ( !empty($item['image']) ) {
                             ?>
                             <div class="teaser-image">
-                                <div class="media media-cover media-circle ratio-1x1">
+                                <div class="media media-cover">
                                     <img alt="<?php echo $item['name']; ?>" loading="lazy" src="<?php echo $item['image']; ?>" />
                                 </div>
                             </div>
