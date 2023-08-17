@@ -1539,7 +1539,7 @@ jQuery(function ($) {
             items: 2,
             slideBy: 2
         },
-        1200: {
+        992: {
             items: 3,
             slideBy: 3
         }

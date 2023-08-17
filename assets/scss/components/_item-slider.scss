@@ -1,0 +1,52 @@
+.item-slider-wrapper {
+  // -- fallback
+  &:not(.tns-slider) {
+    @include make-row();
+
+    > .slider-item {
+      @include make-col-ready();
+      @include make-col(12);
+    }
+
+    // -- 2 columns
+    &[data-columns="2"],
+    &[data-columns="3"],
+    &[data-columns="4"] {
+      @include media-breakpoint-up(md) {
+        > .slider-item {
+          @include make-col(6);
+        }
+      }
+    }
+
+    // -- 3 columns
+    &[data-columns="3"],
+    &[data-columns="4"] {
+      @include media-breakpoint-up(lg) {
+        > .slider-item {
+          @include make-col(4);
+        }
+      }
+    }
+
+    // -- 4 columns
+    &[data-columns="4"] {
+      @include media-breakpoint-up(xl) {
+        > .slider-item {
+          @include make-col(3);
+        }
+      }
+    }
+
+    // -- slider general fallback
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    // -- mobile variant
+    &.item-slider-wrapper--mobile {
+      @include media-breakpoint-up(md) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

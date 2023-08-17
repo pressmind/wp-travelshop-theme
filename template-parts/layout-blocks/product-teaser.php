@@ -69,8 +69,10 @@ if (isset($args['pagination_bottom']) && $args['pagination_bottom'] == 'true' &&
     $mobile_slider = false;
     $layout_type = 'default';
 }
+
+$args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 9999));
 ?>
-<section<?php !empty($args['uid']) ? ' id="' . $args['uid'] . '"' : ''; ?>
+<section id="product-teaser-<?php echo $args['uid']; ?>"
         class="content-block content-block-travel-cols">
     <?php if (!empty($args['headline']) || !empty($args['text'])){ ?>
         <div class="row row-introduction <?php if (isset($args['link_top']) && $args['link_top'] === true) { ?>align-items-baseline<?php } ?>">
