@@ -1,3 +1,22 @@
 .teaser.team-teaser {
   @extend .text-center;
+
+  .teaser-image {
+  }
+
+  .teaser-body {
+    padding: $wp-teaser-spacer-x;
+
+    h1 {
+      margin: 0 0 $image-teaser-spacer-y 0;
+    }
+
+    @include border-radius($wp-teaser-border-radius);
+    border-color: $wp-teaser-border-color;
+    border-style: solid;
+    border-width: $wp-teaser-border-width;
+    background-color: $wp-teaser-bg;
+
+    @include get-element-shadow('wp-teaser');
+  }
 }

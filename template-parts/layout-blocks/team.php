@@ -47,7 +47,7 @@
 
                         <div class="teaser-body">
                             <?php if ( $item['name'] ) { ?>
-                                <h1>
+                                <h1 class="teaser-title h5">
                                     <?php echo $item['name']; ?>
 
                                     <?php if ( $item['position'] ) { ?>
