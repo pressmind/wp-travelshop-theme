@@ -24,7 +24,9 @@ if(count($postsObject) == 0){
 $layout_type = isset($args['layout_type']) ? $args['layout_type'] : 'default';
 $columns = isset($args['display_on_desktop']) ? (int)$args['display_on_desktop'] : 3;
 $mobile_slider = false;
-$args['mobile_slider'] = isset($arg['mobile_slider']) ? $args['mobile_slider'] : 'no';
+if ( !isset($args['mobile_slider']) ) {
+    $args['mobile_slider'] = 'no';
+}
 
 if ( $layout_type !== 'slider' && $args['mobile_slider'] === 'yes' ) {
     $mobile_slider = true;
