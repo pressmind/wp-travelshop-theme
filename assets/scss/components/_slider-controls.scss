@@ -113,13 +113,7 @@
 
   // set width by max ccontainer width
   @each $key, $value in $container-max-widths {
-    $var: index(($container-max-widths), ($key $value)) !global;
-    $myKey: $key !global;
-    $myValue: $value !global;
-
-    @if ( $var != 1 and $var != length($container-max-widths) ) {
-      width: (pxToRem($value) + $slider-controls-size);
-    }
+    width: (pxToRem($value) + $slider-controls-size);
   }
 
   > button {
