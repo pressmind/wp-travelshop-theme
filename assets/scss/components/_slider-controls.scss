@@ -114,7 +114,7 @@
   // set width by max container width
   @each $key, $value in $container-max-widths {
     @if ( index(($container-max-widths), ($key $value)) == length($container-max-widths) ) {
-      width: ((pxToRem($value) - (pxToRem($grid-gutter-width))) + $slider-controls-size);
+      width: ((pxToRem($value) - (pxToRem($grid-gutter-width))) + ($slider-controls-outer-offset * 2));
     }
   }
 
@@ -138,6 +138,12 @@
           border-color: $slider-controls-outer-hover-border-color;
         }
       }
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0;
     }
   }
 }
