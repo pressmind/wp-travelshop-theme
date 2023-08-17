@@ -64,8 +64,6 @@
 
                             <?php if ( $item['mail'] || $item['phone'] ) { ?>
                                 <div class="teaser-body-contact">
-
-
                                     <?php if ( $item['mail'] ) { ?>
                                         <a href="mailto:<?php echo $item['mail']; ?>" title="E-Mail an <?php echo $item['name']; ?>" class="icon-link">
                                             <div class="icon">
@@ -74,7 +72,6 @@
                                             <?php echo $item['mail']; ?>
                                         </a>
                                     <?php } ?>
-
 
                                     <?php if ( $item['phone'] ) { ?>
                                         <a href="tel:<?php echo $item['phone']; ?>" title="Jetzt anrufen!" class="icon-link">
