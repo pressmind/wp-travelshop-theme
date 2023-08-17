@@ -72,13 +72,8 @@ $args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 999
             <div class="<?php echo $wrapper; ?>" data-columns="<?php echo $columns; ?>">
                 <?php
                 foreach($postsObject as $p){
-                    ?>
-                    <div class="<?php echo $item_wrapper; ?>">
-                    <?php
+                    $p->class = $item_wrapper;
                     load_template(get_template_directory().'/template-parts/wp-views/info-teaser-view.php', false, $p);
-                    ?>
-                    </div>
-                    <?php
                 }
                 ?>
             </div>
