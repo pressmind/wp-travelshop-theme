@@ -165,6 +165,10 @@ $args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 999
                 // @todo: integrate "link teaser"
                 ?>
             </div>
+
+            <?php if ( $layout_type === 'slider' || $mobile_slider ) { ?>
+                <?php load_template( get_stylesheet_directory().'/template-parts/micro-templates/slider-controls.php', false, []); ?>
+            <?php } ?>
         </div>
 
     </div>
