@@ -14892,10 +14892,12 @@ header.header-main .auto-complete-overlay {
     z-index: 4; }
 
 .teaser.team-teaser .teaser-image {
-  margin: 0 auto;
+  margin: 0 auto -5rem auto;
+  position: relative;
+  z-index: 2;
   width: 10rem; }
 .teaser.team-teaser .teaser-body {
-  padding: 11.25rem 1.25rem 1.25rem 1.25rem;
+  padding: 6.25rem 1.25rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

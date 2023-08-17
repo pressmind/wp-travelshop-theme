@@ -2,12 +2,14 @@
   @extend .text-center;
 
   .teaser-image {
-    margin: 0 auto;
+    margin: 0 auto (-$team-teaser-image-width/2) auto;
+    position: relative;
+    z-index: 2;
     width: $team-teaser-image-width;
   }
 
   .teaser-body {
-    padding: ($team-teaser-spacer-x + $team-teaser-image-width) $team-teaser-spacer-x $team-teaser-spacer-x $team-teaser-spacer-x;
+    padding: ($team-teaser-spacer-x + ($team-teaser-image-width/2)) $team-teaser-spacer-x $team-teaser-spacer-x $team-teaser-spacer-x;
     display: flex;
     flex-direction: column;
     gap: $image-teaser-spacer-y;
