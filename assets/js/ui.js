@@ -1578,6 +1578,7 @@ jQuery(function ($) {
             window['itemSlider' + thisSliderId] = tns({
                 container: thisSliderContainer,
                 nav: false,
+                items: '.slider-item',
                 navPosition: "bottom",
                 mouseDrag: true,
                 disable: false,
@@ -1615,6 +1616,7 @@ jQuery(function ($) {
                     container: thisSliderContainer,
                     nav: false,
                     navPosition: "bottom",
+                    items: '.slider-item',
                     mouseDrag: true,
                     disable: false,
                     gutter: BSGridGutterWidth,
