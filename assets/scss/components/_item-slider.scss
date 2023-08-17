@@ -48,10 +48,16 @@
         flex-wrap: wrap;
       }
     }
+  }
+}
 
-    // -- slider controls
-    + .slider-controls {
-      display: none;
-    }
+// -- slider ccontrols
+.row.row-products {
+  .slider-controls {
+    display: none;
+  }
+
+  .tns-outer + .slider-controls {
+    display: block;
   }
 }

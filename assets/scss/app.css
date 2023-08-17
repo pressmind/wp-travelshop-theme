@@ -16764,8 +16764,11 @@ ul.pagination {
   @media (min-width: 768px) {
     .item-slider-wrapper:not(.tns-slider).item-slider-wrapper--mobile {
       flex-wrap: wrap; } }
-  .item-slider-wrapper:not(.tns-slider) + .slider-controls {
-    display: none; }
+
+.row.row-products .slider-controls {
+  display: none; }
+.row.row-products .tns-outer + .slider-controls {
+  display: block; }
 
 header.header-main {
   background-color: #fff;
