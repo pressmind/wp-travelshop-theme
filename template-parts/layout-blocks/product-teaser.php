@@ -115,65 +115,67 @@ if ( !isset($args['uid']) ) {
     <?php } ?>
     <div class="row row-products">
         <div class="col-12">
-            <?php
-            $wrapper = 'row';
-            $item_wrapper = 'col-12 col-md-6 col-xl-4';
-
-            if ( $columns === 4 ) {
-                $item_wrapper = 'col-12 col-md-6 col-xl-3';
-            }
-
-            if ( $columns === 2 ) {
-                $item_wrapper = 'col-12 col-md-6';
-            }
-
-            if ( $layout_type === 'slider' ) {
-                $wrapper = 'item-slider-wrapper';
-                $item_wrapper = 'slider-item';
-            }
-
-            if ( $layout_type === 'default' && $mobile_slider ) {
-                $wrapper = 'item-slider-wrapper item-slider-wrapper--mobile';
-                $item_wrapper = 'slider-item';
-            }
-            ?>
-
-            <div class="<?php echo $wrapper; ?>" data-columns="<?php echo $columns; ?>">
+            <div class="position-relative">
                 <?php
+                $wrapper = 'row';
+                $item_wrapper = 'col-12 col-md-6 col-xl-4';
 
-                // Example 1: Using the the shortcode ts-list for displaying the product teasers
-                //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
-                // Note: the View-Template "Teaser1" can be found in travelshop/template-parts/pm-views/{OBJECT_TYPE_NAME}_{VIEWNAME}.php
-
-
-                // Example 2: Using the pressmind® web-core SDK (MySQL)
-                //$conditions = array();
-                //$conditions[] = Pressmind\Search\Condition\ObjectType::create(TS_TOUR_PRODUCTS);
-                //$search = new Pressmind\Search($conditions, ['start' => 0, 'length' => 4], ['' => 'RAND()']);
-                //$products = $search->getResults();
-                //foreach ($products as $product) {
-                //    echo  $product->render('Teaser1', TS_LANGUAGE_CODE);
-                //}
-
-                // Example 3: Use a $args['search] list (or $_GET)
-                // $search = BuildSearch::fromRequest(isset($args['search']) ? $args['search'] : [], 'pm', true, 4);
-                // $products = $search->getResults();
-
-                $view = 'Teaser1';
-                if (!empty($args['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $args['view']) !== false) {
-                    $view = $args['view'];
+                if ( $columns === 4 ) {
+                    $item_wrapper = 'col-12 col-md-6 col-xl-3';
                 }
-                foreach ($result['items'] as $item) {
-                    $item['class'] = $item_wrapper;
-                    echo Template::render(get_stylesheet_directory() . '/template-parts/pm-views/' . $view . '.php', $item);
+
+                if ( $columns === 2 ) {
+                    $item_wrapper = 'col-12 col-md-6';
                 }
-                // @todo: integrate "link teaser"
+
+                if ( $layout_type === 'slider' ) {
+                    $wrapper = 'item-slider-wrapper';
+                    $item_wrapper = 'slider-item';
+                }
+
+                if ( $layout_type === 'default' && $mobile_slider ) {
+                    $wrapper = 'item-slider-wrapper item-slider-wrapper--mobile';
+                    $item_wrapper = 'slider-item';
+                }
                 ?>
-            </div>
 
-            <?php if ( $layout_type === 'slider' || $mobile_slider ) { ?>
-                <?php load_template( get_stylesheet_directory().'/template-parts/micro-templates/slider-controls.php', false, []); ?>
-            <?php } ?>
+                <div class="<?php echo $wrapper; ?>" data-columns="<?php echo $columns; ?>">
+                    <?php
+
+                    // Example 1: Using the the shortcode ts-list for displaying the product teasers
+                    //echo do_shortcode( '[ts-list view="Teaser1" pm-ot="607" pm-l="1,4" pm-o="RAND"]');
+                    // Note: the View-Template "Teaser1" can be found in travelshop/template-parts/pm-views/{OBJECT_TYPE_NAME}_{VIEWNAME}.php
+
+
+                    // Example 2: Using the pressmind® web-core SDK (MySQL)
+                    //$conditions = array();
+                    //$conditions[] = Pressmind\Search\Condition\ObjectType::create(TS_TOUR_PRODUCTS);
+                    //$search = new Pressmind\Search($conditions, ['start' => 0, 'length' => 4], ['' => 'RAND()']);
+                    //$products = $search->getResults();
+                    //foreach ($products as $product) {
+                    //    echo  $product->render('Teaser1', TS_LANGUAGE_CODE);
+                    //}
+
+                    // Example 3: Use a $args['search] list (or $_GET)
+                    // $search = BuildSearch::fromRequest(isset($args['search']) ? $args['search'] : [], 'pm', true, 4);
+                    // $products = $search->getResults();
+
+                    $view = 'Teaser1';
+                    if (!empty($args['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $args['view']) !== false) {
+                        $view = $args['view'];
+                    }
+                    foreach ($result['items'] as $item) {
+                        $item['class'] = $item_wrapper;
+                        echo Template::render(get_stylesheet_directory() . '/template-parts/pm-views/' . $view . '.php', $item);
+                    }
+                    // @todo: integrate "link teaser"
+                    ?>
+                </div>
+
+                <?php if ( $layout_type === 'slider' || $mobile_slider ) { ?>
+                    <?php load_template( get_stylesheet_directory().'/template-parts/micro-templates/slider-controls.php', false, []); ?>
+                <?php } ?>
+            </div>
         </div>
 
     </div>

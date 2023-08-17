@@ -49,42 +49,44 @@ if ( !isset($args['uid']) ) {
     <?php } ?>
     <div class="row row-products">
         <div class="col-12">
-            <?php
-            $wrapper = 'row';
-            $item_wrapper = 'col-12 col-md-6 col-xl-4';
-
-            if ( $columns === 4 ) {
-                $item_wrapper = 'col-12 col-md-6 col-xl-3';
-            }
-
-            if ( $columns === 2 ) {
-                $item_wrapper = 'col-12 col-md-6';
-            }
-
-            if ( $layout_type === 'slider' ) {
-                $wrapper = 'item-slider-wrapper';
-                $item_wrapper = 'slider-item';
-            }
-
-            if ( $layout_type === 'default' && $mobile_slider ) {
-                $wrapper = 'item-slider-wrapper item-slider-wrapper--mobile';
-                $item_wrapper = 'slider-item';
-            }
-            ?>
-
-            <div class="<?php echo $wrapper; ?>" data-columns="<?php echo $columns; ?>">
+            <div class="position-relative">
                 <?php
-                foreach($postsObject as $p){
-                    $p->class = $item_wrapper;
-                    load_template(get_template_directory().'/template-parts/wp-views/image-teaser-view.php', false, $p);
+                $wrapper = 'row';
+                $item_wrapper = 'col-12 col-md-6 col-xl-4';
+
+                if ( $columns === 4 ) {
+                    $item_wrapper = 'col-12 col-md-6 col-xl-3';
+                }
+
+                if ( $columns === 2 ) {
+                    $item_wrapper = 'col-12 col-md-6';
+                }
+
+                if ( $layout_type === 'slider' ) {
+                    $wrapper = 'item-slider-wrapper';
+                    $item_wrapper = 'slider-item';
+                }
+
+                if ( $layout_type === 'default' && $mobile_slider ) {
+                    $wrapper = 'item-slider-wrapper item-slider-wrapper--mobile';
+                    $item_wrapper = 'slider-item';
                 }
                 ?>
+
+                <div class="<?php echo $wrapper; ?>" data-columns="<?php echo $columns; ?>">
+                    <?php
+                    foreach($postsObject as $p){
+                        $p->class = $item_wrapper;
+                        load_template(get_template_directory().'/template-parts/wp-views/image-teaser-view.php', false, $p);
+                    }
+                    ?>
+                </div>
+
+
+                <?php if ( $layout_type === 'slider' || $mobile_slider ) { ?>
+                    <?php load_template( get_stylesheet_directory().'/template-parts/micro-templates/slider-controls.php', false, []); ?>
+                <?php } ?>
             </div>
-
-
-            <?php if ( $layout_type === 'slider' || $mobile_slider ) { ?>
-                <?php load_template( get_stylesheet_directory().'/template-parts/micro-templates/slider-controls.php', false, []); ?>
-            <?php } ?>
         </div>
     </div>
 </section>
