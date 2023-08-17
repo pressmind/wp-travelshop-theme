@@ -66,6 +66,8 @@ $args['uid'] = isset($args['uid']) ? $args['uid'] : (rand(0, 9999) * rand(0, 999
             if ( $layout_type === 'default' && $mobile_slider ) {
                 $wrapper = 'item-slider-wrapper item-slider-wrapper--mobile';
                 $item_wrapper = 'slider-item';
+
+                echo "<h1>hi</h1>";
             }
             ?>
 
