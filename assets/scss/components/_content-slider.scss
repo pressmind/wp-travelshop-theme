@@ -79,7 +79,7 @@
           h1.content-slider-box-title {
              @extend %card-title-styles;
 
-            margin: 0 0 $headings-margin-bottom 0 !important;
+            margin: 0 0 .5rem 0 !important;
           }
 
           .content-slider-box-text {
@@ -147,9 +147,17 @@
     @extend %slider-controls-on-image;
 
     // set element specific spacing left/right
+    left: 0;
+    right: 0;
     @include spacing-generator($content-slider-box-controls-spacer, 'x', padding);
 
     // do some top padding, top make it centered on image..
+    @include media-breakpoint-down(sm) {
+      top:0;
+      transform: translateY(-1rem);
+
+      padding-top: ( (((5 / 21) * 100%) / 2) );
+    }
   }
 
   // -- fallback if not initialized
