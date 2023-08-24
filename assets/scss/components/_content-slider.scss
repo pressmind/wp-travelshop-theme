@@ -30,6 +30,17 @@
         @include make-container-max-widths();
       }
 
+
+      @include media-breakpoint-down(sm) {
+        background-color: $content-slider-box-mobile-bg;
+
+        border: {
+          width: $content-slider-box-mobile-border-bottom-width;
+          style: solid;
+          color: $content-slider-box-mobile-border-bottom-color;
+        }
+      }
+
       .content-slider-box {
         @include get-element-shadow('slider-content-box');
         background-color: $content-slider-box-bg;
@@ -40,6 +51,17 @@
 
         @include media-breakpoint-up(md) {
           max-width: $content-slider-box-max-width;
+        }
+
+        @include media-breakpoint-down(sm) {
+          padding-left: 0;
+          padding-right: 0;
+
+          @include border-radius(0);
+
+          @if ( $content-slider-box-mobile-bg != $content-slider-box-bg ) {
+            background-color: transparent;
+          }
         }
 
         h1.content-slider-box-title {
