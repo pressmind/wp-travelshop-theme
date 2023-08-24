@@ -13735,11 +13735,11 @@ ul.checklist {
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-wishlist.show *, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay * {
       pointer-events: auto; } }
-.page-share.is-open .page-share-fallback, .teaser-block .teaser-block-modal.show, .modal-forms.modal-wrapper.is-open .page-share-fallback {
+.page-share.is-open .page-share-fallback, .teaser-block .teaser-block-modal.show, .modal-forms.modal-wrapper.is-open {
   opacity: 1;
   display: flex;
   pointer-events: auto; }
-  .page-share.is-open .page-share-fallback *, .teaser-block .teaser-block-modal.show *, .modal-forms.modal-wrapper.is-open .page-share-fallback * {
+  .page-share.is-open .page-share-fallback *, .teaser-block .teaser-block-modal.show *, .modal-forms.modal-wrapper.is-open * {
     pointer-events: auto; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-header {
