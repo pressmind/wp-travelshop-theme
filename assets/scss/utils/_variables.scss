@@ -25,6 +25,7 @@ $specific-element-shadows: (
   'detail-box-services': none,
   'detail-box-trust': none,
   'detail-box-contact': none,
+  'slider-content-box': none,
 ) !default;
 
 /**
@@ -148,6 +149,18 @@ $card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
  * Content slider
  */
 $content-slider-min-height: 37.5rem !default;
+$content-slider-box-max-width: 30rem !default;
+$content-slider-box-border-radius: $border-radius !default;
+$content-slider-box-bg: #fff !default;
+$content-slider-box-paddings: (
+        null: 1.5rem,
+        md: $grid-gutter-width
+) !default;
+$content-slider-box-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+$content-slider-box-title-sizes: $card-title-sizes !default;
 
 /**
  * Accordion

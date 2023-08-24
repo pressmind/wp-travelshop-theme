@@ -3,9 +3,34 @@
 
     .content-slider-image,
     .content-slider-video {
-
       @include media-breakpoint-up(md) {
-        min-height: $content-slider-min-height;
+        > div {
+          min-height: $content-slider-min-height;
+        }
+      }
+    }
+
+    .contnet-slider-content {
+
+      > .content-slider-contianer {
+        @include make-container();
+        @include make-container-max-widths();
+      }
+
+      .content-slider-box {
+        @include get-element-shadow('slider-content-box');
+        background-color: $content-slider-box-bg;
+
+        @include border-radius($content-slider-box-border-radius);
+        @include spacing-generator($content-slider-box-paddings, 'around', 'padding');
+
+        h1.content-slider-box-title {
+          @include font-size-generator($content-slider-box-title-sizes);
+        }
+
+        .content-slider-box-text {
+          @include font-size-generator($content-slider-box-font-sizes);
+        }
       }
     }
 

@@ -109,7 +109,7 @@ foreach ($args['items'] as $item) {
                     </div>
                 <?php } ?>
                 <div class="content-slider-content">
-                    <div class="container">
+                    <div class="content-slider-contianer">
                         <?php
                         if ($item['type'] == 'content') {
                             ?>

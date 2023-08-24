@@ -53,6 +53,21 @@
   }
 }
 
+%media-video {
+  position: relative;
+  overflow: hidden;
+}
+
+%media-video-cover {
+  > video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100vw;
+  }
+}
+
 // -- little helper to make sure image is 100% x auto in responsive elements
 %responsive-image {
   width: 100% !important;
@@ -78,4 +93,12 @@
 
 .media-circle {
   @extend %media-circle;
+}
+
+.media-video {
+  @extend %media-video;
+
+  &.media-cover {
+    @extend %media-video-cover;
+  }
 }
