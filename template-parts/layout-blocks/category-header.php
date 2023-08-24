@@ -27,11 +27,11 @@
     <div class="category-header-media category-header-media-<?php echo $args['media_type']; ?>">
         <div class="category-header-media-holder">
                 <?php if ($args['media_type'] == 'image') { ?>
-                    <div class="media-image">
+                    <div class="media media-cover">
                         <img src="<?php echo $image; ?>" alt="<?php echo $args['headline']; ?>"/>
                     </div>
                 <?php } else { ?>
-                    <div class="media-video">
+                    <div class="media media-video media-cover">
                         <video autoplay muted loop style="pointer-events: none;">
                             <source src="<?php echo $video; ?>" type="video/mp4">
                             Your browser does not support the video tag.
