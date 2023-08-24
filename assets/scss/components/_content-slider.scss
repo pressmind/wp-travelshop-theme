@@ -34,7 +34,7 @@
       @include media-breakpoint-down(sm) {
         background-color: $content-slider-box-mobile-bg;
 
-        border: {
+        border-bottom: {
           width: $content-slider-box-mobile-border-bottom-width;
           style: solid;
           color: $content-slider-box-mobile-border-bottom-color;

@@ -167,13 +167,14 @@ $category-header-box-white-color: $body-color !default;
 $category-header-box-white-heading-color: $category-header-box-white-color !default;
 $category-header-box-white-subline-color: $category-header-box-white-color !default;
 
+$category-header-box-mobile-border-bottom-width: 1px !default;
+$category-header-box-mobile-border-bottom-color: $card-border-color !default;
+
 $category-header-box-primary-bg: $primary !default;
 $category-header-box-primary-color: #fff !default;
 $category-header-box-primary-heading-color: $category-header-box-primary-color !default;
 $category-header-box-primary-subline-color: $category-header-box-primary-color !default;
 
-$category-header-box-mobile-border-bottom-width: 1px !default;
-$category-header-box-mobile-border-bottom-color: $card-border-color !default;
 $category-header-box-paddings: (
         null: 1.5rem,
         md: $grid-gutter-width
