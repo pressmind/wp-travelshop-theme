@@ -45,6 +45,38 @@
 
         // box
         .category-header-content {
+
+          @include font-size-generator($category-header-box-font-sizes);
+
+          p {
+            margin: 0;
+
+            + p {
+              margin-top: .5rem;
+            }
+          }
+
+          // spacings
+          .content-slider-box-title {
+            margin-bottom:0;
+
+            + .content-slider-box-subline {
+              margin-top: .5rem;
+            }
+
+            + p {
+              margin-top: 1rem;
+            }
+          }
+
+          .content-slider-box-subline {
+            margin-bottom: 0;
+
+            + p {
+              margin-top: 1rem;
+            }
+          }
+
           &.category-header-content-transparent {
 
             background-color: $category-header-box-transparent-bg;

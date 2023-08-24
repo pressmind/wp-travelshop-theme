@@ -179,6 +179,10 @@ $category-header-spacing-x: (
         null: 1.5rem,
         md: $grid-gutter-width
 ) !default;
+$category-header-box-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
 
 /**
  * Content slider
