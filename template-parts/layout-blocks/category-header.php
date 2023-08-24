@@ -145,19 +145,17 @@ if ( !function_exists('get_vertical_direction') ) {
             <div class="<?php echo $categoryHeaderContainerClass; ?>">
                 <div class="d-flex <?php echo $categoryHeaderPositioningClasses; ?>">
 
-                    <div class="category-header-content-positioning">
-                        <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
-                            <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>
-                        <?php if (!empty($args['subline'])) { ?>
-                        <<?php echo $args['subline_type']; ?> class="category-header-subline" ><?php echo $args['subline']; ?></<?php echo $args['subline_type']; ?>>
-                        <?php } ?>
-                        <?php if (!empty($args['text'])) { ?>
-                            <div class="category-header-text">
-                                <?php echo $args['text']; ?>
-                            </div>
-                        <?php } ?>
-                        </article>
-                    </div>
+                    <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
+                        <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>
+                    <?php if (!empty($args['subline'])) { ?>
+                    <<?php echo $args['subline_type']; ?> class="category-header-subline" ><?php echo $args['subline']; ?></<?php echo $args['subline_type']; ?>>
+                    <?php } ?>
+                    <?php if (!empty($args['text'])) { ?>
+                        <div class="category-header-text">
+                            <?php echo $args['text']; ?>
+                        </div>
+                    <?php } ?>
+                    </article>
                 </div>
             </div>
         </div>
