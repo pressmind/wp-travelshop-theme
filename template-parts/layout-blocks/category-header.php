@@ -20,6 +20,8 @@ if ( !function_exists('get_horizontal_direction') ) {
     function get_horizontal_direction($direction) {
         $directionType = '';
 
+        echo $direction;
+
         if ( $direction = 'center' ) {
             $directionType = 'center';
         }
