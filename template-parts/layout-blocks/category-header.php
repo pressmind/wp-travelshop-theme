@@ -114,6 +114,7 @@ if ( !function_exists('get_vertical_direction') ) {
             $categoryHeaderContainerClass = 'category-header-content-container';
 
             // Horizontal _
+            echo $args['content_alignment_horizontal'];
             echo get_horizontal_direction($args['content_alignment_horizontal']);
             echo $args['content_alignment_horizontal'];
             if ( !empty($args['content_alignment_horizontal']) ) {
