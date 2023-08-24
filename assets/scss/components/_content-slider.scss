@@ -147,8 +147,9 @@
     @extend %slider-controls-on-image;
 
     // set element specific spacing left/right
-    @include spacing-generator($content-slider-box-controls-spacer, 'around', left);
-    @include spacing-generator($content-slider-box-controls-spacer, 'around', right);
+    @include spacing-generator($content-slider-box-controls-spacer, 'x', padding);
+
+    // do some top padding, top make it centered on image..
   }
 
   // -- fallback if not initialized
