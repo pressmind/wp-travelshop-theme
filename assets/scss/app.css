@@ -13521,9 +13521,9 @@ ul.checklist {
   .discount-wrapper.discount-wrapper--border .discount-wrapper--inner {
     background-color: #fff; }
 
-.card-travel .card-body .card-body--bottom .date-row .dropdown {
+.card-travel .card-body .card-body--bottom .date-row .dropdown, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-bottom .date-row .dropdown {
   margin: 0; }
-  .card-travel .card-body .card-body--bottom .date-row .dropdown > button {
+  .card-travel .card-body .card-body--bottom .date-row .dropdown > button, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-bottom .date-row .dropdown > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -14246,18 +14246,18 @@ main > .container > .row .breadcrumb-wrapper,
 .card-travel .card-image .card-badge--new, .detail-header-gallery .detail-header-badge {
   background-color: #dc3545; }
 
-.card-travel .card-body h1.card-title, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title, .author-bio .author-bio-content h4.author-title {
+.card-travel .card-body h1.card-title, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title, .author-bio .author-bio-content h4.author-title, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title {
   color: #212529;
   margin: 0 0 0.75rem 0; }
-  .card-travel .card-body h1.card-title > a, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a, .author-bio .author-bio-content h4.author-title > a {
+  .card-travel .card-body h1.card-title > a, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a, .author-bio .author-bio-content h4.author-title > a, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title > a {
     color: inherit;
     transition: color 0.3s;
     text-decoration: none; }
-    .card-travel .card-body h1.card-title > a:hover, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:hover, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:hover, .author-bio .author-bio-content h4.author-title > a:hover {
+    .card-travel .card-body h1.card-title > a:hover, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:hover, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:hover, .author-bio .author-bio-content h4.author-title > a:hover, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title > a:hover {
       color: #007bff; }
-    .card-travel .card-body h1.card-title > a:active, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .author-bio .author-bio-content h4.author-title > a:active, .card-travel .card-body h1.card-title > a:focus, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:focus, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:focus, .author-bio .author-bio-content h4.author-title > a:focus {
+    .card-travel .card-body h1.card-title > a:active, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .author-bio .author-bio-content h4.author-title > a:active, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title > a:active, .card-travel .card-body h1.card-title > a:focus, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:focus, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:focus, .author-bio .author-bio-content h4.author-title > a:focus, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title > a:focus {
       color: #007bff; }
-    .card-travel .card-body h1.card-title > a:active, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .author-bio .author-bio-content h4.author-title > a:active {
+    .card-travel .card-body h1.card-title > a:active, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title > a:active, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title > a:active, .author-bio .author-bio-content h4.author-title > a:active, .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title > a:active {
       text-decoration: underline; }
 
 .card-travel .card-body h1.card-title, .posts-list .blog-list-entry .blog-list-entry-header .blog-list-entry-title, .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-related .related-posts .post-item .blog-list-entry-title {
@@ -17194,7 +17194,8 @@ ul.pagination {
     .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box {
       background-color: #fff;
       border-radius: 0.25rem;
-      padding: 1.5rem; }
+      padding: 1.5rem;
+      max-width: 30rem; }
       @media (min-width: 768px) {
         .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box {
           padding: 30px; } }
@@ -17214,6 +17215,49 @@ ul.pagination {
         @media (min-width: 992px) {
           .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box .content-slider-box-text {
             font-size: 1rem; } }
+    .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box h1.content-slider-box-title {
+      margin: 0 0 1rem 0 !important; }
+    .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-text {
+      margin-bottom: 0;
+      position: relative;
+      max-height: 3.9375rem;
+      overflow: hidden; }
+      .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-text:after {
+        content: '';
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 3.9375rem;
+        background-image: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 33.3333333333%);
+        background-repeat: repeat-x; }
+      @media (min-width: 992px) {
+        .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-text {
+          position: relative;
+          max-height: 4.5rem;
+          overflow: hidden; }
+          .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-text:after {
+            content: '';
+            display: block;
+            pointer-events: none;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 4.5rem;
+            background-image: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 33.3333333333%);
+            background-repeat: repeat-x; } }
+    .content-block-content-slider .content-slider-item .content-slider-content .content-slider-content-product .content-slider-box .content-slider-box-bottom {
+      padding-top: 1rem;
+      /**
+       * Date row
+       */ }
 
 header.header-main {
   background-color: #fff;

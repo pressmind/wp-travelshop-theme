@@ -55,11 +55,6 @@ if (empty($filteredParams) === false) {
         <h1 class="content-slider-box-title">
             <a href="<?php echo $args['url']; ?>"><?php echo $args['headline']; ?></a>
         </h1>
-        <?php
-        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/attribute-row.php', [
-            'attributes' => array_filter([$args['travel_type'] ?? [], $args['destination'] ?? []]),
-        ]);
-        ?>
         <?php if (empty($args['subline']) === false) { ?>
             <p class="content-slider-box-text card-text--fade-out lh-3">
                 <?php echo $args['subline']; ?>
