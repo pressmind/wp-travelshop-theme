@@ -3,9 +3,7 @@
   // basic styles
   .category-header {
     position: relative;
-    @include spacing-generator($category-header-spacing-x, 'y', 'padding');
 
-    min-height: $category-header-min-height;
 
     // media
     .category-header-media {
@@ -28,6 +26,10 @@
     .category-header-content-wrapper {
       position: relative;
       z-index: 5;
+
+      min-height: $category-header-min-height;
+
+      @include spacing-generator($category-header-spacing-x, 'y', 'padding');
     }
   }
 
