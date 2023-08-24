@@ -16,7 +16,7 @@
  * @var $args
  */
 
-if ( !function_exists(get_horizontal_direction) ) {
+if ( !function_exists('get_horizontal_direction') ) {
     function get_horizontal_direction($direction) {
         $directionType = '';
 
@@ -35,7 +35,7 @@ if ( !function_exists(get_horizontal_direction) ) {
     }
 }
 
-if ( !function_exists(get_vertical_direction) ) {
+if ( !function_exists('get_vertical_direction') ) {
     function get_vertical_direction($direction) {
         $directionType = '';
 
