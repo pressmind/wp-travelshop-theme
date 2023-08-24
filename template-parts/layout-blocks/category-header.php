@@ -112,18 +112,18 @@ if ( !function_exists('get_vertical_direction') ) {
 
         if ( $args['content_box_type'] == 'docked' ) {
             $categoryHeaderContainerClass = 'category-header-content-container';
-
-            // Horizontal _
-            echo $args['content_alignment_horizontal'];
-            echo get_horizontal_direction($args['content_alignment_horizontal']);
-            echo $args['content_alignment_horizontal'];
-            if ( !empty($args['content_alignment_horizontal']) ) {
-                $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal']);
-            }
-
-
-            // Vertial |
         }
+
+        // Horizontal _
+        echo $args['content_alignment_horizontal'];
+        echo get_horizontal_direction($args['content_alignment_horizontal']);
+        echo $args['content_alignment_horizontal'];
+        if ( !empty($args['content_alignment_horizontal']) ) {
+            $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal']);
+        }
+
+
+        // Vertial |
         ?>
         <div class="category-header-content-wrapper">
 
