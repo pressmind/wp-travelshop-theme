@@ -99,7 +99,7 @@
             @include spacing-generator($category-header-box-paddings, 'around', 'padding');
 
             // theming colors
-            &.content-header-content-white {
+            &.category-header-content-white {
               background-color: $category-header-box-white-bg;
               color: $category-header-box-white-color;
 

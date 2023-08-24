@@ -17400,12 +17400,12 @@ ul.pagination {
           @media (min-width: 768px) {
             .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent) {
               padding: 30px; } }
-          .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).content-header-content-white {
+          .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).category-header-content-white {
             background-color: #fff;
             color: #212529; }
-            .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).content-header-content-white .category-header-title {
+            .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).category-header-content-white .category-header-title {
               color: #212529; }
-            .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).content-header-content-white .category-header-subline {
+            .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).category-header-content-white .category-header-subline {
               color: #212529; }
           .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent).category-header-content-primary {
             background-color: #007bff;
