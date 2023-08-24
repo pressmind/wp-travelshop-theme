@@ -119,9 +119,9 @@ if ( !function_exists('get_vertical_direction') ) {
         <div class="category-header-content-wrapper">
 
             <div class="<?php echo $categoryHeaderContainerClass; ?>">
-                <div class="d-flex">
+                <div class="d-flex <?php echo $categoryHeaderPositioningClasses; ?>">
 
-                    <div class="category-header-content-positioning <?php echo $categoryHeaderPositioningClasses; ?>
+                    <div class="category-header-content-positioning
 
                     content-header-vertical-<?php echo $args['content_alignment_vertical']; ?>
                 content-header-vertical-medium-<?php echo $args['content_alignment_vertical_medium']; ?>
