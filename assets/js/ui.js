@@ -273,6 +273,40 @@ jQuery(function ($) {
     });
 
     // -------------------------------------
+    // --- content slider
+    // -------------------------------------
+    var contentSlider = $('.content-block-content-slider');
+    var contentSliderContainer = '';
+    var contentSliderId = '';
+    var contentSliderControlsContainer = '';
+
+    if ( contentSlider.length > 0 ) {
+        contentSlider.each(function(element, index) {
+
+            contentSliderId = $(this).attr('id');
+            contentSliderContainer = '#' + contentSliderId + ' .content-slider-inner';
+            contentSliderControlsContainer = '#' + contentSliderId + ' .slider-controls';
+
+            window[contentSliderId] = tns({
+                container: contentSliderContainer,
+                nav: false,
+                mouseDrag: true,
+                disable: false,
+                gutter: 0,
+                items: 1,
+                loop: false,
+                slideBy: 1,
+                controls: true,
+                controlsContainer: contentSliderControls,
+
+            });
+
+        });
+    }
+
+
+
+    // -------------------------------------
     // --- init for various image slider
     // -------------------------------------
 

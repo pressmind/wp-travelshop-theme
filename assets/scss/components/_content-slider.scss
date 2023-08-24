@@ -132,4 +132,19 @@
     @include spacing-generator($content-slider-box-controls-spacer, 'around', left);
     @include spacing-generator($content-slider-box-controls-spacer, 'around', right);
   }
+
+  // -- fallback if not initialized
+  .content-slider-inner:not(.tns-slider) {
+    .content-slider-item {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+
+    + .slider-controls {
+      display: none;
+    }
+  }
 }

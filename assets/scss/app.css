@@ -17293,6 +17293,12 @@ ul.pagination {
     @media (min-width: 992px) {
       .content-block-content-slider .slider-controls {
         right: 30px; } }
+  .content-block-content-slider .content-slider-inner:not(.tns-slider) .content-slider-item {
+    display: none; }
+    .content-block-content-slider .content-slider-inner:not(.tns-slider) .content-slider-item:first-child {
+      display: block; }
+  .content-block-content-slider .content-slider-inner:not(.tns-slider) + .slider-controls {
+    display: none; }
 
 header.header-main {
   background-color: #fff;
