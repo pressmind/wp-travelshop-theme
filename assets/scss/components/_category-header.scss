@@ -170,6 +170,22 @@
         }
       }
     }
+
+    // -- break
+    @include media-breakpoint-down($category-header-box-break-down) {
+      &.category-header-docked,
+      &.category-header-break {
+        .category-header-media {
+          position: static;
+
+          > div.media {
+            position:relative;
+
+            @include aspect-ratio(16, 10);
+          }
+        }
+      }
+    }
   }
 
 }

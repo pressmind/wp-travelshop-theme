@@ -32,6 +32,15 @@ FLBuilder::register_module('TSWPCategoryHeader', array(
             'media' => array(
                 'title' => __('Hintergrund', 'fl-builder' ),
                 'fields' => array(
+                    'background_height' => array(
+                        'type' => 'unit',
+                        'label' => __('Height', 'fl-builder'),
+                        'description' => 'px',
+                        'placeholder' => 400,
+                        'default' => 400,
+                        'responsive'  => true,
+                        'help' => 'The height of the whole element.'
+                    ),
                     'media_type' => array(
                         'type' => 'select',
                         'label' => __('Media-Type', 'fl-builder'),
