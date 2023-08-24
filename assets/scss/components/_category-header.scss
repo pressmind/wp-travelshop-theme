@@ -150,6 +150,13 @@
             justify-content: center;
           }
         }
+
+        // -- set min heights
+        .category-header-content-container,
+        .category-header-content-container > .d-flex,
+        .category-header-content-container > .d-flex .category-header-content {
+          min-height: $category-header-min-height;
+        }
       }
     }
   }

@@ -17426,6 +17426,20 @@ ul.pagination {
       display: flex;
       flex-direction: column;
       justify-content: center; }
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .d-flex,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .social-links,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div.category-header-content-container > a,
+  .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .nav-links > div.category-header-content-container > a,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a.category-header-content-container > p.meta-nav,
+  .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .nav-links > div > a.category-header-content-container > p.meta-nav,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .d-flex .category-header-content,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .social-links .category-header-content,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div.category-header-content-container > a .category-header-content,
+  .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .nav-links > div.category-header-content-container > a .category-header-content,
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .nav-links > div > a.category-header-content-container > p.meta-nav .category-header-content,
+  .content-main.content-main--posts .blog-entry-single .blog-list-entry.blog-list-entry-postnav .post-navigation .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .nav-links > div > a.category-header-content-container > p.meta-nav .category-header-content {
+    min-height: 24rem; }
 
 header.header-main {
   background-color: #fff;
