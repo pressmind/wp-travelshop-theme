@@ -16,7 +16,6 @@
  * @var $args
  */
 
-print_r(function_exists('get_horizontal_direction'));
 if ( !function_exists('get_horizontal_direction') ) {
     function get_horizontal_direction($direction) {
         $directionType = '';
@@ -37,7 +36,6 @@ if ( !function_exists('get_horizontal_direction') ) {
         return $directionType;
     }
 }
-print_r(function_exists('get_horizontal_direction'));
 
 if ( !function_exists('get_vertical_direction') ) {
     function get_vertical_direction($direction) {
