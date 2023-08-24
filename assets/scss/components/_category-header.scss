@@ -187,7 +187,10 @@
         // -- content
         .category-header-content-wrapper {
           .category-header-content-container {
+            padding: 0 !important;
+
             .category-header-content {
+              @include border-radius(0);
               padding-left: ($grid-gutter-width / 2);
               padding-right: ($grid-gutter-width / 2);
             }
