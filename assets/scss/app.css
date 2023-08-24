@@ -17163,10 +17163,15 @@ ul.pagination {
       min-height: 37.5rem; } }
   .content-block-content-slider .content-slider-item .content-slider-content {
     position: absolute;
-    top: 50%;
+    top: auto;
     left: 0;
     right: 0;
-    transform: translateY(-50%); }
+    bottom: 30px; }
+    @media (min-width: 768px) {
+      .content-block-content-slider .content-slider-item .content-slider-content {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%); } }
     .content-block-content-slider .content-slider-item .content-slider-content > .content-slider-container {
       width: 100%;
       padding-right: 15px;
