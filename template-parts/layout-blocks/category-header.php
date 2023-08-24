@@ -20,7 +20,6 @@ if ( !function_exists('get_horizontal_direction') ) {
     function get_horizontal_direction($direction) {
         $directionType = '';
 
-        echo $direction;
 
         if ( $direction === 'center' ) {
             $directionType = 'center';
@@ -115,9 +114,6 @@ if ( !function_exists('get_vertical_direction') ) {
         }
 
         // Horizontal _
-        echo $args['content_alignment_horizontal'];
-        echo get_horizontal_direction($args['content_alignment_horizontal']);
-        echo $args['content_alignment_horizontal'];
         if ( !empty($args['content_alignment_horizontal']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal']);
         }
