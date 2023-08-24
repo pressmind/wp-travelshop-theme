@@ -45,12 +45,28 @@
 
         // box
         .category-header-content {
+          &.category-header-content-transparent {
+
+            background-color: $category-header-box-transparent-bg;
+            color: $category-header-box-transparent-color;
+            text-shadow: $category-header-box-transparent-text-shadow;
+
+            .category-header-title {
+              color: $category-header-box-transparent-heading-color;
+            }
+
+            .category-header-subline {
+              color: $category-header-box-transparent-subline-color;
+            }
+          }
+
           &:not(.category-header-content-transparent) {
             @include get-element-shadow('category-header-content-box');
 
             @include border-radius($category-header-box-border-radius);
             @include spacing-generator($category-header-box-paddings, 'around', 'padding');
 
+            // theming colors
             &.content-header-content-white {
               background-color: $category-header-box-white-bg;
               color: $category-header-box-white-color;
