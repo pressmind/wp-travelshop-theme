@@ -3,7 +3,7 @@
   // basic styles
   .category-header {
     position: relative;
-    @include spacing-generator($category-header-spacing-x, 'x', 'padding');
+    @include spacing-generator($category-header-spacing-x, 'y', 'padding');
 
     // media
     .category-header-media {

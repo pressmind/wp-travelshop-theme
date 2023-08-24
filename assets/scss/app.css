@@ -17317,12 +17317,12 @@ ul.pagination {
 
 .content-block-category-header.content-block .category-header {
   position: relative;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem; }
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
   @media (min-width: 768px) {
     .content-block-category-header.content-block .category-header {
-      padding-left: 30px;
-      padding-right: 30px; } }
+      padding-top: 30px;
+      padding-bottom: 30px; } }
   .content-block-category-header.content-block .category-header .category-header-media {
     position: absolute;
     top: 0;
