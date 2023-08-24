@@ -1,6 +1,8 @@
 .content-block-content-slider {
   .content-slider-item {
 
+    position: relative;
+
     .content-slider-image,
     .content-slider-video {
       @include media-breakpoint-up(md) {
@@ -12,7 +14,14 @@
 
     .content-slider-content {
 
-      > .content-slider-contianer {
+      position:absolute;
+      top: 50%;
+      left:0;
+      right:0;
+
+      transform: translateY(-50%);
+
+      > .content-slider-container {
         @include make-container();
         @include make-container-max-widths();
       }

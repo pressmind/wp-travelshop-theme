@@ -72,7 +72,7 @@ foreach ($args['items'] as $item) {
         <?php
         foreach ($slide_items as $item) {
             ?>
-            <article class="content-slider-item content-slider-item__<?php echo $item['type']; ?>">
+            <article class="content-slider-item">
                 <?php
                 if ($item['type'] == 'content') {
                     if ($item['media_type'] == 'video' ) {
@@ -108,8 +108,8 @@ foreach ($args['items'] as $item) {
                         </div>
                     </div>
                 <?php } ?>
-                <div class="content-slider-content">
-                    <div class="content-slider-contianer">
+                <div class="content-slider-content content-slider-content-<?php echo $item['type']; ?>">
+                    <div class="content-slider-container">
                         <?php
                         if ($item['type'] == 'content') {
                             ?>
