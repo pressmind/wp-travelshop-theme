@@ -136,6 +136,21 @@
 
     // -- docked
     &.category-header-docked {
+      .category-header-content-wrapper {
+        .category-header-content-container {
+          padding-top: 0;
+          padding-bottom: 0;
+
+          .category-header-content {
+            @include border-radius(0);
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 

@@ -17417,6 +17417,15 @@ ul.pagination {
         @media (min-width: 768px) {
           .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content {
             max-width: 30rem; } }
+  .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container {
+    padding-top: 0;
+    padding-bottom: 0; }
+    .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container .category-header-content {
+      border-radius: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
 
 header.header-main {
   background-color: #fff;
