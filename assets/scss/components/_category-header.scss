@@ -175,6 +175,15 @@
     @include media-breakpoint-down($category-header-box-break-down) {
       &.category-header-docked,
       &.category-header-break {
+
+        // -- set min heights
+        .category-header-content-wrapper,
+        .category-header-content-container,
+        .category-header-content-container > .d-flex,
+        .category-header-content-container > .d-flex .category-header-content {
+          min-height: 0;
+        }
+
         .category-header-media {
           position: static;
 
