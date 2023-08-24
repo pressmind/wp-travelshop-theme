@@ -318,8 +318,6 @@
 
   // -- open state
   &.is-open {
-    .page-share-fallback {
-      @extend %modal-open;
-    }
+    @extend %modal-open;
   }
 }
