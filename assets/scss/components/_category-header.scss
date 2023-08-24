@@ -42,6 +42,20 @@
         > .d-flex {
           height: 100%;
         }
+
+        // box
+        .category-header-content {
+          @include get-element-shadow('category-header-content-box');
+          background-color: $category-header-box-bg;
+
+          @include border-radius($category-header-box-border-radius);
+          @include spacing-generator($category-header-box-paddings, 'around', 'padding');
+
+
+          @include media-breakpoint-up(md) {
+            max-width: $category-header-box-max-width;
+          }
+        }
       }
     }
   }

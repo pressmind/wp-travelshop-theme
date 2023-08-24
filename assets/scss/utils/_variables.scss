@@ -26,6 +26,7 @@ $specific-element-shadows: (
   'detail-box-trust': none,
   'detail-box-contact': none,
   'slider-content-box': none,
+  'category-header-content-box': none
 ) !default;
 
 /**
@@ -149,6 +150,16 @@ $card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
  * Category Header
  */
 $category-header-min-height: 24rem;
+$category-header-box-max-width: 30rem !default;
+$category-header-box-border-radius: $border-radius !default;
+$category-header-box-bg: #fff !default;
+$category-header-box-mobile-border-bottom-width: 1px !default;
+$category-header-box-mobile-border-bottom-color: $card-border-color !default;
+$category-header-box-mobile-bg: #fff !default;
+$category-header-box-paddings: (
+        null: 1.5rem,
+        md: $grid-gutter-width
+) !default;
 $category-header-spacing-x: (
         null: 1.5rem,
         md: $grid-gutter-width
