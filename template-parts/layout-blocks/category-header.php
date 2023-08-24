@@ -150,10 +150,10 @@ if ( !function_exists('get_vertical_direction') ) {
             $categoryHeaderPositioningClassesVertical .= ' align-items-xl-' . get_vertical_direction($args['content_alignment_vertical']);
         }
         ?>
-        <div class="d-flex h-100 category-header-content-wrapper <?php echo $categoryHeaderPositioningClassesHorizontal; ?>">
+        <div class="d-flex h-100 category-header-content-wrapper <?php echo $categoryHeaderPositioningClassesVertical; ?>">
 
             <div class="<?php echo $categoryHeaderContainerClass; ?>">
-                <div class="d-flex <?php echo $categoryHeaderPositioningClassesVertical; ?>">
+                <div class="d-flex <?php echo $categoryHeaderPositioningClasses; ?>">
 
                     <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
                         <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>
