@@ -22,15 +22,15 @@ if ( !function_exists('get_horizontal_direction') ) {
 
         echo $direction;
 
-        if ( $direction = 'center' ) {
+        if ( $direction === 'center' ) {
             $directionType = 'center';
         }
 
-        if ( $direction = 'left' ) {
+        if ( $direction === 'left' ) {
             $directionType = 'start';
         }
 
-        if ( $direction = 'right' ) {
+        if ( $direction === 'right' ) {
             $directionType = 'end';
         }
         return $directionType;
@@ -41,15 +41,15 @@ if ( !function_exists('get_vertical_direction') ) {
     function get_vertical_direction($direction) {
         $directionType = '';
 
-        if ( $direction = 'middle' ) {
+        if ( $direction === 'middle' ) {
             $directionType = 'center';
         }
 
-        if ( $direction = 'top' ) {
+        if ( $direction === 'top' ) {
             $directionType = 'start';
         }
 
-        if ( $direction = 'bottom' ) {
+        if ( $direction === 'bottom' ) {
             $directionType = 'end';
         }
         return $directionType;
