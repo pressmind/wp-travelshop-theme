@@ -32,12 +32,10 @@
 
       min-height: $category-header-min-height;
 
-      @include spacing-generator($category-header-spacing-x, 'y', 'padding');
-
       .category-header-content-container {
-        height: 100%;
-        justify-self: center;
+        @include spacing-generator($category-header-spacing-x, 'y', 'padding');
 
+        height: 100%;
 
         &.category-header-content-container-widths {
           @include make-container();

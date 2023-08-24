@@ -17334,16 +17334,15 @@ ul.pagination {
     height: 100%;
     position: relative;
     z-index: 5;
-    min-height: 24rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem; }
-    @media (min-width: 768px) {
-      .content-block-category-header.content-block .category-header .category-header-content-wrapper {
-        padding-top: 30px;
-        padding-bottom: 30px; } }
+    min-height: 24rem; }
     .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container {
-      height: 100%;
-      justify-self: center; }
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      height: 100%; }
+      @media (min-width: 768px) {
+        .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container {
+          padding-top: 30px;
+          padding-bottom: 30px; } }
       .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container.category-header-content-container-widths {
         width: 100%;
         padding-right: 15px;
