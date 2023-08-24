@@ -146,6 +146,14 @@ $responsive-font-size: (
 $card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
 
 /**
+ * Category Header
+ */
+$category-header-spacing-x: (
+        null: 1.5rem,
+        md: $grid-gutter-width
+) !default;
+
+/**
  * Content slider
  */
 $content-slider-min-height: 37.5rem !default;

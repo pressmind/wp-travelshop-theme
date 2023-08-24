@@ -1,3 +1,32 @@
 .content-block-category-header.content-block {
 
+  // basic styles
+  .category-header {
+    position: relative;
+    @include spacing-generator($category-header-spacing-x, 'x', 'padding');
+
+    // media
+    .category-header-media {
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+
+      > div.media {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+      }
+    }
+
+    // content
+    .category-header-content-wrapper {
+      position: relative;
+      z-index: 5;
+    }
+  }
+
 }
