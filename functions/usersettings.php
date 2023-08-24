@@ -314,8 +314,38 @@ function parse_request($query)
     // User roles per Page
     if (empty($query->query_vars['pagename']) === false) { // if pagename is set
         if (is_user_allowed_to_view_this_page($query->query_vars['pagename']) === false) { // the user is not allowed
-            $query->query_vars['redirect'] = $query->query_vars['pagename']; // set redirect after login
-            $query->query_vars['pagename'] = 'profile/login';
+            if (!isset($_COOKIE['id_user'])) {
+                $query->query_vars['error'] = '404';
+            } else {
+                $cURLConnection = curl_init();
+                $strCookie = 'id_user=' . $_COOKIE['id_user'] . '; path=/';
+                curl_setopt($cURLConnection, CURLOPT_URL, TS_IBE3_BASE_URL . '/api/external/getUserData');
+                curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($cURLConnection, CURLOPT_COOKIE, $strCookie );
+                $response = curl_exec($cURLConnection);
+                curl_close($cURLConnection);
+                if(!json_decode($response)->data->user->is_agency) { ?>
+                    <!DOCTYPE html>
+                    <html lang="de">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Fehlermeldung</title>
+                    </head>
+                    <body style="font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f4f4f4;">
+
+                    <div style="max-width: 800px; width: 100%; background-color: #ffffff; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); text-align: center;">
+                        <h1 style="margin: 0 0 20px; color: #333;">Ihr Nutzerkonto ist keiner Agentur zugeordnet. Bitte informieren Sie den Betreiber dieses Webangebots.</h1>
+                        <a href="javascript:history.go(-2)" style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: #ffffff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Zurück zur letzten Seite</a>
+                    </div>
+
+                    </body>
+                    </html>
+                    <?php die(); ?>
+                <?php }
+            }
+            //$query->query_vars['redirect'] = $query->query_vars['pagename']; // set redirect after login
+            //$query->query_vars['pagename'] = 'profile/login';
         }
     } // user roles
 
