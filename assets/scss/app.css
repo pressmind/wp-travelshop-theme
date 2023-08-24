@@ -17196,7 +17196,7 @@ ul.pagination {
           max-width: 1500px; } }
     @media (max-width: 767.98px) {
       .content-block-content-slider .content-slider-item .content-slider-content {
-        background-color: #e9ecef;
+        background-color: #fff;
         border-width: 1px;
         border-style: solid;
         border-color: rgba(0, 0, 0, 0.125); } }
@@ -17214,8 +17214,7 @@ ul.pagination {
         .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box {
           padding-left: 0;
           padding-right: 0;
-          border-radius: 0;
-          background-color: transparent; } }
+          border-radius: 0; } }
       .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box h1.content-slider-box-title {
         font-size: 1.125rem; }
         @media (min-width: 576px) {
