@@ -17318,7 +17318,8 @@ ul.pagination {
 .content-block-category-header.content-block .category-header {
   position: relative;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem; }
+  padding-bottom: 1.5rem;
+  min-height: 24rem; }
   @media (min-width: 768px) {
     .content-block-category-header.content-block .category-header {
       padding-top: 30px;

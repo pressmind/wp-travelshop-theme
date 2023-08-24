@@ -148,6 +148,7 @@ $card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
 /**
  * Category Header
  */
+$category-header-min-height: 24rem;
 $category-header-spacing-x: (
         null: 1.5rem,
         md: $grid-gutter-width

@@ -5,6 +5,8 @@
     position: relative;
     @include spacing-generator($category-header-spacing-x, 'y', 'padding');
 
+    min-height: $category-header-min-height;
+
     // media
     .category-header-media {
       position: absolute;
