@@ -113,7 +113,7 @@ if ( !function_exists('get_vertical_direction') ) {
             $categoryHeaderContainerClass = 'category-header-content-container';
         }
 
-        // Horizontal _
+        // Horizontal
         if ( !empty($args['content_alignment_horizontal_responsive']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal_responsive']);
         }
@@ -128,7 +128,7 @@ if ( !function_exists('get_vertical_direction') ) {
         }
 
 
-        // Vertial |
+        // Vertical
         if ( !empty($args['content_alignment_vertical_responsive']) ) {
             $categoryHeaderPositioningClasses .= ' align-items-' . get_vertical_direction($args['content_alignment_vertical_responsive']);
         }
