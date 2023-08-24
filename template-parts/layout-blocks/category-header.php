@@ -25,20 +25,18 @@
     $image = empty($args['image']) && $args['media_type'] == 'image' ? SITE_URL . "/placeholder.svg?wh=1200x800&text=image is not set" : wp_get_attachment_image_url($args['image'], 'bigslide');
     ?>
     <div class="category-header-media category-header-media-<?php echo $args['media_type']; ?>">
-        <div class="category-header-media-holder">
-                <?php if ($args['media_type'] == 'image') { ?>
-                    <div class="media media-cover">
-                        <img src="<?php echo $image; ?>" alt="<?php echo $args['headline']; ?>"/>
-                    </div>
-                <?php } else { ?>
-                    <div class="media media-video media-cover">
-                        <video autoplay muted loop style="pointer-events: none;">
-                            <source src="<?php echo $video; ?>" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                <?php } ?>
-        </div>
+        <?php if ($args['media_type'] == 'image') { ?>
+            <div class="media media-cover">
+                <img src="<?php echo $image; ?>" alt="<?php echo $args['headline']; ?>"/>
+            </div>
+        <?php } else { ?>
+            <div class="media media-video media-cover">
+                <video autoplay muted loop style="pointer-events: none;">
+                    <source src="<?php echo $video; ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <?php } ?>
         <?php
         // Overlay handling
         if ($args['background_overlay_type'] !== 'none') {
