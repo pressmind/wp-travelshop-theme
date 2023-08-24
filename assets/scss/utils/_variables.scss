@@ -162,6 +162,12 @@ $content-slider-box-font-sizes: (
 ) !default;
 $content-slider-box-title-sizes: $h3-font-sizes !default;
 
+
+$content-slider-box-controls-spacer: (
+        null: $card-spacer-x,
+        lg: $grid-gutter-width
+) !default;
+
 /**
  * Accordion
  */

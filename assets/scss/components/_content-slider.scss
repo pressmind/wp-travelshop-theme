@@ -1,4 +1,6 @@
 .content-block-content-slider {
+  position: relative;
+
   .content-slider-item {
 
     position: relative;
@@ -38,7 +40,11 @@
 
         @include border-radius($content-slider-box-border-radius);
         @include spacing-generator($content-slider-box-paddings, 'around', 'padding');
-        max-width: $content-slider-box-max-width;
+
+
+        @include media-breakpoint-up(md) {
+          max-width: $content-slider-box-max-width;
+        }
 
         h1.content-slider-box-title {
           @include font-size-generator($content-slider-box-title-sizes);
@@ -112,5 +118,18 @@
       }
     }
 
+  }
+
+  .slider-controls {
+    @extend %slider-controls;
+    @extend %slider-controls-large-up-lg;
+    @extend %slider-controls-inner;
+
+    // theme
+    @extend %slider-controls-on-image;
+
+    // set element specific spacing left/right
+    @include spacing-generator($content-slider-box-controls-spacer, 'around', left);
+    @include spacing-generator($content-slider-box-controls-spacer, 'around', right);
   }
 }
