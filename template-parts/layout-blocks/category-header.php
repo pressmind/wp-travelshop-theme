@@ -57,7 +57,7 @@ if ( !function_exists('get_vertical_direction') ) {
 ?>
 
 <pre>
-    <?php print_r($args['content_alignment_horizontal']); ?>
+    <?php print_r($args); ?>
 </pre>
 <div class="content-block content-block-category-header">
 
