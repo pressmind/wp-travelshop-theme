@@ -114,12 +114,33 @@ if ( !function_exists('get_vertical_direction') ) {
         }
 
         // Horizontal _
+        if ( !empty($args['content_alignment_horizontal_responsive']) ) {
+            $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal_responsive']);
+        }
+        if ( !empty($args['content_alignment_horizontal_medium']) ) {
+            $categoryHeaderPositioningClasses .= ' justify-content-md-' . get_horizontal_direction($args['content_alignment_horizontal_medium']);
+        }
+        if ( !empty($args['content_alignment_horizontal_large']) ) {
+            $categoryHeaderPositioningClasses .= ' justify-content-lg-' . get_horizontal_direction($args['content_alignment_horizontal_large']);
+        }
         if ( !empty($args['content_alignment_horizontal']) ) {
-            $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal']);
+            $categoryHeaderPositioningClasses .= ' justify-content-xl-' . get_horizontal_direction($args['content_alignment_horizontal']);
         }
 
 
         // Vertial |
+        if ( !empty($args['content_alignment_vertical_responsive']) ) {
+            $categoryHeaderPositioningClasses .= ' align-items-' . get_vertical_direction($args['content_alignment_vertical_responsive']);
+        }
+        if ( !empty($args['content_alignment_vertical_medium']) ) {
+            $categoryHeaderPositioningClasses .= ' align-items-md-' . get_vertical_direction($args['content_alignment_vertical_medium']);
+        }
+        if ( !empty($args['content_alignment_vertical_large']) ) {
+            $categoryHeaderPositioningClasses .= ' align-items-lg-' . get_vertical_direction($args['content_alignment_vertical_large']);
+        }
+        if ( !empty($args['content_alignment_vertical']) ) {
+            $categoryHeaderPositioningClasses .= ' align-items-xl-' . get_vertical_direction($args['content_alignment_vertical']);
+        }
         ?>
         <div class="category-header-content-wrapper">
 
