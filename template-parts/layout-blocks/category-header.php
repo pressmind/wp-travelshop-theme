@@ -110,6 +110,7 @@ if ( !function_exists('get_vertical_direction') ) {
             $categoryHeaderContainerClass = 'category-header-content-container';
         }
 
+
         // Horizontal
         if ( !empty($args['content_alignment_horizontal_responsive']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal_responsive']);
@@ -144,14 +145,7 @@ if ( !function_exists('get_vertical_direction') ) {
             <div class="<?php echo $categoryHeaderContainerClass; ?>">
                 <div class="d-flex <?php echo $categoryHeaderPositioningClasses; ?>">
 
-                    <div class="category-header-content-positioning
-
-                    content-header-vertical-<?php echo $args['content_alignment_vertical']; ?>
-                content-header-vertical-medium-<?php echo $args['content_alignment_vertical_medium']; ?>
-                content-header-vertical-small-<?php echo $args['content_alignment_vertical_responsive']; ?>
-                content-header-horizontal-<?php echo $args['content_alignment_horizontal']; ?>
-                content-header-horizontal-medium-<?php echo $args['content_alignment_horizontal_medium']; ?>
-                content-header-horizontal-small-<?php echo $args['content_alignment_horizontal_responsive']; ?>">
+                    <div class="category-header-content-positioning">
                         <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
                             <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>
                         <?php if (!empty($args['subline'])) { ?>
