@@ -47,10 +47,35 @@
         .category-header-content {
           &:not(.category-header-content-transparent) {
             @include get-element-shadow('category-header-content-box');
-            background-color: $category-header-box-bg;
 
             @include border-radius($category-header-box-border-radius);
             @include spacing-generator($category-header-box-paddings, 'around', 'padding');
+
+            &.content-header-content-white {
+              background-color: $category-header-box-white-bg;
+              color: $category-header-box-white-color;
+
+              .category-header-title {
+                color: $category-header-box-white-heading-color;
+              }
+
+              .category-header-subline {
+                color: $category-header-box-white-subline-color;
+              }
+            }
+
+            &.category-header-content-primary {
+              background-color: $category-header-box-primary-bg;
+              color: $category-header-box-primary-color;
+
+              .category-header-title {
+                color: $category-header-box-primary-heading-color;
+              }
+
+              .category-header-subline {
+                color: $category-header-box-primary-subline-color;
+              }
+            }
           }
 
 
