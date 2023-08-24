@@ -17323,6 +17323,14 @@ ul.pagination {
     left: 0;
     right: 0;
     bottom: 0; }
+    .content-block-category-header.content-block .category-header .category-header-media > .category-header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      pointer-events: none; }
     .content-block-category-header.content-block .category-header .category-header-media > div.media {
       position: absolute;
       top: 0;

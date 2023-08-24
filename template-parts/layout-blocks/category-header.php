@@ -182,4 +182,12 @@ if ( !function_exists('get_vertical_direction') ) {
         </div>
         <?php } ?>
     </div>
+    <style>
+        <?php // generate gradient bg ?>
+        <?php if ( $args['background_overlay_type'] == 'gradient' ) { ?>
+            .fl-node-<?php echo $args['uid']; ?> .category-header-overlay {
+                background-image: <?php echo $args['background_overlay_gradient']; ?>
+            }
+        <?php } ?>
+    </style>
 </div>
