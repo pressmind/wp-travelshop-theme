@@ -108,7 +108,7 @@ if ( !function_exists('get_vertical_direction') ) {
         $categoryHeaderContainerClass = 'category-header-content-container category-header-content-container-widths';
 
         if ( $args['content_box_type'] === 'docked' ) {
-            $categoryHeaderContainerClass = 'category-header-content-container';
+            $categoryHeaderContainerClass = 'category-header-content-container w-100';
 
             if ( $args['content_alignment_horizontal'] === 'center' ) {
                 $args['content_alignment_horizontal'] = 'left';
