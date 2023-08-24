@@ -297,7 +297,7 @@ jQuery(function ($) {
                 loop: false,
                 slideBy: 1,
                 controls: true,
-                controlsContainer: contentSliderControls,
+                controlsContainer: contentSliderControlsContainer,
 
             });
 
