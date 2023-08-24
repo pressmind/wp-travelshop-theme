@@ -104,6 +104,8 @@ if ( !function_exists('get_vertical_direction') ) {
 
         // -- category header positioning
         $categoryHeaderPositioningClasses = '';
+        $categoryHeaderPositioningClassesHorizontal = '';
+        $categoryHeaderPositioningClassesVertical = '';
         $categoryHeaderContainerClass = 'category-header-content-container category-header-content-container-widths';
 
         if ( $args['content_box_type'] == 'docked' ) {
@@ -114,36 +116,44 @@ if ( !function_exists('get_vertical_direction') ) {
         // Horizontal
         if ( !empty($args['content_alignment_horizontal_responsive']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal_responsive']);
+            $categoryHeaderPositioningClassesHorizontal .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal_responsive']);
         }
         if ( !empty($args['content_alignment_horizontal_medium']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-md-' . get_horizontal_direction($args['content_alignment_horizontal_medium']);
+            $categoryHeaderPositioningClassesHorizontal .= ' justify-content-md-' . get_horizontal_direction($args['content_alignment_horizontal_medium']);
         }
         if ( !empty($args['content_alignment_horizontal_large']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-lg-' . get_horizontal_direction($args['content_alignment_horizontal_large']);
+            $categoryHeaderPositioningClassesHorizontal .= ' justify-content-lg-' . get_horizontal_direction($args['content_alignment_horizontal_large']);
         }
         if ( !empty($args['content_alignment_horizontal']) ) {
             $categoryHeaderPositioningClasses .= ' justify-content-xl-' . get_horizontal_direction($args['content_alignment_horizontal']);
+            $categoryHeaderPositioningClassesHorizontal .= ' justify-content-xl-' . get_horizontal_direction($args['content_alignment_horizontal']);
         }
 
 
         // Vertical
         if ( !empty($args['content_alignment_vertical_responsive']) ) {
             $categoryHeaderPositioningClasses .= ' align-items-' . get_vertical_direction($args['content_alignment_vertical_responsive']);
+            $categoryHeaderPositioningClassesVertical .= ' align-items-' . get_vertical_direction($args['content_alignment_vertical_responsive']);
         }
         if ( !empty($args['content_alignment_vertical_medium']) ) {
             $categoryHeaderPositioningClasses .= ' align-items-md-' . get_vertical_direction($args['content_alignment_vertical_medium']);
+            $categoryHeaderPositioningClassesVertical .= ' align-items-md-' . get_vertical_direction($args['content_alignment_vertical_medium']);
         }
         if ( !empty($args['content_alignment_vertical_large']) ) {
             $categoryHeaderPositioningClasses .= ' align-items-lg-' . get_vertical_direction($args['content_alignment_vertical_large']);
+            $categoryHeaderPositioningClassesVertical .= ' align-items-lg-' . get_vertical_direction($args['content_alignment_vertical_large']);
         }
         if ( !empty($args['content_alignment_vertical']) ) {
             $categoryHeaderPositioningClasses .= ' align-items-xl-' . get_vertical_direction($args['content_alignment_vertical']);
+            $categoryHeaderPositioningClassesVertical .= ' align-items-xl-' . get_vertical_direction($args['content_alignment_vertical']);
         }
         ?>
-        <div class="category-header-content-wrapper">
+        <div class="d-flex h-100 category-header-content-wrapper <?php echo $categoryHeaderPositioningClassesHorizontal; ?>">
 
             <div class="<?php echo $categoryHeaderContainerClass; ?>">
-                <div class="d-flex <?php echo $categoryHeaderPositioningClasses; ?>">
+                <div class="d-flex <?php echo $categoryHeaderPositioningClassesVertical; ?>">
 
                     <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
                         <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>

@@ -17330,8 +17330,6 @@ ul.pagination {
       right: 0;
       bottom: 0; }
   .content-block-category-header.content-block .category-header .category-header-content-wrapper {
-    display: flex;
-    height: 100%;
     position: relative;
     z-index: 5;
     min-height: 24rem; }
