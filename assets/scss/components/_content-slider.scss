@@ -71,6 +71,14 @@
 
             align-items: flex-end;
 
+            .discount-wrapper {
+              margin-bottom: .25rem;
+
+              .discount-wrapper--inner {
+                justify-content: end;
+              }
+            }
+
             .price-row {
               flex-direction: column;
               flex: 0;

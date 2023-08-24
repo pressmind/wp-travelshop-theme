@@ -17262,6 +17262,10 @@ ul.pagination {
       /**
        * Date row
        */ }
+      .content-block-content-slider .content-slider-item .content-slider-content.content-slider-content-product .content-slider-box .content-slider-box-bottom .discount-wrapper {
+        margin-bottom: .25rem; }
+        .content-block-content-slider .content-slider-item .content-slider-content.content-slider-content-product .content-slider-box .content-slider-box-bottom .discount-wrapper .discount-wrapper--inner {
+          justify-content: end; }
       .content-block-content-slider .content-slider-item .content-slider-content.content-slider-content-product .content-slider-box .content-slider-box-bottom .price-row {
         flex-direction: column;
         flex: 0; }
