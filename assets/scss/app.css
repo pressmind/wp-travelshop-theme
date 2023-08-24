@@ -13947,7 +13947,7 @@ ul.checklist {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay * {
       pointer-events: none; } }
-.page-share .page-share-fallback, .teaser-block .teaser-block-modal {
+.page-share .page-share-fallback, .teaser-block .teaser-block-modal, .modal-forms.modal-wrapper {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -13971,7 +13971,7 @@ ul.checklist {
   border: 0;
   margin: 0;
   border-radius: 0; }
-  .page-share .page-share-fallback *, .teaser-block .teaser-block-modal * {
+  .page-share .page-share-fallback *, .teaser-block .teaser-block-modal *, .modal-forms.modal-wrapper * {
     pointer-events: none; }
 @media (min-width: 768px) {
   .page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner {
@@ -13999,7 +13999,7 @@ ul.checklist {
     height: auto;
     max-height: 100%;
     width: 100%; } }
-.page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner {
+.page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner, .modal-forms.modal-wrapper .modal-inner {
   position: relative;
   margin: 0;
   pointer-events: none;
