@@ -67,7 +67,7 @@ foreach ($args['items'] as $item) {
     $slide_items[] = $item;
 }
 ?>
-<section class="content-block content-block-content-slider">
+<section class="content-block content-block-content-slider" id="content-slider-<?php echo $args['uid']; ?>">
     <div class="content-slider-inner">
         <?php
         foreach ($slide_items as $item) {
