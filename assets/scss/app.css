@@ -13799,7 +13799,7 @@ ul.checklist {
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:active {
         color: #007bff; } }
-.page-share .page-share-fallback .page-share-fallback-header, .teaser-block .teaser-block-modal .teaser-block-modal-header {
+.page-share .page-share-fallback .page-share-fallback-header, .teaser-block .teaser-block-modal .teaser-block-modal-header, .modal-forms.modal-wrapper .modal-header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1rem;
@@ -13807,9 +13807,9 @@ ul.checklist {
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
   display: flex !important; }
-  .page-share .page-share-fallback .page-share-fallback-header > *:not(button), .teaser-block .teaser-block-modal .teaser-block-modal-header > *:not(button) {
+  .page-share .page-share-fallback .page-share-fallback-header > *:not(button), .teaser-block .teaser-block-modal .teaser-block-modal-header > *:not(button), .modal-forms.modal-wrapper .modal-header > *:not(button) {
     margin-bottom: 0; }
-  .page-share .page-share-fallback .page-share-fallback-header > button, .teaser-block .teaser-block-modal .teaser-block-modal-header > button {
+  .page-share .page-share-fallback .page-share-fallback-header > button, .teaser-block .teaser-block-modal .teaser-block-modal-header > button, .modal-forms.modal-wrapper .modal-header > button {
     border: 0;
     outline: none;
     box-shadow: none;
@@ -13821,11 +13821,11 @@ ul.checklist {
     margin: -1rem -1rem -1rem auto;
     color: #212529;
     transition: color 0.3s; }
-    .page-share .page-share-fallback .page-share-fallback-header > button svg, .teaser-block .teaser-block-modal .teaser-block-modal-header > button svg {
+    .page-share .page-share-fallback .page-share-fallback-header > button svg, .teaser-block .teaser-block-modal .teaser-block-modal-header > button svg, .modal-forms.modal-wrapper .modal-header > button svg {
       pointer-events: none;
       width: 1.125rem;
       height: 1.125rem; }
-    .page-share .page-share-fallback .page-share-fallback-header > button:hover, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:hover, .page-share .page-share-fallback .page-share-fallback-header > button:focus, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:focus, .page-share .page-share-fallback .page-share-fallback-header > button:active, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:active {
+    .page-share .page-share-fallback .page-share-fallback-header > button:hover, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:hover, .modal-forms.modal-wrapper .modal-header > button:hover, .page-share .page-share-fallback .page-share-fallback-header > button:focus, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:focus, .modal-forms.modal-wrapper .modal-header > button:focus, .page-share .page-share-fallback .page-share-fallback-header > button:active, .teaser-block .teaser-block-modal .teaser-block-modal-header > button:active, .modal-forms.modal-wrapper .modal-header > button:active {
       color: #007bff; }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter .list-filter-boxes {
@@ -13845,7 +13845,7 @@ ul.checklist {
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden; } }
-.page-share .page-share-fallback .page-share-fallback-body, .teaser-block .teaser-block-modal .teaser-block-modal-body {
+.page-share .page-share-fallback .page-share-fallback-body, .teaser-block .teaser-block-modal .teaser-block-modal-body, .modal-forms.modal-wrapper .modal-body {
   position: relative;
   padding: 1rem;
   margin: 0 !important;
@@ -13877,7 +13877,7 @@ ul.checklist {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     outline: 0; } }
-.page-share .page-share-fallback .page-share-fallback-inner .page-share-fallback-content, .teaser-block .teaser-block-modal .teaser-block-modal-content {
+.page-share .page-share-fallback .page-share-fallback-inner .page-share-fallback-content, .teaser-block .teaser-block-modal .teaser-block-modal-content, .modal-forms.modal-wrapper .modal-inner .modal-ccontent {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13976,6 +13976,9 @@ ul.checklist {
 @media (min-width: 768px) {
   .page-share .page-share-fallback .page-share-fallback-inner, .teaser-block .teaser-block-modal .teaser-block-modal-inner {
     max-width: 768px; } }
+@media (min-width: 992px) {
+  .modal-forms.modal-wrapper .modal-inner {
+    max-width: 992px; } }
 @media (max-width: 767.98px) {
   .content-block.content-block-list-filter {
     padding: 0;

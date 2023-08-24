@@ -301,6 +301,19 @@
 
   .modal-inner {
     @extend %modal-inner;
+    @extend %modal-inner-width-lg;
+
+    .modal-ccontent {
+      @extend %modal-content;
+    }
+  }
+
+  .modal-header {
+    @extend %modal-header;
+  }
+
+  .modal-body {
+    @extend %modal-body;
   }
 
   // -- open state
