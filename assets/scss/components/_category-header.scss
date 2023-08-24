@@ -24,12 +24,30 @@
 
     // content
     .category-header-content-wrapper {
+      display: flex;
+      height: 100%;
+
       position: relative;
       z-index: 5;
 
       min-height: $category-header-min-height;
 
       @include spacing-generator($category-header-spacing-x, 'y', 'padding');
+
+      .category-header-content-container {
+        height: 100%;
+        justify-self: center;
+
+        @include make-container();
+
+        &.category-header-content-container-widths {
+          @include make-container-max-widths();
+        }
+
+        > .d-flex {
+          height: 100%;
+        }
+      }
     }
   }
 
