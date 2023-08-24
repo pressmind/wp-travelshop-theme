@@ -56,6 +56,10 @@ if ( !function_exists('get_vertical_direction') ) {
     }
 }
 ?>
+
+<pre>
+    <?php print_r($args); ?>
+</pre>
 <div class="content-block content-block-category-header">
 
     <div class="category-header category-header-<?php echo $args['uid']; ?> category-header-<?php echo $args['content_box_type']; ?> <?php if ($args['content_box_type'] == 'boxed') { ?>category-header-<?php echo $args['content_box_break'];
