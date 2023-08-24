@@ -16,15 +16,11 @@
 
     .content-slider-content {
 
-      position:absolute;
-      top: auto;
-      left:0;
-      right: 0;
-      bottom: $grid-gutter-width;
-
       @include media-breakpoint-up(md) {
+        position:absolute;
         top: 50%;
-        bottom: auto;
+        left:0;
+        right: 0;
 
         transform: translateY(-50%);
       }

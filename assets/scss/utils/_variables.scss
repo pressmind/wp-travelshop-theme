@@ -164,7 +164,7 @@ $content-slider-box-title-sizes: $h3-font-sizes !default;
 
 
 $content-slider-box-controls-spacer: (
-        null: $card-spacer-x,
+        null: ($grid-gutter-width / 2),
         lg: $grid-gutter-width
 ) !default;
 
