@@ -95,7 +95,7 @@ foreach ($args['items'] as $item) {
                     ?>
                         <div class="content-slider-image">
                             <div class="media media-cover ratio-16x9 ratio-md-21x5">
-                                <div role="img" aria-label="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" style="background-image: url('<?php echo $item['image']; ?>');"></div>
+                                <img title="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" src="<?php echo $item['image']; ?>" />
                             </div>
                         </div>
                     <?php
@@ -104,7 +104,7 @@ foreach ($args['items'] as $item) {
                 <?php } else { ?>
                     <div class="content-slider-image">
                         <div class="media media-cover ratio-16x9 ratio-md-21x5">
-                            <div role="img" aria-label="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" style="background-image: url('<?php echo $item['image']; ?>');"></div>
+                            <img title="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" src="<?php echo $item['image']; ?>" />
                         </div>
                     </div>
                 <?php } ?>
