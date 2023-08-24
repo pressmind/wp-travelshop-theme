@@ -11388,10 +11388,6 @@ body.fl-builder .content-block.content-page > .container, body.fl-builder .fl-bu
 .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap {
   padding-left: 0;
   padding-right: 0; }
-  .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-full-width .fl-module-category-header,
-  .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-row-content.fl-row-full-width .fl-module-slider-mixed-content {
-    margin-left: -15px !important;
-    margin-right: -15px !important; }
   .fl-builder-content .fl-row.fl-row-full-width .fl-row-content-wrap .fl-module-content {
     margin-right: 0;
     margin-left: 0; }
