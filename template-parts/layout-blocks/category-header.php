@@ -16,6 +16,43 @@
  * @var $args
  */
 
+if ( !function_exists(get_horizontal_direction) ) {
+    function get_horizontal_direction($direction) {
+        $directionType = '';
+
+        if ( $direction = 'center' ) {
+            $directionType = 'center';
+        }
+
+        if ( $direction = 'left' ) {
+            $directionType = 'start';
+        }
+
+        if ( $direction = 'right' ) {
+            $directionType = 'end';
+        }
+        return $directionType;
+    }
+}
+
+if ( !function_exists(get_vertical_direction) ) {
+    function get_vertical_direction($direction) {
+        $directionType = '';
+
+        if ( $direction = 'middle' ) {
+            $directionType = 'center';
+        }
+
+        if ( $direction = 'top' ) {
+            $directionType = 'start';
+        }
+
+        if ( $direction = 'bottom' ) {
+            $directionType = 'end';
+        }
+        return $directionType;
+    }
+}
 ?>
 <div class="content-block content-block-category-header">
 
@@ -62,30 +99,51 @@
         <?php
         // Content
         if (!empty($args['headline'])) {
+
+        // -- category header positioning
+        $categoryHeaderPositioningClasses = '';
+        $categoryHeaderContainerClass = 'category-header-content-container category-header-content-container-widths';
+
+        if ( $args['content_box_type'] == 'docked' ) {
+            $categoryHeaderContainerClass = 'category-header-content-container';
+
+            // Horizontal _
+            if ( !empty($args['content_alignment_horizontal'] ) ) {
+                $categoryHeaderPositioningClasses = 'justify-content-' . get_horizontal_direction($args['content_alignment_horizontal']);
+            }
+
+
+            // Vertial |
+        }
         ?>
         <div class="category-header-content-wrapper">
 
-            <div class="category-header-content-container">
-                <div class="category-header-content-positioning content-header-vertical-<?php echo $args['content_alignment_vertical']; ?>
+            <div class="<?php echo $categoryHeaderContainerClass; ?>">
+                <div class="d-flex">
+
+                    <div class="category-header-content-positioning <?php echo $categoryHeaderPositioningClasses; ?>
+
+                    content-header-vertical-<?php echo $args['content_alignment_vertical']; ?>
                 content-header-vertical-medium-<?php echo $args['content_alignment_vertical_medium']; ?>
                 content-header-vertical-small-<?php echo $args['content_alignment_vertical_responsive']; ?>
                 content-header-horizontal-<?php echo $args['content_alignment_horizontal']; ?>
                 content-header-horizontal-medium-<?php echo $args['content_alignment_horizontal_medium']; ?>
                 content-header-horizontal-small-<?php echo $args['content_alignment_horizontal_responsive']; ?>">
-                    <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
-                        <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>
-                    <?php if (!empty($args['subline'])) { ?>
-                    <<?php echo $args['subline_type']; ?> class="category-header-subline" ><?php echo $args['subline']; ?></<?php echo $args['subline_type']; ?>>
-                <?php } ?>
-                <?php if (!empty($args['text'])) { ?>
-                    <div class="category-header-text">
-                        <?php echo $args['text']; ?>
+                        <article class="category-header-content <?php echo $args['content_box_text_align']; ?> category-header-content-<?php echo $args['content_box_type']; ?> <?php if (($args['content_box_type'] == 'boxed' || $args['content_box_type'] == 'docked') && (!empty($args['content_box_background']))) { ?> category-header-content-<?php echo $args['content_box_background']; ?><?php } ?>">
+                            <<?php echo $args['headline_type']; ?> class="category-header-title" ><?php echo $args['headline']; ?></<?php echo $args['headline_type']; ?>>
+                        <?php if (!empty($args['subline'])) { ?>
+                        <<?php echo $args['subline_type']; ?> class="category-header-subline" ><?php echo $args['subline']; ?></<?php echo $args['subline_type']; ?>>
+                        <?php } ?>
+                        <?php if (!empty($args['text'])) { ?>
+                            <div class="category-header-text">
+                                <?php echo $args['text']; ?>
+                            </div>
+                        <?php } ?>
+                        </article>
                     </div>
-                <?php } ?>
-                </article>
+                </div>
             </div>
         </div>
+        <?php } ?>
     </div>
-    <?php } ?>
-</div>
 </div>
