@@ -1,0 +1,13 @@
+.content-block-content-slider {
+  .content-slider-item {
+
+    .content-slider-image,
+    .content-slider-video {
+
+      @include media-breakpoint-up(md) {
+        min-height: $content-slider-min-height;
+      }
+    }
+
+  }
+}

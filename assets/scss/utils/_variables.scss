@@ -36,7 +36,7 @@ $aspect-ratios:  (
     "16x9": calc(9 / 16 * 100%),
     "16x10": calc(10 / 16 * 100%),
     "21x9": calc(9 / 21 * 100%),
-    "21x5": calc(5 / 21 * 100)
+    "21x5": calc(5 / 21 * 100%)
 ) !default;
 
 /**
@@ -143,6 +143,11 @@ $responsive-font-size: (
  * Responsive title sizes
  */
 $card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
+
+/**
+ * Content slider
+ */
+$content-slider-min-height: 37.5rem !default;
 
 /**
  * Accordion
