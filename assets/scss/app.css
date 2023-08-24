@@ -17191,10 +17191,16 @@ ul.pagination {
     .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box {
       padding: 30px; } }
   .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box h1.content-slider-box-title {
-    font-size: 1rem; }
-    @media (min-width: 992px) {
+    font-size: 1.125rem; }
+    @media (min-width: 576px) {
       .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box h1.content-slider-box-title {
         font-size: 1.25rem; } }
+    @media (min-width: 768px) {
+      .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box h1.content-slider-box-title {
+        font-size: 1.5rem; } }
+    @media (min-width: 992px) {
+      .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box h1.content-slider-box-title {
+        font-size: 1.75rem; } }
   .content-block-content-slider .content-slider-item .content-slider-content .content-slider-box .content-slider-box-text {
     font-size: 0.875rem; }
     @media (min-width: 992px) {
