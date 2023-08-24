@@ -82,7 +82,7 @@ foreach ($args['items'] as $item) {
                             <?php
                             $video_src = wp_get_attachment_url( $item['video'] );
                             ?>
-                            <div class="media media-video">
+                            <div class="media media-video media-cover ratio-16x9 ratio-md-21x5">
                                 <video autoplay muted loop style="pointer-events: none;">
                                     <source src="<?php echo $video_src; ?>" type="video/mp4">
                                     Your browser does not support the video tag.
@@ -94,7 +94,7 @@ foreach ($args['items'] as $item) {
                     } else {
                     ?>
                         <div class="content-slider-image">
-                            <div class="media media-cover">
+                            <div class="media media-cover ratio-16x9 ratio-md-21x5">
                                 <div role="img" aria-label="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" style="background-image: url('<?php echo $item['image']; ?>');"></div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ foreach ($args['items'] as $item) {
                 ?>
                 <?php } else { ?>
                     <div class="content-slider-image">
-                        <div class="media media-cover">
+                        <div class="media media-cover ratio-16x9 ratio-md-21x5">
                             <div role="img" aria-label="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" style="background-image: url('<?php echo $item['image']; ?>');"></div>
                         </div>
                     </div>
