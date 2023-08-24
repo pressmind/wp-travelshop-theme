@@ -111,7 +111,8 @@ if ( !function_exists('get_vertical_direction') ) {
 
             // Horizontal _
             echo get_horizontal_direction($args['content_alignment_horizontal']);
-            if ( !empty($args['content_alignment_horizontal'] ) ) {
+            echo $args['content_alignment_horizontal'];
+            if ( !empty($args['content_alignment_horizontal']) ) {
                 $categoryHeaderPositioningClasses .= ' justify-content-' . get_horizontal_direction($args['content_alignment_horizontal']);
             }
 
