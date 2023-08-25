@@ -151,19 +151,6 @@ get_header();
                 ?>
             </div>
         </div>
-        <?php
-        $args = [
-                'headline' => 'Exploring the world is wonderful!',
-                'subline' => 'love holiday',
-                'lead' => 'relax',
-                'text' => 'write some more text in this line',
-                'btn_link' => '#',
-                'btn_label' => 'Join our trips',
-                'bg_image_src' => get_stylesheet_directory_uri().'/assets/img/slide-1.webp',
-                'bg_image_alt_text' => '',
-        ];
-        load_template_transient(get_template_directory().'/template-parts/layout-blocks/jumbotron.php', false, $args);
-        ?>
     </main>
 <?php
 get_footer();
