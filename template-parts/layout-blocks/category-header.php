@@ -190,7 +190,7 @@ if ( !function_exists('get_vertical_direction') ) {
             }
         <?php } ?>
 
-        <?php if ( !empty($args['background_height_small_responsive']) ) { ?>
+        <?php if ( !empty($args['background_height_responsive']) ) { ?>
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper {
                 min-height: <?php echo $args['background_height_small_responsive']; ?>;
             }
