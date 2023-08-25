@@ -181,7 +181,7 @@
         .category-header-content-wrapper .category-header-content-container,
         .category-header-content-wrapper .category-header-content-container > .d-flex,
         .category-header-content-wrapper .category-header-content-container > .d-flex .category-header-content {
-          min-height: 0;
+          min-height: 0 !important;
         }
 
         // -- content
