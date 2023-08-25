@@ -192,8 +192,16 @@ if ( !function_exists('get_vertical_direction') ) {
 
         <?php if ( !empty($args['background_height_responsive']) ) { ?>
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper {
-                min-height: <?php echo $args['background_height_responsive']; ?>;
+                min-height: <?php echo $args['background_height_responsive']; ?>px;
             }
          <?php } ?>
+
+        <?php if ( !empty($args['content_box_max_height']) ) { ?>
+        @media (min-width: 768px) {
+            .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper .category-header-content-container .category-header-content:not(.category-header-content-transparent) {
+                max-width: <?php echo $args['content_box_max_height']; ?>px;
+            }
+        }
+        <?php } ?>
     </style>
 </div>
