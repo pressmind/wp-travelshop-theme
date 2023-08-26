@@ -16,6 +16,10 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 <div class="booking-filter">
     <div class="booking-filter-title h5">
         "<?php echo $args['headline']; ?>" buchen
+
+        <button type="button" class="close-booking-filter d-flex d-lg-none">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+        </button>
     </div>
     <?php
     // build a date to best price map
