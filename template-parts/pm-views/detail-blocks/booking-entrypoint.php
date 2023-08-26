@@ -15,6 +15,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
 
 <div class="booking-filter-wrapper">
     <div class="booking-filter-inner">
+        <div class="booking-filter-inner-body">
         <div class="booking-filter">
             <div class="booking-filter-title h5">
                 "<?php echo $args['headline']; ?>" buchen
@@ -314,6 +315,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     ]);?>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>

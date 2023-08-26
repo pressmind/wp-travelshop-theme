@@ -13731,7 +13731,7 @@ ul.checklist {
       .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:active {
         color: #007bff; } }
 @media (max-width: 991.98px) {
-  .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title {
+  .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title {
     display: flex !important;
     align-items: center;
     justify-content: space-between;
@@ -13739,9 +13739,9 @@ ul.checklist {
     border-bottom: 1px solid #dee2e6;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; }
-    .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > *:not(button) {
+    .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title > *:not(button) {
       margin-bottom: 0; }
-    .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button {
+    .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title > button {
       border: 0;
       outline: none;
       box-shadow: none;
@@ -13753,11 +13753,11 @@ ul.checklist {
       margin: -1rem -1rem -1rem auto;
       color: #212529;
       transition: color 0.3s; }
-      .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button svg {
+      .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title > button svg {
         pointer-events: none;
         width: 1.125rem;
         height: 1.125rem; }
-      .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button:hover, .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button:focus, .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button:active {
+      .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title > button:hover, .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title > button:focus, .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title > button:active {
         color: #007bff; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select, .dropdown-menu.dropdown-menu-booking-person-select, .dropdown-menu.dropdown-menu-wishlist, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay {
@@ -13878,7 +13878,7 @@ ul.checklist {
     overflow-y: auto;
     overflow-x: hidden; } }
 @media (max-width: 991.98px) {
-  .booking-filter-wrapper .booking-filter-inner .booking-filter {
+  .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
