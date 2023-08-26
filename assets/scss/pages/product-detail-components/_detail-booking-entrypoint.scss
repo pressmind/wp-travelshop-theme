@@ -182,4 +182,8 @@
       }
     }
   }
+
+  @if ( $booking-entrypoint-break-down != null ) {
+    @extend %apple-like-wrapper-down-#{$booking-entrypoint-break-down};
+  }
 }

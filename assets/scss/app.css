@@ -13751,6 +13751,33 @@ ul.checklist {
     border-radius: 0; }
     .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-booking-person-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay * {
       pointer-events: none; } }
+@media (max-width: 991.98px) {
+  .detail-booking-entrypoint {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: unset !important;
+    height: 100%;
+    transform: none !important;
+    will-change: unset !important;
+    z-index: 1050;
+    display: block;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    container-name: backdrop;
+    overflow: hidden;
+    transition: opacity 0.3s;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+    border: 0;
+    margin: 0;
+    border-radius: 0; }
+    .detail-booking-entrypoint * {
+      pointer-events: none; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-content, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-content {
     display: flex;
