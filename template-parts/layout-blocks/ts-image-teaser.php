@@ -71,7 +71,7 @@ $items = $args['teasers'];
                     foreach ( $items as $item ) {
                         $item = (array)$item;
                         ?>
-                        <div class="<?php echo $item_wrapper; ?>">
+                        <div class="<?php echo $item_wrapper; ?>" data-columns="<?php echo $columns; ?>">
                             <article class="teaser image-teaser">
                                 <?php
                                 if ( !empty($item['link']) ) {
