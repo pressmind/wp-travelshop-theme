@@ -13730,6 +13730,35 @@ ul.checklist {
         height: 1.125rem; }
       .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:hover, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:hover, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:hover, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:focus, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:focus, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:focus, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header > button:active, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header > button:active, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header > button:active {
         color: #007bff; } }
+@media (max-width: 991.98px) {
+  .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
+    .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > *:not(button) {
+      margin-bottom: 0; }
+    .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      line-height: 1;
+      display: block !important;
+      padding: 1rem 1rem;
+      margin: -1rem -1rem -1rem auto;
+      color: #212529;
+      transition: color 0.3s; }
+      .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button svg {
+        pointer-events: none;
+        width: 1.125rem;
+        height: 1.125rem; }
+      .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button:hover, .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button:focus, .booking-filter-wrapper .booking-filter-inner .booking-filter > .booking-filter-title > button:active {
+        color: #007bff; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select, .dropdown-menu.dropdown-menu-booking-person-select, .dropdown-menu.dropdown-menu-wishlist, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay {
     position: fixed !important;
@@ -13842,6 +13871,14 @@ ul.checklist {
       margin-top: 0 !important; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-booking-select .booking-filter-radio-items, .dropdown-menu.dropdown-menu-booking-person-select .category-tree-field-items, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-body, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-body, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-body {
+    position: relative;
+    padding: 1rem;
+    margin: 0 !important;
+    max-height: unset !important;
+    overflow-y: auto;
+    overflow-x: hidden; } }
+@media (max-width: 991.98px) {
+  .booking-filter-wrapper .booking-filter-inner .booking-filter {
     position: relative;
     padding: 1rem;
     margin: 0 !important;
