@@ -532,7 +532,7 @@ jQuery(function ($) {
     let detailMobileBar = $('.detail-mobile-bar');
 
     if ( detailMobileBar.length > 0 ) {
-        var detailMobileBarThreshold = 100;
+        var detailMobileBarThreshold = 0;
         var resizeInitiatorMobileBar;
         var curScrollPosition = $(window).scrollTop();
 
