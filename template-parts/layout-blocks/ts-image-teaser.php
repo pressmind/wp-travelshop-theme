@@ -143,7 +143,7 @@ $items = $args['teasers'];
 
 
     <?php if ( !empty($args['button_link']) && !empty($args['button_text']) ) { ?>
-        <div class="row row-button">
+        <div class="row row-button spacing-top">
             <div class="col-12">
                 <a class="btn btn-primary" href="<?php echo site_url(); ?>/<?php echo $args['button_link'];?>" role="button" <?php
                 echo !empty($args['button_link_target']) ? ' target="'.$args['button_link_target'].'"' : '';
