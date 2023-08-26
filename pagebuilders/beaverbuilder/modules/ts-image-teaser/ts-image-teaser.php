@@ -9,7 +9,7 @@ class TsImageTeaser extends FLBuilderModule {
         parent::__construct(array(
             'name'            => __( 'Image Teaser', 'fl-builder' ),
             'description'     => __( 'Image Teaser Element', 'fl-builder' ),
-            'category'        => __( 'Content Modules', 'fl-builder' ),
+            'category'        => __( 'Custom content teaser', 'fl-builder' ),
             'group'        => __( 'Travelshop', 'fl-builder' ),
             'editor_export'   => false,
             'partial_refresh' => true,
