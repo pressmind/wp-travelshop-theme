@@ -182,8 +182,22 @@
       }
     }
   }
+}
 
-  @if ( $booking-entrypoint-break-down != null ) {
+@if ( $booking-entrypoint-break-down != null ) {
+  .booking-filter-wrapper {
     @extend %apple-like-wrapper-down-#{$booking-entrypoint-break-down};
+
+    .booking-filter-inner {
+      @extend %apple-like-content-down-#{$booking-entrypoint-break-down};
+    }
+
+    &.show {
+      @extend %apple-like-open-down-#{$booking-entrypoint-break-down};
+
+      .booking-filter-inner {
+        @extend %apple-like-content-open-down-#{$booking-entrypoint-break-down};
+      }
+    }
   }
 }

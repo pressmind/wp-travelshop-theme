@@ -13695,6 +13695,12 @@ ul.checklist {
     pointer-events: auto; }
     .dropdown-menu.dropdown-menu-booking-select.show *, .dropdown-menu.dropdown-menu-booking-person-select.show *, .dropdown-menu.dropdown-menu-wishlist.show *, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay * {
       pointer-events: auto; } }
+@media (max-width: 991.98px) {
+  .booking-filter-wrapper.show {
+    opacity: 1;
+    pointer-events: auto; }
+    .booking-filter-wrapper.show * {
+      pointer-events: auto; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-header, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-header, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-header {
     display: flex !important;
@@ -13752,7 +13758,7 @@ ul.checklist {
     .dropdown-menu.dropdown-menu-booking-select *, .dropdown-menu.dropdown-menu-booking-person-select *, .dropdown-menu.dropdown-menu-wishlist *, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay * {
       pointer-events: none; } }
 @media (max-width: 991.98px) {
-  .detail-booking-entrypoint {
+  .booking-filter-wrapper {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -13776,7 +13782,7 @@ ul.checklist {
     border: 0;
     margin: 0;
     border-radius: 0; }
-    .detail-booking-entrypoint * {
+    .booking-filter-wrapper * {
       pointer-events: none; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist .dropdown-menu-content, .booking-filter-item.booking-filter-item--date-range .booking-filter-calendar-overlay .booking-filter-calendar-overlay-content {
@@ -13799,8 +13805,33 @@ ul.checklist {
     left: 0;
     right: 0;
     top: auto; } }
+@media (max-width: 991.98px) {
+  .booking-filter-wrapper .booking-filter-inner {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(2rem);
+    opacity: 0;
+    background-color: #fff;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    padding: 0;
+    max-height: 75vh;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto; } }
 @media (max-width: 767.98px) {
   .dropdown-menu.dropdown-menu-booking-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-booking-person-select.show .dropdown-menu-content, .dropdown-menu.dropdown-menu-wishlist.show .dropdown-menu-content, .booking-filter-item.booking-filter-item--date-range.open > .booking-filter-calendar-overlay .booking-filter-calendar-overlay-content {
+    transform: translateY(0);
+    opacity: 1; } }
+@media (max-width: 991.98px) {
+  .booking-filter-wrapper.show .booking-filter-inner {
     transform: translateY(0);
     opacity: 1; } }
 @media (max-width: 767.98px) {
