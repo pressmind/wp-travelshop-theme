@@ -17,7 +17,7 @@ if($url_post_thumbnail) {
 ?>
 <article class="col-12 col-sm-6 col-lg-4">
     <div class="teaser image-teaser">
-        <a title="<?php echo $current_post->post_title; ?>" href="<?php echo get_permalink($current_post); ?>"></a>
+        <a title="<?php echo $current_post->post_title; ?>" href="<?php echo get_permalink($current_post); ?>">
 
             <div class="teaser-image">
                     <img src="<?php echo $image_src; ?>" title="<?php echo $current_post->post_title; ?>" loading="lazy" />
