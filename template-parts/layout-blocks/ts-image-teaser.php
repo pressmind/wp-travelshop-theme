@@ -87,27 +87,23 @@ $items = $args['teasers'];
                                             $image_src = wp_get_attachment_image_src($image_id, 'large', false);
                                             ?>
 
-                                            <div class="media media-cover media-overlay media-overlay-full">
-                                                <img src="<?php echo $image_src[0]; ?>" />
-                                            </div>
+                                            <img src="<?php echo $image_src[0]; ?>" title="<?php echo $item['headline']; ?>" />
                                         </div>
                                     <?php } ?>
                                     <div class="teaser-body <?php if ( !empty($item['link']) ) { ?>has-link<?php } ?>">
-                                        <div class="teaser-body-inner">
 
                                             <h1 class="h4">
                                                 <?php echo $item['headline']; ?>
                                             </h1>
 
                                             <?php if ( !empty($item['text']) ) { ?>
-                                                <div class="teaser-sub-line">
+                                                <p>
                                                     <?php echo trim($item['text']); ?>
-                                                </div>
+                                                </p>
                                             <?php } ?>
-                                        </div>
 
                                         <?php if ( !empty($item['link']) ) { ?>
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right"></use></svg>
+                                            <div class="btn btn-primary btn-block"><?php echo $item['link_text']; ?></div>
                                         <?php } ?>
                                     </div>
 
