@@ -198,9 +198,11 @@
           > .booking-filter-title {
             @extend %apple-like-header-down-#{$booking-entrypoint-break-down};
 
-            margin-top: -$apple-like-inner-padding;
-            margin-left: -$apple-like-inner-padding;
-            margin-right: -$apple-like-inner-padding;
+            @include media-breakpoint-down($booking-entrypoint-break-down) {
+              margin-top: -$apple-like-inner-padding;
+              margin-left: -$apple-like-inner-padding;
+              margin-right: -$apple-like-inner-padding;
+            }
           }
         }
       }
