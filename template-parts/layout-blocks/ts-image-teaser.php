@@ -72,7 +72,7 @@ $items = $args['teasers'];
                         $item = (array)$item;
                         ?>
                         <div class="<?php echo $item_wrapper; ?>">
-                            <article class="ts-image-teaser">
+                            <article class="teaser image-teaser">
                                 <?php
                                 if ( !empty($item['link']) ) {
                                 ?>
