@@ -532,38 +532,37 @@ jQuery(function ($) {
     let detailMobileBar = $('.detail-mobile-bar');
 
     if ( detailMobileBar.length > 0 ) {
-        var detailMobileBarThreshold = 0;
         var resizeInitiatorMobileBar;
         var curScrollPosition = $(window).scrollTop();
 
-        function toggleMobileBar(curScrollPosition, detailMobileBarThreshold ) {
+        function toggleMobileBar(curScrollPosition) {
 
             // fix to not show mobile bar if content is scroll through
             var detailContentPosition = $('.detail-section-content').offset().top;
             var detailContentHeight = $('.detail-section-content').height();
             var detailContentThreshold = detailContentPosition + detailContentHeight - $(window).height();
 
-            if ( curScrollPosition > detailMobileBarThreshold && curScrollPosition < detailContentThreshold ) {
+            if ( curScrollPosition < detailContentThreshold ) {
                 detailMobileBar.addClass('show');
             } else {
                 detailMobileBar.removeClass('show');
             }
         }
 
-        toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
+        toggleMobileBar(curScrollPosition);
 
         window.onresize = function() {
             clearTimeout(resizeInitiatorMobileBar);
 
             curScrollPosition = $(window).scrollTop();
 
-            resizeInitiatorMobileBar = setTimeout(toggleMobileBar(curScrollPosition, detailMobileBarThreshold), 100);
+            resizeInitiatorMobileBar = setTimeout(toggleMobileBar(curScrollPosition), 100);
         }
 
         $(document).on('scroll', function() {
             curScrollPosition = $(window).scrollTop();
 
-            toggleMobileBar(curScrollPosition, detailMobileBarThreshold);
+            toggleMobileBar(curScrollPosition);
         });
     }
 
