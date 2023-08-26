@@ -99,11 +99,10 @@ $items = $args['teasers'];
                                                 <?php echo $item['headline']; ?>
                                             </h1>
 
-                                                <?php if ( !empty($item['text']) ) { ?>
-                                                    <div class="teaser-sub-line">
-                                                        <?php echo trim($item['text']); ?>
-                                                    </div>
-                                                <?php } ?>
+                                            <?php if ( !empty($item['text']) ) { ?>
+                                                <div class="teaser-sub-line">
+                                                    <?php echo trim($item['text']); ?>
+                                                </div>
                                             <?php } ?>
                                         </div>
 
