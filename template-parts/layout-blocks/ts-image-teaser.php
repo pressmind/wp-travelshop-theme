@@ -21,8 +21,8 @@ $items = $args['teasers'];
 <section class="content-block content-block-ts-image-teaser" id="ts-image-teaser-<?php echo $args['uid']; ?>">
 
     <?php if ( !empty($headline) || !empty($text) ) { ?>
-        <div class="row row-introduction align-items-center justify-content-center text-center">
-            <div class="col-12 col-md-10 col-xl-8">
+    <div class="row row-introduction">
+        <div class="col-12">
                 <?php if ( !empty($headline) ) { ?>
                     <h2>
                         <?php echo $headline; ?>
@@ -148,7 +148,7 @@ $items = $args['teasers'];
 
 
     <?php if ( !empty($args['button_link']) && !empty($args['button_text']) ) { ?>
-        <div class="row row-button text-center">
+        <div class="row row-button">
             <div class="col-12">
                 <a class="btn btn-primary" href="<?php echo site_url(); ?>/<?php echo $args['button_link'];?>" role="button" <?php
                 echo !empty($args['button_link_target']) ? ' target="'.$args['button_link_target'].'"' : '';
