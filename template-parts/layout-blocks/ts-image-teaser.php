@@ -87,15 +87,6 @@ $items = $args['teasers'];
                                             $image_src = wp_get_attachment_image_src($image_id, 'large', false);
                                             ?>
 
-                                            <?php
-                                            if ( $item['badge_text'] ) {
-                                                ?>
-                                                <div class="teaser-badge teaser-badge--<?php echo $item['badge_type']; ?>">
-                                                    <?php echo trim($item['badge_text']); ?>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
                                             <div class="media media-cover media-overlay media-overlay-full">
                                                 <img src="<?php echo $image_src[0]; ?>" />
                                             </div>
@@ -103,19 +94,11 @@ $items = $args['teasers'];
                                     <?php } ?>
                                     <div class="teaser-body <?php if ( !empty($item['link']) ) { ?>has-link<?php } ?>">
                                         <div class="teaser-body-inner">
-                                            <?php if ( $item['text_position'] === 'top' ) { ?>
-                                                <?php if ( !empty($item['text']) ) { ?>
-                                                    <div class="teaser-tag-line">
-                                                        <?php echo trim($item['text']); ?>
-                                                    </div>
-                                                <?php } ?>
-                                            <?php } ?>
 
                                             <h1 class="h4">
                                                 <?php echo $item['headline']; ?>
                                             </h1>
 
-                                            <?php if ( $item['text_position'] === 'under' ) { ?>
                                                 <?php if ( !empty($item['text']) ) { ?>
                                                     <div class="teaser-sub-line">
                                                         <?php echo trim($item['text']); ?>
