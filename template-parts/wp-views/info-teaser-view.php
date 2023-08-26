@@ -22,7 +22,7 @@ $id_post_thumbnail = get_post_thumbnail_id($current_post);
                 <?php echo $current_post->post_excerpt; ?>
             </p>
             <?php } ?>
-            <a href="<?php echo get_permalink($current_post); ?>" class="btn btn-primary btn-block">Mehr erfahren</a>
+            <a href="<?php echo get_permalink($current_post); ?>" class="btn btn-primary">Mehr erfahren</a>
         </div>
     </div>
 </article>

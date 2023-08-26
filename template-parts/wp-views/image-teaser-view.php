@@ -31,7 +31,7 @@ if($url_post_thumbnail) {
                     <?php echo wp_trim_words($current_post->post_excerpt, 10, '...'); ?>
                 </p>
                 <?php } ?>
-                <div class="btn btn-primary btn-block">Mehr erfahren</div>
+                <div class="btn btn-primary">Mehr erfahren</div>
             </div>
         </a>
     </div>

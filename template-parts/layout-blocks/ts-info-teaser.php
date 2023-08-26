@@ -18,7 +18,7 @@ $items = $args['teasers'];
 
 ?>
 
-<section class="content-block content-block-ts-image-teaser" id="ts-image-teaser-<?php echo $args['uid']; ?>">
+<section class="content-block content-block-ts-info-teaser" id="ts-info-teaser-<?php echo $args['uid']; ?>">
 
     <?php if ( !empty($headline) || !empty($text) ) { ?>
     <div class="row row-introduction">
@@ -72,14 +72,7 @@ $items = $args['teasers'];
                         $item = (array)$item;
                         ?>
                         <div class="<?php echo $item_wrapper; ?>">
-                            <article class="teaser image-teaser">
-                                <?php
-                                if ( !empty($item['link']) ) {
-                                ?>
-                                <a href="<?php echo $item['link']; ?>" target="<?php echo $item['link_target']; ?>" title="<?php echo $item['headline']; ?>">
-                                    <?php
-                                    }
-                                    ?>
+                            <article class="teaser wp-teaser">
                                     <?php if ( !empty($item['image']) ) { ?>
                                         <div class="teaser-image">
                                             <?php
@@ -87,10 +80,10 @@ $items = $args['teasers'];
                                             $image_src = wp_get_attachment_image_src($image_id, 'large', false);
                                             ?>
 
-                                            <img src="<?php echo $image_src[0]; ?>" title="<?php echo $item['headline']; ?>" />
+                                            <img class="w-100 h-auto" src="<?php echo $image_src[0]; ?>" title="<?php echo $item['headline']; ?>" />
                                         </div>
                                     <?php } ?>
-                                    <div class="teaser-body <?php if ( !empty($item['link']) ) { ?>has-link<?php } ?>">
+                                    <div class="teaser-body ">
 
                                             <h1 class="h4">
                                                 <?php echo $item['headline']; ?>
@@ -103,17 +96,17 @@ $items = $args['teasers'];
                                             <?php } ?>
 
                                         <?php if ( !empty($item['link']) ) { ?>
-                                            <div class="btn btn-primary btn-block"><?php echo $item['link_text']; ?></div>
+                                            <?php if ( !empty($item['link']) ) { ?>
+                                                <a class="btn btn-primary " href="<?php echo $item['link']; ?>" target="<?php echo $item['link_target']; ?>" title="<?php echo $item['headline']; ?>">
+                                                    <?php } ?>
+                                                    <?php echo $item['link_text']; ?>
+                                                    <?php if ( !empty($item['link']) ) { ?>
+                                                </a>
+                                            <?php } ?>
                                         <?php } ?>
                                     </div>
 
-                                    <?php
-                                    if ( !empty($item['link']) ) {
-                                    ?>
-                                </a>
-                            <?php
-                            }
-                            ?>
+
                             </article>
                         </div>
 

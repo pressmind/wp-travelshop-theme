@@ -103,7 +103,7 @@ $items = $args['teasers'];
                                             <?php } ?>
 
                                         <?php if ( !empty($item['link']) ) { ?>
-                                            <div class="btn btn-primary btn-block"><?php echo $item['link_text']; ?></div>
+                                            <div class="btn btn-primary "><?php echo $item['link_text']; ?></div>
                                         <?php } ?>
                                     </div>
 
