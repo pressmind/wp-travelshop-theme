@@ -45,10 +45,10 @@ $items = $args['teasers'];
             <div class="col-12">
                 <?php
                 $wrapper = 'row';
-                $item_wrapper = 'col-12 col-md-6 col-lg-4';
+                $item_wrapper = 'col-12 col-md-6 col-xl-4';
 
                 if ( $columns === 4 ) {
-                    $item_wrapper = 'col-12 col-md-6 col-lg-3';
+                    $item_wrapper = 'col-12 col-md-6 col-xl-3';
                 }
 
                 if ( $columns === 2 ) {
@@ -61,8 +61,8 @@ $items = $args['teasers'];
                 }
 
                 if ( $layout_type === 'default' && $mobile_slider ) {
-                    $wrapper = 'item-default-wrapper item-slider-wrapper--mobile';
-                    $item_wrapper = 'default-item slider-item';
+                    $wrapper = 'item-slider-wrapper item-slider-wrapper--mobile';
+                    $item_wrapper = 'slider-item';
                 }
                 ?>
 
