@@ -530,10 +530,42 @@ jQuery(function ($) {
     // -- mobile bar show/hide
     // ------------------------------------------------
     let detailMobileBar = $('.detail-mobile-bar');
+    let detailMobileBarBooking = $('.detail-mobile-bar-booking .btn');
+    let detailBookingEntrypoint =  '.booking-filter-wrapper';
+    let detailBookingEntrypointClose = '.close-booking-filter';
 
     if ( detailMobileBar.length > 0 ) {
         var resizeInitiatorMobileBar;
         var curScrollPosition = $(window).scrollTop();
+        var entryPointOpen = false;
+
+        function showBookingEntrypoint() {
+            $('body').find(detailBookingEntrypoint).addClass('show');
+        }
+
+        function hideBookingEntrypoint() {
+            $('body').find(detailBookingEntrypoint).removeClass('show');
+        }
+
+        $('body').find(detailBookingEntrypointClose).on('click touch', function(e) {
+           e.preventDefault();
+
+           hideBookingEntrypoint();
+
+           e.stopPropagation();
+        });
+
+        detailMobileBarBooking.on('click touch', function(e) {
+            e.preventDefault();
+
+            if ( entryPointOpen ) {
+                hideBookingEntrypoint();
+            } else {
+                showBookingEntrypoint();
+            }
+
+            e.stopPropagation();
+        });
 
         function toggleMobileBar(curScrollPosition) {
 
