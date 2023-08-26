@@ -59,6 +59,7 @@ class BeaverBuilderModuleLoader{
         require_once BB_MODULE_TS_DIR . 'modules/faq-schema-accordion/faq-schema-accordion.php';
 
         require_once BB_MODULE_TS_DIR . 'modules/ts-image-teaser/ts-image-teaser.php';
+        require_once BB_MODULE_TS_DIR . 'modules/ts-info-teaser/ts-info-teaser.php';
     }
 
     /**
