@@ -149,6 +149,12 @@ FLBuilder::register_settings_form('ts-image-teaser-form', array(
                             'default'       => 'Some example text'
                         ),
 
+                        'link_text'     => array(
+                            'type'          => 'text',
+                            'label'         => __('Link text', 'fl-builder'),
+                            'default'       => 'Mehr erfahren'
+                        ),
+
                         'link'     => array(
                             'type'          => 'link',
                             'label'         => __('Link', 'fl-builder'),
