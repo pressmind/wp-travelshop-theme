@@ -95,3 +95,11 @@
   }
 }
 
+.detail-sidebar {
+  @include spacing-generator($detail-page-section-paddings, 'top');
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 0 !important;
+  }
+}
+

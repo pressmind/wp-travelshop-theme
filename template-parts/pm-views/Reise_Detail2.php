@@ -476,7 +476,7 @@ $args['breadcrumb'][] = $tmp;
 
         <section class="detail-section detail-section-content">
             <div class="container">
-                <div class="row flex-column-reverse flex-lg-row">
+                <div class="row flex-column flex-lg-row">
                     <div class="col-12 col-lg-7 col-xl-8">
                         <div class="detail-info-section detail-info-section--intro">
                             <h2><?php echo $args['headline']; ?></h2>
@@ -510,7 +510,7 @@ $args['breadcrumb'][] = $tmp;
 
                         ?>
                     </div>
-                    <div class="col-12 col-lg-5 col-xl-4">
+                    <div class="detail-sidebar col-12 col-lg-5 col-xl-4">
                         <div class="detail-booking-entrypoint">
                             <?php
                             // = = = > load the price box < = = =
