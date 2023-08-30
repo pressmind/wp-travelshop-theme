@@ -41,7 +41,7 @@ if(empty($args['cheapest_price'])){
             </div>
 
             <div class="detail-mobile-bar-booking">
-                <button class="btn btn-lg btn-link px-0 border-0 text-primary font-weight-bold" type="button">
+                <button class="btn btn-link px-0 border-0 text-primary font-weight-bold" type="button">
                     Termine & Preise
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
 
