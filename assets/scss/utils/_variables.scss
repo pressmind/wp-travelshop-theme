@@ -1037,3 +1037,22 @@ $booking-entrypoint-spacers-items:(
         null: .25rem,
         lg: .5rem
 ) !default;
+
+$booking-entrypoint-date-item-font-weight: $share-item-font-weight !default;
+$booking-entrypoint-date-item-font-sizes: $share-item-font-sizes !default;
+$booking-entrypoint-date-item-color: $share-item-color !default;
+$booking-entrypoint-date-item-border-width: $share-item-border-width !default;
+$booking-entrypoint-date-item-border-radius: $share-item-border-radius !default;
+$booking-entrypoint-date-item-border-color: $share-item-border-color !default;
+$booking-entrypoint-date-item-bg: $share-item-bg !default;
+$booking-entrypoint-date-item-spacing-y: $share-item-spacing-y !default;
+$booking-entrypoint-date-item-spacing-x: $share-item-spacing-x !default;
+$booking-entrypoint-date-items-gaps: $share-items-gaps !default;
+$booking-entrypoint-date-item-hover-color: $share-item-hover-color !default;
+$booking-entrypoint-date-item-hover-border-color: $share-item-hover-border-color !default;
+$booking-entrypoint-date-item-hover-bg: $share-item-hover-bg !default;
+
+
+$booking-entrypoint-date-item-active-color: $share-item-hover-color !default;
+$booking-entrypoint-date-item-active-border-color: $primary !default;
+$booking-entrypoint-date-item-active-bg: $share-item-hover-bg !default;
