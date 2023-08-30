@@ -18267,8 +18267,8 @@ footer.footer-main {
       gap: 1rem; } }
   .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:hover, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:focus, .detail-booking-entrypoint .booking-filter .booking-filter-items .booking-filter-item--dates .booking-offer-items .booking-offer-item .booking-offer-item-label:active {
     color: #212529;
-    border-color: #212529;
-    background-color: #e9ecef;
+    border-color: #007bff;
+    background-color: #fff;
     text-decoration: none; }
 
 .detail-booking-entrypoint {
