@@ -531,6 +531,7 @@ jQuery(function ($) {
     // ------------------------------------------------
     let detailMobileBar = $('.detail-mobile-bar');
     let detailMobileBarBooking = $('.detail-mobile-bar-booking .btn');
+    let detailMobileBarBookingMobileType = 'scroll';
     let detailBookingEntrypoint =  '.booking-filter-wrapper';
     let detailBookingEntrypointClose = '.close-booking-filter';
 
@@ -558,10 +559,16 @@ jQuery(function ($) {
         detailMobileBarBooking.on('click touch', function(e) {
             e.preventDefault();
 
-            if ( entryPointOpen ) {
-                hideBookingEntrypoint();
+            if ( detailMobileBarBookingMobileType === 'scroll' ) {
+                $('body, html').animate({
+                    scrollTop: $('body').find('.detail-booking-entrypoint').position().top + 'px'
+                }, 300);
             } else {
-                showBookingEntrypoint();
+                if ( entryPointOpen ) {
+                    hideBookingEntrypoint();
+                } else {
+                    showBookingEntrypoint();
+                }
             }
 
             e.stopPropagation();
