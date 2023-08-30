@@ -12325,6 +12325,7 @@ img.loader {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     display: flex;
     align-items: center;
     line-height: 0;
@@ -12617,6 +12618,7 @@ form.form-string-search.input-group, .content-block.content-block-list-filter .l
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       line-height: 0;
       color: #5a6570;
       transition: color 0.3s;
@@ -12741,6 +12743,7 @@ form.form-string-search.input-group, .content-block.content-block-list-filter .l
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     width: 100%;
     height: 1rem;
     max-width: 1rem;
@@ -13615,6 +13618,7 @@ ul.checklist {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     font-size: 80%;
     color: #212529;
     line-height: 1;
@@ -13658,6 +13662,7 @@ ul.checklist {
         box-shadow: none;
         background: transparent;
         padding: 0;
+        color: inherit;
         width: 3rem;
         height: 3rem;
         align-items: center;
@@ -13795,6 +13800,7 @@ ul.checklist {
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       line-height: 1;
       display: block !important;
       padding: 1rem 1rem;
@@ -13918,6 +13924,7 @@ ul.checklist {
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       line-height: 1;
       display: block !important;
       padding: 1rem 1rem;
@@ -13947,6 +13954,7 @@ ul.checklist {
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       line-height: 1;
       display: block !important;
       padding: 1rem 1rem;
@@ -13975,6 +13983,7 @@ ul.checklist {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     line-height: 1;
     display: block !important;
     padding: 1rem 1rem;
@@ -14282,6 +14291,7 @@ main > .container > .row .breadcrumb-wrapper,
   box-shadow: none;
   background: transparent;
   padding: 0;
+  color: inherit;
   position: relative;
   display: block;
   width: 100%;
@@ -14812,6 +14822,7 @@ main > .container > .row .breadcrumb-wrapper,
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       font-size: 0.875rem;
       color: #212529;
       transition: color 0.3s;
@@ -14877,6 +14888,7 @@ header.header-main .auto-complete-overlay {
   box-shadow: none;
   background: transparent;
   padding: 0;
+  color: inherit;
   border: 0.125rem solid transparent;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -15004,6 +15016,7 @@ header.header-main .auto-complete-overlay {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     padding: 15px 30px;
@@ -15515,6 +15528,7 @@ header.header-main .auto-complete-overlay {
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       width: 2rem;
       height: 2rem;
       line-height: 0;
@@ -15575,6 +15589,7 @@ header.header-main .auto-complete-overlay {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -16346,6 +16361,7 @@ header.header-main .auto-complete-overlay {
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       width: 3rem;
       height: 3rem;
       align-items: center;
@@ -16767,6 +16783,7 @@ header.header-main .auto-complete-overlay {
           box-shadow: none;
           background: transparent;
           padding: 0;
+          color: inherit;
           width: 3rem;
           height: 3rem;
           display: flex;
@@ -17619,6 +17636,7 @@ header.header-main {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     height: 2rem;
     min-width: 2rem;
     display: flex;
@@ -17765,6 +17783,7 @@ nav#navbar ul.navbar-nav {
       box-shadow: none;
       background: transparent;
       padding: 0;
+      color: inherit;
       color: #212529;
       transition: color 0.3s;
       line-height: 1;
@@ -17805,6 +17824,7 @@ nav#navbar ul.navbar-nav {
         box-shadow: none;
         background: transparent;
         padding: 0;
+        color: inherit;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -18072,6 +18092,7 @@ footer.footer-main {
         box-shadow: none;
         background: transparent;
         padding: 0;
+        color: inherit;
         color: #5a6570;
         font-size: 1rem;
         padding: 0.6125rem 1.125rem;
@@ -18765,6 +18786,7 @@ footer.footer-main {
     box-shadow: none;
     background: transparent;
     padding: 0;
+    color: inherit;
     position: absolute;
     top: 1rem;
     right: 1rem;
