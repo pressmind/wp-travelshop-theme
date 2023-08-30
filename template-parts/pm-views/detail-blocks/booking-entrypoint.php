@@ -52,7 +52,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <div class="booking-filter-items-boxed">
 
 
-                <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?>">
+                <div class="booking-filter-item booking-filter-item--transport-type booking-filter-radio--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?>">
                     <div class="dropdown">
                         <button class="dropdownTransportTypes input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="dropdown-icon">
