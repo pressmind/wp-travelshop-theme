@@ -221,6 +221,11 @@
       box-shadow: none;
       padding:0;
       border:0;
+
+      + .detail-box.detail-box-transparent {
+        margin-top: 0;
+        padding-top: 0;
+      }
     }
 
   }
