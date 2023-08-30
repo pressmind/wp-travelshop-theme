@@ -213,6 +213,16 @@
   }
 }
 
+@if ( $booking-entrypoint-break-down == null ) {
+  .detail-booking-entrypoint {
+    .booking-filter-title {
+      button.close-booking-filter {
+        display: none !important;
+      }
+    }
+  }
+}
+
 @if ( $booking-entrypoint-break-down != null ) {
 
   @include media-breakpoint-down($booking-entrypoint-break-down) {
