@@ -1,7 +1,7 @@
 <?php
 // for dev, shows actual breakpoint key
 $breakpoints = array('sm', 'md', 'lg', 'xl', 'xxl');
-$showbreakpoints = true;
+$showbreakpoints = false;
 
 if ( $showbreakpoints ) {
 ?>
