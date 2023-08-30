@@ -41,7 +41,7 @@ if(empty($args['cheapest_price'])){
             </div>
 
             <div class="detail-mobile-bar-booking">
-                <button class="btn btn-link px-0 border-0" type="button">
+                <button class="btn btn-link px-0 border-0 text-primary font-weight-bold" type="button">
                     Termine & Preise
                 </button>
             </div>
