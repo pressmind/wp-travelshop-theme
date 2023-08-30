@@ -53,8 +53,6 @@
 
       // -- transport type
       &.booking-filter-item--transport-type {
-        //@include spacing-generator($booking-entrypoint-spacers-y, 'bottom', 'padding');
-
         .booking-filter-radio {
           @extend %custom-radio-checkbox-inline;
 
