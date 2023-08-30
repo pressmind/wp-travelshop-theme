@@ -60,7 +60,9 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                             </span>
                             <small class="d-block">Anreiseart wählen</small>
                             <span class="selected-options" data-placeholder="bitte wählen">
-                                <?php echo $args['cheapest_price']->transport_type; ?>
+                                <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
+                                    'transport_type' => $args['cheapest_price']->transport_type
+                                ]);?>
                             </span>
                             <span class="dropdown-clear input-clear">
                                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
