@@ -18450,6 +18450,11 @@ footer.footer-main {
           box-shadow: inset 0 0 0 0.0625rem #007bff; }
 
 @media (max-width: 991.98px) {
+  .detail-booking-entrypoint {
+    box-shadow: none;
+    padding: 0;
+    border: 0; } }
+@media (max-width: 991.98px) {
   .booking-filter-wrapper .booking-filter-inner .booking-filter-inner-body .booking-filter > .booking-filter-title {
     margin-top: -1rem;
     margin-left: -1rem;

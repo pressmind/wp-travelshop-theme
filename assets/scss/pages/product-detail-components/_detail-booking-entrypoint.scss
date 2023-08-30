@@ -214,6 +214,17 @@
 }
 
 @if ( $booking-entrypoint-break-down != null ) {
+
+  @include media-breakpoint-down($booking-entrypoint-break-down) {
+
+    .detail-booking-entrypoint {
+      box-shadow: none;
+      padding:0;
+      border:0;
+    }
+
+  }
+
   .booking-filter-wrapper {
     @extend %apple-like-wrapper-down-#{$booking-entrypoint-break-down};
 
