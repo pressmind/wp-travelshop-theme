@@ -83,7 +83,7 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
         <div class="h5 d-block d-lg-none">
             <?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>
         </div>
-        <button type="button" class="daterange-overlay-close d-flex d-lg-none">
+        <button type="button" class="daterange-overlay-close d-flex ">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
         </button>
     </div>
