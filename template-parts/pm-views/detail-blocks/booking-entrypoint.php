@@ -38,25 +38,6 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 }
             }
             ?>
-            <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?>">
-                <div class="booking-filter-radio booking-filter-radio--transport-type ">
-                    <?php foreach( $transport_types as $type ) { ?>
-                        <div class="form-radio">
-                            <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
-
-                            <div>
-                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
-                            </div>
-
-                            <label class="form-radio-label" for="transport-type-<?php echo $type; ?>">
-                                <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                                    'transport_type' => $type
-                                ]);?>
-                            </label>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
 
             <input class="booking-filter-field--duration" type="hidden" name="dur" value="<?php echo $args['cheapest_price']->duration; ?>" />
             <input class="booking-filter-field--mediaobject-id" type="hidden" name="mediaobject" value="<?php echo $args['id_media_object']; ?>" />
@@ -71,20 +52,76 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             <div class="booking-filter-items-boxed">
 
 
+                <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?>">
+                    <div class="dropdown">
+                        <button class="dropdownTransportTypes input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="dropdown-icon">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
+                            </span>
+                            <small class="d-block">Anreiseart wählen</small>
+                            <span class="selected-options" data-placeholder="bitte wählen">
+                                <?php echo $args['cheapest_price']->transport_type; ?>
+                            </span>
+                            <span class="dropdown-clear input-clear">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                            </span>
+                        </button>
+
+                        <div class="dropdown-menu dropdown-menu-booking-select" aria-labelledby="dropdownTransportTypes" x-placement="top-start">
+                            <div class="dropdown-menu-inner">
+                                <div class="dropdown-menu-content">
+                                    <div class="dropdown-menu-header d-none">
+                                        <div class="h4">
+                                            Anreiseart wählen
+                                        </div>
+                                        <button class="filter-prompt" data-type="close-popup" type="button">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                        </button>
+                                    </div>
+
+                                    <div class="booking-filter-radio-items">
+                                        <?php foreach( $transport_types as $type ) { ?>
+                                            <div class="form-radio">
+                                                <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
+
+                                                <div>
+                                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
+                                                </div>
+
+                                                <label class="form-radio-label" for="transport-type-<?php echo $type; ?>">
+                                                    <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
+                                                        'transport_type' => $type
+                                                    ]);?>
+                                                </label>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+
+                                    <div class="dropdown-menu-footer">
+                                        <button class="btn btn-primary btn-block mt-3 filter-prompt">
+                                            Auswahl übernehmen
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="booking-filter-item booking-filter-item--persons">
                     <div class="dropdown">
                         <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="dropdown-icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
-                </span>
+                            <span class="dropdown-icon">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
+                            </span>
                             <small class="d-block">Anzahl Personen</small>
                             <span class="selected-options">
-                    2 Personen
-                </span>
+                                2 Personen
+                            </span>
                             <span class="dropdown-clear input-clear">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                </span>
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                            </span>
                         </button>
 
                         <div class="dropdown-menu dropdown-menu-booking-person-select" aria-labelledby="dropdownPersons" x-placement="top-start">
