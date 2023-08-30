@@ -41,19 +41,9 @@ if(empty($args['cheapest_price'])){
             </div>
 
             <div class="detail-mobile-bar-booking">
-                <?php if(empty($args['cheapest_price']) || !empty($args['booking_on_request']) ) { ?>
-                <button class="btn btn-lg btn-primary" type="button">
-                    zur Anfrage
-
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
-
+                <button class="btn btn-link px-0 border-0" type="button">
+                    Termine & Preise
                 </button>
-                <?php } else { ?>
-                <button class="btn btn-lg btn-booking green" type="button">
-                    zur Buchung
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
-                </button>
-                <?php } ?>
             </div>
         </div>
 
