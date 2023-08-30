@@ -49,7 +49,7 @@ if(empty($args['cheapest_price'])){
 
                 </button>
                 <?php } else { ?>
-                <button class="btn btn-lg booking-btn green" type="button">
+                <button class="btn btn-lg btn-booking green" type="button">
                     zur Buchung
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
                 </button>

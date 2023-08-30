@@ -13244,132 +13244,182 @@ ul.checklist {
       font-size: 1.125rem !important; } }
 
 .btn.booking-btn,
-.booking-btn {
+.booking-btn,
+.btn-booking {
   transition: color 0.3s, border-color 0.3s, background-color 0.3s, opacity 0.3s; }
   .btn.booking-btn.green,
-  .booking-btn.green {
+  .booking-btn.green,
+  .btn-booking.green {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
     color: #fff; }
     .btn.booking-btn.green:hover,
-    .booking-btn.green:hover {
+    .booking-btn.green:hover,
+    .btn-booking.green:hover {
       color: #212529;
       background-color: #48d368;
       border-color: #48d368; }
     .btn.booking-btn.green:focus, .btn.booking-btn.green.focus,
     .booking-btn.green:focus,
-    .booking-btn.green.focus {
+    .booking-btn.green.focus,
+    .btn-booking.green:focus,
+    .btn-booking.green.focus {
       box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5); }
     .btn.booking-btn.green.disabled, .btn.booking-btn.green:disabled,
     .booking-btn.green.disabled,
-    .booking-btn.green:disabled {
+    .booking-btn.green:disabled,
+    .btn-booking.green.disabled,
+    .btn-booking.green:disabled {
       color: #fff;
       background-color: #28a745;
       border-color: #28a745; }
     .btn.booking-btn.green:not(:disabled):not(.disabled):active, .btn.booking-btn.green:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.green.dropdown-toggle,
     .booking-btn.green:not(:disabled):not(.disabled):active,
     .booking-btn.green:not(:disabled):not(.disabled).active, .show >
-    .booking-btn.green.dropdown-toggle {
+    .booking-btn.green.dropdown-toggle,
+    .btn-booking.green:not(:disabled):not(.disabled):active,
+    .btn-booking.green:not(:disabled):not(.disabled).active, .show >
+    .btn-booking.green.dropdown-toggle {
       color: #fff;
       background-color: #1e7e34;
       border-color: #1e7e34; }
       .btn.booking-btn.green:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.green:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.green.dropdown-toggle:focus,
       .booking-btn.green:not(:disabled):not(.disabled):active:focus,
       .booking-btn.green:not(:disabled):not(.disabled).active:focus, .show >
-      .booking-btn.green.dropdown-toggle:focus {
+      .booking-btn.green.dropdown-toggle:focus,
+      .btn-booking.green:not(:disabled):not(.disabled):active:focus,
+      .btn-booking.green:not(:disabled):not(.disabled).active:focus, .show >
+      .btn-booking.green.dropdown-toggle:focus {
         box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5); }
     .btn.booking-btn.green:hover, .btn.booking-btn.green:focus, .btn.booking-btn.green:active,
     .booking-btn.green:hover,
     .booking-btn.green:focus,
-    .booking-btn.green:active {
+    .booking-btn.green:active,
+    .btn-booking.green:hover,
+    .btn-booking.green:focus,
+    .btn-booking.green:active {
       color: #fff; }
   .btn.booking-btn.red,
-  .booking-btn.red {
+  .booking-btn.red,
+  .btn-booking.red {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
     color: #fff; }
     .btn.booking-btn.red:hover,
-    .booking-btn.red:hover {
+    .booking-btn.red:hover,
+    .btn-booking.red:hover {
       color: #212529;
       background-color: #e77681;
       border-color: #e77681; }
     .btn.booking-btn.red:focus, .btn.booking-btn.red.focus,
     .booking-btn.red:focus,
-    .booking-btn.red.focus {
+    .booking-btn.red.focus,
+    .btn-booking.red:focus,
+    .btn-booking.red.focus {
       box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5); }
     .btn.booking-btn.red.disabled, .btn.booking-btn.red:disabled,
     .booking-btn.red.disabled,
-    .booking-btn.red:disabled {
+    .booking-btn.red:disabled,
+    .btn-booking.red.disabled,
+    .btn-booking.red:disabled {
       color: #fff;
       background-color: #dc3545;
       border-color: #dc3545; }
     .btn.booking-btn.red:not(:disabled):not(.disabled):active, .btn.booking-btn.red:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.red.dropdown-toggle,
     .booking-btn.red:not(:disabled):not(.disabled):active,
     .booking-btn.red:not(:disabled):not(.disabled).active, .show >
-    .booking-btn.red.dropdown-toggle {
+    .booking-btn.red.dropdown-toggle,
+    .btn-booking.red:not(:disabled):not(.disabled):active,
+    .btn-booking.red:not(:disabled):not(.disabled).active, .show >
+    .btn-booking.red.dropdown-toggle {
       color: #fff;
       background-color: #bd2130;
       border-color: #bd2130; }
       .btn.booking-btn.red:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.red:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.red.dropdown-toggle:focus,
       .booking-btn.red:not(:disabled):not(.disabled):active:focus,
       .booking-btn.red:not(:disabled):not(.disabled).active:focus, .show >
-      .booking-btn.red.dropdown-toggle:focus {
+      .booking-btn.red.dropdown-toggle:focus,
+      .btn-booking.red:not(:disabled):not(.disabled):active:focus,
+      .btn-booking.red:not(:disabled):not(.disabled).active:focus, .show >
+      .btn-booking.red.dropdown-toggle:focus {
         box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5); }
     .btn.booking-btn.red:hover, .btn.booking-btn.red:focus, .btn.booking-btn.red:active,
     .booking-btn.red:hover,
     .booking-btn.red:focus,
-    .booking-btn.red:active {
+    .booking-btn.red:active,
+    .btn-booking.red:hover,
+    .btn-booking.red:focus,
+    .btn-booking.red:active {
       color: #fff; }
   .btn.booking-btn.orange,
-  .booking-btn.orange {
+  .booking-btn.orange,
+  .btn-booking.orange {
     color: #212529;
     background-color: #ffc107;
     border-color: #ffc107;
     color: #fff; }
     .btn.booking-btn.orange:hover,
-    .booking-btn.orange:hover {
+    .booking-btn.orange:hover,
+    .btn-booking.orange:hover {
       color: #212529;
       background-color: #ffd454;
       border-color: #ffd454; }
     .btn.booking-btn.orange:focus, .btn.booking-btn.orange.focus,
     .booking-btn.orange:focus,
-    .booking-btn.orange.focus {
+    .booking-btn.orange.focus,
+    .btn-booking.orange:focus,
+    .btn-booking.orange.focus {
       box-shadow: 0 0 0 0 rgba(222, 170, 12, 0.5); }
     .btn.booking-btn.orange.disabled, .btn.booking-btn.orange:disabled,
     .booking-btn.orange.disabled,
-    .booking-btn.orange:disabled {
+    .booking-btn.orange:disabled,
+    .btn-booking.orange.disabled,
+    .btn-booking.orange:disabled {
       color: #212529;
       background-color: #ffc107;
       border-color: #ffc107; }
     .btn.booking-btn.orange:not(:disabled):not(.disabled):active, .btn.booking-btn.orange:not(:disabled):not(.disabled).active, .show > .btn.booking-btn.orange.dropdown-toggle,
     .booking-btn.orange:not(:disabled):not(.disabled):active,
     .booking-btn.orange:not(:disabled):not(.disabled).active, .show >
-    .booking-btn.orange.dropdown-toggle {
+    .booking-btn.orange.dropdown-toggle,
+    .btn-booking.orange:not(:disabled):not(.disabled):active,
+    .btn-booking.orange:not(:disabled):not(.disabled).active, .show >
+    .btn-booking.orange.dropdown-toggle {
       color: #212529;
       background-color: #d39e00;
       border-color: #d39e00; }
       .btn.booking-btn.orange:not(:disabled):not(.disabled):active:focus, .btn.booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show > .btn.booking-btn.orange.dropdown-toggle:focus,
       .booking-btn.orange:not(:disabled):not(.disabled):active:focus,
       .booking-btn.orange:not(:disabled):not(.disabled).active:focus, .show >
-      .booking-btn.orange.dropdown-toggle:focus {
+      .booking-btn.orange.dropdown-toggle:focus,
+      .btn-booking.orange:not(:disabled):not(.disabled):active:focus,
+      .btn-booking.orange:not(:disabled):not(.disabled).active:focus, .show >
+      .btn-booking.orange.dropdown-toggle:focus {
         box-shadow: 0 0 0 0 rgba(222, 170, 12, 0.5); }
     .btn.booking-btn.orange:hover, .btn.booking-btn.orange:focus, .btn.booking-btn.orange:active,
     .booking-btn.orange:hover,
     .booking-btn.orange:focus,
-    .booking-btn.orange:active {
+    .booking-btn.orange:active,
+    .btn-booking.orange:hover,
+    .btn-booking.orange:focus,
+    .btn-booking.orange:active {
       color: #fff; }
   .btn.booking-btn.gray, .btn.booking-btn.btn-disabled,
   .booking-btn.gray,
-  .booking-btn.btn-disabled {
+  .booking-btn.btn-disabled,
+  .btn-booking.gray,
+  .btn-booking.btn-disabled {
     color: #fff;
     background-color: #6c757d;
     border-color: #6c757d;
     color: #fff; }
     .btn.booking-btn.gray:hover, .btn.booking-btn.btn-disabled:hover,
     .booking-btn.gray:hover,
-    .booking-btn.btn-disabled:hover {
+    .booking-btn.btn-disabled:hover,
+    .btn-booking.gray:hover,
+    .btn-booking.btn-disabled:hover {
       color: #fff;
       background-color: #868e96;
       border-color: #868e96; }
@@ -13377,13 +13427,21 @@ ul.checklist {
     .booking-btn.gray:focus,
     .booking-btn.gray.focus,
     .booking-btn.btn-disabled:focus,
-    .booking-btn.btn-disabled.focus {
+    .booking-btn.btn-disabled.focus,
+    .btn-booking.gray:focus,
+    .btn-booking.gray.focus,
+    .btn-booking.btn-disabled:focus,
+    .btn-booking.btn-disabled.focus {
       box-shadow: 0 0 0 0 rgba(130, 138, 145, 0.5); }
     .btn.booking-btn.gray.disabled, .btn.booking-btn.gray:disabled, .btn.booking-btn.btn-disabled.disabled, .btn.booking-btn.btn-disabled:disabled,
     .booking-btn.gray.disabled,
     .booking-btn.gray:disabled,
     .booking-btn.btn-disabled.disabled,
-    .booking-btn.btn-disabled:disabled {
+    .booking-btn.btn-disabled:disabled,
+    .btn-booking.gray.disabled,
+    .btn-booking.gray:disabled,
+    .btn-booking.btn-disabled.disabled,
+    .btn-booking.btn-disabled:disabled {
       color: #fff;
       background-color: #6c757d;
       border-color: #6c757d; }
@@ -13393,7 +13451,13 @@ ul.checklist {
     .booking-btn.gray.dropdown-toggle,
     .booking-btn.btn-disabled:not(:disabled):not(.disabled):active,
     .booking-btn.btn-disabled:not(:disabled):not(.disabled).active, .show >
-    .booking-btn.btn-disabled.dropdown-toggle {
+    .booking-btn.btn-disabled.dropdown-toggle,
+    .btn-booking.gray:not(:disabled):not(.disabled):active,
+    .btn-booking.gray:not(:disabled):not(.disabled).active, .show >
+    .btn-booking.gray.dropdown-toggle,
+    .btn-booking.btn-disabled:not(:disabled):not(.disabled):active,
+    .btn-booking.btn-disabled:not(:disabled):not(.disabled).active, .show >
+    .btn-booking.btn-disabled.dropdown-toggle {
       color: #fff;
       background-color: #545b62;
       border-color: #545b62; }
@@ -13403,7 +13467,13 @@ ul.checklist {
       .booking-btn.gray.dropdown-toggle:focus,
       .booking-btn.btn-disabled:not(:disabled):not(.disabled):active:focus,
       .booking-btn.btn-disabled:not(:disabled):not(.disabled).active:focus, .show >
-      .booking-btn.btn-disabled.dropdown-toggle:focus {
+      .booking-btn.btn-disabled.dropdown-toggle:focus,
+      .btn-booking.gray:not(:disabled):not(.disabled):active:focus,
+      .btn-booking.gray:not(:disabled):not(.disabled).active:focus, .show >
+      .btn-booking.gray.dropdown-toggle:focus,
+      .btn-booking.btn-disabled:not(:disabled):not(.disabled):active:focus,
+      .btn-booking.btn-disabled:not(:disabled):not(.disabled).active:focus, .show >
+      .btn-booking.btn-disabled.dropdown-toggle:focus {
         box-shadow: 0 0 0 0 rgba(130, 138, 145, 0.5); }
     .btn.booking-btn.gray:hover, .btn.booking-btn.gray:focus, .btn.booking-btn.gray:active, .btn.booking-btn.btn-disabled:hover, .btn.booking-btn.btn-disabled:focus, .btn.booking-btn.btn-disabled:active,
     .booking-btn.gray:hover,
@@ -13411,29 +13481,42 @@ ul.checklist {
     .booking-btn.gray:active,
     .booking-btn.btn-disabled:hover,
     .booking-btn.btn-disabled:focus,
-    .booking-btn.btn-disabled:active {
+    .booking-btn.btn-disabled:active,
+    .btn-booking.gray:hover,
+    .btn-booking.gray:focus,
+    .btn-booking.gray:active,
+    .btn-booking.btn-disabled:hover,
+    .btn-booking.btn-disabled:focus,
+    .btn-booking.btn-disabled:active {
       color: #fff; }
   .btn.booking-btn *,
-  .booking-btn * {
+  .booking-btn *,
+  .btn-booking * {
     pointer-events: none; }
   .btn.booking-btn.btn-disabled,
-  .booking-btn.btn-disabled {
+  .booking-btn.btn-disabled,
+  .btn-booking.btn-disabled {
     pointer-events: none;
     opacity: .25;
     cursor: not-allowed; }
   .btn.booking-btn .loader,
-  .booking-btn .loader {
+  .booking-btn .loader,
+  .btn-booking .loader {
     height: 0.75rem;
     width: auto;
     margin: 0.375rem auto; }
   .btn.booking-btn.btn-lg .loader, .btn-group-lg > .btn.booking-btn .loader,
   .booking-btn.btn-lg .loader,
-  .btn-group-lg > .booking-btn.btn .loader {
+  .btn-group-lg > .booking-btn.btn .loader,
+  .btn-booking.btn-lg .loader,
+  .btn-group-lg > .btn-booking.btn .loader {
     margin: 0.5625rem auto; }
     @media (max-width: 767.98px) {
       .btn.booking-btn.btn-lg .loader, .btn-group-lg > .btn.booking-btn .loader,
       .booking-btn.btn-lg .loader,
-      .btn-group-lg > .booking-btn.btn .loader {
+      .btn-group-lg > .booking-btn.btn .loader,
+      .btn-booking.btn-lg .loader,
+      .btn-group-lg > .btn-booking.btn .loader {
         margin: 0.46875rem auto; } }
 
 .add-to-wishlist {
