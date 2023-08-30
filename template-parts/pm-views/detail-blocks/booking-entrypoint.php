@@ -56,7 +56,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                     <div class="dropdown">
                         <button class="dropdownTransportTypes input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="dropdown-icon">
-                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#car"></use></svg>
                             </span>
                             <small class="d-block">Anreiseart wählen</small>
                             <span class="selected-options" data-placeholder="bitte wählen">
