@@ -561,7 +561,7 @@ jQuery(function ($) {
 
             if ( detailMobileBarBookingMobileType === 'scroll' ) {
                 $('body, html').animate({
-                    scrollTop: $('body').find('.detail-booking-entrypoint').offset().top
+                    scrollTop: $('body').find('.detail-booking-entrypoint').offset().top - $('.header-main').height() - 16
                 }, 300);
             } else {
                 if ( entryPointOpen ) {
