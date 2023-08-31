@@ -15,7 +15,7 @@
     <div class="layout-block-search-header--search transparent">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-11 col-xl-10">
+                <div class="col-12 col-xxl-10">
                 <?php require  get_template_directory().'/template-parts/pm-search/search-bar.php';?>
                 </div>
             </div>
