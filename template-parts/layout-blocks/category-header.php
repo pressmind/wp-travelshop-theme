@@ -194,7 +194,7 @@ if ( !function_exists('get_vertical_direction') ) {
         .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper,
         .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container .category-header-content,
         .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .d-flex {
-            min-height: <?php echo $args['background_height_responsive']; ?>px;
+            min-height: <?php echo $args['background_height_responsive']; ?>px !important;
         }
         <?php } ?>
 
@@ -203,7 +203,7 @@ if ( !function_exists('get_vertical_direction') ) {
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper,
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container .category-header-content,
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .d-flex{
-                min-height: <?php echo $args['background_height_medium']; ?>px;
+                min-height: <?php echo $args['background_height_medium']; ?>px !important;
             }
         }
         <?php } ?>
@@ -213,7 +213,7 @@ if ( !function_exists('get_vertical_direction') ) {
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper,
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container .category-header-content,
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .d-flex{
-                min-height: <?php echo $args['background_height_large']; ?>px;
+                min-height: <?php echo $args['background_height_large']; ?>px !important;
             }
         }
         <?php } ?>
@@ -223,7 +223,7 @@ if ( !function_exists('get_vertical_direction') ) {
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header .category-header-content-wrapper,
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container .category-header-content,
             .fl-node-<?php echo $args['uid']; ?> .content-block-category-header.content-block .category-header.category-header-docked .category-header-content-wrapper .category-header-content-container > .d-flex{
-                min-height: <?php echo $args['background_height']; ?>px;
+                min-height: <?php echo $args['background_height']; ?>px !important;
             }
         }
         <?php } ?>
