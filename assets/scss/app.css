@@ -14928,12 +14928,11 @@ header.header-main .auto-complete-overlay {
       width: 100%; } }
   @media (min-width: 1200px) {
     .search-wrapper .search-bar-fields-search {
-      min-width: 18rem;
+      min-width: 14rem;
       flex: 0; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1360px) {
     .search-wrapper .search-bar-fields-search {
-      min-width: 18rem;
-      flex: 0; } }
+      min-width: 18rem; } }
 .search-wrapper .search-bar-fields-pickers {
   flex: 0 0 100%;
   width: 100%;

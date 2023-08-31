@@ -72,13 +72,12 @@
     }
 
     @include media-breakpoint-up($search-bar-large-break-up) {
-      min-width: 18rem;
+      min-width: 14rem;
       flex: 0;
     }
 
-    @include media-breakpoint-up($search-bar-large-break-up) {
+    @include media-breakpoint-up(xxl) {
       min-width: 18rem;
-      flex: 0;
     }
   }
 
