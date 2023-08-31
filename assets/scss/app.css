@@ -14392,6 +14392,9 @@ main > .container > .row .breadcrumb-wrapper,
     width: 100%;
     max-width: 58.3333333333%;
     padding: 0 0 0 1.25rem; }
+    @media (max-width: 767.98px) {
+      .card-travel:not(.card-travel--stripe) .card-body, .card-travel.card-travel--stripe .card-body {
+        align-self: center; } }
     @media (max-width: 575.98px) {
       .card-travel:not(.card-travel--stripe) .card-body, .card-travel.card-travel--stripe .card-body {
         flex: 0 0 66.6666666667%;

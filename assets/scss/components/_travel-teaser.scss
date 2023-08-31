@@ -94,6 +94,11 @@
     width: 100%;
     max-width: ((100% / 12) * 7);
 
+
+    @include media-breakpoint-down($travel-card-break-down) {
+      align-self: center;
+    }
+
     @include media-breakpoint-down(xs) {
       flex: 0 0 ((100% / 12) * 8);
       max-width: ((100% / 12) * 8);
