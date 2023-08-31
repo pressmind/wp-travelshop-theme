@@ -67,6 +67,11 @@
     width: 100%;
     max-width: ((100% / 12) * 5);
 
+    @include media-breakpoint-down(xs) {
+      flex: 0 0 ((100% / 12) * 4);
+      max-width: ((100% / 12) * 4);
+    }
+
     // -- set offset left top bottom to make image lay above border if border width not 0
     @if $travel-card-border-width != 0 {
       > a {
@@ -89,13 +94,25 @@
     width: 100%;
     max-width: ((100% / 12) * 7);
 
+    @include media-breakpoint-down(xs) {
+      flex: 0 0 ((100% / 12) * 8);
+      max-width: ((100% / 12) * 8);
+    }
+
     padding: 0 0 0 $travel-card-spacer-x;
 
-    .attribute-row {
+    .attribute-row,
+    .card-text {
       display: none;
     }
 
+    h1.card-title {
+      margin-bottom: .25rem;
+    }
+
     .card-body--bottom {
+      padding-top: .25rem;
+
       .price-row {
         display: flex;
         flex-direction: row;

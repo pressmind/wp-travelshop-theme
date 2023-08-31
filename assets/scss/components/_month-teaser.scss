@@ -36,6 +36,11 @@
       }
 
       @extend %media-cover;
+
+      @include media-breakpoint-down(xs) {
+        flex: 0 0 6rem;
+        max-width: 6rem;
+      }
     }
 
     div.month-teaser-title {
