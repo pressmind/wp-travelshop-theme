@@ -60,8 +60,7 @@
 
   // -- search
   .search-bar-fields-search {
-    min-width: 18rem;
-    flex: 0;
+    flex: 1;
 
     .search-box-field {
       margin: -$input-border-width;
@@ -70,6 +69,12 @@
     @include media-breakpoint-down($search-bar-mobile-break) {
       min-width: unset;
       width: 100%;
+    }
+
+
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      min-width: 18rem;
+      flex: 0;
     }
   }
 

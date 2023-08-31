@@ -14919,14 +14919,17 @@ header.header-main .auto-complete-overlay {
   border-radius: 0.25rem;
   border: 1px solid #ced4da; }
 .search-wrapper .search-bar-fields-search {
-  min-width: 18rem;
-  flex: 0; }
+  flex: 1; }
   .search-wrapper .search-bar-fields-search .search-box-field {
     margin: -1px; }
   @media (max-width: 767.98px) {
     .search-wrapper .search-bar-fields-search {
       min-width: unset;
       width: 100%; } }
+  @media (min-width: 1200px) {
+    .search-wrapper .search-bar-fields-search {
+      min-width: 18rem;
+      flex: 0; } }
 .search-wrapper .search-bar-fields-pickers {
   flex: 1;
   display: flex;
