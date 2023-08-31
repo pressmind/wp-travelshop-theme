@@ -101,17 +101,24 @@
 
     padding: 0 0 0 $travel-card-spacer-x;
 
-    .attribute-row,
-    .card-text {
+    .attribute-row {
       display: none;
     }
 
-    h1.card-title {
-      margin-bottom: .25rem;
+    @include media-breakpoint-down($travel-card-break-down) {
+      .card-text {
+        display: none;
+      }
+
+      h1.card-title {
+        margin-bottom: 0;
+      }
     }
 
     .card-body--bottom {
-      padding-top: .25rem;
+      @include media-breakpoint-down($travel-card-break-down) {
+        padding-top: .25rem;
+      }
 
       .price-row {
         display: flex;

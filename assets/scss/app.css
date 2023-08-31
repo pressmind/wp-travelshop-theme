@@ -14396,26 +14396,28 @@ main > .container > .row .breadcrumb-wrapper,
       .card-travel:not(.card-travel--stripe) .card-body, .card-travel.card-travel--stripe .card-body {
         flex: 0 0 66.6666666667%;
         max-width: 66.6666666667%; } }
-    .card-travel:not(.card-travel--stripe) .card-body .attribute-row, .card-travel.card-travel--stripe .card-body .attribute-row,
-    .card-travel:not(.card-travel--stripe) .card-body .card-text,
-    .card-travel.card-travel--stripe .card-body .card-text {
+    .card-travel:not(.card-travel--stripe) .card-body .attribute-row, .card-travel.card-travel--stripe .card-body .attribute-row {
       display: none; }
-    .card-travel:not(.card-travel--stripe) .card-body h1.card-title, .card-travel.card-travel--stripe .card-body h1.card-title {
-      margin-bottom: .25rem; }
-    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom, .card-travel.card-travel--stripe .card-body .card-body--bottom {
-      padding-top: .25rem; }
-      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .price-row, .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: .5rem; }
-      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary, .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary {
-        display: inline-block;
-        margin-top: 0; }
-        .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary > small span, .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary > small span {
-          display: none; }
+    @media (max-width: 767.98px) {
+      .card-travel:not(.card-travel--stripe) .card-body .card-text, .card-travel.card-travel--stripe .card-body .card-text {
+        display: none; }
+      .card-travel:not(.card-travel--stripe) .card-body h1.card-title, .card-travel.card-travel--stripe .card-body h1.card-title {
+        margin-bottom: 0; } }
+    @media (max-width: 767.98px) {
+      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom, .card-travel.card-travel--stripe .card-body .card-body--bottom {
+        padding-top: .25rem; } }
+    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .price-row, .card-travel.card-travel--stripe .card-body .card-body--bottom .price-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem; }
+    .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary, .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary {
+      display: inline-block;
+      margin-top: 0; }
+      .card-travel:not(.card-travel--stripe) .card-body .card-body--bottom .btn.btn-primary > small span, .card-travel.card-travel--stripe .card-body .card-body--bottom .btn.btn-primary > small span {
+        display: none; }
 
 /**
  * normal travel card teaser
