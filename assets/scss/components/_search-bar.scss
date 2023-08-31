@@ -272,6 +272,35 @@
       }
     }
   }
+
+  // -- sorting fields
+  .search-bar-fields-search {
+    order: 1;
+
+    @include media-breakpoint-up($search-bar-mobile-break-up) {
+      order: 2;
+    }
+
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      order: 1;
+    }
+  }
+
+  .search-bar-fields-pickers {
+    order: 2;
+
+    @include media-breakpoint-up($search-bar-mobile-break-up) {
+      order: 1;
+    }
+
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      order: 2;
+    }
+  }
+
+  .search-box-submit {
+    order: 3;
+  }
 }
 
 /**
