@@ -14931,7 +14931,8 @@ header.header-main .auto-complete-overlay {
       min-width: 18rem;
       flex: 0; } }
 .search-wrapper .search-bar-fields-pickers {
-  flex: 1;
+  flex: 0 0 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
@@ -14939,6 +14940,10 @@ header.header-main .auto-complete-overlay {
     .search-wrapper .search-bar-fields-pickers {
       flex-direction: column;
       width: 100%; } }
+  @media (min-width: 1200px) {
+    .search-wrapper .search-bar-fields-pickers {
+      flex: 1;
+      width: auto; } }
   .search-wrapper .search-bar-fields-pickers .search-box-field {
     flex: 0 0 33.3333333333%;
     width: 100%;
