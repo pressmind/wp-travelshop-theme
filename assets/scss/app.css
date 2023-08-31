@@ -14930,7 +14930,7 @@ header.header-main .auto-complete-overlay {
     .search-wrapper .search-bar-fields-search {
       min-width: 14rem;
       flex: 0; } }
-  @media (min-width: 1360px) {
+  @media (min-width: 1560px) {
     .search-wrapper .search-bar-fields-search {
       min-width: 18rem; } }
 .search-wrapper .search-bar-fields-pickers {
