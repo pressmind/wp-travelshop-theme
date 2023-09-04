@@ -17,7 +17,7 @@
     .teaser-block-toggle{
       padding: 3rem 0 0 0;
 
-      @include gradient-y(rgba($body-bg, 0), $body-bg);
+      @include gradient-y(rgba($body-bg, 0), $body-bg, 0%, 50%);
 
       opacity: 1;
       pointer-events: auto;

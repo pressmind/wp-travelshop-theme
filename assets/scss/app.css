@@ -15741,7 +15741,7 @@ header.header-main .auto-complete-overlay {
   position: relative; }
   .teaser-block .teaser-block-preview .teaser-block-toggle {
     padding: 3rem 0 0 0;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 50%);
     background-repeat: repeat-x;
     opacity: 1;
     pointer-events: auto;
