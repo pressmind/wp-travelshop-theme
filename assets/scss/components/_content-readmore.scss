@@ -15,12 +15,12 @@
 
     // -- toggle
     .teaser-block-toggle{
-      padding: 3rem 0 0 0;
+      padding: 5rem 0 0 0;
+      pointer-events: none;
 
-      @include gradient-y(rgba($body-bg, 0), $body-bg);
+      @include gradient-y(rgba($body-bg, 0), $body-bg, 0%, 75%);
 
       opacity: 1;
-      pointer-events: auto;
 
       position:absolute;
       bottom:0;
@@ -29,6 +29,7 @@
 
       > button.btn {
         padding: 0;
+        pointer-events: auto;
       }
     }
 
