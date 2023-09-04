@@ -117,8 +117,6 @@ require_once 'functions/sitemaps.php';
 // Images
 require_once 'functions/images.php';
 
-// Checklist
-require_once 'functions/checklist_formatter.php';
 
 // Remove empty p tags
 require_once 'functions/remove_empty_paragraphs.php';
