@@ -2,6 +2,22 @@
  * change breadcrumb in some aspects
  */
 
+%breadcrumb-no-spacing {
+  // -- small padding
+  padding: .5rem 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 1rem 0;
+  }
+
+  .breadcrumb-wrapper .breadcrumb,
+  .breadcrumb {
+    padding-top:0;
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+}
+
 .breadcrumb-wrapper {
   .breadcrumb {
     gap: $breadcrumb-item-padding;
@@ -78,4 +94,16 @@
       }
     }
   }
+}
+
+main > .breadcrumb-wrapper,
+main > .container > .row .breadcrumb-wrapper {
+  @extend %breadcrumb-no-spacing;
+}
+
+.container .breadcrumb-wrapper .container {
+  width: unset;
+  max-width: unset;
+  padding-left: unset;
+  padding-right: unset;
 }

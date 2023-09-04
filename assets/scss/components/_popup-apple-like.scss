@@ -97,7 +97,7 @@
   flex-direction: column;
 
   position: fixed;
-  transition: opacity .3s, transform $animation-speed-default;
+  transition: opacity $animation-speed-default, transform $animation-speed-default;
 
   transform: translateY($apple-like-offset);
   opacity:0;

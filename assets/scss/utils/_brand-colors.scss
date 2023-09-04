@@ -11,7 +11,7 @@ $color--foursquare         : hsla(206, 72%, 45%, 1);     // #207dc5
 $color--github             : hsla(0, 0%, 18%, 1);        // #2f2f2f
 $color--google             : hsla(217, 89%, 61%, 1);     // #4285f4
 $color--google_plus        : hsla(8, 74%, 53%, 1);       // #e0452c
-$color--instagram          : hsla(208, 46%, 41%, 1);     // #396d9a
+$color--instagram          : #e1306c;     // #396d9a
 $color--linkedin           : hsla(203, 100%, 35%, 1);    // #006db3
 $color--pinterest          : hsla(0, 78%, 45%, 1);       // #ce1a19
 $color--skype              : hsla(198, 100%, 48%, 1);    // #00acf4
@@ -21,3 +21,13 @@ $color--vimeo              : hsla(200, 82%, 61%, 1);     // #48b6ed
 $color--yelp               : hsla(5, 100%, 38%, 1);      // #c30f00
 $color--youtube            : hsla(0, 100%, 60%, 1);      // #ff3333
 $color--whatsapp           : hsla(102, 69%, 40%, 1); // #4aae20;
+
+$brand-colors: (
+        'whatsapp': $color--whatsapp,
+        'youtube': $color--youtube,
+        'twitter': $color--twitter,
+        'pinterest': $color--pinterest,
+        'instagram': $color--instagram,
+        'linkedin': $color--linkedin,
+        'facebook': $color--facebook
+) !default;

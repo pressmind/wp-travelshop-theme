@@ -1,0 +1,177 @@
+.content-block-content-slider {
+  position: relative;
+
+  .content-slider-item {
+
+    position: relative;
+
+    .content-slider-image,
+    .content-slider-video {
+      @include media-breakpoint-up(md) {
+        > div {
+          min-height: $content-slider-min-height;
+        }
+      }
+    }
+
+    .content-slider-content {
+
+      @include media-breakpoint-up(md) {
+        position:absolute;
+        top: 50%;
+        left:0;
+        right: 0;
+
+        transform: translateY(-50%);
+      }
+
+      > .content-slider-container {
+        @include make-container();
+        @include make-container-max-widths();
+      }
+
+
+      @include media-breakpoint-down(sm) {
+        background-color: $content-slider-box-mobile-bg;
+
+        border-bottom: {
+          width: $content-slider-box-mobile-border-bottom-width;
+          style: solid;
+          color: $content-slider-box-mobile-border-bottom-color;
+        }
+      }
+
+      .content-slider-box {
+        @include get-element-shadow('slider-content-box');
+        background-color: $content-slider-box-bg;
+
+        @include border-radius($content-slider-box-border-radius);
+        @include spacing-generator($content-slider-box-paddings, 'around', 'padding');
+
+
+        @include media-breakpoint-up(md) {
+          max-width: $content-slider-box-max-width;
+        }
+
+        @include media-breakpoint-down(sm) {
+          padding-left: 0;
+          padding-right: 0;
+
+          @include border-radius(0);
+
+          @if ( $content-slider-box-mobile-bg != $content-slider-box-bg ) {
+            background-color: transparent;
+          }
+        }
+
+        h1.content-slider-box-title {
+          @include font-size-generator($content-slider-box-title-sizes);
+        }
+
+        .content-slider-box-text {
+          @include font-size-generator($content-slider-box-font-sizes);
+        }
+      }
+
+      // -- changes for procut
+      &.content-slider-content-product {
+        .content-slider-box {
+          h1.content-slider-box-title {
+             @extend %card-title-styles;
+
+            margin: 0 0 .5rem 0 !important;
+          }
+
+          .content-slider-box-text {
+            margin-bottom: 0;
+
+            // -- default is 3 lines, font-size-base + line-height-base
+            @include fade-out-text($font-size-sm);
+
+            @include media-breakpoint-up(lg) {
+              @include fade-out-text();
+            }
+          }
+
+          .content-slider-box-bottom {
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            align-items: flex-end;
+
+            .discount-wrapper {
+              margin-bottom: .25rem;
+
+              .discount-wrapper--inner {
+                justify-content: end;
+              }
+            }
+
+            .price-row {
+              flex-direction: column;
+              flex: 0;
+
+              .btn.btn-primary {
+                white-space: nowrap;
+
+                > small span {
+                  display: inline;
+                }
+              }
+            }
+
+            /**
+             * Date row
+             */
+            .date-row {
+              flex: 1;
+              .dropdown {
+                @extend %date-dropdown;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .slider-controls {
+    @extend %slider-controls;
+    @extend %slider-controls-large-up-lg;
+    @extend %slider-controls-inner;
+
+    // theme
+    @extend %slider-controls-on-image;
+
+    // set element specific spacing left/right
+    left: 0;
+    right: 0;
+    @include spacing-generator($content-slider-box-controls-spacer, 'x', padding);
+
+    // do some top padding, top make it centered on image..
+    @include media-breakpoint-down(sm) {
+      top:0;
+      transform: translateY(-1rem);
+
+      padding-top: ( (((9 / 16) * 100%) / 2) );
+    }
+  }
+
+  // -- fallback if not initialized
+  .content-slider-inner:not(.tns-slider) {
+    .content-slider-item {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+
+    + .slider-controls {
+      display: none;
+    }
+  }
+}

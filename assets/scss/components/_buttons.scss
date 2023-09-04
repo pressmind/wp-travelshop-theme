@@ -2,27 +2,55 @@
  * Booking button
  */
 
-.btn {
-  display: inline-flex;
-  flex-direction: row;
-  gap: .25rem;
-  align-items: center;
-
+%btn-inner-elements {
   .loader {
     display: none;
     width: auto;
-
-    height: $btn-font-size * $btn-line-height;
   }
 
   > svg {
     width: $btn-font-size;
     height: $btn-font-size;
   }
+}
+
+%btn-flex-attributes {
+  display: inline-flex;
+  flex-direction: row;
+  gap: .25rem;
+  align-items: center;
+}
+
+.btn {
+  @extend %btn-flex-attributes;
+  @extend %btn-inner-elements;
+
+  position: relative;
 
   &.btn-block {
     display: flex;
     justify-content: center;
+  }
+
+  > .btn-loader,
+  > .btn-loader-placeholder {
+    @extend %btn-flex-attributes;
+    @extend %btn-inner-elements;
+  }
+
+  > .btn-loader-placeholder {
+    opacity:0;
+    pointer-events: none;
+
+    + .btn-loader {
+      position:absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      justify-content: center;
+    }
   }
 
   // -- change look & feel of btn-link
@@ -66,10 +94,11 @@
 }
 
 .btn.booking-btn,
-.booking-btn {
+.booking-btn,
+.btn-booking {
 
   // add opacity to transitions
-  transition: color .3s, border-color .3s, background-color .3s, opacity $animation-speed-default;
+  transition: color $animation-speed-default, border-color $animation-speed-default, background-color $animation-speed-default, opacity $animation-speed-default;
 
   &.green {
     @include button-variant($booking-green, $booking-green, lighten($booking-green, 15%), lighten($booking-green, 15%), darken($booking-green, 10%), darken($booking-green, 10%));
@@ -125,18 +154,18 @@
 
   // -- loader height
   .loader {
-    height: $booking-btn-loader-height;
+    height: $btn-loader-height;
     width: auto;
 
-    margin: ( (($btn-font-size * $btn-line-height) - $booking-btn-loader-height) / 2 ) auto;
+    margin: ( (($btn-font-size * $btn-line-height) - $btn-loader-height) / 2 ) auto;
   }
 
   &.btn-lg {
     .loader {
-      margin: ( (($btn-font-size-lg * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+      margin: ( (($btn-font-size-lg * $btn-line-height-lg) - $btn-loader-height) / 2 ) auto;
 
       @include media-breakpoint-down(sm) {
-        margin: ( ((1.125rem * $btn-line-height-lg) - $booking-btn-loader-height) / 2 ) auto;
+        margin: ( ((1.125rem * $btn-line-height-lg) - $btn-loader-height) / 2 ) auto;
       }
     }
   }

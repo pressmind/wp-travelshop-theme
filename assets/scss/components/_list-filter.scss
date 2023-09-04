@@ -240,7 +240,9 @@
       }
 
       .list-filter-footer {
-        margin-top: 0;
+        @include media-breakpoint-down($filter-mobile-break) {
+          margin-top: 0;
+        }
         @extend %modal-footer-down-#{$filter-mobile-break};
       }
     }
@@ -263,7 +265,9 @@
       }
 
       .list-filter-footer {
-        margin-top: 0;
+        @include media-breakpoint-down($filter-mobile-break) {
+          margin-top: 0;
+        }
         @extend %apple-like-footer-down-#{$filter-mobile-break};
       }
 
@@ -296,7 +300,9 @@
       }
 
       .list-filter-footer {
-        margin-top: 0;
+        @include media-breakpoint-down($filter-mobile-break) {
+          margin-top: 0;
+        }
         @extend %offcanvas-footer-down-#{$filter-mobile-break};
       }
 

@@ -235,6 +235,7 @@
   box-shadow: none;
   background: transparent;
   padding: 0;
+  color: inherit;
 }
 
 /**
@@ -324,4 +325,52 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+/**
+ * Scrollbar
+ */
+@mixin scrollbars($style, $size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    width: $size;
+    transition: background $animation-speed-default;
+
+    @if ( $style == 'pill' ) {
+      border-radius: ($size/2);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+@mixin make-col($size, $type: 'grid', $columns: $grid-columns) {
+  @if ( $type == 'custom' ) {
+    flex: 0 0 $size;
+    // Add a `max-width` to ensure content within each column does not blow out
+    // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+    // do not appear to require this.
+    max-width: $size;
+  } @else {
+    flex: 0 0 percentage($size / $columns);
+    // Add a `max-width` to ensure content within each column does not blow out
+    // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+    // do not appear to require this.
+    max-width: percentage($size / $columns);
+  }
 }

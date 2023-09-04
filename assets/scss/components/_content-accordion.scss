@@ -58,7 +58,7 @@
         height: $font-size-lg;
 
         color: $accordion-toggle-icon-color;
-        transition: color .3s, transform $animation-speed-default;
+        transition: color $animation-speed-default, transform $animation-speed-default;
       }
 
       .accordion-toggle--title {

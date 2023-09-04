@@ -55,7 +55,8 @@ if ( post_password_required() ) {
             'logged_in_as'       => null,
             'title_reply'        => esc_html__( 'Schreibe ein Kommentar', 'travelshop' ),
             'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
-            'title_reply_after'  => '</h4>'
+            'title_reply_after'  => '</h4>',
+            'class_submit' => 'btn btn-primary'
         )
     );
     ?>

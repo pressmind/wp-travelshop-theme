@@ -76,14 +76,14 @@ foreach ( $durConfig['data']['search_mongodb']['search']['touristic']['duration_
 </div>
 
 <div class="daterange-overlay">
-    <div class="daterange-overlay-header d-flex flex-row flex-nowrap justify-content-between justify-content-lg-center">
+    <div class="daterange-overlay-header d-flex flex-row flex-nowrap justify-content-between ">
         <div class="h5 d-none d-lg-block">
             <span class="selected-options-date" data-default="<?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>"><?php echo !empty($human_readable_str) ? $human_readable_str : 'Reisezeitraum'; ?></span>
         </div>
         <div class="h5 d-block d-lg-none">
             <?php echo empty($args['name']) ? 'Reisezeitraum' : $args['name']; ?>
         </div>
-        <button type="button" class="daterange-overlay-close d-flex d-lg-none">
+        <button type="button" class="daterange-overlay-close d-flex ">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
         </button>
     </div>

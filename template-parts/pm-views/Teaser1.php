@@ -17,7 +17,6 @@ use Pressmind\Travelshop\Template;
  *  'departure_date_count' => 12
  *  'possible_durations' => []
  *  'dates_per_month' => []
- *  'fst_date_departure'
  *  'class' => ''
  * ];
  * </code>
@@ -49,7 +48,7 @@ if(!empty($args['cheapest_price'])){
 }
 
 ?>
-<article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper card-travel-wrapper--default">
+<article class="<?php echo empty($args['class']) ? 'col-12 col-md-6 col-lg-3' : $args['class']; ?> card-travel-wrapper card-travel-wrapper--default ">
     <div class="card-travel">
             <div class="card-image">
                 <?php
@@ -123,27 +122,28 @@ if(!empty($args['cheapest_price'])){
                 </div>
                 <?php } ?>
                 <div class="price-row">
-                    <?php
-                    if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
-                        echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
-                            'prefix' => '<hr>',
-                            'cheapest_price' => $args['cheapest_price'],
-                            'discount' => $discount,
-                            'hide-price-total' => true,
-                            'hide-discount-valid-to' => true,
-                        ], 0);
-                    }
-                    ?>
-                    <a href="<?php echo $args['url']; ?>" class="btn btn-primary">
                         <?php
-                        if(!is_null($args['cheapest_price'])) {
-                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', ['cheapest_price' => $args['cheapest_price'],
-                            ]);
-                        }else{
-                            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                        if (($discount = PriceHandler::getDiscount($args['cheapest_price'])) !== false) {
+                            echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/discount.php', [
+                                'prefix' => '<hr>',
+                                'cheapest_price' => $args['cheapest_price'],
+                                'discount' => $discount,
+                                'hide-price-total' => true,
+                                'hide-discount-valid-to' => true,
+                            ], 0);
                         }
                         ?>
-                    </a>
+                        <a href="<?php echo $args['url']; ?>" class="btn btn-primary">
+                            <?php
+                            if(!is_null($args['cheapest_price'])) {
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/price-1.php', [
+                                    'cheapest_price' => $args['cheapest_price'],
+                                ]);
+                            }else{
+                                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/no-price.php', []);
+                            }
+                            ?>
+                        </a>
                 </div>
             </div>
         </section>

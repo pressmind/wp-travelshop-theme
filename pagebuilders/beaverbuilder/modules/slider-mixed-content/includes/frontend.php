@@ -4,7 +4,7 @@
  */
 
 $args = [];
-
+$args['uid'] = $module->node;
 
 foreach($settings->slides as $slide){
 

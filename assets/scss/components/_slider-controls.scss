@@ -20,7 +20,7 @@
     justify-content: center;
     pointer-events: auto;
 
-    transition: border-color .3s, color .3s, background-color .3s, opacity $animation-speed-default;
+    transition: border-color $animation-speed-default, color $animation-speed-default, background-color $animation-speed-default, opacity $animation-speed-default;
     background-color: $slider-controls-bg;
     color: $slider-controls-color;
 
@@ -102,7 +102,50 @@
 }
 
 @include placeholder('slider-controls-outer') {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  justify-content: space-between;
 
+  z-index: 2;
+  max-width: calc((var(--vw, 1vw) * 100) - .25rem);
+
+  // set width by max container width
+  @each $key, $value in $container-max-widths {
+    @if ( index(($container-max-widths), ($key $value)) == length($container-max-widths) ) {
+      width: ((pxToRem($value) - (pxToRem($grid-gutter-width))) + ($slider-controls-outer-offset * 2));
+    }
+  }
+
+  > button {
+    color: $slider-controls-outer-color;
+    background-color: $slider-controls-outer-bg;
+
+    border-width: $slider-controls-outer-border-width;
+
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-style: solid;
+      border-color: $slider-controls-outer-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-outer-hover-color;
+        background-color: $slider-controls-outer-hover-bg;
+
+        @if ( $slider-controls-outer-border-width != 0 ) {
+          border-color: $slider-controls-outer-hover-border-color;
+        }
+      }
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0;
+    }
+  }
 }
 
 // -- different theming

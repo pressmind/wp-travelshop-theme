@@ -25,6 +25,29 @@
   }
 }
 
+%input-field-base {
+  @include button-reset();
+
+  border: $input-border-big-width solid transparent;
+  @include border-radius($input-border-radius);
+  @include transition($input-transition);
+
+  width: 100%;
+
+  padding-left: $input-padding-x;
+  padding-right: $input-padding-x;
+
+  height: $search-bar-input-height;
+  line-height: ($search-bar-input-height - ($input-border-big-width * 2));
+
+  position: relative;
+  z-index: 2;
+
+  &:hover, &:focus, &:active {
+    border: $input-border-big-width solid $input-border-active-color;
+  }
+}
+
 .search-wrapper {
 
   // -- fields
@@ -37,8 +60,7 @@
 
   // -- search
   .search-bar-fields-search {
-    min-width: 18rem;
-    flex: 0;
+    flex: 1;
 
     .search-box-field {
       margin: -$input-border-width;
@@ -48,11 +70,21 @@
       min-width: unset;
       width: 100%;
     }
+
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      min-width: 14rem;
+      flex: 0;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      min-width: 18rem;
+    }
   }
 
   // -- pickers
   .search-bar-fields-pickers {
-    flex: 1;
+    flex: 0 0 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -60,6 +92,10 @@
     @include media-breakpoint-down($search-bar-mobile-break) {
       flex-direction: column;
       width: 100%;
+    }
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      flex: 1;
+      width: auto;
     }
 
     .search-box-field {
@@ -95,26 +131,7 @@
 
     .search-field-input-field,
     .auto-complete-overlay {
-      @include button-reset();
-      
-      border: $input-border-big-width solid transparent;
-      @include border-radius($input-border-radius);
-      @include transition($input-transition);
-
-      width: 100%;
-
-      padding-left: $input-padding-x;
-      padding-right: $input-padding-x;
-
-      height: $search-bar-input-height;
-      line-height: ($search-bar-input-height - ($input-border-big-width * 2));
-
-      position: relative;
-      z-index: 2;
-
-      &:hover, &:focus, &:active {
-        border: $input-border-big-width solid $input-border-active-color;
-      }
+      @extend %input-field-base;
     }
 
     // -- datepicker input
@@ -237,7 +254,7 @@
 
       font-weight: $search-bar-tabs-font-weight;
 
-      transition: border-color .3s, color .3s, background-color $animation-speed-default;
+      transition: border-color $animation-speed-default, color $animation-speed-default, background-color $animation-speed-default;
 
       @if ( $search-bar-tabs-border-width != 0 ) {
         border-top-width: $search-bar-tabs-border-width;
@@ -267,6 +284,35 @@
         }
       }
     }
+  }
+
+  // -- sorting fields
+  .search-bar-fields-search {
+    order: 1;
+
+    @include media-breakpoint-up($search-bar-mobile-break-up) {
+      order: 2;
+    }
+
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      order: 1;
+    }
+  }
+
+  .search-bar-fields-pickers {
+    order: 2;
+
+    @include media-breakpoint-up($search-bar-mobile-break-up) {
+      order: 1;
+    }
+
+    @include media-breakpoint-up($search-bar-large-break-up) {
+      order: 2;
+    }
+  }
+
+  .search-box-submit {
+    order: 3;
   }
 }
 

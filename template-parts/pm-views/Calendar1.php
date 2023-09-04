@@ -38,7 +38,7 @@ $random = rand(1, 999999);
             <div class="arrow--wrapper">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
 
-                <div class="date-wrapper d-none d-mb-flex">
+                <div class="date-wrapper d-none d-lg-flex">
                     <i class="circle green"></i>
                     <?php
                     if(!empty($cheapest_price)) {
@@ -55,8 +55,8 @@ $random = rand(1, 999999);
         <div class="col-title col-12 col-lg-4">
             <strong><?php echo $args['headline']; ?></strong>
         </div>
-        <div class="col-duration col-6 col-mb-2">
-            <div class="date-wrapper d-mb-none">
+        <div class="col-duration col-6 col-lg-2">
+            <div class="date-wrapper d-lg-none">
                 <i class="circle green"></i>
                 <?php
                 if(!empty($cheapest_price)) {

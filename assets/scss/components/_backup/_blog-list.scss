@@ -6,7 +6,7 @@
   }
 }
 
-.content-block.content-block-blog--header {
+.content-block.content-block-blog-header {
   h1, .h1 {
     margin-bottom: 0;
     font-size: 1.75rem;
@@ -20,7 +20,7 @@
     margin-top: 1rem;
   }
 
-  .blog-list-entry.blog-list-entry--author {
+  .blog-list-entry.log-list-entry-author {
     margin: 1rem 0 0 0;
     border-top: 0;
     border-bottom: 0;
@@ -43,7 +43,7 @@ figure.wp-block-image {
 }
 
 .content-block.content-block-blog,
-.content-block.content-block-blog--header {
+.content-block.content-block-blog-header {
   @include media-breakpoint-down(sm) {
     margin-left: -($grid-gutter-width / 4);
     margin-right: -($grid-gutter-width / 4);
@@ -99,7 +99,7 @@ figure.wp-block-image {
   }
 
   @include media-breakpoint-down(sm) {
-    .blog-list-entry--more {
+    .log-list-entry-more {
       font-size: $font-size-sm;
     }
   }
@@ -130,7 +130,7 @@ figure.wp-block-image {
   }
 
   // -- thumbnail
-  .blog-list-entry--thumbnail {
+  .log-list-entry-thumbnail {
     img {
       width: 100%;
       height: auto;
@@ -138,7 +138,7 @@ figure.wp-block-image {
   }
 
   // -- body
-  .blog-list-entry--thumbnail + .blog-list-entry--body {
+  .log-list-entry-thumbnail + .log-list-entry-body {
     padding: ($grid-gutter-width / 2) 0 0 0;
 
     @include media-breakpoint-up(md) {
@@ -147,7 +147,7 @@ figure.wp-block-image {
   }
 
   // -- header
-  .blog-list-entry--header {
+  .log-list-entry-header {
     h3, h1 {
       a {
         color: $body-color;
@@ -178,7 +178,7 @@ figure.wp-block-image {
   }
 
   // -- details
-  .blog-list-entry--details {
+  .log-list-entry-details {
     @include clearfix();
 
     font-size: 12px;
@@ -207,8 +207,8 @@ figure.wp-block-image {
   }
 
   // -- excerpt
-  .blog-list-entry--excerpt,
-  .blog-list-entry--content {
+  .log-list-entry-excerpt,
+  .log-list-entry-content {
     margin: .5rem 0;
 
     @include media-breakpoint-up(md) {
@@ -216,7 +216,7 @@ figure.wp-block-image {
     }
   }
 
-  .blog-list-entry--excerpt {
+  .log-list-entry-excerpt {
     font-size: $font-size-sm;
 
     @include media-breakpoint-up(md) {
@@ -225,7 +225,7 @@ figure.wp-block-image {
   }
 
   // -- blog crosslinks
-  .blog-list-entry--crosslinks {
+  .log-list-entry-crosslinks {
     margin-top: $grid-gutter-width;
 
     > div {
@@ -244,7 +244,7 @@ figure.wp-block-image {
     }
   }
 
-  .blog-list-entry--header + .blog-list-entry--more {
+  .log-list-entry-header + .log-list-entry-more {
     margin-top: 1rem;
 
     @include media-breakpoint-down(sm) {
@@ -266,7 +266,7 @@ figure.wp-block-image {
     border-bottom:0;
   }
 
-  .blog-list-entry--header {
+  .log-list-entry-header {
     h1 {
       font-size: 1.75rem;
 
@@ -300,7 +300,7 @@ figure.wp-block-image {
     }
   }
 
-  .blog-list-entry--content {
+  .log-list-entry-content {
     h1, h2, h3, h4 {
       margin-bottom: 1rem;
     }
@@ -309,7 +309,7 @@ figure.wp-block-image {
 
 
 // -- author box
-.blog-list-entry--author {
+.log-list-entry-author {
 
   .author-bio.show-avatars {
     padding-left: 115px;
@@ -471,7 +471,7 @@ figure.wp-block-image {
 }
 
 // -- comments
-.blog-list-entry--comments {
+.log-list-entry-comments {
   h3, h4 {
     margin: 0 0 1.5rem 0;
 
@@ -481,7 +481,7 @@ figure.wp-block-image {
   }
 }
 
-.blog-list-entry--comments-list {
+.log-list-entry-comments-list {
 
   ol.comment-list {
     padding:0;
@@ -657,7 +657,7 @@ figure.wp-block-image {
 }
 
 // - entry title
-.blog-list-entry--content {
+.log-list-entry-content {
   blockquote.wp-block-quote {
     padding: .75rem 1rem;
     font-style: italic;
@@ -677,12 +677,12 @@ figure.wp-block-image {
 }
 
 // - related
-.blog-list-entry--related {
+.log-list-entry-related {
   h3 {
     margin: 0 0 1.5rem 0;
   }
 
-  h1.blog-list-entry--title.related {
+  h1.log-list-entry-title.related {
     font-size: $font-size-base;
     margin: 0;
   }
@@ -733,7 +733,7 @@ figure.wp-block-image {
       }
     }
 
-    .blog-list-entry--title {
+    .log-list-entry-title {
       a {
         color: $body-color;
         transition: color $animation-speed-default;
@@ -745,12 +745,12 @@ figure.wp-block-image {
       }
     }
 
-    .blog-list-entry--excerpt {
+    .log-list-entry-excerpt {
       margin: .5rem 0 0 0;
       font-size: $font-size-sm;
     }
 
-    .blog-list-entry--details {
+    .log-list-entry-details {
       font-size: $font-size-sm;
       color: $gray-500;
 
@@ -771,7 +771,7 @@ figure.wp-block-image {
 }
 
 // - post nav
-.blog-list-entry--postnav {
+.log-list-entry-postnav {
   .nav-links {
     display: flex;
     flex-wrap: wrap;

@@ -42,14 +42,14 @@ jQuery(function ($) {
         }
 
         this.setButtonLoader = function (btn) {
-            btn.find('svg').hide();
-            btn.find('span').hide();
+            btn.find('svg:not(.always-show)').hide();
+            btn.find('span:not(.btn-loader):not(.btn-loader-placeholder)').hide();
             btn.find('.loader').show();
         }
 
         this.removeButtonLoader = function (btn) {
-            btn.find('svg').show();
-            btn.find('span').show();
+            btn.find('svg:not(.always-show)').show();
+            btn.find('span:not(.btn-loader):not(.btn-loader-placeholder)').show();
             btn.find('.loader').hide();
         }
 
@@ -293,7 +293,7 @@ jQuery(function ($) {
         this.resultHandlerSearchBarStandalone = function(data, query_string, scrollto, btn){
 
             _this.removeButtonLoader(btn);
-            let total_count_span = btn.find('span');
+            let total_count_span = btn.find('span.search-bar-total-count');
             let str = '';
             if (data.count == 1) {
                 str = data.count + ' ' + total_count_span.data('total-count-singular');

@@ -189,7 +189,7 @@
               height: 1rem;
               border: 1px solid rgba($body-color, .25);
               background-color: transparent;
-              transition: border .3s, background-color $animation-speed-default;
+              transition: border $animation-speed-default, background-color $animation-speed-default;
               border-radius: .5rem;
               position: absolute;
               top: 50%;

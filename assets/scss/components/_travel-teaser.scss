@@ -17,6 +17,37 @@
   background-color: $danger; // @todo: maybe green better? Cuz read is danger, in every shop new == green
 }
 
+%card-title-styles {
+  color: $travel-card-title-color;
+  margin: 0 0 $travel-card-spacer-y 0;
+
+  // set link settings for better optik + reading / usage
+  > a {
+    color: inherit;
+    transition: color $animation-speed-default;
+    text-decoration: none;
+
+    &:hover {
+      color: $travel-card-title-hover-color;
+    }
+
+    &:active, &:focus {
+      color: $travel-card-title-active-color;
+    }
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+%card-title-settings {
+  // -- set font sizes
+  @include font-size-generator($card-title-sizes);
+
+  @extend %card-title-styles;
+}
+
 /**
  * small ( 2 column ) travel card
  */
@@ -35,6 +66,11 @@
     flex: 0 0 ((100% / 12) * 5); // 5 of 12
     width: 100%;
     max-width: ((100% / 12) * 5);
+
+    @include media-breakpoint-down(xs) {
+      flex: 0 0 ((100% / 12) * 4);
+      max-width: ((100% / 12) * 4);
+    }
 
     // -- set offset left top bottom to make image lay above border if border width not 0
     @if $travel-card-border-width != 0 {
@@ -58,13 +94,37 @@
     width: 100%;
     max-width: ((100% / 12) * 7);
 
+
+    @include media-breakpoint-down($travel-card-break-down) {
+      align-self: center;
+    }
+
+    @include media-breakpoint-down(xs) {
+      flex: 0 0 ((100% / 12) * 8);
+      max-width: ((100% / 12) * 8);
+    }
+
     padding: 0 0 0 $travel-card-spacer-x;
 
     .attribute-row {
       display: none;
     }
 
+    @include media-breakpoint-down($travel-card-break-down) {
+      .card-text {
+        display: none;
+      }
+
+      h1.card-title {
+        margin-bottom: 0;
+      }
+    }
+
     .card-body--bottom {
+      @include media-breakpoint-down($travel-card-break-down) {
+        padding-top: .25rem;
+      }
+
       .price-row {
         display: flex;
         flex-direction: row;
@@ -257,30 +317,10 @@
     }
 
     h1.card-title {
-      // -- set font sizes
+      @extend %card-title-settings;
+
+      // specific travel card font size title
       @include font-size-generator($travel-card-title-sizes);
-
-      color: $travel-card-title-color;
-      margin: 0 0 $travel-card-spacer-y 0;
-
-      // set link settings for better optik + reading / usage
-      > a {
-        color: inherit;
-        transition: color $animation-speed-default;
-        text-decoration: none;
-
-        &:hover {
-          color: $travel-card-title-hover-color;
-        }
-
-        &:active, &:focus {
-          color: $travel-card-title-active-color;
-        }
-
-        &:active {
-          text-decoration: underline;
-        }
-      }
     }
 
     .card-body--bottom {
@@ -343,6 +383,64 @@
       }
     }
 
+  }
+
+  // -- date dropdown
+  .date-row {
+    .dropdown {
+      .dropdown-toggle:hover {
+        .more-dates {
+          text-decoration: underline;
+        }
+      }
+
+      .dropdown-menu {
+        margin-top: 0.5rem;
+        border-color: $travel-card-border-color;
+        width: 100%;
+        max-width: 16rem;
+        max-height: 14rem;
+        overflow-x: auto;
+
+        @include scrollbars('pill', .5rem, rgba(#000, .25), $dropdown-bg);
+
+        .dropdown-header,
+        .dropdown-item {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .dropdown-item {
+          padding-top: .25rem;
+          padding-bottom: .25rem;
+
+          display: flex;
+          gap: .25rem;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          transition: background-color $animation-speed-default;
+          font-size: $font-size-sm;
+
+          &:hover, &:focus, &:active {
+            color: $dropdown-color;
+            background-color: $dropdown-link-hover-bg;
+          }
+        }
+
+        .dropdown-header {
+          padding-top: .25rem;
+          padding-bottom: .25rem;
+          font-size: $font-size-xs;
+          margin-bottom: 0;
+        }
+
+        .dropdown-item + .dropdown-header {
+          margin-top: .25rem;
+        }
+      }
+    }
   }
 }
 

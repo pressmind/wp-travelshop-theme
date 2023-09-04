@@ -67,44 +67,22 @@ foreach ($args['items'] as $item) {
     $slide_items[] = $item;
 }
 ?>
-<section class="content-block content-block-content-slider">
-    <?php
-    if (count($slide_items) > 1) {
-        ?>
-        <div class="content-slider--nav">
-            <button class="prev-button">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 407.437 407.437" style="enable-background:new 0 0 407.437 407.437;"
-                     xml:space="preserve">
-                     <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "></polygon>
-                </svg>
-            </button>
-            <button class="next-button">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 407.437 407.437" style="enable-background:new 0 0 407.437 407.437;"
-                     xml:space="preserve">
-                      <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "></polygon>
-                </svg>
-            </button>
-        </div>
-        <?php
-    }
-    ?>
-    <div class="content-slider--inner">
+<section class="content-block content-block-content-slider" id="content-slider-<?php echo $args['uid']; ?>">
+    <div class="content-slider-inner">
         <?php
         foreach ($slide_items as $item) {
             ?>
-            <article class="content-slider--item content-slider--item__<?php echo $item['type']; ?>">
+            <article class="content-slider-item">
                 <?php
                 if ($item['type'] == 'content') {
                     if ($item['media_type'] == 'video' ) {
                     ?>
-                        <div class="content-slider--video">
+                        <div class="content-slider-video">
 
                             <?php
                             $video_src = wp_get_attachment_url( $item['video'] );
                             ?>
-                            <div class="media-video">
+                            <div class="media media-video media-cover ratio-16x9 ratio-md-21x5">
                                 <video autoplay muted loop style="pointer-events: none;">
                                     <source src="<?php echo $video_src; ?>" type="video/mp4">
                                     Your browser does not support the video tag.
@@ -115,29 +93,34 @@ foreach ($args['items'] as $item) {
                     <?php
                     } else {
                     ?>
-                        <div class="content-slider--image">
-                            <div role="img" aria-label="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" style="background-image: url('<?php echo $item['image']; ?>');"></div>
+                        <div class="content-slider-image">
+                            <div class="media media-cover ratio-16x9 ratio-md-21x5">
+                                <img title="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" src="<?php echo $item['image']; ?>" />
+                            </div>
                         </div>
                     <?php
                     }
                 ?>
                 <?php } else { ?>
-                    <div class="content-slider--image">
-                        <div role="img" aria-label="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" style="background-image: url('<?php echo $item['image']; ?>');"></div>
+                    <div class="content-slider-image">
+                        <div class="media media-cover ratio-16x9 ratio-md-21x5">
+                            <img title="<?php echo !empty($args['headline']) ? $args['headline'] : ''; ?>" src="<?php echo $item['image']; ?>" />
+                        </div>
                     </div>
                 <?php } ?>
-                <div class="content-slider--content">
-                    <div class="container">
+                <div class="content-slider-content content-slider-content-<?php echo $item['type']; ?>">
+                    <div class="content-slider-container">
                         <?php
                         if ($item['type'] == 'content') {
                             ?>
-                            <div class="card">
-                                <div class="card-body">
+                            <div class="content-slider-box">
                                     <?php if(!empty($item['title'])){?>
-                                    <h1><?php echo $item['title']; ?></h1>
+                                    <h1 class="content-slider-box-title"><?php echo $item['title']; ?></h1>
                                     <?php } ?>
                                     <?php if(!empty($item['text'])){?>
-                                        <p><?php echo $item['text']; ?></p>
+                                        <p class="content-slider-box-text">
+                                            <?php echo $item['text']; ?>
+                                        </p>
                                     <?php } ?>
                                     <?php if(!empty($item['btn_link'])){?>
                                     <a class="btn btn-primary" href="<?php echo $item['btn_link']; ?>" target="<?php echo !empty($item['btn_link_target']) ? $item['btn_link_target'] : '_self';?>"><?php
@@ -148,7 +131,6 @@ foreach ($args['items'] as $item) {
                                         }
                                         ?></a>
                                     <?php } ?>
-                                </div>
                             </div>
                             <?php
                         } elseif ($item['type'] == 'product') {
@@ -165,4 +147,7 @@ foreach ($args['items'] as $item) {
         }
         ?>
     </div>
+
+    <?php load_template( get_stylesheet_directory().'/template-parts/micro-templates/slider-controls.php', false, []); ?>
+
 </section>

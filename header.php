@@ -1,4 +1,5 @@
 <?php
+use Pressmind\Travelshop\Template;
 /**
  * @var PMTravelShop $PMTravelShop
  */
@@ -10,14 +11,14 @@ global $PMTravelShop;
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0">
     <?php if(TS_COOKIE_CONSENT){
-        ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
+    ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
     <?php } ?>
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1.jpg" media="(min-width: 601px)">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1-mobile.jpg" media="(max-width: 600px)">
     <?php if(TS_PWA){
-        ?><link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest-pwa.php">
+    ?><link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest-pwa.php">
     <?php } ?>
     <meta name="theme-color" content="#f4f4f4"/>
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon_192.png" sizes="192x192" type="image/png">
@@ -54,10 +55,10 @@ global $PMTravelShop;
     </script>
     <?php if(defined('TS_GTM_CODE')) { ?>
         <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','<?php echo TS_GTM_CODE; ?>');</script>
         <!-- End Google Tag Manager -->
     <?php } ?>
@@ -65,8 +66,8 @@ global $PMTravelShop;
 <body <?php body_class(); ?>>
 <?php if(defined('TS_GTM_CODE')) { ?>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo TS_GTM_CODE; ?>"
-                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo TS_GTM_CODE; ?>"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 <?php } ?>
 <header class="header-main">
@@ -89,19 +90,25 @@ global $PMTravelShop;
                 <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
-                <div class="col-auto  d-none d-xl-block col-search" id="search">
-                    <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
-                        <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
-                        <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
-                               aria-label="Search" name="pm-t">
-                        <div class="input-group-append">
-                            <button class="input-group-btn" aria-label="Suchen">
-                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+            <div class="col-auto  d-none d-xl-block col-search" id="search">
+                <form class="position-relative search-box-field search-box-field--fulltext" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
+                    <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
 
-                            </button>
+                    <div class="input-group form-string-search my-2 my-lg-0 search-field-input search-field-input--fulltext" data-search-placeholder="search-1">
+
+                        <div class="input-icon">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
                         </div>
-                    </form>
-                </div>
+                        <input class="search-field-input-field string-search-trigger" readonly type="search"  placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>" aria-label="Search" value="<?php echo !empty($_GET['pm-t']) ? $_GET['pm-t'] : '';?>">
+                        <div class="lds-dual-ring"></div>
+                    </div>
+
+                    <?php
+                    // -- search overlay
+                    echo Template::render(APPLICATION_PATH . '/template-parts/pm-search/search/string-search-overlay.php', []);
+                    ?>
+                </form>
+            </div>
             <?php } ?>
 
 

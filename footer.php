@@ -1,7 +1,7 @@
 <?php
 // for dev, shows actual breakpoint key
 $breakpoints = array('sm', 'md', 'lg', 'xl', 'xxl');
-$showbreakpoints = true;
+$showbreakpoints = false;
 
 if ( $showbreakpoints ) {
 ?>
@@ -92,14 +92,14 @@ left:0; z-index: 9999999; color: #fff; background: black; display: flex; flex-di
                         <?php echo do_shortcode('[ts-company-zip]');?>
                         <?php echo do_shortcode('[ts-company-city]');?>
                     </p>
-                    <a class="icon-link" href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>" title="<?php echo do_shortcode('[ts-company-name]');?> anrufen" class="icon-link">
+                    <a href="tel:<?php echo do_shortcode('[ts-company-hotline]');?>" title="<?php echo do_shortcode('[ts-company-name]');?> anrufen" class="icon-link">
                         <div class="icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
                         </div>
                     <?php echo do_shortcode('[ts-company-hotline]');?>
                     </a>
 
-                    <a class="icon-link" href="mailto:<?php echo do_shortcode('[ts-company-mail]');?>" title="E-Mail an <?php echo do_shortcode('[ts-company-name]');?>" class="icon-link">
+                    <a href="mailto:<?php echo do_shortcode('[ts-company-mail]');?>" title="E-Mail an <?php echo do_shortcode('[ts-company-name]');?>" class="icon-link">
                         <div class="icon">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                         </div>

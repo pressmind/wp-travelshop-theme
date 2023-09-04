@@ -14,7 +14,7 @@
         @extend %slider-controls-on-image;
 
         // set element specific spacing left/right
-        @include spacing-generator($detail-header-gallery-spacer-x, 'around', left);
+        @include spacing-generator($detail-header-gallery-spacer-x, 'padding', left);
         @include spacing-generator($detail-header-gallery-spacer-x, 'around', right);
       }
 

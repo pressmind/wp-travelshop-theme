@@ -1,3 +1,34 @@
+%booking-entrypoint-date-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  @include border-radius($booking-entrypoint-date-item-border-radius);
+
+  text-decoration: none;
+  font-weight: $booking-entrypoint-date-item-font-weight;
+  color: $booking-entrypoint-date-item-color;
+  border-width: $booking-entrypoint-date-item-border-width;
+  border-style: solid;
+  border-color: $booking-entrypoint-date-item-border-color;
+  background-color: $booking-entrypoint-date-item-bg;
+  transition: border-color $animation-speed-default, color $animation-speed-default, background-color $animation-speed-default;
+
+  padding: $booking-entrypoint-date-item-spacing-y $booking-entrypoint-date-item-spacing-x;
+
+  @include spacing-generator($booking-entrypoint-date-items-gaps, 'around', 'gap');
+  @include font-size-generator($booking-entrypoint-date-item-font-sizes);
+
+  &:hover, &:focus, &:active {
+    color: $booking-entrypoint-date-item-hover-color;
+    border-color: $booking-entrypoint-date-item-hover-border-color;
+    background-color: $booking-entrypoint-date-item-hover-bg;
+
+    text-decoration: none;
+  }
+}
+
 .detail-booking-entrypoint{
   background-color: $booking-entrypoint-bg;
   color: $booking-entrypoint-color;
@@ -22,8 +53,6 @@
 
       // -- transport type
       &.booking-filter-item--transport-type {
-        @include spacing-generator($booking-entrypoint-spacers-y, 'bottom', 'padding');
-
         .booking-filter-radio {
           @extend %custom-radio-checkbox-inline;
 
@@ -138,7 +167,7 @@
         .booking-offer-items {
           .booking-offer-item {
             .booking-offer-item-label {
-              @extend %share-action-button;
+              @extend %booking-entrypoint-date-item;
               cursor: pointer;
 
               // gap reset
@@ -171,14 +200,74 @@
               &.is-active:hover,
               &.is-active:active,
               &.is-active:focus {
-                color: $share-item-hover-color;
-                border-color: $share-item-hover-border-color;
-                background-color: $share-item-bg;
-                box-shadow: inset 0 0 0 .0625rem $share-item-hover-border-color;
+                color: $booking-entrypoint-date-item-active-color;
+                border-color: $booking-entrypoint-date-item-active-border-color;
+                background-color: $booking-entrypoint-date-item-active-bg;
+                box-shadow: inset 0 0 0 .0625rem $booking-entrypoint-date-item-active-border-color;
               }
             }
           }
         }
+      }
+    }
+  }
+}
+
+@if ( $booking-entrypoint-break-down == null ) {
+  .detail-booking-entrypoint {
+    .booking-filter-title {
+      button.close-booking-filter {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@if ( $booking-entrypoint-break-down != null ) {
+
+  @include media-breakpoint-down($booking-entrypoint-break-down) {
+
+    .detail-booking-entrypoint {
+      box-shadow: none;
+      padding:0;
+      border:0;
+
+      + .detail-box.detail-box-transparent {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+  }
+
+  .booking-filter-wrapper {
+    @extend %apple-like-wrapper-down-#{$booking-entrypoint-break-down};
+
+    .booking-filter-inner {
+      @extend %apple-like-content-down-#{$booking-entrypoint-break-down};
+
+      .booking-filter-inner-body {
+        @extend %apple-like-body-down-#{$booking-entrypoint-break-down};
+
+        .booking-filter {
+          > .booking-filter-title {
+            @extend %apple-like-header-down-#{$booking-entrypoint-break-down};
+
+            @include media-breakpoint-down($booking-entrypoint-break-down) {
+              margin-top: -$apple-like-inner-padding;
+              margin-left: -$apple-like-inner-padding;
+              margin-right: -$apple-like-inner-padding;
+            }
+          }
+        }
+      }
+    }
+
+    &.show {
+      @extend %apple-like-open-down-#{$booking-entrypoint-break-down};
+
+      .booking-filter-inner {
+        @extend %apple-like-content-open-down-#{$booking-entrypoint-break-down};
       }
     }
   }

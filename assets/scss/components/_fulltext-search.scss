@@ -132,7 +132,7 @@
               text-transform: uppercase;
 
               padding: 0 $font-size-xs;
-              transition: color .3s, background-color .3s, border $animation-speed-default;
+              transition: color $animation-speed-default, background-color $animation-speed-default, border $animation-speed-default;
 
               @include border-radius($border-radius-sm);
             }

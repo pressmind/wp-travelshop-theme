@@ -28,10 +28,10 @@ hr + .content-block {
 }
 
 // -- rest container inside container
-.container .container,
-.container .container-fluid,
-.container-fluid .container-fluid,
-.container-fluid .container {
+.container:not(.fl-row) .container:not(.fl-row),
+.container:not(.fl-row) .container-fluid:not(.fl-row),
+.container-fluid:not(.fl-row) .container-fluid:not(.fl-row),
+.container-fluid:not(.fl-row) .container:not(.fl-row) {
   max-width: unset;
   width: unset;
   padding:0;

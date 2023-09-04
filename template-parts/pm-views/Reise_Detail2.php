@@ -406,13 +406,13 @@ $args['breadcrumb'][] = $tmp;
         <div class="detail-section detail-section-topbar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-12 col-md">
+                    <div class="col">
                         <?php
                         // = = = > load the breadcrumb  < = = =
                         the_breadcrumb(null, null, $args['breadcrumb']);
                         ?>
                     </div>
-                    <div class="d-none d-md-block col-md-auto">
+                    <div class="col-auto">
                         <?php
                         // = = = > simple share button < = = =
                         $share_args = [
@@ -435,7 +435,7 @@ $args['breadcrumb'][] = $tmp;
                             'title' => $args['headline'],
                             'image' => $args['pictures'][0]
                         ];
-                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['sharing_options' => $share_args, 'object' => $share_object]);
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/link-sharing.php', ['share_options' => $share_args, 'object' => $share_object]);
                         ?>
                     </div>
                 </div>
@@ -510,7 +510,7 @@ $args['breadcrumb'][] = $tmp;
 
                         ?>
                     </div>
-                    <div class="col-12 col-lg-5 col-xl-4">
+                    <div class="detail-sidebar col-12 col-lg-5 col-xl-4">
                         <div class="detail-booking-entrypoint">
                             <?php
                             // = = = > load the price box < = = =

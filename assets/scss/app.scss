@@ -26,10 +26,12 @@
 @import "base/beaverbuilder";
 @import "base/media";
 @import "base/prices";
+@import "base/aspect-ratios";
 @import "base/status-circles";
 @import "base/content";
 @import "base/spacing";
 @import "base/stars";
+@import "base/spinner";
 //@import "base/_backup/typography";
 //@import "base/_backup/container";
 //@import "base/_backup/beaverbuilder";
@@ -68,6 +70,7 @@
 @import "components/search-bar";
 @import "components/search-header";
 @import "components/jumbotron";
+@import "components/team-teaser";
 @import "components/wp-teaser";
 @import "components/icon-teaser";
 @import "components/image-teaser";
@@ -81,6 +84,14 @@
 @import "components/date-range-picker";
 @import "components/fulltext-search";
 @import "components/pagination";
+@import "components/blog-sidebar";
+@import "components/blog-entry";
+@import "components/blog-author";
+@import "components/social-links";
+@import "components/item-slider";
+@import "components/contactform7";
+@import "components/content-slider";
+@import "components/category-header";
 
 // -- layout
 //@import "layout/_backup/footer";
@@ -100,6 +111,8 @@
 @import "pages/product-results";
 @import "pages/product-detail";
 @import "pages/product-calendar";
+@import "pages/blog-list";
+@import "pages/blog-detail";
 
 // -- themes
 // this just an example for you're theme starting point

@@ -13,11 +13,30 @@
 }
 
 %media-cover {
+  display: block;
   position: relative;
   overflow: hidden;
 
   > img {
     @extend %media-cover-image;
+  }
+}
+
+%media-border-radius {
+  @include border-radius($border-radius);
+  overflow: hidden;
+
+  > img {
+    @include border-radius($border-radius);
+  }
+}
+
+%media-circle {
+  @include border-radius(100%);
+  overflow: hidden;
+
+  > img {
+    @include border-radius(100%);
   }
 }
 
@@ -31,6 +50,21 @@
     img {
       transform: scale(1.1); // scale up by hover
     }
+  }
+}
+
+%media-video {
+  position: relative;
+  overflow: hidden;
+}
+
+%media-video-cover {
+  > video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100vw;
   }
 }
 
@@ -51,4 +85,20 @@
 
 .media-hover-scale {
   @extend %media-hover-scale;
+}
+
+.media-border-radius {
+  @extend %media-border-radius;
+}
+
+.media-circle {
+  @extend %media-circle;
+}
+
+.media-video {
+  @extend %media-video;
+
+  &.media-cover {
+    @extend %media-video-cover;
+  }
 }

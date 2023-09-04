@@ -30,7 +30,7 @@ if (empty($args['categories'][$args['fieldname']][0]) === false) {
                         <?php echo $args['name']; ?>
                     </div>
 
-                    <button type="button" class="close-category-dropdown d-flex d-lg-none">
+                    <button type="button" class="close-category-dropdown d-flex ">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                     </button>
                 </div>

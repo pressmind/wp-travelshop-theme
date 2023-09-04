@@ -1,9 +1,6 @@
 <?php
 get_header();
 ?>
-    <!-- BREADCRUMB: START -->
-<?php the_breadcrumb(null);?>
-    <!-- BREADCRUMB: END -->
 
     <main>
 
@@ -11,8 +8,8 @@ get_header();
 
             <div class="container">
 
-                <div class="content-block content-block-blog--header">
-                    <div class="row">
+                <div class="content-block content-block-blog-header">
+                    <div class="row row-introduction">
                         <div class="col-12">
                             <h1><?php echo get_the_archive_title() ?></h1>
                         </div>
@@ -22,7 +19,7 @@ get_header();
                 <div class="content-block content-block-blog">
                     <div class="row">
                         <div class="col-12 col-md-9">
-                            <div class="posts-list">
+                            <div class="posts-list" data-columns="<?php echo BLOG_LIST_COLUMNS; ?>">
                                 <?php
                                 // -- wp query, all posts
                                 global $wp;
@@ -56,7 +53,7 @@ get_header();
                             <?php if ( $count_posts > $count ) { ?>
                                 <div class="posts-pagination">
                                     <nav>
-                                        <ul class="pagination">
+                                        <ul class="pagination justify-content-center">
 
                                             <?php
                                                 $prev_page = $paged - 1;
@@ -72,11 +69,9 @@ get_header();
                                             ?>
 
                                             <li  class="page-item <?php if ( $paged == 1 ) { echo 'disabled'; } ?>">
-                                                <a href="<?php echo $get_permalink . $prev_page_str; ?>" class="page-link">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="16" height="16" viewBox="0 2 24 24" stroke-width="2" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <polyline points="15 6 9 12 15 18"></polyline>
-                                                    </svg>
+                                                <a href="<?php echo $get_permalink . $prev_page_str; ?>" class="page-link page-link-chevron">
+                                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-left-bold"></use></svg>
+
                                                 </a>
                                             </li>
 
@@ -109,11 +104,9 @@ get_header();
                                                 }
                                                 ?>
                                                 <li  class="page-item <?php if ( $paged == $wp_query->max_num_pages ) { echo 'disabled'; } ?>">
-                                                    <a href="<?php echo $get_permalink; ?>page/<?php echo $next_page; ?>" class="page-link">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="16" height="16" viewBox="0 2 24 24" stroke-width="2" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                            <polyline points="9 6 15 12 9 18"></polyline>
-                                                        </svg>
+                                                    <a href="<?php echo $get_permalink; ?>page/<?php echo $next_page; ?>" class="page-link page-link-chevron">
+                                                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+
                                                     </a>
                                                 </li>
                                             <?php } ?>

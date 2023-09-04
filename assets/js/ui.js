@@ -1,6 +1,12 @@
 jQuery(function ($) {
+    // ------------------------------------------------
+    // -- BS Classes
+    // ------------------------------------------------
+    let BSGridGutterWidth = 30;
 
-
+    // ------------------------------------------------
+    // -- basic classes
+    // ------------------------------------------------
     let openClass = 'is-open';
     let activeClass = 'is-active';
     let hiddenClass = 'is-hidden';
@@ -267,6 +273,40 @@ jQuery(function ($) {
     });
 
     // -------------------------------------
+    // --- content slider
+    // -------------------------------------
+    var contentSlider = $('.content-block-content-slider');
+    var contentSliderContainer = '';
+    var contentSliderId = '';
+    var contentSliderControlsContainer = '';
+
+    if ( contentSlider.length > 0 ) {
+        contentSlider.each(function(element, index) {
+
+            contentSliderId = $(this).attr('id');
+            contentSliderContainer = '#' + contentSliderId + ' .content-slider-inner';
+            contentSliderControlsContainer = '#' + contentSliderId + ' .slider-controls';
+
+            window[contentSliderId] = tns({
+                container: contentSliderContainer,
+                nav: false,
+                mouseDrag: true,
+                disable: false,
+                gutter: 0,
+                items: 1,
+                loop: false,
+                slideBy: 1,
+                controls: true,
+                controlsContainer: contentSliderControlsContainer,
+
+            });
+
+        });
+    }
+
+
+
+    // -------------------------------------
     // --- init for various image slider
     // -------------------------------------
 
@@ -490,6 +530,10 @@ jQuery(function ($) {
     // -- mobile bar show/hide
     // ------------------------------------------------
     let detailMobileBar = $('.detail-mobile-bar');
+    let detailMobileBarBooking = $('.detail-mobile-bar-booking .btn');
+    let detailMobileBarBookingMobileType = 'scroll';
+    let detailBookingEntrypoint =  '.booking-filter-wrapper';
+    let detailBookingEntrypointClose = '.close-booking-filter';
 
     if ( detailMobileBar.length > 0 ) {
         var detailBookingPos = $('.detail-booking-entrypoint').offset().top;
@@ -497,6 +541,41 @@ jQuery(function ($) {
         var detailMobileBarThreshold = detailBookingPos + detailBookingHeight + 30;
         var resizeInitiatorMobileBar;
         var curScrollPosition = $(window).scrollTop();
+        var entryPointOpen = false;
+
+        function showBookingEntrypoint() {
+            $('body').find(detailBookingEntrypoint).addClass('show');
+        }
+
+        function hideBookingEntrypoint() {
+            $('body').find(detailBookingEntrypoint).removeClass('show');
+        }
+
+        $('body').find(detailBookingEntrypointClose).on('click touch', function(e) {
+           e.preventDefault();
+
+           hideBookingEntrypoint();
+
+           e.stopPropagation();
+        });
+
+        detailMobileBarBooking.on('click touch', function(e) {
+            e.preventDefault();
+
+            if ( detailMobileBarBookingMobileType === 'scroll' ) {
+                $('body, html').animate({
+                    scrollTop: $('body').find('.detail-booking-entrypoint').offset().top - $('.header-main').outerHeight() - 16
+                }, 300);
+            } else {
+                if ( entryPointOpen ) {
+                    hideBookingEntrypoint();
+                } else {
+                    showBookingEntrypoint();
+                }
+            }
+
+            e.stopPropagation();
+        });
 
         function toggleMobileBar(curScrollPosition, detailMobileBarThreshold ) {
 
@@ -900,7 +979,7 @@ jQuery(function ($) {
     });
 
     $(dropdownNotClose).on('click touch', function(e) {
-        //e.preventDefault();
+        // e.preventDefault();
 
         // -- little hook
         // -- backdrop checker
@@ -1044,7 +1123,7 @@ jQuery(function ($) {
         var thisWrapper = _this.parents('.search-box-field--fulltext');
         var thisOverlay = thisWrapper.find(searchOverlayWrapper);
         var thisOverlayBackdrop = thisWrapper.find(searchOverlayBackdrop);
-        var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .form-control');
+        var thisOverlayInput = thisWrapper.find('.string-search-overlay-input .auto-complete');
 
         // get "trigger" position, for fixed overlay attrubutes
         var thisPosition = _this.offset();
@@ -1519,5 +1598,121 @@ jQuery(function ($) {
             navBackdrop.toggleClass(openClass);
             navOffcanvas.toggleClass(openClass);
         }
+    });
+
+    /**
+     * Item slider
+     */
+    let itemSlider = $('.item-slider-wrapper');
+    let itemSliderMobile = $('.item-slider-wrapper--mobile');
+    let itemSliderResponsive = [];
+
+    itemSliderResponsive[2] = {
+        768: {
+            items: 2,
+            slideBy: 2
+        }
+    };
+
+    itemSliderResponsive[3] = {
+        768: {
+            items: 2,
+            slideBy: 2
+        },
+        992: {
+            items: 3,
+            slideBy: 3
+        }
+    };
+
+    itemSliderResponsive[4] = {
+        768: {
+            items: 2,
+            slideBy: 2
+        },
+        992: {
+            items: 3,
+            slidey: 3,
+        },
+        1200: {
+            items: 4,
+            slideBy: 4
+        }
+    };
+
+    function itemSliderMobileInit(itemSliderMobile) {
+        var thisSliderId, thisSliderContainer, thisSliderControls = null;
+
+        itemSliderMobile.each(function(e){
+            thisSliderId = $(this).parents('.content-block').attr('id');
+            thisSliderControls = '#' + thisSliderId + ' .slider-controls';
+            thisSliderContainer = '#' + thisSliderId + ' .item-slider-wrapper--mobile';
+
+            window['itemSlider' + thisSliderId] = tns({
+                container: thisSliderContainer,
+                nav: false,
+                navPosition: "bottom",
+                mouseDrag: true,
+                disable: false,
+                gutter: BSGridGutterWidth,
+                loop: false,
+                items: 1,
+                slideBy: 1,
+                controls: true,
+                responsive: {
+                    768: {
+                        disable: true
+                    }
+                },
+                controlsContainer: thisSliderControls
+            });
+        });
+    }
+
+    function itemSliderInit(itemSlider) {
+
+        var thisSliderId, thisSliderContainer, thisSliderColumns, thisSliderControls, thisSliderResponsive = null;
+
+        itemSlider.each(function(e){
+
+            if ( !$(this).hasClass('tns-slider') && !$(this).hasClass('item-slider-wrapper--mobile') ) {
+                thisSliderId = $(this).parents('.content-block').attr('id');
+                thisSliderColumns = $(this).data('columns');
+                thisSliderControls = '#' + thisSliderId + ' .slider-controls';
+                thisSliderContainer = '#' + thisSliderId + ' .item-slider-wrapper';
+
+                // -- set column settings
+                thisSliderResponsive = itemSliderResponsive[thisSliderColumns];
+
+                window['itemSlider' + thisSliderId] = tns({
+                    container: thisSliderContainer,
+                    nav: false,
+                    navPosition: "bottom",
+                    mouseDrag: true,
+                    disable: false,
+                    gutter: BSGridGutterWidth,
+                    loop: false,
+                    items: 1,
+                    slideBy: 1,
+                    controls: true,
+                    responsive: thisSliderResponsive,
+                    controlsContainer: thisSliderControls
+                });
+
+            }
+
+        });
+
+    }
+
+    // -- init sliders
+    itemSliderMobileInit(itemSliderMobile);
+    itemSliderInit(itemSlider);
+
+
+    // -- reinitialize
+    $( document ).ajaxComplete(function( event, xhr, settings ) {
+        var refreshItemSlider = $('.item-slider-wrapper');
+        itemSliderInit(refreshItemSlider);
     });
 });

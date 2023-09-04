@@ -1,3 +1,11 @@
+%divider-top {
+  border-top: $hr-border-width solid $hr-border-color;
+}
+
+%divider-bottom {
+  border-top: $hr-border-width solid $hr-border-color;
+}
+
 %spacing-bottom {
   margin-bottom: 1rem;
 
@@ -12,4 +20,83 @@
    @include media-breakpoint-up(md) {
      margin-top: $grid-gutter-width;
    }
+}
+
+%spacing-divider-top {
+  padding-top: 1rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $grid-gutter-width;
+  }
+
+  @extend %divider-top;
+}
+
+%spacing-divider-bottom {
+  padding-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: $grid-gutter-width;
+  }
+
+  @extend %divider-bottom;
+}
+
+.spacing-top {
+  @extend %spacing-top;
+}
+
+.spacing-top-divider {
+  @extend %spacing-divider-top;
+}
+
+.divider-top {
+  @extend %divider-top;
+}
+
+.spacing-bottom {
+  @extend %spacing-bottom;
+}
+
+.spacing-bottom-divider {
+  @extend %spacing-divider-bottom;
+}
+
+.divider-bottom {
+  @extend %divider-bottom;
+}
+
+// -- generate gaps
+@if ( $default-gaps ) {
+  @each $name, $value in $default-gaps {
+    .gap-#{$name} {
+      gap: $value;
+    }
+
+    .row-gap-#{$name} {
+      row-gap: $value;
+    }
+
+    .column-gap-#{$name} {
+      column-gap: $value;
+    }
+  }
+
+  @each $breakpoint, $value in $grid-breakpoints {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+      @each $name, $value in $default-gaps {
+        .gap-#{$breakpoint}-#{$name} {
+          gap: $value;
+        }
+
+        .row-gap-#{$breakpoint}-#{$name} {
+          row-gap: $value;
+        }
+
+        .column-gap-#{$breakpoint}-#{$name} {
+          column-gap: $value;
+        }
+      }
+    }
+  }
 }

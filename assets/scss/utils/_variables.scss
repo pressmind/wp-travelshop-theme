@@ -25,6 +25,29 @@ $specific-element-shadows: (
   'detail-box-services': none,
   'detail-box-trust': none,
   'detail-box-contact': none,
+  'slider-content-box': none,
+  'category-header-content-box': none
+) !default;
+
+/**
+ * Ratios
+ */
+$aspect-ratios:  (
+    "1x1": 100%,
+    "4x3": calc(3 / 4 * 100%),
+    "16x9": calc(9 / 16 * 100%),
+    "16x10": calc(10 / 16 * 100%),
+    "21x9": calc(9 / 21 * 100%),
+    "21x5": calc(5 / 21 * 100%)
+) !default;
+
+/**
+ * Gaps ( flexbox )
+ */
+$default-gaps: (
+  '1': .25rem,
+  '2': .5rem,
+  '3': 1rem
 ) !default;
 
 /**
@@ -48,7 +71,7 @@ $booking-orange-color: $white !default;
 $booking-gray: $gray-600 !default;
 $booking-gray-color: $white !default;
 
-$booking-btn-loader-height: .75rem !default;
+$btn-loader-height: .75rem !default;
 
 /**
  * Rating color
@@ -58,6 +81,7 @@ $rating-color: $warning !default;
 /**
  * Body
  */
+$body-color-lighter: lighten($body-color, 35%) !default;
 $body-color-light: lighten($body-color, 25%) !default;
 $body-bg-highlight: $gray-200 !default;
 
@@ -106,6 +130,87 @@ $h5-font-sizes: (
 
 $h6-font-sizes: (
         null: $h6-font-size // 16px
+) !default;
+
+/**
+ * Responsive font sizhe
+ */
+
+$responsive-font-size: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+/**
+ * Responsive title sizes
+ */
+$card-title-sizes: $h5-font-sizes !default; // its similar to $h5-font-sizes
+
+/**
+ * Category Header
+ */
+$category-header-min-height: 24rem;
+$category-header-box-max-width: 30rem !default;
+$category-header-box-border-radius: $border-radius !default;
+
+$category-header-box-break-up: md !default;
+$category-header-box-break-down: sm !default;
+
+$category-header-box-transparent-bg: transparent !default;
+$category-header-box-transparent-color: #fff !default;
+$category-header-box-transparent-heading-color: $category-header-box-transparent-color !default;
+$category-header-box-transparent-subline-color: $category-header-box-transparent-color !default;
+$category-header-box-transparent-text-shadow: $text-on-image-shadow !default;
+
+$category-header-box-white-bg: #fff !default;
+$category-header-box-white-color: $body-color !default;
+$category-header-box-white-heading-color: $category-header-box-white-color !default;
+$category-header-box-white-subline-color: $category-header-box-white-color !default;
+
+$category-header-box-mobile-border-bottom-width: 1px !default;
+$category-header-box-mobile-border-bottom-color: $card-border-color !default;
+
+$category-header-box-primary-bg: $primary !default;
+$category-header-box-primary-color: #fff !default;
+$category-header-box-primary-heading-color: $category-header-box-primary-color !default;
+$category-header-box-primary-subline-color: $category-header-box-primary-color !default;
+
+$category-header-box-paddings: (
+        null: 1.5rem,
+        md: $grid-gutter-width
+) !default;
+$category-header-spacing-x: (
+        null: 1.5rem,
+        md: $grid-gutter-width
+) !default;
+$category-header-box-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+
+/**
+ * Content slider
+ */
+$content-slider-min-height: 37.5rem !default;
+$content-slider-box-max-width: 30rem !default;
+$content-slider-box-border-radius: $border-radius !default;
+$content-slider-box-bg: #fff !default;
+$content-slider-box-mobile-border-bottom-width: 1px !default;
+$content-slider-box-mobile-border-bottom-color: $card-border-color !default;
+$content-slider-box-mobile-bg: #fff !default;
+$content-slider-box-paddings: (
+        null: 1.5rem,
+        md: $grid-gutter-width
+) !default;
+$content-slider-box-font-sizes: (
+        null: $font-size-sm,
+        lg: $font-size-base
+) !default;
+$content-slider-box-title-sizes: $h3-font-sizes !default;
+
+$content-slider-box-controls-spacer: (
+        null: ($grid-gutter-width / 2),
+        lg: $grid-gutter-width
 ) !default;
 
 /**
@@ -171,6 +276,15 @@ $slider-controls-on-image-light-color: #fff !default;
 $slider-controls-on-image-light-hover-color: $body-color !default;
 $slider-controls-on-image-light-hover-border-color: transparent !default;
 $slider-controls-on-image-light-hover-bg: #fff !default;
+
+$slider-controls-outer-offset: $slider-controls-size + 1rem !default;
+$slider-controls-outer-bg: #fff !default;
+$slider-controls-outer-border-width: 1px !default;
+$slider-controls-outer-border-color: $hr-border-color !default;
+$slider-controls-outer-color: $body-color-light !default;
+$slider-controls-outer-hover-border-color: $primary !default;
+$slider-controls-outer-hover-bg: $primary !default;
+$slider-controls-outer-hover-color: #fff !default;
 
 /**
  * Share page
@@ -527,6 +641,8 @@ $search-bar-padding-x: ($grid-gutter-width / 2) !default;
 $search-bar-input-height: 3rem !default;
 
 $search-bar-mobile-break: sm !default;
+$search-bar-mobile-break-up: md !default;
+$search-bar-large-break-up: xl !default;
 $search-bar-field-columns: 3 !default;
 
 // themes
@@ -706,6 +822,7 @@ $teaser-category-product-travel-card-title-active-color: $primary;
 // -- travelcard break for Teaser1.php - breaks stripe teaser into normal teaser by breakpoint wich is set here
 // -- you can set bootstrap breakpoint key or px value
 $travel-card-break: md !default;
+$travel-card-break-down: sm !default;
 
 $travel-card-spacer-y: $card-spacer-y !default;
 $travel-card-spacer-x: $card-spacer-x !default;
@@ -716,19 +833,13 @@ $travel-card-bg: $card-bg !default;
 
 $travel-card-badge-pill: false !default;
 
-$travel-card-body-sizes: (
-  null: $font-size-sm,
-  lg: $font-size-base
-) !default;
+$travel-card-body-sizes: $responsive-font-size !default;
 
 $travel-card-title-color: $headings-color;
 $travel-card-title-hover-color: $primary;
 $travel-card-title-active-color: $primary;
 
-$travel-card-title-sizes: (
-        null: 1rem, // 16px
-        lg: $h5-font-size // 20px
-) !default; // its similar to $h5-font-sizes
+$travel-card-title-sizes: $card-title-sizes !default; // its similar to $h5-font-sizes
 
 /**
  * Image teaser
@@ -746,7 +857,7 @@ $image-teaser-image-overlay-color: rgba(#000, .15) !default;
  * WP teaser
  */
 
-$wp-teaser-bg: $card-bg !important;
+$wp-teaser-bg: $card-bg !default;
 $wp-teaser-border-radius: $card-border-radius !default;
 $wp-teaser-border-width: $card-border-width !default;
 $wp-teaser-border-color: $card-border-color !default;
@@ -754,6 +865,21 @@ $wp-teaser-spacer-y: $card-spacer-y !default;
 $wp-teaser-spacer-x: $card-spacer-x !default;
 $wp-teaser-image-aspect-ratio-width: 16 !default;
 $wp-teaser-image-aspect-ratio-height: 9 !default;
+
+/**
+ * Team teaser
+ */
+
+$team-teaser-image-offset: true !default;
+$team-teaser-image-width: 10rem !default;
+$team-teaser-image-circle: true !default;
+$team-teaser-image-ratio: '1x1' !default; // ratios from $aspect-ratios
+$team-teaser-bg: $card-bg !default;
+$team-teaser-border-radius: $card-border-radius !default;
+$team-teaser-border-width: $card-border-width !default;
+$team-teaser-border-color: $card-border-color !default;
+$team-teaser-spacer-y: $card-spacer-y !default;
+$team-teaser-spacer-x: $card-spacer-x !default;
 
 /**
  * Icon teaser
@@ -898,6 +1024,8 @@ $detail-box-success-border-color: $success !default;
 $detail-box-success-color: #fff !default;
 
 // detail booking entrypoint
+$booking-entrypoint-break-up: lg !default;
+$booking-entrypoint-break-down: null !default;
 $booking-entrypoint-border-radius: $detail-header-info-border-radius !default;
 $booking-entrypoint-color: $detail-header-info-color !default;
 $booking-entrypoint-border-width: $detail-header-info-border-width !default;
@@ -912,3 +1040,22 @@ $booking-entrypoint-spacers-items:(
         null: .25rem,
         lg: .5rem
 ) !default;
+
+$booking-entrypoint-date-item-font-weight: $share-item-font-weight !default;
+$booking-entrypoint-date-item-font-sizes: $share-item-font-sizes !default;
+$booking-entrypoint-date-item-color: $share-item-color !default;
+$booking-entrypoint-date-item-border-width: $share-item-border-width !default;
+$booking-entrypoint-date-item-border-radius: $share-item-border-radius !default;
+$booking-entrypoint-date-item-border-color: $share-item-border-color !default;
+$booking-entrypoint-date-item-bg: $share-item-bg !default;
+$booking-entrypoint-date-item-spacing-y: $share-item-spacing-y !default;
+$booking-entrypoint-date-item-spacing-x: $share-item-spacing-x !default;
+$booking-entrypoint-date-items-gaps: $share-items-gaps !default;
+$booking-entrypoint-date-item-hover-color: $share-item-hover-color !default;
+$booking-entrypoint-date-item-hover-border-color: $primary !default;
+$booking-entrypoint-date-item-hover-bg: $booking-entrypoint-date-item-bg !default;
+
+
+$booking-entrypoint-date-item-active-color: $share-item-hover-color !default;
+$booking-entrypoint-date-item-active-border-color: $primary !default;
+$booking-entrypoint-date-item-active-bg: $booking-entrypoint-date-item-bg !default;
