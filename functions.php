@@ -72,7 +72,6 @@ require_once 'functions/cleanup_meta_includes.php';
 require_once 'functions/disable_emojis.php';
 require_once 'functions/disable_pagetypes.php';
 //require_once 'functions/disable_main_query.php';
-//require_once 'functions/wordpress_php8.1_fixes.php';
 
 // Menus
 require_once 'functions/menus.php';
@@ -118,7 +117,6 @@ require_once 'functions/sitemaps.php';
 // Images
 require_once 'functions/images.php';
 
-
 // Remove empty p tags
 require_once 'functions/remove_empty_paragraphs.php';
 
@@ -129,49 +127,31 @@ require_once 'functions/after_wp_save.php';
 // Cache
 require_once 'src/RedisPageCache.php';
 
-// Sendmail TODO move!
-add_action('wp_ajax_nopriv_sendrequest', 'sendrequest');
-add_action('wp_ajax_sendrequest', 'sendrequest');
-function sendrequest() {
-    $to     = $_POST['to'];
-    $title = $_POST['title'];
-    $text = $_POST['text'];
-
-    wp_mail($to, $title, $text);
-    return 'email sent';
-    die();
-}
-
 class PMTravelShop{
-
     public $Shortcodes;
     public $AdminPage;
     public $ThemeActivation;
     public $RouteProcessor;
     public $Redis = null;
-
-
     public function __construct($routes)
     {
         $this->RouteProcessor = RouteProcessor::init(new Router('pmwc_routes'), $routes);
         $this->Shortcodes = new Shortcodes();
         $this->AdminPage = new AdminPage();
         $this->ThemeActivation = new ThemeActivation();
-
     }
-
 }
 
 Timer::startTimer('routing');
 require_once 'config-routing.php';
 Timer::endTimer('routing');
+/**
+ * @var $routes array
+ */
 $PMTravelShop = new PMTravelShop($routes);
-
-
 
 // load theme specific pagebuilder modules
 if(PAGEBUILDER == 'beaverbuilder' && class_exists( 'FLBuilder' )){
-
     Timer::startTimer('beaverinit');
     require_once 'config-bb.php';
     require_once 'src/BeaverBuilderModuleLoader.php';

@@ -1,7 +1,7 @@
 <div id="string-search-placeholder-storage" class="d-none">
     <?php
         for($tab_index = 1; $tab_index <= 3; $tab_index++){ ?>
-        <div class="string-search-palceholder-tab" id="searchStorage_search-<?php echo $tab_index; ?>">
+        <div class="string-search-placeholder-tab" id="searchStorage_search-<?php echo $tab_index; ?>">
             <div class="string-search-placeholder">
                 <?php
                 $search_teaser_items = wpsf_get_setting('travelshop_wpsf', 'search_tab'.$tab_index.'_section1', 'items');

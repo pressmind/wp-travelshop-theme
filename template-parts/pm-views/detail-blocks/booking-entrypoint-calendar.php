@@ -9,7 +9,7 @@ use Pressmind\Travelshop\PriceHandler;
  * @var array $args
  */
 
-if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
+if(!empty($args['booking_on_request'])){
     return;
 }
 
@@ -22,21 +22,6 @@ $filter = $calendar->filter;
 
 ?>
 <div class="booking-entrypoint-calendar">
-    <?php /* if(count($filter['durations']) > 1){ ?>
-        <div class="booking-entrypoint-calender-duration">
-            <div class="duration-switch">
-            <?php
-            foreach($filter['durations'] as $duration => $items) { ?>
-                <button type="button" data-duration="<?php echo $duration; ?>" class="<?php echo ($duration == $args['cheapest_price']->duration) ? 'active' : '';?>"><?php
-                    echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
-                        'duration' => $duration,
-                    ]);
-                    ?></button>
-            <?php } ?>
-            </div>
-        </div>
-    <?php } */ ?>
-
     <div class="booking-entrypoint-calendar-outer">
         <div class="booking-entrypoint-calendar-inner">
             <?php

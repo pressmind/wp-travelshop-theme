@@ -9,13 +9,12 @@ use Pressmind\Travelshop\PriceHandler;
 /**
  * @var array $args
  * <code>
- * $args['cheapest_price']
  * $args['media_object']
  * </code>
  *
  */
 
-if(empty($args['cheapest_price'])){
+if(!empty($args['booking_on_request'])){
     return;
 }
 if(empty($args['calendar_filter'])){
@@ -75,7 +74,7 @@ $calendar = $args['media_object']->getCalendar($args['calendar_filter']);
             </label>
         </div>
         <?php
-    }
+        }
     }
     ?>
 </div>

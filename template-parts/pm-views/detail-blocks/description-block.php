@@ -199,7 +199,7 @@
                                                             </div>
                                                             <div class="accordion-gallery-item--image">
                                                                 <img src="<?php echo $picture['url_teaser']; ?>"
-                                                                     alt="<?php echo $picture['alt']; ?>"/>
+                                                                     alt="<?php echo $picture['caption']; ?>"/>
                                                             </div>
                                                             <div class="accordion-gallery-item--copyright">
                                                                 <?php echo $picture['copyright']; ?>

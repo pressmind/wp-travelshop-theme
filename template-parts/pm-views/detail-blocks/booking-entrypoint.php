@@ -243,7 +243,7 @@ if($CheapestPrice->is_virtual_created_price){
         <div class="h6">Termin wählen</div>
         <div id="booking-filter-item--dates" class="booking-filter-item--dates">
             <?php
-            echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/booking-entrypoint-date-list.php', ['cheapest_price' => $args['cheapest_price'],
+            echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/booking-entrypoint-date-list.php', [
                     'media_object' => $args['media_object']
             ]);
             ?>

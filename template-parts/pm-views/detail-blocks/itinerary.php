@@ -51,7 +51,7 @@ if(!$valid){
             <?php
             foreach ($args['media_object']->getItinerarySteps() as $key => $step) {
                 foreach ($step->sections as $section) {
-                    if(empty(strip_tags($section->content->headline))){
+                    if(empty(strip_tags((string)$section->content->headline))){
                         continue;
                     }
                     ?>
