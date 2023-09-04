@@ -2,10 +2,12 @@
 /**
  * @var $args | mediaobject data
  */
+
+use Pressmind\Travelshop\Template;
+
 ?>
 
 <div class="detail-header-info-top">
-
     <div data-pm-id="<?php echo $args['id_media_object']; ?>"
          data-pm-ot="<?php echo $args['id_object_type']; ?>"
          data-pm-dr="<?php //echo !is_null($args['cheapest_price']) ? $args['cheapest_price']->date_arrival->format('Ymd') . '-' . $args['cheapest_price']->date_arrival->format('Ymd') : ''; ?>"
@@ -13,9 +15,7 @@
          class="add-to-wishlist">
         <svg class="heart-stroke"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#heart-straight"></use></svg>
         <svg class="heart-filled"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#heart-straight-filled"></use></svg>
-
     </div>
-
     <?php
     if ( !empty($args['destination_attributes']) || !empty($args['travel_type_attributes']) ) {
         ?>
@@ -39,13 +39,17 @@
     ?>
     <div class="detail-header-info-top-body">
         <h1><?php echo $args['name']; ?></h1>
-        <?php /*
-        <?php if (!empty($args['subline'])) { ?>
+        <?php /* if (!empty($args['subline'])) { ?>
             <p><?php echo $args['subline']; ?></p>
-        <?php } ?>
- */ ?>
+        <?php } */ ?>
         <?php if (!empty($args['usps'])) { ?>
-            <?php echo checklist_formatter($args['usps'], true); ?>
+            <?php
+            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/checked-list.php',
+                [
+                    'value' => $args['usps'],
+                    'responsive' => true,
+                ]);
+            ?>
         <?php } ?>
     </div>
 </div>

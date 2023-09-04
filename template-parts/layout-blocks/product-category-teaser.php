@@ -30,7 +30,7 @@ use Pressmind\Travelshop\Template;
 ?>
 <section class="content-block content-block-teaser-group">
     <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
-    <div class="row row-introduction">
+        <div class="row row-introduction">
             <div class="col-12">
                 <?php if(!empty($args['headline'])){ ?>
                     <h2 class="mt-0">
@@ -41,7 +41,7 @@ use Pressmind\Travelshop\Template;
                     <p><?php echo $args['text'];?></p>
                 <?php } ?>
             </div>
-    </div>
+        </div>
     <?php } ?>
 
 

@@ -26,7 +26,7 @@ if(!empty($_GET['view']) && preg_match('/^[0-9A-Za-z\_]+$/', $_GET['view']) !== 
     $args['view'] = $_GET['view'];
 }
 ?>
-<?php if ( $view !== 'Calendar1' ) { ?>
+<?php if ( $args['view'] !== 'Calendar1' ) { ?>
     <div class="list-filter-toggle mb-4">
         <button class="btn btn-block btn-secondary list-filter-open">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-alt" width="30"

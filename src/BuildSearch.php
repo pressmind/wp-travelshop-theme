@@ -585,6 +585,7 @@ class BuildSearch
         if(preg_match('/^[a-z,A-Z]{3}$/', $str) > 0){
           return strtoupper($str);
         }
+        return $default;
     }
 
 

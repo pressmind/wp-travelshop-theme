@@ -75,6 +75,8 @@ jQuery(function ($) {
     // --- rangeslider
     // ------------------------------------------
 
+
+    // TODO duplicate?
     if (false && $('.js-range-slider').length > 0) {
         var rSliderElement = new rSlider({
             target: '#js-range-slider',
@@ -87,7 +89,7 @@ jQuery(function ($) {
             labels: false,
             disabled: $(".js-range-slider").attr('data-disable') == 'true'
         });
-    }
+   }
 
 
 

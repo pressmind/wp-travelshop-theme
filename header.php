@@ -10,14 +10,14 @@ global $PMTravelShop;
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0">
     <?php if(TS_COOKIE_CONSENT){
-    ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
+        ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
     <?php } ?>
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1.jpg" media="(min-width: 601px)">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/slide-1-mobile.jpg" media="(max-width: 600px)">
     <?php if(TS_PWA){
-    ?><link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest-pwa.php">
+        ?><link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest-pwa.php">
     <?php } ?>
     <meta name="theme-color" content="#f4f4f4"/>
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon_192.png" sizes="192x192" type="image/png">
@@ -38,8 +38,6 @@ global $PMTravelShop;
     <script>
         var IBEURL = '<?php echo TS_IBE3_BASE_URL; ?>';
         var SITEURL = '<?php echo SITE_URL; ?>';
-    </script>
-    <script>
         var ts_ajax_check_availibility_endpoint = '<?php echo defined('TS_IBE3_CHECK_AVAILABILITY_URL') && !empty(TS_IBE3_CHECK_AVAILABILITY_URL) ? TS_IBE3_CHECK_AVAILABILITY_URL : '/wp-content/themes/travelshop/pm-ajax-endpoint.php'; ?>';
         var ts_pwa = <?php echo defined('TS_PWA') && TS_PWA === true ? 'true' : 'false'; ?>;
         <?php if(defined('TS_PARTNERLINK_PARAMETER_NAME')) {
@@ -51,28 +49,26 @@ global $PMTravelShop;
             echo "const partnerTimeout = " . TS_PARTNERLINK_VALID_DAYS . ";";
         } else {
             echo "const partnerTimeout = 30;";
-        } ?>
+        }
+        ?>
     </script>
     <?php if(defined('TS_GTM_CODE')) { ?>
         <!-- Google Tag Manager -->
-            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','<?php echo TS_GTM_CODE; ?>');</script>
         <!-- End Google Tag Manager -->
     <?php } ?>
 </head>
-<body <?php body_class('logged-out'); ?>>
+<body <?php body_class(); ?>>
 <?php if(defined('TS_GTM_CODE')) { ?>
     <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo TS_GTM_CODE; ?>"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo TS_GTM_CODE; ?>"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 <?php } ?>
-<?php
-load_template_transient(get_template_directory().'/template-parts/layout-blocks/cookie-consent.php', false);
-?>
 <header class="header-main">
     <div class="container">
         <div class="row header-main-row align-items-center">
@@ -93,19 +89,19 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 <?php load_template_transient(get_template_directory().'/template-parts/header/menu.php', false); ?>
             </div>
             <?php if(!empty(TS_SINGLE_SEARCH)){?>
-            <div class="col-auto  d-none d-xl-block col-search" id="search">
-                <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
-                    <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
-                    <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
-                           aria-label="Search" name="pm-t">
-                    <div class="input-group-append">
-                        <button class="input-group-btn" aria-label="Suchen">
-                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
+                <div class="col-auto  d-none d-xl-block col-search" id="search">
+                    <form class="form-string-search input-group my-2 my-lg-0" action="<?php echo site_url().'/'.TS_SINGLE_SEARCH['route'].'/'; ?>" method="GET">
+                        <input type="hidden" name="pm-ot" value="<?php echo TS_SINGLE_SEARCH['search']['pm-ot'];?>">
+                        <input class="form-control auto-complete" type="search" data-autocomplete="true" placeholder="<?php echo TS_SINGLE_SEARCH['placeholder'];?>"
+                               aria-label="Search" name="pm-t">
+                        <div class="input-group-append">
+                            <button class="input-group-btn" aria-label="Suchen">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#magnifying-glass"></use></svg>
 
-                        </button>
-                    </div>
-                </form>
-            </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             <?php } ?>
 
 
@@ -133,29 +129,6 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                     </div>
                 </a>
             </div>
-            <div class="col-auto align-self-center header-action-col user-login logged-out p-r-0" style="margin-bottom: 1px;">
-                <div class="header-login align-items-center">
-                    <a class="login-link" href="<?php echo TS_IBE3_BASE_URL; ?>/login?redirect=<?php echo base64_encode(SITE_URL . '/'); ?>">
-                        <div class="icon icon-xxl">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                            </svg>
-                        </div>
-                        <div class="lds-dual-ring"></div>
-                        <div class="loginstatus"></div>
-                        <span class="label ml-2">Login</span>
-                    </a>
-                    <span class="userdata">
-                            <span class="userdata-label">Eingeloggt</span>
-                            <div class="login-menu">
-                                <small class="userdata-email"></small>
-                                <small><a href="#profil">Profil</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="logout-link" href="#logout">Logout</a></small>
-                            </div>
-                        </span>
-                </div>
-            </div>
             <div class="col-auto d-block pr-0 d-xl-none">
                 <button class="header-action header-action--search toggler search-toggler" type="button" data-target="#search" aria-controls="search"
                         aria-expanded="false" aria-label="Toggle Search">
@@ -175,43 +148,6 @@ load_template_transient(get_template_directory().'/template-parts/layout-blocks/
                 </button>
 
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-wishlist">
-                    <div class="wishlist-user-infobox">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                            <path d="M12 9h.01"></path>
-                            <path d="M11 12h1v4h1"></path>
-                        </svg>
-                        <div>
-                            Sie sind nicht eingeloggt. Um Ihre Merkliste dauerhaft zu speichern
-                            <a href="<?php echo TS_IBE3_BASE_URL; ?>/login?redirect=<?php echo base64_encode(SITE_URL . '/'); ?>">
-                                hier anmelden.
-                            </a>
-                            Noch keinen Account?
-                            <a href="<?php echo TS_IBE3_BASE_URL; ?>/login?redirect=<?php echo base64_encode(SITE_URL . '/'); ?>">
-                                Hier registrieren.
-                            </a>
-                        </div>
-                    </div>
-                    <div class="wishlist-visited-toggle">
-                        <div class="dropdown-menu-wishlist-toggle active"><span>Merkliste (<span class="wishlist-count">0</span> Einträge)</span></div>
-                        <div class="dropdown-menu-visited-toggle">Zuletzt angesehen</div>
-                    </div>
-                    <hr />
-                    <div id="wishlist-result" class="wishlist-items active">
-                        <p>Keine Reisen auf der Merkliste</p>
-                    </div>
-                    <div id="visited-result" class="visited-items">
-                        <p>Keine Reisen bislang angesehen</p>
-                    </div>
-                    <hr />
-                </div>
-            </div>
-            <div class="col-auto align-self-center d-none">
-                <button class="toggler search-toggler" type="button" data-target="#search" aria-controls="search"
-                        aria-expanded="false" aria-label="Toggle Search">
-                    <i class="la la-search"></i>
-                </button>
                     <div class="dropdown-menu-inner">
                         <div class="dropdown-menu-content">
                             <div class="dropdown-menu-header d-none">

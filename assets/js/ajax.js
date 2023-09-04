@@ -1475,7 +1475,7 @@ jQuery(function ($) {
 
         this.initBookingBtnClickHandler = function (){
             if ($('.booking-btn').length > 0) {
-                $('.booking-btn').on('click', function (e) {
+                $('.booking-btn').not('.detail-booking-entrypoint .booking-btn').on('click', function (e) {
                     if($(this).data('modal') === true){
                         return true;
                     }
@@ -1776,7 +1776,8 @@ jQuery(function ($) {
             _this.searchboxSwitch();
             _this.autoCompleteInit();
             _this.dateRangePickerInit();
-            _this.priceRangeSliderInit();
+            // TODO deprecated?
+            //_this.priceRangeSliderInit();
             _this.initCategoryTreeSearchBarFields();
             _this.initCalendarRowClick();
             _this.initBookingBtnClickHandler();

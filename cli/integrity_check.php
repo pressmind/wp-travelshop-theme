@@ -6,7 +6,39 @@ use Pressmind\ORM\Object\AbstractObject;
 use Pressmind\REST\Client;
 use Pressmind\System\Info;
 
+$args = $argv;
+$args[1] = isset($argv[1]) ? $argv[1] : null;
+if($matches = preg_grep("/^\-c\=/", $args)){
+    $config_file = trim(substr(reset($matches), 3));
+    if(!file_exists('../'.$config_file)){
+        echo "error: file does not exist".'../'.$config_file."\n";
+        exit;
+    }
+    putenv('PM_CONFIG='.$config_file);
+    echo "pm-config loaded: ".getenv('PM_CONFIG')."\n";
+}
+
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php';
+
+function find_wordpress_base_path()
+{
+    $dir = dirname(__FILE__);
+    do {
+        //it is possible to check for other files here
+        if (file_exists($dir . "/wp-config.php")) {
+            return $dir;
+        }
+    } while ($dir = realpath("$dir/.."));
+    return null;
+}
+
+$wp_path = find_wordpress_base_path() . "/";
+
+define('WP_USE_THEMES', false);
+
+require_once($wp_path . 'wp-load.php');
+require_once($wp_path . 'wp-admin/includes/admin.php');
+
 
 echo 'Checking static models for integrity'. "\n";
 foreach (Info::STATIC_MODELS as $model_name) {

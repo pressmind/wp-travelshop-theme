@@ -4,7 +4,7 @@
   width: 100%;
   min-width: 16rem;
 
-  .category-tree-field-items, .dropdown-menu-body {
+  .category-tree-field-items, .dropdown-menu-body, .booking-filter-radio-items {
     padding: 0 1rem;
     margin: 0 -1rem;
 
@@ -124,7 +124,7 @@
       @extend %modal-header#{$temp-category-dropdown-modal-string};
     }
 
-    .category-tree-field-items, .dropdown-menu-body {
+    .category-tree-field-items, .dropdown-menu-body, .booking-filter-radio-items {
       @extend %modal-body#{$temp-category-dropdown-modal-string};
     }
 
@@ -170,7 +170,7 @@
         @extend %modal-header-down-#{$category-dropdown-booking-mobile-break};
       }
 
-      .category-tree-field-items, .dropdown-menu-body {
+      .category-tree-field-items, .dropdown-menu-body, .booking-filter-radio-items {
         @extend %modal-body-down-#{$category-dropdown-booking-mobile-break};
       }
 
@@ -198,7 +198,7 @@
         @extend %apple-like-header-down-#{$category-dropdown-booking-mobile-break};
       }
 
-      .category-tree-field-items, .dropdown-menu-body {
+      .category-tree-field-items, .dropdown-menu-body, .booking-filter-radio-items {
         @extend %apple-like-body-down-#{$category-dropdown-booking-mobile-break};
       }
 
@@ -231,7 +231,7 @@
         @extend %offcanvas-header-down-#{$category-dropdown-booking-mobile-break};
       }
 
-      .category-tree-field-items, .dropdown-menu-body {
+      .category-tree-field-items, .dropdown-menu-body, .booking-filter-radio-items {
         @extend %offcanvas-body-down-#{$category-dropdown-booking-mobile-break};
       }
 
@@ -252,5 +252,3 @@
     }
   }
 }
-
-

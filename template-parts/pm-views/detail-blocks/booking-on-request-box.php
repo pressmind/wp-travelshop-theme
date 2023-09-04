@@ -10,7 +10,7 @@ use Pressmind\Travelshop\PriceHandler;
  * @var array $args
  */
 
-if($args['booking_on_request'] === false){
+if(!empty($args['cheapest_price']) && empty($args['booking_on_request'])){
     return;
 }
 ?>

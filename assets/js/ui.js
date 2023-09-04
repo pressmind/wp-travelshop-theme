@@ -900,7 +900,7 @@ jQuery(function ($) {
     });
 
     $(dropdownNotClose).on('click touch', function(e) {
-        e.preventDefault();
+        //e.preventDefault();
 
         // -- little hook
         // -- backdrop checker
@@ -1011,6 +1011,7 @@ jQuery(function ($) {
                     $(pCounterTarget).text(pCounterValueNew + ' ' + pCounterInput.data('singular'));
                 }
                 pCounterInput.val(pCounterValueNew);
+                pCounterInput.trigger('change');
             }
 
             e.stopPropagation();

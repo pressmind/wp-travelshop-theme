@@ -27,7 +27,7 @@
 
                     <li class="page-item<?php echo ($args['current_page'] == 1) ? ' disabled' : ''; ?>">
                         <a class="page-link page-link-chevron"
-                           href="?action=search&<?php echo BuildSearch::getCurrentQueryString($args['current_page'] - 1, $args['page_size'], ['view' => $args['view']); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>">
+                           href="?action=search&<?php echo BuildSearch::getCurrentQueryString($args['current_page'] - 1, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-left-bold"></use></svg>
 
                         </a>
@@ -59,7 +59,7 @@
                     <?php } ?>
                     <li class="page-item<?php echo ($args['current_page'] == $args['pages']) ? ' disabled' : ''; ?>"><a
                                 class="page-link page-link-chevron"
-                                href="<?php echo ($args['current_page'] >= $args['pages']) ? '#' : '?action=search&' . BuildSearch::getCurrentQueryString($args['current_page'] + 1, $args['page_size'], ['view' => $args['view']); ?><?php echo isset($args['uid']) ? '#' .  $args['uid'] : '';?>">
+                                href="<?php echo ($args['current_page'] >= $args['pages']) ? '#' : '?action=search&' . BuildSearch::getCurrentQueryString($args['current_page'] + 1, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' .  $args['uid'] : '';?>">
                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
 
                         </a>

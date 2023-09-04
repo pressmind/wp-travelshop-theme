@@ -1,5 +1,6 @@
 <?php
 use Pressmind\HelperFunctions;
+use Pressmind\ORM\Object\Airport;
 use Pressmind\Travelshop\PriceHandler;
 use Pressmind\Search\CheapestPrice;
 use Pressmind\Travelshop\Template;
@@ -11,39 +12,46 @@ use Pressmind\Travelshop\Template;
 if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     return;
 }
+
+/**
+ * @var \Pressmind\ORM\Object\CheapestPriceSpeed $CheapestPrice
+ */
+$CheapestPrice = $args['cheapest_price'];
+$calendar_filter = new \Pressmind\Search\CalendarFilter();
+$calendar_filter->occupancy = $CheapestPrice->option_occupancy;
+$calendar_filter->duration = $CheapestPrice->duration;
+$calendar_filter->transport_type = $CheapestPrice->transport_type;
+$calendar_filter->airport = $CheapestPrice->transport_1_airport;
+$calendar = $args['media_object']->getCalendar($calendar_filter);
+$filter = $calendar->filter;
+if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
+    return;
+}
+if($CheapestPrice->is_virtual_created_price){
+    echo 'Error: virtual created price - contact support';
+    return;
+}
 ?>
 
 <div class="booking-filter">
     <div class="booking-filter-title h5">
         "<?php echo $args['headline']; ?>" buchen
     </div>
-    <?php
-    // build a date to best price map
-    $filter = new CheapestPrice();
-    $filter->occupancies_disable_fallback = false;
-    $offers = $args['media_object']->getCheapestPrices($filter, ['date_departure' => 'ASC', 'price_total' => 'ASC'], [0, 100]);
-
-    $transport_types = [];
-
-    foreach ($offers as $offer ) {
-        if ( !in_array($offer->transport_type, $transport_types) ) {
-            $transport_types[] = $offer->transport_type;
-        }
-    }
-    ?>
-    <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($transport_types) < 2 ) ? 'd-none' : '';?>">
+    <!-- Transport -->
+    <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($filter['transport_types']) < 2 ) ? 'd-none' : '';?>">
         <div class="booking-filter-radio booking-filter-radio--transport-type ">
-            <?php foreach( $transport_types as $type ) { ?>
+            <?php foreach($filter['transport_types'] as $transport_type => $v) { ?>
                 <div class="form-radio">
-                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $type; ?>" name="transport_type" value="<?php echo $type; ?>" <?php if ( $args['cheapest_price']->transport_type == $type ) { ?>checked="checked"<?php } ?> />
-
+                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $transport_type; ?>"
+                           name="transport_type"
+                           data-filter='<?php echo json_encode($v); ?>'
+                           value="<?php echo $transport_type; ?>" <?php echo $CheapestPrice->transport_type == $transport_type ? 'checked="checked"' : '' ?> />
                     <div>
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
                     </div>
-
-                    <label class="form-radio-label" for="transport-type-<?php echo $type; ?>">
+                    <label class="form-radio-label" for="transport-type-<?php echo $transport_type; ?>">
                         <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/transport_type_human_string.php', [
-                            'transport_type' => $type
+                            'transport_type' => $transport_type
                         ]);?>
                     </label>
                 </div>
@@ -51,139 +59,42 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </div>
     </div>
 
-    <input class="booking-filter-field--duration" type="hidden" name="dur" value="<?php echo $args['cheapest_price']->duration; ?>" />
-    <input class="booking-filter-field--mediaobject-id" type="hidden" name="mediaobject" value="<?php echo $args['id_media_object']; ?>" />
-    <input class="booking-filter-field--offer-id" type="hidden" name="offer" value="<?php echo $args['cheapest_price']->id; ?>" />
-    <input class="booking-filter-field--bookingurl" type="hidden" name="offer" value="" />
-    <input class="booking-filter-field--daterange"  type="hidden" name="offer" value="<?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
-        'date_departure' => $args['cheapest_price']->date_departure,
-        'date_arrival' => $args['cheapest_price']->date_arrival
-    ]);?>" />
-    <input class="booking-filter-field--slider-index" type="hidden" name="offer" value="0" />
+    <!-- Duration Type -->
+    <?php //@TODO ?>
+    <div class="booking-filter-item booking-filter-item--transport-type <?php echo ( count($filter['durations']) < 2 ) ? 'd-none' : '';?>">
+        <div class="booking-filter-radio booking-filter-radio--duration">
+            <?php foreach($filter['durations'] as $duration => $v) { ?>
+                <div class="form-radio">
+                    <input type="radio" class="form-radio-input" id="transport-type-<?php echo $duration; ?>"
+                           name="duration"
+                           data-filter='<?php echo json_encode($v); ?>'
+                           value="<?php echo $duration; ?>" <?php echo $CheapestPrice->duration == $duration ? 'checked="checked"' : '' ?> />
+                    <div>
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
+                    </div>
+                    <label class="form-radio-label" for="transport-type-<?php echo $duration; ?>">
+                        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', [
+                            'duration' => $duration
+                        ]);?>
+                    </label>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+
 
     <div class="booking-filter-items-boxed">
-
-
-
-        <div class="booking-filter-item booking-filter-item--persons">
-            <div class="dropdown">
-                <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="dropdown-icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
-                </span>
-                    <small class="d-block">Anzahl Personen</small>
-                    <span class="selected-options">
-                    2 Personen
-                </span>
-                    <span class="dropdown-clear input-clear">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                </span>
-                </button>
-
-                <div class="dropdown-menu dropdown-menu-booking-person-select" aria-labelledby="dropdownPersons" x-placement="top-start">
-                    <div class="dropdown-menu-inner">
-                        <div class="dropdown-menu-content">
-                            <div class="dropdown-menu-header d-none">
-                                <div class="h4">
-                                    Anzahl Personen
-                                </div>
-                                <button class="filter-prompt" data-type="close-popup" type="button">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                                </button>
-                            </div>
-
-                            <div class="dropdown-menu-body">
-                                <div class="personen-select">
-                                    <div class="personen-select-title">
-                                        Personen
-                                    </div>
-
-                                    <div class="personen-select-counter">
-                                        <button type="button"  class="personen-select-counter-btn" data-type="-">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
-                                        </button>
-                                        <input readonly type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="" data-target-input=".dropdownPersons .selected-options"/>
-                                        <button type="button" class="personen-select-counter-btn" data-type="+">
-                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#plus-circle"></use></svg>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="info-text mt-3">
-                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#info"></use></svg>
-                                    Informationen bezüglich Reisen mit Kindern sowie Reisen mit Haustieren finden Sie in der Buchung.
-                                </div>
-                            </div>
-
-                            <div class="dropdown-menu-footer">
-                                <button class="btn btn-primary btn-block mt-3 filter-prompt">
-                                    Auswahl übernehmen
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <?php if ( $args['view'] === 'calendar' ) { ?>
-        <div class="booking-filter-item booking-filter-item--date-range">
-            <button class="booking-filter-field booking-filter-field--date-range" data-placeholder="Bitte wählen">
-                <span class="booking-filter-field--icon">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
-                </span>
-                <small class="d-block">Termin wählen</small>
-                <span class="booking-filter-field--text">
-                <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
-                    'date_departure' => $args['cheapest_price']->date_departure,
-                    'date_arrival' => $args['cheapest_price']->date_arrival
-                ]);?>
-                </span>
-
-                <span class="booking-filter-field--counter">
-                    +8
-                </span>
-            </button>
-            <div class="booking-filter-calendar-overlay">
-                <div class="booking-filter-calendar-overlay-inner">
-                    <div class="booking-filter-calendar-overlay-content">
-
-                        <div class="booking-filter-calendar-overlay-header d-none">
-                            <div class="h4">
-                                Termin wählen
-                            </div>
-                            <button class="booking-calendar-close" data-type="close-popup" type="button">
-                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
-                            </button>
-                        </div>
-                        <div class="booking-filter-calendar-overlay-body">
-                            <div id="booking-entry-calendar">
-
-                            </div>
-                        </div>
-                        <div class="booking-filter-calendar-overlay-footer text-center">
-                            <button class="btn btn-primary booking-calendar-close">
-                                Auswahl übernehmen
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php } ?>
-
-        <?php if ( in_array('FLUG', $transport_types) ) { ?>
-        <div class="booking-filter-item booking-filter-item--airport <?php echo ( $args['cheapest_price']->transport_type !== 'FLUG' ) ? 'd-none' : ''; ?>">
+    <!-- Airport -->
+    <div class="booking-filter-item booking-filter-item--airport d-none">
             <div class="dropdown">
                 <button class="dropdownAirport input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="dropdown-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#airplane-tilt"></use></svg>
                 </span>
                     <small class="d-block">Flughafen wählen</small>
-                <span class="selected-options" data-placeholder="bitte wählen">
-                    Berlin
-                </span>
+                    <span class="selected-options" data-placeholder="bitte wählen"><?php
+                            echo Airport::getByIata($CheapestPrice->transport_1_airport)->name; ?>
+                    </span>
                     <span class="dropdown-clear input-clear">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                 </span>
@@ -200,37 +111,80 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
                                 </button>
                             </div>
-
-                            <?php
-                            $airports = [
-                                'BER' => 'Berlin',
-                                'FRA' => 'Frankfurt Main',
-                                'MUC' => 'Flughafen München',
-                                'DUS' => 'Flughafen Düsselforf',
-                                'HAM' => 'Hamburg',
-                                'CGN' => 'Köln / Bonn',
-                                'HHN' => 'Frankfurt-Hahn'
-                            ]
-                            ?>
-
-                            <div class="category-tree-field-items multi-level-checkboxes">
-                                <?php $i = 0; ?>
-                                <?php foreach( $airports as $key => $value ) { ?>
+                            <div class="booking-filter-radio-items">
+                                <?php foreach( $filter['airports'] as $airport3L => $value) { ?>
                                     <div class="form-radio">
-                                        <input type="radio" class="form-radio-input" id="airport-<?php echo $key; ?>" name="airport" value="<?php echo $key; ?>" <?php if ( $i == 0 ) { ?>checked<?php } ?> />
-
+                                        <input type="radio" class="form-radio-input" id="airport-<?php echo $airport3L; ?>"
+                                               name="airport" value="<?php echo $airport3L; ?>" <?php echo $CheapestPrice->transport_1_airport == $airport3L ? 'checked="checked"' : '' ?>/>
                                         <span>
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
                                         </span>
-
-                                        <label class="form-radio-label" for="airport-<?php echo $key; ?>">
-                                            <?php echo $value; ?>
+                                        <label class="form-radio-label" for="airport-<?php echo $airport3L; ?>">
+                                            <?php
+                                                echo Airport::getByIata($airport3L)->name;
+                                            ?>
                                         </label>
                                     </div>
-                                    <?php $i++; ?>
                                 <?php } ?>
                             </div>
+                            <div class="dropdown-menu-footer">
+                                <button class="btn btn-primary btn-block mt-3 filter-prompt">
+                                    Auswahl übernehmen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Persons -->
+        <?php if($calendar->calendar->booking_package->price_mix === 'date_housing'){ ?>
+        <div class="booking-filter-item booking-filter-item--persons">
+            <div class="dropdown">
+                <button class="dropdownPersons input-has-icon select-form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="dropdown-icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#users"></use></svg>
+                </span>
+                    <small class="d-block">Anzahl Personen</small>
+                    <span class="selected-options">
+                    2 Personen
+                </span>
+                    <span class="dropdown-clear input-clear">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-booking-person-select" aria-labelledby="dropdownPersons" x-placement="top-start">
+                    <div class="dropdown-menu-inner">
+                        <div class="dropdown-menu-content">
+                            <div class="dropdown-menu-header d-none">
+                                <div class="h4">
+                                    Anzahl Personen
+                                </div>
+                                <button class="filter-prompt" data-type="close-popup" type="button">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu-body">
+                                <div class="personen-select">
+                                    <div class="personen-select-title">
+                                        Personen
+                                    </div>
+                                    <div class="personen-select-counter">
+                                        <button type="button"  class="personen-select-counter-btn" data-type="-">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#minus-circle"></use></svg>
+                                        </button>
+                                        <input readonly type="text" class="personen-select-counter-input" value="2" data-singular="Person" data-plural="Personen" data-min="1" data-max="" data-target-input=".dropdownPersons .selected-options"/>
+                                        <button type="button" class="personen-select-counter-btn" data-type="+">
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#plus-circle"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="info-text mt-3">
+                                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#info"></use></svg>
+                                    Informationen bezüglich Reisen mit Kindern sowie Reisen mit Haustieren finden Sie in der Buchung.
+                                </div>
+                            </div>
                             <div class="dropdown-menu-footer">
                                 <button class="btn btn-primary btn-block mt-3 filter-prompt">
                                     Auswahl übernehmen
@@ -242,42 +196,67 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
             </div>
         </div>
         <?php } ?>
-    </div>
-
-    <?php
-    if ( $args['view'] === 'rows' ) {
+        <?php
+        $show_calendar_modal = $calendar->calendar->bookable_date_count > 5;
         ?>
-        <div class="booking-filter-items">
-            <div class="h6">Termin wählen</div>
-
-            <div class="booking-filter-item--dates">
-                <?php echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/booking-entrypoint-offers.php', [
-                    'media_object' => $args['media_object'],
-                    'cheapest_price' => $args['cheapest_price'],
-                    'date_departure' => $args['cheapest_price']->date_departure,
-                    'date_arrival' => $args['cheapest_price']->date_arrival,
-                    'offer_id' => $args['cheapest_price']->id,
-                    'url' => $args['url'],
-                    'filter' => [
-                            'pm-tr' => $args['cheapest_price']->transport_type
-                    ]
+        <div class="booking-filter-item booking-filter-item--date-range<?php echo $show_calendar_modal ? ' active' : ' d-none'; ?>">
+            <button class="booking-filter-field booking-filter-field--date-range" data-placeholder="Bitte wählen">
+                <span class="booking-filter-field--icon">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#calendar-blank"></use></svg>
+                </span>
+                <small class="d-block">Termin wählen</small>
+                <span class="booking-filter-field--text">
+                <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/travel-date-range.php', [
+                    'date_departure' => $CheapestPrice->date_departure,
+                    'date_arrival' => $CheapestPrice->date_arrival
                 ]);?>
+                </span>
+                <span class="booking-filter-field--counter">
+                    <?php echo  $calendar->calendar->bookable_date_count > 1 ? '+'. $calendar->calendar->bookable_date_count  - 1  : '';?>
+                </span>
+            </button>
+            <div class="booking-filter-calendar-overlay">
+                <div class="booking-filter-calendar-overlay-inner">
+                    <div class="booking-filter-calendar-overlay-content">
+                        <div class="booking-filter-calendar-overlay-header d-none">
+                            <div class="h4">
+                                Termin wählen
+                            </div>
+                            <button class="booking-calendar-close" data-type="close-popup" type="button">
+                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+                            </button>
+                        </div>
+                        <div class="booking-filter-calendar-overlay-body">
+                            <div id="booking-entry-calendar"></div>
+                        </div>
+                        <div class="booking-filter-calendar-overlay-footer text-center">
+                            <button class="btn btn-primary booking-calendar-close">
+                                Auswahl übernehmen
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <?php
-    }
-    ?>
-
+    </div>
+    <div class="booking-filter-items<?php echo $show_calendar_modal ? ' d-none' : ' active'; ?>">
+        <div class="h6">Termin wählen</div>
+        <div id="booking-filter-item--dates" class="booking-filter-item--dates">
+            <?php
+            echo Template::render(APPLICATION_PATH.'/template-parts/pm-views/detail-blocks/booking-entrypoint-date-list.php', ['cheapest_price' => $args['cheapest_price'],
+                    'media_object' => $args['media_object']
+            ]);
+            ?>
+        </div>
+    </div>
 </div>
 
 <div class="booking-action">
-
-    <?php // Random Availability
+    <?php // @TODO
     $randint = random_int(1, 9);
     ?>
     <?php if($randint < 10) { ?>
         <div class="booking-action-row">
-            <!-- Toggle in badge the class "active" to toggle status with animation -->
             <div class="status <?php echo $randint <= 3 ? 'danger' : ''; ?>">Nur noch <?php echo $randint < 10 ? $randint == 1 ? '1 Platz' : $randint . ' Plätze ' : ''; ?> frei</div>
         </div>
     <?php } ?>
@@ -304,8 +283,6 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
                 'cheapest_price' => $args['cheapest_price'],
                 'url' => $args['url'],
                 'size' => 'lg',
-                'modal_id' => $args['id_modal_price_box'],
-                'disable_id' => true
             ]);?>
         </div>
     </div>

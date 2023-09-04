@@ -10,7 +10,7 @@ use \Pressmind\Travelshop\PriceHandler;
 use \Pressmind\Travelshop\IB3Tools;
 use \Pressmind\Travelshop\Template;
 use \Pressmind\Travelshop\CalendarGenerator;
-use \DateTime;
+
 
 ini_set('display_errors', 'On');
 error_reporting(-1);
@@ -25,7 +25,6 @@ if ( !function_exists('get_stylesheet_directory_uri') ) {
     }
 
 }
-require_once 'functions/checklist_formatter.php';
 require_once 'functions/remove_empty_paragraphs.php';
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
@@ -211,47 +210,43 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
     $Output = array('state' => 'invalid');
     echo json_encode($Output);
     exit;
-} else if ($_GET['action'] == 'detail-booking-calendar' ) {
-    /**
-     *  Action is rendering booking calendar via ajax - to prevent sourcecode in HTML not needed
-     *  + re-rendering calendar on various actions by values
-     */
-    $id_media_object = (int)$_POST['media_object_id'];
-    if ( empty($id_media_object) ) {
+} else if ($_GET['action'] == 'detail-booking-entrypoint-calendar' ) {
+    $id_media_object = (int)$_POST['id_media_object'];
+    if (empty($id_media_object) ) {
         exit;
     }
-
     $args = [];
-    $mo = new \Pressmind\ORM\Object\MediaObject($id_media_object);
-
-    $CheapestPriceFilter = new CheapestPrice();
-
-    $valid_params = [];
-
-    // duration
-    if (empty($_POST['pm-du']) === false) {
-        $durationRange = BuildSearch::extractDurationRange($_POST['pm-du']);
-        if ($durationRange !== false) {
-            $valid_params['pm-du'] = $_POST['pm-du'];
-            $CheapestPriceFilter->duration_from = $durationRange[0];
-            $CheapestPriceFilter->duration_to = $durationRange[1];
-        }
+    $args['media_object'] =  new \Pressmind\ORM\Object\MediaObject($id_media_object);
+    $args['calendar_filter'] = new \Pressmind\Search\CalendarFilter();
+    if(!empty($_POST['pm-du'])){
+        $args['calendar_filter']->duration = BuildSearch::extractDurationRange($_POST['pm-du'], null, true);
     }
-
-    // transport_type
-    if (empty($_POST['pm-tr']) === false) {
-        $transport_types = BuildSearch::extractTransportTypes($_POST['pm-tr']);
-        if(!empty($transport_types)){
-            $valid_params['pm-tr'] = $_POST['pm-tr'];
-            $CheapestPriceFilter->transport_types = $transport_types;
-        }
+    if(!empty($_POST['pm-tr'])){
+        $args['calendar_filter']->transport_type = BuildSearch::extractTransportTypes($_POST['pm-tr'], null, true);
     }
-
-    $args['media_object'] = $mo;
-    $args['filter'] = isset($_POST) ? $_POST : null;
-    $args['cheapest_price'] = $mo->getCheapestPrice($CheapestPriceFilter);
-
-    echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint-calendar.php', $args);
+    if(!empty($_POST['pm-ap'])){
+        $args['calendar_filter']->airport = BuildSearch::extractAirport3L($_POST['pm-ap'], null);
+    }
+    if(!empty($_POST['persons'])){
+        $args['calendar_filter']->occupancy = !empty($_POST['persons']) && (int)$_POST['persons'] === 1 ? 1 : 2;
+    }
+    ob_start();
+    if($_POST['template'] == 'list'){
+        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint-date-list.php', $args);
+    }else{
+        echo Template::render(APPLICATION_PATH . '/template-parts/pm-views/detail-blocks/booking-entrypoint-calendar.php', $args);
+    }
+    $Output->html = ob_get_contents();
+    ob_end_clean();
+    $Output->error = false;
+    $result = json_encode($Output);
+    if(json_last_error() > 0){
+        $Output->error = true;
+        $Output->msg = 'json error: '.json_last_error_msg();
+        $Output->html = $Output->msg;
+        $result = json_encode($Output);
+    }
+    echo $result;
     exit;
 } else if ($_GET['action'] == 'search') {
     $output = null;
