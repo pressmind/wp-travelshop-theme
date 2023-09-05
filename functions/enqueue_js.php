@@ -14,7 +14,6 @@ if (!is_admin()) {
 add_action('wp_enqueue_scripts', function () {
 
     $js_files = array();
-    $js_files[] = array('handle' => 'prettydropdowns', 'dependencies' => ['jquery'], 'src' => '/assets/js/jquery.prettydropdowns.min.js', 'defer' => true, 'version' => '4.17.0');
     $js_files[] = array('handle' => 'popper', 'dependencies' => ['jquery'], 'src' => '/assets/js/popper-1.14.7.min.js', 'defer' => true, 'version' => '1.14.7');
     $js_files[] = array('handle' => 'bootstrap', 'dependencies' => ['jquery'], 'src' => '/assets/js/bootstrap.min.js', 'defer' => true, 'version' => '4.3.1');
     $js_files[] = array('handle' => 'pulltorefresh', 'dependencies' => ['jquery'], 'src' => '/assets/js/pulltorefresh.min.js', 'defer' => true, 'version' => '0.1.22');
@@ -32,11 +31,9 @@ add_action('wp_enqueue_scripts', function () {
     $js_files[] = array('handle' => 'instant-page', 'dependencies' => ['jquery'], 'src' => '/assets/js/instant.page.min.js', 'defer' => true, 'version' => '5.1.0');
 
     foreach ($js_files as $f) {
-
         if ($f['defer']) {
             $f['handle'] .= '-defer';
         }
-
         wp_enqueue_script($f['handle'], get_stylesheet_directory_uri() . $f['src'], $f['dependencies'], $f['version'], true);
     }
 

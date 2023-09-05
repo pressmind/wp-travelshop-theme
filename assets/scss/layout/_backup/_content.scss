@@ -1,9 +1,0 @@
-.content-main {
-  > .container,
-  > .container-fluid {
-    @include media-breakpoint-down(sm) {
-      padding-left: ( $grid-gutter-width / 2 );
-      padding-right: ( $grid-gutter-width / 2 );
-    }
-  }
-}
