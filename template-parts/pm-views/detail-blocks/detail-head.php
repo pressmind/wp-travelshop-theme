@@ -15,8 +15,7 @@ use Pressmind\Travelshop\Template;
             <?php foreach ($args['pictures'] as $picture) { ?>
                 <div class="detail-header-gallery-slider-item">
                     <div class="detail-header-gallery-slider-item--image">
-                        <img src="<?php echo $picture['url_detail']; ?>" alt="<?php echo $picture['caption']; ?>"
-                             loading="lazy"/>
+                        <img src="<?php echo $picture['url_detail']; ?>" alt="<?php echo $picture['caption']; ?>"/>
                     </div>
                     <div class="detail-header-gallery-slider-item--copyright">
                         <?php echo $picture['copyright']; ?>
@@ -48,8 +47,7 @@ use Pressmind\Travelshop\Template;
             <?php if ( $i < 3 ) { ?>
                 <div class="detail-header-gallery-grid-item detail-header-gallery-grid-item--<?php echo ( $i + 1 ); ?>">
                     <div class="detail-header-gallery-slider-item--image">
-                        <img src="<?php echo $picture['url_detail']; ?>" alt="<?php echo $picture['caption']; ?>"
-                             loading="lazy"/>
+                        <img src="<?php echo $picture['url_detail']; ?>" alt="<?php echo $picture['caption']; ?>"/>
                     </div>
                     <div class="detail-header-gallery-slider-item--copyright">
                         <?php echo $picture['copyright']; ?>

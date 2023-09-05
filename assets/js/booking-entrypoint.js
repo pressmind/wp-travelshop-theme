@@ -373,7 +373,8 @@ jQuery(function ($) {
 
     };
 
-    window.BookingEntrypoint = new TSBookingEntrypoint(CHEAPEST_PRICE);
-    window.BookingEntrypoint.init();
-
+    if($('.detail-booking-entrypoint').length > 0) {
+        window.BookingEntrypoint = new TSBookingEntrypoint(CHEAPEST_PRICE);
+        window.BookingEntrypoint.init();
+    }
 });

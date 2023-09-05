@@ -10,7 +10,7 @@
 ?>
 <section class="layout-block layout-block-search-header">
     <div class="layout-block-search-header--media">
-        <img src="/wp-content/themes/travelshop/assets/img/slide-1.jpg" loading="lazy" />
+        <img src="/wp-content/themes/travelshop/assets/img/slide-1.jpg"/>
     </div>
     <div class="layout-block-search-header--search transparent">
         <div class="container">
