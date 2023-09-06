@@ -170,9 +170,72 @@ function activeIds(array &$elements, $currentId)
  */
 function nav_menu_2_tree($menu_position)
 {
+    global $wpdb;
     $locations = get_nav_menu_locations(); //get all menu locations
     $primary = wp_get_nav_menu_object($locations[$menu_position]);
-    $items = wp_get_nav_menu_items($primary);
+    $sorted_menu_items = wp_get_nav_menu_items($primary);
+
+    $newSort	=	array();
+    $objectIds	=	array();
+
+    /**
+     * @var WP_Post $v
+     */
+    foreach($sorted_menu_items as $k => $v)
+    {
+        $objectIds[]	=	$v->object_id;
+    }
+
+    global $wpdb;
+
+    $getSites	=	'
+			SELECT
+				`ID`
+			FROM
+				`wp_posts`
+			WHERE
+				`ID` IN ('.implode(',', $objectIds).') AND
+				`post_status` = "publish"
+			';
+
+    $siteIDs	=	$wpdb->get_results($getSites, 'ARRAY_A');
+
+    $newSiteIDs = [];
+    //var_dump($siteIDs);
+    foreach($siteIDs as $siteID) {
+        //var_dump(get_post_meta($siteID['ID'], '_tt_user_roles_allowed'));
+        $allowedRoles = get_post_meta($siteID['ID'], '_tt_user_roles_allowed');
+        if(!empty($allowedRoles[0])) {
+            if(is_user_logged_in()) {
+                echo '<pre>';
+                //var_dump($allowedRoles);
+                echo '</pre>';
+                $user = wp_get_current_user();
+                $roles = ( array ) $user->roles;
+                foreach($roles as $role) {
+                    if(in_array($role, $allowedRoles[0])) {
+                        array_push($newSiteIDs, $siteID['ID']);
+                    }
+                }
+            }
+        } else {
+            array_push($newSiteIDs, $siteID['ID']);
+        }
+    }
+
+    //var_dump($sorted_menu_items[1]->object_id);
+    //var_dump($newSiteIDs);
+
+    foreach($sorted_menu_items as $key => $menuit) {
+        if(!in_array($menuit->object_id, $newSiteIDs)) {
+            array_splice($sorted_menu_items, $key, 1);
+        }
+    }
+
+    //var_dump($sorted_menu_items);
+
+    $items = $sorted_menu_items;
+
     $tree = array();
 
     $tree['navigation'] = $items ? buildTree($items, 0) : null;

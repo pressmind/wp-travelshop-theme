@@ -42,6 +42,9 @@ require_once 'bootstrap.php';
 // register admin setting page (wpsf based)
 require_once 'admin-settings/register-settings-page.php';
 
+// User Settings / Travelshop
+require_once 'functions/usersettings.php';
+
 // admin/system related functions
 require_once 'src/ThemeActivation.php';
 require_once 'src/AdminPage.php';

@@ -1685,6 +1685,14 @@ jQuery(function ($) {
                     if (data.success) {
                         _this.matchRelatedProducts();
                         renderUserData(data.data.user);
+                        // Login as Wordpress Agency User
+                        if(data.data.user.is_agency) {
+                            console.log('Agency logged in, login into Wordpress...');
+                            $.get('/wp-content/themes/travelshop/functions/agency-login.php', function(data){
+                               let response = JSON.parse(data);
+                               console.log(response);
+                            });
+                        }
                     } else {
                         _this.renderVisitedList();
                         _this.renderWishlist();
