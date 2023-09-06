@@ -55,7 +55,6 @@ class BeaverBuilderModuleLoader{
         require_once BB_MODULE_TS_DIR . 'modules/slider-mixed-content/slider-mixed-content.php';
         require_once BB_MODULE_TS_DIR . 'modules/history/history.php';
         require_once BB_MODULE_TS_DIR . 'modules/team/team.php';
-        require_once BB_MODULE_TS_DIR . 'modules/category-header/category-header.php';
         require_once BB_MODULE_TS_DIR . 'modules/faq-schema-accordion/faq-schema-accordion.php';
         require_once BB_MODULE_TS_DIR . 'modules/ts-image-teaser/ts-image-teaser.php';
         require_once BB_MODULE_TS_DIR . 'modules/ts-info-teaser/ts-info-teaser.php';
