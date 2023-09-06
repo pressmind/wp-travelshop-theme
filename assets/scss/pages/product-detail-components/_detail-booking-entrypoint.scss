@@ -1,0 +1,274 @@
+%booking-entrypoint-date-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  @include border-radius($booking-entrypoint-date-item-border-radius);
+
+  text-decoration: none;
+  font-weight: $booking-entrypoint-date-item-font-weight;
+  color: $booking-entrypoint-date-item-color;
+  border-width: $booking-entrypoint-date-item-border-width;
+  border-style: solid;
+  border-color: $booking-entrypoint-date-item-border-color;
+  background-color: $booking-entrypoint-date-item-bg;
+  transition: border-color $animation-speed-default, color $animation-speed-default, background-color $animation-speed-default;
+
+  padding: $booking-entrypoint-date-item-spacing-y $booking-entrypoint-date-item-spacing-x;
+
+  @include spacing-generator($booking-entrypoint-date-items-gaps, 'around', 'gap');
+  @include font-size-generator($booking-entrypoint-date-item-font-sizes);
+
+  &:hover, &:focus, &:active {
+    color: $booking-entrypoint-date-item-hover-color;
+    border-color: $booking-entrypoint-date-item-hover-border-color;
+    background-color: $booking-entrypoint-date-item-hover-bg;
+
+    text-decoration: none;
+  }
+}
+
+.detail-booking-entrypoint{
+  background-color: $booking-entrypoint-bg;
+  color: $booking-entrypoint-color;
+
+  @if ( $booking-entrypoint-border-width != 0 ) {
+    border: $booking-entrypoint-border-width solid $booking-entrypoint-border-color;
+  }
+
+  @include border-radius($booking-entrypoint-border-radius);
+  @include font-size-generator($booking-entrypoint-font-sizes);
+  @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'padding');
+
+  @include get-element-shadow('booking-entry-point');
+
+  // -- filters
+  .booking-filter {
+
+
+    @include spacing-generator($booking-entrypoint-spacers-y, 'bottom', 'padding');
+
+    .booking-filter-item {
+
+      // -- transport type
+      &.booking-filter-item--transport-type {
+        .booking-filter-radio {
+          @extend %custom-radio-checkbox-inline;
+
+          .form-radio {
+            @extend %custom-radio;
+          }
+        }
+      }
+
+      // -- daterange
+      &.booking-filter-item--date-range {
+        position: relative;
+
+        button.booking-filter-field--date-range {
+          @extend .form-control;
+          @extend %input-has-icon;
+
+          text-align: left;
+
+          .booking-filter-field--counter {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: .75rem;
+
+            color: rgba($input-color, .5);
+          }
+
+          .booking-filter-field--icon {
+            @extend %input-icon;
+          }
+        }
+      }
+    }
+
+    // -- boxed items
+    .booking-filter-items-boxed {
+      @include border-radius($input-border-radius);
+      border: $input-border-width solid $input-border-color;
+
+      .booking-filter-item + .booking-filter-item {
+        border-top: $input-border-width solid $input-border-color;
+      }
+
+      // -- little changes to make booking entrypoint "unique"
+      .booking-filter-item {
+
+        margin-top: -$input-border-width;
+        margin-left: -$input-border-width;
+        margin-right: -$input-border-width;
+
+        &:last-child {
+          margin-bottom: -$input-border-width;
+        }
+
+        button.booking-filter-field--date-range,
+        button.select-form-control {
+          padding: .75rem 1rem .75rem ( 1rem + .5rem + $custom-input-icon-size );
+          border: 2px solid transparent;
+          background-color: transparent;
+          height: auto;
+
+          small {
+            font-size: $font-size-sm;
+            color: rgba($input-color, .5);
+            line-height: 1;
+          }
+
+          .dropdown-icon,
+          .booking-filter-field--icon {
+            left: .75rem;
+            @extend %input-icon-top;
+
+            top: .75rem;
+          }
+
+          .input-clear {
+            right: 1rem;
+          }
+
+          &:hover, &:focus, &:active {
+            background-color: transparent;
+            border: $input-border-big-width solid $input-border-active-color;
+            box-shadow: none;
+            outline: none;
+          }
+
+          &.has-error,
+          &.has-error:hover,
+          &.has-error:focus,
+          &.has-error:active {
+            border: $input-border-big-width solid $danger;
+          }
+        }
+
+        &.open > button.booking-filter-field--date-range,
+        &.show > button.select-form-control {
+          background-color: transparent;
+          border: $input-border-big-width solid $input-border-active-color;
+          box-shadow: none;
+          outline: none;
+        }
+      }
+    }
+
+    // -- offer list
+    .booking-filter-items {
+      margin-top: 1rem;
+
+      .booking-filter-item--dates {
+
+        .booking-offer-items {
+          .booking-offer-item {
+            .booking-offer-item-label {
+              @extend %booking-entrypoint-date-item;
+              cursor: pointer;
+
+              // gap reset
+              gap: 0.5rem !important;
+
+              // -- input
+              > input {
+                display: none;
+
+                + span {
+                  @extend %custom-radio-circle;
+
+                  // -- simple reset
+                  top: unset !important;
+                  transform: translateY(0) !important;
+                }
+              }
+
+              &:hover, &:focus, &:active {
+                > input + span {
+                  @extend %custom-radio-circle-hover;
+                }
+              }
+
+              > input:checked + span {
+                @extend %custom-radio-circle-active;
+              }
+
+              &.is-active,
+              &.is-active:hover,
+              &.is-active:active,
+              &.is-active:focus {
+                color: $booking-entrypoint-date-item-active-color;
+                border-color: $booking-entrypoint-date-item-active-border-color;
+                background-color: $booking-entrypoint-date-item-active-bg;
+                box-shadow: inset 0 0 0 .0625rem $booking-entrypoint-date-item-active-border-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if ( $booking-entrypoint-break-down == null ) {
+  .detail-booking-entrypoint {
+    .booking-filter-title {
+      button.close-booking-filter {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@if ( $booking-entrypoint-break-down != null ) {
+
+  @include media-breakpoint-down($booking-entrypoint-break-down) {
+
+    .detail-booking-entrypoint {
+      box-shadow: none;
+      padding:0;
+      border:0;
+
+      + .detail-box.detail-box-transparent {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+  }
+
+  .booking-filter-wrapper {
+    @extend %apple-like-wrapper-down-#{$booking-entrypoint-break-down};
+
+    .booking-filter-inner {
+      @extend %apple-like-content-down-#{$booking-entrypoint-break-down};
+
+      .booking-filter-inner-body {
+        @extend %apple-like-body-down-#{$booking-entrypoint-break-down};
+
+        .booking-filter {
+          > .booking-filter-title {
+            @extend %apple-like-header-down-#{$booking-entrypoint-break-down};
+
+            @include media-breakpoint-down($booking-entrypoint-break-down) {
+              margin-top: -$apple-like-inner-padding;
+              margin-left: -$apple-like-inner-padding;
+              margin-right: -$apple-like-inner-padding;
+            }
+          }
+        }
+      }
+    }
+
+    &.show {
+      @extend %apple-like-open-down-#{$booking-entrypoint-break-down};
+
+      .booking-filter-inner {
+        @extend %apple-like-content-open-down-#{$booking-entrypoint-break-down};
+      }
+    }
+  }
+}

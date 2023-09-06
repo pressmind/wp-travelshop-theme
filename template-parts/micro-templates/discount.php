@@ -15,7 +15,7 @@ use Pressmind\Travelshop\PriceHandler;
 ?>
 <div class="discount-wrapper">
     <?php echo !empty($args['prefix']) ? $args['prefix'] : ''; ?>
-    <p>
+    <div class="discount-wrapper--inner">
         <?php if(empty($args['hide-price-total'])) {?>
             <span class="price-total">ab <strong><?php echo PriceHandler::format($args['cheapest_price']->price_total); ?></strong></span>
         <?php } ?>
@@ -28,5 +28,5 @@ use Pressmind\Travelshop\PriceHandler;
             <span class="price"><?php echo $args['discount']['price_before_discount']; ?></span>
             <span class="discount"><?php echo $args['discount']['price_delta']; ?></span>
         </span>
-    </p>
+    </div>
 </div>

@@ -1,0 +1,202 @@
+/**
+ * Placeholder for slider controls
+ * for usage on various elements
+ */
+
+// -- default stuff, resets..
+%slider-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  > button {
+    @include button-reset();
+
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    justify-content: center;
+    pointer-events: auto;
+
+    transition: border-color $animation-speed-default, color $animation-speed-default, background-color $animation-speed-default, opacity $animation-speed-default;
+    background-color: $slider-controls-bg;
+    color: $slider-controls-color;
+
+    width: $slider-controls-size;
+    height: $slider-controls-size;
+    flex: 0 0 $slider-controls-size;
+    max-width: 100%;
+
+    @include border-radius($slider-controls-border-radius);
+
+    @if ( $slider-controls-border-width != 0 ) {
+      border-width: $slider-controls-border-width;
+      border-style: solid;
+      border-color: $slider-controls-border-color;
+    }
+
+    > svg {
+      width: $slider-controls-icon-size;
+      height: $slider-controls-icon-size;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-hover-color;
+        background-color: $slider-controls-hover-bg;
+
+        @if ( $slider-controls-border-width != 0 ) {
+          border-color: $slider-controls-hover-border-color;
+        }
+      }
+    }
+
+    // -- disabled
+    &[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: $slider-controls-disabled-opacity;
+    }
+  }
+}
+
+%slider-controls-if-initialized {
+  .slider-controls {
+    transition: opacity $animation-speed-default;
+    opacity: 0;
+  }
+
+  .tns-outer + .slider-controls {
+    opacity: 1;
+  }
+}
+
+// -- controls lg
+@include placeholder('slider-controls-large') {
+  > button {
+    width: $slider-controls-large-size;
+    height: $slider-controls-large-size;
+    flex: 0 0 $slider-controls-large-size;
+
+    > svg {
+      width: $slider-controls-large-icon-size;
+      height: $slider-controls-large-icon-size;
+    }
+  }
+}
+
+// -- positioning
+@include placeholder('slider-controls-inner') {
+  position: absolute;
+  top:50%;
+
+  transform: translateY(-50%);
+
+  // -- need to be overwritten in specific element
+  left:$grid-gutter-width;
+  right:$grid-gutter-width;
+
+  z-index: 2;
+}
+
+@include placeholder('slider-controls-outer') {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  justify-content: space-between;
+
+  z-index: 2;
+  max-width: calc((var(--vw, 1vw) * 100) - .25rem);
+
+  // set width by max container width
+  @each $key, $value in $container-max-widths {
+    @if ( index(($container-max-widths), ($key $value)) == length($container-max-widths) ) {
+      width: ((pxToRem($value) - (pxToRem($grid-gutter-width))) + ($slider-controls-outer-offset * 2));
+    }
+  }
+
+  > button {
+    color: $slider-controls-outer-color;
+    background-color: $slider-controls-outer-bg;
+
+    border-width: $slider-controls-outer-border-width;
+
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-style: solid;
+      border-color: $slider-controls-outer-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-outer-hover-color;
+        background-color: $slider-controls-outer-hover-bg;
+
+        @if ( $slider-controls-outer-border-width != 0 ) {
+          border-color: $slider-controls-outer-hover-border-color;
+        }
+      }
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0;
+    }
+  }
+}
+
+// -- different theming
+@include placeholder('slider-controls-on-image') {
+  > button {
+    color: $slider-controls-on-image-color;
+    background-color: $slider-controls-on-image-bg;
+
+    border-width: $slider-controls-on-image-border-width;
+
+    @if ( $slider-controls-on-image-border-width != 0 ) {
+      border-style: solid;
+      border-color: $slider-controls-on-image-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-on-image-hover-color;
+        background-color: $slider-controls-on-image-hover-bg;
+
+        @if ( $slider-controls-on-image-border-width != 0 ) {
+          border-color: $slider-controls-on-image-hover-border-color;
+        }
+      }
+    }
+  }
+}
+
+// -- different theming
+@include placeholder('slider-controls-on-image-light') {
+  > button {
+    color: $slider-controls-on-image-light-color;
+    background-color: $slider-controls-on-image-light-bg;
+
+    border-width: $slider-controls-on-image-light-border-width;
+
+    @if ( $slider-controls-on-image-light-border-width != 0 ) {
+      border-style: solid;
+      border-color: $slider-controls-on-image-light-border-color;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        color: $slider-controls-on-image-light-hover-color;
+        background-color: $slider-controls-on-image-light-hover-bg;
+
+        @if ( $slider-controls-on-image-light-border-width != 0 ) {
+          border-color: $slider-controls-on-image-light-hover-border-color;
+        }
+      }
+    }
+  }
+}
+

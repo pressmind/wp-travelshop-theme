@@ -1,13 +1,84 @@
-.pagination {
-  .page-item {
-    .page-link{
-      color:$primary;
+ul.pagination{
+  gap: .5rem;
+
+  li.page-item {
+    a.page-link {
+      padding:0;
+      background-color: $pagination-bg;
+      border-radius: $btn-border-radius;
+
+      width: 2.5rem;
+      height: 2.5rem;
+
+      display: flex;
+
+      transition: background-color $animation-speed-default, color $animation-speed-default, border-color $animation-speed-default;
+
+      font-size: $pagination-font-size;
+      font-weight: $pagination-font-weight;
+
+      align-items: center;
+      justify-content: center;
+      color: $pagination-color;
+      text-decoration: none;
+
+      border: {
+        width: 1px;
+        style: solid;
+        color: $pagination-border-color;
+      }
+
+      &:active, &:hover, &:focus {
+        text-decoration: none;
+      }
+
+      &:active, &:focus {
+        color: $pagination-color;
+        background-color: $pagination-bg;
+      }
+
+      &:hover {
+        border-color: $pagination-hover-border-color;
+        background-color: $pagination-hover-bg;
+        color: $pagination-hover-color;
+      }
+
+      &.page-link-chevron {
+        border-width: 0;
+        background-color: transparent;
+        color: $pagination-color;
+
+        svg {
+          height: $font-size-lg;
+          width: $font-size-lg;
+        }
+
+        &:hover {
+          background-color: $pagination-hover-bg;
+        }
+      }
     }
+
+    &.disabled {
+      > .page-link,
+      > .page-link.page-link-chevron {
+        color: $pagination-disabled-color;
+        background-color: $pagination-disabled-bg;
+        border-color: $pagination-disabled-border-color;
+
+        pointer-events: none;
+      }
+    }
+
     &.active {
-      .page-link {
-        background-color: $primary;
-        border-color: $primary;
-        color: white;
+      > .page-link,
+      > .page-link:hover,
+      > .page-link:focus,
+      > .page-link:active {
+        color: $pagination-active-color;
+        border-color: $pagination-active-border-color;
+        background-color: $pagination-active-bg;
+        font-weight: $pagination-active-font-weight;
       }
     }
   }

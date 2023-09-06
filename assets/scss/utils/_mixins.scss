@@ -1,174 +1,376 @@
-/*****
- ** Own mixins here
- *****/
-
 /**
- * Disabling select
- **/
-@mixin noselect() {
-   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
+ * Mixin to generate font sizes with scss maps
+ * this can be used with px values + bootstrap breakpoints.
+ * =============================================================
+ * Given variables
+ * -------------------------------------------------------------
+ * $font-size-map: scss map with font sizes, key can be px value or bootstrap breakpoint ( see $grid-breakpoints for keys )
+ * $breakpoints: $grid-breakpoints defined by bootstrap. Can be overwritten by custom breakpoint scss map
+ * =============================================================
+ * Usage
+ * -------------------------------------------------------------
+ * For example h1
+ * h1, .h1 { @include font-size-generator($h1-font-sizes);
+ * You can also use it for different views like travelboxes or something else.
+ *
+ * To use it you need to setup a scss map:
+ * $travel-box-headlines: (
+ *  null: 1rem, ( default value, from 0 - infinity )
+ *  lg: 2rem ( 32px if screen > lg breakpoint )
+ * );
+ *
+ * Use sizes on element:
+ * .travel-box h1.travel-box--title { @include font-size-generator($travel-box-headlines); }
+ *
+ * Enjoy responsive font sizes! ;)
+ */
+@mixin font-size-generator($font-size-map, $breakpoints: $grid-breakpoints) {
+  // loop through set font sizes
+  @each $breakpoint, $font-size in $font-size-map {
+    // check if breakpoint defined as zero to render "default" value ( mobile )
+    @if $breakpoint == null {
+      font-size: $font-size;
+    }
+    @else {
+      // if not null use $breakpoint as breakpoint to set font size
+
+      // check if breakpoint with key is defined + set $breakpoint by $grid-breakpoints
+      @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+      }
+
+      // set media query + font size for view.
+      @media ( min-width: $breakpoint ) {
+        font-size: $font-size;
+      }
+    }
+  }
 }
 
 /**
- * Generating aspect-ratio for elements.
- **/
+ * Simple mixin to generate paddings out if a scss map combined with breakpoints + custom breakpoints
+ * you can use 'around' ( top, left, bottom, right ), 'y' ( top and bottom ), 'x' (left and right )
+ * 'left', 'top', 'bottom' and 'right'
+ */
+@mixin spacing-set($padding, $direction, $type, $negative: false) {
+  @if ( $negative == true and $type == 'margin' ) {
+    $padding: ($padding * -1);
+  }
+
+  @if ( $direction == 'around' ) {
+    #{$type}: $padding;
+  }
+
+  @if ( $direction == 'y' ) {
+    #{$type}-top: $padding;
+    #{$type}-bottom: $padding;
+  }
+
+  @if ( $direction == 'x' ) {
+    #{$type}-left: $padding;
+    #{$type}-right: $padding;
+  }
+
+  @if ( $direction == 'top' or $direction == 'left' or $direction == 'right' or $direction == 'bottom' ) {
+    #{$type}-#{$direction}: $padding;
+  }
+}
+
+@mixin spacing-generator($padding-map, $direction: 'around', $type: 'padding', $negative: false, $breakpoints: $grid-breakpoints) {
+
+  // loop through set paddings
+  @each $breakpoint, $padding in $padding-map {
+    // check if breakpoint defined as zero to render "default" value ( mobile )
+    @if $breakpoint == null {
+      @include spacing-set($padding, $direction, $type, $negative);
+    }
+    @else {
+      // if not null use $breakpoint as breakpoint to set font size
+
+      // check if breakpoint with key is defined + set $breakpoint by $grid-breakpoints
+      @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+      }
+
+      // set media query + padding for view.
+      @media ( min-width: $breakpoint ) {
+        @include spacing-set($padding, $direction, $type, $negative);
+      }
+    }
+  }
+}
+
+/**
+ * Used for custom breakpoint / bootstrap breakpoint to use for various of elements to break them into another layout
+ */
+
+@mixin get-custom-breakpoint($breakpoint, $breakpoints: $grid-breakpoints) {
+  @if $breakpoint == null {
+    @content;
+  }
+  @else {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $breakpoint: map-get($breakpoints, $breakpoint);
+    }
+
+    @media ( min-width: $breakpoint ) {
+      @content;
+    }
+  }
+}
+
+
+/**
+ * Mixins for discounts - we need this cuz we using it in varius breakpoints with different styles. + we need to reset bg-colors of discount inner from time to time for some elemnets
+ */
+// -- set discount border bg for inner element, to make border not shine through.
+@mixin discount-border-set-bg($bg: $card-bg) {
+  .discount-wrapper--inner {
+    background-color: $bg;
+  }
+}
+
+// -- discount border style. in normal usage just use @extend %discount-border; to not produce more css as we need. This just for usage in breakpoints.
+@mixin discount-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  // -- set border on position 50% top in background
+  hr {
+    display: block; // its display none by default
+    position: absolute;
+    margin:0;
+
+    top: 50%;
+    left: 0;
+    right:0;
+  }
+
+  .discount-wrapper--inner {
+    padding-left: .25rem;
+    padding-right: .25rem;
+
+    position: relative;
+    z-index: 2; // set it on top of background border..
+  }
+
+  // -- using mixin for this part cuz background color of various elements can be different. To avoid bugs we redefine it in various elements by variables of them.
+  @include discount-border-set-bg($card-bg);
+}
+
+/**
+ * Additional gradient mixn for another direction ( to top )
+ */
+@mixin gradient-y-top($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to top, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+}
+
+/**
+ * Generates fadeout text based on font size, line-height and lines to show
+ * last line is faded out!
+ */
+@mixin fade-out-text($font-size: $font-size-base, $line-height: $line-height-base, $lines: 3, $background: #fff) {
+  $calculatedHeight: ( $font-size * $line-height ) * $lines;
+  $calculateFadeoutPercentage: 100% / $lines;
+
+  position: relative;
+
+  max-height: $calculatedHeight;
+  overflow: hidden;
+
+  // -- setting up fadeout effect based on background + calculated heighs + lines ( last line will be faded out )
+  &:after {
+    content: '';
+    display: block;
+
+    pointer-events: none;
+
+    position: absolute;
+    z-index: 2;
+
+    top:0;
+    left:0;
+    right:0;
+
+    width: 100%;
+    height: $calculatedHeight;
+
+    @include gradient-y-top($background, rgba($background, 0), 0, $calculateFadeoutPercentage);
+  }
+}
+
+/**
+ * Aspect ratio
+ */
 @mixin aspect-ratio($width, $height) {
+  position: relative;
   &:before {
     display: block;
     content: "";
     width: 100%;
-    padding-top: $height / $width * 100%;
+    padding-top: ($height / $width) * 100%;
   }
 }
-/**
- *  Reset button style
- **/
-@mixin resetbutton() {
-  border: 0;
-  box-shadow: 0;
-  outline: none;
-  background: transparent;
 
+/**
+ * Disable browser select
+ */
+
+@mixin disable-browser-select() {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+
+/**
+ * Button reset
+ */
+@mixin button-reset() {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
   padding: 0;
-  margin: 0;
+  color: inherit;
+}
+
+/**
+ * Button input
+ */
+@mixin input-reset() {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
 
   &:hover, &:focus, &:active {
-    box-shadow: 0;
+    border: 0;
     outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
   }
 }
 
 /**
-Creates a strike trough price
-<span class="discount-label">
-  <span class="price">701&nbsp;€</span>
-  <span class="discount">-4%</span>
-  </span>
-*/
+ * Placeholder generator
+ * ------------------------------
+ * generate placeholders dynaimically by breakpoints
+ * up and down to make sure not use mixins and generate
+ * same quellcode everytime
+ */
 
-@mixin discount_label(){
-  .discount-label {
-    background-color: lightgray;
-    color: black;
-    border-radius: 10px;
-    width: auto;
-    position: relative;
-    font-size: 0.8rem;
-    padding: 2px 10px;
-    white-space: nowrap;
+@mixin placeholder($name) {
+  @if not index($placeholders, $name) {
+    // store name
+    $placeholders: append($placeholders, $name) !global;
 
-    .price {
-      width: 30px;
-      position: relative;
-    }
+    // At root level
+    @at-root {
+      @each $breakpoint, $value in $grid-breakpoints {
+        // Opening media query block up + down
+        @include media-breakpoint-up($breakpoint) {
+          %#{$name}-up-#{$breakpoint} {
+            @content;
+          }
+        }
 
-    // strike-trough
-    .price:before {
-      position: absolute;
-      content: "";
-      top: 0.5em;
-      background: linear-gradient(to right,
-              rgba(230, 0, 0, 0.8) 50%,
-              rgba(230, 0, 0, 0) 100%);
-      border-bottom-right-radius: 50%;
-      border-bottom-left-radius: 2px;
-      transform: rotate(-20deg);
-      width: 110%;
-      height: 0.15em;
-    }
+        @include media-breakpoint-down($breakpoint) {
+          %#{$name}-down-#{$breakpoint} {
+            @content;
+          }
+        }
+      }
 
-    .discount {
-      color: rgb(230, 0, 0);
-      font-weight: bold;
+      // -- generating placeholder without breakpoint aswell
+      %#{$name} {
+        @content;
+      }
     }
   }
 
+  // If placeholder already exists, warn user
+  @else {
+    @warn "Placeholder `#{$name}` already exists.";
+  }
 }
-@mixin booking_btn(){
 
-  .booking-btn {
-    font-weight: bold;
-
-    &.green {
-      color: $booking-button-green-txt;
-      background-color: $booking-button-green;
-      border-color: $booking-button-green;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-green, 15%) !important;
-        border-color: lighten($booking-button-green, 15%) !important;
+/**
+ * get element shadow
+ */
+@mixin get-element-shadow($key, $enabled: $enable-element-shadows, $specific-shadows: $specific-element-shadows ) {
+  @if ( $enabled == true ) {
+    @if ( map-has-key($specific-shadows, $key) ) {
+      @if ( map-get($specific-shadows, $key) != null and map-get($specific-shadows, $key) != unset and map-get($specific-shadows, $key) != none ) {
+        box-shadow: map-get($specific-shadows, $key);
       }
-      &.active {
-        background-color: darken($booking-button-green, 30%) !important;
-        border-color: lighten($booking-button-green, 30%) !important;
-      }
+    } @else {
+      box-shadow: $global-element-shadow;
     }
+  }
+}
 
-    &.red {
-      color: $booking-button-red-txt;
-      background-color: $booking-button-red;
-      border-color: $booking-button-red;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-red, 15%) !important;
-        border-color: lighten($booking-button-red, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-red, 30%) !important;
-        border-color: lighten($booking-button-red, 30%) !important;
-      }
-      pointer-events: none;
-      cursor: default;
-    }
+/** no select
+ *
+ */
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-    &.orange {
-      color: $booking-button-orange-txt;
-      background-color: $booking-button-orange;
-      border-color: $booking-button-orange;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-orange, 15%) !important;
-        border-color: lighten($booking-button-orange, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-orange, 30%) !important;
-        border-color: lighten($booking-button-orange, 30%) !important;
-      }
-      pointer-events: none;
-      cursor: default;
-    }
-
-    &.gray {
-      color: $booking-button-gray-txt;
-      background-color: $booking-button-gray;
-      border-color: $booking-button-gray;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: lighten($booking-button-gray, 15%) !important;
-        border-color: lighten($booking-button-gray, 15%) !important;
-      }
-      &.active {
-        background-color: darken($booking-button-gray, 30%) !important;
-        border-color: lighten($booking-button-gray, 30%) !important;
-      }
-      pointer-events: none;
-      cursor: default;
-    }
-    .loader {
-      width: 25px;
-      display: none;
-    }
-
+/**
+ * Scrollbar
+ */
+@mixin scrollbars($style, $size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
   }
 
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    width: $size;
+    transition: background $animation-speed-default;
+
+    @if ( $style == 'pill' ) {
+      border-radius: ($size/2);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+@mixin make-col($size, $type: 'grid', $columns: $grid-columns) {
+  @if ( $type == 'custom' ) {
+    flex: 0 0 $size;
+    // Add a `max-width` to ensure content within each column does not blow out
+    // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+    // do not appear to require this.
+    max-width: $size;
+  } @else {
+    flex: 0 0 percentage($size / $columns);
+    // Add a `max-width` to ensure content within each column does not blow out
+    // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+    // do not appear to require this.
+    max-width: percentage($size / $columns);
+  }
 }

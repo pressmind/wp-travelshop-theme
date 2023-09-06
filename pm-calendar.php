@@ -15,11 +15,21 @@ get_header();
             $result = Search::getResult($request,2, 500, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
             $result['calendarpage'] = true;
             ?>
-        <div class="content-main">
+        <div class="content-main content-main--calendar" id="content-main">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1 style="margin: 1.5rem 0 .5rem 0">Reisekalender</h1>
+                        <h1>Reisekalender</h1>
+
+                        <?php
+                        $args = [];
+                        $args['headline'] = '';
+                        $args['text'] = '';
+                        $args['id_object_type'] = TS_TOUR_PRODUCTS;
+                        $args['calendar'] = true;
+                        load_template_transient(get_stylesheet_directory() . '/template-parts/layout-blocks/month-badge.php', false, $args);
+                        ?>
+
                         <div id="search-result">
                             <?php
                             // this content will be replaced by ajax during the search, @see travelshop/assets/js/ajax.js

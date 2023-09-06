@@ -18,12 +18,14 @@ if (isset($_GET['pm-pr']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $_GET
 <div class="list-filter-box list-filter-box-price">
     <div class="list-filter-box-title">
         <strong>Preis</strong>
+
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down-bold"></use></svg>
     </div>
-    <div class="list-filter-box-body">
+    <div class="list-filter-box-body" style="width: 90%; margin: 0 auto;">
         <?php
         // ion.rangeSlider is used here, see API Docu: @link http://ionden.com/a/plugins/ion.rangeSlider/api.html
         ?>
-        <input id="js-range-slider" type="text" class="js-range-slider" name="pm-pr" value=""
+        <input id="js-range-slider" style="display:none;" type="text" class="js-range-slider" name="pm-pr" value=""
                data-type="double"
                data-min="<?php echo empty($args['price_min']) ? 0 : $args['price_min']; ?>"
                data-max="<?php echo empty($args['price_max']) ? 1000 : $args['price_max']; ?>"

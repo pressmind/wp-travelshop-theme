@@ -43,15 +43,15 @@ $cheapest_price = $args['cheapest_price'];
         <?php
         if (($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {
             ?>
-            <div class="discount-wrapper">
+            <div class="discount-wrapper discount-wrapper--border">
                 <hr>
-                <p>
+                <div class="discount-wrapper--inner">
                     <span class="msg"><?php echo $discount['name']; ?> bis 24.12</span>
                     <span class="discount-label">
                                 <span class="price"><?php echo $discount['price_before_discount']; ?></span>
                                 <span class="discount"><?php echo $discount['price_delta']; ?></span>
                             </span>
-                </p>
+                </div>
             </div>
             <?php
         }

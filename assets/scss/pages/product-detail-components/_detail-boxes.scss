@@ -1,0 +1,236 @@
+.detail-box {
+  @include spacing-generator($detail-box-spacers-y, 'top', 'margin');
+  @include spacing-generator($detail-box-spacers-y, 'y', 'padding');
+
+  color: $detail-box-color;
+
+  @include font-size-generator($detail-box-font-sizes);
+
+  .detail-box-title{
+    @include spacing-generator($detail-box-spacers-y, 'bottom', 'margin');
+  }
+
+  .detail-box-body {
+    p, ul, ol {
+      margin-bottom: 0;
+
+      + p, + ul, + ol {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  // -- if not transparent
+  &:not(.detail-box-transparent) {
+    @include border-radius($detail-box-border-radius);
+    @include spacing-generator($detail-box-spacers-x, 'around', 'padding');
+
+    background-color: $detail-box-bg;
+
+    // -- box shadows
+    &:not(.detail-box-trust):not(.detail-box-services):not(.detail-box-contact) {
+      @include get-element-shadow('detail-box');
+    }
+
+    // -- specific shadows for predefined types
+    &.detail-box-trust {
+      @include get-element-shadow('detail-box-trust');
+    }
+    &.detail-box-contact {
+      @include get-element-shadow('detail-box-contact');
+    }
+    &.detail-box-services {
+      @include get-element-shadow('detail-box-services');
+    }
+
+    @if ( $detail-box-border-width > 0 ) {
+      border: $detail-box-border-width solid $detail-box-border-color;
+    }
+  }
+
+  // -- theming
+  &.detail-box-success:not(.detail-box-transparent) {
+    background-color: $detail-box-success-bg;
+    border-color: $detail-box-success-border-color;
+    color: $detail-box-success-color;
+  }
+
+  &.detail-box-success.detail-box-bordered:not(.detail-box-transparent) {
+    background-color: $detail-box-bg;
+    color: $detail-box-color;
+    border-color: $detail-box-success-border-color;
+  }
+
+  &.detail-box-light:not(.detail-box-transparent) {
+    background-color: $detail-box-light-bg;
+    border-color: $detail-box-light-border-color;
+    color: $detail-box-light-color;
+  }
+
+  // -- some predefined content variants
+
+  // trust box
+  &.detail-box-trust {
+    .trust-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: .5rem;
+
+      .trust-smiley {
+        width: 3rem;
+        height: 3rem;
+
+        line-height: 0;
+
+        color: $success;
+
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .trust-content{
+        p {
+          margin: 0;
+
+          + p {
+            margin: .5rem 0 0 0;
+          }
+        }
+      }
+
+      .trust-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        line-height: 1;
+        gap: 0.25rem;
+        font-size: $font-size-xs;
+
+        svg {
+          height: $font-size-base;
+          width: $font-size-base;
+        }
+      }
+    }
+
+    &.detail-box-success.detail-box-bordered {
+      .trust-wrapper {
+        .trust-smiley {
+          width: 4rem;
+          height: 4rem;
+          padding: .5rem;
+          background-color: rgba($success, .25);
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &.detail-box-success:not(.detail-box-bordered) {
+      .trust-smiley {
+        color: #fff;
+      }
+    }
+  }
+
+  // contact box
+  .detail-box-contact .detail-contact-wrapper,
+  .detail-contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: space-between;
+
+    // -- contact
+    .detail-contact-hotline {
+      a.hotline-link {
+        display: block;
+        position:relative;
+
+        color: $primary;
+        transition: color $animation-speed-default;
+
+        text-decoration: none;
+
+        padding-left: 1.75rem;
+
+        .hotline-info {
+          line-height: 1.2;
+
+          .hotline-number {
+            color: inherit;
+            line-height: 1;
+            margin: 0 0 0.25rem 0;
+          }
+
+          .hotline-openings {
+            color: $detail-box-color;
+            font-size: $font-size-xs;
+          }
+        }
+
+        .hotline-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+          left:0;
+          top:0;
+          position: absolute;
+          line-height: 0;
+          display: block;
+
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+
+        &:hover, &:focus, &:active {
+          text-decoration: none;
+          color: $link-hover-color;
+        }
+      }
+    }
+
+    // -- whastapp
+    .detail-contact-whatsapp {
+      a.whatsapp-link {
+        font-size: $font-size-xs;
+        color: $body-color;
+        text-align: center;
+
+        line-height: 1;
+        transition: color $animation-speed-default;
+        text-decoration: none;
+
+        display: flex;
+        flex-direction: column;
+
+        flex: 0;
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+
+          transition: color $animation-speed-default;
+          color: $color--whatsapp;
+          margin: 0 auto .25rem auto;
+        }
+
+        &:hover, &:focus, &:active {
+          color: $body-color;
+          text-decoration: none;
+
+          svg {
+            color: darken($color--whatsapp, 10%);
+          }
+        }
+      }
+
+    }
+  }
+
+}

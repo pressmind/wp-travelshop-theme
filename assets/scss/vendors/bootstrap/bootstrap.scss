@@ -7,6 +7,11 @@
 
 @import "functions";
 @import "variables";
+
+// -- load custom variables/overrides to make sure basic bootstrap is overritten aswell..
+// -- its necessary since noticed some bootstrap items not overritten bei variables.
+@import "../../abstracts/variables";
+
 @import "mixins";
 @import "root";
 @import "reboot";

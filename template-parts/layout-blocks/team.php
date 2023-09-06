@@ -2,8 +2,8 @@
 
 ?>
 <section class="content-block content-block-team content-block-teaser-group">
-    <div class="row">
-        <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
+    <?php if(!empty($args['headline']) || !empty($args['text'])){ ?>
+        <div class="row row-introduction">
             <div class="col-12">
                 <?php if(!empty($args['headline'])){ ?>
                     <h2 class="mt-0">
@@ -14,8 +14,9 @@
                     <p><?php echo $args['text'];?></p>
                 <?php } ?>
             </div>
-        <?php } ?>
-
+        </div>
+    <?php } ?>
+    <div class="row row-products">
         <?php
         if(!empty($args['items'])){
             $colClass = 'col-12 col-sm-6 col-lg-3';
@@ -36,7 +37,7 @@
                         if ( !empty($item['image']) ) {
                             ?>
                             <div class="teaser-image">
-                                <div class="image-holder">
+                                <div class="media media-cover">
                                     <img alt="<?php echo $item['name']; ?>" loading="lazy" src="<?php echo $item['image']; ?>" />
                                 </div>
                             </div>
@@ -46,7 +47,7 @@
 
                         <div class="teaser-body">
                             <?php if ( $item['name'] ) { ?>
-                                <h1>
+                                <h1 class="teaser-title h5">
                                     <?php echo $item['name']; ?>
 
                                     <?php if ( $item['position'] ) { ?>
@@ -63,26 +64,20 @@
 
                             <?php if ( $item['mail'] || $item['phone'] ) { ?>
                                 <div class="teaser-body-contact">
-
-
                                     <?php if ( $item['mail'] ) { ?>
-                                        <a title="E-Mail an <?php echo $item['name']; ?>" href="mailto:<?php echo $item['mail']; ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="16" height="16" viewBox="0 2 24 24" stroke-width="1.5" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                                                <polyline points="3 7 12 13 21 7"></polyline>
-                                            </svg>
+                                        <a href="mailto:<?php echo $item['mail']; ?>" title="E-Mail an <?php echo $item['name']; ?>" class="icon-link justify-content-center">
+                                            <div class="icon">
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
+                                            </div>
                                             <?php echo $item['mail']; ?>
                                         </a>
                                     <?php } ?>
 
-
                                     <?php if ( $item['phone'] ) { ?>
-                                        <a title="Jetzt anrufen!" href="tel:<?php echo $item['phone']; ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="16" height="16" viewBox="0 4 25 24" stroke-width="2" stroke="#607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
-                                            </svg>
+                                        <a href="tel:<?php echo $item['phone']; ?>" title="Jetzt anrufen!" class="icon-link justify-content-center">
+                                            <div class="icon">
+                                                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#phone-call"></use></svg>
+                                            </div>
                                             <?php echo $item['phone']; ?>
                                         </a>
                                     <?php } ?>

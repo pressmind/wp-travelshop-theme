@@ -26,13 +26,7 @@ add_filter('wpsf_register_settings_travelshop_wpsf', function ($wpsf_settings) {
         array(
             'id' => 'contact',
             'title' => 'Kontaktdaten',
-        ),
-        /*
-        array(
-            'id' => 'tab_2',
-            'title' => __('Tab 2'),
-        ),
-        */
+        )
     );
 
     // Settings
@@ -108,7 +102,6 @@ add_filter('wpsf_register_settings_travelshop_wpsf', function ($wpsf_settings) {
                 ),
             ),
         ),
-
         array(
             'tab_id' => 'contact',
             'section_id' => 'hotline',
@@ -158,7 +151,6 @@ add_filter('wpsf_register_settings_travelshop_wpsf', function ($wpsf_settings) {
 
             ),
         ),
-
         array(
             'tab_id' => 'contact',
             'section_id' => 'socialmedia',
@@ -204,47 +196,160 @@ add_filter('wpsf_register_settings_travelshop_wpsf', function ($wpsf_settings) {
                     'type' => 'text',
                     'default' => 'https://...',
                 ),
-
-
             ),
         ),
-
-
-        array(
-            'tab_id' => 'tab_1',
-            'section_id' => 'section_2',
-            'section_title' => 'Section 2',
-            'section_order' => 10,
-            'fields' => array(
-                array(
-                    'id' => 'text-2',
-                    'title' => 'Text',
-                    'desc' => 'This is a description.',
-                    'type' => 'text',
-                    'default' => 'This is default',
-                ),
-            ),
-        ),
-
-        /*
-        array(
-            'tab_id' => 'tab_2',
-            'section_id' => 'section_3',
-            'section_title' => 'Section 3',
-            'section_order' => 10,
-            'fields' => array(
-                array(
-                    'id' => 'text-3',
-                    'title' => 'Text',
-                    'desc' => 'This is a description.',
-                    'type' => 'text',
-                    'default' => 'This is default',
-                ),
-            ),
-        ),
-        */
 
     );
+
+    for($tab_index = 1; $tab_index <= 3; $tab_index++) {
+        $tab =  array(
+            'id' => 'search_tab'.$tab_index,
+            'title' => 'Suche Tab #'.$tab_index
+        );
+        $wpsf_settings['tabs'][] = $tab;
+        $search_tab_fields =  array(
+            'tab_id' => 'search_tab'.$tab_index,
+            'section_id' => 'section1',
+            'section_title' => 'Auto-Complete Vorschläge',
+            'section_order' => 1,
+            'fields' => array(
+                array(
+                    'id' => 'items',
+                    'title' => 'Teaser',
+                    'desc' => 'Diese Teaser werden als erstes im Auto-Complete angezeigt und sollen auf Landingpages mit aktuellen Kampagnen verlinken.',
+                    'type' => 'group',
+                    'subfields' => array(
+                        array(
+                            'id' => 'text',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => 'Sylt',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'subtext',
+                            'title' => 'Subtitel',
+                            'desc' => '',
+                            'placeholder' => 'Die schönste Insel der Welt',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'badge',
+                            'title' => 'Badge',
+                            'desc' => '',
+                            'placeholder' => 'DEAL',
+                            'type' => 'text',
+                            'default' => '',
+                        ),
+                        array(
+                            'id' => 'image',
+                            'title' => 'Bild',
+                            'desc' => 'ID des Bildes der WordPress Media Library',
+                            'placeholder' => '123',
+                            'type' => 'number',
+                            'default' => '0',
+                        ),
+                        array(
+                            'id' => 'link',
+                            'title' => 'Link zur Landingpage',
+                            'desc' => '',
+                            'placeholder' => 'https://...',
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+
+
+                array(
+                    'id'        => 'teaser_group',
+                    'title'     => 'Teaser Gruppen',
+                    'desc'      => '',
+                    'type'      => 'group',
+                    'subfields' => array(
+                        // accepts most types of fields.
+                        array(
+                            'id' => 'title',
+                            'title' => 'Titel',
+                            'desc' => '',
+                            'placeholder' => 'Beliebte Reiseziele',
+                            'type' => 'text',
+                            'default' => ''
+                        ),
+                        array(
+                            'id' => 'more_link',
+                            'title' => 'Mehr Link',
+                            'desc' => '',
+                            'placeholder' => 'https://...',
+                            'type' => 'text',
+                            'default' => '/reiseziele/'
+                        ),
+                        array(
+                            'id' => 'more_link_text',
+                            'title' => 'Mehr Link Text',
+                            'desc' => '',
+                            'type' => 'text',
+                            'default' => 'Weitere Reiseziele anzeigen'
+                        ),
+                        array(
+                            'id' => 'items',
+                            'title' => 'Teaser',
+                            'desc' => '',
+                            'type' => 'group',
+                            'subfields' => array(
+                                array(
+                                    'id' => 'title',
+                                    'title' => 'Titel',
+                                    'desc' => '',
+                                    'placeholder' => 'Spanien',
+                                    'type' => 'text',
+                                    'default' => '',
+                                ),
+                                array(
+                                    'id' => 'image',
+                                    'title' => 'Bild',
+                                    'desc' => 'ID des Bildes der WordPress Media Library',
+                                    'placeholder' => '123',
+                                    'type' => 'number',
+                                    'default' => '0',
+                                ),
+                                array(
+                                    'id' => 'link',
+                                    'title' => 'Link',
+                                    'desc' => '',
+                                    'placeholder' => 'https://...',
+                                    'type' => 'text',
+                                    'default' => ''
+                                )
+                            )
+                        ),
+
+                    ),
+                ),
+
+
+                array(
+                    'id' => 'show_all_link',
+                    'title' => 'Zeige alles Link',
+                    'desc' => '',
+                    'placeholder' => '/suche/',
+                    'type' => 'text',
+                    'default' => '/suche/'
+                ),
+                array(
+                    'id' => 'show_all_text',
+                    'title' => 'Zeige alles Text',
+                    'desc' => '',
+                    'placeholder' => 'Nicht sicher? Alle Reisen anzeigen',
+                    'type' => 'text',
+                    'default' => 'Nicht sicher? Alle Reisen anzeigen'
+                ),
+            )
+        );
+        $wpsf_settings['sections'][] = $search_tab_fields;
+    }
 
     return $wpsf_settings;
 });

@@ -1,0 +1,146 @@
+%image-gallery-outer {
+  padding: 0;
+}
+
+%image-gallery-wrapper {
+  &:not(.tns-slider) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    overflow: hidden;
+    margin: -.5rem;
+  }
+}
+
+%image-gallery-item {
+  position: relative;
+}
+
+%image-gallery-item-not-initialized {
+  padding: .5rem;
+
+  flex: 0 0 (100% / 2);
+  width: 100%;
+  max-width: (100% / 2);
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 (100% / 3);
+    width: 100%;
+    max-width: (100% / 3);
+  }
+}
+
+%image-gallery-item-link {
+  display: block;
+  clear: both;
+  position: relative;
+
+  > .zoom-indicator {
+    transition: transform .15s, opacity .15s;
+
+    z-index: 3;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background-color: rgba($body-color , .75);
+
+    display: flex;
+    line-height: 1;
+
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(1.1);
+
+    opacity:0;
+    pointer-events: none;
+
+    > svg {
+      color: #fff;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    @if ( $border-radius != 0 ) {
+      @include border-radius(50%);
+    }
+  }
+
+  &:hover {
+    .zoom-indicator {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+%image-gallery-item-copyright {
+  @extend %copyright-on-image;
+
+  bottom: 1rem !important;
+  left: 1rem !important;
+}
+
+%image-gallery-item-image {
+
+  @include aspect-ratio(16, 10);
+  position: relative;
+
+  > img {
+    @extend %media-cover-image;
+    @include border-radius($border-radius);
+  }
+}
+
+.accordion-block-gallery,
+.teaser-block-gallery,
+.text-block-gallery {
+  @extend %image-gallery-outer;
+
+  // -- wrapper
+  .text-block-gallery--inner,
+  .accordion-block-gallery--inner,
+  .teaser-block-gallery--inner {
+    @extend %image-gallery-wrapper;
+
+    // -- item
+    .teaser-block-gallery-item,
+    .text-block-gallery-item,
+    .accordion-gallery-item {
+      @extend %image-gallery-item;
+
+      // -- link behaviour
+      > a {
+        @extend %image-gallery-item-link;
+      }
+
+      // -- image
+      .accordion-gallery-item--image,
+      .text-block-gallery-item--image,
+      .teaser-block-gallery-item--image {
+        @extend %image-gallery-item-image;
+      }
+
+      // -- copyright
+      .accordion-gallery-item--copyright,
+      .text-block-gallery-item--copyright,
+      .teaser-block-gallery-item--copyright {
+        @extend %image-gallery-item-copyright;
+      }
+    }
+
+    &:not(.tns-slider) {
+      // -- item not initialized
+      .teaser-block-gallery-item,
+      .text-block-gallery-item,
+      .accordion-gallery-item {
+        @extend %image-gallery-item-not-initialized;
+      }
+    }
+  }
+}

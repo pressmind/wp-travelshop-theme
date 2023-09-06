@@ -221,7 +221,8 @@ if(empty($result->calendar)){
                                 <li class="travel-date position-relative<?php echo $class;?>" title="<?php echo $info; ?> <br> zur Buchung" data-html="true" data-toggle="tooltip">
                                     <a data-duration="<?php echo $duration; ?>"
                                        data-anchor="<?php echo $day->cheapest_price->id; ?>"
-                                       data-modal="true" data-modal-id="<?php echo $args['id_modal_price_box']; ?>"
+                                       data-modal="true"
+                                       data-modal-id="<?php echo $args['id_modal_price_box']; ?>"
                                        href="<?php echo IB3Tools::get_bookinglink($day->cheapest_price, $args['url'], null, $args['booking_type'] ?? null, true);?>"
                                        class="stretched-link"><?php echo $day->date->format('d'); ?>
                                         <div>ab&nbsp;<?php echo PriceHandler::format($day->cheapest_price->price_total); ?></div>

@@ -1,0 +1,70 @@
+.teaser-block{
+
+  +.teaser-block {
+    @include spacing-generator($detail-page-section-paddings, 'top');
+    @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+
+    border-top: $hr-border-width solid $hr-border-color;
+  }
+
+  .teaser-block-preview {
+    max-height: 20rem;
+    overflow: hidden;
+
+    position: relative;
+
+    // -- toggle
+    .teaser-block-toggle{
+      padding: 5rem 0 0 0;
+      pointer-events: none;
+
+      @include gradient-y(rgba($body-bg, 0), $body-bg, 0%, 75%);
+
+      opacity: 1;
+
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+
+      > button.btn {
+        padding: 0;
+        pointer-events: auto;
+      }
+    }
+
+    &.not-toggleable {
+      .teaser-block-toggle {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // -- modal
+  .teaser-block-modal {
+    @extend %modal-wrapper;
+
+
+    .teaser-block-modal-inner {
+      @extend %modal-inner;
+      @extend %modal-inner-width-md;
+    }
+
+    .teaser-block-modal-content {
+      @extend %modal-content;
+    }
+
+    &.show {
+      @extend %modal-open;
+    }
+
+    .teaser-block-modal-header {
+      @extend %modal-header;
+    }
+
+    .teaser-block-modal-body {
+      @extend %modal-body;
+    }
+  }
+}

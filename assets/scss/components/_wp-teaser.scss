@@ -1,0 +1,32 @@
+.teaser.wp-teaser {
+  @include border-radius($wp-teaser-border-radius);
+  border-color: $wp-teaser-border-color;
+  border-style: solid;
+  border-width: $wp-teaser-border-width;
+  background-color: $wp-teaser-bg;
+
+  @include get-element-shadow('wp-teaser');
+
+  .teaser-image {
+    @if ( $wp-teaser-border-width != 0 ) {
+      margin-top: -$wp-teaser-border-width;
+      margin-right: -$wp-teaser-border-width;
+      margin-bottom: -$wp-teaser-border-width;
+    }
+
+    overflow: hidden;
+
+    @include border-top-radius($wp-teaser-border-radius);
+
+    @include aspect-ratio($wp-teaser-image-aspect-ratio-width, $wp-teaser-image-aspect-ratio-height);
+    @extend %media-cover;
+  }
+
+  .teaser-body {
+    padding: $wp-teaser-spacer-x;
+
+    h1 {
+      margin: 0 0 $image-teaser-spacer-y 0;
+    }
+  }
+}

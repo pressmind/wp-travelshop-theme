@@ -1,0 +1,56 @@
+%checklist {
+  list-style-type: none;
+  padding:0;
+  font-size: $checklist-font-size;
+  line-height: $checklist-line-height;
+
+  li {
+    padding-left: ( $checklist-icon-size + $checklist-icon-spacer);
+    position: relative;
+
+    svg {
+      position: absolute;
+
+      left:0;
+      top: (  ($checklist-font-size * $checklist-line-height) / 2 );
+
+      transform: translateY(-50%);
+
+      width: $checklist-icon-size;
+      height: $checklist-icon-size;
+
+      color: $checklist-icon-color;
+    }
+
+    + li {
+      margin-top: $checklist-item-spacer;
+    }
+  }
+}
+
+%checklist-responsive {
+  @include media-breakpoint-down(md) {
+    font-size: $checklist-font-size-small;
+
+    li {
+      padding-left: ( $checklist-icon-size-small + $checklist-icon-spacer);
+
+      svg {
+        top: (  ($checklist-font-size-small * $checklist-line-height) / 2 );
+
+        width: $checklist-icon-size-small;
+        height: $checklist-icon-size-small;
+
+
+      }
+    }
+  }
+}
+
+ul.checklist {
+  @extend %checklist;
+
+  &-responsive {
+    @extend %checklist-responsive;
+  }
+}

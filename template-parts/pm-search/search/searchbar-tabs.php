@@ -28,7 +28,7 @@ if(isset($args['search_box_tab'])){
         }
         foreach(TS_SEARCH[$args['search_box']]['tabs'] as $k => $tab){
             ?>
-            <button class="search-wrapper--tabs_btn  <?php echo $tab['route'] == trim($_SERVER['REQUEST_URI'], '/') || $no_active_route && $k == $current_tab ? 'is--active' : ''; ?>" data-pm-tab="<?php echo $k; ?>"  data-pm-box="<?php echo $args['search_box']; ?>">
+            <button class="search-wrapper--tabs_btn  <?php echo $tab['route'] == trim($_SERVER['REQUEST_URI'], '/') || $no_active_route && $k == $current_tab ? 'is-active' : ''; ?>" data-pm-tab="<?php echo $k; ?>"  data-pm-box="<?php echo $args['search_box']; ?>">
                 <?php echo $tab['name'];?>
             </button>
             <?php

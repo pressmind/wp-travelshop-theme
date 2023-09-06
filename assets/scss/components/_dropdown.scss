@@ -1,0 +1,9 @@
+.dropdown {
+  .dropdown-toggle {
+
+    // -- reset unused caret down
+    &:after {
+      display: none;
+    }
+  }
+}

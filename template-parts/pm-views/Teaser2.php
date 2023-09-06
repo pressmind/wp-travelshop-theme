@@ -53,11 +53,15 @@ if (empty($filteredParams) === false) {
         </a>
     </div>
     <div class="wishlist-item-data">
+
+        <div data-pm-id="<?php echo $args['id_media_object']; ?>" class="remove-from-wishlist">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#trash"></use></svg>
+        </div>
+
         <span class="name">
             <a href="<?php echo $args['url'] ; ?>"><?php echo $args['headline']; ?></a>
         </span>
         <span class="price">
-            <div data-pm-id="<?php echo $args['id_media_object']; ?>" class="remove-from-wishlist">entfernen</div>
             <a href="<?php echo $args['url'] ; ?>">
                 <?php
                     if(!is_null($args['cheapest_price'])) {

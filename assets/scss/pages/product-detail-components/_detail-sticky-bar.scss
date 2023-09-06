@@ -1,0 +1,63 @@
+// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+@if ( $detail-page-use-default == true ) {
+  .detail-mobile-bar {
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+
+    z-index: $zindex-sticky;
+
+    background-color: $body-bg;
+    border-top: $hr-border-width solid $hr-border-color;
+
+    padding: .75rem 0;
+
+    .detail-mobile-bar-row {
+      gap: .5rem;
+    }
+
+    .detail-mobile-bar-info {
+
+      flex: 1 1 auto;
+      overflow: hidden;
+
+      .detail-mobile-bar-info--attributes {
+        @extend %detail-attributes-row;
+
+        margin: 0;
+      }
+
+      .detail-mobile-bar-info--title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .detail-mobile-bar-booking {
+      flex: 0;
+
+      .btn {
+        white-space: nowrap;
+      }
+    }
+
+    // -- visibility
+    display: none;
+
+    @include media-breakpoint-down( $detail-content-column-break ) {
+      display: block;
+    }
+
+    // -- show hide mechanism
+    transition: transform $animation-speed-default;
+    transform: translateY(100%);
+    opacity: 0;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

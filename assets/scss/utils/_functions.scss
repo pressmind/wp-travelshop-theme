@@ -1,0 +1,112 @@
+/**
+ * Get max breakpoint
+ */
+
+@function getMediaBreakpointDown($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+
+  @return $max;
+}
+/**
+ * Get min breakpoint breakpoint
+ */
+@function getMediaBreakpointUp($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
+
+/**
+ * get unit
+ */
+@function getUnit($value) {
+  @return str-slice($value * 0 + "", 2, -1);
+}
+
+/**
+ * Strip unit
+ */
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+/**
+ * Convert rem to px
+ */
+@function remToPx($remValue) {
+
+  $checkUnit: getUnit($remValue);
+
+  @if ( $checkUnit == 'rem' ) {
+    // if rem convert
+    @return ( (16 * strip-unit($remValue)) * 1px);
+  } @else {
+    // if not return value before
+    @return $remValue;
+  }
+
+}
+
+/**
+ * Convert px to rem
+ */
+@function pxToRem($pxValue) {
+
+  $checkUnit: getUnit($pxValue);
+
+  @if ( $checkUnit == 'px' ) {
+    // if px convert
+    @return ( (strip-unit($pxValue) / 16) * 1rem );
+  } @else {
+    // if not return value before
+    @return $pxValue;
+  }
+
+}
+
+/**
+ * Get next breakpoint
+ */
+@function getNextBreakpoint($breakpoint, $breakpoints: $grid-breakpoints) {
+
+  // if map is valid
+  @if type-of($breakpoints) == map {
+    // -- check if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+      // init index
+      $i: 0;
+      // key index
+      $key-index: false;
+
+      @each $breakpoint-key, $breakpoint-value in $breakpoints {
+        // update index
+        $i: $i + 1;
+
+        // if map key found, set key index
+        @if $breakpoint-key == $breakpoint {
+          $key-index: $i;
+        }
+
+        // if next index return next key
+        @if $i == $key-index + 1 {
+          @return $breakpoint-key;
+        }
+
+        // return breakpoint if breakpoint == length of breakpoints map
+        @if $i == length($breakpoints) {
+          @return $breakpoint;
+        }
+      }
+    }
+
+    @warn 'No valid key #{$breakpoint} in $breakpoints ( default: $grid-breakpoints )';
+    @return $breakpoint;
+  }
+
+  @warn 'Breakpoint map is not valid';
+  @return $breakpoint;
+
+}

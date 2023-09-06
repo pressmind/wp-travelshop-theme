@@ -1,473 +1,326 @@
-.list-filter-toggle {
-  display: none;
-
-  .list-filter-open {
-    span {
-      display: inline-block;
-      margin-left: .25rem;
-      transform: translateY(2px);
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    display: block;
-    margin-top: 1rem;
-  }
-}
-
 .content-block.content-block-list-filter {
+
   .list-filter {
-    background-color: $gray-200;
-    padding: $grid-gutter-width;
-    @include border-radius($card-border-radius);
+    border-radius: $filter-border-radius;
+    background-color: $filter-bg;
+    padding: $filter-spacer-x;
 
-    button.list-filter-close {
-      display: none;
-      padding: 4px;
-      line-height: 0;
-      border-radius: 20px;
-      border:0;
-      outline: none;
-      background-color: #fff;
-      width: 36px;
-      height: 36px;
-      position: absolute;
-      top:$grid-gutter-width;
-      right: $grid-gutter-width;
-      color: rgba($body-color, .5);
-      background-color: rgba(#000, .1);
-      transition:all .3s;
+    // -- border only if not 0
+    @if ( $filter-border-width != 0 ) {
+      border: $filter-border-width solid $filter-border-color;
+    }
 
-      &:hover, &:focus, &:active {
-        outline: none;
+    // -- filter header
+    .list-filter-header {
+      > button.list-filter-close {
+        display: none;
       }
 
-      &:focus, &:active {
-        color: rgba($body-color, .5);
-      }
-
-      &:hover {
-        color: $body-color;
+      .h4 {
+        margin: 0 0 $filter-spacer-y 0;
       }
     }
 
-    // -- boxes
+    // -- filter boxes
     .list-filter-boxes {
 
-      // -- box
       .list-filter-box {
 
+        // -- title
+        .list-filter-box-title,
+        > label {
+          display: block;
+          font: {
+            weight: $filter-box-title-font-weight;
+            size: $filter-box-title-font-size;
+          }
+          margin: 0 0 $filter-spacer-y 0;
 
-        // -- body
-        .list-filter-box-body {
-          .form-check {
-            position: relative;
+          > strong {
+            font-weight: $font-weight-bold;
+          }
+        }
 
-            .form-check-label {
-              display: block;
-              cursor: pointer;
-            }
+        .list-filter-box-title {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
 
-            .form-check-input {
-              opacity: 0;
-              visibility: hidden;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
 
-              + span {
-                position: absolute;
-                pointer-events: visible;
-                cursor: pointer;
-                left:0;
-                top: .3rem;
+          svg {
+            width: $font-size-base;
+            height: $font-size-base;
 
-                display: block;
-                width: 14px;
-                height: 14px;
-                border: 1px solid rgba($body-color, .5);
-                border-radius: $card-border-radius;
+            color: $body-color-light;
+            transition: color $animation-speed-default, transform $animation-speed-default;
 
-                transition: all .3s;
-
-                i {
-                  display: none;
-                }
-                @include media-breakpoint-down(sm) {
-                  top: .9rem;
-                  width: 20px;
-                  height: 20px;
-                }
-              }
-            }
-
-            &:hover > .form-check-input + span {
-              border-color: $primary;
-            }
-
-            > .form-check-input:checked + span {
-              border-color: $primary;
-              background-color: $primary;
-
-              i {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: block;
-                color: #fff;
-                font-size: .6125rem;
-              }
-            }
-
-            > .form-check-input:disabled + span {
-              border-color: $primary;
-              background-color: $primary;
-              cursor:default;
-
-              &:after {
-                content: '';
-                display: block;
-                height:2px;
-                width: 6px;
-
-                position: absolute;
-                top: 50%;
-                left: 50%;
-
-                transform: translate(-50%, -50%);
-                background-color: #fff;
-              }
-            }
-            .form-check-input:disabled ~ .form-check-label {
-              color: $body-color;
-            }
-
-            .form-check-input:disabled ~ .form-check-label,
-            .form-check-input:disabled {
-              cursor: default;
-            }
-
-            + .form-check {
-              margin-top: .25rem;
-            }
           }
 
-          .list-filter-second-level {
-            margin-top: .25rem;
-            display: none;
-
-            .form-check {
-              + .form-check {
-                margin-top: .25rem;
-              }
+          &:hover {
+            svg {
+              color: $primary;
             }
           }
+        }
 
-          // -- toggle second level
-          button.toggle-second-level {
-            position: absolute;
-            top: 0;
-            right:0;
-            width: 20px;
-            height: 20px;
-            border:0;
-            border-radius: 12px;
-            line-height: 20px;
-            text-align: center;
-            color: rgba($body-color, .5);
-            //background-color: rgba(#000, .1);
-            transition: all .3s;
-            padding:0;
+        // -- search
+        .list-filter-box-search {
+          margin: 0 0 $filter-spacer-y  0;
+
+          .input-group {
+            @extend %custom-input-group;
+          }
+        }
+
+        // -- footer
+        .list-filter-box-footer {
+          margin: $filter-spacer-y 0 0 0;
+
+          button {
+            @include button-reset();
+            font-size: $font-size-sm;
+            color: $body-color;
+            transition: color $animation-speed-default;
+            text-align: left;
             display: block;
-            font-size: .7125rem;
+            width: 100%;
+            font-weight: $font-weight-bold;
 
             &:focus, &:active {
-            color: rgba($body-color, .5);
-              outline: none;
+              color: $body-color;
+              text-decoration: underline;
             }
 
             &:hover {
               color: $primary;
-              outline: none;
-            }
-
-            i {
-              transition: all .3s;
-            }
-            @include media-breakpoint-down(sm) {
-              width: 25px;
-              height: 25px;
-              svg {
-                width: 25px;
-                height: 25px;
-              }
-            }
-          }
-
-          .form-check.is--open {
-            .list-filter-second-level {
-              display: block;
-            }
-
-            button.toggle-second-level {
-              i {
-                transform: rotate(180deg);
-              }
             }
           }
         }
 
-        // -- title
-        .list-filter-box-title {
-          margin-bottom: .25rem;
+        // -- header change for title
+        &.list-filter-box-price {
+          .list-filter-box-title {
+            margin: 0 0 ($filter-spacer-y + 2rem) 0;
+          }
+        }
+
+
+        // -- daterange picker
+        &.list-filter-box-date-range-picker {
+          position: relative;
+
+          @include media-breakpoint-up(lg) {
+            .daterange-overlay {
+              left: -0.5rem;
+              transform: translateX(0);
+
+              .daterange-overlay-header {
+                justify-content: start !important;
+              }
+            }
+          }
+
+          .search-field-input-field {
+            @extend .form-control;
+            background-color: $input-bg !important;
+          }
+
+          // -- datepicker input
+          .search-field-input.search-field-input--datepicker {
+            @extend %datepicker-input;
+          }
+        }
+
+        // -- category definition, board-type definition, transport-type definition
+        &.category-tree,
+        &.board-type,
+        &.transport-type {
+          .form-check {
+            @extend %custom-checkbox;
+
+            + .form-check {
+              margin-top: $custom-checkbox-spacer;
+            }
+
+            // -- bigger checkboxes if mobile view
+            @if ( $filter-mobile-break != null ) {
+              @extend %custom-checkbox-large-down-#{$filter-mobile-break};
+
+              @include media-breakpoint-down($filter-mobile-break) {
+                + .form-check {
+                  margin-top: $custom-checkbox-large-spacer;
+                }
+              }
+            }
+          }
         }
 
         + .list-filter-box {
-          margin-top: 1rem;
-          padding-top: 1rem;
-          border-top: 1px solid  rgba(#000, .1);
-        }
+          padding-top: $filter-spacer-y;
 
-
-        // -- price filter
-        &.list-filter-box-price {
-          .irs  {
-            margin-top: .5rem;
-          }
-
-          .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
-            background-color: $primary;
-          }
-
-          .irs--flat .irs-from:before, .irs--flat .irs-to:before, .irs--flat .irs-single:before {
-            border-top-color: $primary;
-          }
-
-          .irs--flat .irs-line {
-            height: 4px;
-            background-color: $gray-500;
-          }
-
-          .irs--flat .irs-bar {
-            background-color: $primary;
-            height: 4px;
-          }
-
-          .irs--flat .irs-handle {
-            top: 20px;
-            width: 14px;
-            height: 14px;
-          }
-
-          .irs--flat .irs-handle>i:first-child {
-            height: 14px;
-            width: 14px;
-            border-radius: 50%;
-            margin-left: -7px;
-
-            background-color: $primary;
-          }
-
-          .irs--flat .irs-handle.state_hover>i:first-child, .irs--flat .irs-handle:hover>i:first-child {
-            background-color: darken($primary, 15%);
-          }
-
-          .irs--flat .irs-min, .irs--flat .irs-max {
-            color: $body-color;
-            background-color: $gray-400;
+          @if ( $filter-box-divider ) {
+            margin-top: $filter-spacer-y;
+            border-top: $filter-box-divider-width solid $filter-box-divider-color;
           }
         }
-      }
 
+        // -- hidden behaviour
+        &.is-hidden {
+          .list-filter-box-title {
+            svg {
+              transform: scaleY(-1);
+            }
+          }
 
-      // -- filter submit
-      @include media-breakpoint-down(sm) {
-        padding-bottom: 55px + 16px + $grid-gutter-width !important;
-        position: relative;
+          .list-filter-box-body,
+          .list-filter-box-footer,
+          .list-filter-box-search {
+            display: none;
+          }
 
-        .list-filter-box.list-filter-box-submit {
-          position: fixed;
-          bottom:0;
-          left:0;
-          right:0;
-          background-color: #fff;
-
-          padding: $grid-gutter-width;
+          &.list-filter-box-price {
+            .list-filter-box-title {
+              margin-bottom: $filter-spacer-y;
+            }
+          }
         }
       }
     }
   }
 
-  /// -- mobile fullscreen.
-  @include media-breakpoint-down(sm) {
-    margin:0;
-    padding:0;
-    background-color: #fff;
+  // -- list filter footer
+  .list-filter-footer {
+    padding-top: $filter-spacer-y;
 
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-
-    overflow-y: auto;
-
-    z-index: 9999;
-
-    transition: opacity .3s;
-    opacity:0;
-    pointer-events: none;
-
-    &.is--open {
-      opacity: 1;
-      pointer-events: auto;
+    @if ( $filter-box-divider ) {
+      margin-top: $filter-spacer-y;
+      border-top: $filter-box-divider-width solid $filter-box-divider-color;
     }
+  }
 
-    .list-filter {
-      background-color: transparent;
+  // -- mobile view
+  @if  ( $filter-mobile-break != null ) {
 
-      button.list-filter-close {
-        display: block;
+    @if ( $filter-mobile-view-type == 'modal' or $filter-mobile-view-type == 'modal-fullscreen' ) {
+      @extend %modal-wrapper-down-#{$filter-mobile-break};
+
+      @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+        @extend %modal-wrapper-fullscreen-down-#{$filter-mobile-break};
+      }
+
+      > form {
+        @extend %modal-inner-down-#{$filter-mobile-break};
+
+        @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-inner-fullscreen-down-#{$filter-mobile-break};
+        }
+      }
+
+      > form .list-filter {
+        @extend %modal-content-down-#{$filter-mobile-break};
+
+        @if ( $filter-mobile-view-type == 'modal-fullscreen' ) {
+          @extend %modal-content-fullscreen-down-#{$filter-mobile-break};
+        }
+      }
+
+      &.is-open {
+        @extend %modal-open-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-header {
+        @extend %modal-header-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-boxes {
+        @extend %modal-body-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-footer {
+        @include media-breakpoint-down($filter-mobile-break) {
+          margin-top: 0;
+        }
+        @extend %modal-footer-down-#{$filter-mobile-break};
       }
     }
+
+    // apple like
+    @if ( $filter-mobile-view-type == 'apple-like' ) {
+      @extend %apple-like-wrapper-down-#{$filter-mobile-break};
+
+      // -- inner
+      > form .list-filter {
+        @extend %apple-like-content-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-header {
+        @extend %apple-like-header-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-boxes {
+        @extend %apple-like-body-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-footer {
+        @include media-breakpoint-down($filter-mobile-break) {
+          margin-top: 0;
+        }
+        @extend %apple-like-footer-down-#{$filter-mobile-break};
+      }
+
+      // -- open state
+      &.is-open {
+        @extend %apple-like-open-down-#{$filter-mobile-break};
+
+        > form .list-filter {
+          @extend %apple-like-content-open-down-#{$filter-mobile-break};
+        }
+      }
+    }
+
+    // offcanvas
+    @if ( $filter-mobile-view-type == 'offcanvas' ) {
+      @extend %offcanvas-wrapper-down-#{$filter-mobile-break};
+
+      // -- inner
+      > form .list-filter {
+        @extend %offcanvas-content-down-#{$filter-mobile-break};
+        @extend %offcanvas-direction-#{$filter-offcanvas-direction}-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-header {
+        @extend %offcanvas-header-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-boxes {
+        @extend %offcanvas-body-down-#{$filter-mobile-break};
+      }
+
+      .list-filter-footer {
+        @include media-breakpoint-down($filter-mobile-break) {
+          margin-top: 0;
+        }
+        @extend %offcanvas-footer-down-#{$filter-mobile-break};
+      }
+
+      // -- open state
+      &.is-open {
+        @extend %offcanvas-open-down-#{$filter-mobile-break};
+
+        > form .list-filter {
+          @extend %offcanvas-content-open-down-#{$filter-mobile-break};
+        }
+      }
+    }
+
+
   }
 }
 
-
-.list-filter-box-body,
-.multi-level-checkboxes  {
-  .form-check {
-    position: relative;
-
-    .form-check-label {
-      display: block;
-      cursor: pointer;
-    }
-
-    .form-check-input {
-      opacity: 0;
-      visibility: hidden;
-
-      + span {
-        position: absolute;
-        left:0;
-        top: 5px;
-
-        display: block;
-        width: 14px;
-        height: 14px;
-        border: 1px solid rgba($body-color, .5);
-        border-radius: $card-border-radius;
-
-        transition: all .3s;
-
-        i {
-          display: none;
-        }
-      }
-    }
-
-    &:hover > .form-check-input + span {
-      border-color: $primary;
-    }
-
-    > .form-check-input:checked + span {
-      border-color: $primary;
-      background-color: $primary;
-
-      i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: block;
-        color: #fff;
-        font-size: .6125rem;
-        pointer-events: none;
-        svg {
-          pointer-events: none;
-        }
-      }
-    }
-
-    + .form-check {
-      margin-top: .25rem;
-    }
-  }
-
-  .list-filter-second-level {
-    margin-top: .25rem;
-    display: none;
-
-    .form-check {
-      + .form-check {
-        margin-top: .25rem;
-      }
-    }
-  }
-
-  // -- toggle second level
-  button.toggle-second-level {
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 20px;
-    height: 20px;
-    border:0;
-    border-radius: 12px;
-    line-height: 20px;
-    text-align: center;
-    color: rgba($body-color, .5);
-    //background-color: rgba(#000, .1);
-    transition: all .3s;
-    padding:0;
-    display: block;
-    font-size: .7125rem;
-
-    &:focus, &:active {
-    color: rgba($body-color, .5);
-      outline: none;
-    }
-
-    &:hover {
-      color: $primary;
-      outline: none;
-    }
-
-    i {
-      transition: all .3s;
-    }
-  }
-
-  .form-check.is--open {
-    .list-filter-second-level {
-      display: block;
-    }
-
-    button.toggle-second-level {
-      i {
-        transform: rotate(180deg);
-      }
-    }
-  }
-  @include media-breakpoint-down(sm) {
-    .form-check {
-      font-size: 1.2rem;
-      margin: .5rem 0;
-      padding-left: calc(25px + .5rem);
-      .form-check-input {
-        +span {
-          width: 20px;
-          height: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-    }
-  }
-}
-
-// -- open econd level by default for elements inside .multi-level-checkboxes
-.multi-level-checkboxes {
-  .list-filter-second-level {
-    display: block;
-  }
+// @todo: decline it outside here, ans basic element
+#wpadminbar {
+  z-index: ($zindex-modal-backdrop - 1) !important;
 }

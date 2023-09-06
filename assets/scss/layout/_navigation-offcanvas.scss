@@ -1,0 +1,184 @@
+.page-navigation-offcanvas {
+  position: fixed;
+  top:0;
+  right: -$navbar-offcanvas-width;
+  bottom:0;
+
+  width: $navbar-offcanvas-width;
+
+  z-index: $navbar-offcanvas-zindex;
+  background-color: $navbar-offcanvas-bg;
+  box-shadow: 0 0 0 rgba(#000, 0);
+
+  transition: right $animation-speed-default, box-shadow $animation-speed-default;
+
+  overflow: hidden;
+
+  &.is-open {
+    box-shadow: $navbar-offcanvas-shadow;
+    right: 0;
+  }
+
+  // -- header
+  .offcanvas-header {
+    flex: 0;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    > button.offcanvas-close {
+      display: flex;
+
+      @include button-reset();
+
+      color: $body-color;
+      transition: color $animation-speed-default;
+
+      &:hover, &:focus, &:active {
+        color: $primary;
+      }
+
+      line-height: 1;
+
+      width: 2.5rem;
+      height: 2.5rem;
+
+      align-items: center;
+      justify-content: flex-end;
+
+      > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  // -- inner
+  .offcanvas-inner {
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 0 1.5rem 1rem 1.5rem;
+
+    position: relative;
+
+    // -- sublayers
+    .sub-layer {
+      width: $navbar-offcanvas-width;
+      position: absolute;
+      top:0;
+      left: auto;
+      right: -$navbar-offcanvas-width;
+      bottom:0;
+      background-color: $navbar-offcanvas-bg;
+      z-index: 2;
+
+      transition: right $animation-speed-default;
+
+      &.is-open {
+        right: 0;
+      }
+    }
+  }
+
+  // -- sub layer
+  .sub-layer {
+    padding: 0 1.5rem 1rem 1.5rem;
+
+    // -- header
+    .sub-layer-header {
+      margin: 0 0 1rem 0;
+
+      button.sub-layer-back {
+        @include button-reset();
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        gap: .5rem;
+
+        height: 2.5rem;
+
+        color: $body-color-light;
+        transition: color $animation-speed-default;
+
+        > .icon {
+          line-height: 1;
+
+          > svg {
+            width: 1.25rem;
+            height: 1.25rem;
+          }
+        }
+
+        &:hover, &:focus, &:active {
+          color: $body-color;
+        }
+      }
+
+      .parent-link {
+        font: {
+          size: $font-size-lg;
+          weight: $headings-font-weight;
+        }
+
+        margin: .5rem 0 0 0;
+        color: $body-color;
+        transition: color $animation-speed-default;
+
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+          color: $primary;
+        }
+      }
+
+    }
+  }
+
+  // -- nav items
+  .nav-item, .sub-layer-items {
+    > a.nav-link {
+      @extend %navigation-item;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+
+      height: 2rem;
+      line-height: 2rem;
+
+      > span.icon {
+        line-height: 1;
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+      }
+
+      &.active {
+        @extend %navigation-item-active;
+      }
+    }
+  }
+}
+
+.offcanvas-backdrop {
+  @extend %backdrop-default;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}

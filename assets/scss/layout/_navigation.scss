@@ -1,8 +1,72 @@
-.btn-primary{
-  background-color: $primary;
-  border-color: $primary;
+/**
+ * Navigation
+ * -------------------------
+ * based on navbar variables
+ */
+
+%navigation-item {
+  color: $navbar-light-color;
+  transition: color $animation-speed-default;
+  text-decoration: none;
+
+  font: {
+    size: $navbar-font-size;
+    weight: $navbar-font-weight;
+  }
 }
 
-a {
-  color: $primary;
+%navigation-item-active {
+  color: $navbar-light-active-color;
+
+  font: {
+    weight: $navbar-active-font-weight;
+  }
+}
+
+nav#navbar {
+  ul.navbar-nav {
+    align-items: baseline;
+
+    > li.nav-item {
+      > a.nav-link {
+        @extend %navigation-item;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: .25rem;
+
+        &.dropdown-toggle {
+          svg {
+            width: $font-size-sm;
+            height: $font-size-sm;
+
+            color: $navbar-light-color;
+
+            transition: transform $animation-speed-default;
+          }
+        }
+
+        &:hover, &:focus, &:active {
+          text-decoration: none;
+          color: $navbar-light-hover-color;
+        }
+      }
+
+      // -- show state
+      &.show {
+        > a.nav-link.dropdown-toggle {
+          svg {
+            transform: scaleY(-1);
+          }
+        }
+      }
+
+      // -- active state
+      &.active > a.nav-link {
+        @extend %navigation-item-active;
+      }
+    }
+  }
 }

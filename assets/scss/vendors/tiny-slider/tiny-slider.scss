@@ -64,9 +64,9 @@
     left: auto !important;
   }
   > .tns-moving {
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    transition: all 0.25s;
+    -webkit-transition: all 0$animation-speed-default;
+    -moz-transition: all 0$animation-speed-default;
+    transition: all 0$animation-speed-default;
   }
 }
 .tns-autowidth { display: inline-block; }

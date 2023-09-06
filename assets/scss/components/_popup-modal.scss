@@ -1,0 +1,173 @@
+/**
+ * File defines usable mixins for modal elements + transitions
+ * Used for various elements for mobile views / UI|UX
+ */
+
+@include placeholder('modal-open') {
+  opacity: 1;
+  display: flex;
+  pointer-events: auto;
+
+  * {
+    pointer-events: auto;
+  }
+}
+
+@include placeholder('modal-header') {
+  align-items: center; // so the close btn always stays on the upper right corner
+  justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+  padding: $modal-header-padding;
+  border-bottom: $modal-header-border-width solid $modal-header-border-color;
+  @include border-top-radius($modal-content-border-radius);
+
+  display: flex !important;
+
+  > *:not(button) {
+    margin-bottom:0;
+  }
+
+  > button {
+    @include button-reset();
+
+    line-height: 1;
+
+    // -- make visible, important!
+    display: block !important;
+
+    padding: $modal-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$modal-header-padding-y) (-$modal-header-padding-x) (-$modal-header-padding-y) auto;
+
+    color: $popup-close-color;
+    transition: color $animation-speed-default;
+
+    // -- svg size
+    svg {
+      pointer-events: none;
+      width: $popup-close-icon-size;
+      height: $popup-close-icon-size;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $popup-close-hover-color;
+    }
+  }
+}
+
+@include placeholder('modal-body') {
+  position: relative;
+  padding: $modal-inner-padding;
+
+  margin: 0 !important;
+  max-height: unset !important;
+  flex: 1;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@include placeholder('modal-content') {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  // counteract the pointer-events: none; in the .modal-dialog
+  color: $modal-content-color;
+  //pointer-events: auto;
+  background-color: $modal-content-bg;
+  background-clip: padding-box;
+  padding: 0;
+  border: $modal-content-border-width solid $modal-content-border-color;
+  @include border-radius($modal-content-border-radius);
+  @include box-shadow($modal-content-box-shadow-xs);
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+@include placeholder('modal-content-fullscreen') {
+  @include border-radius(0);
+  border: 0;
+  box-shadow: none;
+}
+
+@include placeholder('modal-wrapper') {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: $zindex-modal;
+  display: flex;
+  width: 100% !important;
+  min-width: unset !important;
+  height: 100% !important;
+  transform: none !important;
+  will-change: unset !important;
+  align-items: center;
+  justify-content: center;
+  container-name: backdrop;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
+  overflow: hidden;
+
+  transition: opacity $animation-speed-default;
+  opacity:0;
+
+  padding: $modal-dialog-margin;
+  pointer-events: none;
+
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+  @include media-breakpoint-up($breakpoint-key) {
+    %modal-inner-width-#{$breakpoint-key} {
+      max-width: #{getMediaBreakpointUp($breakpoint-key)};
+    }
+  }
+}
+
+@include placeholder('modal-wrapper-fullscreen') {
+  padding: 0;
+  align-items: unset;
+  justify-content: unset;
+}
+
+@include placeholder('modal-inner') {
+  position: relative;
+  margin: 0;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+
+  display: flex;
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+}
+
+@include placeholder('modal-inner-fullscreen') {
+  height: 100%;
+}
+
+@include placeholder('modal-footer') {
+  padding: $modal-inner-padding;
+  border-top: $modal-footer-border-width solid $modal-footer-border-color;
+  @include border-bottom-radius($modal-content-border-radius);
+
+  // -- resets for dropdown behaviour
+  * {
+    margin-top: 0 !important;
+  }
+}

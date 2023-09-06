@@ -1,0 +1,75 @@
+%add-to-wishlist-color {
+
+  color: $add-to-wishlist-color;
+
+  &:hover {
+    color: $add-to-wishlist-hover-color;
+  }
+
+  &:active, &:focus, &.active {
+    color: $add-to-wishlist-active-color;
+  }
+
+}
+
+%add-to-wishlist-on-image-color {
+
+  color: $add-to-wishlist-on-image-color;
+
+  &:hover {
+    color: $add-to-wishlist-on-image-hover-color;
+  }
+
+  &:active, &:focus, &.active {
+    color: $add-to-wishlist-on-image-active-color;
+  }
+
+}
+
+.add-to-wishlist {
+  // -- default position: relative
+  position: relative;
+  cursor: pointer;
+
+  transition: color $animation-speed-default;
+
+  svg {
+    pointer-events: none !important;
+
+    &.heart-filled {
+      @extend .d-none;
+    }
+  }
+
+  &.active {
+    svg {
+      &.heart-filled {
+        @extend .d-block;
+      }
+
+      &.heart-stroke {
+        @extend .d-none;
+      }
+    }
+  }
+
+  // set sizes ( default )
+  // 32px widht/hight cuz touch item
+  width: $add-to-wishlist-size;
+  height: $add-to-wishlist-size;
+
+  // @todo: maybe add icon sizes as variables + base elements?
+  svg {
+    width: $add-to-wishlist-icon-size;
+    height: $add-to-wishlist-icon-size;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  @extend %add-to-wishlist-color;
+}

@@ -38,15 +38,15 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
         </span>
     </div>
     <?php if($args['cheapest_price']->duration != 1){ ?>
-    <div class="col-12">
-        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-mix-icon.php', ['price_mix' => $args['cheapest_price']->price_mix]);?>
-        <div>
-            <?php
-            echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/offer-description.php', [
+        <div class="col-12">
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/price-mix-icon.php', ['price_mix' => $args['cheapest_price']->price_mix]);?>
+            <div>
+                <?php
+                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/offer-description.php', [
                     'cheapest_price' => $args['cheapest_price']]);
-            ?>
+                ?>
+            </div>
         </div>
-    </div>
     <?php } ?>
     <div class="col-12">
         <?php
@@ -63,7 +63,7 @@ if(empty($args['cheapest_price']) || !empty($args['booking_on_request'])){
     </div>
     <div class="col-12">
         <?php // Random Availability
-            $randint = random_int(1, 9);
+        $randint = random_int(1, 9);
         ?>
         <div class="booking-button-wrap">
             <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/booking-button.php', [

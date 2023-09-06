@@ -1,0 +1,15 @@
+.content-main.content-main--posts {
+  .content-block {
+
+    &.content-block-blog-header {
+      h1 + .content {
+        margin-top: 1rem;
+      }
+    }
+
+    + .content-block {
+      margin-top:0;
+      padding-top:0;
+    }
+  }
+}

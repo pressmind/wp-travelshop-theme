@@ -1,0 +1,20 @@
+%backdrop-default {
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: $zindex-modal-backdrop;
+
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
+  transition: opacity $animation-speed-default;
+
+  pointer-events: none !important;
+  opacity:0;
+
+  &.open, &.is-open {
+    pointer-events: auto !important;
+    opacity: 1;
+  }
+}

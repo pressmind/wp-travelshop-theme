@@ -1,112 +1,144 @@
-.footer-main {
-  background-color: $gray-200;
+@if ( $footer-use-default == true ) {
+  footer.footer-main {
+    background-color: $footer-bg;
+    color: $footer-color;
+    line-height: $footer-line-height;
 
-  .footer-boxes > div {
-    padding-bottom: $grid-gutter-width;
+    @include font-size-generator($footer-font-sizes);
 
-    .h5 {
-      margin: 0 0 1rem 0;
+    // -- different spacings for paragraphs
+    p {
+      @include spacing-generator($footer-paragraph-margins, 'bottom', 'margin');
     }
-  }
 
-  // -- change spacing behaviour of p-tags for footer
-  p {
-    margin-bottom: 0;
-    margin-top: 0;
+    // -- footer trust items
+    @if ( $footer-use-trust == true ) {
+      .footer-main--trust {
+        @include spacing-generator($footer-paddings-y, 'top');
+        background-color: $footer-trust-bg;
 
-    + p {
-      margin-top: 1rem;
-    }
-  }
+        .trust-item{
+          @include spacing-generator($footer-paddings-y, 'bottom');
+          @include font-size-generator($footer-trust-item-font-sizes);
 
-  // -- change nav flex-column for footer
-  nav.nav.flex-column {
-    a.nav-link {
-      padding: 0;
+          // -- trust item settings
+          text-align: center;
+          color: $footer-trust-item-color;
 
-      + a.nav-link {
-        margin-top: 0.5rem;
-      }
-    }
-  }
-  .travelshop_above_footer {
-    background-color: #f2f4f7;
-    color: #6c757d;
-    position: relative;
-    z-index: 500;
-    .container {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      .travelshop_trust_item {
-        text-align: center;
-        padding: 1rem 0.25rem;
-        flex: 0 0 25%;
-        div {
-          background: #bdc3c7; /* fallback for old browsers */
-          background: -webkit-radial-gradient(
-            #fff,
-            #e9ecef
-          ); /* Chrome 10-25, Safari 5.1-6 */
-          background: radial-gradient(
-            #fff,
-            #e9ecef
-          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-            0 1px 2px rgba(0, 0, 0, 0.24);
-          padding: 0.25rem;
-          border-radius: 50%;
-          display: inline-block;
-        }
-        span {
-          display: block;
-          margin-top: 0.5rem;
-          font-size: 0.7rem;
-          line-height: 1.3;
-        }
-        svg {
-          max-width: 40px;
-          height: auto;
-        }
-      }
-    }
-    @media only screen and (min-width: 900px) {
-      padding: 1rem 0;
-      .container {
-        .travelshop_trust_item {
-          flex: 0 0 25%;
-          padding: 2rem 1rem;
-          div {
-            padding: 1rem;
+
+          .trust-item--icon {
+            @include border-radius($footer-trust-item-icon-border-radius);
+            @include spacing-generator($footer-trust-item-icon-paddings, 'around', 'padding');
+
+            margin: 0 auto;
+            color: $footer-trust-item-icon-color;
+
+            // -- spacing generator with 'around' can be used for various attributes in responsive behaviour
+            @include spacing-generator($footer-trust-item-icon-max-widths, 'around', 'max-width');
+
+            // border
+            @if ( $footer-trust-item-icon-border-width != 0 ) {
+              border: $footer-trust-item-icon-border-width solid $footer-trust-item-icon-border-color;
+            }
+
+            // bg
+            @if ( $footer-trust-item-icon-bg != transparent ) {
+              background-color: $footer-trust-item-icon-bg;
+            } @else {
+              padding-bottom: 0 !important;
+              padding-top: 0 !important;
+            }
+
+            .icon-holder {
+              width: 100%;
+              padding-bottom: 100%;
+              position: relative;
+
+              > svg {
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+              }
+            }
           }
-          span {
-            font-size: 1.2rem;
-          }
-          svg {
-            max-width: 100px;
+
+          .trust-item--title {
+            @include spacing-generator($footer-trust-item-title-margins, 'top', 'margin');
           }
         }
       }
     }
-  }
-  .travelshop_main_footer {
-    padding-top: $grid-gutter-width * 2;
-    padding-bottom: $grid-gutter-width;
-  }
 
-  .travelshop_meta_footer {
-    ul {
-      list-style-type: none;
-      padding:0 0 $grid-gutter-width 0;
-      margin:0;
-      display:flex;
-      flex-wrap: wrap;
+    // -- footer boxes
+    .footer-main--boxes {
+      @include spacing-generator($footer-paddings-y, 'top');
 
-      li {
-        padding:0;
-        margin: 0 1rem .5rem 0;
+      .col-footer-box {
+        @include spacing-generator($footer-paddings-y, 'bottom');
+      }
+
+      .h5 {
+        color: $footer-heading-color;
+        margin-bottom: 0;
+
+        @include spacing-generator($footer-headings-bottom-margins, 'bottom', 'padding');
+      }
+
+      // -- nav
+      .nav.flex-column {
+
+        @include spacing-generator($footer-nav-link-spacers, 'around', 'gap');
+
+        a {
+          color: $footer-nav-link-color;
+          transition: color $animation-speed-default;
+          text-decoration: none;
+
+          &:hover {
+            color: $footer-nav-link-hover-color;
+            text-decoration: none;
+          }
+
+          &:active, &:focus {
+            color: $footer-nav-link-active-color;
+            text-decoration: underline;
+          }
+        }
       }
     }
+
+    // -- footer meta
+    .footer-main--meta {
+      @include spacing-generator($footer-paddings-y, 'bottom');
+
+      // -- nav
+      .nav.flex-row {
+        gap: $footer-meta-nav-link-spacer;
+
+        @include font-size-generator($footer-meta-font-sizes);
+
+        a {
+          color: $footer-meta-nav-link-color;
+          transition: color $animation-speed-default;
+          text-decoration: none;
+
+          &:hover {
+            color: $footer-meta-nav-link-hover-color;
+            text-decoration: none;
+          }
+
+          &:active, &:focus {
+            color: $footer-meta-nav-link-active-color;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
   }
 }

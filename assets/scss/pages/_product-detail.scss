@@ -1,0 +1,105 @@
+/**
+ * Import Detail "components"
+ */
+@import "product-detail-components/detail-booking-calendar";
+@import "product-detail-components/detail-booking-entrypoint";
+@import "product-detail-components/detail-boxes";
+@import "product-detail-components/detail-gallery-modal";
+@import "product-detail-components/detail-header-gallery";
+@import "product-detail-components/detail-header-gallery-slider";
+@import "product-detail-components/detail-header-gallery-grid";
+@import "product-detail-components/detail-header-gallery-modal";
+@import "product-detail-components/detail-header-info";
+@import "product-detail-components/detail-price-box";
+@import "product-detail-components/detail-sticky-bar";
+
+/**
+ * General styles for Detail-Page
+ */
+// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+@if ( $detail-page-use-default == true ) {
+
+  // -- contianer-manipulation
+  .content-main.content-main--detail {
+    .container {
+      // -- manipulate container by varialbe
+      @if ( $detail-max-container != null ) {
+        @include media-breakpoint-up($detail-max-container) {
+          max-width: map-get($container-max-widths, $detail-max-container) !important;
+        }
+      }
+    }
+  }
+
+  // -- section handling
+  .detail-section {
+
+    // -- breadcrumb
+    &.detail-section-topbar {
+      @extend %breadcrumb-no-spacing;
+    }
+
+    // -- content
+    &.detail-section-content {
+      @include spacing-generator($detail-page-section-paddings, 'top');
+    }
+
+    // -- crosselling
+    &.detail-section-crossselling {
+      background-color: $detail-crossselling-bg;
+
+      @if ( $detail-crossselling-divider-width != 0 ) {
+        border: $detail-crossselling-divider-width solid $detail-crossselling-divider-color;
+      }
+
+      @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+      @include spacing-generator($detail-page-section-paddings, 'y');
+    }
+
+    // -- description blocks
+    .description-block-wrapper{
+      .description-block + .description-block {
+        @include spacing-generator($detail-page-section-paddings, 'top');
+        @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+
+        //border-top: $hr-border-width solid $hr-border-color;
+      }
+    }
+
+    // -- info line
+    .detail-info-line {
+      @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+      color: $body-color-light;
+    }
+
+    // -- info sections
+    .detail-info-section {
+      + .detail-info-section {
+        @include spacing-generator($detail-page-section-paddings, 'top');
+        @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+
+        //border-top: $hr-border-width solid $hr-border-color;
+      }
+
+      // -- little fix for detail-info-section--intro
+      &.detail-info-section--intro {
+        p, ul, ol, h1, h2, h3, h4 {
+          margin-bottom:0;
+
+          + p, + ul, + ol, + h1, + h2, + h3, + h4 {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.detail-sidebar {
+  @include spacing-generator($detail-page-section-paddings, 'top');
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 0 !important;
+  }
+}
+

@@ -32,31 +32,45 @@ $cheapest_price = $args['cheapest_price'];
 $random = rand(1, 999999);
 ?>
 
-<div class="product-calendar-group-item row" data-row-id="<?php echo $random; ?>" data-pm-id="<?php echo $args['id_media_object']; ?>">
-    <div class="col-12 col-lg-3">
-        <div class="arrow--wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 407.437 407.437" style="enable-background:new 0 0 407.437 407.437;" xml:space="preserve">
-                <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 " />
-            </svg>
-            <i class="circle green"></i>
-            <?php
-            if(!empty($cheapest_price)) {
-                // var_dump($cheapest_price);
-                echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
-                    'date_departure' => $cheapest_price->date_departures[0],
-                    //'date_arrival' => $cheapest_price->date_arrival
-                ]);
-            }
-            ?>
+<div class="product-calendar-group-item " data-row-id="<?php echo $random; ?>" data-pm-id="<?php echo $args['id_media_object']; ?>">
+    <div class="row">
+        <div class="col-date col-12 col-lg-3">
+            <div class="arrow--wrapper">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-down"></use></svg>
+
+                <div class="date-wrapper d-none d-lg-flex">
+                    <i class="circle green"></i>
+                    <?php
+                    if(!empty($cheapest_price)) {
+                        // var_dump($cheapest_price);
+                        echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
+                            'date_departure' => $cheapest_price->date_departures[0],
+                            //'date_arrival' => $cheapest_price->date_arrival
+                        ]);
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-12 col-lg-4">
-        <strong><?php echo $args['headline']; ?></strong>
-    </div>
-    <div class="col-6 col-lg-2">
-        <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
-    </div>
-    <div class="col-6 col-lg-3 md-align-right">
+        <div class="col-title col-12 col-lg-4">
+            <strong><?php echo $args['headline']; ?></strong>
+        </div>
+        <div class="col-duration col-6 col-lg-2">
+            <div class="date-wrapper d-lg-none">
+                <i class="circle green"></i>
+                <?php
+                if(!empty($cheapest_price)) {
+                    // var_dump($cheapest_price);
+                    echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/travel-date-range.php', [
+                        'date_departure' => $cheapest_price->date_departures[0],
+                        //'date_arrival' => $cheapest_price->date_arrival
+                    ]);
+                }
+                ?>
+            </div>
+            <?php echo Template::render(APPLICATION_PATH.'/template-parts/micro-templates/duration.php', ['duration' => $cheapest_price->duration]);?>
+        </div>
+        <div class="col-price col-6 col-lg-3 text-right">
         <span class="price">
             <?php
             if (!empty($cheapest_price) && ($discount = PriceHandler::getDiscount($cheapest_price)) !== false) {
@@ -74,9 +88,14 @@ $random = rand(1, 999999);
             }
             ?>
         </span>
+        </div>
     </div>
 </div>
-<div class="product-calendar-group-item--product row" data-row-id="<?php echo $random; ?>">
-    <?php // this section will get the content by ajax; (pm-view/Teaser*), see ajax.js:initCalendarRowClick(); 
-    ?>
+
+
+<div class="product-calendar-group-item-product">
+    <div class="row product-calendar-group-item--product" data-row-id="<?php echo $random; ?>">
+        <?php // this section will get the content by ajax; (pm-view/Teaser*), see ajax.js:initCalendarRowClick();
+        ?>
+    </div>
 </div>
