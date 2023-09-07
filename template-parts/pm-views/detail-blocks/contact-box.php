@@ -2,6 +2,11 @@
 /**
  * @var array $args
  */
+
+if(empty(do_shortcode('[ts-company-hotline]'))){
+    return;
+}
+
 ?>
 
 <div class="detail-box detail-box-light detail-box-contact">
@@ -22,18 +27,20 @@
                         <div class="hotline-number h5">
                             <?php echo do_shortcode('[ts-company-hotline]');?>
                         </div>
-
-                        <div class="hotline-openings">
-                            <?php
-                            $opening_times = wpsf_get_setting('travelshop_wpsf', 'contact_hotline', 'ts-company-opening-info');
-
-                            foreach ( $opening_times as $opening ) {
-                                echo "<div class='hotline-openings-item'>";
-                                echo $opening['sub-text'];
-                                echo "</div>";
-                            }
-                            ?>
-                        </div>
+                        <?php
+                        $opening_times = wpsf_get_setting('travelshop_wpsf', 'contact_hotline', 'ts-company-opening-info');
+                        if(!empty($opening_times)){
+                        ?>
+                            <div class="hotline-openings">
+                                <?php
+                                    foreach ( $opening_times as $opening ) {
+                                        echo '<div class="hotline-openings-item">';
+                                        echo $opening['sub-text'];
+                                        echo '</div>';
+                                    }
+                                ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 </a>
 
