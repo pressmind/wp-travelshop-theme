@@ -4,6 +4,11 @@
  * @var $args ['price_max']
  */
 
+if(empty($args['price_max'])){
+    return;
+}
+$args['price_min'] = (float)$args['price_min'];
+
 // set the price range to the closest 100, 1000 and so on...
 $args['price_min'] = str_pad(substr(round($args['price_min']), 0, 1), strlen(round($args['price_min'])), 0);
 $args['price_max'] = str_pad(substr(round($args['price_max']), 0, 1) + 1, strlen(round($args['price_max'])) + strlen(substr(round($args['price_max']), 0, 1) + 1) - 1, 0);
