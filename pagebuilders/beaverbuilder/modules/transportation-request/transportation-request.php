@@ -8,12 +8,12 @@
  */
 class FLBasicExampleModule extends FLBuilderModule {
 
-    /** 
+    /**
      * Constructor function for the module. You must pass the
      * name, description, dir and url in an array to the parent class.
      *
      * @method __construct
-     */  
+     */
     public function __construct()
     {
         parent::__construct(array(
@@ -41,6 +41,37 @@ FLBuilder::register_module('FLBasicExampleModule', array(
                     'email'     => array(
                         'type'          => 'text',
                         'label'         => __('Email-Adressen', 'fl-builder')
+                    ),
+                    'show_options' => array(
+                        'type'          => 'select',
+                        'label'         => __( 'Zusätzliche Ausstattungsoptionen', 'fl-builder' ),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'false'      => __( 'Nein', 'fl-builder' ),
+                            'true'      => __( 'Ja', 'fl-builder' )
+                        ),
+                        'toggle'        => array(
+                            'true'      => array(
+                                'fields'        => array( 'additional_options' ),
+                            ),
+                        )
+                    ),
+                    'additional_options'     => array(
+                        'type'          => 'text',
+                        'label'         => __('Ausstattungsoptionen', 'fl-builder'),
+                        'placeholder'   => __( 'Option 1; Option 2; Option 3', 'fl-builder' ),
+                        'help'          => __( 'List, separated with semicolon', 'fl-builder' )
+                    ),
+                    'maincolor'    => array(
+                        'type'          => 'color',
+                        'label'         => __('Hauptfarbe', 'fl-builder'),
+                        'default'       => 'e30613',
+                        'show_reset'    => true,
+                        'preview'         => array(
+                            'type'            => 'css',
+                            'selector'        => '.fl-example-text',
+                            'property'        => 'color'
+                        )
                     ),
                 )
             )

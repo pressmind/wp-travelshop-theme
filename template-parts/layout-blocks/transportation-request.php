@@ -1,5 +1,29 @@
 <?php
-    $randomHash = bin2hex(random_bytes(5));
+$randomHash = bin2hex(random_bytes(5));
+if (!function_exists('adjustBrightness')) {
+    function adjustBrightness($hex, $steps) {
+        // Steps should be between -255 and 255. Negative = darker, positive = lighter
+        $steps = max(-255, min(255, $steps));
+
+        // Normalize into a six character long hex string
+        $hex = str_replace('#', '', $hex);
+        if (strlen($hex) == 3) {
+            $hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+        }
+
+        // Split into three parts: R, G and B
+        $color_parts = str_split($hex, 2);
+        $return = '#';
+
+        foreach ($color_parts as $color) {
+            $color   = hexdec($color); // Convert to decimal
+            $color   = max(0,min(255,$color + $steps)); // Adjust color
+            $return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+        }
+
+        return $return;
+    }
+}
 ?>
 <!-- Embed Vue3 -->
 <script src="/wp-content/themes/travelshop/assets/js/vue-3.2.47.js"></script>
@@ -72,7 +96,7 @@
                 </div>
                 <div class="ts-trr-input">
                     <label><span>Personen*</span>
-                        <input v-model="this.countPersons" type="number" placeholder="z.B. 30" />
+                        <input v-model="this.countPersons" type="number" min="0" max="500" placeholder="z.B. 30" />
                         <svg v-if="this.countPersons == '' && this.validationError" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icon-tabler-square-rounded-x-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="red" stroke="none" d="m12 2 .324.001.318.004.616.017.299.013.579.034.553.046c4.785.464 6.732 2.411 7.196 7.196l.046.553.034.579c.005.098.01.198.013.299l.017.616L22 12l-.005.642-.017.616-.013.299-.034.579-.046.553c-.464 4.785-2.411 6.732-7.196 7.196l-.553.046-.579.034c-.098.005-.198.01-.299.013l-.616.017L12 22l-.642-.005-.616-.017-.299-.013-.579-.034-.553-.046c-4.785-.464-6.732-2.411-7.196-7.196l-.046-.553-.034-.579a28.058 28.058 0 0 1-.013-.299l-.017-.616C2.002 12.432 2 12.218 2 12l.001-.324.004-.318.017-.616.013-.299.034-.579.046-.553c.464-4.785 2.411-6.732 7.196-7.196l.553-.046.579-.034c.098-.005.198-.01.299-.013l.616-.017c.21-.003.424-.005.642-.005zm-1.489 7.14a1 1 0 0 0-1.218 1.567L10.585 12l-1.292 1.293-.083.094a1 1 0 0 0 1.497 1.32L12 13.415l1.293 1.292.094.083a1 1 0 0 0 1.32-1.497L13.415 12l1.292-1.293.083-.094a1 1 0 0 0-1.497-1.32L12 10.585l-1.293-1.292-.094-.083z"/></svg>
                         <svg v-if="this.countPersons != ''" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#047857" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon valid icon-tabler icon-tabler-circle-check-filled" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path fill="#047857" stroke="none" d="M17 3.34a10 10 0 1 1-14.995 8.984L2 12l.005-.324A10 10 0 0 1 17 3.34zm-1.293 5.953a1 1 0 0 0-1.32-.083l-.094.083L11 12.585l-1.293-1.292-.094-.083a1 1 0 0 0-1.403 1.403l.083.094 2 2 .094.083a1 1 0 0 0 1.226 0l.094-.083 4-4 .083-.094a1 1 0 0 0-.083-1.32z"/></svg>
 
@@ -115,6 +139,21 @@
                     </label>
                 </div>
             </div>
+            <?php if($args['show_options'] == 'true' && !empty($args['additional_options'])) { ?>
+                <?php
+                $options = explode(';', $args['additional_options']);
+                ?>
+                <hr />
+                <p><strong>Ausstattungsoptionen</strong></p>
+                <ul class="checkbox-list">
+                    <?php foreach($options as $key => $option) { ?>
+                        <li class="checkbox-list-item">
+                            <input v-model="addOption" <?php echo $key == 0 ? 'checked' : ''; ?> type="radio" id="item<?php echo $key; ?>" value="<?php echo trim($option); ?>" name="add_options" style="height: 20px; width: 20px;">
+                            <label for="item<?php echo $key; ?>" style="font-size: 14px;"><?php echo trim($option); ?></label>
+                        </li>
+                    <?php } ?>
+                </ul>
+            <?php } ?>
             <hr />
             <div v-if="validData" class="ts-trr-route-data">
                 <div class="ts-trr-data">
@@ -339,8 +378,27 @@
                     </select>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <label>Telefonnummer</label>
-                    <input type="text" v-model="contactData.phone" />
+                    <label>Telefonnummer (mind. eine)</label>
+                    <div class="row">
+                        <div class="col-12 col-lg-4 ts-trr-input">
+                            <label>
+                                <span>Mobil</span>
+                            <input type="text" v-model="contactData.phoneMobile" />
+                            </label>
+                        </div>
+                        <div class="col-12 col-lg-4 ts-trr-input">
+                            <label>
+                                <span>Privat</span>
+                            <input type="text" v-model="contactData.phonePrivate" />
+                            </label>
+                        </div>
+                        <div class="col-12 col-lg-4 ts-trr-input">
+                            <label>
+                                <span>Arbeit</span>
+                            <input type="text" v-model="contactData.phoneWork" />
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <label>E-Mail-Adresse</label>
@@ -352,8 +410,8 @@
                 <div @click="this.currentStep = 1;" class="button-large">
                     Zurück zur Routenplanung
                 </div>
-                <div @click="Object.values(contactData).filter(a => a.length > 0).length == 11 ? this.sendEmail() : null" :class="{ disabled: Object.values(contactData).filter(a => a.length > 0).length < 11 }" class="button-large">
-                    {{ Object.values(contactData).filter(a => a.length > 0).length == 11 ? 'Anfrage versenden' : 'Bitte alle Felder ausfüllen' }}
+                <div @click="Object.values(contactData).filter(a => a.length > 0).length >= 11 ? this.sendEmail() : null" :class="{ disabled: Object.values(contactData).filter(a => a.length > 0).length < 11 }" class="button-large">
+                    {{ Object.values(contactData).filter(a => a.length > 0).length >= 11 ? 'Anfrage versenden' : 'Bitte alle Felder ausfüllen' }}
                     <img v-if="submitLoading" style="width: 30px; margin-left: .5rem;" class="loader" src="/wp-content/themes/travelshop/assets/img/loading-dots.svg" alt="loading" />
                 </div>
             </div>
@@ -362,401 +420,421 @@
 </div>
 
 <script>
-String.prototype.toObject = function( obj, value ) {
-    var names = this;
-    let newObj = obj;
-    console.log(names, '164');
-    names = names.replace(/\[(\w+)\]/, ".$1");
-    names = names.replace(/^\./, "");
-    names = names.split(".");
-    var lastName = arguments.length === 2 ? names.pop() : false;
-    for( var i = 0; i < names.length; i++ ) {
-        newObj = newObj[ names[i] ] = newObj[ names[i] ] || {};
-    }
-    // If a value was given, set it to the last name:
-    if( lastName ) newObj = newObj[ lastName ] = value;
-    // Return the last object in the hierarchy:
-    return obj = newObj;
-};
-Vue.createApp({
-    data() {
-        return {
-            APIKeyProvided: <?php echo defined('TS_GOOGLEMAPS_API') && !empty(TS_GOOGLEMAPS_API) ? 'true' : 'false'; ?>,
-            contactData: {
-                type: '',
-                typeDesc: ' ',
-                salutation: '',
-                firstname: '',
-                lastname: '',
-                address: '',
-                zip: '',
-                place: '',
-                country: 'Deutschland',
-                phone: '',
-                email: ''
+    String.prototype.toObject = function( obj, value ) {
+        var names = this;
+        let newObj = obj;
+        console.log(names, '164');
+        names = names.replace(/\[(\w+)\]/, ".$1");
+        names = names.replace(/^\./, "");
+        names = names.split(".");
+        var lastName = arguments.length === 2 ? names.pop() : false;
+        for( var i = 0; i < names.length; i++ ) {
+            newObj = newObj[ names[i] ] = newObj[ names[i] ] || {};
+        }
+        // If a value was given, set it to the last name:
+        if( lastName ) newObj = newObj[ lastName ] = value;
+        // Return the last object in the hierarchy:
+        return obj = newObj;
+    };
+    Vue.createApp({
+        data() {
+            return {
+                APIKeyProvided: <?php echo defined('TS_GOOGLEMAPS_API') && !empty(TS_GOOGLEMAPS_API) ? 'true' : 'false'; ?>,
+                contactData: {
+                    type: '',
+                    typeDesc: ' ',
+                    salutation: '',
+                    firstname: '',
+                    lastname: '',
+                    address: '',
+                    zip: '',
+                    place: '',
+                    country: 'Deutschland',
+                    phoneMobile: '',
+                    phonePrivate: '',
+                    phoneWork: '',
+                    email: ''
+                },
+                submitStatus: {
+                    sent: false,
+                    message: ''
+                },
+                submitLoading: false,
+                validationError: null,
+                validCountries: 'de,ch',
+                typingTimer: null,
+                doneTypingInterval: 650,
+                kmAtLocationActive: false,
+                kmAtLocation: 20,
+                stopOverActive: false,
+                stopOvers: [
+                    {
+                        location: '',
+                        locationObj: false,
+                        inputLoading: false,
+                        wayForth: true,
+                        wayBack: false
+                    }
+                ],
+                validData: false,
+                showMap: true,
+                currentStep: 0,
+                countPersons: '',
+                routeData: {},
+                transportBack: false,
+                startTime: '',
+                startDate: '',
+                endTime: '',
+                endDate: '',
+                inputFrom: '',
+                inputFromLoading: false,
+                inputFromObj: false,
+                inputTo: '',
+                inputToLoading: false,
+                inputToObj: false,
+                predirectionsStatus: '',
+                datePickerBack: null,
+                addOption: '',
+                notes: '',
+                predictions: [
+
+                ],
+                currentStep: 1,
+                steps: [
+                    {
+                        name: 'Busanfrage',
+                        ready: true,
+                        valid: false
+                    },
+                    {
+                        name: 'Kontaktdaten',
+                        ready: false,
+                        valid: false
+                    }
+                ]
+            }
+        },
+        methods: {
+            sendEmail() {
+                this.submitLoading = true;
+                const data = new FormData();
+                data.append( 'action', 'sendrequest' );
+                data.append( 'to', this.contactData.email );
+                data.append( 'bcc', '<?php echo $args['emails']; ?>,' );
+                data.append( 'title', 'Busanfrage über <?php echo get_site_url(); ?>' );
+                data.append( 'text', this.getEmailString() );
+
+                fetch('/wp-admin/admin-ajax.php?action=sendrequest', {
+                    method: 'POST',
+                    body: data,
+                }).then((resp) => {
+                    if(resp.status == 200) {
+                        this.submitStatus.sent = true;
+                        this.submitStatus.message = 'Ihre Anfrage wurde erfolgreich verschickt.';
+                    }
+                    this.submitLoading = false;
+                });
             },
-            submitStatus: {
-                sent: false,
-                message: ''
+            getEmailString() {
+                let string = '';
+                string += 'Sehr geehrte/r ' + this.contactData.salutation + ' ' + this.contactData.firstname + ' ' + this.contactData.lastname + ',\r\n\r\n';
+                string += 'vielen Dank für Ihre untenstehende Busanfrage, die bei uns eingegangen ist und die wir schnellstmöglich bearbeiten werden.\r\n\r\n';
+                string += 'Kontaktdaten:\r\n';
+                string += this.contactData.type + ': ' + this.contactData.typeDesc + '\r\n';
+                string += this.contactData.salutation + ' ' + this.contactData.firstname + ' ' + this.contactData.lastname + '\r\n';
+                string += this.contactData.address + ', ' + this.contactData.zip + ' ' + this.contactData.place + '\r\n';
+                string += this.contactData.country + '\r\n\r\n';
+                string += 'Mobil: ' + this.contactData.phoneMobile + '\r\n';
+                string += 'Privat: ' + this.contactData.phonePrivate + '\r\n';
+                string += 'Beruflich: ' + this.contactData.phoneWork + '\r\n';
+                string += 'E-Mail-Adresse: ' + this.contactData.email + '\r\n\r\n\r\n';
+
+                string += 'Anfragedaten:\r\n';
+                string += 'Von: ' + this.inputFrom + '\r\n';
+                string += 'Nach: ' + this.inputTo + '\r\n';
+                string += 'Personen: ' + this.countPersons + '\r\n';
+                string += 'Gewünschte Ausstattung: ' + this.addOption + '\r\n';
+                string += 'Hinfahrt: ' + this.startDate + ', ' + this.startTime + ' Uhr\r\n';
+                string += this.transportBack ? ('Rückfahrt: ' + this.endDate + ', ' + this.endTime + ' Uhr\r\n') : '';
+                string += 'Bus vor Ort benötigt: ' + (this.kmAtLocationActive ? 'Ja, ca. ' + this.kmAtLocation + ' km' : 'Nein') + '\r\n';
+
+                if(this.stopOverActive && this.stopOvers.filter(stop => stop.wayForth).length) {
+                    string += '\r\nZwischenstops Hinreise:\r\n';
+                    this.stopOvers.filter(stop => stop.wayForth).forEach((el) => {
+                        string += el.location + '\r\n';
+                    });
+                }
+                if(this.stopOverActive && this.stopOvers.filter(stop => stop.wayBack).length) {
+                    string += '\r\nZwischenstops Rückreise:\r\n';
+                    this.stopOvers.filter(stop => stop.wayBack).forEach((el) => {
+                        string += el.location + '\r\n';
+                    });
+                }
+
+                string += '\r\nAnmerkungen:\r\n';
+                string += this.notes.length ? this.notes : 'Keine Anmerkungen';
+
+                string += '\r\n\r\n\r\n';
+                string += 'Mit freundlichen Grüßen\r\n\r\n';
+                string += 'Ihr Team von Sauerlandgruss\r\n\r\n';
+                string += 'Josef Heuel GmbH\r\n';
+                string += 'Sauerlandgruss Reisen\r\n';
+                string += 'Der Reisestern Westfalen\r\n';
+                string += 'Industriestraße 2\r\n';
+                string += '57489 Drolshagen\r\n\r\n';
+                string += 'info@sauerlandgruss.de\r\n';
+                string += 'Telefon: 02763 / 809 200\r\n\r\n';
+                string += 'Impressum: https://www.sauerlandgruss.de/impressum/\r\n';
+                return string;
             },
-            submitLoading: false,
-            validationError: null,
-            validCountries: 'de,ch',
-            typingTimer: null,
-            doneTypingInterval: 650,
-            kmAtLocationActive: false,
-            kmAtLocation: 20,
-            stopOverActive: false,
-            stopOvers: [
-                {
+            processAddress(stop, pred) {
+                stop.location = pred.structured_formatting.main_text + ', ' + pred.structured_formatting.secondary_text; stop.locationObj = pred;
+                setTimeout(() => {
+                    this.initGoogleMap();
+                }, 750);
+            },
+            loadNextStep() {
+                if((this.validData && this.countPersons != '' && this.startDate != '' && this.startTime != '' && (this.transportBack ? (this.endDate != '' && this.endTime != '') : true) && (this.stopOverActive ? this.stopOvers.reduce((accumulator, curr) => { return !curr.locationObj ? false : ( curr.locationObj && accumulator == true ? true : false) }, true) : true))) {
+                    this.steps[this.currentStep].ready = true;
+                    this.validationError = false;
+                    this.currentStep++;
+                } else {
+                    this.validationError = true;
+                }
+            },
+            addStopOver() {
+                this.stopOvers.push({
                     location: '',
                     locationObj: false,
                     inputLoading: false,
                     wayForth: true,
                     wayBack: false
-                }
-            ],
-            validData: false,
-            showMap: true,
-            currentStep: 0,
-            countPersons: '',
-            routeData: {},
-            transportBack: false,
-            startTime: '',
-            startDate: '',
-            endTime: '',
-            endDate: '',
-            inputFrom: '',
-            inputFromLoading: false,
-            inputFromObj: false,
-            inputTo: '',
-            inputToLoading: false,
-            inputToObj: false,
-            predirectionsStatus: '',
-            datePickerBack: null,
-            notes: '',
-            predictions: [
-
-            ],
-            currentStep: 1,
-            steps: [
-                {
-                    name: 'Busanfrage',
-                    ready: true,
-                    valid: false
-                },
-                {
-                    name: 'Kontaktdaten',
-                    ready: false,
-                    valid: false
-                }
-            ]
-        }
-    },
-    methods: {
-        sendEmail() {
-            this.submitLoading = true;
-            const data = new FormData();
-            data.append( 'action', 'sendrequest' );
-            data.append( 'to', '<?php echo $args['emails']; ?>' );
-            data.append( 'title', 'Busanfrage über <?php echo get_site_url(); ?>' );
-            data.append( 'text', this.getEmailString() );
-
-            fetch('/wp-admin/admin-ajax.php?action=sendrequest', {
-                method: 'POST',
-                body: data,
-            }).then((resp) => {
-                if(resp.status == 200) {
-                    this.submitStatus.sent = true;
-                    this.submitStatus.message = 'Ihre Anfrage wurde erfolgreich verschickt.';
-                }
-                this.submitLoading = false;
-            });
-        },
-        getEmailString() {
-            let string = '';
-            string += 'Busanfrage über <?php echo get_site_url(); ?> erhalten:\r\n\r\n';
-            string += 'Kontaktdaten:\r\n';
-            string += this.contactData.type + ': ' + this.contactData.typeDesc + '\r\n';
-            string += this.contactData.salutation + ' ' + this.contactData.firstname + ' ' + this.contactData.lastname + '\r\n';
-            string += this.contactData.address + ', ' + this.contactData.zip + ' ' + this.contactData.place + '\r\n';
-            string += this.contactData.country + '\r\n\r\n';
-            string += 'Telefon: ' + this.contactData.phone + '\r\n';
-            string += 'E-Mail-Adresse: ' + this.contactData.email + '\r\n\r\n\r\n';
-
-            string += 'Anfragedaten:\r\n';
-            string += 'Von: ' + this.inputFrom + '\r\n';
-            string += 'Nach: ' + this.inputTo + '\r\n';
-            string += 'Personen: ' + this.countPersons + '\r\n';
-            string += 'Hinfahrt: ' + this.startDate + ', ' + this.startTime + ' Uhr\r\n';
-            string += this.transportBack ? ('Rückfahrt: ' + this.endDate + ', ' + this.endTime + ' Uhr\r\n') : '';
-            string += 'Bus vor Ort benötigt: ' + (this.kmAtLocationActive ? 'Ja, ca. ' + this.kmAtLocation + ' km' : 'Nein') + '\r\n';
-
-            if(this.stopOverActive && this.stopOvers.filter(stop => stop.wayForth).length) {
-                string += '\r\nZwischenstops Hinreise:\r\n';
-                this.stopOvers.filter(stop => stop.wayForth).forEach((el) => {
-                    string += el.location + '\r\n';
                 });
-            }
-            if(this.stopOverActive && this.stopOvers.filter(stop => stop.wayBack).length) {
-                string += '\r\nZwischenstops Rückreise:\r\n';
-                this.stopOvers.filter(stop => stop.wayBack).forEach((el) => {
-                    string += el.location + '\r\n';
-                });
-            }
-
-            string += '\r\nAnmerkungen:\r\n';
-            string += this.notes.length ? this.notes : 'Keine Anmerkungen';
-            return string;
-        },
-        processAddress(stop, pred) {
-            stop.location = pred.structured_formatting.main_text + ', ' + pred.structured_formatting.secondary_text; stop.locationObj = pred;
-            setTimeout(() => {
-                this.initGoogleMap();
-            }, 750);
-        },
-        loadNextStep() {
-          if((this.validData && this.countPersons != '' && this.startDate != '' && this.startTime != '' && (this.transportBack ? (this.endDate != '' && this.endTime != '') : true) && (this.stopOverActive ? this.stopOvers.reduce((accumulator, curr) => { return !curr.locationObj ? false : ( curr.locationObj && accumulator == true ? true : false) }, true) : true))) {
-              this.steps[this.currentStep].ready = true;
-              this.validationError = false;
-              this.currentStep++;
-          } else {
-              this.validationError = true;
-          }
-        },
-        addStopOver() {
-            this.stopOvers.push({
-                location: '',
-                locationObj: false,
-                inputLoading: false,
-                wayForth: true,
-                wayBack: false
-            });
-        },
-        deleteStopOver(index) {
-            this.stopOvers.splice(index,1);
-            setTimeout(() => {
-                this.initGoogleMap();
-            }, 750);
-        },
-        ObjectByString(s) {
-            s = s.replace(/\[(\w+)\]/, ".$1");
-            s = s.replace(/^\./, "");
-            var self = this,
-                a = s.split(".");
-            for (var i = 0; i < a.length; i++) {
-                var k = a[i];
-                if (k in self) {
-                    self = self[k];
-                } else  {
-                    return;
-                }
-            }
-            return self;
-        },
-        set(from, value, selector) {
-            selector.toObject(this, value)
-        },
-        getDateObject(DateString, TimeString) {
-            let dateValues = DateString.split('.');
-            let timeValues = TimeString.split(':');
-            const date = new Date(dateValues[2], parseInt(dateValues[1]) - 1, dateValues[0], timeValues[0], timeValues[1]);
-            return date;
-        },
-        getEstimatedArrivalDate(date, durationInSeconds) {
-            return new Date(date.setSeconds(date.getSeconds() + durationInSeconds + 60));
-        },
-        formatTime(date) {
-            var today = date;
-            var h = today.getHours().toString().padStart(2, '0');
-            var m = today.getMinutes().toString().padStart(2, '0');
-            var s = today.getSeconds();
-            return h + ":" + m;
-        },
-        formatDate(inputDate) {
-            let date, month, year;
-
-            date = inputDate.getDate();
-            month = inputDate.getMonth() + 1;
-            year = inputDate.getFullYear();
-
-            date = date
-                .toString()
-                .padStart(2, '0');
-
-            month = month
-                .toString()
-                .padStart(2, '0');
-
-            return `${date}.${month}.${year}`;
-        },
-        startedPlaceTyping(loading, obj) {
-            this.set(this, true, loading);
-            console.log(loading, '288');
-            this.set(this, false, obj);
-            clearTimeout(this.typingTimer);
-        },
-        endedPlaceTyping(term) {
-            clearTimeout(this.typingTimer);
-            this.typingTimer = setTimeout(() => {
-                this.startAutocomplete(this.ObjectByString(term));
-            }, this.doneTypingInterval);
-        },
-        startAutocomplete(term) {
-            this.callPlaceAPI('place/autocomplete', term).then(() => {
-                this.inputFromLoading = false;
-                this.inputToLoading = false;
-                this.stopOvers.forEach((stopOv) => {
-                    stopOv.inputLoading = false;
-                });
-            });
-        },
-        callPlaceAPI: async function(action, term) {
-            const response = await fetch('/wp-content/themes/travelshop/google-ajax-endpoint.php?action=' + encodeURIComponent(action) + '&term=' + term + '&countries=' + this.validCountries);
-            const jsonData = await response.json();
-            this.predirectionsStatus = JSON.parse(jsonData).status;
-            this.predictions = JSON.parse(jsonData).predictions;
-            //console.log(jsonData);
-        },
-        callDestinationAPI: async function(action, origin, destination) {
-            const response = await fetch('/wp-content/themes/travelshop/google-ajax-endpoint.php?action=' + encodeURIComponent(action) + '&origin=' + origin + '&destination=' + destination);
-            const jsonData = await response.json();
-            this.routeData = JSON.parse(jsonData).routes[0].legs[0];
-            //console.log(jsonData);
-        },
-        initGoogleMap() {
-            var directionsService = new google.maps.DirectionsService();
-            var directionsRenderer = new google.maps.DirectionsRenderer();
-            var chicago = new google.maps.LatLng(41.850033, -87.6500523);
-            var map = new google.maps.Map(document.getElementById('routemap'));
-            console.log(this.stopOvers);
-            directionsRenderer.setMap(map);
-            directionsService.route({
-                origin: { placeId: this.inputFromObj.place_id },
-                destination: { placeId: this.inputToObj.place_id },
-                waypoints: this.stopOvers.filter((x) => {
-                    if(typeof x.locationObj.place_id != 'undefined') {
-                        return true;
-                    } else {
-                        return false;
+            },
+            deleteStopOver(index) {
+                this.stopOvers.splice(index,1);
+                setTimeout(() => {
+                    this.initGoogleMap();
+                }, 750);
+            },
+            ObjectByString(s) {
+                s = s.replace(/\[(\w+)\]/, ".$1");
+                s = s.replace(/^\./, "");
+                var self = this,
+                    a = s.split(".");
+                for (var i = 0; i < a.length; i++) {
+                    var k = a[i];
+                    if (k in self) {
+                        self = self[k];
+                    } else  {
+                        return;
                     }
-                }).map((x) => {
-                    return {
-                        location: { placeId: x.locationObj.place_id },
-                        stopover: true
-                    }
-                }),
-                travelMode: 'DRIVING'
-            }, function(result, status) {
-                if (status == 'OK') {
-                    directionsRenderer.setDirections(result);
                 }
-            });
-        },
-        initPickers() {
-            const dateinputs = document.querySelectorAll('.dateinput');
-            let $ = jQuery;
-            let startDate = this.startDate == '' ? this.formatDate(new Date()) : this.startDate;
-            let parts = startDate.match(/(\d+)/g);
-            dateinputs.forEach((inp) => {
-                if($(inp).hasClass('dinpzur')) {
-                    this.datePickerBack = new Datepicker(inp, {
-                        format: 'dd.mm.yyyy',
-                        autohide: true,
-                        minDate: $(inp).hasClass('dinpzur') ? new Date(parts[2], parts[1]-1, parts[0]) : new Date()
+                return self;
+            },
+            set(from, value, selector) {
+                selector.toObject(this, value)
+            },
+            getDateObject(DateString, TimeString) {
+                let dateValues = DateString.split('.');
+                let timeValues = TimeString.split(':');
+                const date = new Date(dateValues[2], parseInt(dateValues[1]) - 1, dateValues[0], timeValues[0], timeValues[1]);
+                return date;
+            },
+            getEstimatedArrivalDate(date, durationInSeconds) {
+                return new Date(date.setSeconds(date.getSeconds() + durationInSeconds + 60));
+            },
+            formatTime(date) {
+                var today = date;
+                var h = today.getHours().toString().padStart(2, '0');
+                var m = today.getMinutes().toString().padStart(2, '0');
+                var s = today.getSeconds();
+                return h + ":" + m;
+            },
+            formatDate(inputDate) {
+                let date, month, year;
+
+                date = inputDate.getDate();
+                month = inputDate.getMonth() + 1;
+                year = inputDate.getFullYear();
+
+                date = date
+                    .toString()
+                    .padStart(2, '0');
+
+                month = month
+                    .toString()
+                    .padStart(2, '0');
+
+                return `${date}.${month}.${year}`;
+            },
+            startedPlaceTyping(loading, obj) {
+                this.set(this, true, loading);
+                console.log(loading, '288');
+                this.set(this, false, obj);
+                clearTimeout(this.typingTimer);
+            },
+            endedPlaceTyping(term) {
+                clearTimeout(this.typingTimer);
+                this.typingTimer = setTimeout(() => {
+                    this.startAutocomplete(this.ObjectByString(term));
+                }, this.doneTypingInterval);
+            },
+            startAutocomplete(term) {
+                this.callPlaceAPI('place/autocomplete', term).then(() => {
+                    this.inputFromLoading = false;
+                    this.inputToLoading = false;
+                    this.stopOvers.forEach((stopOv) => {
+                        stopOv.inputLoading = false;
                     });
-                } else {
-                    new Datepicker(inp, {
-                        format: 'dd.mm.yyyy',
-                        autohide: true,
-                        minDate: $(inp).hasClass('dinpzur') ? new Date(parts[2], parts[1]-1, parts[0]) : new Date()
-                    });
-                }
-                inp.addEventListener('changeDate', (date) => {
-                    this[date.target.getAttribute('data-var')] = this.formatDate(date.detail.date);
-                    if($(inp).hasClass('dinphin')) {
-                        if(this.startDate && document.querySelector('.dinpzur')) {
-                            this.datePickerBack?.destroy();
-                            let startDate = this.startDate;
-                            let parts = startDate.match(/(\d+)/g);
-                            this.datePickerBack = new Datepicker(document.querySelector('.dinpzur'), {
-                                format: 'dd.mm.yyyy',
-                                autohide: true,
-                                minDate: new Date(parts[2], parts[1]-1, parts[0])
-                            });
+                });
+            },
+            callPlaceAPI: async function(action, term) {
+                const response = await fetch('/wp-content/themes/travelshop/google-ajax-endpoint.php?action=' + encodeURIComponent(action) + '&term=' + term + '&countries=' + this.validCountries);
+                const jsonData = await response.json();
+                this.predirectionsStatus = JSON.parse(jsonData).status;
+                this.predictions = JSON.parse(jsonData).predictions;
+                //console.log(jsonData);
+            },
+            callDestinationAPI: async function(action, origin, destination) {
+                const response = await fetch('/wp-content/themes/travelshop/google-ajax-endpoint.php?action=' + encodeURIComponent(action) + '&origin=' + origin + '&destination=' + destination);
+                const jsonData = await response.json();
+                this.routeData = JSON.parse(jsonData).routes[0].legs[0];
+                //console.log(jsonData);
+            },
+            initGoogleMap() {
+                var directionsService = new google.maps.DirectionsService();
+                var directionsRenderer = new google.maps.DirectionsRenderer();
+                var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+                var map = new google.maps.Map(document.getElementById('routemap'));
+                console.log(this.stopOvers);
+                directionsRenderer.setMap(map);
+                directionsService.route({
+                    origin: { placeId: this.inputFromObj.place_id },
+                    destination: { placeId: this.inputToObj.place_id },
+                    waypoints: this.stopOvers.filter((x) => {
+                        if(typeof x.locationObj.place_id != 'undefined') {
+                            return true;
+                        } else {
+                            return false;
                         }
+                    }).map((x) => {
+                        return {
+                            location: { placeId: x.locationObj.place_id },
+                            stopover: true
+                        }
+                    }),
+                    travelMode: 'DRIVING'
+                }, function(result, status) {
+                    if (status == 'OK') {
+                        directionsRenderer.setDirections(result);
                     }
                 });
-            });
-            let formatTime = this.formatTime;
-            let _this = this;
-            $('.timepicker').timepicker({
-                timeFormat: 'HH:mm',
-                interval: 30,
-                minTime: '5',
-                maxTime: '22',
-                startTime: '05:00',
-                dynamic: false,
-                dropdown: true,
-                scrollbar: false,
-                change: function(time, e) {
-                    _this[$(this).attr('data-var')] = formatTime(time);
+            },
+            initPickers() {
+                const dateinputs = document.querySelectorAll('.dateinput');
+                let $ = jQuery;
+                let startDate = this.startDate == '' ? this.formatDate(new Date()) : this.startDate;
+                let parts = startDate.match(/(\d+)/g);
+                dateinputs.forEach((inp) => {
+                    if($(inp).hasClass('dinpzur')) {
+                        this.datePickerBack = new Datepicker(inp, {
+                            format: 'dd.mm.yyyy',
+                            autohide: true,
+                            minDate: $(inp).hasClass('dinpzur') ? new Date(parts[2], parts[1]-1, parts[0]) : new Date()
+                        });
+                    } else {
+                        new Datepicker(inp, {
+                            format: 'dd.mm.yyyy',
+                            autohide: true,
+                            minDate: $(inp).hasClass('dinpzur') ? new Date(parts[2], parts[1]-1, parts[0]) : new Date()
+                        });
+                    }
+                    inp.addEventListener('changeDate', (date) => {
+                        this[date.target.getAttribute('data-var')] = this.formatDate(date.detail.date);
+                        if($(inp).hasClass('dinphin')) {
+                            if(this.startDate && document.querySelector('.dinpzur')) {
+                                this.datePickerBack?.destroy();
+                                let startDate = this.startDate;
+                                let parts = startDate.match(/(\d+)/g);
+                                this.datePickerBack = new Datepicker(document.querySelector('.dinpzur'), {
+                                    format: 'dd.mm.yyyy',
+                                    autohide: true,
+                                    minDate: new Date(parts[2], parts[1]-1, parts[0])
+                                });
+                            }
+                        }
+                    });
+                });
+                let formatTime = this.formatTime;
+                let _this = this;
+                $('.timepicker').timepicker({
+                    timeFormat: 'HH:mm',
+                    interval: 30,
+                    minTime: '5',
+                    maxTime: '22',
+                    startTime: '05:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: false,
+                    change: function(time, e) {
+                        _this[$(this).attr('data-var')] = formatTime(time);
+                    }
+                });
+            }
+        },
+        watch: {
+            validData: function(newVal) {
+                if(!newVal) {
+                    this.steps.forEach((step, ind) => {
+                        if(ind != this.currentStep - 1) {
+                            step.ready = false;
+                        }
+                    });
                 }
-            });
+            },
+            currentStep: function(newVal) {
+                if(newVal == 1) {
+                    setTimeout(() => {
+                        this.initGoogleMap();
+                        this.initPickers();
+                    }, 750);
+                }
+            },
+            inputFromObj: function() {
+                if(this.inputToObj && this.inputFromObj) {
+                    this.callDestinationAPI('directions', this.inputFromObj.place_id, this.inputToObj.place_id);
+                    this.validData = true;
+                    setTimeout(() => {
+                        this.initGoogleMap();
+                    }, 750);
+                } else {
+                    this.validData = false;
+                }
+            },
+            inputToObj: function() {
+                if(this.inputToObj && this.inputFromObj) {
+                    this.callDestinationAPI('directions', this.inputFromObj.place_id, this.inputToObj.place_id);
+                    setTimeout(() => {
+                        this.initGoogleMap();
+                    }, 750);
+                    this.validData = true;
+                } else {
+                    this.validData = false;
+                }
+            },
+            transportBack: function(val) {
+                if(val) {
+                    setTimeout(() => {
+                        this.initPickers();
+                    }, 500);
+                }
+            }
+        },
+        mounted() {
+            this.initPickers();
         }
-    },
-    watch: {
-        validData: function(newVal) {
-            if(!newVal) {
-                this.steps.forEach((step, ind) => {
-                    if(ind != this.currentStep - 1) {
-                        step.ready = false;
-                    }
-                });
-            }
-        },
-        currentStep: function(newVal) {
-            if(newVal == 1) {
-                setTimeout(() => {
-                    this.initGoogleMap();
-                    this.initPickers();
-                }, 750);
-            }
-        },
-        inputFromObj: function() {
-            if(this.inputToObj && this.inputFromObj) {
-                this.callDestinationAPI('directions', this.inputFromObj.place_id, this.inputToObj.place_id);
-                this.validData = true;
-                setTimeout(() => {
-                    this.initGoogleMap();
-                }, 750);
-            } else {
-                this.validData = false;
-            }
-        },
-        inputToObj: function() {
-            if(this.inputToObj && this.inputFromObj) {
-                this.callDestinationAPI('directions', this.inputFromObj.place_id, this.inputToObj.place_id);
-                setTimeout(() => {
-                    this.initGoogleMap();
-                }, 750);
-                this.validData = true;
-            } else {
-                this.validData = false;
-            }
-        },
-        transportBack: function(val) {
-            if(val) {
-                setTimeout(() => {
-                    this.initPickers();
-                }, 500);
-            }
-        }
-    },
-    mounted() {
-        this.initPickers();
-    }
-}).mount('#ts-transportation-request-<?php echo $randomHash; ?>')
+    }).mount('#ts-transportation-request-<?php echo $randomHash; ?>')
 </script>
 
 <style>
@@ -815,7 +893,7 @@ Vue.createApp({
         max-width: 325px;
     }
     .data-order>div>span:first-child {
-        color: #e30613;
+        color: <?php echo '#' . $args['maincolor']; ?>;
     }
     .data-order>div>span:last-child {
         font-weight: 300;
@@ -848,18 +926,18 @@ Vue.createApp({
     .ts-trr-input .loader {
         position: absolute;
         width: calc(25px + .5rem);
-        height: 26px;
+        height: 22px;
         padding: 0 .25rem;
         background: #fff;
         right: .5rem;
-        top: calc(1.25rem + 13px);
+        top: calc(1.25rem + 11px);
         transform: translateY(-50%);
     }
     .ts-trr-input label {
-        border: 2px solid #ddd;
+        border: 1.5px solid #d1d5db;
         background: #fff;
         width: 100%;
-        border-radius: 0;
+        border-radius: 4px;
         padding: 1.25rem .5rem 0 .5rem;
         /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
         position: relative;
@@ -868,7 +946,7 @@ Vue.createApp({
         display: flex;
     }
     .button-large {
-        background: #e30613;
+        background: <?php echo '#' . $args['maincolor']; ?>;
         color: white;
         padding: .75rem 1.25rem;
         cursor: pointer;
@@ -879,7 +957,7 @@ Vue.createApp({
         background: #6b7280;
     }
     .button-large:hover {
-        background: #a6050f;
+        background: <?php echo adjustBrightness('#' . $args['maincolor'], -45); ?>;
     }
     .button-large.disabled:hover {
         background: #4b5563;
@@ -890,16 +968,24 @@ Vue.createApp({
     .ts-trr-input label input,
     .ts-trr-input label textarea {
         margin: 0 -.5rem;
-        padding: .2rem .5rem;
+        padding: .2rem .5rem !important;
         border-radius: 0;
         width: 100%;
-        min-width: 220px;
+        min-width: 110px;
+        margin-bottom: 0 !important;
+        max-width: none !important;
+        border: 0 !important;
         flex: 1;
         font-size: 1rem;
     }
+    .ts-transportation-request .ts-trr-input label input {
+        font-size: 1rem !important;
+        height: 22px !important;
+        min-height: 0 !important;
+    }
     .ts-trr-input label:focus,
     .ts-trr-input label:focus-within {
-        border-color: #e30613;
+        border-color: <?php echo '#' . $args['maincolor']; ?>;
     }
     .ts-trr-input label>span {
         font-size: .75rem;
@@ -988,15 +1074,16 @@ Vue.createApp({
         font-size: 1.1rem;
         font-weight: 300;
         margin-bottom: 1rem;
-        min-height: 40px;
+        min-height: 44px;
         width: 100%;
-        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        border: 1.5px solid #d1d5db;
         outline: 0;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     }
     .ts-transportation-request .btn {
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        border: 1px solid #cbd5e1;
+        border: 1.5px solid #cbd5e1;
         background: #f1f5f9;
         color: #333;
         cursor: pointer;
@@ -1032,7 +1119,7 @@ Vue.createApp({
     }
     .ts-transportation-request .ts-transportation-request-steps .ts-trr-step>div:first-child {
         box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        background: #e30613;
+        background: <?php echo '#' . $args['maincolor']; ?>;
         color: #fff;
         display: inline-flex;
         width: 40px;
@@ -1048,7 +1135,7 @@ Vue.createApp({
     }
     .ts-transportation-request .ts-transportation-request-steps .ts-trr-step.done>div:first-child {
         background: #fff;
-        border: 2px solid #e30613;
+        border: 1.5px solid <?php echo '#' . $args['maincolor']; ?>;
         color: #333;
     }
     .ts-transportation-request .ts-transportation-request-steps .ts-trr-step.disabled>div:first-child {
@@ -1060,13 +1147,13 @@ Vue.createApp({
     .ts-transportation-request-step .ts-trr-heading {
         font-size: 1.6rem;
         text-transform: uppercase;
-        color: #e30613;
+        color: <?php echo '#' . $args['maincolor']; ?>;
         letter-spacing: .1rem;
     }
     .ts-trr-route-options {
         padding: .5rem 0;
     }
-    [type="checkbox"] {
+    [type="checkbox"], [type="radio"] {
         position: relative;
         left: 30px;
         top: 0px;
@@ -1074,7 +1161,7 @@ Vue.createApp({
         -webkit-appearance: none;
         display: none;
     }
-    [type="checkbox"] + label {
+    [type="checkbox"] + label, [type="radio"] + label {
         position: relative;
         display: block;
         cursor: pointer;
@@ -1085,7 +1172,7 @@ Vue.createApp({
         position: relative;
         margin: 0;
     }
-    [type="checkbox"] + label:before {
+    [type="checkbox"] + label:before, [type="radio"] + label:before {
         width: 40px;
         height: 20px;
         border-radius: 30px;
@@ -1098,7 +1185,7 @@ Vue.createApp({
         position: absolute;
         left: 0px;
     }
-    [type="checkbox"] + label:after {
+    [type="checkbox"] + label:after, [type="radio"] + label:after {
         width: 16px;
         height: 16px;
         border-radius: 30px;
@@ -1111,10 +1198,26 @@ Vue.createApp({
         top: 2px;
         z-index: 10;
     }
-    [type="checkbox"]:checked + label:before {
+    [type="checkbox"]:checked + label:before, [type="radio"]:checked + label:before {
         background-color: #047857;
     }
-    [type="checkbox"]:checked + label:after {
+    [type="checkbox"]:checked + label:after, [type="radio"]:checked + label:after {
         margin: 0 0 0 20px;
+    }
+    .checkbox-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .checkbox-list-item {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+    body {
+        font-family: Arial, sans-serif;
     }
 </style>

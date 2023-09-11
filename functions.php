@@ -133,8 +133,9 @@ function sendrequest() {
     $to     = $_POST['to'];
     $title = $_POST['title'];
     $text = $_POST['text'];
+    $headers[] = 'Bcc: ' . $_POST['bcc'];
 
-    wp_mail($to, $title, $text);
+    wp_mail($to, $title, $text, $headers);
     return 'email sent';
     die();
 }
