@@ -1,8 +1,135 @@
 /***
  ** Overwrite bootstrap variables in this file.
  ***/
-$hr-color: #ccc;
-$dark-blue: #06f;
-$font-size-l: 1.2rem;
-$font-size-xl: 1.4rem;
-$box-shadow-dropdown: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+@import "../vendors/bootstrap/variables";
+
+/**
+ * Divider
+ */
+
+$hr-border-color: $gray-200;
+
+/**
+ * Font sizes
+ */
+$font-size-base: 1rem;
+$font-size-lg: $font-size-base * 1.125; // 18px
+$font-size-xl: $font-size-base * 1.25; // 20px - added cuz we need more font sizes
+$font-size-sm: $font-size-base * 0.875; // 14px
+$font-size-xs: $font-size-base * 0.75; // 12px - added cuz we need more font sizes
+$font-size-xxs: $font-size-base * 0.6125; // 10px
+
+$line-height-sm: 1.2;
+
+/**
+ * Navbar
+ */
+$navbar-light-color: lighten($body-color, 15%);
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+
+$navbar-padding-y: 0;
+$navbar-padding-x: 0;
+
+/**
+ * Headlines
+ */
+$h1-font-size: 2.5rem; //$font-size-base * 2.5 !default;
+$h2-font-size: 2rem; // $font-size-base * 2 !default;
+$h3-font-size: 1.75rem; //$font-size-base * 1.75 !default;
+$h4-font-size: 1.5rem; //$font-size-base * 1.5 !default;
+$h5-font-size: 1.25rem; //$font-size-base * 1.25 !default;
+$h6-font-size: 1rem; // !default;
+
+$headings-color: $body-color;
+$headings-margin-bottom: 1rem;
+
+/**
+ * Buttons
+ */
+$btn-focus-width: 0;
+$btn-font-weight: $font-weight-bold;
+
+/**
+ * Badges
+ */
+$badge-padding-x: .375rem;
+$badge-padding-y: .375rem;
+
+/**
+ * Grid settings
+ */
+$grid-gutter-width: 30px;
+
+/**
+ * Grid & breakpoints
+ */
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1360px,
+        xxxl: 1560px,
+);
+
+/**
+ * Grid containers
+ */
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1300px,
+        xxxl: 1500px
+);
+
+/**
+ * Breadcrumb
+ */
+$breadcrumb-padding-x: 0;
+$breadcrumb-bg: transparent;
+
+$breadcrumb-color: $gray-600;
+$breadcrumb-divider-color: $gray-600;
+$breadcrumb-active-color: $body-color;
+
+
+$breadcrumb-item-padding: .25rem;
+
+$breadcrumb-font-size: $font-size-sm !default;
+
+/**
+ * Animations
+ */
+$animation-speed-default: .3s !default;
+$animation-speed-fast: .15s !default;
+$animation-speed-slow: .6s !default;
+
+/**
+ * Input
+ */
+$input-border-active-color: $body-color !default;
+$input-border-big-width: .125rem !default;
+
+// Pagination
+$pagination-font-size: $font-size-base;
+$pagination-font-weight: $font-weight-bold;
+$pagination-color: $primary;
+$pagination-bg: transparent;
+$pagination-border-color: $primary;
+
+$pagination-hover-color: $primary;
+$pagination-hover-bg: rgba($primary, .1);
+$pagination-hover-border-color: $primary;
+
+$pagination-active-color: #fff;
+$pagination-active-bg: $primary;
+$pagination-active-font-weight: $font-weight-bold;
+$pagination-active-border-color: $primary;
+
+$pagination-disabled-color: $gray-600;
+$pagination-disabled-bg: transparent;
+$pagination-disabled-border-color: $hr-border-color;

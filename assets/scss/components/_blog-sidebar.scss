@@ -1,0 +1,16 @@
+.blog-sidebar {
+
+  a.category-link {
+    color: $body-color;
+    transition: color $animation-speed-default;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+    }
+    
+    &:active, &:focus {
+      text-decoration: underline;
+    }
+  }
+}

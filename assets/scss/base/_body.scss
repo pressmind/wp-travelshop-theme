@@ -1,0 +1,7 @@
+body {
+  font-display: swap !important;
+
+  @if ( $header-sticky == true ) {
+    @include spacing-generator($header-heights, 'top');
+  }
+}

@@ -3,10 +3,5 @@
  * @var array $args
  */
 ?>
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock"
-     width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
-     fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <circle cx="12" cy="12" r="9"/>
-    <polyline points="12 7 12 12 15 15"/>
-</svg>
+
+<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#clock"></use></svg>

@@ -1,0 +1,115 @@
+%details-divider {
+  &:before {
+    content: '/';
+    color: $body-color-lighter;
+    margin-right: .5rem;
+  }
+}
+
+%blog-entry-details {
+  // spacer
+  > div + div {
+    @extend %details-divider;
+  }
+
+  .blog-list-entry-details-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+%blog-list-entry-header {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+
+  .blog-list-entry {
+    @extend %spacing-bottom;
+
+    .blog-list-entry-header {
+      @extend %blog-list-entry-header;
+
+      margin-bottom: 1rem;
+
+      // -- details
+      .blog-list-entry-details {
+        @extend %blog-entry-details;
+      }
+
+      // -- title
+      .blog-list-entry-title {
+        @extend %card-title-settings;
+
+        // -- h3 font sizes
+        @include font-size-generator($h3-font-sizes);
+        margin: 0;
+      }
+    }
+
+    .blog-list-entry-excerpt {
+      @include font-size-generator($responsive-font-size);
+
+      margin: 0 0 1rem 0;
+    }
+
+    .blog-list-entry-more {
+      @include font-size-generator($responsive-font-size);
+    }
+
+    .blog-list-entry-body {
+      padding-top: $card-spacer-x;
+    }
+
+    + .blog-list-entry {
+
+      .blog-list-entry-thumbnail {
+        @extend %spacing-top;
+      }
+
+      border-top: $hr-border-width solid $hr-border-color;
+    }
+  }
+
+  // -- 2 columns
+  @include media-breakpoint-up(md) {
+    &[data-columns="2"] {
+      @include make-row();
+      flex-direction: row;
+
+      > .blog-list-entry {
+        @include make-col-ready();
+        @include make-col(6);
+
+        margin-bottom: $grid-gutter-width !important;
+
+        .blog-list-entry-body{
+          padding-left: $card-spacer-y;
+          padding-right: $card-spacer-y;
+
+          .blog-list-entry-header {
+            h1.blog-list-entry-title {
+              @include font-size-generator($card-title-sizes);
+            }
+          }
+        }
+
+        + .blog-list-entry {
+
+          .blog-list-entry-thumbnail {
+            margin-top: 0 !important;
+          }
+
+          border-top: 0 !important;
+        }
+      }
+    }
+  }
+}

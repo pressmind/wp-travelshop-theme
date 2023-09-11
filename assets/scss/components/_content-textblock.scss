@@ -1,0 +1,8 @@
+.text-block {
+  + .text-block {
+    @include spacing-generator($detail-page-section-paddings, 'top');
+    @include spacing-generator($detail-page-section-paddings, 'top', 'margin');
+
+    border-top: $hr-border-width solid $hr-border-color;
+  }
+}

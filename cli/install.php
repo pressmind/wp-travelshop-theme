@@ -562,6 +562,7 @@ if($args[1] != 'only_static') {
     }
     Writer::write('Importing airports', Writer::OUTPUT_SCREEN, 'install', Writer::TYPE_INFO);
     echo shell_exec('php airport_import.php');
+    echo shell_exec('php airline_import.php');
 }
 echo "\n";
 // TODO:

@@ -16,8 +16,8 @@ if (has_nav_menu($args['menu_location'])) {
     <div class="h5">
         <?php echo !empty($footer_menu->name) ? $footer_menu->name : ''; ?>
     </div>
-    <nav class="nav flex-column">
-        <ul class="">
+    <nav>
+        <ul class="nav flex-column">
             <?php
             wp_nav_menu(
                 array(

@@ -1,0 +1,73 @@
+.select-form-control {
+  @include button-reset();
+
+  position: relative;
+
+  display: block;
+  width: 100%;
+
+  // -- use from-control / input variables, to make it same look than other inputs
+  border-width: $input-border-width;
+  border-style: solid;
+  border-color: $input-border-color;
+
+  // -- define text align left, cuz select-form-controls mostly buttons
+  text-align: left;
+
+  color: $input-color;
+  height: $input-height;
+  line-height: $input-line-height;
+  padding: $input-padding-y $input-padding-x;
+  font-family: $input-font-family;
+  @include font-size($input-font-size);
+  font-weight: $input-font-weight;
+  background-clip: padding-box;
+  background-color: $input-bg;
+
+  @include border-radius($input-border-radius);
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+
+  // -- focus
+  @include form-control-focus();
+
+  // Placeholder
+  &::placeholder {
+    color: $input-placeholder-color;
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $input-disabled-bg;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+
+  // -- clear X
+  .input-clear {
+    @extend %input-clear;
+  }
+
+  // -- input icon
+  &.input-has-icon {
+    @extend %input-has-icon;
+  }
+
+  .dropdown-icon {
+    @extend %input-icon;
+  }
+
+  // -- selected options
+  .selected-options {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+
+    // -- white fadeout
+    &:after {
+      @extend %input-fadeout;
+    }
+  }
+}

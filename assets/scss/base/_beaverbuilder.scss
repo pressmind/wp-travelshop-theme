@@ -57,8 +57,8 @@ body.fl-builder .content-block.content-page > .container {
         // -- simple fix for category header + slider
         .fl-module-category-header,
         .fl-module-slider-mixed-content {
-          margin-left: -($grid-gutter-width / 2) !important;
-          margin-right: -($grid-gutter-width / 2)  !important;
+          //margin-left: -($grid-gutter-width / 2) !important;
+          //margin-right: -($grid-gutter-width / 2)  !important;
         }
       }
 
@@ -68,6 +68,33 @@ body.fl-builder .content-block.content-page > .container {
         margin-left: 0;
       }
     }
+  }
+}
+
+/**
+ * Some defaults for beaverbuilder and block usage
+ */
+.fl-builder-content {
+  .content-block {
+    margin-top: 0 !important;
+  }
+}
+
+#content-main {
+  overflow-x: hidden;
+}
+
+/**
+ * Cols beaver builder
+ */
+
+.fl-col-group {
+  margin-left: -($grid-gutter-width / 2) !important;
+  margin-right: -($grid-gutter-width / 2) !important;
+
+  > .fl-col {
+    padding-left: $grid-gutter-width / 2 !important;
+    padding-right: $grid-gutter-width / 2 !important;
   }
 }
 

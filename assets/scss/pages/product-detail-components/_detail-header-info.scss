@@ -1,0 +1,119 @@
+// -- is used in every file wich is for detail page, so u can "deactivate" and use own stylings
+
+%detail-attributes-row {
+  font-size: $font-size-sm;
+
+  @include spacing-generator($detail-header-info-spacers-items, 'bottom', margin);
+
+  > a {
+    color: rgba($detail-header-info-color, .5);
+    transition: color $animation-speed-default;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      color: $detail-header-info-color;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+@if ( $detail-page-use-default == true ) {
+  .detail-header-info {
+    background-color: $detail-header-info-bg;
+    color: $detail-header-info-color;
+    overflow: hidden;
+
+    // -- same height for image-gallery + info col
+    height: 100%;
+
+    @include get-element-shadow('detail-info-box');
+
+    @if ( $detail-header-info-border-width != 0 ) {
+      border: $detail-header-info-border-width solid $detail-header-info-border-color;
+    }
+
+    @include border-radius($detail-header-info-border-radius);
+    @include font-size-generator($detail-header-info-font-sizes);
+
+    // -- reset borrder radius to generate box-like header
+    @include media-breakpoint-down($detail-header-column-break) {
+      @include border-top-radius(0);
+    }
+
+    .detail-header-info-top {
+      @include spacing-generator($detail-header-info-spacers-x, 'around', 'padding');
+    }
+
+    // remove background, border, padding left and right and bottom for mobile view
+    @include media-breakpoint-down(xs) {
+      border-width:0;
+      background-color: transparent;
+
+      .detail-header-info-top {
+        padding-left:0;
+        padding-right:0;
+        padding-bottom:0;
+      }
+    }
+
+    .detail-header-info-top {
+      position: relative;
+
+      .add-to-wishlist {
+        position: absolute;
+
+        @each $breakpoint, $value in $detail-header-info-spacers-x {
+          @if $breakpoint == null {
+            top: ( pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+            right: ( pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+          }
+          @else {
+            @if map-has-key($grid-breakpoints, $breakpoint) {
+              @media ( min-width: map-get($grid-breakpoints, $breakpoint) ) {
+                top: ( pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+                right: ( pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+              }
+            } @else {
+              @media ( min-width: $breakpoint ) {
+                top: ( pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+                right: ( pxToRem($value) - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+              }
+            }
+          }
+        }
+
+        // mobile positioning
+        @include media-breakpoint-down(xs) {
+          right: (($add-to-wishlist-icon-size - $add-to-wishlist-size) / 2);
+        }
+
+        z-index: 2;
+      }
+
+      .detail-header-info-top-attributes{
+        @extend %detail-attributes-row;
+      }
+
+      h1 {
+        @include font-size-generator($detail-header-info-headline-sizes);
+        @include spacing-generator($detail-header-info-spacers-y, 'bottom', margin);
+      }
+
+      ul, p {
+        margin: 0;
+
+        + ul,
+        + p {
+          @include spacing-generator($detail-header-info-spacers-y, 'top', margin);
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <?php
 
 add_action('wp_head', function(){
-    wp_enqueue_style('main-style', get_template_directory_uri().'/assets/scss/app.min.css?'.filemtime(get_template_directory() . '/assets/scss/app.min.css'));
+    wp_enqueue_style('main-style', get_template_directory_uri().'/assets/scss/app.min.css?'.filemtime(get_template_directory() . '/assets/scss/app.css'));
 }, 0);
 
 add_action('wp_head', function(){

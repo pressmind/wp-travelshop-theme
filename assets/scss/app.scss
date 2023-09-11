@@ -1,98 +1,136 @@
+//@import "themes/theme-ananas/abstracts/variables";
+
 // -- vendors
+// -- Load vendors first, cuz we need those vendors varialbes/settings/mixins for abstracts
 @import "vendors/bootstrap/bootstrap";
-@import "vendors/rSlider/rSlider";
+@import "vendors/ion-rangeslider/range-slider";
 @import "vendors/tiny-slider/tiny-slider";
 @import "vendors/daterangepicker/daterangepicker";
-@import "vendors/pretty-dropdowns/prettydropdowns.css";
-@import "vendors/lightbox2/lightbox.min.css";
+@import "vendors/lightbox2/lightbox";
 @import "vendors/cookieconsent/cookieconsent";
 
 // -- abstracts
 @import "abstracts/variables";
 
-// -- utls
+// -- utils
 @import "utils/variables";
+//@import "themes/theme-ananas/utils/variables";
+@import "utils/brand-colors"; // brand colors should be used for social link elements to take their colors.
+@import "utils/functions";
 @import "utils/mixins";
 
 // -- base
+@import "base/body";
 @import "base/typography";
-@import "base/container";
 @import "base/beaverbuilder";
+@import "base/media";
+@import "base/prices";
+@import "base/aspect-ratios";
+@import "base/status-circles";
+@import "base/content";
+@import "base/spacing";
+@import "base/stars";
+@import "base/spinner";
+//@import "base/_backup/typography";
+//@import "base/_backup/container";
+//@import "base/_backup/beaverbuilder";
 
 // -- icons
-@import "icons/_tabler-icons";
+//@import "icons/_tabler-icons";
 
 // -- components
-@import "components/offcanvas";
-@import "components/travel-teaser";
-@import "components/travel-teaser-mega-stripe";
-@import "components/travel-slider";
-@import "components/list-filter";
-@import "components/detail-gallery";
-@import "components/detail-booking";
-@import "components/detail-booking-calendar";
-@import "components/content-blocks";
-@import "components/teaser";
-@import "components/image-teaser";
-@import "components/breadcrumb";
-@import "components/badges";
-@import "components/forms";
-@import "components/search-header";
-@import "components/daterangepicker";
-@import "components/search-bar";
-@import "components/search-bar";
-@import "components/autocomplete-suggestions";
-@import "components/accordion";
-@import "components/service-hotline-batch";
-@import "components/spinner";
+@import "components/slider-controls";
+@import "components/autocomplete-elements";
+@import "components/icon-link";
+@import "components/form-essentials";
+@import "components/row-essentials";
 @import "components/string-search";
-@import "components/pagination";
-@import "components/button";
-@import "components/blog-list";
-@import "components/cf7";
-@import "components/modals";
-@import "components/product-category-teaser";
-@import "components/image-slider";
-@import "components/price-box";
-@import "components/gmaps-box";
-@import "components/map-box";
-@import "components/itinerary";
-@import "components/contact-box";
-@import "components/mobile-bar";
-@import "components/description-block";
-@import "components/product-calendar";
+@import "components/checklist";
+@import "components/spinner";
+@import "components/backdrop";
+@import "components/dropdown";
+@import "components/buttons";
+@import "components/wishlist-add";
+@import "components/discount";
+@import "components/date-dropdown";
+@import "components/category-dropdown";
+@import "components/category-booking-dropdown";
+@import "components/person-booking-dropdown";
+@import "components/popup-apple-like";
+@import "components/popup-offcanvas";
+@import "components/popup-modal";
+@import "components/breadcrumb";
+@import "components/field-daterange-picker";
+@import "components/field-select-form-control";
+@import "components/travel-teaser";
+@import "components/category-product-teaser";
 @import "components/month-teaser";
+@import "components/list-filter";
+@import "components/search-bar";
+@import "components/search-header";
+@import "components/jumbotron";
+@import "components/team-teaser";
+@import "components/wp-teaser";
+@import "components/icon-teaser";
+@import "components/image-teaser";
+@import "components/wishlist";
+@import "components/page-share";
+@import "components/personen-select";
+@import "components/content-accordion";
+@import "components/content-readmore";
+@import "components/content-textblock";
+@import "components/image-gallery";
+@import "components/date-range-picker";
+@import "components/fulltext-search";
+@import "components/pagination";
+@import "components/blog-sidebar";
+@import "components/blog-entry";
+@import "components/blog-author";
+@import "components/social-links";
+@import "components/item-slider";
+@import "components/contactform7";
 @import "components/content-slider";
-@import "components/history";
-@import "components/team";
-@import "components/trust-box";
 @import "components/category-header";
-@import "components/share-box";
-@import "components/booking-on-request";
-@import "components/faq-schema-accordion";
-@import "components/user-login";
 
 // -- layout
-@import "layout/footer";
+//@import "layout/_backup/footer";
+//@import "layout/_backup/header";
+//@import "layout/_backup/navigation";
+//@import "layout/_backup/content";
 @import "layout/header";
 @import "layout/navigation";
-@import "layout/content";
+@import "layout/navigation-offcanvas";
+@import "layout/footer";
 
 // -- pages
-@import "pages/home";
-@import "pages/list";
-@import "pages/detail";
-@import "pages/detail2";
+//@import "pages/_backup/home";
+//@import "pages/_backup/list";
+//@import "pages/_backup/detail";
+//@import "pages/_backup/detail2";
+@import "pages/product-results";
+@import "pages/product-detail";
+@import "pages/product-calendar";
+@import "pages/blog-list";
+@import "pages/blog-detail";
 
 // -- themes
 // this just an example for you're theme starting point
-// @import "pages/themes/theme-ananas";
+//@import "themes/theme-ananas/ananas";
 
-body {
-	font-display: swap !important;
+
+// -- manipulation admin bar
+html #wpadminbar {
+  top: auto !important;
+  bottom: 0 !important;
+
+  position: fixed !important;
 }
 
-// -- fix for wishlist issues
-.add-to-wishlist svg {
-	pointer-events: none !important;
+html[lang="de"], html, html#html {
+  margin-top: 0 !important;
 }
+
+//// -- fix for wishlist issues
+//.add-to-wishlist svg {
+//	pointer-events: none !important;
+//}

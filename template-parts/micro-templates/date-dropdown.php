@@ -27,9 +27,16 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
             'date_departure' => $args['date_departures'][0],
             'date_from_format ' => $date_format
         ]);
+        if ($args['departure_date_count'] > 1 && !empty($args['dates_per_month'])) {
+            ?>
+            <span class="small more-dates">
+                (<?php echo $args['departure_date_count']; ?> <?php echo ($args['departure_date_count'] > 1) ? 'weitere Termine' : 'weiterer Termin';?>)
+            </span>
+            <?php
+        }
         ?>
     </button>
-    <?php if ($args['departure_date_count'] > 1 && !empty($args['dates_per_month'])) { ?>
+    <?php if ($args['departure_date_count'] > 1  && !empty($args['dates_per_month'])) { ?>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <?php
             foreach ($args['dates_per_month'] as $month) {

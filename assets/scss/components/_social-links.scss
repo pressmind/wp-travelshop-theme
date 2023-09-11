@@ -1,0 +1,58 @@
+%social-link {
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: grid;
+  place-items: center;
+
+  transition: color $animation-speed-default, background-color $animation-speed-default;
+  color: $body-color;
+  background-color: $body-bg-highlight;
+  text-decoration: none;
+
+  // make rounded
+  @include border-radius(1.25rem);
+
+  > svg {
+    width: $font-size-lg;
+    height: $font-size-lg;
+  }
+
+  &:active, &:focus, &:hover {
+    color: $primary;
+    background-color: darken($body-bg-highlight, 10%);
+  }
+
+  // -- brand colors
+  @each $key, $value in $brand-colors {
+    @if ( map-has-key($brand-colors, $key) ) {
+      &.social-link-#{$key} {
+        color: #fff;
+        background-color: map-get($brand-colors, $key);
+
+        &:active, &:focus, &:hover {
+          color: #fff;
+          background-color: darken(map-get($brand-colors, $key), 20%);
+        }
+      }
+    }
+  }
+}
+
+%social-links {
+
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .flex-wrap;
+  @extend .gap-1;
+
+  > a, > a.social-link {
+    @extend %social-link;
+  }
+
+}
+
+.social-links {
+  @extend %social-links;
+}

@@ -1,0 +1,137 @@
+/**
+ * Styling for category product teaser
+ */
+.teaser.category-product-teaser {
+  @include border-radius($teaser-category-product-border-radius);
+  background-color: $teaser-category-product-bg;
+  border: $teaser-category-product-border-width solid $teaser-category-product-border-color;
+
+  @include get-element-shadow('category-product-teaser');
+
+  // -- top element
+  .teaser-category-image {
+    > a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+
+      @if $teaser-category-product-border-width != 0 {
+        margin-left: -$teaser-category-product-border-width;
+        margin-top: -$teaser-category-product-border-width;
+        margin-bottom: 0;
+        margin-right: -$teaser-category-product-border-width;
+      }
+
+      .teaser-image {
+        @include border-top-radius($teaser-category-product-border-radius);
+        @include aspect-ratio(16, 10);
+
+        overflow: hidden;
+
+        @extend %media-cover;
+      }
+
+      .teaser-body {
+        padding: $teaser-category-product-spacer-x;
+
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+
+        z-index: 2;
+
+        .teaser-title {
+          margin: 0;
+
+          @extend %text-on-image;
+        }
+      }
+
+      // - reset link behaviour to prevent unwondated underlines by hovering block link
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // -- products
+  .teaser-products {
+
+    .card-category-travel-wrapper {
+      padding: $teaser-category-product-spacer-x;
+      position: relative;
+
+      .add-to-wishlist {
+        position: absolute;
+
+        // -- simple calculation to position in "border" of contents of card
+        // -- this makes the aligment of icon inside similar to the size of $travel-card-spacer-x
+        top: ($teaser-category-product-spacer-x - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+        right: ($teaser-category-product-spacer-x - (($add-to-wishlist-size - $add-to-wishlist-icon-size) / 2 ));
+
+        z-index: 2;
+      }
+
+      + .card-category-travel-wrapper {
+        border-top: $teaser-category-product-border-width solid $teaser-category-product-border-color;
+      }
+    }
+
+    .category-travel-card {
+      padding: 0;
+
+      @include font-size-generator($teaser-category-product-body-sizes);
+
+      h1.card-title {
+        // -- set font sizes
+        @include font-size-generator($teaser-category-product-travel-card-title-sizes);
+
+        color: $teaser-category-product-travel-card-title-color;
+        margin: 0 0 $teaser-category-product-spacer-y 0;
+
+        padding-right: $add-to-wishlist-size;
+
+        // set link settings for better optik + reading / usage
+        > a {
+          color: inherit;
+          transition: color $animation-speed-default;
+          text-decoration: none;
+
+          &:hover {
+            color: $teaser-category-product-travel-card-title-hover-color;
+          }
+
+          &:active, &:focus {
+            color: $teaser-category-product-travel-card-title-active-color;
+          }
+
+          &:active {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .price-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+
+        .product-price {
+          display: flex;
+          align-items: baseline;
+          color: inherit;
+          text-decoration: none;
+
+          &:hover, &:focus, &:active {
+            text-decoration: none;
+          }
+
+          @extend %price-small;
+        }
+      }
+    }
+  }
+}

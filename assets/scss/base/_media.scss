@@ -1,0 +1,104 @@
+// -- little helper to make sure media is cover
+%media-cover-image {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+}
+
+%media-cover {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    @extend %media-cover-image;
+  }
+}
+
+%media-border-radius {
+  @include border-radius($border-radius);
+  overflow: hidden;
+
+  > img {
+    @include border-radius($border-radius);
+  }
+}
+
+%media-circle {
+  @include border-radius(100%);
+  overflow: hidden;
+
+  > img {
+    @include border-radius(100%);
+  }
+}
+
+%media-hover-scale {
+  img {
+    transition: transform $animation-speed-default;
+    transform: scale(1); // scale 1 by default
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1); // scale up by hover
+    }
+  }
+}
+
+%media-video {
+  position: relative;
+  overflow: hidden;
+}
+
+%media-video-cover {
+  > video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100vw;
+  }
+}
+
+// -- little helper to make sure image is 100% x auto in responsive elements
+%responsive-image {
+  width: 100% !important;
+  height: auto !important;
+}
+
+// -- add helper classes to use media handling
+.responsive-image {
+  @extend %responsive-image;
+}
+
+.media-cover {
+  @extend %media-cover;
+}
+
+.media-hover-scale {
+  @extend %media-hover-scale;
+}
+
+.media-border-radius {
+  @extend %media-border-radius;
+}
+
+.media-circle {
+  @extend %media-circle;
+}
+
+.media-video {
+  @extend %media-video;
+
+  &.media-cover {
+    @extend %media-video-cover;
+  }
+}

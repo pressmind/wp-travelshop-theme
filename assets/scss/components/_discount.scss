@@ -1,0 +1,72 @@
+/**
+ * SCSS definition for discount elements
+ */
+
+%discount-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1;
+
+  padding: $badge-padding-y $badge-pill-padding-x;
+
+  @include border-radius($badge-pill-border-radius);
+
+  background-color: $body-bg-highlight;
+
+  .price {
+    position: relative;
+
+    &:after {
+      content:'';
+      position: absolute;
+      display: block;
+
+      width: 110%;
+      border-top: 2px solid $danger;
+
+      left:50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%) rotate(-20deg);
+    }
+  }
+
+  .discount {
+    font-weight: $font-weight-bold;
+    color: $danger;
+  }
+}
+
+%discount-base {
+  hr {
+    display: none;
+  }
+
+  .discount-wrapper--inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: .25rem;
+    font-size: $font-size-xs;
+
+    .discount-label {
+      @extend %discount-label;
+    }
+  }
+}
+
+%discount-border {
+  @include discount-border();
+}
+
+.discount-wrapper {
+  @extend %discount-base;
+
+  &.discount-wrapper--border {
+    @include discount-border();
+  }
+}

@@ -18,23 +18,18 @@
  * </code>
  * @var array $args
  */
-
 ?>
 <section class="content-block content-block-pagination">
     <div class="row">
         <div class="col-12">
             <nav aria-label="">
-                <ul class="ajax-enabled-pagination pagination">
+                <ul class="ajax-enabled-pagination pagination justify-content-center">
 
                     <li class="page-item<?php echo ($args['current_page'] == 1) ? ' disabled' : ''; ?>">
-                        <a class="page-link"
+                        <a class="page-link page-link-chevron"
                            href="?action=search&<?php echo BuildSearch::getCurrentQueryString($args['current_page'] - 1, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' . $args['uid'] : '';?>">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left"
-                                 width="16" height="16" viewBox="0 2 24 24" stroke-width="2" stroke="#607D8B"
-                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <polyline points="15 6 9 12 15 18"/>
-                            </svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-left-bold"></use></svg>
+
                         </a>
                     </li>
                     <?php
@@ -59,18 +54,14 @@
                     <?php } ?>
                     <?php if($args['pages'] != $to) { ?>
                         <li class="page-item disabled">
-                            <a class="page-link">...</a>
+                            <a class="page-link page-link-dots">...</a>
                         </li>
                     <?php } ?>
                     <li class="page-item<?php echo ($args['current_page'] == $args['pages']) ? ' disabled' : ''; ?>"><a
-                                class="page-link"
+                                class="page-link page-link-chevron"
                                 href="<?php echo ($args['current_page'] >= $args['pages']) ? '#' : '?action=search&' . BuildSearch::getCurrentQueryString($args['current_page'] + 1, $args['page_size'], ['view' => $args['view']]); ?><?php echo isset($args['uid']) ? '#' .  $args['uid'] : '';?>">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right"
-                                 width="16" height="16" viewBox="0 2 24 24" stroke-width="2" stroke="#607D8B"
-                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <polyline points="9 6 15 12 9 18"/>
-                            </svg>
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#caret-right-bold"></use></svg>
+
                         </a>
                     </li>
                 </ul>

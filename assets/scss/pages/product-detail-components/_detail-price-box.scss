@@ -1,0 +1,134 @@
+%offer-status {
+  padding: .25rem .5rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+
+  color: $booking-orange;
+  background-color: rgba($booking-orange, .25);
+
+  text-align: center;
+
+  &.danger {
+    color: $booking-red;
+    background-color: rgba($booking-red, .25);
+  }
+}
+
+// -- pricebox + booking action box
+.booking-action {
+  position: relative;
+
+  @include font-size-generator($booking-entrypoint-font-sizes);
+
+  // state-checkmark
+  .state-check {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $booking-gray;
+    color: $booking-gray-color;
+
+    @include border-radius(50%);
+
+    position:absolute;
+    right:0;
+
+    @include spacing-generator($booking-entrypoint-spacers-x, 'around', 'top');
+
+
+    line-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-success {
+      background-color: $booking-green;
+      color: $booking-green-color;
+    }
+
+    > svg {
+      width: $font-size-base;
+      height: $font-size-base;
+    }
+  }
+
+  // -- info rows
+  .booking-action-row  {
+    .booking-action-icon-item {
+      position: relative;
+      padding-left: $font-size-lg + .5rem;
+
+      small {
+        display: block;
+        color: $body-color-light;
+      }
+
+      > svg {
+        width: $font-size-lg;
+        height: $font-size-lg;
+
+        position: absolute;
+
+        transform: translateY(-50%);
+        left: 0;
+
+        // positioning right way by font sizes set in map
+        @each $breakpoint, $value in $booking-entrypoint-font-sizes {
+          @if $breakpoint == null {
+            top: ( (pxToRem($value) * $line-height-base) / 2);
+          }
+          @else {
+            @if map-has-key($grid-breakpoints, $breakpoint) {
+              @media ( min-width: map-get($grid-breakpoints, $breakpoint) ) {
+                top: ( (pxToRem($value) * $line-height-base) / 2);
+              }
+            } @else {
+              @media ( min-width: $breakpoint ) {
+                top: ( (pxToRem($value) * $line-height-base) / 2);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    + .booking-action-row {
+      @include spacing-generator($booking-entrypoint-spacers-items, 'top', margin);
+    }
+
+    .status {
+      @extend %offer-status;
+      // -- set padding
+      @include spacing-generator($booking-entrypoint-spacers-x, 'x', padding);
+      // -- set negative margin padding
+      @include spacing-generator($booking-entrypoint-spacers-x, 'x', margin, true);
+    }
+  }
+
+  // -- price-total
+  .price-box-discount {
+    display: flex;
+    width: 100%;
+
+    .discount-wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    .price-total {
+      @extend %price-default;
+
+      margin-left: auto;
+    }
+
+    .discount-wrapper--inner {
+      align-items: baseline;
+      flex-direction: row-reverse;
+      width: 100%;
+
+      .msg {
+        order: 1;
+      }
+    }
+  }
+}

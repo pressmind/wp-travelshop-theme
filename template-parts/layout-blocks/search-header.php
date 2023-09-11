@@ -9,10 +9,13 @@
  */
 ?>
 <section class="layout-block layout-block-search-header">
-    <div class="layout-block-search-header--search">
+    <div class="layout-block-search-header--media">
+        <img src="/wp-content/themes/travelshop/assets/img/slide-1.jpg"/>
+    </div>
+    <div class="layout-block-search-header--search transparent">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-11 col-xl-10">
+                <div class="col-12 col-xxl-11 col-xxxl-10">
                 <?php require  get_template_directory().'/template-parts/pm-search/search-bar.php';?>
                 </div>
             </div>

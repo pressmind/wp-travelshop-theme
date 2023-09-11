@@ -8,4 +8,4 @@ use Pressmind\Travelshop\PriceHandler;
  * @var array $args
  */
 ?>
-<small><span>Preis p.P.</span> <strong>ab</strong> </small><strong><?php echo PriceHandler::format($args['cheapest_price']->price_total); ?></strong>
+<small><span>Preis p.P.</span> <strong>ab&nbsp;</strong></small><strong><?php echo PriceHandler::format($args['cheapest_price']->price_total); ?></strong>

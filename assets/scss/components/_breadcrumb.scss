@@ -1,58 +1,109 @@
-.breadcrumb-wrapper {
-  // border-bottom: 1px solid $breadcrumb-bg;
+/**
+ * change breadcrumb in some aspects
+ */
 
+%breadcrumb-no-spacing {
+  // -- small padding
+  padding: .5rem 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 1rem 0;
+  }
+
+  .breadcrumb-wrapper .breadcrumb,
   .breadcrumb {
-    margin-bottom: 0;
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
-    align-items: stretch;
-    flex-wrap: nowrap;
+    padding-top:0;
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+}
 
-    .breadcrumb-item {
-      .breadcrumb-name {
-        display: flex;
-        align-items: center;
-      }
-
-      &:before {
-        display: none;
-      }
-    }
+.breadcrumb-wrapper {
+  .breadcrumb {
+    gap: $breadcrumb-item-padding;
 
     li {
+      font-size: $breadcrumb-font-size;
       display: flex;
-      align-items: center;
-      line-height: 1;
-      padding: .3rem 0;
-      font-size: .9rem;
-      // border-left: 1px solid #ccc;
-      // border-top: 1px solid #ccc;
-      // border-bottom: 1px solid #ccc;
+      flex-direction: row;
+      flex-wrap: nowrap;
 
-      a {
-        color: #777;
+      gap: $breadcrumb-item-padding;
+
+      &.breadcrumb-item + .breadcrumb-item {
+        padding-left: 0;
       }
 
-      .breadcrumb-sep {
-        margin: 0 .3rem;
+      // -- remove before element from default bootstrap breadcrumb
+      &:before {
+        display: none !important;
       }
 
+      // -- mobile variant
+      // this is the "back"-link wich shows up in mobile views
       &.bc-separator {
         display: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        gap: $breadcrumb-item-padding;
+
+        > svg {
+          color: $breadcrumb-divider-color;
+          width: $breadcrumb-font-size;
+          height: $breadcrumb-font-size;
+        }
       }
 
-      &:first-child {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+      a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        color: $breadcrumb-color;
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+          color: $breadcrumb-color;
+          text-decoration: underline;
+        }
+
+        span.breadcrumb-name {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+
+          gap: $breadcrumb-item-padding;
+        }
+
+        span.breadcrumb-sep {
+          line-height: 0;
+          color: $breadcrumb-divider-color;
+
+          > svg {
+            width: .6125rem;
+            height: .6125rem;
+          }
+        }
       }
 
       &:last-child {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        // border-right: 1px solid #ccc;
+        color: $breadcrumb-active-color;
       }
     }
   }
+}
 
+main > .breadcrumb-wrapper,
+main > .container > .row .breadcrumb-wrapper {
+  @extend %breadcrumb-no-spacing;
+}
+
+.container .breadcrumb-wrapper .container {
+  width: unset;
+  max-width: unset;
+  padding-left: unset;
+  padding-right: unset;
 }

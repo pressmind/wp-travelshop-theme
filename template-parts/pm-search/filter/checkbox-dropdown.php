@@ -14,15 +14,13 @@ if (empty($args['filter_data'][$args['filter_val']][array_key_first($args['filte
             <div class="form-group mb-lg-0 category-tree">
                 <label for=""><?php echo $args['label']; ?></label>
                 <div class="dropdown">
-                    <button class="select-from-control dropdown-toggle" type="button"
+                    <button class="select-form-control dropdown-toggle" type="button"
                             data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <span class="selected-options" data-placeholder="bitte wählen">bitte wählen</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x dropdown-clear" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0066ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <line x1="18" y1="6" x2="6" y2="18" />
-                            <line x1="6" y1="6" x2="18" y2="18" />
-                        </svg>
+
+                        <svg class="dropdown-clear input-clear"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#x"></use></svg>
+
                         <?php echo isset($args['icon']) ? $args['icon'] : ''; ?>
                     </button>
                     <div class="dropdown-menu dropdown-menu-select">
@@ -38,9 +36,11 @@ if (empty($args['filter_data'][$args['filter_val']][array_key_first($args['filte
                                            filter-param="<?php echo $args['filter_param']; ?>"
                                            id="<?php echo $uuid; ?>"
                                         <?php echo isset($_GET[$args['filter_param']]) && in_array(strtoupper($args['filter_data'][$args['filter_val2'] ?? $args['filter_val']][$key]), explode(',', strtoupper($_GET[$args['filter_param']]))) ? 'checked' : ''; ?>>
-                                        <span><i>
-                                            <svg class="icon icon-tabler icon-tabler-check"><use xlink:href="/wp-content/themes/travelshop/assets/img/icon-lib.svg#icon-tabler-check"></use></svg>
-                                        </i></span>
+
+                                        <span>
+                                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#check-bold"></use></svg>
+                                        </span>
+
                                     <label class="form-check-label" for="<?php echo $uuid; ?>">
                                         <?php echo is_int($key) ? $item : $key; ?>
                                     </label>

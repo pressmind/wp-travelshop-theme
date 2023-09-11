@@ -1,0 +1,154 @@
+// accordion-group
+.accordion-group {
+
+  // -- accordion header
+  .accordion-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: .5rem;
+    align-items: baseline;
+    justify-content: space-between;
+
+    // -- toggle button
+    button.accordion-toggle-all {
+      &[data-toggle="open"] {
+        .txt-close {
+          display: none;
+        }
+      }
+      &[data-toggle="close"] {
+        .txt-open {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+
+// accordion-wrapper
+.accordion-wrapper {
+
+  .accordion-item {
+
+    border-bottom: $accordion-border-width solid $accordion-border-color;
+
+    &:first-child {
+      border-top: $accordion-border-width solid $accordion-border-color;
+    }
+
+    .accordion-toggle {
+      @include button-reset();
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      text-align: left;
+
+      width: 100%;
+      gap: .5rem;
+
+      > svg {
+        width: $font-size-lg;
+        height: $font-size-lg;
+
+        color: $accordion-toggle-icon-color;
+        transition: color $animation-speed-default, transform $animation-speed-default;
+      }
+
+      .accordion-toggle--title {
+        margin-bottom: 0 !important;
+        color: $accordion-toggle-color;
+        transition: color $animation-speed-default;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        gap: .25rem;
+
+        @include media-breakpoint-up(lg) {
+          gap: .5rem;
+        }
+
+        .accordion-toggle--rating {
+          display: flex;
+          flex-wrap: nowrap;
+          color: $rating-color;
+
+          line-height: 1;
+
+          svg {
+            @include spacing-generator($h5-font-sizes, 'around', 'width');
+            @include spacing-generator($h5-font-sizes, 'around', 'height');
+          }
+        }
+      }
+
+      @include spacing-generator($accordion-spacers-y, 'y', 'padding');
+
+      &:hover {
+        .accordion-toggle--title {
+          color: $accordion-toggle-hover-color;
+        }
+
+        > svg {
+          color: $accordion-toggle-hover-icon-color;
+        }
+      }
+    }
+
+    // -- content
+    .accordion-content {
+      height: 0;
+      overflow: hidden;
+
+      .accordion-content--inner {
+        @include spacing-generator($accordion-spacers-y, 'bottom', 'padding');
+      }
+    }
+
+    &.is-open {
+
+      .accordion-toggle {
+        > svg {
+          transform: scaleY(-1);
+        }
+      }
+      .accordion-content {
+        height: auto;
+      }
+    }
+  }
+
+  // -- boxed
+  &.accordion-wrapper-boxed {
+    .accordion-item {
+
+      @include border-radius($accordion-border-radius);
+      border: $accordion-border-width solid $accordion-border-color;
+
+      + .accordion-item {
+        @include spacing-generator($accordion-boxed-gutters, 'top', 'margin');
+      }
+
+      .accordion-toggle {
+        @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+      }
+
+      .accordion-content {
+        .accordion-content--inner {
+          @include spacing-generator($accordion-spacers-x, 'x', 'padding');
+        }
+      }
+    }
+  }
+
+}
+

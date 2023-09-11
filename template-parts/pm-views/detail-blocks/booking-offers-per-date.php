@@ -233,7 +233,7 @@ $cheapest_price = $args['cheapest_price'];
                                             if (($discount = PriceHandler::getDiscount($housing_options_cheapest_price_primary)) !== false) {
                                                 ?>
                                                 <div class="discount-wrapper">
-                                                    <p>
+                                                    <div class="discount-wrapper--inner">
                                                         <span class="price-total">ab <strong><?php
                                                                 echo PriceHandler::format($housing_options_cheapest_price_primary->price_total);
                                                                 ?></strong>
@@ -248,7 +248,7 @@ $cheapest_price = $args['cheapest_price'];
                                                             <span class="discount"><?php echo $discount['price_delta']; ?></span>
                                                         </span>
 
-                                                    </p>
+                                                    </div>
                                                 </div>
                                                 <?php
                                             }else{

@@ -7,7 +7,7 @@ $current_post = $args;
 $id_post_thumbnail = get_post_thumbnail_id($current_post);
 
 ?>
-<article class="col-12 col-sm-6 col-lg-3">
+<article class="<?php echo $current_post->class; ?>">
     <div class="teaser wp-teaser">
         <div class="teaser-image">
             <img class="w-100 h-auto" src="<?php echo wp_get_attachment_image_url($id_post_thumbnail, 'thumbnail'); ?>"
@@ -22,7 +22,7 @@ $id_post_thumbnail = get_post_thumbnail_id($current_post);
                 <?php echo $current_post->post_excerpt; ?>
             </p>
             <?php } ?>
-            <a href="<?php echo get_permalink($current_post); ?>" class="btn btn-primary btn-block">Mehr erfahren</a>
+            <a href="<?php echo get_permalink($current_post); ?>" class="btn btn-primary">Mehr erfahren</a>
         </div>
     </div>
 </article>

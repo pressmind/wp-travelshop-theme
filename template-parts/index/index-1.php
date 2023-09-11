@@ -15,7 +15,7 @@ get_header();
         $args['search_box_tab'] = 0;
         load_template(get_template_directory().'/template-parts/layout-blocks/search-header.php', false, $args);
         ?>
-        <div class="content-main">
+        <div class="content-main" id="content-main">
             <div class="container">
                 <?php
                 $args = [
@@ -24,7 +24,7 @@ get_header();
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/image-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [
                     'headline' => 'Reise-Empfehlungen',
@@ -43,7 +43,7 @@ get_header();
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/product-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [];
                 $args['headline'] = 'Die besten Reiseziele für jeden Monat';
@@ -51,7 +51,7 @@ get_header();
                 $args['id_object_type'] = TS_TOUR_PRODUCTS;
                 load_template_transient(get_stylesheet_directory() . '/template-parts/layout-blocks/month-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [
                     'headline' => 'Reise-Themen',
@@ -95,14 +95,14 @@ get_header();
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/product-category-teaser.php', false, $args);
                 ?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                 $args = [
                     'headline' => 'Info Teaser',
                     'text' => 'Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.'
                 ];
                 load_template_transient(get_template_directory().'/template-parts/layout-blocks/info-teaser.php', false, $args);?>
-                <hr class="mt-0 mb-0">
+                <hr>
                 <?php
                     $args = [
                             'headline' => 'Icon-Teaser',
@@ -151,35 +151,6 @@ get_header();
                 ?>
             </div>
         </div>
-        <?php
-        $args = [
-                'uid' => 'index1',
-                'content_box_type' => 'boxed',
-                'content_alignment_horizontal' => 'center',
-                'content_alignment_horizontal_responsive' => '',
-                'content_alignment_horizontal_medium' => '',
-                'content_inner_padding' => '50',
-                'media_type' => 'image',
-                'background_overlay_type' => 'color',
-                'background_overlay_color' => 'rgba(255,255,255,.3)',
-                'headline' => 'Exploring the world is wonderful!',
-                'headline_type' => 'h1',
-                'subline' => 'love holiday',
-                'subline_type' => 'h3',
-                'lead' => 'relax',
-                'text' => 'write some more text in this line',
-                'btn_link' => '#',
-                'btn_label' => 'Join our trips',
-                'image' => get_stylesheet_directory_uri().'/assets/img/slide-1.webp',
-                'bg_image_alt_text' => '',
-                'content_alignment_vertical' => '',
-                'content_alignment_vertical_medium' => '',
-                'content_alignment_vertical_responsive' => '',
-                'content_box_break' => '',
-                'content_box_text_align' => '',
-        ];
-        load_template_transient(get_template_directory().'/template-parts/layout-blocks/category-header-jumbotron.php', false, $args);
-        ?>
     </main>
 <?php
 get_footer();
