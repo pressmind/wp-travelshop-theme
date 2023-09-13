@@ -17,9 +17,9 @@
 %spacing-top {
   margin-top: 1rem;
 
-   @include media-breakpoint-up(md) {
-     margin-top: $grid-gutter-width;
-   }
+  @include media-breakpoint-up(md) {
+    margin-top: $grid-gutter-width;
+  }
 }
 
 %spacing-divider-top {
@@ -84,17 +84,19 @@
 
   @each $breakpoint, $value in $grid-breakpoints {
     @if map-has-key($grid-breakpoints, $breakpoint) {
-      @each $name, $value in $default-gaps {
-        .gap-#{$breakpoint}-#{$name} {
-          gap: $value;
-        }
+      @include media-breakpoint-up($breakpoint) {
+        @each $name, $value in $default-gaps {
+          .gap-#{$breakpoint}-#{$name} {
+            gap: $value;
+          }
 
-        .row-gap-#{$breakpoint}-#{$name} {
-          row-gap: $value;
-        }
+          .row-gap-#{$breakpoint}-#{$name} {
+            row-gap: $value;
+          }
 
-        .column-gap-#{$breakpoint}-#{$name} {
-          column-gap: $value;
+          .column-gap-#{$breakpoint}-#{$name} {
+            column-gap: $value;
+          }
         }
       }
     }
