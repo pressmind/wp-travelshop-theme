@@ -543,7 +543,10 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
         $r->booking_type = 'bookable';
         $r->bookable = true;
     }
-    $result = json_encode($r);
+    $output = new stdClass();
+    $output->data = [$r];
+    $output->success = true;
+    $result = json_encode($output);
     echo $result;
     exit;
 }else if ($_GET['action'] == 'getClientLocation') {
