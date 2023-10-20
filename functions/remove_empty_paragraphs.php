@@ -3,7 +3,7 @@ function remove_empty_paragraphs($string) {
 
     $output = '';
 
-    $stringParts = explode('<p>', str_replace('</p>', '', $string));
+    $stringParts = explode('<p>', str_replace('</p>', '', $string ?? ''));
 
     foreach ( $stringParts as $part ) {
         if ( !empty($part) && $part !== '' ) {

@@ -11,7 +11,7 @@ global $PMTravelShop;
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0">
     <?php if(TS_COOKIE_CONSENT){
-    ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cookieconsent.min.js"></script>
+    ?><script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/vendor/cookieconsent.min.js"></script>
     <?php } ?>
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/travelshop-logo.svg">
     <link rel="preload" as="image" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg">

@@ -194,7 +194,8 @@ jQuery(function ($) {
             let bookingEntryCalendarRenderTarget = $('#booking-entry-calendar');
             var travelDate = bookingEntryCalendarRenderTarget.find('.travel-date a');
 
-            travelDate.on('mouseenter', function(e) {
+            travelDate.on('mouseenter', (e) => {
+                let me = this;
                 if ( !$(this).parent().hasClass('active') ) {
                     me.markTravelDateRange(this);
                     $(this).bind('mouseout', function(e) {
@@ -209,8 +210,9 @@ jQuery(function ($) {
             });
 
 
-            travelDate.on('click touch', function(e) {
+            travelDate.on('click touch', (e) => {
                 e.preventDefault();
+                let me = this;
                 me.unMarkTravelDateRange();
                 me.id_date = parseInt($(this).data('id_date'));
                 $('.booking-filter-item--date-range .booking-filter-field--text').html($(this).data('date-range'));

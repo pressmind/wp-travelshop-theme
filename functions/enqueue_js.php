@@ -14,21 +14,25 @@ if (!is_admin()) {
 add_action('wp_enqueue_scripts', function () {
 
     $js_files = array();
-    $js_files[] = array('handle' => 'popper', 'dependencies' => ['jquery'], 'src' => '/assets/js/popper-1.14.7.min.js', 'defer' => true, 'version' => '1.14.7');
-    $js_files[] = array('handle' => 'bootstrap', 'dependencies' => ['jquery'], 'src' => '/assets/js/bootstrap.min.js', 'defer' => true, 'version' => '4.3.1');
-    $js_files[] = array('handle' => 'pulltorefresh', 'dependencies' => ['jquery'], 'src' => '/assets/js/pulltorefresh.min.js', 'defer' => true, 'version' => '0.1.22');
-    $js_files[] = array('handle' => 'bodyscrolllock', 'dependencies' => ['jquery'], 'src' => '/assets/js/bodyScrollLock.min.js', 'defer' => true, 'version' => '1.0');
-    $js_files[] = array('handle' => 'dayjs-pack', 'dependencies' => ['jquery'], 'src' => '/assets/js/dayjs-1.10.6.pack.min.js', 'defer' => true, 'version' => '1.10.6');
-    $js_files[] = array('handle' => 'daterangepicker', 'dependencies' => ['jquery'], 'src' => '/assets/js/daterangepicker.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/daterangepicker.min.js'));
-    $js_files[] = array('handle' => 'autocomplete', 'dependencies' => ['jquery'], 'src' => '/assets/js/autocomplete.min.js', 'defer' => true, 'version' => '1.4.10');
-    $js_files[] = array('handle' => 'rangeslider', 'dependencies' => ['jquery'], 'src' => '/assets/js/rSlider.min.js', 'defer' => true, 'version' => '2.3.1');
-    $js_files[] = array('handle' => 'tiny-slider', 'dependencies' => ['jquery'], 'src' => '/assets/js/tiny-slider.min.js', 'defer' => true, 'version' => '2.9.3');
-    $js_files[] = array('handle' => 'lightbox', 'dependencies' => ['jquery'], 'src' => '/assets/js/lightbox.min.js', 'defer' => true, 'version' => '1.0.0');
+
+    // === Third-Party-Libraries
+    $js_files[] = array('handle' => 'popper', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/popper-1.14.7.min.js', 'defer' => true, 'version' => '1.14.7');
+    $js_files[] = array('handle' => 'bootstrap', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/bootstrap.min.js', 'defer' => true, 'version' => '4.3.1');
+    $js_files[] = array('handle' => 'pulltorefresh', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/pulltorefresh.min.js', 'defer' => true, 'version' => '0.1.22');
+    $js_files[] = array('handle' => 'dayjs-pack', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/dayjs-1.10.6.pack.min.js', 'defer' => true, 'version' => '1.10.6');
+    //$js_files[] = array('handle' => 'daterangepicker', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/daterangepicker.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/daterangepicker.min.js'));
+    $js_files[] = array('handle' => 'autocomplete', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/autocomplete.min.js', 'defer' => true, 'version' => '1.4.10');
+    $js_files[] = array('handle' => 'rangeslider', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/rSlider.min.js', 'defer' => true, 'version' => '2.3.1');
+    $js_files[] = array('handle' => 'tiny-slider', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/tiny-slider.min.js', 'defer' => true, 'version' => '2.9.3');
+    $js_files[] = array('handle' => 'lightbox', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/lightbox.min.js', 'defer' => true, 'version' => '1.0.0');
+    $js_files[] = array('handle' => 'instant-page', 'dependencies' => ['jquery'], 'src' => '/assets/js/vendor/instant.page.min.js', 'defer' => true, 'version' => '5.1.0');
+
+    // === Custom-Scripts
     $js_files[] = array('handle' => 'travelshop-ui', 'dependencies' => ['jquery'], 'src' => '/assets/js/ui.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/ui.min.js'));
     $js_files[] = array('handle' => 'travelshop-search', 'dependencies' => ['jquery'], 'src' => '/assets/js/search.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/search.min.js'));
     $js_files[] = array('handle' => 'travelshop-booking-entrypoint', 'dependencies' => ['jquery'], 'src' => '/assets/js/booking-entrypoint.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/booking-entrypoint.min.js'));
     $js_files[] = array('handle' => 'travelshop-ajax', 'dependencies' => ['jquery'], 'src' => '/assets/js/ajax.min.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/ajax.min.js'));
-    $js_files[] = array('handle' => 'instant-page', 'dependencies' => ['jquery'], 'src' => '/assets/js/instant.page.min.js', 'defer' => true, 'version' => '5.1.0');
+    //$js_files[] = array('handle' => 'travelshop-ajax', 'dependencies' => ['jquery'], 'src' => '/assets/js/functions/dist/ts-functions-bundle.js', 'defer' => true, 'version' => filemtime(get_template_directory() . '/assets/js/functions/dist/ts-functions-bundle.js'));
 
     foreach ($js_files as $f) {
         if ($f['defer']) {

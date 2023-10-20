@@ -2,7 +2,7 @@
 /**
  * This files add the menu meta box "pressmind Categories" to the admin menu panel
  */
-
+// TODO: Crashes Wordpress Menu Functionality
 // Display meta informations for the pressmind tree specific menu item
 add_action( 'wp_nav_menu_item_custom_fields', function($item_id, $item) {
     global $config;

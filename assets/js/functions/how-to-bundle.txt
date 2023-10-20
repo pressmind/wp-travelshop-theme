@@ -1,0 +1,5 @@
+=== How to bundle the JS files ===
+1. Install Webpack globally: `npm install webpack webpack-cli -g`
+2. Install npm 'path' package globally: `npm install path -g`
+3. Go to functions folder
+4. Run "npx webpack"

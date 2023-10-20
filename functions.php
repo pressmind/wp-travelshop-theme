@@ -78,7 +78,7 @@ require_once 'functions/disable_pagetypes.php';
 
 // Menus
 require_once 'functions/menus.php';
-require_once 'functions/add_menu_meta.php';
+// require_once 'functions/add_menu_meta.php';
 
 require_once 'functions/the_breadcrumb.php';
 require_once 'functions/theme_support.php';

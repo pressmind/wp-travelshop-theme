@@ -332,7 +332,7 @@ jQuery(function ($) {
             }
         }
 
-        this.wishlistEventListeners = function () {
+        this.wishlistEventListeners = function ($) {
 
             if ($('#search-result').length > 0) {
                 // Create an observer instance linked to the callback function
@@ -376,7 +376,7 @@ jQuery(function ($) {
             }
         }
 
-        this.wishListInit = function () {
+        this.wishListInit = function ($) {
             $('.dropdown-menu-wishlist').click((e) => {
                 if(!$(e.target).is('a')) {
                     e.preventDefault();
@@ -502,7 +502,7 @@ jQuery(function ($) {
             }
         }
 
-        this.pagination = function () {
+        this.pagination = function ($) {
 
             $("#search-result").on('click', ".page-link", function (e) {
                 var href = $(this).attr('href').split('?');
@@ -637,7 +637,7 @@ jQuery(function ($) {
             return query_string;
         }
 
-        this.filter = function () {
+        this.filter = function ($) {
 
             // dont run default realtime ajax-functions on small viewport
             if ($(window).width() > 768) {
@@ -684,7 +684,7 @@ jQuery(function ($) {
 
         }
 
-        this.searchbox = function () {
+        this.searchbox = function ($) {
 
             /**
              * This Event checks if a input field is modified and building the query string.
@@ -721,7 +721,7 @@ jQuery(function ($) {
 
         }
 
-        this.searchboxSwitch = function (){
+        this.searchboxSwitch = function ($){
             $(".search-wrapper--tabs_btn").on('click', function (e) {
                 $(this).parents().find(".search-wrapper--tabs_btn").removeClass('is-active');
                 $(this).addClass('is-active');
@@ -740,7 +740,7 @@ jQuery(function ($) {
             _this.initCategoryTreeSearchBarFields();
         }
 
-        this.autoCompleteInit = function (){
+        this.autoCompleteInit = function ($){
             if ($('.auto-complete').length > 0) {
                 var autoCompleteContainerClass = 'autocomplete-suggestions';
 
@@ -1346,46 +1346,6 @@ jQuery(function ($) {
             }
         }
 
-        // ------------------------------
-        // -- content modal
-        // ------------------------------
-
-        this.initModals = function() {
-            if ($('.modal-wrapper').length > 0) {
-                $('a[data-modal="true"]').on('click', function (e) {
-                    console.log('Modal open');
-                    e.preventDefault();
-                    let modalId = $(e.target).data('modal-id');
-                    // -- show modal
-                    $('body').find('#modal-id-post-' + modalId).addClass('is-open');
-                    if($(e.target).hasClass('booking-btn') || $(e.target).hasClass('stretched-link')) {
-                        $('.modal-loader').css('display', 'flex');
-                        setTimeout(() => {
-                            modalId != 'bofilters' ? _this.loadFilters() : '';
-                            setTimeout(() => {
-                                _this.loadOffers(e);
-                            }, 200);
-                        }, 500);
-                    }
-                    let target = document.querySelector('.is-open .modal-body-outer');
-                    bodyScrollLock.disableBodyScroll(target);
-                    e.stopPropagation();
-                })
-
-                $('.modal-close, .modal-close-btn').on('click', function (e) {
-                    e.preventDefault();
-                    let target = document.querySelector('.is-open .modal-body-outer');
-                    $(e.target).closest('.is-open').removeClass('is-open');
-                    bodyScrollLock.enableBodyScroll;
-                    e.stopPropagation();
-                })
-
-                $(document).on('keyup', function (e) {
-                    if (e.which == 27) $('.modal-close').click(); // esc
-                });
-            }
-        }
-
         this.loadFilters = function() {
             _this.infinityActive = true;
             $('.modal-loader').css('display', 'flex');
@@ -1473,7 +1433,7 @@ jQuery(function ($) {
             }
         }
 
-        this.initBookingBtnClickHandler = function (){
+        this.initBookingBtnClickHandler = function ($){
             if ($('.booking-btn').length > 0) {
                 $('.booking-btn').not('.detail-booking-entrypoint .booking-btn').on('click', function (e) {
                     if($(this).data('modal') === true){
@@ -1489,7 +1449,7 @@ jQuery(function ($) {
             }
         }
 
-        this.initPartnerParams = function () {
+        this.initPartnerParams = function ($) {
             let getUrlParameter = function getUrlParameter(sParam) {
                 var sPageURL = window.location.search.substring(1),
                     sURLVariables = sPageURL.split('&'),
@@ -1647,7 +1607,7 @@ jQuery(function ($) {
                 });
             });
         }
-        this.initLoginFunctionality = function() {
+        this.initLoginFunctionality = function($) {
             if($('.user-login').length) {
                 const params = _this.getAllUrlParams();
                 const redirectURL = _this.replaceUrlParam($('.login-link').attr('href'), 'redirect', btoa(location.protocol + '//' + location.host + location.pathname));
@@ -1751,28 +1711,6 @@ jQuery(function ($) {
                 window.localStorage.setItem('relatedList', JSON.stringify(relatedList));
             }
         }
-
-        this.setViewedProduct = function() {
-            if($('body').hasClass('pm-detail-page') && typeof currentMOID != 'undefined') {
-                let relatedList = JSON.parse(window.localStorage.getItem('relatedList'));
-                let wishlist  = relatedList?.filter(x => x?.type == 'marked');
-                let visitedlist  = relatedList?.filter(x => x?.type == 'viewed');
-                if (jQuery.isEmptyObject(visitedlist)) { visitedlist = []; }
-                if (jQuery.isEmptyObject(wishlist)) { wishlist = []; }
-                visitedlist = visitedlist.filter((a) => a.id_media_object != currentMOID);
-                let now = + new Date();
-                visitedlist.unshift({
-                    id_media_object: currentMOID,
-                    type: 'viewed',
-                    created: now
-                });
-                visitedlist = visitedlist.slice(0, 10);
-                relatedList = wishlist.concat(visitedlist);
-                _this.saveProductRelationInUserAccount('viewed', currentMOID, now);
-                window.localStorage.setItem('relatedList', JSON.stringify(relatedList));
-            }
-        }
-
         this.init = function(){
             _this.setViewedProduct();
             _this.initLoginFunctionality();
@@ -1784,13 +1722,10 @@ jQuery(function ($) {
             _this.searchboxSwitch();
             _this.autoCompleteInit();
             _this.dateRangePickerInit();
-            // TODO deprecated?
-            //_this.priceRangeSliderInit();
             _this.initCategoryTreeSearchBarFields();
             _this.initCalendarRowClick();
             _this.initBookingBtnClickHandler();
             _this.initPartnerParams();
-            _this.initModals();
             _this.searchbox();
             _this.filter();
         }

@@ -16,7 +16,7 @@ class Filter
      */
     public static function strip($str)
     {
-        return trim(strip_tags((string)$str));
+        return trim(strip_tags($str));
     }
 
     /**
@@ -59,6 +59,19 @@ class Filter
         return null;
     }
 
+    /**
+     * This filter is created to use in
+     * mongodb search index creation context
+     * @param $array
+     * @return mixed|null
+     */
+    public static function lastTreeItemIdAsString($array)
+    {
+        if (!empty($array) && !empty($array[array_key_last($array)]->item->id)) {
+            return $array[array_key_last($array)]->item->id;
+        }
+        return null;
+    }
 
     /**
      * This filter is created to use in
