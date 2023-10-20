@@ -170,6 +170,7 @@ jQuery(function ($) {
         }
 
         this.calendarInteraction = function() {
+            var me = this;
             if ( $('body').find('.booking-entrypoint-calendar-outer .calendar-item').length > 2 ) {
                 this.calendarSlider = tns({
                     container: '.booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner',
@@ -282,6 +283,14 @@ jQuery(function ($) {
                 }
                 // TODO
             });
+
+            if($('.booking-filter-radio--duration input[type="radio"]').length === 1){
+                $('.booking-filter-item--duration button').css('pointer-events', 'none');
+                $('.booking-filter-item--duration button small').text('Dauer');
+            }else{
+                $('.booking-filter-item--duration button').css('pointer-events', 'auto');
+                $('.booking-filter-item--duration button small').text('Dauer wählen');
+            }
 
             // TODO airport is not implemented yet
 

@@ -505,17 +505,26 @@ class BuildSearch
      */
     public static function extractDaterange($str){
         if(preg_match('/^([0-9]{4}[0-9]{2}[0-9]{2})\-([0-9]{4}[0-9]{2}[0-9 ]{2})$/', $str, $m) > 0){
-            return array(new DateTime($m[1]), new DateTime($m[2]));
+            $from = new DateTime($m[1]);
+            $from->setTime(0,0);
+            $to = new DateTime($m[2]);
+            $to->setTime(0,0);
+            return array($from, $to);
         }elseif(preg_match('/^([0-9]{4}[0-9]{2}[0-9]{2})$/', $str, $m) > 0){
-            return array(new DateTime($m[1]), null);
+            $from = new DateTime($m[1]);
+            $from->setTime(0,0);
+            return array($from, null);
         }elseif(preg_match('/^([\+\-]?[0-9]+)$/', $str, $m) > 0) {
             $to = new DateTime('now');
+            $to->setTime(0,0);
             $to->modify($m[1].' day');
             return array(new DateTime('now'), $to);
         }elseif(preg_match('/^([\+\-]?[0-9]+)\-([\+\-]?[0-9]+)$/', $str, $m) > 0) {
             $from = new DateTime('now');
+            $from->setTime(0,0);
             $from->modify($m[1].' day');
             $to = new DateTime('now');
+            $to->setTime(0,0);
             $to->modify($m[2].' day');
             return array($from, $to);
         }
@@ -589,7 +598,7 @@ class BuildSearch
     }
 
 
-        /**
+    /**
      * @param $str
      * @return null
      */
@@ -605,11 +614,11 @@ class BuildSearch
      * @return string[]
      */
     public static function extractBoardTypes($str){
-         $board_types = explode(',', $str);
-         foreach($board_types as $k => $board_type){
-             $board_types[$k] = self::sanitizeStr($board_type);
-         }
-         return $board_types;
+        $board_types = explode(',', $str);
+        foreach($board_types as $k => $board_type){
+            $board_types[$k] = self::sanitizeStr($board_type);
+        }
+        return $board_types;
     }
 
     /**
@@ -631,7 +640,7 @@ class BuildSearch
      * @return string
      */
     public static function sanitizeStr($str){
-       return trim(preg_replace( '/[^a-zA-Z0-9_\-\.ÁÀȦÂÄǞǍĂĀÃÅǺǼǢĆĊĈČĎḌḐḒÉÈĖÊËĚĔĒẼE̊ẸǴĠĜǦĞG̃ĢĤḤáàȧâäǟǎăāãåǻǽǣćċĉčďḍḑḓéèėêëěĕēẽe̊ẹǵġĝǧğg̃ģĥḥÍÌİÎÏǏĬĪĨỊĴĶǨĹĻĽĿḼM̂M̄ʼNŃN̂ṄN̈ŇN̄ÑŅṊÓÒȮȰÔÖȪǑŎŌÕȬŐỌǾƠíìiîïǐĭīĩịĵķǩĺļľŀḽm̂m̄ŉńn̂ṅn̈ňn̄ñņṋóòôȯȱöȫǒŏōõȭőọǿơP̄ŔŘŖŚŜṠŠȘṢŤȚṬṰÚÙÛÜǓŬŪŨŰŮỤẂẀŴẄÝỲŶŸȲỸŹŻŽẒǮp̄ŕřŗśŝṡšşṣťțṭṱúùûüǔŭūũűůụẃẁŵẅýỳŷÿȳỹźżžẓǯßœŒçÇ\s]/', '', $str));
+        return trim(preg_replace( '/[^a-zA-Z0-9_\-\.ÁÀȦÂÄǞǍĂĀÃÅǺǼǢĆĊĈČĎḌḐḒÉÈĖÊËĚĔĒẼE̊ẸǴĠĜǦĞG̃ĢĤḤáàȧâäǟǎăāãåǻǽǣćċĉčďḍḑḓéèėêëěĕēẽe̊ẹǵġĝǧğg̃ģĥḥÍÌİÎÏǏĬĪĨỊĴĶǨĹĻĽĿḼM̂M̄ʼNŃN̂ṄN̈ŇN̄ÑŅṊÓÒȮȰÔÖȪǑŎŌÕȬŐỌǾƠíìiîïǐĭīĩịĵķǩĺļľŀḽm̂m̄ŉńn̂ṅn̈ňn̄ñņṋóòôȯȱöȫǒŏōõȭőọǿơP̄ŔŘŖŚŜṠŠȘṢŤȚṬṰÚÙÛÜǓŬŪŨŰŮỤẂẀŴẄÝỲŶŸȲỸŹŻŽẒǮp̄ŕřŗśŝṡšşṣťțṭṱúùûüǔŭūũűůụẃẁŵẅýỳŷÿȳỹźżžẓǯßœŒçÇ\s]/', '', $str));
     }
 
 }

@@ -257,7 +257,7 @@ if (empty($_GET['action']) && !empty($_POST['action'])) {
             $output = 'date_list';
         }
     }
-    $args = Search::getResult($_GET, 2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
+    $args = Search::getResult($_GET, null, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
     $Output->count = (int)$args['total_result'];
     if ($view == 'data') {
         $Output->data = $args;

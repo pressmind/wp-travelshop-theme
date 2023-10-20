@@ -71,7 +71,7 @@ $filter = $calendar->filter;
                                                'cheapest_price' => $day->cheapest_price,
                                            ]);
                                        } ?>'
-                                       data-booking_url="<?php echo IB3Tools::get_bookinglink($day->cheapest_price); ?>"
+                                       data-booking_url="<?php echo IB3Tools::get_bookinglink($day->cheapest_price, SITE_URL, null, null, true); ?>"
                                     >
                                         <?php echo $day->date->format('d'); ?>
                                         <div>
