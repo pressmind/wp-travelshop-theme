@@ -27,6 +27,9 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
             'date_departure' => $args['date_departures'][0],
             'date_from_format ' => $date_format
         ]);
+        if(in_array($args['date_departures'][0], $args['guaranteed_departures'])){
+            echo ' garantiert';
+        }
         if ($args['departure_date_count'] > 1 && !empty($args['dates_per_month'])) {
             ?>
             <span class="small more-dates">
@@ -55,6 +58,10 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
                             'durations_from_this_departure' => $date['durations_from_this_departure'],
                             'date_from_format ' => $date_format
                         ]);
+
+                        if(in_array($date['date_departure'], $args['guaranteed_departures'])){
+                            echo ' garantiert';
+                        }
                         ?>
                     </a>
                     <?php
