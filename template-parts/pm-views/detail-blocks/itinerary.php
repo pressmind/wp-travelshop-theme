@@ -25,6 +25,9 @@ if (empty($args['media_object']->getItinerarySteps())) {
 
 $valid = false;
 foreach ($args['media_object']->getItinerarySteps() as $key => $step) {
+    /**
+     * @var $step \Pressmind\ORM\Object\Itinerary\Step
+     */
     foreach ($step->sections as $section) {
         if(!empty(strip_tags((string)$section->content->headline))){
             $valid = true;
