@@ -147,6 +147,7 @@ class Search
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] = (float)$date['price_total'];
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_regular_before_discount'] = $date['price_regular_before_discount'];
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['durations_from_this_departure'] = $date['durations_from_this_departure'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['guaranteed'] = !empty($date['guaranteed']);
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = false;
                             if(!empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure']->format('Y-m-d') === $item['fst_date_departure']->format('Y-m-d')){
                                 $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = true;

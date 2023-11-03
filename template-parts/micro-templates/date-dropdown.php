@@ -59,8 +59,8 @@ $date_format = $args['date_departures'][0]->format('Y') == $today->format('Y') ?
                             'date_from_format ' => $date_format
                         ]);
 
-                        if(in_array($date['date_departure'], $args['guaranteed_departures'])){
-                            echo ' garantiert';
+                        if($date['guaranteed'] === true){
+                            echo ' garantierte Abreise';
                         }
                         ?>
                     </a>
