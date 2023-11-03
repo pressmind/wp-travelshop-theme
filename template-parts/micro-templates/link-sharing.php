@@ -66,25 +66,25 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
                     <div class="share-buttons">
                         <?php if ( isset($args['share_options']['buttons']['facebook']) && $args['share_options']['buttons']['facebook'] ) { ?>
                             <div class="share-buttons-col">
-                                <a target="_blank" href="" title="Auf Facebook teilen" class="share-button">
+                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $actual_link; ?>" title="Auf Facebook teilen" class="share-button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/share-sprite.svg#share-facebook"></use></svg>
 
                                     Facebook
                                 </a>
                             </div>
                         <?php } ?>
-                        <?php if ( isset($args['share_options']['buttons']['facebook-messenger']) && $args['share_options']['buttons']['facebook-messenger'] ) { ?>
-                            <div class="share-buttons-col">
-                                <a target="_blank" href="" title="Per Messenger teilen" class="share-button">
-                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"  focusable="false" style="display: block; height: 32px; width: 32px;"><radialGradient id="a" cx="19.25%" cy="99.446619%" r="108.96%"><stop offset="0" stop-color="#09f"></stop><stop offset=".6098" stop-color="#a033ff"></stop><stop offset=".9348" stop-color="#ff5280"></stop><stop offset="1" stop-color="#ff7061"></stop></radialGradient><g fill="none" transform="translate(4 4)"><path d="m12 0c-6.759 0-12 4.95256076-12 11.6389677 0 3.4976898 1.434 6.5214217 3.768 8.6092365.195.1739846.315.4199627.321.6839393l.066 2.1358106c.021.6809396.723 1.1249002 1.347.8489247l2.382-1.0499069c.201-.089992.429-.1049907.642-.0479957 1.095.2999734 2.259.461959 3.474.461959 6.759 0 12-4.9525607 12-11.6389677 0-6.68640701-5.241-11.6419675-12-11.6419675z" fill="url(#a)"></path><path d="m4.794 15.0436658 3.525-5.59150411c.561-.89092099 1.761-1.10990157 2.604-.47995744l2.805 2.10281355c.258.1919829.612.1919829.867-.0029998l3.786-2.87374511c.504-.38396594 1.164.22198032.828.75893269l-3.528 5.58850432c-.561.890921-1.761 1.1099016-2.604.4799575l-2.805-2.1028135c-.258-.191983-.612-.191983-.867.0029997l-3.786 2.8737451c-.504.383966-1.164-.2189805-.825-.7559329z" fill="#fff"></path></g></svg>
-                                    Messenger
-                                </a>
-                            </div>
-                        <?php } ?>
+                        <!--                        --><?php //if ( isset($args['share_options']['buttons']['facebook-messenger']) && $args['share_options']['buttons']['facebook-messenger'] ) { ?>
+                        <!--                            <div class="share-buttons-col">-->
+                        <!--                                <a target="_blank" href="fb-messenger://share/?link=--><?php //echo $actual_link; ?><!--" title="Per Messenger teilen" class="share-button">-->
+                        <!--                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"  focusable="false" style="display: block; height: 32px; width: 32px;"><radialGradient id="a" cx="19.25%" cy="99.446619%" r="108.96%"><stop offset="0" stop-color="#09f"></stop><stop offset=".6098" stop-color="#a033ff"></stop><stop offset=".9348" stop-color="#ff5280"></stop><stop offset="1" stop-color="#ff7061"></stop></radialGradient><g fill="none" transform="translate(4 4)"><path d="m12 0c-6.759 0-12 4.95256076-12 11.6389677 0 3.4976898 1.434 6.5214217 3.768 8.6092365.195.1739846.315.4199627.321.6839393l.066 2.1358106c.021.6809396.723 1.1249002 1.347.8489247l2.382-1.0499069c.201-.089992.429-.1049907.642-.0479957 1.095.2999734 2.259.461959 3.474.461959 6.759 0 12-4.9525607 12-11.6389677 0-6.68640701-5.241-11.6419675-12-11.6419675z" fill="url(#a)"></path><path d="m4.794 15.0436658 3.525-5.59150411c.561-.89092099 1.761-1.10990157 2.604-.47995744l2.805 2.10281355c.258.1919829.612.1919829.867-.0029998l3.786-2.87374511c.504-.38396594 1.164.22198032.828.75893269l-3.528 5.58850432c-.561.890921-1.761 1.1099016-2.604.4799575l-2.805-2.1028135c-.258-.191983-.612-.191983-.867.0029997l-3.786 2.8737451c-.504.383966-1.164-.2189805-.825-.7559329z" fill="#fff"></path></g></svg>-->
+                        <!--                                    Messenger-->
+                        <!--                                </a>-->
+                        <!--                            </div>-->
+                        <!--                        --><?php //} ?>
 
                         <?php if ( isset($args['share_options']['buttons']['twitter']) && $args['share_options']['buttons']['twitter'] ) { ?>
                             <div class="share-buttons-col">
-                                <a target="_blank" href="" title="Auf Twitter teilen" class="share-button">
+                                <a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $actual_link; ?>" title="Auf Twitter teilen" class="share-button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/share-sprite.svg#share-twitter"></use></svg>
                                     Twitter
                                 </a>
@@ -93,7 +93,7 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
 
                         <?php if ( isset($args['share_options']['buttons']['whatsapp']) && $args['share_options']['buttons']['whatsapp'] ) { ?>
                             <div class="share-buttons-col">
-                                <a target="_blank" href="" title="per WhatsApp teilen" class="share-button">
+                                <a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $actual_link; ?>" title="per WhatsApp teilen" class="share-button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/share-sprite.svg#share-whatsapp"></use></svg>
                                     WhatsApp
                                 </a>
@@ -102,7 +102,7 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
 
                         <?php if ( isset($args['share_options']['buttons']['telegram']) && $args['share_options']['buttons']['telegram'] ) { ?>
                             <div class="share-buttons-col">
-                                <a target="_blank" href="" title="Per Telegram teilen" class="share-button">
+                                <a target="_blank" href="https://t.me/share/url?url=<?php echo $actual_link; ?>" title="Per Telegram teilen" class="share-button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/share-sprite.svg#share-telegram"></use></svg>
                                     Telegram
                                 </a>
@@ -111,7 +111,7 @@ $share_title = !empty($args['share_options']['type']) ? $args['share_options']['
 
                         <?php if ( isset($args['share_options']['buttons']['mail']) && $args['share_options']['buttons']['mail'] ) { ?>
                             <div class="share-buttons-col">
-                                <a target="_blank" href="" title="Per E-Mail senden" class="share-button">
+                                <a target="_blank" href="mailto:?body=<?php echo $actual_link; ?>" title="Per E-Mail senden" class="share-button">
                                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#envelope"></use></svg>
                                     per E-Mail senden
                                 </a>
