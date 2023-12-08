@@ -130,6 +130,7 @@ define('TS_SEARCH_ROUTES', []);
  */
 define('BLOG_ENABLE_AUTHORPAGE', true);
 define('BLOG_ENABLE_CATEGORYPAGE', true);
+define('BLOG_EXCERPT_WORDS', 55);
 
 /**
  * Default visibility level
