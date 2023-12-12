@@ -42,6 +42,11 @@ $filter = $calendar->filter;
                             <div class="calendar-item-day calendar-item-weekday"><?php echo HelperFunctions::dayNumberToLocalDayName($day_of_week, 'short'); ?></div>
                             <?php
                         }
+                        for($i = 0; $i < $month->days[0]->date->format('N') - 1; $i++){
+                            ?>
+                            <div class="calendar-item-day calendar-item-empty"></div>
+                            <?php
+                        }
                         foreach ($month->days as $day) {
                             if (!empty($day->cheapest_price)) {
                                 ?>

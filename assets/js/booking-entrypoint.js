@@ -242,7 +242,7 @@ jQuery(function ($) {
             $(calendar_link_el).parent().addClass('active-duration');
             var duration = parseInt($(calendar_link_el).data('duration'));
             var position = 0;
-            $('#booking-entry-calendar').find('.calendar-item-day').not('.calendar-item-weekday').each(function() {
+            $('#booking-entry-calendar').find('.calendar-item-day').not('.calendar-item-weekday').not('.calendar-item-empty').each(function() {
                 if($(this).hasClass('active-duration') || position > 0) {
                     position++;
                 }
