@@ -4,6 +4,13 @@
  * it's protects the website performance against st*p*d users.
  */
 add_filter('wp_handle_upload_prefilter', function ($file) {
+
+    /**
+     * This is a workaround for the deprecated function utf8_encode() in the WordPress Core
+     * Deprecated Function utf8_encode() is deprecated in /wp-admin/includes/image.php< on line 930
+     */
+    error_reporting(E_ALL ^ E_DEPRECATED);
+
     if(TS_WP_IMAGE_MAX_UPLOAD_SIZE == null){
         return $file;
     }
@@ -53,7 +60,7 @@ add_filter( 'wp_generate_attachment_metadata', function ($meta) {
     }
     $upload_dir = wp_get_upload_dir();
     $files = [];
-    $files[] = $upload_dir['path'].'/'.$meta['file'];
+    $files[] = $upload_dir['path'].'/'.$pathinfo['basename'];
     foreach($meta['sizes'] as $size){
         $files[] = $upload_dir['path'].'/'.$size['file'];
     }
