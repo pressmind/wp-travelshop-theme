@@ -25,10 +25,37 @@ Writer::write('Image processor started', WRITER::OUTPUT_BOTH, 'image_processor',
 if(file_exists(APPLICATION_PATH.'/tmp/image_processor.lock') &&
     time()-filemtime(APPLICATION_PATH.'/tmp/image_processor.lock') < 86400 && $args[1] != 'unlock'){
     $pid = file_get_contents(APPLICATION_PATH.'/tmp/image_processor.lock');
-    Writer::write('is still running, check pid: '.$pid.', or try "sudo kill -9 '.$pid.' | php image_processor.php unlock"', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
-    exit();
+    if(file_exists( "/proc/$pid" ))
+    {
+        Writer::write('is still running, check pid: '.$pid.', or try "sudo kill -9 '.$pid.' | php image_processor.php unlock"', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+        exit();
+    }
+    unlink(APPLICATION_PATH.'/tmp/image_processor.lock');
 }
 file_put_contents(APPLICATION_PATH.'/tmp/image_processor.lock', getmypid());
+
+try {
+    /**
+     * @var DocumentMediaObject[]|Picture[]|Picture\Section[] $result
+     */
+    $result =  array_merge(
+        Picture::listAll(array('download_successful' => 1)),
+        DocumentMediaObject::listAll(array('download_successful' => 1)),
+    );
+} catch (Exception $e) {
+    Writer::write($e->getMessage(), WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_ERROR);
+}
+$c = 0;
+foreach ($result as $image) {
+  $File = $image->getFile();
+  if($File->exists()){
+        $c++;
+      $File->delete();
+  }
+}
+if($c > 0){
+    Writer::write('Deleted '.$c.' not used original image files', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+}
 
 try {
     /**
