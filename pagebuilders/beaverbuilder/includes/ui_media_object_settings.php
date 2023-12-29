@@ -13,7 +13,7 @@ $config = \Pressmind\Registry::getInstance()->get('config');
  * @var $settings
  */
 
-// get all categories group by id objec type for later purposes
+// get all categories group by id object type for later purposes
 $r = $db->fetchAll('select distinct var_name, ti.id_tree as id, ct.name, ti.id_object_type from pmt2core_media_object_tree_items ti
                             left join pmt2core_media_objects mo on(mo.id = ti.id_media_object)
                             left join pmt2core_category_trees ct on (ct.id = ti.id_tree)
@@ -24,6 +24,7 @@ foreach ($r as $category){
     $category_map[$category->var_name] = $category;
 }
 $categories = [];
+$global_categories = [];
 foreach($config['data']['search_mongodb']['search']['categories'] as $id_ot => $item){
     foreach($item as $var_name => $category){
         if(empty($category_map[$var_name]->id)){
@@ -35,8 +36,14 @@ foreach($config['data']['search_mongodb']['search']['categories'] as $id_ot => $
             'fieldname' => $fieldname,
             'var_name' => $var_name
         ];
+        $fieldname = 'category_'.$id_tree.'-'.$var_name;
+        $global_categories[$fieldname] = [
+            'fieldname' => $fieldname,
+            'var_name' => $var_name
+        ];
     }
 }
+$categories[0] = array_values($global_categories);
 ?>
     <div id="fl-builder-settings-section-general" class="fl-builder-settings-section">
         <div class="fl-builder-settings-section-header">
@@ -68,15 +75,15 @@ foreach($config['data']['search_mongodb']['search']['categories'] as $id_ot => $
                         $toggle[$id_ot]['fields'][] = $category['fieldname'];
                     }
                 }
-
+                $media_type_options = $config['data']['media_types'];
+                $media_type_options[0] = '-';
                 FLBuilder::render_settings_field('pm-ot', array(
                     'type' => 'select',
                     'label' => 'Object Type',
                     'default' => !empty($config['data']['primary_media_type_ids'][0]) ? $config['data']['primary_media_type_ids'][0] : array_key_first($config['data']['media_types']) ,
-                    'options' => $config['data']['media_types'],
+                    'options' => $media_type_options,
                     'toggle' => $toggle
                 ), $settings);
-
                 FLBuilder::render_settings_field('view', array(
                     'type' => 'select',
                     'label' => 'View',
