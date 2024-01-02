@@ -248,6 +248,16 @@ switch ($args[1]) {
                 }
             }
         }
+    case 'postimport':
+        Writer::write('Running post import', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+        try {
+            $importer = new Import('fullimport');
+            $importer->postImport();
+            Writer::write('Post import completed (image generation is running in background perhaps', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
+        } catch (Exception $e) {
+            Writer::write($e->getMessage(), Writer::OUTPUT_BOTH, 'import', Writer::TYPE_ERROR);
+            echo "WARNING: post import failed:\n" . $e->getMessage() . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_error.log for details\n";
+        }
         break;
     case 'help':
     case '--help':
