@@ -252,6 +252,7 @@ switch ($args[1]) {
         Writer::write('Running post import', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
         try {
             $importer = new Import('fullimport');
+            $ids = [];
             if(!empty($args[2])) {
                 $ids = array_map('trim', explode(',', $args[2]));
             }
