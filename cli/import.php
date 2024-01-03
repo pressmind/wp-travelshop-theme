@@ -91,7 +91,7 @@ switch ($args[1]) {
             try {
                 $importer->importMediaObjectsFromArray($ids);
                 Writer::write('Import done.', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
-                $importer->postImport();
+                $importer->postImport($ids);
                 if($importer->hasErrors()) {
                     echo ("WARNING: Import threw errors:\n" . implode("\n", $importer->getErrors())) . "\nSEE " . Writer::getLogFilePath() . DIRECTORY_SEPARATOR . "import_errors.log for details\n";
                 }
@@ -252,7 +252,10 @@ switch ($args[1]) {
         Writer::write('Running post import', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
         try {
             $importer = new Import('fullimport');
-            $importer->postImport();
+            if(!empty($args[2])) {
+                $ids = array_map('trim', explode(',', $args[2]));
+            }
+            $importer->postImport($ids);
             Writer::write('Post import completed (image generation is running in background perhaps', Writer::OUTPUT_BOTH, 'import', Writer::TYPE_INFO);
         } catch (Exception $e) {
             Writer::write($e->getMessage(), Writer::OUTPUT_BOTH, 'import', Writer::TYPE_ERROR);
