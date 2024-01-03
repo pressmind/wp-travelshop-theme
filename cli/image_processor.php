@@ -1,6 +1,5 @@
 <?php
 namespace Pressmind;
-
 use Exception;
 use ImagickException;
 use Predis\Protocol\Text\Handler\IntegerResponse;
@@ -10,6 +9,9 @@ use Pressmind\Log\Writer;
 use Pressmind\ORM\Object\Itinerary\Step\DocumentMediaObject;
 use Pressmind\ORM\Object\MediaObject\DataType\Picture;
 use \Pressmind\Search\MongoDB\Indexer;
+use Pressmind\Storage\Bucket;
+use Pressmind\Storage\File;
+
 if(php_sapi_name() == 'cli') {
     putenv('ENV=DEVELOPMENT');
 }
@@ -49,7 +51,7 @@ $c = 0;
 foreach ($result as $image) {
   $File = $image->getFile();
   if($File->exists()){
-        $c++;
+      $c++;
       $File->delete();
   }
 }
@@ -79,6 +81,33 @@ foreach ($result as $image) {
     }
     $binary_image = null;
     Writer::write('Processing image ID:' . $image->getId(), WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+    $has_something_to_do = false;
+    foreach ($config['image_handling']['processor']['derivatives'] as $derivative_name => $derivative_config) {
+        $extensions = ['jpg'];
+        if(!empty($derivative_config['webp_create'])){
+            $extensions[] = 'webp';
+        }
+        foreach($extensions as $extension){
+            $File = new File(new Bucket($config['image_handling']['storage']));
+            $File->name = pathinfo($image->file_name, PATHINFO_FILENAME) . '_' . $derivative_name . '.'.$extension;
+            if(!$File->exists()){
+                $has_something_to_do = true;
+            }
+            if(!empty($image->sections) && is_array($image->sections)){
+                foreach ($image->sections as $section) {
+                    $File = new File(new Bucket($config['image_handling']['storage']));
+                    $File->name = pathinfo($section->file_name, PATHINFO_FILENAME) . '_' . $derivative_name . '.'.$extension;
+                    if(!$File->exists()){
+                        $has_something_to_do = true;
+                    };
+                }
+            }
+        }
+    }
+    if(!$has_something_to_do){
+        Writer::write('Nothing to do (all derivates are created)', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+        continue;
+    }
     Writer::write('Downloading image from ' . $image->tmp_url, WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
     try {
         if($image->exists()){
