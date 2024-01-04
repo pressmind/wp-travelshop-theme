@@ -1,6 +1,5 @@
 <?php
 namespace Pressmind;
-
 use Exception;
 use ImagickException;
 use Predis\Protocol\Text\Handler\IntegerResponse;
@@ -10,6 +9,9 @@ use Pressmind\Log\Writer;
 use Pressmind\ORM\Object\Itinerary\Step\DocumentMediaObject;
 use Pressmind\ORM\Object\MediaObject\DataType\Picture;
 use \Pressmind\Search\MongoDB\Indexer;
+use Pressmind\Storage\Bucket;
+use Pressmind\Storage\File;
+
 if(php_sapi_name() == 'cli') {
     putenv('ENV=DEVELOPMENT');
 }
@@ -25,10 +27,37 @@ Writer::write('Image processor started', WRITER::OUTPUT_BOTH, 'image_processor',
 if(file_exists(APPLICATION_PATH.'/tmp/image_processor.lock') &&
     time()-filemtime(APPLICATION_PATH.'/tmp/image_processor.lock') < 86400 && $args[1] != 'unlock'){
     $pid = file_get_contents(APPLICATION_PATH.'/tmp/image_processor.lock');
-    Writer::write('is still running, check pid: '.$pid.', or try "sudo kill -9 '.$pid.' | php image_processor.php unlock"', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
-    exit();
+    if(file_exists( "/proc/$pid" ))
+    {
+        Writer::write('is still running, check pid: '.$pid.', or try "sudo kill -9 '.$pid.' | php image_processor.php unlock"', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+        exit();
+    }
+    unlink(APPLICATION_PATH.'/tmp/image_processor.lock');
 }
 file_put_contents(APPLICATION_PATH.'/tmp/image_processor.lock', getmypid());
+
+try {
+    /**
+     * @var DocumentMediaObject[]|Picture[]|Picture\Section[] $result
+     */
+    $result =  array_merge(
+        Picture::listAll(array('download_successful' => 1)),
+        DocumentMediaObject::listAll(array('download_successful' => 1)),
+    );
+} catch (Exception $e) {
+    Writer::write($e->getMessage(), WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_ERROR);
+}
+$c = 0;
+foreach ($result as $image) {
+  $File = $image->getFile();
+  if($File->exists()){
+      $c++;
+      $File->delete();
+  }
+}
+if($c > 0){
+    Writer::write('Deleted '.$c.' not used original image files', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+}
 
 try {
     /**
@@ -52,6 +81,33 @@ foreach ($result as $image) {
     }
     $binary_image = null;
     Writer::write('Processing image ID:' . $image->getId(), WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+    $has_something_to_do = false;
+    foreach ($config['image_handling']['processor']['derivatives'] as $derivative_name => $derivative_config) {
+        $extensions = ['jpg'];
+        if(!empty($derivative_config['webp_create'])){
+            $extensions[] = 'webp';
+        }
+        foreach($extensions as $extension){
+            $File = new File(new Bucket($config['image_handling']['storage']));
+            $File->name = pathinfo($image->file_name, PATHINFO_FILENAME) . '_' . $derivative_name . '.'.$extension;
+            if(!$File->exists()){
+                $has_something_to_do = true;
+            }
+            if(!empty($image->sections) && is_array($image->sections)){
+                foreach ($image->sections as $section) {
+                    $File = new File(new Bucket($config['image_handling']['storage']));
+                    $File->name = pathinfo($section->file_name, PATHINFO_FILENAME) . '_' . $derivative_name . '.'.$extension;
+                    if(!$File->exists()){
+                        $has_something_to_do = true;
+                    };
+                }
+            }
+        }
+    }
+    if(!$has_something_to_do){
+        Writer::write('Nothing to do (all derivates are created)', WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
+        continue;
+    }
     Writer::write('Downloading image from ' . $image->tmp_url, WRITER::OUTPUT_BOTH, 'image_processor', Writer::TYPE_INFO);
     try {
         if($image->exists()){

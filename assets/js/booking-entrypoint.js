@@ -170,6 +170,7 @@ jQuery(function ($) {
         }
 
         this.calendarInteraction = function() {
+            var me = this;
             if ( $('body').find('.booking-entrypoint-calendar-outer .calendar-item').length > 2 ) {
                 this.calendarSlider = tns({
                     container: '.booking-entrypoint-calendar-outer .booking-entrypoint-calendar-inner',
@@ -241,7 +242,7 @@ jQuery(function ($) {
             $(calendar_link_el).parent().addClass('active-duration');
             var duration = parseInt($(calendar_link_el).data('duration'));
             var position = 0;
-            $('#booking-entry-calendar').find('.calendar-item-day').not('.calendar-item-weekday').each(function() {
+            $('#booking-entry-calendar').find('.calendar-item-day').not('.calendar-item-weekday').not('.calendar-item-empty').each(function() {
                 if($(this).hasClass('active-duration') || position > 0) {
                     position++;
                 }
@@ -282,6 +283,14 @@ jQuery(function ($) {
                 }
                 // TODO
             });
+
+            if($('.booking-filter-radio--duration input[type="radio"]').length === 1){
+                $('.booking-filter-item--duration button').css('pointer-events', 'none');
+                $('.booking-filter-item--duration button small').text('Dauer');
+            }else{
+                $('.booking-filter-item--duration button').css('pointer-events', 'auto');
+                $('.booking-filter-item--duration button small').text('Dauer wählen');
+            }
 
             // TODO airport is not implemented yet
 

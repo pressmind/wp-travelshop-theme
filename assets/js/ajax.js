@@ -516,10 +516,10 @@ jQuery(function ($) {
 
         }
 
-        this.buildSearchQuery = function (form) {
+        this.buildSearchQuery = function (form, action = 'search') {
 
             let query = [];
-            query.push('action=search');
+            query.push('action='+action);
 
             // the object type
             let id_object_type = $(form).find('input[name=pm-ot]').val();
@@ -529,7 +529,7 @@ jQuery(function ($) {
 
             // categorytree checkboxes
             let selected = [];
-            $(form).find('.category-tree input:checked').each(function () {
+            $(form).find('.category-tree-field-items input:checked').each(function () {
 
                 let id_parent = $(this).attr('data-id-parent');
                 let id = $(this).attr('data-id');
@@ -623,7 +623,9 @@ jQuery(function ($) {
                 if(order.find('option[data-view="Calendar1"]').is(':selected')) {
                     view = 'Calendar1';
                 }
-                query.push('pm-o=' + order.val());
+                if(order.val()){
+                    query.push('pm-o=' + order.val());
+                }
             }
 
             if (view) {
@@ -1783,8 +1785,8 @@ jQuery(function ($) {
             }
             _this.searchboxSwitch();
             _this.autoCompleteInit();
-            _this.dateRangePickerInit();
-            // TODO deprecated?
+            // deprecated
+            //_this.dateRangePickerInit();
             //_this.priceRangeSliderInit();
             _this.initCategoryTreeSearchBarFields();
             _this.initCalendarRowClick();

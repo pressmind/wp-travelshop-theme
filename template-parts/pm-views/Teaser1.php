@@ -114,6 +114,7 @@ if(!empty($args['cheapest_price'])){
                     <?php
                         echo Template::render(APPLICATION_PATH . '/template-parts/micro-templates/date-dropdown.php', [
                             'date_departures' => $args['cheapest_price']->date_departures,
+                            'guaranteed_departures' => $args['cheapest_price']->guaranteed_departures,
                             'dates_per_month' => $args['dates_per_month'],
                             'departure_date_count' => $args['departure_date_count'],
                             'url' => $args['url']

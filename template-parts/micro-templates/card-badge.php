@@ -1,6 +1,10 @@
 <?php
 /**
  * <code>
+ * $args['cheapest_price']
+ * $args['id_media_object']
+ * $args['id_object_type']
+ * $args['recommendation_rate']
  * </code>
  * @var array $args
  */
@@ -9,6 +13,11 @@
     <!--<div class="card-badge card-badge--top-offer">-->
     Neu
 </div>
+<?php if(!empty($args['cheapest_price']->guaranteed_departures)){?>
+    <div class="card-badge card-badge--new">
+        <?php echo count($args['cheapest_price']->guaranteed_departures) > 1 ? 'garantierte Abreisen' : 'garantierte Abreise';?>
+    </div>
+<?php } ?>
 <!--
 <?php if(!empty($args['recommendation_rate'])){?>
     <div class="card-badge card-badge--new">

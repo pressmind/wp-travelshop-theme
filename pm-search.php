@@ -21,7 +21,7 @@ get_header();
             $output = 'date_list';
         }
     }
-    $result = Search::getResult($request,2, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
+    $result = Search::getResult($request, null, 12, true, false, TS_TTL_FILTER, TS_TTL_SEARCH, $output);
     ?>
     <?php the_breadcrumb(null); ?>
     <div class="content-main content-main--results" id="content-main">

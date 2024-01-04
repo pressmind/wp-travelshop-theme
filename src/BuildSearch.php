@@ -278,6 +278,7 @@ class BuildSearch
      * $request['pm-pr'] price range 123-1234
      * $request['pm-dr'] date range 20200101-20200202
      * $request['pm-url'] url like /travel/5-italia/
+     * $request['pm-loc'] location like 50.123,12.123,10.5 (lng,lat,radius in km)
      * $request['pm-gr'] groups
      * $request['pm-l'] limit 0,10
      * $request['pm-o'] order
@@ -307,15 +308,43 @@ class BuildSearch
             }
         }
 
-        if (empty($request[$prefix.'-t']) === false){
-            $term = self::sanitizeStr($request[$prefix.'-t']);
+        if (empty($request[$prefix.'-t']) === false || empty($request[$prefix.'-loc']) === false){
+            $term = !empty($request[$prefix.'-t']) ? self::sanitizeStr($request[$prefix.'-t']) : null;
             $order = array('score' => 'desc');
             if(defined('TS_FULLTEXT_SEARCH') && !empty(TS_FULLTEXT_SEARCH['atlas']['active'])){
-                $conditions[] = new \Pressmind\Search\Condition\MongoDB\AtlasLuceneFulltext($term, !empty(TS_FULLTEXT_SEARCH['atlas']['definition']) ? TS_FULLTEXT_SEARCH['atlas']['definition'] : []);
+                $gson_property = null;
+                $lat = null;
+                $lon = null;
+                $radius = null;
+                if (isset($request[$prefix.'-loc']) === true && is_array($request[$prefix.'-loc']) === true) {
+                    $search_items = $request[$prefix.'-loc'];
+                    foreach($search_items as $gson_property => $location){
+                        if(preg_match('/^[0-9a-zA-Z\-\_]+$/', $gson_property) > 0){
+                            if(preg_match('/^([0-9\.0-9]+),([0-9\.0-9]+)(,([0-9\.0-9]+))?$/', $location, $matches) > 0){
+                                $lat = (float)$matches[1];
+                                if($lat >= 90 || $lat <= -90){
+                                    continue;
+                                }
+                                $lon = (float)$matches[2];
+                                if($lon >= 180 || $lon <= -180){
+                                    continue;
+                                }
+                                $radius = isset($matches[4]) ? (float)$matches[4] : 100;
+                                $validated_search_parameters[$prefix.'-loc'][$gson_property] = $location;
+                            }
+                        }
+                        break;
+                    }
+                }
+                $conditions[] = new \Pressmind\Search\Condition\MongoDB\AtlasLuceneFulltext($term, !empty(TS_FULLTEXT_SEARCH['atlas']['definition']) ? TS_FULLTEXT_SEARCH['atlas']['definition'] : [] ,$gson_property, $lat, $lon, $radius);
             }else{
-                $conditions[] = new \Pressmind\Search\Condition\MongoDB\Fulltext($term);
+                if(empty($term) === false){
+                    $conditions[] = new \Pressmind\Search\Condition\MongoDB\Fulltext($term);
+                }
             }
-            $validated_search_parameters[$prefix.'-t'] = $request[$prefix.'-t'];
+            if(empty($term) === false){
+                $validated_search_parameters[$prefix.'-t'] = $request[$prefix.'-t'];
+            }
         }
 
         if (empty($request[$prefix.'-co']) === false && preg_match('/^([0-9\-_A-Za-z\,]+)$/', $request[$prefix.'-co']) > 0){
@@ -330,7 +359,6 @@ class BuildSearch
             $price_range_to = empty(intval($price_range_to)) ? 99999 : intval($price_range_to);
             $conditions[] = new \Pressmind\Search\Condition\MongoDB\PriceRange($price_range_from, $price_range_to);
             $validated_search_parameters[$prefix.'-pr'] = $price_range_from.'-'.$price_range_to;
-
         }
 
         if (isset($request[$prefix.'-du']) === true && preg_match('/^([0-9]+)\-([0-9]+)$/', $request[$prefix.'-du']) > 0) {
@@ -394,11 +422,10 @@ class BuildSearch
         }
 
         if (empty($request[$prefix.'-id']) === false){
-            if(preg_match('/^[0-9\,]+$/', $request[$prefix.'-id']) > 0){
+            if(preg_match('/^[\-0-9\,]+$/', $request[$prefix.'-id']) > 0){
                 $ids = array_map('intval', explode(',', $request[$prefix.'-id']));
                 $conditions[] = new \Pressmind\Search\Condition\MongoDB\MediaObject($ids);
                 $validated_search_parameters[$prefix.'-id'] = implode(',', $ids);
-
             }
         }
 
@@ -505,17 +532,26 @@ class BuildSearch
      */
     public static function extractDaterange($str){
         if(preg_match('/^([0-9]{4}[0-9]{2}[0-9]{2})\-([0-9]{4}[0-9]{2}[0-9 ]{2})$/', $str, $m) > 0){
-            return array(new DateTime($m[1]), new DateTime($m[2]));
+            $from = new DateTime($m[1]);
+            $from->setTime(0,0);
+            $to = new DateTime($m[2]);
+            $to->setTime(0,0);
+            return array($from, $to);
         }elseif(preg_match('/^([0-9]{4}[0-9]{2}[0-9]{2})$/', $str, $m) > 0){
-            return array(new DateTime($m[1]), null);
+            $from = new DateTime($m[1]);
+            $from->setTime(0,0);
+            return array($from, null);
         }elseif(preg_match('/^([\+\-]?[0-9]+)$/', $str, $m) > 0) {
             $to = new DateTime('now');
+            $to->setTime(0,0);
             $to->modify($m[1].' day');
             return array(new DateTime('now'), $to);
         }elseif(preg_match('/^([\+\-]?[0-9]+)\-([\+\-]?[0-9]+)$/', $str, $m) > 0) {
             $from = new DateTime('now');
+            $from->setTime(0,0);
             $from->modify($m[1].' day');
             $to = new DateTime('now');
+            $to->setTime(0,0);
             $to->modify($m[2].' day');
             return array($from, $to);
         }
@@ -589,7 +625,7 @@ class BuildSearch
     }
 
 
-        /**
+    /**
      * @param $str
      * @return null
      */
@@ -605,11 +641,11 @@ class BuildSearch
      * @return string[]
      */
     public static function extractBoardTypes($str){
-         $board_types = explode(',', $str);
-         foreach($board_types as $k => $board_type){
-             $board_types[$k] = self::sanitizeStr($board_type);
-         }
-         return $board_types;
+        $board_types = explode(',', $str);
+        foreach($board_types as $k => $board_type){
+            $board_types[$k] = self::sanitizeStr($board_type);
+        }
+        return $board_types;
     }
 
     /**
@@ -631,7 +667,7 @@ class BuildSearch
      * @return string
      */
     public static function sanitizeStr($str){
-       return trim(preg_replace( '/[^a-zA-Z0-9_\-\.ÁÀȦÂÄǞǍĂĀÃÅǺǼǢĆĊĈČĎḌḐḒÉÈĖÊËĚĔĒẼE̊ẸǴĠĜǦĞG̃ĢĤḤáàȧâäǟǎăāãåǻǽǣćċĉčďḍḑḓéèėêëěĕēẽe̊ẹǵġĝǧğg̃ģĥḥÍÌİÎÏǏĬĪĨỊĴĶǨĹĻĽĿḼM̂M̄ʼNŃN̂ṄN̈ŇN̄ÑŅṊÓÒȮȰÔÖȪǑŎŌÕȬŐỌǾƠíìiîïǐĭīĩịĵķǩĺļľŀḽm̂m̄ŉńn̂ṅn̈ňn̄ñņṋóòôȯȱöȫǒŏōõȭőọǿơP̄ŔŘŖŚŜṠŠȘṢŤȚṬṰÚÙÛÜǓŬŪŨŰŮỤẂẀŴẄÝỲŶŸȲỸŹŻŽẒǮp̄ŕřŗśŝṡšşṣťțṭṱúùûüǔŭūũűůụẃẁŵẅýỳŷÿȳỹźżžẓǯßœŒçÇ\s]/', '', $str));
+        return trim(preg_replace( '/[^a-zA-Z0-9_\-\.ÁÀȦÂÄǞǍĂĀÃÅǺǼǢĆĊĈČĎḌḐḒÉÈĖÊËĚĔĒẼE̊ẸǴĠĜǦĞG̃ĢĤḤáàȧâäǟǎăāãåǻǽǣćċĉčďḍḑḓéèėêëěĕēẽe̊ẹǵġĝǧğg̃ģĥḥÍÌİÎÏǏĬĪĨỊĴĶǨĹĻĽĿḼM̂M̄ʼNŃN̂ṄN̈ŇN̄ÑŅṊÓÒȮȰÔÖȪǑŎŌÕȬŐỌǾƠíìiîïǐĭīĩịĵķǩĺļľŀḽm̂m̄ŉńn̂ṅn̈ňn̄ñņṋóòôȯȱöȫǒŏōõȭőọǿơP̄ŔŘŖŚŜṠŠȘṢŤȚṬṰÚÙÛÜǓŬŪŨŰŮỤẂẀŴẄÝỲŶŸȲỸŹŻŽẒǮp̄ŕřŗśŝṡšşṣťțṭṱúùûüǔŭūũűůụẃẁŵẅýỳŷÿȳỹźżžẓǯßœŒçÇ\s]/', '', $str));
     }
 
 }

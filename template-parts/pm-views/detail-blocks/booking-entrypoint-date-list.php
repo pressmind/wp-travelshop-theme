@@ -60,7 +60,7 @@ $calendar = $args['media_object']->getCalendar($args['calendar_filter']);
                                'cheapest_price' => $day->cheapest_price,
                            ]);
                        } ?>'
-                       data-booking_url="<?php echo IB3Tools::get_bookinglink($day->cheapest_price); ?>"<?php /* attribut 'checked="checked"' is set by jquery */?> />
+                       data-booking_url="<?php echo IB3Tools::get_bookinglink($day->cheapest_price, SITE_URL, null, null, true); ?>"<?php /* attribut 'checked="checked"' is set by jquery */?> />
                 <span>
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/phosphor-sprite.svg#circle-filled"></use></svg>
                 </span>

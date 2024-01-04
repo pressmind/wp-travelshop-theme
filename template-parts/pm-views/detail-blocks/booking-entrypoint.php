@@ -38,7 +38,7 @@ if ($CheapestPrice->is_virtual_created_price) {
         "<?php echo $args['headline']; ?>" buchen
     </div>
     <!-- Transport -->
-    <div class="booking-filter-item booking-filter-item--transport-type mb-2<?php echo (count($filter['transport_types']) < 2) ? 'd-none' : ''; ?>">
+    <div class="booking-filter-item booking-filter-item--transport-type mb-2<?php echo (count($filter['transport_types']) < 2) ? ' d-none' : ''; ?>">
         <div class="booking-filter-radio booking-filter-radio--transport-type ">
             <?php foreach ($filter['transport_types'] as $transport_type => $v) { ?>
                 <div class="form-radio">

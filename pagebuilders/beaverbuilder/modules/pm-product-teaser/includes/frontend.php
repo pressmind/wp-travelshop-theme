@@ -33,7 +33,14 @@ $args['search']['pm-pr'] = !empty($settings->{'pm-pr'}) ? $settings->{'pm-pr'} :
 $args['search']['pm-dr'] = !empty($settings->{'pm-dr'}) ? $settings->{'pm-dr'} : ''; // travel date range
 
 foreach($settings as $k => $v){ // categories
-    if(!empty($v) && preg_match('/^category_[0-9]+_([0-9]+)\-([a-z0-9\_]+)$/', $k, $matches) > 0){
+    $id_tree = null;
+    if(!empty($args['search']['pm-ot']) && preg_match('/^category_'.$args['search']['pm-ot'].'_([0-9]+)\-([a-z0-9\_]+)$/', $k, $matches) > 0){
+        $id_tree = $matches[2];
+    }
+    if(preg_match('/^category_([0-9]+)\-([a-z0-9\_]+)$/', $k, $matches) > 0){
+        $id_tree = $matches[2];
+    }
+    if(!empty($v) && !empty($id_tree)){
         $items = explode(',',$v);
         $delimeter = ',';
         if(in_array('search-behavior-AND', $items)){
@@ -45,7 +52,7 @@ foreach($settings as $k => $v){ // categories
         if (($key = array_search('search-behavior-OR', $items)) !== false) {
             unset($items[$key]);
         }
-        $args['search']['pm-c'][$matches[2]] = implode($delimeter, $items);
+        $args['search']['pm-c'][$id_tree] = implode($delimeter, $items);
     }
 }
 $args['view'] = !empty($settings->{'view'}) ? $settings->{'view'} : 'Teaser1';

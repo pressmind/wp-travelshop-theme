@@ -20,9 +20,13 @@ final class TravelShop_BeaverBuilderAutoSuggest {
 	 */
 	static public function suggest() {
 	    if ( isset( $_REQUEST['fl_as_action'] ) && isset( $_REQUEST['fl_as_query'] ) ) {
-	        // category_1234_123-zielgebiet_default
+	        // category_1234_123-zielgebiet_default (with object type) - legacy support
 	        if(preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $_REQUEST['fl_as_action'], $matches) > 0){
-	            return self::get_categories($matches[1], $matches[2]);
+	            return self::get_categories($matches[2]);
+            }
+            // category_123-zielgebiet_default (without object type)
+            if(preg_match('/^category_([0-9]+)\-([a-z0-9\_]+)$/', $_REQUEST['fl_as_action'], $matches) > 0){
+                return self::get_categories($matches[1]);
             }
 		}
 	}
@@ -35,18 +39,26 @@ final class TravelShop_BeaverBuilderAutoSuggest {
 	 */
 	static public function get_values( $fields ) {
 		$values = array();
-		// the field must match, otherwise this is not our call and we return silent.
-        // category_1234123_-zielgebiet_default
+        // category_1234_123-zielgebiet_default (with object type) - legacy support
         if(preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $fields[0]['action'], $matches) > 0){
             foreach ( $fields as $field ) {
                 if(preg_match('/^category_(?:([0-9]+))?_([0-9]+)\-([a-z0-9\_]+)$/', $field['action'], $matches) > 0) {
-                    $values[ $field['name'] ] = self::get_value(explode(',', $field['value']), $matches[1], $matches[2]);
+                    $values[ $field['name'] ] = self::get_value(explode(',', $field['value']), $matches[2]);
                 }
             }
             echo json_encode($values);
             exit;
         }
-
+        // category_123-zielgebiet_default (without object type)
+        if(preg_match('/^category_([0-9]+)\-([a-z0-9\_]+)$/', $fields[0]['action'], $matches) > 0){
+            foreach ( $fields as $field ) {
+                if(preg_match('/^category_([0-9]+)\-([a-z0-9\_]+)$/', $field['action'], $matches) > 0) {
+                    $values[ $field['name'] ] = self::get_value(explode(',', $field['value']), $matches[1]);
+                }
+            }
+            echo json_encode($values);
+            exit;
+        }
 	}
 
 
@@ -58,18 +70,14 @@ final class TravelShop_BeaverBuilderAutoSuggest {
      * @return false|string|string[]
      * @throws Exception
      */
-	public static function get_value($id_items, $id_object_type, $id_tree){
-
+	public static function get_value($id_items, $id_tree){
         $search = new Pressmind\Search(
             [
                 Pressmind\Search\Condition\Visibility::create(TS_VISIBILTY),
-               // Pressmind\Search\Condition\ObjectType::create($id_object_type),
             ]
         );
-
         $tree = new Pressmind\Search\Filter\Category($id_tree, $search);
         $treeItems = $tree->getResult();
-
         $categories = \Pressmind\Travelshop\CategoryTreeTools::flatten($treeItems);
         $categories[] = [
             'name' => 'search_behavior-AND',
@@ -91,9 +99,7 @@ final class TravelShop_BeaverBuilderAutoSuggest {
                 }
             }
         }
-
        return  str_replace( "'", '&#39;', json_encode( $output ) );
-
     }
 
 
@@ -101,15 +107,12 @@ final class TravelShop_BeaverBuilderAutoSuggest {
      * Returns a flat tree list as array
 	 * @return array
 	 */
-	static public function get_categories($id_object_type, $id_tree) {
-
+	static public function get_categories($id_tree) {
         $search = new Pressmind\Search(
             [
                 Pressmind\Search\Condition\Visibility::create(TS_VISIBILTY),
-                //Pressmind\Search\Condition\ObjectType::create($id_object_type),
             ]
         );
-
         $tree = new Pressmind\Search\Filter\Category($id_tree, $search);
         $treeItems = $tree->getResult('name');
         $output = \Pressmind\Travelshop\CategoryTreeTools::flatten($treeItems);

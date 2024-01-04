@@ -120,6 +120,12 @@ class Search
                             $item['cheapest_price']->date_departures[] = new \DateTime($date_departure);
                         }
                     }
+                    $item['cheapest_price']->guaranteed_departures = [];
+                    if (!empty($document['prices']['guaranteed_departures'])) {
+                        foreach ($document['prices']['date_departures'] as $guaranteed_departure) {
+                            $item['cheapest_price']->guaranteed_departures[] = new \DateTime($guaranteed_departure);
+                        }
+                    }
                     $item['cheapest_price']->earlybird_discount_date_to = $document['prices']['earlybird_discount_date_to'] != null ? new \DateTime($document['prices']['earlybird_discount_date_to']) : null;
                     $item['cheapest_price']->option_board_type = $document['prices']['option_board_type'];
                     $item['cheapest_price']->transport_type = $document['prices']['transport_type'];
@@ -141,6 +147,7 @@ class Search
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_total'] = (float)$date['price_total'];
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['price_regular_before_discount'] = $date['price_regular_before_discount'];
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['durations_from_this_departure'] = $date['durations_from_this_departure'];
+                            $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['guaranteed'] = !empty($date['guaranteed']);
                             $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = false;
                             if(!empty($document['fst_date_departure']) && $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['date_departure']->format('Y-m-d') === $item['fst_date_departure']->format('Y-m-d')){
                                 $item['dates_per_month'][$k]['five_dates_in_month'][$k1]['active'] = true;
@@ -251,15 +258,47 @@ class Search
                     }
                     foreach ($document['prices']['date_departures'] as $date_departure) {
                         $date_departure = new \DateTime($date_departure);
-                        $filter_departures[] = $date_departure->format('Y-m-d');
+                        if(isset($filter_departures[$date_departure->format('Y-m-d')])){
+                            $filter_departures[$date_departure->format('Y-m-d')]->count_in_system++;
+                            $filter_departures[$date_departure->format('Y-m-d')]->date = $date_departure->format('Y-m-d');
+                        }else{
+                            $filter_departures[$date_departure->format('Y-m-d')] = new \stdClass();
+                            $filter_departures[$date_departure->format('Y-m-d')]->count_in_system = 1;
+                            $filter_departures[$date_departure->format('Y-m-d')]->count_in_search = 0;
+                            $filter_departures[$date_departure->format('Y-m-d')]->date = $date_departure->format('Y-m-d');
+                        }
                     }
                 }
             }
 
-            $filter_departures = array_unique($filter_departures);
-            sort($filter_departures);
+            if(!$returnFiltersOnly) {
+                foreach ($result->documents as $document) {
+                    $document = json_decode(json_encode($document), true);
+                    if (!empty($document['prices']['date_departures'])) {
+                        if (!is_array($document['prices']['date_departures'])) {
+                            $document['prices']['date_departures'] = [$document['prices']['date_departures']];
+                        }
+                        foreach ($document['prices']['date_departures'] as $date_departure) {
+                            $date_departure = new \DateTime($date_departure);
+                            if (isset($filter_departures[$date_departure->format('Y-m-d')])) {
+                                $filter_departures[$date_departure->format('Y-m-d')]->count_in_search++;
+                            }
+                        }
+                    }
+                }
+            }
+            usort($filter_departures, function($a, $b) {
+                return $a->date <=> $b->date;
+            });
             $end_time = microtime(true);
             $departure_filter_ms = ($end_time - $start_time)  * 1000;
+
+
+           // echo '<pre>';
+           // print_r($filter_departures);
+           // echo '</pre>';
+           // exit;
+//
         }
 
         $result = [
