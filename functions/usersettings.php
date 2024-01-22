@@ -78,7 +78,7 @@ function add_frontend_user_roles(){
         }
     }
 
-    if(AGENCY_FUNCTIONALITY) {
+    if(defined('AGENCY_FUNCTIONALITY') && AGENCY_FUNCTIONALITY) {
         if(in_array('tsagency', $current_frontend_roles) === false) {
             add_role( 'tsagency', 'TSAgency', array( 'read' => true, 'level_0' => true, 'tt_frontend_user' => true) );
             $frontendroles .= "\nTSAgency";
