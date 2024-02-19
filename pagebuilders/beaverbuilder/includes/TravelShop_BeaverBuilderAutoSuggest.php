@@ -71,13 +71,7 @@ final class TravelShop_BeaverBuilderAutoSuggest {
      * @throws Exception
      */
 	public static function get_value($id_items, $id_tree){
-        $search = new Pressmind\Search(
-            [
-                Pressmind\Search\Condition\Visibility::create(TS_VISIBILTY),
-            ]
-        );
-        $tree = new Pressmind\Search\Filter\Category($id_tree, $search);
-        $treeItems = $tree->getResult();
+        $treeItems = \Pressmind\ORM\Object\CategoryTree\Item::listAll(['id_tree' => $id_tree], 'name');
         $categories = \Pressmind\Travelshop\CategoryTreeTools::flatten($treeItems);
         $categories[] = [
             'name' => 'search_behavior-AND',
@@ -108,13 +102,7 @@ final class TravelShop_BeaverBuilderAutoSuggest {
 	 * @return array
 	 */
 	static public function get_categories($id_tree) {
-        $search = new Pressmind\Search(
-            [
-                Pressmind\Search\Condition\Visibility::create(TS_VISIBILTY),
-            ]
-        );
-        $tree = new Pressmind\Search\Filter\Category($id_tree, $search);
-        $treeItems = $tree->getResult('name');
+        $treeItems = \Pressmind\ORM\Object\CategoryTree\Item::listAll(['id_tree' => $id_tree], 'name');
         $output = \Pressmind\Travelshop\CategoryTreeTools::flatten($treeItems);
         $output[] = [
             'name' => 'search_behavior-AND',
