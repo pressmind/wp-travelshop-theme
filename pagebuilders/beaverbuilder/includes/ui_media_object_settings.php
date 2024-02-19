@@ -1,5 +1,7 @@
 <?php
 
+use Pressmind\Import\CategoryTree;
+
 if ( ! FLBuilderModel::is_builder_active() ) {
     return;
 }
@@ -7,11 +9,14 @@ if ( ! FLBuilderModel::is_builder_active() ) {
 $db = \Pressmind\Registry::getInstance()->get('db');
 $config = \Pressmind\Registry::getInstance()->get('config');
 
-
 /**
  * beaverbuilder settings
  * @var $settings
  */
+
+// get instant new categories from pressmind
+$CategoryImporter = new CategoryTree([]);
+$CategoryImporter->import();
 
 // get all categories group by id object type for later purposes
 $r = $db->fetchAll('select distinct var_name, ti.id_tree as id, ct.name, ti.id_object_type from pmt2core_media_object_tree_items ti
