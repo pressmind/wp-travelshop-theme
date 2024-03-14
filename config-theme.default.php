@@ -587,6 +587,11 @@ define('TS_TTL_SEARCH', 0);
 define('TS_TTL_FILTER', 0);
 
 /**
+ * Cache time in seconds of a transient. Default is 15 minutes (900 seconds)
+ */
+define('TS_TTL_TRANSIENTS', 900);
+
+/**
  * Laod simple service worker and PWA manifest
  */
 define('TS_PWA', false);

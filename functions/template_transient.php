@@ -8,8 +8,7 @@
  * @param array  $args           Optional. Additional arguments passed to the template.
  *                               Default empty array.
  */
-function load_template_transient( $_template_file, $require_once = true, $args = array(), $expiration = 0) {
-
+function load_template_transient( $_template_file, $require_once = true, $args = array(), $expiration = TS_TTL_TRANSIENTS) {
     global $id_object_type;
 
     $transient = 'ts_template_transient_'.md5(serialize( [$_template_file, $args, $id_object_type]));
