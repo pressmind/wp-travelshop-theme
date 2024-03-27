@@ -604,3 +604,18 @@ define('TS_PWA', false);
  * In most cases this constant must be mapped to a multipage site id
  */
 //define('TS_SEARCH_GROUP_KEYS', ['www_demoseite1_de']);
+
+/**
+ * Defines the origin of the touristic data
+ * 0 = default
+ * n = pressmind myContent ID
+ */
+define('TS_TOURISTIC_ORIGIN', 0);
+
+
+/**
+ * Required to to enable agency specific price and options
+ * If pm-config.php:data.touristic.agency_based_option_and_prices.enabled is set to true,
+ * you have to set the agency id here, see pm-config.php:data.touristic.agency_based_option_and_prices.allowed_agencies for valid ids
+ */
+define('TS_AGENCY_ID_PRICE_INDEX', null);

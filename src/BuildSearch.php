@@ -467,11 +467,14 @@ class BuildSearch
         }
 
         $conditions = array_merge($conditions, $custom_conditions);
-
-        $Search = new Pressmind\Search\MongoDB($conditions, $order, TS_LANGUAGE_CODE);
-
         self::$validated_search_parameters = $validated_search_parameters;
-
+        $Search = new Pressmind\Search\MongoDB(
+                                            $conditions,
+                                            $order,
+                                            TS_LANGUAGE_CODE,
+                                            defined('TS_TOURISTIC_ORIGIN') ? TS_TOURISTIC_ORIGIN : 0,
+                                            defined('TS_AGENCY_ID_PRICE_INDEX') ? TS_AGENCY_ID_PRICE_INDEX : null
+        );
         if($paginator){ // @TODO this needs a refactoring
             $page = 0;
             //$page_size = 10;
@@ -482,9 +485,7 @@ class BuildSearch
 
             $Search->setPaginator(Pressmind\Search\Paginator::create($page_size, $page));
         }
-
         return $Search;
-
     }
 
 
