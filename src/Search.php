@@ -68,7 +68,13 @@ class Search
                 $FilterCondition[] = new \Pressmind\Search\Condition\MongoDB\Occupancy($occupancy);
             }
             $FilterCondition = array_merge($FilterCondition, $custom_conditions);
-            $filter = new \Pressmind\Search\MongoDB($FilterCondition, ['price_total' => 'asc'], TS_LANGUAGE_CODE);
+            $filter = new \Pressmind\Search\MongoDB(
+                                                    $FilterCondition,
+                                                    ['price_total' => 'asc'],
+                                                    TS_LANGUAGE_CODE,
+                                                    defined('TS_TOURISTIC_ORIGIN') ? TS_TOURISTIC_ORIGIN : 0,
+                                                    defined('TS_AGENCY_ID_PRICE_INDEX') ? TS_AGENCY_ID_PRICE_INDEX : null
+            );
             $start_time = microtime(true);
             if(isset(self::$_run_time_cache_filter[$cache_key])){
                 $result_filter = self::$_run_time_cache_filter[$cache_key];
